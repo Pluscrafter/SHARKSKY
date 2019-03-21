@@ -1,0 +1,17 @@
+https://www.st.com/en/microcontrollers-microprocessors/stm32f722re.html 21.03.2019:
+en.DM00305990.pdf
+en.DM00305994.pdf
+en.DM00354244.pdf
+en.DM00237416.pdf
+stm32f722re.pdf
+
+https://www.invensense.com/products/motion-tracking/6-axis/mpu-6050/ 21.03.2019:
+MPU-6000-Register-Map1.pdf
+MPU-6000-Datasheet1.pdf
+
+https://www.invensense.com/products/motion-tracking/6-axis/mpu-6500/ 21.03.2019:
+MPU-6500-Datasheet2.pdf
+MPU-6500-Register-Map2.pdf
+
+https://store.arduino.cc/arduino-nano
+NanoV3.3_sch.pdf

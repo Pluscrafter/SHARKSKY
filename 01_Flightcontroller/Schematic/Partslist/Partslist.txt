@@ -1,0 +1,28 @@
+STM32F722re
+https://www.digikey.ch/product-detail/de/stmicroelectronics/STM32F722RET6/497-17184-ND/6621769
+https://www.mouser.ch/ProductDetail/STMicroelectronics/STM32F722RET6?qs=NoqMqJKvPFLRYC3WLxVXLQ==
+https://ch.rs-online.com/web/p/mikrocontroller/1358264/
+
+MPU6050
+https://de.aliexpress.com/item/6DOF-MPU-6050-MPU6050-Six-axis-Gyro-ans-Acc-Sensor-Chips-IC-QFN-24/32813239676.html?spm=a2g0x.search0104.3.309.38111ae1tVw9Sg&ws_ab_test=searchweb0_0,searchweb201602_5_10065_10068_319_10059_10884_317_10887_10696_321_322_10084_453_10083_454_10103_10618_10307_537_536_10902_10134,searchweb201603_51,ppcSwitch_0&algo_expid=57d27ee1-8bd2-4320-9ecc-6a8367c2a7c8-44&algo_pvid=57d27ee1-8bd2-4320-9ecc-6a8367c2a7c8
+
+
+MPU6000
+https://de.aliexpress.com/item/10PCS-X-100-New-Invensense-MPU6000-Six-axis-sensor/1847838629.html?spm=a2g0x.search0104.3.52.5a896005MxfEOd&ws_ab_test=searchweb0_0%2Csearchweb201602_5_10065_10068_319_10059_10884_317_10887_10696_321_322_10084_453_10083_454_10103_10618_10307_537_536_10902_10134%2Csearchweb201603_51%2CppcSwitch_0&algo_pvid=8f94b4b3-9252-4010-a409-614919e5f0cf&algo_expid=8f94b4b3-9252-4010-a409-614919e5f0cf-8
+
+NRF2401 PA LNA 
+https://de.aliexpress.com/item/Smart-Electronics-1Set-2-4G-1100-Meters-Long-Distance-NRF24L01-PA-LNA-Wireless-Transceiver-Communication-Modules/32707423150.html?spm=a2g0x.search0104.3.2.2f5240f1S6VmSx&ws_ab_test=searchweb0_0,searchweb201602_5_10065_10068_319_10059_10884_317_10887_10696_321_322_10084_453_10083_454_10103_10618_10307_537_536_10902_10134,searchweb201603_51,ppcSwitch_0&algo_expid=567cf530-ec54-4c6c-ab72-dbdc8aa6ba27-0&algo_pvid=567cf530-ec54-4c6c-ab72-dbdc8aa6ba27
+
+8MHZ/16MHZ Quartz
+
+ATMEGA328
+https://www.mouser.ch/_/N-1yzvvqxZgjdhub?Keyword=ATmega328&FS=True&Ns=Pricing|0
+https://www.digikey.com/products/en/integrated-circuits-ics/embedded-microcontrollers/685?k=ATmega328&k=&pkeyword=ATmega328&sv=0&pv69=3&pv1291=2455&sf=0&FV=ffe002ad&quantity=&ColumnSort=0&page=1&pageSize=25
+https://ch.rs-online.com/web/p/mikrocontroller/7380432/
+
+FT323RL
+https://www.banggood.com/de/FT232-FT232R-FT232RL-IC-USB-TO-SERIAL-UART-28-SSOP-FTDI-Chip-for-Arduino-p-1416447.html?rmmds=search&cur_warehouse=CN
+
+3.3V Voltage regulator
+
+caps and tantalum caps
