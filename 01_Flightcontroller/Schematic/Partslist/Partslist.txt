@@ -24,5 +24,8 @@ FT323RL
 https://www.banggood.com/de/FT232-FT232R-FT232RL-IC-USB-TO-SERIAL-UART-28-SSOP-FTDI-Chip-for-Arduino-p-1416447.html?rmmds=search&cur_warehouse=CN
 
 3.3V Voltage regulator
+https://ch.rs-online.com/web/p/ldo-spannungsregler/5361546/
 
 caps and tantalum caps
+https://ch.rs-online.com/web/p/keramik-multilayer-kondensatoren/9038818/  0.47uf for ldo-VR
+https://ch.rs-online.com/web/p/keramik-multilayer-kondensatoren/9155461/  33uf for ldo-VR
