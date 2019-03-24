@@ -1,0 +1,9 @@
+\documentclass[document]{12pt, a4paper, ngerman}
+\begin{document}
+\title{Lorem Ipsum}
+\date{\today}
+\author{Charpoan Kong \\ M5d \\ Kantonsschule Zürich Nord}
+
+\maketitle
+
+\end{document}

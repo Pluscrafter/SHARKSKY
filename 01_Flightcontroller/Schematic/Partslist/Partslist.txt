@@ -14,6 +14,8 @@ NRF2401 PA LNA
 https://de.aliexpress.com/item/Smart-Electronics-1Set-2-4G-1100-Meters-Long-Distance-NRF24L01-PA-LNA-Wireless-Transceiver-Communication-Modules/32707423150.html?spm=a2g0x.search0104.3.2.2f5240f1S6VmSx&ws_ab_test=searchweb0_0,searchweb201602_5_10065_10068_319_10059_10884_317_10887_10696_321_322_10084_453_10083_454_10103_10618_10307_537_536_10902_10134,searchweb201603_51,ppcSwitch_0&algo_expid=567cf530-ec54-4c6c-ab72-dbdc8aa6ba27-0&algo_pvid=567cf530-ec54-4c6c-ab72-dbdc8aa6ba27
 
 8MHZ/16MHZ Quartz
+https://ch.rs-online.com/web/p/quarzmodule/1710644/ 8MHZ
+https://ch.rs-online.com/web/p/quarzmodule/1710562/ 16MHZ
 
 ATMEGA328
 https://www.mouser.ch/_/N-1yzvvqxZgjdhub?Keyword=ATmega328&FS=True&Ns=Pricing|0
@@ -29,3 +31,18 @@ https://ch.rs-online.com/web/p/ldo-spannungsregler/5361546/
 caps and tantalum caps
 https://ch.rs-online.com/web/p/keramik-multilayer-kondensatoren/9038818/  0.47uf for ldo-VR
 https://ch.rs-online.com/web/p/keramik-multilayer-kondensatoren/9155461/  33uf for ldo-VR
+https://ch.rs-online.com/web/p/keramik-multilayer-kondensatoren/7414699/  10pf for crystal
+https://ch.rs-online.com/web/p/keramik-multilayer-kondensatoren/9155180/  22uf stm32
+https://ch.rs-online.com/web/p/keramik-multilayer-kondensatoren/6521733/  2.2nF MPU6000
+https://ch.rs-online.com/web/p/keramik-multilayer-kondensatoren/4348110/  1uf stm32
+https://ch.rs-online.com/web/p/keramik-multilayer-kondensatoren/1034158/  4.7uf stm32
+
+leds
+https://ch.rs-online.com/web/p/leds-sichtbares-licht/4663863/ green
+https://ch.rs-online.com/web/p/leds-sichtbares-licht/4663920/ red
+
+diode
+https://ch.rs-online.com/web/p/gleichrichterdioden-und-schottky-dioden/6708826/ polarity protection
+
+sdcard
+https://ch.rs-online.com/web/p/speicher-und-sim-karten-steckverbinder/0212799/
