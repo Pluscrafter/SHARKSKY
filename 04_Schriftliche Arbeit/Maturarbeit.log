@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.3.24)  24 MAR 2019 03:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.3.25)  25 MAR 2019 23:18
 entering extended mode
 **./Maturarbeit.tex
 (Maturarbeit.tex
 LaTeX2e <2018-12-01>
-("C:\Program Files\MiKTeX 2.9\tex/latex/base\article.cls"
+(D:\Programs\MiKTeX\tex/latex/base\article.cls
 Document Class: article 2018/09/03 v1.4i Standard LaTeX document class
-("C:\Program Files\MiKTeX 2.9\tex/latex/base\size12.clo"
+(D:\Programs\MiKTeX\tex/latex/base\size12.clo
 File: size12.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
 )
 \c@part=\count80
@@ -20,38 +20,37 @@ File: size12.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-("C:\Program Files\MiKTeX 2.9\tex/generic/babel\babel.sty"
+(D:\Programs\MiKTeX\tex/generic/babel\babel.sty
 Package: babel 2018/11/13 3.27 The Babel package
 
-("C:\Program Files\MiKTeX 2.9\tex/generic/babel\switch.def"
+(D:\Programs\MiKTeX\tex/generic/babel\switch.def
 File: switch.def 2018/11/13 3.27 Babel switching mechanism
 )
 *************************************
 * Local config file bblopts.cfg used
 *
-("C:\Program Files\MiKTeX 2.9\tex/latex/arabi\bblopts.cfg"
+(C:\Users\Pluscrafter\AppData\Roaming\MiKTeX\2.9\tex/latex/arabi\bblopts.cfg
 File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
  babel
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/babel-german\ngerman.ldf"
+(D:\Programs\MiKTeX\tex/latex/babel-german\ngerman.ldf
 Language: ngerman 2018/12/08 v2.11 German support for babel (post-1996 orthogra
 phy)
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/babel-german\ngermanb.ldf"
+(D:\Programs\MiKTeX\tex/latex/babel-german\ngermanb.ldf
 Language: ngermanb 2018/12/08 v2.11 German support for babel (post-1996 orthogr
 aphy)
 
-("C:\Program Files\MiKTeX 2.9\tex/generic/babel\babel.def"
+(D:\Programs\MiKTeX\tex/generic/babel\babel.def
 File: babel.def 2018/11/13 3.27 Babel common definitions
 \babel@savecnt=\count88
 \U@D=\dimen103
 
-("C:\Program Files\MiKTeX 2.9\tex/generic/babel\txtbabel.def")
+(D:\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
 \bbl@dirlevel=\count89
 )
 Package babel Info: Making " an active character on input line 121.
-)))
-(Maturarbeit.aux)
+))) (Maturarbeit.aux)
 \openout1 = `Maturarbeit.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
@@ -70,10 +69,11 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <14.4> on input line 7.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 7.
- [1
 
-{C:/Users/Pluscrafter/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] (Matu
-rarbeit.toc
+[1
+
+{C:/Users/Pluscrafter/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+(Maturarbeit.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <12> on input line 4.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -88,18 +88,17 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 ] [1] [2] (Maturarbeit.aux) ) 
 Here is how much of TeX's memory you used:
- 846 strings out of 492946
- 11148 string characters out of 3135509
+ 847 strings out of 492945
+ 11063 string characters out of 3139494
  79824 words of memory out of 3000000
- 4791 multiletter control sequences out of 15000+200000
- 8808 words of font info for 31 fonts, out of 3000000 for 9000
+ 4793 multiletter control sequences out of 15000+200000
+ 9107 words of font info for 32 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 27i,7n,27p,224b,199s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.p
-fb>
-Output written on Maturarbeit.pdf (4 pages, 37231 bytes).
+ 27i,7n,27p,224b,198s stack positions out of 5000i,500n,10000p,200000b,50000s
+<D:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm
+/cmbx12.pfb><D:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/Pr
+ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb>
+Output written on Maturarbeit.pdf (4 pages, 40457 bytes).
 PDF statistics:
  27 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
