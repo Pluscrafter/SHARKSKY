@@ -11023,6 +11023,80 @@ http://www.s6z.de&lt;br&gt;&lt;br&gt;
 </deviceset>
 </devicesets>
 </library>
+<library name="bosch-bmp280">
+<description>Digital Pressure Sensor</description>
+<packages>
+<package name="BMP280">
+<description>2.5 mm x 2.5 mm x 0.93 mm metal lid LGA</description>
+<smd name="7" x="0.325" y="0.8" dx="0.35" dy="0.5" layer="1"/>
+<smd name="6" x="-0.325" y="0.8" dx="0.35" dy="0.5" layer="1"/>
+<smd name="5" x="-0.975" y="0.8" dx="0.35" dy="0.5" layer="1"/>
+<smd name="8" x="0.975" y="0.8" dx="0.35" dy="0.5" layer="1"/>
+<smd name="3" x="-0.325" y="-0.8" dx="0.35" dy="0.5" layer="1" rot="R180"/>
+<smd name="2" x="0.325" y="-0.8" dx="0.35" dy="0.5" layer="1" rot="R180"/>
+<smd name="1" x="0.975" y="-0.8" dx="0.35" dy="0.5" layer="1" rot="R180"/>
+<smd name="4" x="-0.975" y="-0.8" dx="0.35" dy="0.5" layer="1" rot="R180"/>
+<text x="-1.25" y="1.2" size="0.4064" layer="25" font="vector">&gt;NAME</text>
+<text x="-1.2" y="-1.55" size="0.4064" layer="27" font="vector">&gt;VALUE</text>
+<circle x="0.975" y="-0.375" radius="0.0901375" width="0.05" layer="21"/>
+<wire x1="-1.2" y1="1" x2="-1.25" y2="1" width="0.05" layer="21"/>
+<wire x1="-1.25" y1="1" x2="-1.25" y2="-1" width="0.05" layer="21"/>
+<wire x1="-1.25" y1="-1" x2="-1.2" y2="-1" width="0.05" layer="21"/>
+<wire x1="1.2" y1="-1" x2="1.25" y2="-1" width="0.05" layer="21"/>
+<wire x1="1.25" y1="-1" x2="1.25" y2="1" width="0.05" layer="21"/>
+<wire x1="1.25" y1="1" x2="1.2" y2="1" width="0.05" layer="21"/>
+<wire x1="-1.3" y1="1.1" x2="1.3" y2="1.1" width="0.01" layer="39"/>
+<wire x1="1.3" y1="1.1" x2="1.3" y2="-1.1" width="0.01" layer="39"/>
+<wire x1="1.3" y1="-1.1" x2="-1.3" y2="-1.1" width="0.01" layer="39"/>
+<wire x1="-1.3" y1="-1.1" x2="-1.3" y2="1.1" width="0.01" layer="39"/>
+</package>
+</packages>
+<symbols>
+<symbol name="BMP280">
+<wire x1="-10.16" y1="7.62" x2="10.16" y2="7.62" width="0.4064" layer="94"/>
+<wire x1="10.16" y1="7.62" x2="10.16" y2="-7.62" width="0.4064" layer="94"/>
+<wire x1="10.16" y1="-7.62" x2="-10.16" y2="-7.62" width="0.4064" layer="94"/>
+<wire x1="-10.16" y1="-7.62" x2="-10.16" y2="7.62" width="0.4064" layer="94"/>
+<pin name="VDD" x="-15.24" y="5.08" length="middle" direction="pwr"/>
+<pin name="GND" x="-15.24" y="-5.08" length="middle" direction="pwr"/>
+<pin name="VDDIO" x="15.24" y="5.08" length="middle" direction="pwr" rot="R180"/>
+<pin name="CSB" x="-15.24" y="0" length="middle" direction="in"/>
+<pin name="SDO" x="15.24" y="-5.08" length="middle" direction="in" rot="R180"/>
+<pin name="SDI" x="15.24" y="-2.54" length="middle" rot="R180"/>
+<pin name="SCK" x="15.24" y="0" length="middle" rot="R180"/>
+<text x="-9.906" y="8.382" size="1.778" layer="95" font="vector">&gt;NAME</text>
+<text x="-10.16" y="-10.16" size="1.778" layer="96" font="vector">&gt;VALUE</text>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="BMP280" prefix="IC">
+<description>The BMP280 is an absolute barometric pressure sensor especially designed for mobile applications. The sensor module is housed in an extremely compact 8-pin metal-lid LGA package with a footprint of only 2.0 × 2.5 mm2 and 0.95 mm package height. Its small
+dimensions and its low power consumption of 2.7 μA @1Hz allow the implementation in battery driven devices such as mobile phones, GPS modules or watches.
+&lt;br&gt;&lt;br&gt;
+
+The library has been designed by&lt;a href="https://www.facebook.com/groups/eaglecadsoftUK"&gt; Richard Magdycz&lt;/a&gt;</description>
+<gates>
+<gate name="G$1" symbol="BMP280" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="BMP280">
+<connects>
+<connect gate="G$1" pin="CSB" pad="2"/>
+<connect gate="G$1" pin="GND" pad="1 7"/>
+<connect gate="G$1" pin="SCK" pad="4"/>
+<connect gate="G$1" pin="SDI" pad="3"/>
+<connect gate="G$1" pin="SDO" pad="5"/>
+<connect gate="G$1" pin="VDD" pad="8"/>
+<connect gate="G$1" pin="VDDIO" pad="6"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -11098,6 +11172,9 @@ http://www.s6z.de&lt;br&gt;&lt;br&gt;
 <part name="SUPPLY15" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="VCC" device=""/>
 <part name="GND14" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
 <part name="C27" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="4.7uF"/>
+<part name="IC3" library="bosch-bmp280" deviceset="BMP280" device=""/>
+<part name="SUPPLY16" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="VCC" device=""/>
+<part name="GND15" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -11338,6 +11415,16 @@ http://www.s6z.de&lt;br&gt;&lt;br&gt;
 <attribute name="NAME" x="-44.196" y="53.721" size="1.778" layer="95"/>
 <attribute name="VALUE" x="-44.196" y="48.641" size="1.778" layer="96"/>
 </instance>
+<instance part="IC3" gate="G$1" x="266.7" y="66.04" smashed="yes" rot="R180">
+<attribute name="NAME" x="276.606" y="57.658" size="1.778" layer="95" font="vector" rot="R180"/>
+<attribute name="VALUE" x="276.86" y="76.2" size="1.778" layer="96" font="vector" rot="R180"/>
+</instance>
+<instance part="SUPPLY16" gate="G$1" x="294.64" y="63.5" smashed="yes">
+<attribute name="VALUE" x="294.64" y="66.294" size="1.778" layer="96" align="bottom-center"/>
+</instance>
+<instance part="GND15" gate="1" x="287.02" y="68.58" smashed="yes">
+<attribute name="VALUE" x="287.02" y="68.326" size="1.778" layer="96" align="top-center"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -11515,6 +11602,13 @@ http://www.s6z.de&lt;br&gt;&lt;br&gt;
 <pinref part="C26" gate="G$1" pin="2"/>
 <wire x1="218.44" y1="-36.83" x2="231.14" y2="-36.83" width="0.1524" layer="91"/>
 <junction x="231.14" y="-36.83"/>
+<pinref part="IC2" gate="G$1" pin="FSYNC"/>
+<wire x1="210.82" y1="-34.29" x2="231.14" y2="-34.29" width="0.1524" layer="91"/>
+<wire x1="231.14" y1="-34.29" x2="231.14" y2="-36.83" width="0.1524" layer="91"/>
+<pinref part="IC2" gate="G$1" pin="CLKIN"/>
+<wire x1="170.18" y1="-24.13" x2="170.18" y2="-17.78" width="0.1524" layer="91"/>
+<wire x1="170.18" y1="-17.78" x2="231.14" y2="-17.78" width="0.1524" layer="91"/>
+<wire x1="231.14" y1="-17.78" x2="231.14" y2="-31.75" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="GND"/>
@@ -11530,6 +11624,11 @@ http://www.s6z.de&lt;br&gt;&lt;br&gt;
 <wire x1="-45.72" y1="44.45" x2="-41.91" y2="44.45" width="0.1524" layer="91"/>
 <wire x1="-45.72" y1="48.26" x2="-45.72" y2="44.45" width="0.1524" layer="91"/>
 <junction x="-45.72" y="44.45"/>
+</segment>
+<segment>
+<pinref part="IC3" gate="G$1" pin="GND"/>
+<pinref part="GND15" gate="1" pin="GND"/>
+<wire x1="281.94" y1="71.12" x2="287.02" y2="71.12" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="VCC" class="0">
@@ -11605,6 +11704,18 @@ http://www.s6z.de&lt;br&gt;&lt;br&gt;
 <wire x1="-45.72" y1="59.69" x2="-41.91" y2="59.69" width="0.1524" layer="91"/>
 <wire x1="-45.72" y1="55.88" x2="-45.72" y2="59.69" width="0.1524" layer="91"/>
 <junction x="-45.72" y="59.69"/>
+</segment>
+<segment>
+<pinref part="SUPPLY16" gate="G$1" pin="VCC"/>
+<pinref part="IC3" gate="G$1" pin="VDD"/>
+<wire x1="294.64" y1="63.5" x2="294.64" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="294.64" y1="60.96" x2="284.48" y2="60.96" width="0.1524" layer="91"/>
+<pinref part="IC3" gate="G$1" pin="VDDIO"/>
+<wire x1="284.48" y1="60.96" x2="281.94" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="251.46" y1="60.96" x2="251.46" y2="55.88" width="0.1524" layer="91"/>
+<wire x1="251.46" y1="55.88" x2="284.48" y2="55.88" width="0.1524" layer="91"/>
+<wire x1="284.48" y1="55.88" x2="284.48" y2="60.96" width="0.1524" layer="91"/>
+<junction x="284.48" y="60.96"/>
 </segment>
 </net>
 <net name="N$2" class="0">
@@ -11980,6 +12091,58 @@ http://www.s6z.de&lt;br&gt;&lt;br&gt;
 <pinref part="U2" gate="U$1" pin="PC4(ADC4/SDA)"/>
 <wire x1="213.36" y1="67.31" x2="218.44" y2="67.31" width="0.1524" layer="91"/>
 <label x="213.36" y="67.31" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="A_SPI_SCLK" class="0">
+<segment>
+<pinref part="U2" gate="U$1" pin="PB5(SCK)"/>
+<wire x1="213.36" y1="19.05" x2="218.44" y2="19.05" width="0.1524" layer="91"/>
+<wire x1="218.44" y1="19.05" x2="218.44" y2="17.78" width="0.1524" layer="91"/>
+<label x="213.36" y="17.78" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="IC3" gate="G$1" pin="SCK"/>
+<wire x1="251.46" y1="66.04" x2="246.38" y2="66.04" width="0.1524" layer="91"/>
+<label x="236.22" y="66.04" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="A_SPI_MISO" class="0">
+<segment>
+<pinref part="U2" gate="U$1" pin="PB4(MISO)"/>
+<wire x1="213.36" y1="21.59" x2="218.44" y2="21.59" width="0.1524" layer="91"/>
+<wire x1="218.44" y1="21.59" x2="218.44" y2="20.32" width="0.1524" layer="91"/>
+<label x="213.36" y="20.32" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="IC3" gate="G$1" pin="SDO"/>
+<wire x1="251.46" y1="71.12" x2="246.38" y2="71.12" width="0.1524" layer="91"/>
+<label x="236.22" y="71.12" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="A_SPI_MOSI" class="0">
+<segment>
+<pinref part="U2" gate="U$1" pin="PB3(MOSI/OC2)"/>
+<wire x1="213.36" y1="24.13" x2="218.44" y2="24.13" width="0.1524" layer="91"/>
+<wire x1="218.44" y1="24.13" x2="218.44" y2="22.86" width="0.1524" layer="91"/>
+<label x="213.36" y="22.86" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="IC3" gate="G$1" pin="SDI"/>
+<wire x1="251.46" y1="68.58" x2="246.38" y2="68.58" width="0.1524" layer="91"/>
+<label x="236.22" y="68.58" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="A_SPI_NSS" class="0">
+<segment>
+<pinref part="U2" gate="U$1" pin="PB2(SS/OC1B)"/>
+<wire x1="213.36" y1="26.67" x2="218.44" y2="26.67" width="0.1524" layer="91"/>
+<wire x1="218.44" y1="26.67" x2="218.44" y2="25.4" width="0.1524" layer="91"/>
+<label x="213.36" y="25.4" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="IC3" gate="G$1" pin="CSB"/>
+<wire x1="281.94" y1="66.04" x2="287.02" y2="66.04" width="0.1524" layer="91"/>
+<label x="281.94" y="66.04" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>

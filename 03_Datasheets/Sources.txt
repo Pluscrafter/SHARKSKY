@@ -15,3 +15,20 @@ MPU-6500-Register-Map2.pdf
 
 https://store.arduino.cc/arduino-nano
 NanoV3.3_sch.pdf
+
+https://www.st.com/en/evaluation-tools/nucleo-f722ze.html#resource
+MB1137.pdf
+
+https://store.arduino.cc/arduino-uno-rev3
+UNO-TH_Rev3e_sch.pdf
+
+https://www.st.com/en/switches-and-multiplexers/st890.html#resource
+st890.pdf
+
+https://cdn-shop.adafruit.com/datasheets/BST-BMP280-DS001-11.pdf
+BST-BMP280-DS001-11.pdf
+
+https://cdn-learn.adafruit.com/assets/assets/000/026/865/original/sensors_sch.png?1438371131
+sensors_sch.png
+
+http://www.hobbytronics.co.uk/mosfet-voltage-level-converter
