@@ -32,3 +32,6 @@ https://cdn-learn.adafruit.com/assets/assets/000/026/865/original/sensors_sch.pn
 sensors_sch.png
 
 http://www.hobbytronics.co.uk/mosfet-voltage-level-converter
+
+https://www.st.com/content/ccc/resource/technical/document/application_note/b0/5c/ba/b2/cb/10/41/dd/DM00164549.pdf/files/DM00164549.pdf/jcr:content/translations/en.DM00164549.pdf
+en.DM00164549.pdf
