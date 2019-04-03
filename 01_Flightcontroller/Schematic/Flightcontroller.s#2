@@ -16030,8 +16030,10 @@ Source: http://www.osram.convergy.de/</description>
 <net name="I2C1_SDA" class="0">
 <segment>
 <pinref part="U1" gate="A" pin="PB7"/>
-<wire x1="7.62" y1="30.48" x2="3.81" y2="30.48" width="0.1524" layer="91"/>
 <label x="-5.08" y="30.48" size="1.778" layer="95"/>
+<wire x1="7.62" y1="30.48" x2="-19.05" y2="30.48" width="0.1524" layer="91"/>
+<pinref part="R5" gate="G$1" pin="1"/>
+<wire x1="-19.05" y1="30.48" x2="-19.05" y2="33.02" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="JP3" gate="G$1" pin="4"/>
@@ -16200,13 +16202,6 @@ Source: http://www.osram.convergy.de/</description>
 <pinref part="IC3" gate="G$1" pin="SCK"/>
 <wire x1="281.94" y1="63.5" x2="276.86" y2="63.5" width="0.1524" layer="91"/>
 <label x="266.7" y="63.5" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="N$12" class="0">
-<segment>
-<wire x1="2.54" y1="30.48" x2="-19.05" y2="30.48" width="0.1524" layer="91"/>
-<pinref part="R5" gate="G$1" pin="1"/>
-<wire x1="-19.05" y1="30.48" x2="-19.05" y2="33.02" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="LLVOE" class="0">

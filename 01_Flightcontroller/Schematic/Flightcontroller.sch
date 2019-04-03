@@ -15984,13 +15984,6 @@ Source: http://www.osram.convergy.de/</description>
 <label x="2.54" y="-33.02" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="JTDI" class="0">
-<segment>
-<pinref part="U1" gate="A" pin="PA15"/>
-<wire x1="7.62" y1="53.34" x2="3.81" y2="53.34" width="0.1524" layer="91"/>
-<label x="-5.08" y="53.34" size="1.778" layer="95"/>
-</segment>
-</net>
 <net name="SWO" class="0">
 <segment>
 <pinref part="U1" gate="A" pin="PB3"/>
