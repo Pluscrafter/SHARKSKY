@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.3.2">
+<eagle version="9.1.3">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -14450,10 +14450,6 @@ Source: http://www.osram.convergy.de/</description>
 <part name="GND20" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
 <part name="SONIC1" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="1X4" device="-BIG" package3d_urn="urn:adsk.eagle:package:6240658/1"/>
 <part name="SONIC2" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="1X4" device="-BIG" package3d_urn="urn:adsk.eagle:package:6240658/1"/>
-<part name="SONIC3" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="1X4" device="-BIG" package3d_urn="urn:adsk.eagle:package:6240658/1"/>
-<part name="SONIC4" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="1X4" device="-BIG" package3d_urn="urn:adsk.eagle:package:6240658/1"/>
-<part name="SONIC5" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="1X4" device="-BIG" package3d_urn="urn:adsk.eagle:package:6240658/1"/>
-<part name="SONIC6" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="1X4" device="-BIG" package3d_urn="urn:adsk.eagle:package:6240658/1"/>
 <part name="SUPPLY22" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="VCC_2" device=""/>
 <part name="GND21" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
 <part name="C31" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="100nF"/>
@@ -14846,27 +14842,11 @@ Source: http://www.osram.convergy.de/</description>
 <attribute name="NAME" x="374.65" y="58.42" size="1.27" layer="95" font="vector" rot="R180"/>
 <attribute name="VALUE" x="369.57" y="40.64" size="1.27" layer="96" font="vector"/>
 </instance>
-<instance part="SONIC3" gate="G$1" x="369.57" y="31.75" smashed="yes">
-<attribute name="NAME" x="374.65" y="39.37" size="1.27" layer="95" font="vector" rot="R180"/>
-<attribute name="VALUE" x="369.57" y="21.59" size="1.27" layer="96" font="vector"/>
-</instance>
-<instance part="SONIC4" gate="G$1" x="369.57" y="12.7" smashed="yes">
-<attribute name="NAME" x="374.65" y="20.32" size="1.27" layer="95" font="vector" rot="R180"/>
-<attribute name="VALUE" x="369.57" y="2.54" size="1.27" layer="96" font="vector"/>
-</instance>
-<instance part="SONIC5" gate="G$1" x="369.57" y="-6.35" smashed="yes">
-<attribute name="NAME" x="374.65" y="1.27" size="1.27" layer="95" font="vector" rot="R180"/>
-<attribute name="VALUE" x="369.57" y="-16.51" size="1.27" layer="96" font="vector"/>
-</instance>
-<instance part="SONIC6" gate="G$1" x="369.57" y="-25.4" smashed="yes">
-<attribute name="NAME" x="374.65" y="-17.78" size="1.27" layer="95" font="vector" rot="R180"/>
-<attribute name="VALUE" x="369.57" y="-35.56" size="1.27" layer="96" font="vector"/>
-</instance>
 <instance part="SUPPLY22" gate="G$1" x="361.95" y="82.55" smashed="yes">
 <attribute name="VALUE" x="361.95" y="85.344" size="1.778" layer="96" align="bottom-center"/>
 </instance>
-<instance part="GND21" gate="1" x="363.22" y="-39.37" smashed="yes">
-<attribute name="VALUE" x="363.22" y="-39.624" size="1.778" layer="96" align="top-center"/>
+<instance part="GND21" gate="1" x="363.22" y="43.18" smashed="yes">
+<attribute name="VALUE" x="363.22" y="42.926" size="1.778" layer="96" align="top-center"/>
 </instance>
 <instance part="C31" gate="G$1" x="102.87" y="7.62" smashed="yes" rot="R270">
 <attribute name="NAME" x="103.251" y="6.096" size="1.778" layer="95" rot="R270"/>
@@ -15289,32 +15269,6 @@ Source: http://www.osram.convergy.de/</description>
 <junction x="76.2" y="22.86"/>
 </segment>
 <segment>
-<pinref part="SONIC1" gate="G$1" pin="4"/>
-<wire x1="364.49" y1="67.31" x2="363.22" y2="67.31" width="0.1524" layer="91"/>
-<pinref part="SONIC2" gate="G$1" pin="4"/>
-<wire x1="363.22" y1="67.31" x2="363.22" y2="45.72" width="0.1524" layer="91"/>
-<wire x1="363.22" y1="45.72" x2="364.49" y2="45.72" width="0.1524" layer="91"/>
-<pinref part="SONIC3" gate="G$1" pin="4"/>
-<wire x1="363.22" y1="45.72" x2="363.22" y2="26.67" width="0.1524" layer="91"/>
-<wire x1="363.22" y1="26.67" x2="364.49" y2="26.67" width="0.1524" layer="91"/>
-<junction x="363.22" y="45.72"/>
-<pinref part="SONIC4" gate="G$1" pin="4"/>
-<wire x1="363.22" y1="26.67" x2="363.22" y2="7.62" width="0.1524" layer="91"/>
-<wire x1="363.22" y1="7.62" x2="364.49" y2="7.62" width="0.1524" layer="91"/>
-<junction x="363.22" y="26.67"/>
-<pinref part="SONIC5" gate="G$1" pin="4"/>
-<wire x1="363.22" y1="7.62" x2="363.22" y2="-11.43" width="0.1524" layer="91"/>
-<wire x1="363.22" y1="-11.43" x2="364.49" y2="-11.43" width="0.1524" layer="91"/>
-<junction x="363.22" y="7.62"/>
-<pinref part="SONIC6" gate="G$1" pin="4"/>
-<wire x1="363.22" y1="-11.43" x2="363.22" y2="-30.48" width="0.1524" layer="91"/>
-<wire x1="363.22" y1="-30.48" x2="364.49" y2="-30.48" width="0.1524" layer="91"/>
-<junction x="363.22" y="-11.43"/>
-<wire x1="363.22" y1="-30.48" x2="363.22" y2="-36.83" width="0.1524" layer="91"/>
-<junction x="363.22" y="-30.48"/>
-<pinref part="GND21" gate="1" pin="GND"/>
-</segment>
-<segment>
 <pinref part="ADC1" gate="A" pin="3"/>
 <wire x1="370.84" y1="-66.04" x2="364.49" y2="-66.04" width="0.1524" layer="91"/>
 <pinref part="ADC2" gate="A" pin="3"/>
@@ -15392,6 +15346,15 @@ Source: http://www.osram.convergy.de/</description>
 <pinref part="SW1" gate="G$1" pin="P$2"/>
 <wire x1="195.58" y1="-1.27" x2="195.58" y2="-3.81" width="0.1524" layer="91"/>
 <pinref part="GND31" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="SONIC1" gate="G$1" pin="4"/>
+<wire x1="364.49" y1="67.31" x2="363.22" y2="67.31" width="0.1524" layer="91"/>
+<pinref part="SONIC2" gate="G$1" pin="4"/>
+<wire x1="363.22" y1="67.31" x2="363.22" y2="45.72" width="0.1524" layer="91"/>
+<wire x1="363.22" y1="45.72" x2="364.49" y2="45.72" width="0.1524" layer="91"/>
+<pinref part="GND21" gate="1" pin="GND"/>
+<junction x="363.22" y="45.72"/>
 </segment>
 </net>
 <net name="VCC" class="0">
@@ -15688,27 +15651,11 @@ Source: http://www.osram.convergy.de/</description>
 <junction x="299.72" y="5.08"/>
 </segment>
 <segment>
-<pinref part="SONIC5" gate="G$1" pin="1"/>
-<wire x1="364.49" y1="-3.81" x2="361.95" y2="-3.81" width="0.1524" layer="91"/>
-<wire x1="361.95" y1="-3.81" x2="361.95" y2="-22.86" width="0.1524" layer="91"/>
-<pinref part="SONIC6" gate="G$1" pin="1"/>
-<wire x1="361.95" y1="-22.86" x2="364.49" y2="-22.86" width="0.1524" layer="91"/>
-<pinref part="SONIC4" gate="G$1" pin="1"/>
-<wire x1="364.49" y1="15.24" x2="361.95" y2="15.24" width="0.1524" layer="91"/>
-<wire x1="361.95" y1="15.24" x2="361.95" y2="-3.81" width="0.1524" layer="91"/>
-<junction x="361.95" y="-3.81"/>
-<pinref part="SONIC3" gate="G$1" pin="1"/>
-<wire x1="361.95" y1="15.24" x2="361.95" y2="34.29" width="0.1524" layer="91"/>
-<wire x1="361.95" y1="34.29" x2="364.49" y2="34.29" width="0.1524" layer="91"/>
-<junction x="361.95" y="15.24"/>
 <pinref part="SONIC2" gate="G$1" pin="1"/>
-<wire x1="361.95" y1="34.29" x2="361.95" y2="53.34" width="0.1524" layer="91"/>
 <wire x1="361.95" y1="53.34" x2="364.49" y2="53.34" width="0.1524" layer="91"/>
-<junction x="361.95" y="34.29"/>
 <pinref part="SONIC1" gate="G$1" pin="1"/>
 <wire x1="361.95" y1="53.34" x2="361.95" y2="74.93" width="0.1524" layer="91"/>
 <wire x1="361.95" y1="74.93" x2="364.49" y2="74.93" width="0.1524" layer="91"/>
-<junction x="361.95" y="53.34"/>
 <wire x1="361.95" y1="74.93" x2="361.95" y2="82.55" width="0.1524" layer="91"/>
 <junction x="361.95" y="74.93"/>
 <pinref part="SUPPLY22" gate="G$1" pin="VCC_2"/>
@@ -16408,22 +16355,12 @@ Source: http://www.osram.convergy.de/</description>
 <wire x1="213.36" y1="72.39" x2="218.44" y2="72.39" width="0.1524" layer="91"/>
 <label x="213.36" y="72.39" size="1.778" layer="95"/>
 </segment>
-<segment>
-<pinref part="SONIC3" gate="G$1" pin="2"/>
-<wire x1="364.49" y1="31.75" x2="360.68" y2="31.75" width="0.1524" layer="91"/>
-<label x="351.79" y="31.75" size="1.778" layer="95"/>
-</segment>
 </net>
 <net name="ECHO3_IN" class="0">
 <segment>
 <pinref part="U2" gate="U$1" pin="PC3(ADC3)"/>
 <wire x1="213.36" y1="69.85" x2="218.44" y2="69.85" width="0.1524" layer="91"/>
 <label x="213.36" y="69.85" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="SONIC3" gate="G$1" pin="3"/>
-<wire x1="364.49" y1="29.21" x2="360.68" y2="29.21" width="0.1524" layer="91"/>
-<label x="351.79" y="29.21" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="TRIGG4_IN" class="0">
@@ -16432,22 +16369,12 @@ Source: http://www.osram.convergy.de/</description>
 <wire x1="213.36" y1="46.99" x2="218.44" y2="46.99" width="0.1524" layer="91"/>
 <label x="213.36" y="46.99" size="1.778" layer="95"/>
 </segment>
-<segment>
-<pinref part="SONIC4" gate="G$1" pin="2"/>
-<wire x1="364.49" y1="12.7" x2="360.68" y2="12.7" width="0.1524" layer="91"/>
-<label x="351.79" y="12.7" size="1.778" layer="95"/>
-</segment>
 </net>
 <net name="ECHO4_IN" class="0">
 <segment>
 <pinref part="U2" gate="U$1" pin="PD4(XCK/T0)"/>
 <wire x1="213.36" y1="44.45" x2="218.44" y2="44.45" width="0.1524" layer="91"/>
 <label x="213.36" y="44.45" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="SONIC4" gate="G$1" pin="3"/>
-<wire x1="364.49" y1="10.16" x2="360.68" y2="10.16" width="0.1524" layer="91"/>
-<label x="351.79" y="10.16" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="TRIGG5_IN" class="0">
@@ -16456,22 +16383,12 @@ Source: http://www.osram.convergy.de/</description>
 <wire x1="213.36" y1="41.91" x2="218.44" y2="41.91" width="0.1524" layer="91"/>
 <label x="213.36" y="41.91" size="1.778" layer="95"/>
 </segment>
-<segment>
-<pinref part="SONIC5" gate="G$1" pin="2"/>
-<wire x1="364.49" y1="-6.35" x2="360.68" y2="-6.35" width="0.1524" layer="91"/>
-<label x="351.79" y="-6.35" size="1.778" layer="95"/>
-</segment>
 </net>
 <net name="ECHO5_IN" class="0">
 <segment>
 <pinref part="U2" gate="U$1" pin="PD6(AIN0)"/>
 <wire x1="213.36" y1="39.37" x2="218.44" y2="39.37" width="0.1524" layer="91"/>
 <label x="213.36" y="39.37" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="SONIC5" gate="G$1" pin="3"/>
-<wire x1="364.49" y1="-8.89" x2="360.68" y2="-8.89" width="0.1524" layer="91"/>
-<label x="351.79" y="-8.89" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="TRIGG6_IN" class="0">
@@ -16480,22 +16397,12 @@ Source: http://www.osram.convergy.de/</description>
 <wire x1="213.36" y1="36.83" x2="218.44" y2="36.83" width="0.1524" layer="91"/>
 <label x="213.36" y="36.83" size="1.778" layer="95"/>
 </segment>
-<segment>
-<pinref part="SONIC6" gate="G$1" pin="2"/>
-<wire x1="364.49" y1="-25.4" x2="360.68" y2="-25.4" width="0.1524" layer="91"/>
-<label x="351.79" y="-25.4" size="1.778" layer="95"/>
-</segment>
 </net>
 <net name="ECHO6_IN" class="0">
 <segment>
 <pinref part="U2" gate="U$1" pin="PB0(ICP)"/>
 <wire x1="213.36" y1="31.75" x2="218.44" y2="31.75" width="0.1524" layer="91"/>
 <label x="213.36" y="31.75" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="SONIC6" gate="G$1" pin="3"/>
-<wire x1="364.49" y1="-27.94" x2="360.68" y2="-27.94" width="0.1524" layer="91"/>
-<label x="351.79" y="-27.94" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$9" class="0">
