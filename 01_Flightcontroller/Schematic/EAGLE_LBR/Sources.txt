@@ -3,3 +3,4 @@ https://www.snapeda.com/parts/LM3940IMPX-3.3/NOPB/Texas%20Instruments/view-part/
 https://www.diymodules.org/eagle-show-object?type=usr&id=1012210569&device=MPU6000	MPU6000
 https://www.snapeda.com/parts/2908-05WB-MG/3M%20(TC)/view-part/?ref=search&t=2908-05WB-MG sdcard
 https://www.diymodules.org/eagle-show-library?type=usr&id=1012211178 BMP280
+https://www.diymodules.org/eagle-show-library?type=usr&id=1012210559 Molex-microusb

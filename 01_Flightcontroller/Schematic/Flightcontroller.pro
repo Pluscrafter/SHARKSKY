@@ -1,25 +1,25 @@
 EAGLE AutoRouter Statistics:
 
-Job           : D:/Charpoan Kong/Documents/MaturarbeitQuadcopter/01_Flightcontroller/Schematic/Flightcontroller.brd
+Job           : D:/Pluscrafter/Documents/MaturarbeitQuadcopter/01_Flightcontroller/Schematic/Flightcontroller.brd
 
-Start at      : 14:38:24 (10.04.2019)
-End at        : 14:39:34 (10.04.2019)
-Elapsed time  : 00:01:08
+Start at      : 22:44:10 (10.04.2019)
+End at        : 22:44:45 (10.04.2019)
+Elapsed time  : 00:00:32
 
-Signals       :    90   RoutingGrid: 4 mil  Layers: 2
-Connections   :   236   predefined:  9 ( 1 Vias )
+Signals       :    93   RoutingGrid: 2 mil  Layers: 2
+Connections   :   246   predefined:  242 ( 118 Vias )
 
-Router memory :   1645800
+Router memory :   6506760
 
-Passname          :    Busses     Route Optimize1 Optimize2 Optimize3 Optimize4
+Passname          : TopRouter     Route Optimize1 Optimize2 Optimize3 Optimize4 Optimize5 Optimize6 Optimize7 Optimize8 Optimize9Optimize10Optimize11Optimize12
 
-Time per pass     :  00:00:01  00:00:22  00:00:13  00:00:12  00:00:09  00:00:11
-Number of Ripups  :         0         9         0         0         0         0
-max. Level        :         0         2         0         0         0         0
-max. Total        :         0        76         0         0         0         0
+Time per pass     :  00:00:17  00:00:00  00:00:01  00:00:01  00:00:02  00:00:01  00:00:01  00:00:01  00:00:02  00:00:01  00:00:01  00:00:01  00:00:02  00:00:01
+Number of Ripups  :         0         0         0         0         0         0         0         0         0         0         0         0         0         0
+max. Level        :         0         0         0         0         0         0         0         0         0         0         0         0         0         0
+max. Total        :         0         0         0         0         0         0         0         0         0         0         0         0         0         0
 
-Routed            :         6       227       227       227       227       227
-Vias              :         0       283       163       131       118       115
-Resolution        :     6.4 %   100.0 %   100.0 %   100.0 %   100.0 %   100.0 %
+Routed            :         3         4         4         4         4         4         4         4         4         4         4         4         4         4
+Vias              :         0         3         3         3         3         3         3         3         3         3         3         3         3         3
+Resolution        :    99.6 %   100.0 %   100.0 %   100.0 %   100.0 %   100.0 %   100.0 %   100.0 %   100.0 %   100.0 %   100.0 %   100.0 %   100.0 %   100.0 %
 
 Final             : 100.0% beendet
