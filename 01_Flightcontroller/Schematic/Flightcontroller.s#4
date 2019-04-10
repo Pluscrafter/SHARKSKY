@@ -14620,7 +14620,7 @@ TXB0104PWR
 <busses>
 </busses>
 <nets>
-<net name="GND" class="0">
+<net name="GND" class="1">
 <segment>
 <pinref part="U1" gate="B" pin="VSS_2"/>
 <pinref part="U1" gate="B" pin="VSS_3"/>
@@ -15227,7 +15227,7 @@ TXB0104PWR
 <busses>
 </busses>
 <nets>
-<net name="GND" class="0">
+<net name="GND" class="1">
 <segment>
 <pinref part="M1" gate="A" pin="3"/>
 <wire x1="87.63" y1="78.74" x2="82.55" y2="78.74" width="0.1524" layer="91"/>
@@ -15634,7 +15634,7 @@ TXB0104PWR
 <busses>
 </busses>
 <nets>
-<net name="GND" class="0">
+<net name="GND" class="1">
 <segment>
 <pinref part="U3" gate="A" pin="GND_2"/>
 <pinref part="U3" gate="A" pin="GND"/>
@@ -15719,7 +15719,7 @@ TXB0104PWR
 <busses>
 </busses>
 <nets>
-<net name="GND" class="0">
+<net name="GND" class="1">
 <segment>
 <pinref part="J1" gate="G$1" pin="VSS"/>
 <wire x1="64.77" y1="48.26" x2="67.31" y2="48.26" width="0.1524" layer="91"/>
@@ -15782,7 +15782,7 @@ TXB0104PWR
 <busses>
 </busses>
 <nets>
-<net name="GND" class="0">
+<net name="GND" class="1">
 <segment>
 <pinref part="U$1" gate="G$1" pin="GND"/>
 <wire x1="34.29" y1="53.34" x2="25.4" y2="53.34" width="0.1524" layer="91"/>
@@ -15890,7 +15890,7 @@ TXB0104PWR
 <busses>
 </busses>
 <nets>
-<net name="GND" class="0">
+<net name="GND" class="1">
 <segment>
 <pinref part="C18" gate="G$1" pin="2"/>
 <pinref part="C21" gate="G$1" pin="2"/>
@@ -16046,7 +16046,7 @@ TXB0104PWR
 <busses>
 </busses>
 <nets>
-<net name="GND" class="0">
+<net name="GND" class="1">
 <segment>
 <pinref part="GND12" gate="1" pin="GND"/>
 <wire x1="64.77" y1="52.07" x2="73.66" y2="52.07" width="0.1524" layer="91"/>
@@ -16293,7 +16293,7 @@ TXB0104PWR
 <busses>
 </busses>
 <nets>
-<net name="GND" class="0">
+<net name="GND" class="1">
 <segment>
 <pinref part="C10" gate="G$1" pin="1"/>
 <pinref part="C11" gate="G$1" pin="1"/>
@@ -16706,7 +16706,7 @@ TXB0104PWR
 <busses>
 </busses>
 <nets>
-<net name="GND" class="0">
+<net name="GND" class="1">
 <segment>
 <pinref part="IC3" gate="G$1" pin="GND"/>
 <pinref part="GND15" gate="1" pin="GND"/>

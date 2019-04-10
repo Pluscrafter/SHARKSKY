@@ -15366,7 +15366,7 @@ TXB0104PWR
 <pinref part="SUPPLY30" gate="G$1" pin="VCC"/>
 </segment>
 </net>
-<net name="VCC_2" class="0">
+<net name="VCC_2" class="1">
 <segment>
 <pinref part="ADC2" gate="A" pin="2"/>
 <wire x1="124.46" y1="45.72" x2="116.84" y2="45.72" width="0.1524" layer="91"/>
@@ -15679,7 +15679,7 @@ TXB0104PWR
 <junction x="69.85" y="21.59"/>
 </segment>
 </net>
-<net name="VCC_2" class="0">
+<net name="VCC_2" class="1">
 <segment>
 <pinref part="U3" gate="A" pin="IN"/>
 <wire x1="82.55" y1="49.53" x2="80.01" y2="49.53" width="0.1524" layer="91"/>
@@ -15926,7 +15926,7 @@ TXB0104PWR
 <junction x="27.94" y="39.37"/>
 </segment>
 </net>
-<net name="VCC_2" class="0">
+<net name="VCC_2" class="1">
 <segment>
 <pinref part="IC1" gate="1" pin="VCC"/>
 <wire x1="54.61" y1="73.66" x2="52.07" y2="73.66" width="0.1524" layer="91"/>
@@ -16385,7 +16385,7 @@ TXB0104PWR
 <junction x="-17.78" y="68.58"/>
 </segment>
 </net>
-<net name="VCC_2" class="0">
+<net name="VCC_2" class="1">
 <segment>
 <pinref part="U2" gate="U$1" pin="VCC@6"/>
 <pinref part="U2" gate="U$1" pin="VCC@4"/>
@@ -16807,7 +16807,7 @@ TXB0104PWR
 <label x="144.78" y="85.09" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="VCC_2" class="0">
+<net name="VCC_2" class="1">
 <segment>
 <pinref part="U4" gate="G$1" pin="VCCB"/>
 <wire x1="124.46" y1="69.85" x2="124.46" y2="64.77" width="0.1524" layer="91"/>

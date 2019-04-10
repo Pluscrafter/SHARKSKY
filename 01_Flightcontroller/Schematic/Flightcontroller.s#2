@@ -14356,7 +14356,7 @@ TXB0104PWR
 <class number="0" name="default" width="0.1016" drill="0.1016">
 <clearance class="0" value="0.1016"/>
 </class>
-<class number="1" name="Supply" width="0.2032" drill="0.2032">
+<class number="1" name="Supply" width="0.2032" drill="0.254">
 <clearance class="1" value="0.1016"/>
 </class>
 </classes>

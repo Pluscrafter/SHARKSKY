@@ -14355,6 +14355,9 @@ TXB0104PWR
 <classes>
 <class number="0" name="default" width="0" drill="0">
 </class>
+<class number="1" name="Supply" width="0.127" drill="0.127">
+<clearance class="1" value="0.0889"/>
+</class>
 </classes>
 <parts>
 <part name="U1" library="STMF22RET6" deviceset="STM32F7X2RXT" device=""/>
@@ -14682,7 +14685,7 @@ TXB0104PWR
 <junction x="76.2" y="22.86"/>
 </segment>
 </net>
-<net name="VCC" class="0">
+<net name="VCC" class="1">
 <segment>
 <pinref part="SUPPLY2" gate="G$1" pin="VCC"/>
 <pinref part="C2" gate="G$1" pin="1"/>
@@ -15304,7 +15307,7 @@ TXB0104PWR
 <pinref part="GND28" gate="1" pin="GND"/>
 </segment>
 </net>
-<net name="VCC" class="0">
+<net name="VCC" class="1">
 <segment>
 <pinref part="M1" gate="A" pin="2"/>
 <wire x1="87.63" y1="81.28" x2="80.01" y2="81.28" width="0.1524" layer="91"/>
@@ -15657,7 +15660,7 @@ TXB0104PWR
 <junction x="93.98" y="13.97"/>
 </segment>
 </net>
-<net name="VCC" class="0">
+<net name="VCC" class="1">
 <segment>
 <pinref part="U3" gate="A" pin="OUT"/>
 <wire x1="118.11" y1="49.53" x2="120.65" y2="49.53" width="0.1524" layer="91"/>
@@ -15726,7 +15729,7 @@ TXB0104PWR
 <junction x="67.31" y="48.26"/>
 </segment>
 </net>
-<net name="VCC" class="0">
+<net name="VCC" class="1">
 <segment>
 <pinref part="J1" gate="G$1" pin="VDD"/>
 <wire x1="64.77" y1="63.5" x2="67.31" y2="63.5" width="0.1524" layer="91"/>
@@ -15786,7 +15789,7 @@ TXB0104PWR
 <pinref part="GND13" gate="1" pin="GND"/>
 </segment>
 </net>
-<net name="VCC" class="0">
+<net name="VCC" class="1">
 <segment>
 <pinref part="U$1" gate="G$1" pin="VCC"/>
 <wire x1="34.29" y1="48.26" x2="30.48" y2="48.26" width="0.1524" layer="91"/>
@@ -15906,7 +15909,7 @@ TXB0104PWR
 <junction x="31.75" y="29.21"/>
 </segment>
 </net>
-<net name="VCC" class="0">
+<net name="VCC" class="1">
 <segment>
 <pinref part="IC1" gate="1" pin="VCCIO"/>
 <wire x1="54.61" y1="71.12" x2="50.8" y2="71.12" width="0.1524" layer="91"/>
@@ -16079,7 +16082,7 @@ TXB0104PWR
 <pinref part="GND25" gate="1" pin="GND"/>
 </segment>
 </net>
-<net name="VCC" class="0">
+<net name="VCC" class="1">
 <segment>
 <pinref part="IC2" gate="G$1" pin="VDD"/>
 <wire x1="63.5" y1="64.77" x2="73.66" y2="64.77" width="0.1524" layer="91"/>
@@ -16351,7 +16354,7 @@ TXB0104PWR
 <junction x="101.6" y="63.5"/>
 </segment>
 </net>
-<net name="VCC" class="0">
+<net name="VCC" class="1">
 <segment>
 <pinref part="R2" gate="G$1" pin="2"/>
 <pinref part="R3" gate="G$1" pin="2"/>
@@ -16732,7 +16735,7 @@ TXB0104PWR
 <wire x1="152.4" y1="69.85" x2="152.4" y2="67.31" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="VCC" class="0">
+<net name="VCC" class="1">
 <segment>
 <pinref part="SUPPLY16" gate="G$1" pin="VCC"/>
 <pinref part="IC3" gate="G$1" pin="VDD"/>
