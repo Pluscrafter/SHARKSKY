@@ -4,3 +4,4 @@ https://www.diymodules.org/eagle-show-object?type=usr&id=1012210569&device=MPU60
 https://www.snapeda.com/parts/2908-05WB-MG/3M%20(TC)/view-part/?ref=search&t=2908-05WB-MG sdcard
 https://www.diymodules.org/eagle-show-library?type=usr&id=1012211178 BMP280
 https://www.diymodules.org/eagle-show-library?type=usr&id=1012210559 Molex-microusb
+https://www.snapeda.com/parts/ICM-20689/TDK%20InvenSense/view-part/
