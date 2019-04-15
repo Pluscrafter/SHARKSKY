@@ -4996,10 +4996,8 @@ design rules under a new name.</description>
 <wire x1="34.798" y1="71.374" x2="35.687" y2="71.374" width="0.3048" layer="1"/>
 <wire x1="33.274" y1="72.898" x2="33.274" y2="73.3044" width="0.2032" layer="1"/>
 <wire x1="33.274" y1="73.3044" x2="32.2072" y2="74.3712" width="0.2032" layer="1"/>
-<contactref element="MPU6000" pad="25"/>
-<wire x1="36.83" y1="63.5" x2="38.8" y2="64.25" width="0" layer="19" extent="1-1"/>
-<wire x1="35.6108" y1="65.4304" x2="36.83" y2="63.5" width="0" layer="19" extent="1-1"/>
-<wire x1="35.6108" y1="61.5696" x2="36.83" y2="63.5" width="0" layer="19" extent="1-1"/>
+<wire x1="40.6908" y1="61.5188" x2="38.8" y2="64.25" width="0" layer="19" extent="1-16"/>
+<wire x1="35.6108" y1="65.4304" x2="38.8" y2="64.25" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="VCC" class="1">
 <contactref element="C2" pad="1"/>
@@ -6844,6 +6842,9 @@ design rules under a new name.</description>
 <contactref element="C36" pad="2"/>
 <wire x1="20.135" y1="47.875" x2="21.533" y2="47.875" width="0.2032" layer="1"/>
 <wire x1="21.533" y1="47.875" x2="22.86" y2="46.548" width="0.2032" layer="1"/>
+</signal>
+<signal name="NC">
+<contactref element="MPU6000" pad="25"/>
 </signal>
 </signals>
 <mfgpreviewcolors>

@@ -240,7 +240,7 @@
 <text x="54.356" y="86.614" size="0.6096" layer="26" rot="MR180">SWO</text>
 <rectangle x1="50.8" y1="41.148" x2="55.626" y2="58.42" layer="39"/>
 <text x="51.054" y="58.42" size="1.778" layer="1" rot="R270">SHARKSKY F7
-V 1.0</text>
+V 1.0b</text>
 <text x="11.176" y="89.662" size="0.6096" layer="26" rot="MR0">DRDY</text>
 <text x="13.208" y="89.662" size="0.6096" layer="26" rot="MR0">INT</text>
 <text x="16.51" y="89.662" size="0.6096" layer="26" rot="MR0">FSYNC</text>
@@ -283,13 +283,15 @@ V 1.0</text>
 <circle x="55.372" y="42.926" radius="0.71841875" width="1.27" layer="29"/>
 <circle x="55.372" y="57.912" radius="0.71841875" width="1.27" layer="29"/>
 <circle x="51.308" y="57.912" radius="0.71841875" width="1.27" layer="29"/>
-<text x="51.816" y="40.894" size="1.27" layer="26" rot="MR90">SHARKSKY F7 V 1.0
+<text x="51.816" y="40.894" size="1.27" layer="26" rot="MR90">SHARKSKY F7 V 1.0b
 (C) CHARPOAN KONG</text>
-<text x="5.334" y="61.214" size="0.8128" layer="25">SHARKSKY F7 V 1.0
+<text x="5.334" y="61.214" size="0.8128" layer="25">SHARKSKY F7 V 1.0b
 (C) CHARPOAN KONG</text>
 <text x="44.958" y="68.707" size="0.6096" layer="26" rot="MR270">PPM_IN</text>
 <text x="44.958" y="65.151" size="0.6096" layer="26" rot="MR270">5V</text>
 <text x="44.958" y="62.738" size="0.6096" layer="26" rot="MR270">GND</text>
+<text x="35.56" y="65.278" size="0.4064" layer="25">1</text>
+<text x="33.274" y="65.405" size="0.4064" layer="25">1</text>
 </plain>
 <libraries>
 <library name="adafruit" urn="urn:adsk.eagle:library:420">

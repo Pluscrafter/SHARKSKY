@@ -295,6 +295,8 @@ V 1.0b</text>
 <rectangle x1="35.306" y1="62.865" x2="38.1" y2="65.659" layer="42"/>
 <rectangle x1="35.306" y1="62.865" x2="38.1" y2="65.659" layer="41"/>
 <rectangle x1="35.306" y1="62.865" x2="38.1" y2="65.659" layer="39"/>
+<rectangle x1="49.149" y1="39.624" x2="57.023" y2="59.563" layer="39"/>
+<rectangle x1="49.276" y1="39.624" x2="57.023" y2="59.817" layer="41"/>
 </plain>
 <libraries>
 <library name="adafruit" urn="urn:adsk.eagle:library:420">

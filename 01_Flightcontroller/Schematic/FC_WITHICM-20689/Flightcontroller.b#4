@@ -238,7 +238,6 @@
 <text x="54.356" y="91.694" size="0.6096" layer="26" rot="MR180">SWDIO</text>
 <text x="54.356" y="89.154" size="0.6096" layer="26" rot="MR180">RST</text>
 <text x="54.356" y="86.614" size="0.6096" layer="26" rot="MR180">SWO</text>
-<rectangle x1="50.8" y1="41.148" x2="55.626" y2="58.42" layer="39"/>
 <text x="51.054" y="58.42" size="1.778" layer="1" rot="R270">SHARKSKY F7
 V 1.0b</text>
 <text x="11.176" y="89.662" size="0.6096" layer="26" rot="MR0">DRDY</text>
