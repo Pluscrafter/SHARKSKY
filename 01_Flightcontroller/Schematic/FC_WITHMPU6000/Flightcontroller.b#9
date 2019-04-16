@@ -3,7 +3,7 @@
 <eagle version="9.3.2">
 <drawing>
 <settings>
-<setting alwaysvectorfont="yes"/>
+<setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="5" unitdist="mil" unit="mil" style="lines" multiple="1" display="no" altdistance="5" altunitdist="mil" altunit="mil"/>
@@ -4456,7 +4456,6 @@ design rules under a new name.</description>
 <contactref element="C19" pad="2"/>
 <contactref element="C20" pad="2"/>
 <contactref element="MPU6000" pad="18"/>
-<contactref element="MPU6000" pad="25"/>
 <contactref element="C24" pad="2"/>
 <contactref element="C25" pad="1"/>
 <contactref element="C26" pad="2"/>
@@ -4804,13 +4803,10 @@ design rules under a new name.</description>
 <wire x1="14.2748" y1="66.04" x2="14.29" y2="66.04" width="0.2032" layer="1"/>
 <wire x1="14.224" y1="58.4708" x2="14.29" y2="58.42" width="0.2032" layer="1"/>
 <wire x1="35.6108" y1="62.2808" x2="35.6108" y2="61.5696" width="0.2032" layer="1"/>
-<wire x1="36.83" y1="63.5" x2="35.6108" y2="62.2808" width="0.2032" layer="1"/>
 <wire x1="35.6108" y1="61.5696" x2="35.58" y2="61.53" width="0.2032" layer="1"/>
 <wire x1="35.6108" y1="64.7192" x2="35.6108" y2="65.4304" width="0.2032" layer="1"/>
-<wire x1="36.83" y1="63.5" x2="35.6108" y2="64.7192" width="0.2032" layer="1"/>
 <wire x1="35.6108" y1="65.4304" x2="35.58" y2="65.47" width="0.2032" layer="1"/>
 <wire x1="37.5412" y1="64.2112" x2="38.7604" y2="64.2112" width="0.2032" layer="1"/>
-<wire x1="36.83" y1="63.5" x2="37.5412" y2="64.2112" width="0.2032" layer="1"/>
 <wire x1="38.7604" y1="64.2112" x2="38.8" y2="64.25" width="0.2032" layer="1"/>
 <wire x1="23.2156" y1="68.58" x2="23.2156" y2="67.0052" width="0.2032" layer="1"/>
 <wire x1="23.2156" y1="67.0052" x2="23.2156" y2="66.04" width="0.2032" layer="1"/>
@@ -5000,6 +4996,10 @@ design rules under a new name.</description>
 <wire x1="34.798" y1="71.374" x2="35.687" y2="71.374" width="0.3048" layer="1"/>
 <wire x1="33.274" y1="72.898" x2="33.274" y2="73.3044" width="0.2032" layer="1"/>
 <wire x1="33.274" y1="73.3044" x2="32.2072" y2="74.3712" width="0.2032" layer="1"/>
+<contactref element="MPU6000" pad="25"/>
+<wire x1="36.83" y1="63.5" x2="35.6108" y2="64.7192" width="0" layer="19" extent="1-1"/>
+<wire x1="37.5412" y1="64.2112" x2="36.83" y2="63.5" width="0" layer="19" extent="1-1"/>
+<wire x1="35.6108" y1="62.2808" x2="36.83" y2="63.5" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="VCC" class="1">
 <contactref element="C2" pad="1"/>

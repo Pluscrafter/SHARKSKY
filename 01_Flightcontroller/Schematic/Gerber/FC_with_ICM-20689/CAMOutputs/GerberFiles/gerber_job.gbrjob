@@ -1,0 +1,24 @@
+{
+    "Header": {
+        "Comment": "All values are metric (mm)",
+        "CreationDate": "2019-04-15T12:49:46Z",
+        "GenerationSoftware": {
+            "Application": "EAGLE",
+            "Vendor": "Autodesk",
+            "Version": "9.3.2"
+        },
+        "Part": "Single"
+    },
+    "Overall": {
+        "BoardThickness": 0.69,
+        "LayerNumber": 2,
+        "Name": {
+            "ProjectId": "Flightcontroller"
+        },
+        "Owner": "Charpoan Kong <charpoan.kong@stud.kzn.ch>",
+        "Size": {
+            "X": 63.48,
+            "Y": 63.17
+        }
+    }
+}

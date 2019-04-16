@@ -4804,7 +4804,6 @@ design rules under a new name.</description>
 <wire x1="14.224" y1="58.4708" x2="13.462" y2="59.2328" width="0.2032" layer="1"/>
 <wire x1="14.2748" y1="66.04" x2="14.29" y2="66.04" width="0.2032" layer="1"/>
 <wire x1="14.224" y1="58.4708" x2="14.29" y2="58.42" width="0.2032" layer="1"/>
-<wire x1="35.6108" y1="61.5696" x2="35.58" y2="61.53" width="0.2032" layer="1"/>
 <wire x1="23.2156" y1="68.58" x2="23.2156" y2="67.0052" width="0.2032" layer="1"/>
 <wire x1="23.2156" y1="67.0052" x2="23.2156" y2="66.04" width="0.2032" layer="1"/>
 <wire x1="23.2156" y1="66.04" x2="23.18" y2="66.04" width="0.2032" layer="1"/>
@@ -4908,9 +4907,7 @@ design rules under a new name.</description>
 <wire x1="45.466" y1="80.518" x2="45.466" y2="79.944" width="0.2032" layer="16"/>
 <wire x1="45.466" y1="79.944" x2="44.45" y2="78.928" width="0.2032" layer="16"/>
 <wire x1="44.45" y1="78.928" x2="46.736" y2="78.928" width="0.2032" layer="16"/>
-<wire x1="16.256" y1="50.159" x2="16.256" y2="50.038" width="0.2032" layer="16"/>
 <via x="16.256" y="50.038" extent="1-16" drill="0.35"/>
-<wire x1="16.256" y1="50.038" x2="16.256" y2="51.1048" width="0.2032" layer="1"/>
 <wire x1="22.86" y1="47.7012" x2="22.86" y2="48.448" width="0.2032" layer="1"/>
 <wire x1="19.5072" y1="44.3484" x2="19.558" y2="44.3992" width="0.2032" layer="1"/>
 <wire x1="19.558" y1="44.3992" x2="19.558" y2="45.016025" width="0.2032" layer="1"/>
@@ -5077,6 +5074,7 @@ design rules under a new name.</description>
 <wire x1="23.905" y1="42.291" x2="26.416" y2="42.291" width="0.2032" layer="1"/>
 <wire x1="26.416" y1="42.291" x2="26.543" y2="42.164" width="0.2032" layer="1"/>
 <via x="26.543" y="42.164" extent="1-16" drill="0.35"/>
+<wire x1="16.256" y1="51.1048" x2="16.256" y2="50.038" width="0.2032" layer="1"/>
 </signal>
 <signal name="VCC" class="1">
 <contactref element="C2" pad="1"/>
@@ -5194,7 +5192,6 @@ design rules under a new name.</description>
 <wire x1="12.9032" y1="53.086" x2="12.885" y2="53.075" width="0.2032" layer="1"/>
 <wire x1="16.6116" y1="54.0004" x2="16.6116" y2="54.5592" width="0.2032" layer="16"/>
 <wire x1="15.748" y1="53.1368" x2="16.6116" y2="54.0004" width="0.2032" layer="16"/>
-<wire x1="16.2052" y1="58.42" x2="16.19" y2="58.42" width="0.2032" layer="1"/>
 <wire x1="15.748" y1="53.1368" x2="15.5956" y2="53.1876" width="0.2032" layer="16"/>
 <wire x1="-0.6096" y1="46.99" x2="-1.422" y2="46.99" width="0.2032" layer="1"/>
 <wire x1="0.8128" y1="48.4124" x2="-0.6096" y2="46.99" width="0.2032" layer="1"/>
@@ -5352,11 +5349,11 @@ design rules under a new name.</description>
 <via x="51.308" y="87.884" extent="1-16" drill="0.35"/>
 <wire x1="19.394" y1="49.3892" x2="19.394" y2="45.468" width="0.2032" layer="16"/>
 <wire x1="15.5956" y1="53.1876" x2="19.394" y2="49.3892" width="0.2032" layer="16"/>
-<wire x1="16.19" y1="58.42" x2="17.23829375" y2="57.37170625" width="0.2032" layer="1"/>
-<wire x1="17.23829375" y1="57.37170625" x2="18.38270625" y2="57.37170625" width="0.2032" layer="1"/>
+<wire x1="18.38270625" y1="57.37170625" x2="17.23829375" y2="57.37170625" width="0.2032" layer="1"/>
 <via x="18.38270625" y="57.37170625" extent="1-16" drill="0.35"/>
 <wire x1="18.38270625" y1="57.37170625" x2="18.669" y2="57.0854125" width="0.2032" layer="16"/>
 <wire x1="18.669" y1="57.0854125" x2="18.669" y2="54.5592" width="0.2032" layer="16"/>
+<wire x1="17.23829375" y1="57.37170625" x2="16.19" y2="58.42" width="0.2032" layer="1"/>
 </signal>
 <signal name="N$2">
 <contactref element="STM32F722" pad="5"/>
@@ -6953,7 +6950,6 @@ design rules under a new name.</description>
 <mfgpreviewcolor name="substratecolor" color="0xFF786E46"/>
 </mfgpreviewcolors>
 <errors>
-<approved hash="11,1,ab79909cdf4de4a8"/>
 <approved hash="6,1,47943d6a30ec4a12"/>
 <approved hash="6,1,4490326e36fc4002"/>
 <approved hash="6,1,858c73727eed8813"/>
@@ -7043,6 +7039,10 @@ design rules under a new name.</description>
 <approved hash="6,16,c586396aa8f001e4"/>
 <approved hash="6,16,bcab3859877dc3eb"/>
 <approved hash="6,16,1c1adfaf66256b7a"/>
+<approved hash="6,1,958a63747ef1880f"/>
+<approved hash="7,39,74747444283e280e"/>
+<approved hash="7,39,360435d85fa25c7e"/>
+<approved hash="7,39,79a89462e24d0f87"/>
 </errors>
 </board>
 </drawing>
