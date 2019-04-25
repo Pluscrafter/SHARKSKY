@@ -100,7 +100,7 @@ int main(void)
   MX_I2C1_Init();
   MX_USB_OTG_FS_PCD_Init();
   /* USER CODE BEGIN 2 */
-  HAL_GPIO_WritePin(LD2_GPIO_Port,LD2_Pin,GPIO_PIN_SET);
+  HAL_GPIO_WritePin(GPIOA,GPIO_PIN_4,GPIO_PIN_SET);
   mpu65.Initalize();
   /* USER CODE END 2 */
   /* Infinite loop */

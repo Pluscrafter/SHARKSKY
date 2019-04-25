@@ -20,30 +20,37 @@ namespace Interface {
 	}
 
 	void I_SPI::Transfer(uint8_t msg){
-		HAL_GPIO_WritePin(LD2_GPIO_Port,LD2_Pin,GPIO_PIN_RESET);
+		GPIOA->BSRR = (1<<20);//HAL_GPIO_WritePin(GPIOA,GPIO_PIN_4,GPIO_PIN_RESET);
 		HAL_SPI_Transmit_DMA(&spi, &msg, 1);
-		while( spi.State == HAL_SPI_STATE_BUSY );
-		HAL_GPIO_WritePin(LD2_GPIO_Port,LD2_Pin,GPIO_PIN_SET);
+		while (HAL_SPI_GetState(&spi) != HAL_SPI_STATE_READY);//while( spi.State == HAL_SPI_STATE_BUSY );
+		GPIOA->BSRR = (1<<4);//HAL_GPIO_WritePin(GPIOA,GPIO_PIN_4,GPIO_PIN_SET);
 	}
 
 	void I_SPI::Transfer(uint8_t msg[], uint8_t bytes){
+		GPIOA->BSRR = (1<<20);//http://hertaville.com/stm32f0-gpio-tutorial-part-1.html 26.04.2019
 		HAL_SPI_Transmit_DMA(&spi, msg, bytes);
+		while (HAL_SPI_GetState(&spi) != HAL_SPI_STATE_READY);
+		GPIOA->BSRR = (1<<4);
 	}
 
 	uint8_t I_SPI::TransferReceive(uint8_t msg){
 		uint8_t rcv;
-		HAL_GPIO_WritePin(LD2_GPIO_Port,LD2_Pin,GPIO_PIN_RESET);
+		GPIOA->BSRR = (1<<20);
 		HAL_SPI_Transmit_DMA(&spi,&msg,1);
 		HAL_SPI_Receive_DMA(&spi,&rcv,1);
-		while( spi.State == HAL_SPI_STATE_BUSY );
-		HAL_GPIO_WritePin(LD2_GPIO_Port,LD2_Pin,GPIO_PIN_SET);
+		while (HAL_SPI_GetState(&spi) != HAL_SPI_STATE_READY); //https://github.com/fboris/STM32Cube_FW_F4/blob/master/Projects/STM32F4-Discovery/Examples/SPI/SPI_FullDuplex_ComDMA/Src/main.c 25.04.2019
+		GPIOA->BSRR = (1<<4);
+
 		return rcv;
 	}
 
 	uint8_t* I_SPI::TransferReceive(uint8_t msg[], uint8_t bytes){
 		uint8_t rcv[bytes];
-		HAL_SPI_TransmitReceive_DMA(&spi,msg,rcv,bytes);
-
+		GPIOA->BSRR = (1<<20);
+		HAL_SPI_Transmit_DMA(&spi,msg,bytes);
+		HAL_SPI_Receive_DMA(&spi,rcv,bytes);
+		while (HAL_SPI_GetState(&spi) != HAL_SPI_STATE_READY); //https://github.com/fboris/STM32Cube_FW_F4/blob/master/Projects/STM32F4-Discovery/Examples/SPI/SPI_FullDuplex_ComDMA/Src/main.c 25.04.2019
+		GPIOA->BSRR = (1<<4);
 		return rcv;
 	}
 
