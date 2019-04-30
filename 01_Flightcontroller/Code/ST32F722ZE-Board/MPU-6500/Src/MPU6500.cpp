@@ -23,12 +23,17 @@ namespace Sensor {
 		SigReset();
 		UserCtl();
 
-		HAL_Delay(1);
 		id = spi1.ReadRegister(WHO_AM_I);
 		if(id == 0x70) {
 			HAL_GPIO_TogglePin(LD3_GPIO_Port,LD3_Pin);
 		}
-		HAL_Delay(1);
+		spi1.WriteRegister(CONFIG,0x01);
+		spi1.WriteRegister(USER_CTRL, 0x10);
+		id = spi1.ReadRegister(USER_CTRL);
+		if(id == 0x10) {
+			HAL_GPIO_TogglePin(LD3_GPIO_Port,LD3_Pin);
+		}
+
 	}
 
 	void MPU6500::SelfTest(){
@@ -65,6 +70,18 @@ namespace Sensor {
 	}
 
 	void MPU6500::ReadGyro(){
+		uint8_t xyz[6] = {GYRO_XOUT_H,GYRO_XOUT_L,GYRO_YOUT_H,GYRO_YOUT_L,GYRO_ZOUT_H,GYRO_ZOUT_L};
+		uint8_t rcv[6];
+
+		spi1.ReadRegisters(xyz,rcv,6);
+
+		gyroraw[0] = (rcv[0] << 8) + rcv[1];
+		gyroraw[1] = (rcv[2] << 8) + rcv[3];
+		gyroraw[2] = (rcv[4] << 8) + rcv[5];
+
+		for(int i = 0; i < 3;i++){
+			gyro[i] = 131.0/gyroraw[i];
+		}
 
 	}
 

@@ -44,14 +44,16 @@ namespace Interface {
 		return rcv;
 	}
 
-	uint8_t* I_SPI::TransferReceive(uint8_t msg[], uint8_t bytes){
-		uint8_t rcv[bytes];
+	void I_SPI::TransferReceive(uint8_t msg[],uint8_t rec[], uint8_t bytes){
+		//uint8_t rcv[bytes];
 		GPIOA->BSRR = (1<<20);
-		HAL_SPI_Transmit_DMA(&spi,msg,bytes);
-		HAL_SPI_Receive_DMA(&spi,rcv,bytes);
+		for (int i = 0; i < bytes; i++){
+			HAL_SPI_Transmit_DMA(&spi,&msg[i],1);
+			HAL_SPI_Receive_DMA(&spi,&rec[i],1);
+			while (HAL_SPI_GetState(&spi) != HAL_SPI_STATE_READY);
+		}
 		while (HAL_SPI_GetState(&spi) != HAL_SPI_STATE_READY); //https://github.com/fboris/STM32Cube_FW_F4/blob/master/Projects/STM32F4-Discovery/Examples/SPI/SPI_FullDuplex_ComDMA/Src/main.c 25.04.2019
 		GPIOA->BSRR = (1<<4);
-		return rcv;
 	}
 
 	void I_SPI::WriteRegister(uint8_t reg, uint8_t val){
@@ -76,14 +78,13 @@ namespace Interface {
 		return TransferReceive(reg|0x80);
 	}
 
-	uint8_t* I_SPI::ReadRegisters(uint8_t reg[], uint8_t bytes){
+	void I_SPI::ReadRegisters(uint8_t reg[],uint8_t rec[], uint8_t bytes){
 		uint8_t regs[bytes];
 
 		for (int i = 0; i < bytes; i++){
 			regs[i] = reg[i] | 0x80;
 		}
-
-		return TransferReceive(regs, bytes);
+		TransferReceive(regs,rec,bytes);
 	}
 
 } /* namespace Interface */

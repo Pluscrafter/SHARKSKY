@@ -78,6 +78,7 @@ public:
 	float ypr[3];
 	float accel[3];
 	float gyro[3];
+	uint16_t gyroraw[3];
 
 	uint8_t id;
 

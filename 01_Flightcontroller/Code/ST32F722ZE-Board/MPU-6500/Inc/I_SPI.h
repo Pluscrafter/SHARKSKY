@@ -30,13 +30,13 @@ public:
 	void Transfer(uint8_t msg[], uint8_t bytes);
 
 	uint8_t TransferReceive(uint8_t msg);
-	uint8_t* TransferReceive(uint8_t msg[],uint8_t bytes);
+	void TransferReceive(uint8_t msg[],uint8_t rec[],uint8_t bytes);
 
 	void WriteRegister(uint8_t reg, uint8_t val);
 	void WriteRegisters(uint8_t reg[], uint8_t val[], uint8_t bytes);
 
 	uint8_t ReadRegister(uint8_t reg);
-	uint8_t* ReadRegisters(uint8_t reg[], uint8_t bytes);
+	void ReadRegisters(uint8_t reg[],uint8_t rec[], uint8_t bytes);
 };
 
 } /* namespace Interface */

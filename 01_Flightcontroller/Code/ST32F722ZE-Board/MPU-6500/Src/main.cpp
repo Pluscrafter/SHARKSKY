@@ -111,9 +111,9 @@ int main(void)
 	 /* HAL_SPI_Init(&hspi1);
 	  HAL_SPI_Transmit(&hspi1, (uint8_t *)message, strlen(message), HAL_MAX_DELAY);
 	 HAL_SPI_DeInit(&hspi1);*/
-	  HAL_Delay(1000);
-
-
+	  mpu65.ReadGyro();
+	  mpu65.gyro;
+	  HAL_Delay(1);
 
     /* USER CODE BEGIN 3 */
   }
