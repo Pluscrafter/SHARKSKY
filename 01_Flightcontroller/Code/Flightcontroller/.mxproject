@@ -1,7 +1,7 @@
 [PreviousGenFiles]
-HeaderPath=D:/Pluscrafter/Documents/MaturarbeitQuadcopter/01_Flightcontroller/Code/Flightcontroller/Inc
+HeaderPath=C:/Users/Pluscrafter/Documents/MaturarbeitQuadcopter/01_Flightcontroller/Code/Flightcontroller/Inc
 HeaderFiles=stm32f7xx_it.h;stm32f7xx_hal_conf.h;main.h;gpio.h;adc.h;dac.h;ffconf.h;bsp_driver_sd.h;sd_diskio.h;fatfs.h;i2c.h;sdmmc.h;spi.h;tim.h;usart.h;
-SourcePath=D:/Pluscrafter/Documents/MaturarbeitQuadcopter/01_Flightcontroller/Code/Flightcontroller/Src
+SourcePath=C:/Users/Pluscrafter/Documents/MaturarbeitQuadcopter/01_Flightcontroller/Code/Flightcontroller/Src
 SourceFiles=stm32f7xx_it.c;stm32f7xx_hal_msp.c;main.c;gpio.c;adc.c;dac.c;bsp_driver_sd.c;sd_diskio.c;fatfs.c;i2c.c;sdmmc.c;spi.c;tim.c;usart.c;
 
 [PreviousLibFiles]
