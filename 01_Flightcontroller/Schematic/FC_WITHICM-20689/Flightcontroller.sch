@@ -17583,6 +17583,55 @@ USB_MICRO-B
 </deviceset>
 </devicesets>
 </library>
+<library name="frames" urn="urn:adsk.eagle:library:229">
+<description>&lt;b&gt;Frames for Sheet and Layout&lt;/b&gt;</description>
+<packages>
+</packages>
+<symbols>
+<symbol name="A3L-LOC" urn="urn:adsk.eagle:symbol:13881/1" library_version="1">
+<wire x1="288.29" y1="3.81" x2="342.265" y2="3.81" width="0.1016" layer="94"/>
+<wire x1="342.265" y1="3.81" x2="373.38" y2="3.81" width="0.1016" layer="94"/>
+<wire x1="373.38" y1="3.81" x2="383.54" y2="3.81" width="0.1016" layer="94"/>
+<wire x1="383.54" y1="3.81" x2="383.54" y2="8.89" width="0.1016" layer="94"/>
+<wire x1="383.54" y1="8.89" x2="383.54" y2="13.97" width="0.1016" layer="94"/>
+<wire x1="383.54" y1="13.97" x2="383.54" y2="19.05" width="0.1016" layer="94"/>
+<wire x1="383.54" y1="19.05" x2="383.54" y2="24.13" width="0.1016" layer="94"/>
+<wire x1="288.29" y1="3.81" x2="288.29" y2="24.13" width="0.1016" layer="94"/>
+<wire x1="288.29" y1="24.13" x2="342.265" y2="24.13" width="0.1016" layer="94"/>
+<wire x1="342.265" y1="24.13" x2="383.54" y2="24.13" width="0.1016" layer="94"/>
+<wire x1="373.38" y1="3.81" x2="373.38" y2="8.89" width="0.1016" layer="94"/>
+<wire x1="373.38" y1="8.89" x2="383.54" y2="8.89" width="0.1016" layer="94"/>
+<wire x1="373.38" y1="8.89" x2="342.265" y2="8.89" width="0.1016" layer="94"/>
+<wire x1="342.265" y1="8.89" x2="342.265" y2="3.81" width="0.1016" layer="94"/>
+<wire x1="342.265" y1="8.89" x2="342.265" y2="13.97" width="0.1016" layer="94"/>
+<wire x1="342.265" y1="13.97" x2="383.54" y2="13.97" width="0.1016" layer="94"/>
+<wire x1="342.265" y1="13.97" x2="342.265" y2="19.05" width="0.1016" layer="94"/>
+<wire x1="342.265" y1="19.05" x2="383.54" y2="19.05" width="0.1016" layer="94"/>
+<wire x1="342.265" y1="19.05" x2="342.265" y2="24.13" width="0.1016" layer="94"/>
+<text x="344.17" y="15.24" size="2.54" layer="94">&gt;DRAWING_NAME</text>
+<text x="344.17" y="10.16" size="2.286" layer="94">&gt;LAST_DATE_TIME</text>
+<text x="357.505" y="5.08" size="2.54" layer="94">&gt;SHEET</text>
+<text x="343.916" y="4.953" size="2.54" layer="94">Sheet:</text>
+<frame x1="0" y1="0" x2="387.35" y2="260.35" columns="8" rows="5" layer="94"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="A3L-LOC" urn="urn:adsk.eagle:component:13942/1" prefix="FRAME" uservalue="yes" library_version="1">
+<description>&lt;b&gt;FRAME&lt;/b&gt;&lt;p&gt;
+DIN A3, landscape with location and doc. field</description>
+<gates>
+<gate name="G$1" symbol="A3L-LOC" x="0" y="0"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -17768,6 +17817,16 @@ USB_MICRO-B
 <part name="C40" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10nF"/>
 <part name="C41" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="100nF"/>
 <part name="C42" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="2.2uF"/>
+<part name="FRAME1" library="frames" library_urn="urn:adsk.eagle:library:229" deviceset="A3L-LOC" device=""/>
+<part name="FRAME2" library="frames" library_urn="urn:adsk.eagle:library:229" deviceset="A3L-LOC" device=""/>
+<part name="FRAME3" library="frames" library_urn="urn:adsk.eagle:library:229" deviceset="A3L-LOC" device=""/>
+<part name="FRAME4" library="frames" library_urn="urn:adsk.eagle:library:229" deviceset="A3L-LOC" device=""/>
+<part name="FRAME5" library="frames" library_urn="urn:adsk.eagle:library:229" deviceset="A3L-LOC" device=""/>
+<part name="FRAME6" library="frames" library_urn="urn:adsk.eagle:library:229" deviceset="A3L-LOC" device=""/>
+<part name="FRAME7" library="frames" library_urn="urn:adsk.eagle:library:229" deviceset="A3L-LOC" device=""/>
+<part name="FRAME8" library="frames" library_urn="urn:adsk.eagle:library:229" deviceset="A3L-LOC" device=""/>
+<part name="FRAME9" library="frames" library_urn="urn:adsk.eagle:library:229" deviceset="A3L-LOC" device=""/>
+<part name="FRAME10" library="frames" library_urn="urn:adsk.eagle:library:229" deviceset="A3L-LOC" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -17881,6 +17940,11 @@ USB_MICRO-B
 <instance part="BATT_SENS" gate="G$1" x="-43.18" y="55.88" smashed="yes" rot="R180">
 <attribute name="NAME" x="-36.83" y="52.705" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="-36.83" y="60.96" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="FRAME1" gate="G$1" x="-142.24" y="-92.71" smashed="yes">
+<attribute name="DRAWING_NAME" x="201.93" y="-77.47" size="2.54" layer="94"/>
+<attribute name="LAST_DATE_TIME" x="201.93" y="-82.55" size="2.286" layer="94"/>
+<attribute name="SHEET" x="215.265" y="-87.63" size="2.54" layer="94"/>
 </instance>
 </instances>
 <busses>
@@ -18515,6 +18579,11 @@ USB_MICRO-B
 <attribute name="NAME" x="83.82" y="104.775" size="1.778" layer="95"/>
 <attribute name="VALUE" x="83.82" y="91.44" size="1.778" layer="96"/>
 </instance>
+<instance part="FRAME2" gate="G$1" x="-120.65" y="-85.09" smashed="yes">
+<attribute name="DRAWING_NAME" x="223.52" y="-69.85" size="2.54" layer="94"/>
+<attribute name="LAST_DATE_TIME" x="223.52" y="-74.93" size="2.286" layer="94"/>
+<attribute name="SHEET" x="236.855" y="-80.01" size="2.54" layer="94"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -18973,6 +19042,11 @@ USB_MICRO-B
 <attribute name="NAME" x="103.124" y="19.431" size="1.778" layer="95"/>
 <attribute name="VALUE" x="103.124" y="14.351" size="1.778" layer="96"/>
 </instance>
+<instance part="FRAME3" gate="G$1" x="-87.63" y="-100.33" smashed="yes">
+<attribute name="DRAWING_NAME" x="256.54" y="-85.09" size="2.54" layer="94"/>
+<attribute name="LAST_DATE_TIME" x="256.54" y="-90.17" size="2.286" layer="94"/>
+<attribute name="SHEET" x="269.875" y="-95.25" size="2.54" layer="94"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -19058,6 +19132,11 @@ USB_MICRO-B
 <attribute name="NAME" x="68.834" y="57.531" size="1.778" layer="95"/>
 <attribute name="VALUE" x="68.834" y="52.451" size="1.778" layer="96"/>
 </instance>
+<instance part="FRAME4" gate="G$1" x="-134.62" y="-81.28" smashed="yes">
+<attribute name="DRAWING_NAME" x="209.55" y="-66.04" size="2.54" layer="94"/>
+<attribute name="LAST_DATE_TIME" x="209.55" y="-71.12" size="2.286" layer="94"/>
+<attribute name="SHEET" x="222.885" y="-76.2" size="2.54" layer="94"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -19120,6 +19199,11 @@ USB_MICRO-B
 </instance>
 <instance part="SUPPLY14" gate="G$1" x="30.48" y="59.69" smashed="yes">
 <attribute name="VALUE" x="30.48" y="62.484" size="1.778" layer="96" align="bottom-center"/>
+</instance>
+<instance part="FRAME5" gate="G$1" x="-138.43" y="-81.28" smashed="yes">
+<attribute name="DRAWING_NAME" x="205.74" y="-66.04" size="2.54" layer="94"/>
+<attribute name="LAST_DATE_TIME" x="205.74" y="-71.12" size="2.286" layer="94"/>
+<attribute name="SHEET" x="219.075" y="-76.2" size="2.54" layer="94"/>
 </instance>
 </instances>
 <busses>
@@ -19252,6 +19336,11 @@ USB_MICRO-B
 <instance part="C36" gate="G$1" x="50.8" y="50.8" smashed="yes">
 <attribute name="NAME" x="52.324" y="51.181" size="1.778" layer="95"/>
 <attribute name="VALUE" x="52.324" y="46.101" size="1.778" layer="96"/>
+</instance>
+<instance part="FRAME6" gate="G$1" x="-115.57" y="-78.74" smashed="yes">
+<attribute name="DRAWING_NAME" x="228.6" y="-63.5" size="2.54" layer="94"/>
+<attribute name="LAST_DATE_TIME" x="228.6" y="-68.58" size="2.286" layer="94"/>
+<attribute name="SHEET" x="241.935" y="-73.66" size="2.54" layer="94"/>
 </instance>
 </instances>
 <busses>
@@ -19477,6 +19566,11 @@ USB_MICRO-B
 <instance part="C42" gate="G$1" x="85.09" y="26.67" smashed="yes" rot="R270">
 <attribute name="NAME" x="85.471" y="25.146" size="1.778" layer="95" rot="R270"/>
 <attribute name="VALUE" x="80.391" y="25.146" size="1.778" layer="96" rot="R270"/>
+</instance>
+<instance part="FRAME7" gate="G$1" x="-101.6" y="-78.74" smashed="yes">
+<attribute name="DRAWING_NAME" x="242.57" y="-63.5" size="2.54" layer="94"/>
+<attribute name="LAST_DATE_TIME" x="242.57" y="-68.58" size="2.286" layer="94"/>
+<attribute name="SHEET" x="255.905" y="-73.66" size="2.54" layer="94"/>
 </instance>
 </instances>
 <busses>
@@ -19728,6 +19822,11 @@ USB_MICRO-B
 <instance part="R13" gate="G$1" x="-13.97" y="106.68" smashed="yes" rot="R90">
 <attribute name="NAME" x="-15.494" y="106.68" size="1.778" layer="95" font="vector" rot="R90" align="bottom-center"/>
 <attribute name="VALUE" x="-12.446" y="106.68" size="1.778" layer="96" font="vector" rot="R90" align="top-center"/>
+</instance>
+<instance part="FRAME8" gate="G$1" x="-146.05" y="-63.5" smashed="yes">
+<attribute name="DRAWING_NAME" x="198.12" y="-48.26" size="2.54" layer="94"/>
+<attribute name="LAST_DATE_TIME" x="198.12" y="-53.34" size="2.286" layer="94"/>
+<attribute name="SHEET" x="211.455" y="-58.42" size="2.54" layer="94"/>
 </instance>
 </instances>
 <busses>
@@ -20103,6 +20202,11 @@ USB_MICRO-B
 <attribute name="NAME" x="69.596" y="42.799" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="69.596" y="47.879" size="1.778" layer="96" rot="R180"/>
 </instance>
+<instance part="FRAME9" gate="G$1" x="-76.2" y="-55.88" smashed="yes">
+<attribute name="DRAWING_NAME" x="267.97" y="-40.64" size="2.54" layer="94"/>
+<attribute name="LAST_DATE_TIME" x="267.97" y="-45.72" size="2.286" layer="94"/>
+<attribute name="SHEET" x="281.305" y="-50.8" size="2.54" layer="94"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -20310,6 +20414,11 @@ USB_MICRO-B
 <instance part="JP7" gate="A" x="82.55" y="76.2" smashed="yes">
 <attribute name="NAME" x="76.2" y="86.995" size="1.778" layer="95"/>
 <attribute name="VALUE" x="76.2" y="66.04" size="1.778" layer="96"/>
+</instance>
+<instance part="FRAME10" gate="G$1" x="-125.73" y="-52.07" smashed="yes">
+<attribute name="DRAWING_NAME" x="218.44" y="-36.83" size="2.54" layer="94"/>
+<attribute name="LAST_DATE_TIME" x="218.44" y="-41.91" size="2.286" layer="94"/>
+<attribute name="SHEET" x="231.775" y="-46.99" size="2.54" layer="94"/>
 </instance>
 </instances>
 <busses>

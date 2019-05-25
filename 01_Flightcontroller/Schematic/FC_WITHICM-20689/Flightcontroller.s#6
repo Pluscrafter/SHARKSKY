@@ -19856,12 +19856,12 @@ USB_MICRO-B
 <pinref part="SUPPLY19" gate="G$1" pin="VCC"/>
 <wire x1="57.15" y1="102.87" x2="62.23" y2="102.87" width="0.1524" layer="91"/>
 <junction x="57.15" y="102.87"/>
-<wire x1="57.15" y1="102.87" x2="53.34" y2="102.87" width="0.1524" layer="91"/>
+<wire x1="57.15" y1="102.87" x2="54.61" y2="102.87" width="0.1524" layer="91"/>
 <pinref part="R13" gate="G$1" pin="2"/>
-<wire x1="-13.97" y1="111.76" x2="-13.97" y2="114.3" width="0.1524" layer="91"/>
-<wire x1="-13.97" y1="114.3" x2="62.23" y2="114.3" width="0.1524" layer="91"/>
-<wire x1="62.23" y1="114.3" x2="62.23" y2="102.87" width="0.1524" layer="91"/>
-<junction x="62.23" y="102.87"/>
+<wire x1="54.61" y1="102.87" x2="53.34" y2="102.87" width="0.1524" layer="91"/>
+<wire x1="-13.97" y1="111.76" x2="54.61" y2="111.76" width="0.1524" layer="91"/>
+<wire x1="54.61" y1="111.76" x2="54.61" y2="102.87" width="0.1524" layer="91"/>
+<junction x="54.61" y="102.87"/>
 </segment>
 </net>
 <net name="N$6" class="0">
@@ -20372,6 +20372,36 @@ USB_MICRO-B
 </nets>
 </sheet>
 </sheets>
+<errors>
+<approved hash="204,1,19.05,113.03,STM32F722B,VBAT,,,,"/>
+<approved hash="202,6,54.61,60.96,FT232RL,OSCI,,,,"/>
+<approved hash="202,6,82.55,66.04,FT232RL,!CTS,,,,"/>
+<approved hash="202,6,82.55,60.96,FT232RL,!DSR,,,,"/>
+<approved hash="202,6,82.55,58.42,FT232RL,!DCD,,,,"/>
+<approved hash="202,6,82.55,55.88,FT232RL,!RI,,,,"/>
+<approved hash="202,6,54.61,66.04,FT232RL,!RESET,,,,"/>
+<approved hash="208,1,-8.89,-5.08,VCC,sup,,,,"/>
+<approved hash="208,1,58.42,133.35,VCC,sup,,,,"/>
+<approved hash="208,1,-15.24,43.18,VCC,sup,,,,"/>
+<approved hash="208,2,38.1,81.28,VCC,sup,,,,"/>
+<approved hash="208,2,16.51,62.23,VCC,sup,,,,"/>
+<approved hash="208,2,1.27,96.52,VCC,sup,,,,"/>
+<approved hash="208,2,6.35,33.02,VCC,sup,,,,"/>
+<approved hash="208,2,80.01,12.7,VCC,sup,,,,"/>
+<approved hash="208,2,114.3,11.43,VCC,sup,,,,"/>
+<approved hash="208,3,118.11,49.53,VCC,out,,,,"/>
+<approved hash="208,3,120.65,50.8,VCC,sup,,,,"/>
+<approved hash="208,3,78.74,21.59,VCC,sup,,,,"/>
+<approved hash="208,4,71.12,63.5,VCC,sup,,,,"/>
+<approved hash="208,5,30.48,59.69,VCC,sup,,,,"/>
+<approved hash="208,6,44.45,74.93,VCC,sup,,,,"/>
+<approved hash="208,6,27.94,39.37,VCC,sup,,,,"/>
+<approved hash="208,7,73.66,91.44,VCC,sup,,,,"/>
+<approved hash="208,7,118.11,88.9,VCC,sup,,,,"/>
+<approved hash="208,8,57.15,102.87,VCC,sup,,,,"/>
+<approved hash="208,9,93.98,72.39,VCC,sup,,,,"/>
+<approved hash="208,9,139.7,64.77,VCC,sup,,,,"/>
+</errors>
 </schematic>
 </drawing>
 <compatibility>

@@ -22,6 +22,7 @@
 #include "main.h"
 #include "adc.h"
 #include "dac.h"
+#include "dma.h"
 #include "fatfs.h"
 #include "i2c.h"
 #include "sdmmc.h"
@@ -96,6 +97,7 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_I2C1_Init();
   MX_SDMMC1_SD_Init();
   MX_SPI2_Init();
@@ -119,17 +121,17 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  for(int i = 1024; i < 2049; i++){
-		  HAL_GPIO_TogglePin(INIT_OK_GPIO_Port, INIT_OK_Pin);
-		  HAL_UART_Transmit(&huart1, (uint8_t *)"Hello World !!! \r\n", 20, 1000);
-		  HAL_UART_Transmit(&huart1, (uint8_t *)"Test \r\n", 7, 1000);
-		  __HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_1,i);
-		  __HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_2,i);
-		  __HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_3,i);
-		  __HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_4,i);
-		  HAL_Delay(1);
-		  //HAL_Delay(1);
-	  }
+	for(int i = 1024; i < 2048; i++){
+		HAL_GPIO_TogglePin(INIT_OK_GPIO_Port, INIT_OK_Pin);
+		HAL_UART_Transmit_DMA(&huart1, (uint8_t *)"Hello World !!! \r\n", 20);
+		HAL_UART_Transmit_DMA(&huart1, (uint8_t *)"Test \r\n", 7);
+		__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_1,i);
+		__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_2,i);
+		__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_3,i);
+		__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_4,i);
+		HAL_Delay(10);
+		//HAL_Delay(1);
+	}
 
     /* USER CODE END WHILE */
 

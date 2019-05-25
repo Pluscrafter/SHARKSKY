@@ -19506,12 +19506,19 @@ USB_MICRO-B
 <wire x1="76.2" y1="33.02" x2="76.2" y2="17.78" width="0.1524" layer="91"/>
 <wire x1="76.2" y1="17.78" x2="71.12" y2="17.78" width="0.1524" layer="91"/>
 <junction x="71.12" y="17.78"/>
-<wire x1="87.63" y1="25.4" x2="87.63" y2="13.97" width="0.1524" layer="91"/>
+<wire x1="87.63" y1="26.67" x2="87.63" y2="13.97" width="0.1524" layer="91"/>
 <wire x1="87.63" y1="13.97" x2="74.93" y2="13.97" width="0.1524" layer="91"/>
 <junction x="74.93" y="13.97"/>
 <pinref part="ICM20689" gate="G$1" pin="EPX_PAD"/>
 <wire x1="63.5" y1="15.24" x2="71.12" y2="15.24" width="0.1524" layer="91"/>
 <junction x="71.12" y="15.24"/>
+<pinref part="C40" gate="G$1" pin="2"/>
+<pinref part="C41" gate="G$1" pin="1"/>
+<wire x1="87.63" y1="40.64" x2="87.63" y2="35.56" width="0.1524" layer="91"/>
+<pinref part="C42" gate="G$1" pin="1"/>
+<wire x1="87.63" y1="35.56" x2="87.63" y2="26.67" width="0.1524" layer="91"/>
+<junction x="87.63" y="35.56"/>
+<junction x="87.63" y="26.67"/>
 </segment>
 </net>
 <net name="VCC" class="1">
@@ -19615,16 +19622,6 @@ USB_MICRO-B
 <pinref part="ICM20689" gate="G$1" pin="REGOUT"/>
 <pinref part="C39" gate="G$1" pin="2"/>
 <wire x1="68.58" y1="33.02" x2="63.5" y2="33.02" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$12" class="0">
-<segment>
-<pinref part="C40" gate="G$1" pin="2"/>
-<pinref part="C41" gate="G$1" pin="1"/>
-<wire x1="87.63" y1="40.64" x2="87.63" y2="35.56" width="0.1524" layer="91"/>
-<pinref part="C42" gate="G$1" pin="1"/>
-<wire x1="87.63" y1="35.56" x2="87.63" y2="26.67" width="0.1524" layer="91"/>
-<junction x="87.63" y="35.56"/>
 </segment>
 </net>
 </nets>
@@ -20349,8 +20346,8 @@ USB_MICRO-B
 <approved hash="208,5,30.48,59.69,VCC,sup,,,,"/>
 <approved hash="208,6,44.45,74.93,VCC,sup,,,,"/>
 <approved hash="208,6,27.94,39.37,VCC,sup,,,,"/>
-<approved hash="208,7,73.66,91.44,VCC,sup,,,,"/>
 <approved hash="208,7,118.11,88.9,VCC,sup,,,,"/>
+<approved hash="208,7,74.93,45.72,VCC,sup,,,,"/>
 <approved hash="208,8,57.15,102.87,VCC,sup,,,,"/>
 <approved hash="208,9,93.98,72.39,VCC,sup,,,,"/>
 <approved hash="208,9,139.7,64.77,VCC,sup,,,,"/>
