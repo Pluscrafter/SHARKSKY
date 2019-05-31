@@ -59,10 +59,10 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define IMU_MOSI_Pin GPIO_PIN_1
-#define IMU_MOSI_GPIO_Port GPIOC
-#define IMU_MISO_Pin GPIO_PIN_2
-#define IMU_MISO_GPIO_Port GPIOC
+#define RF24_MOSI_Pin GPIO_PIN_1
+#define RF24_MOSI_GPIO_Port GPIOC
+#define RF24_MISO_Pin GPIO_PIN_2
+#define RF24_MISO_GPIO_Port GPIOC
 #define MOTOR_1_Pin GPIO_PIN_0
 #define MOTOR_1_GPIO_Port GPIOA
 #define MOTOR_2_Pin GPIO_PIN_1
@@ -71,8 +71,8 @@ void Error_Handler(void);
 #define GPS_TX_GPIO_Port GPIOA
 #define GPS_RX_Pin GPIO_PIN_3
 #define GPS_RX_GPIO_Port GPIOA
-#define RF24_NSS_Pin GPIO_PIN_4
-#define RF24_NSS_GPIO_Port GPIOA
+#define IMU_NSS_Pin GPIO_PIN_4
+#define IMU_NSS_GPIO_Port GPIOA
 #define INIT_OK_Pin GPIO_PIN_7
 #define INIT_OK_GPIO_Port GPIOA
 #define MOD0_LED_Pin GPIO_PIN_4
@@ -81,16 +81,16 @@ void Error_Handler(void);
 #define GIMBAL_X_GPIO_Port GPIOB
 #define MOD1_LED_Pin GPIO_PIN_1
 #define MOD1_LED_GPIO_Port GPIOB
-#define RF24_MOSI_Pin GPIO_PIN_2
-#define RF24_MOSI_GPIO_Port GPIOB
+#define IMU_MOSI_Pin GPIO_PIN_2
+#define IMU_MOSI_GPIO_Port GPIOB
 #define MOTOR_3_Pin GPIO_PIN_10
 #define MOTOR_3_GPIO_Port GPIOB
 #define MOTOR_4_Pin GPIO_PIN_11
 #define MOTOR_4_GPIO_Port GPIOB
-#define IMU_NSS_Pin GPIO_PIN_12
-#define IMU_NSS_GPIO_Port GPIOB
-#define IMU_SCK_Pin GPIO_PIN_13
-#define IMU_SCK_GPIO_Port GPIOB
+#define RF24_NSS_Pin GPIO_PIN_12
+#define RF24_NSS_GPIO_Port GPIOB
+#define RF24_SCK_Pin GPIO_PIN_13
+#define RF24_SCK_GPIO_Port GPIOB
 #define CE_Pin GPIO_PIN_6
 #define CE_GPIO_Port GPIOC
 #define IRQ_Pin GPIO_PIN_7
@@ -107,10 +107,10 @@ void Error_Handler(void);
 #define LLVOE_GPIO_Port GPIOA
 #define USBOSD_Pin GPIO_PIN_12
 #define USBOSD_GPIO_Port GPIOA
-#define RF24_SCK_Pin GPIO_PIN_10
-#define RF24_SCK_GPIO_Port GPIOC
-#define RF24_MISO_Pin GPIO_PIN_11
-#define RF24_MISO_GPIO_Port GPIOC
+#define IMU_SCK_Pin GPIO_PIN_10
+#define IMU_SCK_GPIO_Port GPIOC
+#define IMU_MISO_Pin GPIO_PIN_11
+#define IMU_MISO_GPIO_Port GPIOC
 #define GIMBAL_Y_Pin GPIO_PIN_4
 #define GIMBAL_Y_GPIO_Port GPIOB
 #define GIMBAL_Z_Pin GPIO_PIN_5

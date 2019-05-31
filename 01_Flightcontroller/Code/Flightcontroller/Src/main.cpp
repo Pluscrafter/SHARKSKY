@@ -20,6 +20,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "stdio.h"
 #include "adc.h"
 #include "dac.h"
 #include "dma.h"
@@ -30,6 +31,7 @@
 #include "tim.h"
 #include "usart.h"
 #include "gpio.h"
+#include "ICM20689.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -105,7 +107,7 @@ uint8_t  sine[256] = {
   0x67, 0x6A, 0x6D, 0x70, 0x74, 0x77, 0x7A, 0x7D
 };
 
-const uint8_t sawtooth[256] = {0, 1, 2, 3, 4, 5, 6, 7,
+uint8_t sawtooth[256] = {0, 1, 2, 3, 4, 5, 6, 7,
 		  8, 9, 10, 11, 12, 13, 14, 15,
 		  16, 17, 18, 19, 20, 21, 22, 23,
 		  24, 25, 26, 27, 28, 29, 30, 31,
@@ -138,6 +140,8 @@ const uint8_t sawtooth[256] = {0, 1, 2, 3, 4, 5, 6, 7,
 		  232, 233, 234, 235, 236, 237, 238, 239,
 		  240, 241, 242, 243, 244, 245, 246, 247,
 		  248, 249, 250, 251, 252, 253, 254, 255};
+
+Sensor::ICM20689 imu;
 /* USER CODE END 0 */
 
 /**
@@ -209,9 +213,17 @@ int main(void)
 
   //TEST DAC
   HAL_TIM_Base_Start(&htim6);
-  HAL_DAC_Start_DMA(&hdac, DAC_CHANNEL_2, (uint32_t *)sine, 256, DAC_ALIGN_8B_R);
+  HAL_DAC_Start_DMA(&hdac, DAC_CHANNEL_2, (uint32_t *)sawtooth, 256, DAC_ALIGN_8B_R);
+
+  imu.Initalize();
 
 
+  if(imu.init_ok == false){
+	  for(;;){
+		  HAL_GPIO_TogglePin(INIT_OK_GPIO_Port, INIT_OK_Pin);
+		  HAL_Delay(100);
+	  }
+  }
 
   HAL_GPIO_WritePin(INIT_OK_GPIO_Port, INIT_OK_Pin, GPIO_PIN_SET);
   /* USER CODE END 2 */
@@ -220,9 +232,13 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-
-
-
+	  char txt[32];
+	  imu.ReadGyro();
+	  //HAL_UART_Transmit(&huart1, (uint8_t *)"HalloWelt", 9,100);
+	  HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "GYROX: %i \t", imu.gyro[0]),100);
+	  HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "GYROY: %i \t", imu.gyro[1]),100);
+	  HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "GYROZ: %i \t \n\r", imu.gyro[2]),100);
+	  HAL_Delay(100);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
