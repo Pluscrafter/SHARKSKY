@@ -76,9 +76,7 @@ namespace Sensor {
 	void ICM20689::ReadGyro(){
 		uint8_t temp[6];
 		uint8_t reg[6]={GYRO_XOUT_H,GYRO_XOUT_L,GYRO_YOUT_H,GYRO_YOUT_L,GYRO_ZOUT_H,GYRO_ZOUT_L};
-		for(int i = 0; i<6; i++){
-			temp[i] = spi1.ReadRegister(reg[i]);
-		}
+		spi1.ReadRegisters(reg, temp, 6);
 
 		gyro[0] = temp[0] << 8 | temp[1];
 		gyro[1] = temp[2] << 8 | temp[3];

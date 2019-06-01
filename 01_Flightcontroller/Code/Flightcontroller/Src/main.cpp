@@ -142,6 +142,7 @@ uint8_t sawtooth[256] = {0, 1, 2, 3, 4, 5, 6, 7,
 		  248, 249, 250, 251, 252, 253, 254, 255};
 
 Sensor::ICM20689 imu;
+float PI = 3.1415;
 /* USER CODE END 0 */
 
 /**
@@ -235,9 +236,9 @@ int main(void)
 	  char txt[32];
 	  imu.ReadGyro();
 	  //HAL_UART_Transmit(&huart1, (uint8_t *)"HalloWelt", 9,100);
-	  HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "GYROX: %i \t", imu.gyro[0]),100);
-	  HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "GYROY: %i \t", imu.gyro[1]),100);
-	  HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "GYROZ: %i \t \n\r", imu.gyro[2]),100);
+	  HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "GYROX: %2.3f \t", imu.ypr[0]),100);
+	  HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "GYROY: %2.3f \t", imu.ypr[1]),100);
+	  HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "GYROZ: %2.3f \t \n\r", imu.ypr[2]),100);
 	  HAL_Delay(100);
     /* USER CODE END WHILE */
 

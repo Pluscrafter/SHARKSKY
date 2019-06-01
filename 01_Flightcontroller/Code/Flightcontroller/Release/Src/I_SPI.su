@@ -1,0 +1,11 @@
+I_SPI.cpp:18:2:Interface::I_SPI::~I_SPI()	0	static
+I_SPI.cpp:18:2:virtual Interface::I_SPI::~I_SPI()	8	static
+I_SPI.cpp:14:2:Interface::I_SPI::I_SPI(SPI_HandleTypeDef&)	0	static
+I_SPI.cpp:22:7:void Interface::I_SPI::Transfer(uint8_t)	24	static
+I_SPI.cpp:29:7:void Interface::I_SPI::Transfer(uint8_t*, uint8_t)	16	static
+I_SPI.cpp:36:10:uint8_t Interface::I_SPI::TransferReceive(uint8_t)	32	static
+I_SPI.cpp:47:7:void Interface::I_SPI::TransferReceive(uint8_t*, uint8_t*, uint8_t)	24	static
+I_SPI.cpp:59:7:void Interface::I_SPI::WriteRegister(uint8_t, uint8_t)	24	static
+I_SPI.cpp:64:7:void Interface::I_SPI::WriteRegisters(uint8_t*, uint8_t*, uint8_t)	24	dynamic
+I_SPI.cpp:77:10:uint8_t Interface::I_SPI::ReadRegister(uint8_t)	24	static
+I_SPI.cpp:81:7:void Interface::I_SPI::ReadRegisters(uint8_t*, uint8_t*, uint8_t)	32	dynamic
