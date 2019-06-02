@@ -85,9 +85,9 @@ public:
 	bool init_ok = false;
 
 	float ypr[3];
-	double t = 1.55;
-	double accel[3];
-	uint16_t gyro[3];
+	float accel[3];
+	int16_t r_accel[3];
+	int16_t r_gyro[3];
 
 	void Initalize();
 	void SelfTest();

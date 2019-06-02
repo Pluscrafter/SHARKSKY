@@ -78,17 +78,28 @@ namespace Sensor {
 		uint8_t reg[6]={GYRO_XOUT_H,GYRO_XOUT_L,GYRO_YOUT_H,GYRO_YOUT_L,GYRO_ZOUT_H,GYRO_ZOUT_L};
 		spi1.ReadRegisters(reg, temp, 6);
 
-		gyro[0] = temp[0] << 8 | temp[1];
-		gyro[1] = temp[2] << 8 | temp[3];
-		gyro[2] = temp[4] << 8 | temp[5];
+		r_gyro[0] = (temp[0] << 8) | temp[1];
+		r_gyro[1] = (temp[2] << 8) | temp[3];
+		r_gyro[2] = (temp[4] << 8) | temp[5];
 
 		for(int i = 0; i<3; i++){
-			ypr[i] = 131.0/gyro[i];
+			ypr[i] =   r_gyro[i] / 131.0 ;
 		}
 
 	}
 
 	void ICM20689::ReadAccel(){
+		uint8_t temp[6];
+		uint8_t reg[6]={ACCEL_XOUT_H,ACCEL_XOUT_L,ACCEL_YOUT_H,ACCEL_YOUT_L,ACCEL_ZOUT_H,ACCEL_ZOUT_L};
+		spi1.ReadRegisters(reg, temp, 6);
+
+		r_accel[0] = (temp[0] << 8) | temp[1];
+		r_accel[1] = (temp[2] << 8) | temp[3];
+		r_accel[2] = (temp[4] << 8) | temp[5];
+
+		for(int i = 0; i<3; i++){
+			accel[i] =  r_accel[i] / 16384.0;
+		}
 
 	}
 

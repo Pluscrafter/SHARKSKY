@@ -235,10 +235,15 @@ int main(void)
   {
 	  char txt[32];
 	  imu.ReadGyro();
-	  //HAL_UART_Transmit(&huart1, (uint8_t *)"HalloWelt", 9,100);
+	  imu.ReadAccel();
+
 	  HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "GYROX: %2.3f \t", imu.ypr[0]),100);
 	  HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "GYROY: %2.3f \t", imu.ypr[1]),100);
 	  HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "GYROZ: %2.3f \t \n\r", imu.ypr[2]),100);
+
+	  HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "ACCELX: %2.3f \t", imu.accel[0]),100);
+	  HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "ACCELY: %2.3f \t", imu.accel[1]),100);
+	  HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "ACCELZ: %2.3f \t \n\r", imu.accel[2]),100);
 	  HAL_Delay(100);
     /* USER CODE END WHILE */
 

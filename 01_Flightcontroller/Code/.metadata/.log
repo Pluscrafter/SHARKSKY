@@ -5370,3 +5370,2023 @@ org.eclipse.swt.SWTException: Widget is disposed
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:661)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:597)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1476)
+!SESSION 2019-06-02 12:22:47.418 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_202
+java.vendor=AdoptOpenJdk
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_CH
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.egit.core 1 0 2019-06-02 12:23:45.670
+!MESSAGE Using Apache MINA sshd as ssh client.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2019-06-02 12:23:47.319
+!MESSAGE Unable to retrieve the bundle from the URI: bundleclass://org.eclipse.launchbar.ui.controls/org.eclipse.launchbar.ui.controls.internal.LaunchBarControl
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 4 4 2019-06-02 12:23:49.716
+!MESSAGE Type or version is empty: ; 
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 2 2 2019-06-02 12:23:49.720
+!MESSAGE Falling back to default toolchain
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 4 4 2019-06-02 12:23:49.728
+!MESSAGE Type or version is empty: ; 
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 2 2 2019-06-02 12:23:49.731
+!MESSAGE Falling back to default toolchain
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 4 4 2019-06-02 12:23:49.735
+!MESSAGE Type or version is empty: ; 
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 2 2 2019-06-02 12:23:49.738
+!MESSAGE Falling back to default toolchain
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 4 4 2019-06-02 12:23:49.741
+!MESSAGE Type or version is empty: ; 
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 2 2 2019-06-02 12:23:49.744
+!MESSAGE Falling back to default toolchain
+
+!ENTRY org.eclipse.core.runtime 4 0 2019-06-02 12:23:50.873
+!MESSAGE Invalid input url:platform:/plugin/org.eclipse.mylyn.tasks.ui/icons/eview16/task-list.gif
+!STACK 0
+java.io.IOException: Unable to resolve plug-in "org.eclipse.mylyn.tasks.ui".
+	at org.eclipse.core.internal.runtime.PlatformURLPluginConnection.parse(PlatformURLPluginConnection.java:64)
+	at org.eclipse.core.internal.runtime.FindSupport.find(FindSupport.java:293)
+	at org.eclipse.core.runtime.FileLocator.find(FileLocator.java:206)
+	at org.eclipse.jface.resource.URLImageDescriptor.getFilePath(URLImageDescriptor.java:229)
+	at org.eclipse.jface.resource.URLImageDescriptor.access$2(URLImageDescriptor.java:221)
+	at org.eclipse.jface.resource.URLImageDescriptor$URLImageFileNameProvider.getImagePath(URLImageDescriptor.java:57)
+	at org.eclipse.swt.internal.DPIUtil.validateAndGetImagePathAtZoom(DPIUtil.java:419)
+	at org.eclipse.swt.graphics.Image.<init>(Image.java:687)
+	at org.eclipse.jface.resource.URLImageDescriptor.createImage(URLImageDescriptor.java:264)
+	at org.eclipse.jface.resource.ImageDescriptor.createResource(ImageDescriptor.java:182)
+	at org.eclipse.jface.resource.DeviceResourceManager.allocate(DeviceResourceManager.java:55)
+	at org.eclipse.jface.resource.AbstractResourceManager.create(AbstractResourceManager.java:88)
+	at org.eclipse.jface.resource.ResourceManager.createImageWithDefault(ResourceManager.java:195)
+	at org.eclipse.jface.resource.ImageRegistry.get(ImageRegistry.java:206)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.getImageFromURI(SWTPartRenderer.java:220)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.getImage(SWTPartRenderer.java:230)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer.createTab(StackRenderer.java:874)
+	at org.eclipse.e4.ui.workbench.renderers.swt.LazyStackRenderer.processContents(LazyStackRenderer.java:145)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:689)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:781)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:752)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:746)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:730)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:72)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:140)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:689)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:781)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:752)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:746)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:730)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:72)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:140)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:689)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:781)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:752)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:746)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:730)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:72)
+	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveRenderer.processContents(PerspectiveRenderer.java:51)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:689)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:781)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:752)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:746)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:730)
+	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveStackRenderer.showTab(PerspectiveStackRenderer.java:82)
+	at org.eclipse.e4.ui.workbench.renderers.swt.LazyStackRenderer.postProcess(LazyStackRenderer.java:105)
+	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveStackRenderer.postProcess(PerspectiveStackRenderer.java:64)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:693)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:781)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:752)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:746)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:730)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:72)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:140)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:689)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:781)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:752)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:746)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:730)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:72)
+	at org.eclipse.e4.ui.workbench.renderers.swt.WBWRenderer.processContents(WBWRenderer.java:665)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:689)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:781)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:752)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:746)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:730)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1099)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1062)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:566)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:155)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:661)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:597)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1476)
+
+!ENTRY org.eclipse.jface 4 0 2019-06-02 12:23:50.895
+!MESSAGE Unable to resolve plug-in "org.eclipse.mylyn.tasks.ui".
+!STACK 0
+java.io.IOException: Unable to resolve plug-in "org.eclipse.mylyn.tasks.ui".
+	at org.eclipse.core.internal.runtime.PlatformURLPluginConnection.parse(PlatformURLPluginConnection.java:64)
+	at org.eclipse.core.internal.runtime.PlatformURLPluginConnection.resolve(PlatformURLPluginConnection.java:73)
+	at org.eclipse.core.internal.boot.PlatformURLHandler.openConnection(PlatformURLHandler.java:69)
+	at org.eclipse.osgi.internal.url.URLStreamHandlerProxy.openConnection(URLStreamHandlerProxy.java:117)
+	at java.net.URL.openConnection(URL.java:979)
+	at org.eclipse.core.internal.runtime.PlatformURLConverter.toFileURL(PlatformURLConverter.java:34)
+	at org.eclipse.core.runtime.FileLocator.toFileURL(FileLocator.java:261)
+	at org.eclipse.jface.resource.URLImageDescriptor.getFilePath(URLImageDescriptor.java:233)
+	at org.eclipse.jface.resource.URLImageDescriptor.access$2(URLImageDescriptor.java:221)
+	at org.eclipse.jface.resource.URLImageDescriptor$URLImageFileNameProvider.getImagePath(URLImageDescriptor.java:57)
+	at org.eclipse.swt.internal.DPIUtil.validateAndGetImagePathAtZoom(DPIUtil.java:419)
+	at org.eclipse.swt.graphics.Image.<init>(Image.java:687)
+	at org.eclipse.jface.resource.URLImageDescriptor.createImage(URLImageDescriptor.java:264)
+	at org.eclipse.jface.resource.ImageDescriptor.createResource(ImageDescriptor.java:182)
+	at org.eclipse.jface.resource.DeviceResourceManager.allocate(DeviceResourceManager.java:55)
+	at org.eclipse.jface.resource.AbstractResourceManager.create(AbstractResourceManager.java:88)
+	at org.eclipse.jface.resource.ResourceManager.createImageWithDefault(ResourceManager.java:195)
+	at org.eclipse.jface.resource.ImageRegistry.get(ImageRegistry.java:206)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.getImageFromURI(SWTPartRenderer.java:220)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.getImage(SWTPartRenderer.java:230)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer.createTab(StackRenderer.java:874)
+	at org.eclipse.e4.ui.workbench.renderers.swt.LazyStackRenderer.processContents(LazyStackRenderer.java:145)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:689)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:781)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:752)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:746)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:730)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:72)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:140)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:689)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:781)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:752)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:746)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:730)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:72)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:140)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:689)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:781)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:752)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:746)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:730)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:72)
+	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveRenderer.processContents(PerspectiveRenderer.java:51)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:689)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:781)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:752)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:746)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:730)
+	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveStackRenderer.showTab(PerspectiveStackRenderer.java:82)
+	at org.eclipse.e4.ui.workbench.renderers.swt.LazyStackRenderer.postProcess(LazyStackRenderer.java:105)
+	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveStackRenderer.postProcess(PerspectiveStackRenderer.java:64)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:693)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:781)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:752)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:746)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:730)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:72)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:140)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:689)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:781)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:752)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:746)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:730)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:72)
+	at org.eclipse.e4.ui.workbench.renderers.swt.WBWRenderer.processContents(WBWRenderer.java:665)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:689)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:781)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:752)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:746)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:730)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1099)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1062)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:566)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:155)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:661)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:597)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1476)
+
+!ENTRY org.eclipse.core.runtime 4 0 2019-06-02 12:23:50.899
+!MESSAGE Invalid input url:platform:/plugin/org.eclipse.mylyn.tasks.ui/icons/eview16/task-list.gif
+!STACK 0
+java.io.IOException: Unable to resolve plug-in "org.eclipse.mylyn.tasks.ui".
+	at org.eclipse.core.internal.runtime.PlatformURLPluginConnection.parse(PlatformURLPluginConnection.java:64)
+	at org.eclipse.core.internal.runtime.FindSupport.find(FindSupport.java:293)
+	at org.eclipse.core.runtime.FileLocator.find(FileLocator.java:206)
+	at org.eclipse.jface.resource.URLImageDescriptor.getStream(URLImageDescriptor.java:155)
+	at org.eclipse.jface.resource.URLImageDescriptor.getImageData(URLImageDescriptor.java:123)
+	at org.eclipse.jface.resource.URLImageDescriptor.access$3(URLImageDescriptor.java:121)
+	at org.eclipse.jface.resource.URLImageDescriptor$URLImageDataProvider.getImageData(URLImageDescriptor.java:77)
+	at org.eclipse.swt.internal.DPIUtil.validateAndGetImageDataAtZoom(DPIUtil.java:404)
+	at org.eclipse.swt.graphics.Image.<init>(Image.java:732)
+	at org.eclipse.jface.resource.URLImageDescriptor.createImage(URLImageDescriptor.java:274)
+	at org.eclipse.jface.resource.ImageDescriptor.createResource(ImageDescriptor.java:182)
+	at org.eclipse.jface.resource.DeviceResourceManager.allocate(DeviceResourceManager.java:55)
+	at org.eclipse.jface.resource.AbstractResourceManager.create(AbstractResourceManager.java:88)
+	at org.eclipse.jface.resource.ResourceManager.createImageWithDefault(ResourceManager.java:195)
+	at org.eclipse.jface.resource.ImageRegistry.get(ImageRegistry.java:206)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.getImageFromURI(SWTPartRenderer.java:220)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.getImage(SWTPartRenderer.java:230)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer.createTab(StackRenderer.java:874)
+	at org.eclipse.e4.ui.workbench.renderers.swt.LazyStackRenderer.processContents(LazyStackRenderer.java:145)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:689)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:781)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:752)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:746)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:730)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:72)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:140)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:689)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:781)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:752)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:746)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:730)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:72)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:140)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:689)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:781)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:752)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:746)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:730)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:72)
+	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveRenderer.processContents(PerspectiveRenderer.java:51)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:689)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:781)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:752)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:746)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:730)
+	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveStackRenderer.showTab(PerspectiveStackRenderer.java:82)
+	at org.eclipse.e4.ui.workbench.renderers.swt.LazyStackRenderer.postProcess(LazyStackRenderer.java:105)
+	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveStackRenderer.postProcess(PerspectiveStackRenderer.java:64)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:693)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:781)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:752)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:746)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:730)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:72)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:140)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:689)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:781)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:752)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:746)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:730)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:72)
+	at org.eclipse.e4.ui.workbench.renderers.swt.WBWRenderer.processContents(WBWRenderer.java:665)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:689)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:781)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:752)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:746)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:730)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1099)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1062)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:566)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:155)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:661)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:597)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1476)
+
+!ENTRY org.eclipse.jface 2 0 2019-06-02 12:23:50.903
+!MESSAGE The image could not be loaded: URLImageDescriptor(platform:/plugin/org.eclipse.mylyn.tasks.ui/icons/eview16/task-list.gif)
+!STACK 0
+org.eclipse.jface.resource.DeviceResourceException: Unable to create resource URLImageDescriptor(platform:/plugin/org.eclipse.mylyn.tasks.ui/icons/eview16/task-list.gif)
+	at org.eclipse.jface.resource.ImageDescriptor.createResource(ImageDescriptor.java:184)
+	at org.eclipse.jface.resource.DeviceResourceManager.allocate(DeviceResourceManager.java:55)
+	at org.eclipse.jface.resource.AbstractResourceManager.create(AbstractResourceManager.java:88)
+	at org.eclipse.jface.resource.ResourceManager.createImageWithDefault(ResourceManager.java:195)
+	at org.eclipse.jface.resource.ImageRegistry.get(ImageRegistry.java:206)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.getImageFromURI(SWTPartRenderer.java:220)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.getImage(SWTPartRenderer.java:230)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer.createTab(StackRenderer.java:874)
+	at org.eclipse.e4.ui.workbench.renderers.swt.LazyStackRenderer.processContents(LazyStackRenderer.java:145)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:689)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:781)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:752)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:746)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:730)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:72)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:140)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:689)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:781)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:752)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:746)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:730)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:72)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:140)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:689)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:781)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:752)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:746)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:730)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:72)
+	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveRenderer.processContents(PerspectiveRenderer.java:51)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:689)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:781)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:752)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:746)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:730)
+	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveStackRenderer.showTab(PerspectiveStackRenderer.java:82)
+	at org.eclipse.e4.ui.workbench.renderers.swt.LazyStackRenderer.postProcess(LazyStackRenderer.java:105)
+	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveStackRenderer.postProcess(PerspectiveStackRenderer.java:64)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:693)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:781)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:752)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:746)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:730)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:72)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:140)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:689)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:781)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:752)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:746)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:730)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:72)
+	at org.eclipse.e4.ui.workbench.renderers.swt.WBWRenderer.processContents(WBWRenderer.java:665)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:689)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:781)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:752)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:746)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:730)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1099)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1062)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:566)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:155)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:661)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:597)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1476)
+
+!ENTRY org.eclipse.egit.ui 2 0 2019-06-02 12:23:52.301
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Pluscrafter'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2019-06-02 12:23:54.431
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.ui 4 0 2019-06-02 12:33:12.612
+!MESSAGE Unhandled event loop exception
+!STACK 0
+org.eclipse.swt.SWTException: Widget is disposed
+	at org.eclipse.swt.SWT.error(SWT.java:4699)
+	at org.eclipse.swt.SWT.error(SWT.java:4614)
+	at org.eclipse.swt.SWT.error(SWT.java:4585)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:451)
+	at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:350)
+	at org.eclipse.swt.widgets.Composite.getChildren(Composite.java:469)
+	at org.eclipse.epp.internal.mpc.ui.wizards.MarketplaceDropAdapter.lambda$0(MarketplaceDropAdapter.java:136)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3919)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3550)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1173)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1062)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:566)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:155)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:661)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:597)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1476)
+
+!ENTRY org.eclipse.ui 4 0 2019-06-02 12:33:12.615
+!MESSAGE Unhandled event loop exception
+!STACK 0
+org.eclipse.swt.SWTException: Widget is disposed
+	at org.eclipse.swt.SWT.error(SWT.java:4699)
+	at org.eclipse.swt.SWT.error(SWT.java:4614)
+	at org.eclipse.swt.SWT.error(SWT.java:4585)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:451)
+	at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:350)
+	at org.eclipse.swt.widgets.Composite.getChildren(Composite.java:469)
+	at org.eclipse.epp.internal.mpc.ui.wizards.MarketplaceDropAdapter.lambda$0(MarketplaceDropAdapter.java:136)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3919)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3550)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1173)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1062)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:566)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:155)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:661)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:597)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1476)
+
+!ENTRY org.eclipse.ui 4 0 2019-06-02 12:33:12.620
+!MESSAGE Unhandled event loop exception
+!STACK 0
+org.eclipse.swt.SWTException: Widget is disposed
+	at org.eclipse.swt.SWT.error(SWT.java:4699)
+	at org.eclipse.swt.SWT.error(SWT.java:4614)
+	at org.eclipse.swt.SWT.error(SWT.java:4585)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:451)
+	at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:350)
+	at org.eclipse.swt.widgets.Composite.getChildren(Composite.java:469)
+	at org.eclipse.epp.internal.mpc.ui.wizards.MarketplaceDropAdapter.lambda$0(MarketplaceDropAdapter.java:136)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3919)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3550)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1173)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1062)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:566)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:155)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:661)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:597)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1476)
+
+!ENTRY org.eclipse.ui 4 0 2019-06-02 12:33:12.624
+!MESSAGE Unhandled event loop exception
+!STACK 0
+org.eclipse.swt.SWTException: Widget is disposed
+	at org.eclipse.swt.SWT.error(SWT.java:4699)
+	at org.eclipse.swt.SWT.error(SWT.java:4614)
+	at org.eclipse.swt.SWT.error(SWT.java:4585)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:451)
+	at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:350)
+	at org.eclipse.swt.widgets.Composite.getChildren(Composite.java:469)
+	at org.eclipse.epp.internal.mpc.ui.wizards.MarketplaceDropAdapter.lambda$0(MarketplaceDropAdapter.java:136)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3919)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3550)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1173)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1062)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:566)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:155)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:661)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:597)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1476)
+
+!ENTRY org.eclipse.ui 4 0 2019-06-02 12:33:12.627
+!MESSAGE Unhandled event loop exception
+!STACK 0
+org.eclipse.swt.SWTException: Widget is disposed
+	at org.eclipse.swt.SWT.error(SWT.java:4699)
+	at org.eclipse.swt.SWT.error(SWT.java:4614)
+	at org.eclipse.swt.SWT.error(SWT.java:4585)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:451)
+	at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:350)
+	at org.eclipse.swt.widgets.Composite.getChildren(Composite.java:469)
+	at org.eclipse.epp.internal.mpc.ui.wizards.MarketplaceDropAdapter.lambda$0(MarketplaceDropAdapter.java:136)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3919)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3550)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1173)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1062)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:566)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:155)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:661)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:597)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1476)
+
+!ENTRY org.eclipse.ui 4 0 2019-06-02 12:33:12.630
+!MESSAGE Unhandled event loop exception
+!STACK 0
+org.eclipse.swt.SWTException: Widget is disposed
+	at org.eclipse.swt.SWT.error(SWT.java:4699)
+	at org.eclipse.swt.SWT.error(SWT.java:4614)
+	at org.eclipse.swt.SWT.error(SWT.java:4585)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:451)
+	at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:350)
+	at org.eclipse.swt.widgets.Composite.getChildren(Composite.java:469)
+	at org.eclipse.epp.internal.mpc.ui.wizards.MarketplaceDropAdapter.lambda$0(MarketplaceDropAdapter.java:136)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3919)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3550)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1173)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1062)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:566)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:155)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:661)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:597)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1476)
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 5012 2019-06-02 13:25:17.828
+!MESSAGE Error in final launch sequence:
+
+Failed to execute MI command:
+-exec-continue
+
+Error message from debugger back end:
+Cannot execute this command while the selected thread is running.
+!STACK 1
+org.eclipse.core.runtime.CoreException: Failed to execute MI command:
+-exec-continue
+
+Error message from debugger back end:
+Cannot execute this command while the selected thread is running.
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:112)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugSession(GdbLaunchDelegate.java:242)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugger(GdbLaunchDelegate.java:106)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launch(GdbLaunchDelegate.java:94)
+	at com.st.stm32cube.ide.mcu.debug.launch.DSFDelegate.launch(DSFDelegate.java:85)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:862)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:720)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1029)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1243)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.lang.Exception: Cannot execute this command while the selected thread is running.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:993)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:822)
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2019-06-02 13:25:17.830
+!MESSAGE Failed to execute MI command:
+-exec-continue
+
+Error message from debugger back end:
+Cannot execute this command while the selected thread is running.
+!STACK 0
+java.lang.Exception: Cannot execute this command while the selected thread is running.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:993)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:822)
+2019-06-02 16:15:58,451 [INFO] com.st.components.util.ApplicationProperties.getApplicationPath(ApplicationProperties.java:181) - Using Application install path: D:\Programs\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_1.0.0.201904230831
+2019-06-02 16:15:58,479 [INFO] com.st.microxplorer.mcufinder.db.DbMcusXml.setDbPaths(DbMcusXml.java:68) - Set database path to: D:\Programs\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_1.0.0.201904230831\\db\/mcu/
+2019-06-02 16:15:58,484 [INFO] com.st.microxplorer.mcufinder.db.DbBoardsPdsc.setBoardPluginDbPath(DbBoardsPdsc.java:54) - Set plugin database path to: D:\Programs\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_1.0.0.201904230831\\db\/plugins/boardmanager/
+2019-06-02 16:15:58,484 [INFO] com.st.microxplorer.mcufinder.db.DbMcus.setPluginImagesPath(DbMcus.java:262) - Set plugin images path to: D:\Programs\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_1.0.0.201904230831\\db\/plugins/mcufinder/images/
+2019-06-02 16:15:58,485 [INFO] com.st.microxplorer.mcufinder.db.DbBoards.setPluginImagesPath(DbBoards.java:225) - Set plugin images path to: D:\Programs\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_1.0.0.201904230831\\db\/plugins/mcufinder/images/
+2019-06-02 16:15:58,487 [INFO] com.st.microxplorer.mcufinder.db.APIGFXSelector.setDatabasePath(APIGFXSelector.java:72) - Set database path to: D:\Programs\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_1.0.0.201904230831\\db\/plugins/mcufinder/mcu/
+2019-06-02 16:15:58,522 [INFO] com.st.microxplorer.mcufinder.db.DbMcusAds.setDbPaths(DbMcusAds.java:72) - Set database path to: C:\Users\Pluscrafter\.stmcufinder\plugins\mcufinder//mcu/
+2019-06-02 16:15:58,523 [INFO] com.st.microxplorer.mcufinder.db.DbMcusDocs.setDbPaths(DbMcusDocs.java:90) - Set database path to: C:\Users\Pluscrafter\.stmcufinder\plugins\mcufinder//mcu/
+2019-06-02 16:15:58,525 [INFO] com.st.microxplorer.mcufinder.db.DbMcusJson.setDbPaths(DbMcusJson.java:59) - Set database path to: C:\Users\Pluscrafter\.stmcufinder\plugins\mcufinder//mcu/
+2019-06-02 16:15:58,526 [INFO] com.st.microxplorer.mcufinder.db.DbBoardsDocs.setDbPaths(DbBoardsDocs.java:82) - Set database path to: C:\Users\Pluscrafter\.stmcufinder\plugins\mcufinder//mcu/
+2019-06-02 16:15:58,527 [INFO] com.st.microxplorer.mcufinder.db.DbBoardsJson.setDbPaths(DbBoardsJson.java:51) - Set database path to: C:\Users\Pluscrafter\.stmcufinder\plugins\mcufinder//mcu/
+2019-06-02 16:15:58,543 [INFO] com.st.microxplorer.mcufinder.db.crossselector.CrossReferenceDbSqlite.setDbPaths(CrossReferenceDbSqlite.java:197) - Set database path to: C:\Users\Pluscrafter\.stmcufinder\plugins\mcufinder//mcu/cs/
+2019-06-02 16:15:58,655 [INFO] com.st.microxplorer.db.RulesReader.<init>(RulesReader.java:52) - Compatibility file has been processed (156 Rules)
+2019-06-02 16:15:58,733 [INFO] com.st.microxplorer.maingui.MicroXplorer.checkJavaVersion(MicroXplorer.java:521) - Detected Java Version = 1.8.0_202
+2019-06-02 16:15:58,733 [INFO] com.st.microxplorer.mcufinder.db.DbMcusXml.setDbPaths(DbMcusXml.java:68) - Set database path to: D:\Programs\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_1.0.0.201904230831\\db\/mcu/
+2019-06-02 16:15:58,733 [INFO] com.st.microxplorer.mcufinder.db.DbBoardsPdsc.setBoardPluginDbPath(DbBoardsPdsc.java:54) - Set plugin database path to: D:\Programs\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_1.0.0.201904230831\\db\/plugins/boardmanager/
+2019-06-02 16:15:58,733 [INFO] com.st.microxplorer.mcufinder.db.DbMcus.setPluginImagesPath(DbMcus.java:262) - Set plugin images path to: D:\Programs\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_1.0.0.201904230831\\db\/plugins/mcufinder/images/
+2019-06-02 16:15:58,735 [INFO] com.st.microxplorer.mcufinder.db.DbBoards.setPluginImagesPath(DbBoards.java:225) - Set plugin images path to: D:\Programs\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_1.0.0.201904230831\\db\/plugins/mcufinder/images/
+2019-06-02 16:15:58,735 [INFO] com.st.microxplorer.mcufinder.db.APIGFXSelector.setDatabasePath(APIGFXSelector.java:72) - Set database path to: D:\Programs\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_1.0.0.201904230831\\db\/plugins/mcufinder/mcu/
+2019-06-02 16:15:58,735 [WARN] com.st.microxplorer.mcufinder.db.DbFile.setPath(DbFile.java:31) - Overriding database path with different value: C:\Users\Pluscrafter\.stmcufinder\plugins\mcufinder/ => C:\Users\Pluscrafter\.stmcufinder\plugins\mcufinder
+2019-06-02 16:15:58,735 [INFO] com.st.microxplorer.mcufinder.db.DbMcusAds.setDbPaths(DbMcusAds.java:72) - Set database path to: C:\Users\Pluscrafter\.stmcufinder\plugins\mcufinder//mcu/
+2019-06-02 16:15:58,735 [WARN] com.st.microxplorer.mcufinder.db.DbFile.setPath(DbFile.java:31) - Overriding database path with different value: C:\Users\Pluscrafter\.stmcufinder\plugins\mcufinder/ => C:\Users\Pluscrafter\.stmcufinder\plugins\mcufinder
+2019-06-02 16:15:58,735 [INFO] com.st.microxplorer.mcufinder.db.DbMcusDocs.setDbPaths(DbMcusDocs.java:90) - Set database path to: C:\Users\Pluscrafter\.stmcufinder\plugins\mcufinder//mcu/
+2019-06-02 16:15:58,735 [WARN] com.st.microxplorer.mcufinder.db.DbFile.setPath(DbFile.java:31) - Overriding database path with different value: C:\Users\Pluscrafter\.stmcufinder\plugins\mcufinder/ => C:\Users\Pluscrafter\.stmcufinder\plugins\mcufinder
+2019-06-02 16:15:58,735 [INFO] com.st.microxplorer.mcufinder.db.DbMcusJson.setDbPaths(DbMcusJson.java:59) - Set database path to: C:\Users\Pluscrafter\.stmcufinder\plugins\mcufinder//mcu/
+2019-06-02 16:15:58,735 [WARN] com.st.microxplorer.mcufinder.db.DbFile.setPath(DbFile.java:31) - Overriding database path with different value: C:\Users\Pluscrafter\.stmcufinder\plugins\mcufinder/ => C:\Users\Pluscrafter\.stmcufinder\plugins\mcufinder
+2019-06-02 16:15:58,735 [INFO] com.st.microxplorer.mcufinder.db.DbBoardsDocs.setDbPaths(DbBoardsDocs.java:82) - Set database path to: C:\Users\Pluscrafter\.stmcufinder\plugins\mcufinder//mcu/
+2019-06-02 16:15:58,735 [WARN] com.st.microxplorer.mcufinder.db.DbFile.setPath(DbFile.java:31) - Overriding database path with different value: C:\Users\Pluscrafter\.stmcufinder\plugins\mcufinder/ => C:\Users\Pluscrafter\.stmcufinder\plugins\mcufinder
+2019-06-02 16:15:58,737 [INFO] com.st.microxplorer.mcufinder.db.DbBoardsJson.setDbPaths(DbBoardsJson.java:51) - Set database path to: C:\Users\Pluscrafter\.stmcufinder\plugins\mcufinder//mcu/
+2019-06-02 16:15:58,737 [WARN] com.st.microxplorer.mcufinder.db.DbFile.setPath(DbFile.java:31) - Overriding database path with different value: C:\Users\Pluscrafter\.stmcufinder\plugins\mcufinder/ => C:\Users\Pluscrafter\.stmcufinder\plugins\mcufinder
+2019-06-02 16:15:58,737 [WARN] com.st.microxplorer.mcufinder.db.DbFile.setPath(DbFile.java:31) - Overriding database path with different value: C:\Users\Pluscrafter\.stmcufinder\plugins\mcufinder/ => C:\Users\Pluscrafter\.stmcufinder\plugins\mcufinder
+2019-06-02 16:15:58,737 [INFO] com.st.microxplorer.mcufinder.db.crossselector.CrossReferenceDbSqlite.setDbPaths(CrossReferenceDbSqlite.java:197) - Set database path to: C:\Users\Pluscrafter\.stmcufinder\plugins\mcufinder//mcu/cs/
+2019-06-02 16:15:58,794 [INFO] com.st.microxplorer.maingui.MainPanel.<init>(MainPanel.java:211) - HeapMemory: 313524224
+2019-06-02 16:15:58,851 [INFO] com.st.microxplorer.mcufinder.db.DbMcusXml.setDbPaths(DbMcusXml.java:68) - Set database path to: D:\Programs\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_1.0.0.201904230831\\db\/mcu/
+2019-06-02 16:15:58,851 [INFO] com.st.microxplorer.mcufinder.db.DbBoardsPdsc.setBoardPluginDbPath(DbBoardsPdsc.java:54) - Set plugin database path to: D:\Programs\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_1.0.0.201904230831\\db\/plugins/boardmanager/
+2019-06-02 16:15:58,851 [INFO] com.st.microxplorer.mcufinder.db.DbMcus.setPluginImagesPath(DbMcus.java:262) - Set plugin images path to: D:\Programs\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_1.0.0.201904230831\\db\/plugins/mcufinder/images/
+2019-06-02 16:15:58,852 [INFO] com.st.microxplorer.mcufinder.db.DbBoards.setPluginImagesPath(DbBoards.java:225) - Set plugin images path to: D:\Programs\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_1.0.0.201904230831\\db\/plugins/mcufinder/images/
+2019-06-02 16:15:58,852 [INFO] com.st.microxplorer.mcufinder.db.APIGFXSelector.setDatabasePath(APIGFXSelector.java:72) - Set database path to: D:\Programs\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_1.0.0.201904230831\\db\/plugins/mcufinder/mcu/
+2019-06-02 16:15:58,852 [WARN] com.st.microxplorer.mcufinder.db.DbFile.setPath(DbFile.java:31) - Overriding database path with different value: C:\Users\Pluscrafter\.stmcufinder\plugins\mcufinder/ => C:\Users\Pluscrafter\.stmcufinder\plugins\mcufinder
+2019-06-02 16:15:58,853 [INFO] com.st.microxplorer.mcufinder.db.DbMcusAds.setDbPaths(DbMcusAds.java:72) - Set database path to: C:\Users\Pluscrafter\.stmcufinder\plugins\mcufinder//mcu/
+2019-06-02 16:15:58,853 [WARN] com.st.microxplorer.mcufinder.db.DbFile.setPath(DbFile.java:31) - Overriding database path with different value: C:\Users\Pluscrafter\.stmcufinder\plugins\mcufinder/ => C:\Users\Pluscrafter\.stmcufinder\plugins\mcufinder
+2019-06-02 16:15:58,853 [INFO] com.st.microxplorer.mcufinder.db.DbMcusDocs.setDbPaths(DbMcusDocs.java:90) - Set database path to: C:\Users\Pluscrafter\.stmcufinder\plugins\mcufinder//mcu/
+2019-06-02 16:15:58,853 [WARN] com.st.microxplorer.mcufinder.db.DbFile.setPath(DbFile.java:31) - Overriding database path with different value: C:\Users\Pluscrafter\.stmcufinder\plugins\mcufinder/ => C:\Users\Pluscrafter\.stmcufinder\plugins\mcufinder
+2019-06-02 16:15:58,853 [INFO] com.st.microxplorer.mcufinder.db.DbMcusJson.setDbPaths(DbMcusJson.java:59) - Set database path to: C:\Users\Pluscrafter\.stmcufinder\plugins\mcufinder//mcu/
+2019-06-02 16:15:58,853 [WARN] com.st.microxplorer.mcufinder.db.DbFile.setPath(DbFile.java:31) - Overriding database path with different value: C:\Users\Pluscrafter\.stmcufinder\plugins\mcufinder/ => C:\Users\Pluscrafter\.stmcufinder\plugins\mcufinder
+2019-06-02 16:15:58,854 [INFO] com.st.microxplorer.mcufinder.db.DbBoardsDocs.setDbPaths(DbBoardsDocs.java:82) - Set database path to: C:\Users\Pluscrafter\.stmcufinder\plugins\mcufinder//mcu/
+2019-06-02 16:15:58,854 [WARN] com.st.microxplorer.mcufinder.db.DbFile.setPath(DbFile.java:31) - Overriding database path with different value: C:\Users\Pluscrafter\.stmcufinder\plugins\mcufinder/ => C:\Users\Pluscrafter\.stmcufinder\plugins\mcufinder
+2019-06-02 16:15:58,854 [INFO] com.st.microxplorer.mcufinder.db.DbBoardsJson.setDbPaths(DbBoardsJson.java:51) - Set database path to: C:\Users\Pluscrafter\.stmcufinder\plugins\mcufinder//mcu/
+2019-06-02 16:15:58,854 [WARN] com.st.microxplorer.mcufinder.db.DbFile.setPath(DbFile.java:31) - Overriding database path with different value: C:\Users\Pluscrafter\.stmcufinder\plugins\mcufinder/ => C:\Users\Pluscrafter\.stmcufinder\plugins\mcufinder
+2019-06-02 16:15:58,854 [WARN] com.st.microxplorer.mcufinder.db.DbFile.setPath(DbFile.java:31) - Overriding database path with different value: C:\Users\Pluscrafter\.stmcufinder\plugins\mcufinder/ => C:\Users\Pluscrafter\.stmcufinder\plugins\mcufinder
+2019-06-02 16:15:58,855 [INFO] com.st.microxplorer.mcufinder.db.crossselector.CrossReferenceDbSqlite.setDbPaths(CrossReferenceDbSqlite.java:197) - Set database path to: C:\Users\Pluscrafter\.stmcufinder\plugins\mcufinder//mcu/cs/
+2019-06-02 16:15:58,868 [INFO] com.st.components.util.ApplicationProperties.getApplicationPath(ApplicationProperties.java:181) - Using Application install path: D:\Programs\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_1.0.0.201904230831
+2019-06-02 16:15:58,870 [INFO] com.st.microxplorer.plugin.PluginManage.PluginSearch(PluginManage.java:178) - Search for loadable plugins [exclusion list=]
+2019-06-02 16:15:58,871 [INFO] com.st.microxplorer.plugin.PluginManage.loadPluginJar(PluginManage.java:292) - Check plugin analytics
+2019-06-02 16:15:58,916 [INFO] com.st.microxplorer.plugin.PluginManage.loadPluginJar(PluginManage.java:342) - Loaded plugin analytics (category:tool,tabindex:-1)
+2019-06-02 16:15:58,916 [INFO] com.st.microxplorer.plugin.PluginManage.loadPluginJar(PluginManage.java:292) - Check plugin clock
+2019-06-02 16:15:58,976 [INFO] com.st.microxplorer.plugin.PluginManage.loadPluginJar(PluginManage.java:342) - Loaded plugin clock (category:base,tabindex:2)
+2019-06-02 16:15:58,977 [INFO] com.st.microxplorer.plugin.PluginManage.loadPluginJar(PluginManage.java:292) - Check plugin ddr
+2019-06-02 16:15:59,008 [INFO] com.st.microxplorer.plugin.PluginManage.loadPluginJar(PluginManage.java:342) - Loaded plugin ddr (category:tool,tabindex:6)
+2019-06-02 16:15:59,008 [INFO] com.st.microxplorer.plugin.PluginManage.loadPluginJar(PluginManage.java:292) - Check plugin filemanager
+2019-06-02 16:15:59,167 [INFO] com.st.microxplorer.plugin.PluginManage.loadPluginJar(PluginManage.java:342) - Loaded plugin filemanager (category:base,tabindex:10)
+2019-06-02 16:15:59,167 [INFO] com.st.microxplorer.plugin.PluginManage.loadPluginJar(PluginManage.java:292) - Check plugin ipmanager
+2019-06-02 16:15:59,482 [INFO] com.st.microxplorer.plugin.PluginManage.loadPluginJar(PluginManage.java:342) - Loaded plugin ipmanager (category:base,tabindex:5)
+2019-06-02 16:15:59,482 [INFO] com.st.microxplorer.plugin.PluginManage.loadPluginJar(PluginManage.java:292) - Check plugin pinoutandconfiguration
+2019-06-02 16:15:59,787 [INFO] com.st.microxplorer.plugin.PluginManage.loadPluginJar(PluginManage.java:342) - Loaded plugin pinoutandconfiguration (category:base,tabindex:1)
+2019-06-02 16:15:59,787 [INFO] com.st.microxplorer.plugin.PluginManage.loadPluginJar(PluginManage.java:292) - Check plugin pinoutconfig
+2019-06-02 16:16:00,038 [INFO] com.st.microxplorer.plugin.PluginManage.loadPluginJar(PluginManage.java:342) - Loaded plugin pinoutconfig (category:base,tabindex:0)
+2019-06-02 16:16:00,038 [INFO] com.st.microxplorer.plugin.PluginManage.loadPluginJar(PluginManage.java:292) - Check plugin power
+2019-06-02 16:16:00,071 [INFO] com.st.microxplorer.plugin.PluginManage.loadPluginJar(PluginManage.java:342) - Loaded plugin power (category:power,tabindex:4)
+2019-06-02 16:16:00,072 [INFO] com.st.microxplorer.plugin.PluginManage.loadPluginJar(PluginManage.java:292) - Check plugin projectmanager
+2019-06-02 16:16:00,092 [INFO] com.st.microxplorer.plugin.PluginManage.loadPluginJar(PluginManage.java:342) - Loaded plugin projectmanager (category:projectmanager,tabindex:3)
+2019-06-02 16:16:00,093 [INFO] com.st.microxplorer.plugin.PluginManage.loadPluginJar(PluginManage.java:292) - Check plugin thirdparty
+2019-06-02 16:16:00,745 [INFO] com.st.microxplorer.plugins.thirdparty.xml.ThirdPartyDb.readDb(ThirdPartyDb.java:293) - Open Third Party DataBase File (C:/Users/Pluscrafter/.stm32cubemx/plugins/thirdparty/db/thirdparties_db.xml) : 12 ms. number of Sw pack : 8
+2019-06-02 16:16:00,754 [INFO] com.st.microxplorer.plugin.PluginManage.loadPluginJar(PluginManage.java:342) - Loaded plugin thirdparty (category:base,tabindex:-1)
+2019-06-02 16:16:00,755 [INFO] com.st.microxplorer.plugin.PluginManage.loadPluginJar(PluginManage.java:292) - Check plugin tools
+2019-06-02 16:16:00,776 [INFO] com.st.microxplorer.plugin.PluginManage.loadPluginJar(PluginManage.java:342) - Loaded plugin tools (category:base,tabindex:7)
+2019-06-02 16:16:00,776 [INFO] com.st.microxplorer.plugin.PluginManage.loadPluginJar(PluginManage.java:292) - Check plugin updater
+2019-06-02 16:16:00,796 [INFO] com.st.microxplorer.plugin.PluginManage.loadPluginJar(PluginManage.java:342) - Loaded plugin updater (category:base,tabindex:12)
+2019-06-02 16:16:00,796 [INFO] com.st.microxplorer.plugin.PluginManage.PluginSearch(PluginManage.java:265) - PluginManage : Loaded plugins [12]
+2019-06-02 16:16:00,946 [INFO] com.st.microxplorer.plugins.pinoutconfig.gui.PinOutPanel.setPackage(PinOutPanel.java:1361) - setPackage(No Configuration,No Configuration)
+2019-06-02 16:16:01,092 [INFO] com.st.microxplorer.plugins.ipmanager.pluginmanagement.PluginManager.loadPluginJar(PluginManager.java:200) - loadIPPluginJar : add adc
+2019-06-02 16:16:01,139 [INFO] com.st.microxplorer.plugins.ipmanager.pluginmanagement.PluginManager.loadPluginJar(PluginManager.java:200) - loadIPPluginJar : add aes
+2019-06-02 16:16:01,177 [INFO] com.st.microxplorer.plugins.ipmanager.pluginmanagement.PluginManager.loadPluginJar(PluginManager.java:200) - loadIPPluginJar : add can
+2019-06-02 16:16:01,188 [INFO] com.st.microxplorer.plugins.ipmanager.pluginmanagement.PluginManager.loadPluginJar(PluginManager.java:200) - loadIPPluginJar : add comp
+2019-06-02 16:16:01,211 [INFO] com.st.microxplorer.plugins.ipmanager.pluginmanagement.PluginManager.loadPluginJar(PluginManager.java:200) - loadIPPluginJar : add cryp
+2019-06-02 16:16:01,236 [INFO] com.st.microxplorer.plugins.ipmanager.pluginmanagement.PluginManager.loadPluginJar(PluginManager.java:200) - loadIPPluginJar : add dfsdm
+2019-06-02 16:16:01,318 [INFO] com.st.microxplorer.plugins.ipmanager.pluginmanagement.PluginManager.loadPluginJar(PluginManager.java:200) - loadIPPluginJar : add dma
+2019-06-02 16:16:01,329 [INFO] com.st.microxplorer.plugins.ipmanager.pluginmanagement.PluginManager.loadPluginJar(PluginManager.java:200) - loadIPPluginJar : add fatfs
+2019-06-02 16:16:01,396 [INFO] com.st.microxplorer.plugins.ipmanager.pluginmanagement.PluginManager.loadPluginJar(PluginManager.java:200) - loadIPPluginJar : add fmc
+2019-06-02 16:16:01,685 [INFO] com.st.microxplorer.plugins.ipmanager.pluginmanagement.PluginManager.loadPluginJar(PluginManager.java:200) - loadIPPluginJar : add freertos
+2019-06-02 16:16:01,696 [INFO] com.st.microxplorer.plugins.ipmanager.pluginmanagement.PluginManager.loadPluginJar(PluginManager.java:200) - loadIPPluginJar : add genericplugin
+2019-06-02 16:16:01,793 [INFO] com.st.microxplorer.plugins.ipmanager.pluginmanagement.PluginManager.loadPluginJar(PluginManager.java:200) - loadIPPluginJar : add gfxmmu
+2019-06-02 16:16:01,914 [INFO] com.st.microxplorer.plugins.ipmanager.pluginmanagement.PluginManager.loadPluginJar(PluginManager.java:200) - loadIPPluginJar : add gfxsimulator
+2019-06-02 16:16:02,024 [INFO] com.st.microxplorer.plugins.ipmanager.pluginmanagement.PluginManager.loadPluginJar(PluginManager.java:200) - loadIPPluginJar : add gic
+2019-06-02 16:16:02,125 [INFO] com.st.microxplorer.plugins.ipmanager.pluginmanagement.PluginManager.loadPluginJar(PluginManager.java:200) - loadIPPluginJar : add gpio
+2019-06-02 16:16:02,147 [INFO] com.st.microxplorer.plugins.ipmanager.pluginmanagement.PluginManager.loadPluginJar(PluginManager.java:200) - loadIPPluginJar : add hash
+2019-06-02 16:16:02,192 [INFO] com.st.microxplorer.plugins.ipmanager.pluginmanagement.PluginManager.loadPluginJar(PluginManager.java:200) - loadIPPluginJar : add i2c
+2019-06-02 16:16:02,215 [INFO] com.st.microxplorer.plugins.ipmanager.pluginmanagement.PluginManager.loadPluginJar(PluginManager.java:200) - loadIPPluginJar : add i2s
+2019-06-02 16:16:02,369 [INFO] com.st.microxplorer.plugins.ipmanager.pluginmanagement.PluginManager.loadPluginJar(PluginManager.java:200) - loadIPPluginJar : add ipddr
+2019-06-02 16:16:02,405 [INFO] com.st.microxplorer.plugins.ipmanager.pluginmanagement.PluginManager.loadPluginJar(PluginManager.java:200) - loadIPPluginJar : add ltdc
+2019-06-02 16:16:02,535 [INFO] com.st.microxplorer.plugins.ipmanager.pluginmanagement.PluginManager.loadPluginJar(PluginManager.java:200) - loadIPPluginJar : add mdma
+2019-06-02 16:16:02,641 [INFO] com.st.microxplorer.plugins.ipmanager.pluginmanagement.PluginManager.loadPluginJar(PluginManager.java:200) - loadIPPluginJar : add nvic
+2019-06-02 16:16:02,678 [INFO] com.st.microxplorer.plugins.ipmanager.pluginmanagement.PluginManager.loadPluginJar(PluginManager.java:200) - loadIPPluginJar : add opamp
+2019-06-02 16:16:02,722 [INFO] com.st.microxplorer.plugins.ipmanager.pluginmanagement.PluginManager.loadPluginJar(PluginManager.java:200) - loadIPPluginJar : add pdm2pcm
+2019-06-02 16:16:02,821 [INFO] com.st.microxplorer.plugins.ipmanager.pluginmanagement.PluginManager.loadPluginJar(PluginManager.java:200) - loadIPPluginJar : add plateformsettings
+2019-06-02 16:16:02,844 [INFO] com.st.microxplorer.plugins.ipmanager.pluginmanagement.PluginManager.loadPluginJar(PluginManager.java:200) - loadIPPluginJar : add quadspi
+2019-06-02 16:16:02,920 [INFO] com.st.microxplorer.plugins.ipmanager.pluginmanagement.PluginManager.loadPluginJar(PluginManager.java:200) - loadIPPluginJar : add resmgrutility
+2019-06-02 16:16:02,979 [INFO] com.st.microxplorer.plugins.ipmanager.pluginmanagement.PluginManager.loadPluginJar(PluginManager.java:200) - loadIPPluginJar : add sai
+2019-06-02 16:16:03,003 [INFO] com.st.microxplorer.plugins.ipmanager.pluginmanagement.PluginManager.loadPluginJar(PluginManager.java:200) - loadIPPluginJar : add spi
+2019-06-02 16:16:03,032 [INFO] com.st.microxplorer.plugins.ipmanager.pluginmanagement.PluginManager.loadPluginJar(PluginManager.java:200) - loadIPPluginJar : add stm32_wpan
+2019-06-02 16:16:03,060 [INFO] com.st.microxplorer.plugins.ipmanager.pluginmanagement.PluginManager.loadPluginJar(PluginManager.java:200) - loadIPPluginJar : add tim
+2019-06-02 16:16:03,139 [INFO] com.st.microxplorer.plugins.ipmanager.pluginmanagement.PluginManager.loadPluginJar(PluginManager.java:200) - loadIPPluginJar : add touchsensing
+2019-06-02 16:16:03,154 [INFO] com.st.microxplorer.plugins.ipmanager.pluginmanagement.PluginManager.loadPluginJar(PluginManager.java:200) - loadIPPluginJar : add tracer_emb
+2019-06-02 16:16:03,168 [INFO] com.st.microxplorer.plugins.ipmanager.pluginmanagement.PluginManager.loadPluginJar(PluginManager.java:200) - loadIPPluginJar : add ts
+2019-06-02 16:16:03,180 [INFO] com.st.microxplorer.plugins.ipmanager.pluginmanagement.PluginManager.loadPluginJar(PluginManager.java:200) - loadIPPluginJar : add tsc
+2019-06-02 16:16:03,194 [INFO] com.st.microxplorer.plugins.ipmanager.pluginmanagement.PluginManager.loadPluginJar(PluginManager.java:200) - loadIPPluginJar : add ucpd
+2019-06-02 16:16:03,224 [INFO] com.st.microxplorer.plugins.ipmanager.pluginmanagement.PluginManager.loadPluginJar(PluginManager.java:200) - loadIPPluginJar : add usart
+2019-06-02 16:16:04,166 [FATAL] com.st.microxplorer.plugins.updater.Updater.getSpecificTask(Updater.java:277) - Updater called before beeing initialized
+2019-06-02 16:16:04,449 [FATAL] com.st.microxplorer.plugins.updater.Updater.getSpecificTask(Updater.java:277) - Updater called before beeing initialized
+2019-06-02 16:16:04,455 [INFO] com.st.microxplorer.plugins.pinoutconfig.gui.PinOutPanel.setPackage(PinOutPanel.java:1361) - setPackage(No Configuration,No Configuration)
+2019-06-02 16:16:04,458 [FATAL] com.st.microxplorer.plugins.updater.Updater.getSpecificTask(Updater.java:277) - Updater called before beeing initialized
+2019-06-02 16:16:04,480 [INFO] com.st.microxplorer.plugins.updater.Updater.initPhase2(Updater.java:860) - Updater Version found : 5.2.0
+2019-06-02 16:16:04,493 [INFO] com.st.components.util.ApplicationProperties.getApplicationPath(ApplicationProperties.java:181) - Using Application install path: D:\Programs\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_1.0.0.201904230831
+2019-06-02 16:16:05,492 [INFO] com.st.microxplorer.plugins.updater.engine.MainUpdater.performConnectionCheck(MainUpdater.java:2032) - connection check result : 10
+2019-06-02 16:16:05,494 [INFO] com.st.microxplorer.plugins.updater.engine.MainUpdater.<init>(MainUpdater.java:223) - Updater Check For Update Now.
+2019-06-02 16:16:05,494 [INFO] com.st.microxplorer.maingui.MicroXplorer.setDataBaseVersion(MicroXplorer.java:401) - Change Database Version : DB.5.0.20
+2019-06-02 16:16:05,563 [INFO] com.st.microxplorer.plugins.updater.engine.CheckServerUpdateThread.run(CheckServerUpdateThread.java:121) - End of CheckServer Thread
+2019-06-02 16:16:05,730 [INFO] com.st.microxplorer.plugins.updater.engine.MainUpdater.performConnectionCheck(MainUpdater.java:2032) - connection check result : 10
+2019-06-02 16:16:06,001 [INFO] com.st.microxplorer.maingui.MicroXplorer.setDataBaseInstallationPath(MicroXplorer.java:371) - Change Database Path : 
+2019-06-02 16:16:06,001 [INFO] com.st.microxplorer.maingui.MicroXplorer.setDataBaseVersion(MicroXplorer.java:401) - Change Database Version : DB.5.0.20
+2019-06-02 16:16:06,004 [INFO] com.st.microxplorer.plugins.pinoutconfig.gui.PinOutPanel.setPackage(PinOutPanel.java:1361) - setPackage(No Configuration,No Configuration)
+2019-06-02 16:16:06,007 [INFO] com.st.components.util.UtilMem.printUsedHeapMemory(UtilMem.java:74) - Begin LoadConfig() Used Memory: 182510096 Bytes (313524224)
+2019-06-02 16:16:06,007 [INFO] com.st.microxplorer.maingui.MicroXplorer.setDataBaseInstallationPath(MicroXplorer.java:371) - Change Database Path : 
+2019-06-02 16:16:06,008 [INFO] com.st.microxplorer.maingui.MicroXplorer.setDataBaseVersion(MicroXplorer.java:401) - Change Database Version : DB.5.0.20
+2019-06-02 16:16:06,008 [INFO] com.st.microxplorer.plugins.filemanager.engine.OpenFileManager.LoadConfig(OpenFileManager.java:269) - Change cursor
+2019-06-02 16:16:06,781 [INFO] com.st.microxplorer.plugins.thirdparty.xml.ThirdPartyDb.closeDb(ThirdPartyDb.java:263) - Close Third Party DataBase File (C:/Users/Pluscrafter/.stm32cubemx/plugins/thirdparty/db/thirdparties_db.xml)
+2019-06-02 16:16:06,809 [INFO] com.st.microxplorer.plugins.thirdparty.xml.ThirdPartyDb.readDb(ThirdPartyDb.java:293) - Open Third Party DataBase File (C:/Users/Pluscrafter/.stm32cubemx/plugins/thirdparty/db/thirdparties_db.xml) : 2 ms. number of Sw pack : 8
+2019-06-02 16:16:06,810 [INFO] com.st.microxplorer.plugins.thirdparty.xml.ThirdPartyDb.closeDb(ThirdPartyDb.java:263) - Close Third Party DataBase File (C:/Users/Pluscrafter/.stm32cubemx/plugins/thirdparty/db/thirdparties_db.xml)
+2019-06-02 16:16:06,826 [INFO] com.st.microxplorer.plugins.thirdparty.engine.IntegrityCheckThread.run(IntegrityCheckThread.java:94) - End integrity checks thread
+2019-06-02 16:16:08,867 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (ADC1) : Parameter (Rank) has Id (1#ChannelRegularConversion) currently not set
+2019-06-02 16:16:08,868 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (ADC1) : Parameter (Channel) has Id (1#ChannelRegularConversion) currently not set
+2019-06-02 16:16:08,868 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (ADC1) : Parameter (SamplingTime) has Id (1#ChannelRegularConversion) currently not set
+2019-06-02 16:16:08,869 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Instance) has Id (SPI2_RX) currently not set
+2019-06-02 16:16:08,869 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Channel) has Id (SPI2_RX) currently not set
+2019-06-02 16:16:08,869 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Direction) has Id (SPI2_RX) currently not set
+2019-06-02 16:16:08,869 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (PeriphInc) has Id (SPI2_RX) currently not set
+2019-06-02 16:16:08,869 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (MemInc) has Id (SPI2_RX) currently not set
+2019-06-02 16:16:08,869 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (PeriphDataAlignment) has Id (SPI2_RX) currently not set
+2019-06-02 16:16:08,870 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (MemDataAlignment) has Id (SPI2_RX) currently not set
+2019-06-02 16:16:08,870 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Mode) has Id (SPI2_RX) currently not set
+2019-06-02 16:16:08,870 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Priority) has Id (SPI2_RX) currently not set
+2019-06-02 16:16:08,870 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (FIFOMode) has Id (SPI2_RX) currently not set
+2019-06-02 16:16:08,870 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Instance) has Id (SPI3_RX) currently not set
+2019-06-02 16:16:08,870 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Channel) has Id (SPI3_RX) currently not set
+2019-06-02 16:16:08,870 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Direction) has Id (SPI3_RX) currently not set
+2019-06-02 16:16:08,870 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (PeriphInc) has Id (SPI3_RX) currently not set
+2019-06-02 16:16:08,870 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (MemInc) has Id (SPI3_RX) currently not set
+2019-06-02 16:16:08,871 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (PeriphDataAlignment) has Id (SPI3_RX) currently not set
+2019-06-02 16:16:08,871 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (MemDataAlignment) has Id (SPI3_RX) currently not set
+2019-06-02 16:16:08,871 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Mode) has Id (SPI3_RX) currently not set
+2019-06-02 16:16:08,871 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Priority) has Id (SPI3_RX) currently not set
+2019-06-02 16:16:08,871 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (FIFOMode) has Id (SPI3_RX) currently not set
+2019-06-02 16:16:08,871 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Instance) has Id (SPI3_TX) currently not set
+2019-06-02 16:16:08,871 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Channel) has Id (SPI3_TX) currently not set
+2019-06-02 16:16:08,871 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Direction) has Id (SPI3_TX) currently not set
+2019-06-02 16:16:08,871 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (PeriphInc) has Id (SPI3_TX) currently not set
+2019-06-02 16:16:08,871 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (MemInc) has Id (SPI3_TX) currently not set
+2019-06-02 16:16:08,871 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (PeriphDataAlignment) has Id (SPI3_TX) currently not set
+2019-06-02 16:16:08,871 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (MemDataAlignment) has Id (SPI3_TX) currently not set
+2019-06-02 16:16:08,871 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Mode) has Id (SPI3_TX) currently not set
+2019-06-02 16:16:08,871 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Priority) has Id (SPI3_TX) currently not set
+2019-06-02 16:16:08,872 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (FIFOMode) has Id (SPI3_TX) currently not set
+2019-06-02 16:16:08,872 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Instance) has Id (SPI2_TX) currently not set
+2019-06-02 16:16:08,872 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Channel) has Id (SPI2_TX) currently not set
+2019-06-02 16:16:08,872 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Direction) has Id (SPI2_TX) currently not set
+2019-06-02 16:16:08,872 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (PeriphInc) has Id (SPI2_TX) currently not set
+2019-06-02 16:16:08,872 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (MemInc) has Id (SPI2_TX) currently not set
+2019-06-02 16:16:08,872 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (PeriphDataAlignment) has Id (SPI2_TX) currently not set
+2019-06-02 16:16:08,872 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (MemDataAlignment) has Id (SPI2_TX) currently not set
+2019-06-02 16:16:08,872 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Mode) has Id (SPI2_TX) currently not set
+2019-06-02 16:16:08,872 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Priority) has Id (SPI2_TX) currently not set
+2019-06-02 16:16:08,872 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (FIFOMode) has Id (SPI2_TX) currently not set
+2019-06-02 16:16:08,873 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Instance) has Id (I2C1_RX) currently not set
+2019-06-02 16:16:08,873 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Channel) has Id (I2C1_RX) currently not set
+2019-06-02 16:16:08,873 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Direction) has Id (I2C1_RX) currently not set
+2019-06-02 16:16:08,873 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (PeriphInc) has Id (I2C1_RX) currently not set
+2019-06-02 16:16:08,873 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (MemInc) has Id (I2C1_RX) currently not set
+2019-06-02 16:16:08,873 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (PeriphDataAlignment) has Id (I2C1_RX) currently not set
+2019-06-02 16:16:08,873 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (MemDataAlignment) has Id (I2C1_RX) currently not set
+2019-06-02 16:16:08,873 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Mode) has Id (I2C1_RX) currently not set
+2019-06-02 16:16:08,873 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Priority) has Id (I2C1_RX) currently not set
+2019-06-02 16:16:08,873 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (FIFOMode) has Id (I2C1_RX) currently not set
+2019-06-02 16:16:08,873 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Instance) has Id (SDMMC1_TX) currently not set
+2019-06-02 16:16:08,873 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Channel) has Id (SDMMC1_TX) currently not set
+2019-06-02 16:16:08,873 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Direction) has Id (SDMMC1_TX) currently not set
+2019-06-02 16:16:08,873 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (PeriphInc) has Id (SDMMC1_TX) currently not set
+2019-06-02 16:16:08,874 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (MemInc) has Id (SDMMC1_TX) currently not set
+2019-06-02 16:16:08,874 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (PeriphDataAlignment) has Id (SDMMC1_TX) currently not set
+2019-06-02 16:16:08,874 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (MemDataAlignment) has Id (SDMMC1_TX) currently not set
+2019-06-02 16:16:08,874 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Mode) has Id (SDMMC1_TX) currently not set
+2019-06-02 16:16:08,874 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Priority) has Id (SDMMC1_TX) currently not set
+2019-06-02 16:16:08,874 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (FIFOMode) has Id (SDMMC1_TX) currently not set
+2019-06-02 16:16:08,874 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (FIFOThreshold) has Id (SDMMC1_TX) currently not set
+2019-06-02 16:16:08,874 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (FIFOThreshold) has invalid value (null)
+2019-06-02 16:16:08,874 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (MemBurst) has Id (SDMMC1_TX) currently not set
+2019-06-02 16:16:08,874 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (MemBurst) has invalid value (null)
+2019-06-02 16:16:08,874 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (PeriphBurst) has Id (SDMMC1_TX) currently not set
+2019-06-02 16:16:08,874 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (PeriphBurst) has invalid value (null)
+2019-06-02 16:16:08,874 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Instance) has Id (I2C3_RX) currently not set
+2019-06-02 16:16:08,875 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Channel) has Id (I2C3_RX) currently not set
+2019-06-02 16:16:08,875 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Direction) has Id (I2C3_RX) currently not set
+2019-06-02 16:16:08,875 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (PeriphInc) has Id (I2C3_RX) currently not set
+2019-06-02 16:16:08,875 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (MemInc) has Id (I2C3_RX) currently not set
+2019-06-02 16:16:08,875 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (PeriphDataAlignment) has Id (I2C3_RX) currently not set
+2019-06-02 16:16:08,875 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (MemDataAlignment) has Id (I2C3_RX) currently not set
+2019-06-02 16:16:08,875 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Mode) has Id (I2C3_RX) currently not set
+2019-06-02 16:16:08,875 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Priority) has Id (I2C3_RX) currently not set
+2019-06-02 16:16:08,875 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (FIFOMode) has Id (I2C3_RX) currently not set
+2019-06-02 16:16:08,875 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Instance) has Id (DAC2) currently not set
+2019-06-02 16:16:08,875 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Channel) has Id (DAC2) currently not set
+2019-06-02 16:16:08,875 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Direction) has Id (DAC2) currently not set
+2019-06-02 16:16:08,875 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (PeriphInc) has Id (DAC2) currently not set
+2019-06-02 16:16:08,875 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (MemInc) has Id (DAC2) currently not set
+2019-06-02 16:16:08,876 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (PeriphDataAlignment) has Id (DAC2) currently not set
+2019-06-02 16:16:08,876 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (MemDataAlignment) has Id (DAC2) currently not set
+2019-06-02 16:16:08,876 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Mode) has Id (DAC2) currently not set
+2019-06-02 16:16:08,877 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Priority) has Id (DAC2) currently not set
+2019-06-02 16:16:08,879 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (FIFOMode) has Id (DAC2) currently not set
+2019-06-02 16:16:08,880 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Instance) has Id (ADC1) currently not set
+2019-06-02 16:16:08,880 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Channel) has Id (ADC1) currently not set
+2019-06-02 16:16:08,880 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Direction) has Id (ADC1) currently not set
+2019-06-02 16:16:08,880 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (PeriphInc) has Id (ADC1) currently not set
+2019-06-02 16:16:08,880 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (MemInc) has Id (ADC1) currently not set
+2019-06-02 16:16:08,880 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (PeriphDataAlignment) has Id (ADC1) currently not set
+2019-06-02 16:16:08,881 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (MemDataAlignment) has Id (ADC1) currently not set
+2019-06-02 16:16:08,881 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Mode) has Id (ADC1) currently not set
+2019-06-02 16:16:08,881 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Priority) has Id (ADC1) currently not set
+2019-06-02 16:16:08,881 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (FIFOMode) has Id (ADC1) currently not set
+2019-06-02 16:16:08,881 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Instance) has Id (SDMMC1_RX) currently not set
+2019-06-02 16:16:08,881 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Channel) has Id (SDMMC1_RX) currently not set
+2019-06-02 16:16:08,881 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Direction) has Id (SDMMC1_RX) currently not set
+2019-06-02 16:16:08,881 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (PeriphInc) has Id (SDMMC1_RX) currently not set
+2019-06-02 16:16:08,881 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (MemInc) has Id (SDMMC1_RX) currently not set
+2019-06-02 16:16:08,882 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (PeriphDataAlignment) has Id (SDMMC1_RX) currently not set
+2019-06-02 16:16:08,882 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (MemDataAlignment) has Id (SDMMC1_RX) currently not set
+2019-06-02 16:16:08,882 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Mode) has Id (SDMMC1_RX) currently not set
+2019-06-02 16:16:08,882 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Priority) has Id (SDMMC1_RX) currently not set
+2019-06-02 16:16:08,882 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (FIFOMode) has Id (SDMMC1_RX) currently not set
+2019-06-02 16:16:08,882 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (FIFOThreshold) has Id (SDMMC1_RX) currently not set
+2019-06-02 16:16:08,882 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (FIFOThreshold) has invalid value (null)
+2019-06-02 16:16:08,882 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (MemBurst) has Id (SDMMC1_RX) currently not set
+2019-06-02 16:16:08,882 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (MemBurst) has invalid value (null)
+2019-06-02 16:16:08,882 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (PeriphBurst) has Id (SDMMC1_RX) currently not set
+2019-06-02 16:16:08,882 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (PeriphBurst) has invalid value (null)
+2019-06-02 16:16:08,883 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Instance) has Id (USART2_RX) currently not set
+2019-06-02 16:16:08,883 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Channel) has Id (USART2_RX) currently not set
+2019-06-02 16:16:08,883 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Direction) has Id (USART2_RX) currently not set
+2019-06-02 16:16:08,883 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (PeriphInc) has Id (USART2_RX) currently not set
+2019-06-02 16:16:08,883 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (MemInc) has Id (USART2_RX) currently not set
+2019-06-02 16:16:08,883 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (PeriphDataAlignment) has Id (USART2_RX) currently not set
+2019-06-02 16:16:08,883 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (MemDataAlignment) has Id (USART2_RX) currently not set
+2019-06-02 16:16:08,883 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Mode) has Id (USART2_RX) currently not set
+2019-06-02 16:16:08,884 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Priority) has Id (USART2_RX) currently not set
+2019-06-02 16:16:08,884 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (FIFOMode) has Id (USART2_RX) currently not set
+2019-06-02 16:16:08,884 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Instance) has Id (USART1_RX) currently not set
+2019-06-02 16:16:08,884 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Channel) has Id (USART1_RX) currently not set
+2019-06-02 16:16:08,884 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Direction) has Id (USART1_RX) currently not set
+2019-06-02 16:16:08,884 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (PeriphInc) has Id (USART1_RX) currently not set
+2019-06-02 16:16:08,884 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (MemInc) has Id (USART1_RX) currently not set
+2019-06-02 16:16:08,884 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (PeriphDataAlignment) has Id (USART1_RX) currently not set
+2019-06-02 16:16:08,884 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (MemDataAlignment) has Id (USART1_RX) currently not set
+2019-06-02 16:16:08,885 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Mode) has Id (USART1_RX) currently not set
+2019-06-02 16:16:08,885 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Priority) has Id (USART1_RX) currently not set
+2019-06-02 16:16:08,885 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (FIFOMode) has Id (USART1_RX) currently not set
+2019-06-02 16:16:08,885 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Instance) has Id (USART1_TX) currently not set
+2019-06-02 16:16:08,885 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Channel) has Id (USART1_TX) currently not set
+2019-06-02 16:16:08,885 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Direction) has Id (USART1_TX) currently not set
+2019-06-02 16:16:08,886 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (PeriphInc) has Id (USART1_TX) currently not set
+2019-06-02 16:16:08,886 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (MemInc) has Id (USART1_TX) currently not set
+2019-06-02 16:16:08,886 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (PeriphDataAlignment) has Id (USART1_TX) currently not set
+2019-06-02 16:16:08,886 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (MemDataAlignment) has Id (USART1_TX) currently not set
+2019-06-02 16:16:08,886 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Mode) has Id (USART1_TX) currently not set
+2019-06-02 16:16:08,886 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (Priority) has Id (USART1_TX) currently not set
+2019-06-02 16:16:08,886 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (DMA) : Parameter (FIFOMode) has Id (USART1_TX) currently not set
+2019-06-02 16:16:08,888 [INFO] com.st.microxplorer.util.ImportTextPane.optionalMessage(ImportTextPane.java:162) - (OptionalMessage_ERROR) IP (RCC) : Invalid parameter (FamilyName)
+2019-06-02 16:16:09,157 [INFO] com.st.components.util.UtilMem.printUsedHeapMemory(UtilMem.java:74) - End LoadConfig() Used Memory: 227154376 Bytes (313524224)
+2019-06-02 16:16:09,307 [INFO] com.st.microxplorer.plugins.thirdparty.xml.ThirdPartyDb.readDb(ThirdPartyDb.java:293) - Open Third Party DataBase File (C:/Users/Pluscrafter/.stm32cubemx/plugins/thirdparty/db/thirdparties_db.xml) : 3 ms. number of Sw pack : 8
+2019-06-02 16:16:09,561 [INFO] com.st.microxplorer.plugins.thirdparty.ThirdParty.logSwPackList(ThirdParty.java:1207) - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE1 4.3.0
+2019-06-02 16:16:09,561 [INFO] com.st.microxplorer.plugins.thirdparty.ThirdParty.logSwPackList(ThirdParty.java:1207) - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 6.0.1
+2019-06-02 16:16:09,561 [INFO] com.st.microxplorer.plugins.thirdparty.ThirdParty.logSwPackList(ThirdParty.java:1207) - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 3.4.0
+2019-06-02 16:16:09,561 [INFO] com.st.microxplorer.plugins.thirdparty.ThirdParty.logSwPackList(ThirdParty.java:1207) - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC4 1.3.0
+2019-06-02 16:16:09,561 [INFO] com.st.microxplorer.plugins.thirdparty.ThirdParty.logSwPackList(ThirdParty.java:1207) - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE1 4.4.0
+2019-06-02 16:16:09,561 [INFO] com.st.microxplorer.plugins.thirdparty.ThirdParty.logSwPackList(ThirdParty.java:1207) - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 6.1.0
+2019-06-02 16:16:09,561 [INFO] com.st.microxplorer.plugins.thirdparty.ThirdParty.logSwPackList(ThirdParty.java:1207) - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC4 1.4.0
+2019-06-02 16:16:09,561 [INFO] com.st.microxplorer.plugins.thirdparty.ThirdParty.logSwPackList(ThirdParty.java:1207) - CMSIS Pack Vendor :STMicroelectronics X-CUBE-GNSS1 3.0.0
+2019-06-02 16:16:09,804 [INFO] com.st.microxplorer.plugins.pinoutconfig.gui.PinOutPanel.setPackage(PinOutPanel.java:1361) - setPackage(No Configuration,No Configuration)
+2019-06-02 16:16:09,805 [INFO] com.st.microxplorer.plugins.pinoutconfig.gui.PinOutPanel.setPackage(PinOutPanel.java:1361) - setPackage(STM32F722RETx,LQFP64)
+2019-06-02 16:16:10,410 [INFO] com.st.components.util.UtilMem.printUsedHeapMemory(UtilMem.java:74) - Before build in PCC Used Memory: 194499576 Bytes (313524224)
+2019-06-02 16:16:10,865 [INFO] com.st.microxplorer.plugins.power.util.SharedServices.getPowerFolderPath(SharedServices.java:71) - Folder for power plug-in: C:/Users/Pluscrafter/.stm32cubemx/plugins/power
+2019-06-02 16:16:10,866 [INFO] com.st.components.util.UtilMem.printUsedHeapMemory(UtilMem.java:74) - After build in PCC Used Memory: 208131064 Bytes (313524224)
+2019-06-02 16:16:10,995 [INFO] com.st.microxplorer.plugins.filemanager.engine.OpenFileManager.LoadConfig(OpenFileManager.java:289) - Restore cursor
+2019-06-02 16:16:10,998 [INFO] com.st.microxplorer.mcufinder.db.DbMcusXml.loadAltovaDocFromFile(DbMcusXml.java:106) - Load MCU database from D:\Programs\ST\STM32CubeIDE_1.0.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_1.0.0.201904230831\\db\/mcu/families.xml
+2019-06-02 16:16:11,593 [INFO] com.st.microxplorer.db.ApiDbMcu.initConfigParameters(ApiDbMcu.java:444) - Load IP Config File for FATFS
+2019-06-02 16:16:11,772 [INFO] com.st.microxplorer.mcufinder.db.DbMcusJson.LoadJsonArrayFromFile(DbMcusJson.java:87) - JSON generation date=Fri May 17 08:37:39 CEST 2019 (1558075059)
+2019-06-02 16:16:12,911 [INFO] com.st.microxplorer.mcufinder.db.DbMcus.getDbManager(DbMcus.java:192) - Found 1486 MCUs (1445 are supported by CubeMX, 1445 are visible in CubeMX)
+2019-06-02 16:16:12,912 [INFO] com.st.microxplorer.mcufinder.db.ApiDb.loadFavorites(ApiDb.java:158) - Load user favorites file C:\Users\Pluscrafter/.stm32cubemx/favorites.mcus.txt: 0 item(s)
+2019-06-02 16:16:12,912 [INFO] com.st.microxplorer.mcufinder.db.ApiDb.loadFavorites(ApiDb.java:163) - User favorites MCUs=[]
+2019-06-02 16:16:12,912 [INFO] com.st.microxplorer.mcufinder.db.DbMcus.getDbManager(DbMcus.java:203) - Set 0 / 0 favorites MCUs
+
+!ENTRY com.genuitec.eclipse.theming.ui 1 0 2019-06-02 16:20:53.671
+!MESSAGE A DevStyle Theme is being activated on this workspace; preparing colors and configuration
+
+!ENTRY com.genuitec.eclipse.theming.ui 1 0 2019-06-02 16:20:53.708
+!MESSAGE DevStyle has archived current color configurations to alternate preferences - will be restored when switching out of the DevStyle Theme
+
+!ENTRY org.eclipse.ui.console 4 2 2019-06-02 16:20:58.802
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.ui.console".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsolePage.propertyChange(BuildConsolePage.java:289)
+	at org.eclipse.ui.console.AbstractConsole$PropertyNotifier.run(AbstractConsole.java:99)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.console.AbstractConsole$PropertyNotifier.notify(AbstractConsole.java:114)
+	at org.eclipse.ui.console.AbstractConsole.firePropertyChange(AbstractConsole.java:232)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsole.setBackground(BuildConsole.java:133)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsoleManager.propertyChange(BuildConsoleManager.java:347)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore$2.run(ScopedPreferenceStore.java:348)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore.firePropertyChangeEvent(ScopedPreferenceStore.java:345)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore.lambda$0(ScopedPreferenceStore.java:182)
+	at org.eclipse.core.internal.preferences.EclipsePreferences$2.run(EclipsePreferences.java:848)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.firePreferenceEvent(EclipsePreferences.java:851)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.remove(EclipsePreferences.java:958)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.resetOverriddenPreferences(PartRenderingEngine.java:1473)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.resetOverriddenPreferences(PartRenderingEngine.java:1467)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.lambda$0(PartRenderingEngine.java:1456)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4131)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4123)
+	at org.eclipse.swt.widgets.Display.release(Display.java:3594)
+	at org.eclipse.swt.graphics.Device.dispose(Device.java:300)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:171)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:661)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:597)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1476)
+
+!ENTRY org.eclipse.ui.console 4 120 2019-06-02 16:20:58.808
+!MESSAGE Exception occurred during console property change notification.
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsolePage.propertyChange(BuildConsolePage.java:289)
+	at org.eclipse.ui.console.AbstractConsole$PropertyNotifier.run(AbstractConsole.java:99)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.console.AbstractConsole$PropertyNotifier.notify(AbstractConsole.java:114)
+	at org.eclipse.ui.console.AbstractConsole.firePropertyChange(AbstractConsole.java:232)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsole.setBackground(BuildConsole.java:133)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsoleManager.propertyChange(BuildConsoleManager.java:347)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore$2.run(ScopedPreferenceStore.java:348)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore.firePropertyChangeEvent(ScopedPreferenceStore.java:345)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore.lambda$0(ScopedPreferenceStore.java:182)
+	at org.eclipse.core.internal.preferences.EclipsePreferences$2.run(EclipsePreferences.java:848)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.firePreferenceEvent(EclipsePreferences.java:851)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.remove(EclipsePreferences.java:958)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.resetOverriddenPreferences(PartRenderingEngine.java:1473)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.resetOverriddenPreferences(PartRenderingEngine.java:1467)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.lambda$0(PartRenderingEngine.java:1456)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4131)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4123)
+	at org.eclipse.swt.widgets.Display.release(Display.java:3594)
+	at org.eclipse.swt.graphics.Device.dispose(Device.java:300)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:171)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:661)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:597)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1476)
+
+!ENTRY org.eclipse.ui.console 4 2 2019-06-02 16:20:58.813
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.ui.console".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsolePage.propertyChange(BuildConsolePage.java:289)
+	at org.eclipse.ui.console.AbstractConsole$PropertyNotifier.run(AbstractConsole.java:99)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.console.AbstractConsole$PropertyNotifier.notify(AbstractConsole.java:114)
+	at org.eclipse.ui.console.AbstractConsole.firePropertyChange(AbstractConsole.java:232)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsole.setBackground(BuildConsole.java:133)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsoleManager.propertyChange(BuildConsoleManager.java:347)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore$2.run(ScopedPreferenceStore.java:348)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore.firePropertyChangeEvent(ScopedPreferenceStore.java:345)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore.lambda$0(ScopedPreferenceStore.java:182)
+	at org.eclipse.core.internal.preferences.EclipsePreferences$2.run(EclipsePreferences.java:848)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.firePreferenceEvent(EclipsePreferences.java:851)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.remove(EclipsePreferences.java:958)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.resetOverriddenPreferences(PartRenderingEngine.java:1473)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.resetOverriddenPreferences(PartRenderingEngine.java:1467)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.lambda$0(PartRenderingEngine.java:1456)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4131)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4123)
+	at org.eclipse.swt.widgets.Display.release(Display.java:3594)
+	at org.eclipse.swt.graphics.Device.dispose(Device.java:300)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:171)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:661)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:597)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1476)
+
+!ENTRY org.eclipse.ui.console 4 120 2019-06-02 16:20:58.816
+!MESSAGE Exception occurred during console property change notification.
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsolePage.propertyChange(BuildConsolePage.java:289)
+	at org.eclipse.ui.console.AbstractConsole$PropertyNotifier.run(AbstractConsole.java:99)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.console.AbstractConsole$PropertyNotifier.notify(AbstractConsole.java:114)
+	at org.eclipse.ui.console.AbstractConsole.firePropertyChange(AbstractConsole.java:232)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsole.setBackground(BuildConsole.java:133)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsoleManager.propertyChange(BuildConsoleManager.java:347)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore$2.run(ScopedPreferenceStore.java:348)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore.firePropertyChangeEvent(ScopedPreferenceStore.java:345)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore.lambda$0(ScopedPreferenceStore.java:182)
+	at org.eclipse.core.internal.preferences.EclipsePreferences$2.run(EclipsePreferences.java:848)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.firePreferenceEvent(EclipsePreferences.java:851)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.remove(EclipsePreferences.java:958)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.resetOverriddenPreferences(PartRenderingEngine.java:1473)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.resetOverriddenPreferences(PartRenderingEngine.java:1467)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.lambda$0(PartRenderingEngine.java:1456)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4131)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4123)
+	at org.eclipse.swt.widgets.Display.release(Display.java:3594)
+	at org.eclipse.swt.graphics.Device.dispose(Device.java:300)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:171)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:661)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:597)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1476)
+
+!ENTRY org.eclipse.ui.console 4 2 2019-06-02 16:20:58.820
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.ui.console".
+!STACK 0
+org.eclipse.swt.SWTException: Widget is disposed
+	at org.eclipse.swt.SWT.error(SWT.java:4699)
+	at org.eclipse.swt.SWT.error(SWT.java:4614)
+	at org.eclipse.swt.SWT.error(SWT.java:4585)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:451)
+	at org.eclipse.swt.widgets.Widget.getDisplay(Widget.java:572)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsolePage.propertyChange(BuildConsolePage.java:274)
+	at org.eclipse.ui.console.AbstractConsole$PropertyNotifier.run(AbstractConsole.java:99)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.console.AbstractConsole$PropertyNotifier.notify(AbstractConsole.java:114)
+	at org.eclipse.ui.console.AbstractConsole.firePropertyChange(AbstractConsole.java:232)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsoleStreamDecorator.setColor(BuildConsoleStreamDecorator.java:46)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsoleManager.propertyChange(BuildConsoleManager.java:341)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore$2.run(ScopedPreferenceStore.java:348)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore.firePropertyChangeEvent(ScopedPreferenceStore.java:345)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore.lambda$0(ScopedPreferenceStore.java:182)
+	at org.eclipse.core.internal.preferences.EclipsePreferences$2.run(EclipsePreferences.java:848)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.firePreferenceEvent(EclipsePreferences.java:851)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.remove(EclipsePreferences.java:958)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.resetOverriddenPreferences(PartRenderingEngine.java:1473)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.resetOverriddenPreferences(PartRenderingEngine.java:1467)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.lambda$0(PartRenderingEngine.java:1456)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4131)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4123)
+	at org.eclipse.swt.widgets.Display.release(Display.java:3594)
+	at org.eclipse.swt.graphics.Device.dispose(Device.java:300)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:171)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:661)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:597)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1476)
+
+!ENTRY org.eclipse.ui.console 4 120 2019-06-02 16:20:58.824
+!MESSAGE Exception occurred during console property change notification.
+!STACK 0
+org.eclipse.swt.SWTException: Widget is disposed
+	at org.eclipse.swt.SWT.error(SWT.java:4699)
+	at org.eclipse.swt.SWT.error(SWT.java:4614)
+	at org.eclipse.swt.SWT.error(SWT.java:4585)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:451)
+	at org.eclipse.swt.widgets.Widget.getDisplay(Widget.java:572)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsolePage.propertyChange(BuildConsolePage.java:274)
+	at org.eclipse.ui.console.AbstractConsole$PropertyNotifier.run(AbstractConsole.java:99)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.console.AbstractConsole$PropertyNotifier.notify(AbstractConsole.java:114)
+	at org.eclipse.ui.console.AbstractConsole.firePropertyChange(AbstractConsole.java:232)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsoleStreamDecorator.setColor(BuildConsoleStreamDecorator.java:46)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsoleManager.propertyChange(BuildConsoleManager.java:341)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore$2.run(ScopedPreferenceStore.java:348)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore.firePropertyChangeEvent(ScopedPreferenceStore.java:345)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore.lambda$0(ScopedPreferenceStore.java:182)
+	at org.eclipse.core.internal.preferences.EclipsePreferences$2.run(EclipsePreferences.java:848)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.firePreferenceEvent(EclipsePreferences.java:851)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.remove(EclipsePreferences.java:958)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.resetOverriddenPreferences(PartRenderingEngine.java:1473)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.resetOverriddenPreferences(PartRenderingEngine.java:1467)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.lambda$0(PartRenderingEngine.java:1456)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4131)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4123)
+	at org.eclipse.swt.widgets.Display.release(Display.java:3594)
+	at org.eclipse.swt.graphics.Device.dispose(Device.java:300)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:171)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:661)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:597)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1476)
+
+!ENTRY org.eclipse.ui.console 4 2 2019-06-02 16:20:58.827
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.ui.console".
+!STACK 0
+org.eclipse.swt.SWTException: Widget is disposed
+	at org.eclipse.swt.SWT.error(SWT.java:4699)
+	at org.eclipse.swt.SWT.error(SWT.java:4614)
+	at org.eclipse.swt.SWT.error(SWT.java:4585)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:451)
+	at org.eclipse.swt.widgets.Widget.getDisplay(Widget.java:572)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsolePage.propertyChange(BuildConsolePage.java:274)
+	at org.eclipse.ui.console.AbstractConsole$PropertyNotifier.run(AbstractConsole.java:99)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.console.AbstractConsole$PropertyNotifier.notify(AbstractConsole.java:114)
+	at org.eclipse.ui.console.AbstractConsole.firePropertyChange(AbstractConsole.java:232)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsoleStreamDecorator.setColor(BuildConsoleStreamDecorator.java:46)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsoleManager.propertyChange(BuildConsoleManager.java:341)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore$2.run(ScopedPreferenceStore.java:348)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore.firePropertyChangeEvent(ScopedPreferenceStore.java:345)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore.lambda$0(ScopedPreferenceStore.java:182)
+	at org.eclipse.core.internal.preferences.EclipsePreferences$2.run(EclipsePreferences.java:848)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.firePreferenceEvent(EclipsePreferences.java:851)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.remove(EclipsePreferences.java:958)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.resetOverriddenPreferences(PartRenderingEngine.java:1473)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.resetOverriddenPreferences(PartRenderingEngine.java:1467)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.lambda$0(PartRenderingEngine.java:1456)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4131)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4123)
+	at org.eclipse.swt.widgets.Display.release(Display.java:3594)
+	at org.eclipse.swt.graphics.Device.dispose(Device.java:300)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:171)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:661)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:597)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1476)
+
+!ENTRY org.eclipse.ui.console 4 120 2019-06-02 16:20:58.831
+!MESSAGE Exception occurred during console property change notification.
+!STACK 0
+org.eclipse.swt.SWTException: Widget is disposed
+	at org.eclipse.swt.SWT.error(SWT.java:4699)
+	at org.eclipse.swt.SWT.error(SWT.java:4614)
+	at org.eclipse.swt.SWT.error(SWT.java:4585)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:451)
+	at org.eclipse.swt.widgets.Widget.getDisplay(Widget.java:572)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsolePage.propertyChange(BuildConsolePage.java:274)
+	at org.eclipse.ui.console.AbstractConsole$PropertyNotifier.run(AbstractConsole.java:99)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.console.AbstractConsole$PropertyNotifier.notify(AbstractConsole.java:114)
+	at org.eclipse.ui.console.AbstractConsole.firePropertyChange(AbstractConsole.java:232)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsoleStreamDecorator.setColor(BuildConsoleStreamDecorator.java:46)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsoleManager.propertyChange(BuildConsoleManager.java:341)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore$2.run(ScopedPreferenceStore.java:348)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore.firePropertyChangeEvent(ScopedPreferenceStore.java:345)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore.lambda$0(ScopedPreferenceStore.java:182)
+	at org.eclipse.core.internal.preferences.EclipsePreferences$2.run(EclipsePreferences.java:848)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.firePreferenceEvent(EclipsePreferences.java:851)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.remove(EclipsePreferences.java:958)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.resetOverriddenPreferences(PartRenderingEngine.java:1473)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.resetOverriddenPreferences(PartRenderingEngine.java:1467)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.lambda$0(PartRenderingEngine.java:1456)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4131)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4123)
+	at org.eclipse.swt.widgets.Display.release(Display.java:3594)
+	at org.eclipse.swt.graphics.Device.dispose(Device.java:300)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:171)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:661)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:597)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1476)
+
+!ENTRY org.eclipse.ui.console 4 2 2019-06-02 16:20:58.834
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.ui.console".
+!STACK 0
+org.eclipse.swt.SWTException: Widget is disposed
+	at org.eclipse.swt.SWT.error(SWT.java:4699)
+	at org.eclipse.swt.SWT.error(SWT.java:4614)
+	at org.eclipse.swt.SWT.error(SWT.java:4585)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:451)
+	at org.eclipse.swt.widgets.Widget.getDisplay(Widget.java:572)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsolePage.propertyChange(BuildConsolePage.java:274)
+	at org.eclipse.ui.console.AbstractConsole$PropertyNotifier.run(AbstractConsole.java:99)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.console.AbstractConsole$PropertyNotifier.notify(AbstractConsole.java:114)
+	at org.eclipse.ui.console.AbstractConsole.firePropertyChange(AbstractConsole.java:232)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsoleStreamDecorator.setColor(BuildConsoleStreamDecorator.java:46)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsoleManager.propertyChange(BuildConsoleManager.java:329)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore$2.run(ScopedPreferenceStore.java:348)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore.firePropertyChangeEvent(ScopedPreferenceStore.java:345)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore.lambda$0(ScopedPreferenceStore.java:182)
+	at org.eclipse.core.internal.preferences.EclipsePreferences$2.run(EclipsePreferences.java:848)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.firePreferenceEvent(EclipsePreferences.java:851)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.remove(EclipsePreferences.java:958)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.resetOverriddenPreferences(PartRenderingEngine.java:1473)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.resetOverriddenPreferences(PartRenderingEngine.java:1467)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.lambda$0(PartRenderingEngine.java:1456)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4131)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4123)
+	at org.eclipse.swt.widgets.Display.release(Display.java:3594)
+	at org.eclipse.swt.graphics.Device.dispose(Device.java:300)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:171)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:661)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:597)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1476)
+
+!ENTRY org.eclipse.ui.console 4 120 2019-06-02 16:20:58.837
+!MESSAGE Exception occurred during console property change notification.
+!STACK 0
+org.eclipse.swt.SWTException: Widget is disposed
+	at org.eclipse.swt.SWT.error(SWT.java:4699)
+	at org.eclipse.swt.SWT.error(SWT.java:4614)
+	at org.eclipse.swt.SWT.error(SWT.java:4585)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:451)
+	at org.eclipse.swt.widgets.Widget.getDisplay(Widget.java:572)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsolePage.propertyChange(BuildConsolePage.java:274)
+	at org.eclipse.ui.console.AbstractConsole$PropertyNotifier.run(AbstractConsole.java:99)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.console.AbstractConsole$PropertyNotifier.notify(AbstractConsole.java:114)
+	at org.eclipse.ui.console.AbstractConsole.firePropertyChange(AbstractConsole.java:232)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsoleStreamDecorator.setColor(BuildConsoleStreamDecorator.java:46)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsoleManager.propertyChange(BuildConsoleManager.java:329)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore$2.run(ScopedPreferenceStore.java:348)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore.firePropertyChangeEvent(ScopedPreferenceStore.java:345)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore.lambda$0(ScopedPreferenceStore.java:182)
+	at org.eclipse.core.internal.preferences.EclipsePreferences$2.run(EclipsePreferences.java:848)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.firePreferenceEvent(EclipsePreferences.java:851)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.remove(EclipsePreferences.java:958)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.resetOverriddenPreferences(PartRenderingEngine.java:1473)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.resetOverriddenPreferences(PartRenderingEngine.java:1467)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.lambda$0(PartRenderingEngine.java:1456)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4131)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4123)
+	at org.eclipse.swt.widgets.Display.release(Display.java:3594)
+	at org.eclipse.swt.graphics.Device.dispose(Device.java:300)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:171)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:661)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:597)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1476)
+
+!ENTRY org.eclipse.ui.console 4 2 2019-06-02 16:20:58.840
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.ui.console".
+!STACK 0
+org.eclipse.swt.SWTException: Widget is disposed
+	at org.eclipse.swt.SWT.error(SWT.java:4699)
+	at org.eclipse.swt.SWT.error(SWT.java:4614)
+	at org.eclipse.swt.SWT.error(SWT.java:4585)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:451)
+	at org.eclipse.swt.widgets.Widget.getDisplay(Widget.java:572)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsolePage.propertyChange(BuildConsolePage.java:274)
+	at org.eclipse.ui.console.AbstractConsole$PropertyNotifier.run(AbstractConsole.java:99)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.console.AbstractConsole$PropertyNotifier.notify(AbstractConsole.java:114)
+	at org.eclipse.ui.console.AbstractConsole.firePropertyChange(AbstractConsole.java:232)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsoleStreamDecorator.setColor(BuildConsoleStreamDecorator.java:46)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsoleManager.propertyChange(BuildConsoleManager.java:329)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore$2.run(ScopedPreferenceStore.java:348)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore.firePropertyChangeEvent(ScopedPreferenceStore.java:345)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore.lambda$0(ScopedPreferenceStore.java:182)
+	at org.eclipse.core.internal.preferences.EclipsePreferences$2.run(EclipsePreferences.java:848)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.firePreferenceEvent(EclipsePreferences.java:851)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.remove(EclipsePreferences.java:958)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.resetOverriddenPreferences(PartRenderingEngine.java:1473)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.resetOverriddenPreferences(PartRenderingEngine.java:1467)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.lambda$0(PartRenderingEngine.java:1456)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4131)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4123)
+	at org.eclipse.swt.widgets.Display.release(Display.java:3594)
+	at org.eclipse.swt.graphics.Device.dispose(Device.java:300)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:171)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:661)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:597)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1476)
+
+!ENTRY org.eclipse.ui.console 4 120 2019-06-02 16:20:58.844
+!MESSAGE Exception occurred during console property change notification.
+!STACK 0
+org.eclipse.swt.SWTException: Widget is disposed
+	at org.eclipse.swt.SWT.error(SWT.java:4699)
+	at org.eclipse.swt.SWT.error(SWT.java:4614)
+	at org.eclipse.swt.SWT.error(SWT.java:4585)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:451)
+	at org.eclipse.swt.widgets.Widget.getDisplay(Widget.java:572)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsolePage.propertyChange(BuildConsolePage.java:274)
+	at org.eclipse.ui.console.AbstractConsole$PropertyNotifier.run(AbstractConsole.java:99)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.console.AbstractConsole$PropertyNotifier.notify(AbstractConsole.java:114)
+	at org.eclipse.ui.console.AbstractConsole.firePropertyChange(AbstractConsole.java:232)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsoleStreamDecorator.setColor(BuildConsoleStreamDecorator.java:46)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsoleManager.propertyChange(BuildConsoleManager.java:329)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore$2.run(ScopedPreferenceStore.java:348)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore.firePropertyChangeEvent(ScopedPreferenceStore.java:345)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore.lambda$0(ScopedPreferenceStore.java:182)
+	at org.eclipse.core.internal.preferences.EclipsePreferences$2.run(EclipsePreferences.java:848)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.firePreferenceEvent(EclipsePreferences.java:851)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.remove(EclipsePreferences.java:958)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.resetOverriddenPreferences(PartRenderingEngine.java:1473)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.resetOverriddenPreferences(PartRenderingEngine.java:1467)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.lambda$0(PartRenderingEngine.java:1456)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4131)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4123)
+	at org.eclipse.swt.widgets.Display.release(Display.java:3594)
+	at org.eclipse.swt.graphics.Device.dispose(Device.java:300)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:171)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:661)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:597)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1476)
+
+!ENTRY org.eclipse.ui.console 4 2 2019-06-02 16:20:58.847
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.ui.console".
+!STACK 0
+org.eclipse.swt.SWTException: Widget is disposed
+	at org.eclipse.swt.SWT.error(SWT.java:4699)
+	at org.eclipse.swt.SWT.error(SWT.java:4614)
+	at org.eclipse.swt.SWT.error(SWT.java:4585)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:451)
+	at org.eclipse.swt.widgets.Widget.getDisplay(Widget.java:572)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsolePage.propertyChange(BuildConsolePage.java:274)
+	at org.eclipse.ui.console.AbstractConsole$PropertyNotifier.run(AbstractConsole.java:99)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.console.AbstractConsole$PropertyNotifier.notify(AbstractConsole.java:114)
+	at org.eclipse.ui.console.AbstractConsole.firePropertyChange(AbstractConsole.java:232)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsoleStreamDecorator.setColor(BuildConsoleStreamDecorator.java:46)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsoleManager.propertyChange(BuildConsoleManager.java:335)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore$2.run(ScopedPreferenceStore.java:348)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore.firePropertyChangeEvent(ScopedPreferenceStore.java:345)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore.lambda$0(ScopedPreferenceStore.java:182)
+	at org.eclipse.core.internal.preferences.EclipsePreferences$2.run(EclipsePreferences.java:848)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.firePreferenceEvent(EclipsePreferences.java:851)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.remove(EclipsePreferences.java:958)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.resetOverriddenPreferences(PartRenderingEngine.java:1473)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.resetOverriddenPreferences(PartRenderingEngine.java:1467)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.lambda$0(PartRenderingEngine.java:1456)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4131)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4123)
+	at org.eclipse.swt.widgets.Display.release(Display.java:3594)
+	at org.eclipse.swt.graphics.Device.dispose(Device.java:300)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:171)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:661)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:597)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1476)
+
+!ENTRY org.eclipse.ui.console 4 120 2019-06-02 16:20:58.851
+!MESSAGE Exception occurred during console property change notification.
+!STACK 0
+org.eclipse.swt.SWTException: Widget is disposed
+	at org.eclipse.swt.SWT.error(SWT.java:4699)
+	at org.eclipse.swt.SWT.error(SWT.java:4614)
+	at org.eclipse.swt.SWT.error(SWT.java:4585)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:451)
+	at org.eclipse.swt.widgets.Widget.getDisplay(Widget.java:572)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsolePage.propertyChange(BuildConsolePage.java:274)
+	at org.eclipse.ui.console.AbstractConsole$PropertyNotifier.run(AbstractConsole.java:99)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.console.AbstractConsole$PropertyNotifier.notify(AbstractConsole.java:114)
+	at org.eclipse.ui.console.AbstractConsole.firePropertyChange(AbstractConsole.java:232)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsoleStreamDecorator.setColor(BuildConsoleStreamDecorator.java:46)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsoleManager.propertyChange(BuildConsoleManager.java:335)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore$2.run(ScopedPreferenceStore.java:348)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore.firePropertyChangeEvent(ScopedPreferenceStore.java:345)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore.lambda$0(ScopedPreferenceStore.java:182)
+	at org.eclipse.core.internal.preferences.EclipsePreferences$2.run(EclipsePreferences.java:848)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.firePreferenceEvent(EclipsePreferences.java:851)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.remove(EclipsePreferences.java:958)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.resetOverriddenPreferences(PartRenderingEngine.java:1473)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.resetOverriddenPreferences(PartRenderingEngine.java:1467)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.lambda$0(PartRenderingEngine.java:1456)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4131)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4123)
+	at org.eclipse.swt.widgets.Display.release(Display.java:3594)
+	at org.eclipse.swt.graphics.Device.dispose(Device.java:300)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:171)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:661)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:597)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1476)
+
+!ENTRY org.eclipse.ui.console 4 2 2019-06-02 16:20:58.854
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.ui.console".
+!STACK 0
+org.eclipse.swt.SWTException: Widget is disposed
+	at org.eclipse.swt.SWT.error(SWT.java:4699)
+	at org.eclipse.swt.SWT.error(SWT.java:4614)
+	at org.eclipse.swt.SWT.error(SWT.java:4585)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:451)
+	at org.eclipse.swt.widgets.Widget.getDisplay(Widget.java:572)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsolePage.propertyChange(BuildConsolePage.java:274)
+	at org.eclipse.ui.console.AbstractConsole$PropertyNotifier.run(AbstractConsole.java:99)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.console.AbstractConsole$PropertyNotifier.notify(AbstractConsole.java:114)
+	at org.eclipse.ui.console.AbstractConsole.firePropertyChange(AbstractConsole.java:232)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsoleStreamDecorator.setColor(BuildConsoleStreamDecorator.java:46)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsoleManager.propertyChange(BuildConsoleManager.java:335)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore$2.run(ScopedPreferenceStore.java:348)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore.firePropertyChangeEvent(ScopedPreferenceStore.java:345)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore.lambda$0(ScopedPreferenceStore.java:182)
+	at org.eclipse.core.internal.preferences.EclipsePreferences$2.run(EclipsePreferences.java:848)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.firePreferenceEvent(EclipsePreferences.java:851)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.remove(EclipsePreferences.java:958)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.resetOverriddenPreferences(PartRenderingEngine.java:1473)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.resetOverriddenPreferences(PartRenderingEngine.java:1467)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.lambda$0(PartRenderingEngine.java:1456)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4131)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4123)
+	at org.eclipse.swt.widgets.Display.release(Display.java:3594)
+	at org.eclipse.swt.graphics.Device.dispose(Device.java:300)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:171)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:661)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:597)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1476)
+
+!ENTRY org.eclipse.ui.console 4 120 2019-06-02 16:20:58.857
+!MESSAGE Exception occurred during console property change notification.
+!STACK 0
+org.eclipse.swt.SWTException: Widget is disposed
+	at org.eclipse.swt.SWT.error(SWT.java:4699)
+	at org.eclipse.swt.SWT.error(SWT.java:4614)
+	at org.eclipse.swt.SWT.error(SWT.java:4585)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:451)
+	at org.eclipse.swt.widgets.Widget.getDisplay(Widget.java:572)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsolePage.propertyChange(BuildConsolePage.java:274)
+	at org.eclipse.ui.console.AbstractConsole$PropertyNotifier.run(AbstractConsole.java:99)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.console.AbstractConsole$PropertyNotifier.notify(AbstractConsole.java:114)
+	at org.eclipse.ui.console.AbstractConsole.firePropertyChange(AbstractConsole.java:232)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsoleStreamDecorator.setColor(BuildConsoleStreamDecorator.java:46)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsoleManager.propertyChange(BuildConsoleManager.java:335)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore$2.run(ScopedPreferenceStore.java:348)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore.firePropertyChangeEvent(ScopedPreferenceStore.java:345)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore.lambda$0(ScopedPreferenceStore.java:182)
+	at org.eclipse.core.internal.preferences.EclipsePreferences$2.run(EclipsePreferences.java:848)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.firePreferenceEvent(EclipsePreferences.java:851)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.remove(EclipsePreferences.java:958)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.resetOverriddenPreferences(PartRenderingEngine.java:1473)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.resetOverriddenPreferences(PartRenderingEngine.java:1467)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.lambda$0(PartRenderingEngine.java:1456)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4131)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4123)
+	at org.eclipse.swt.widgets.Display.release(Display.java:3594)
+	at org.eclipse.swt.graphics.Device.dispose(Device.java:300)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:171)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:661)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:597)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1476)
+
+!ENTRY org.eclipse.ui 4 0 2019-06-02 16:20:58.862
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsoleManager$2.run(BuildConsoleManager.java:388)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3919)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3550)
+	at org.eclipse.swt.widgets.Display.release(Display.java:3604)
+	at org.eclipse.swt.graphics.Device.dispose(Device.java:300)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:171)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:661)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:597)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1476)
+
+!ENTRY org.eclipse.ui 4 0 2019-06-02 16:20:58.866
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsoleManager$2.run(BuildConsoleManager.java:388)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3919)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3550)
+	at org.eclipse.swt.widgets.Display.release(Display.java:3604)
+	at org.eclipse.swt.graphics.Device.dispose(Device.java:300)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:171)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:661)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:597)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1476)
+
+!ENTRY org.eclipse.ui 4 0 2019-06-02 16:20:58.869
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsoleManager$2.run(BuildConsoleManager.java:388)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3919)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3550)
+	at org.eclipse.swt.widgets.Display.release(Display.java:3604)
+	at org.eclipse.swt.graphics.Device.dispose(Device.java:300)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:171)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:661)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:597)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1476)
+
+!ENTRY org.eclipse.ui 4 0 2019-06-02 16:20:58.872
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsoleManager$2.run(BuildConsoleManager.java:388)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3919)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3550)
+	at org.eclipse.swt.widgets.Display.release(Display.java:3604)
+	at org.eclipse.swt.graphics.Device.dispose(Device.java:300)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:171)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:661)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:597)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1476)
+
+!ENTRY org.eclipse.ui 4 0 2019-06-02 16:20:58.875
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsoleManager$2.run(BuildConsoleManager.java:388)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3919)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3550)
+	at org.eclipse.swt.widgets.Display.release(Display.java:3604)
+	at org.eclipse.swt.graphics.Device.dispose(Device.java:300)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:171)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:661)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:597)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1476)
+
+!ENTRY org.eclipse.ui 4 0 2019-06-02 16:20:58.878
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsoleManager$2.run(BuildConsoleManager.java:388)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3919)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3550)
+	at org.eclipse.swt.widgets.Display.release(Display.java:3604)
+	at org.eclipse.swt.graphics.Device.dispose(Device.java:300)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:171)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:661)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:597)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1476)
+
+!ENTRY org.eclipse.ui 4 0 2019-06-02 16:20:58.880
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsoleManager$2.run(BuildConsoleManager.java:388)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3919)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3550)
+	at org.eclipse.swt.widgets.Display.release(Display.java:3604)
+	at org.eclipse.swt.graphics.Device.dispose(Device.java:300)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:171)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:661)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:597)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1476)
+
+!ENTRY org.eclipse.ui 4 0 2019-06-02 16:20:58.883
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsoleManager$2.run(BuildConsoleManager.java:388)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3919)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3550)
+	at org.eclipse.swt.widgets.Display.release(Display.java:3604)
+	at org.eclipse.swt.graphics.Device.dispose(Device.java:300)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:171)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:661)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:597)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1476)
+!SESSION 2019-06-02 16:21:00.847 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_202
+java.vendor=AdoptOpenJdk
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_CH
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data file:/D:/Pluscrafter/Documents/MaturarbeitQuadcopter/01_Flightcontroller/Code/
+
+!ENTRY org.eclipse.egit.core 1 0 2019-06-02 16:21:33.794
+!MESSAGE Using Apache MINA sshd as ssh client.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2019-06-02 16:21:35.363
+!MESSAGE Unable to retrieve the bundle from the URI: bundleclass://org.eclipse.launchbar.ui.controls/org.eclipse.launchbar.ui.controls.internal.LaunchBarControl
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 4 4 2019-06-02 16:21:37.313
+!MESSAGE Type or version is empty: ; 
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 2 2 2019-06-02 16:21:37.318
+!MESSAGE Falling back to default toolchain
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 4 4 2019-06-02 16:21:37.329
+!MESSAGE Type or version is empty: ; 
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 2 2 2019-06-02 16:21:37.332
+!MESSAGE Falling back to default toolchain
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 4 4 2019-06-02 16:21:37.336
+!MESSAGE Type or version is empty: ; 
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 2 2 2019-06-02 16:21:37.339
+!MESSAGE Falling back to default toolchain
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 4 4 2019-06-02 16:21:37.343
+!MESSAGE Type or version is empty: ; 
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 2 2 2019-06-02 16:21:37.346
+!MESSAGE Falling back to default toolchain
+
+!ENTRY org.eclipse.egit.ui 2 0 2019-06-02 16:21:39.414
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Pluscrafter'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2019-06-02 16:21:39.766
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2019-06-02 16:23:37.187 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_202
+java.vendor=AdoptOpenJdk
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_CH
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data file:/D:/Pluscrafter/Documents/MaturarbeitQuadcopter/01_Flightcontroller/Code/
+
+!ENTRY org.eclipse.egit.core 1 0 2019-06-02 16:23:40.498
+!MESSAGE Using Apache MINA sshd as ssh client.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2019-06-02 16:23:42.093
+!MESSAGE Unable to retrieve the bundle from the URI: bundleclass://org.eclipse.launchbar.ui.controls/org.eclipse.launchbar.ui.controls.internal.LaunchBarControl
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 4 4 2019-06-02 16:23:43.878
+!MESSAGE Type or version is empty: ; 
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 2 2 2019-06-02 16:23:43.883
+!MESSAGE Falling back to default toolchain
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 4 4 2019-06-02 16:23:43.895
+!MESSAGE Type or version is empty: ; 
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 2 2 2019-06-02 16:23:43.899
+!MESSAGE Falling back to default toolchain
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 4 4 2019-06-02 16:23:43.903
+!MESSAGE Type or version is empty: ; 
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 2 2 2019-06-02 16:23:43.907
+!MESSAGE Falling back to default toolchain
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 4 4 2019-06-02 16:23:43.911
+!MESSAGE Type or version is empty: ; 
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 2 2 2019-06-02 16:23:43.914
+!MESSAGE Falling back to default toolchain
+
+!ENTRY org.eclipse.egit.ui 2 0 2019-06-02 16:23:45.716
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Pluscrafter'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2019-06-02 16:23:45.918
+!MESSAGE Started RMI Server, listening on port 41337
