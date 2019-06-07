@@ -39,9 +39,7 @@ namespace Sensor {
 		HAL_Delay(10);
 		spi1.WriteRegister(SMPLRT_DIV, 0x00); //no divider
 
-		/*setXGyroOffset((int16_t*)OFFSET_GYRO_X);
-		setYGyroOffset((int16_t*)OFFSET_GYRO_Y);
-		setZGyroOffset((int16_t*)OFFSET_GYRO_Z);*/
+		SetGyroOffset();
 
 	}
 
@@ -50,7 +48,10 @@ namespace Sensor {
 	}
 
 	void ICM20689::SetGyroOffset(){
-
+		HAL_Delay(10);
+		setXGyroOffset((int16_t*)OFFSET_GYRO_X);
+		setYGyroOffset((int16_t*)OFFSET_GYRO_Y);
+		setZGyroOffset((int16_t*)OFFSET_GYRO_Z);
 	}
 
 	void ICM20689::SetAccelOffset(){
@@ -78,13 +79,13 @@ namespace Sensor {
 	}
 
 	void ICM20689::ReadGyro(){
-		uint8_t temp[6];
+		uint8_t tmp[6];
 		uint8_t reg[6]={GYRO_XOUT_H,GYRO_XOUT_L,GYRO_YOUT_H,GYRO_YOUT_L,GYRO_ZOUT_H,GYRO_ZOUT_L};
-		spi1.ReadRegisters(reg, temp, 6);
+		spi1.ReadRegisters(reg, tmp, 6);
 
-		r_gyro[0] = (temp[0] << 8) | temp[1];
-		r_gyro[1] = (temp[2] << 8) | temp[3];
-		r_gyro[2] = (temp[4] << 8) | temp[5];
+		r_gyro[0] = (tmp[0] << 8) | tmp[1];
+		r_gyro[1] = (tmp[2] << 8) | tmp[3];
+		r_gyro[2] = (tmp[4] << 8) | tmp[5];
 
 		for(int i = 0; i<3; i++){
 			ypr[i] =   r_gyro[i] / 131.0 ;
@@ -93,13 +94,13 @@ namespace Sensor {
 	}
 
 	void ICM20689::ReadAccel(){
-		uint8_t temp[6];
+		uint8_t tmp[6];
 		uint8_t reg[6]={ACCEL_XOUT_H,ACCEL_XOUT_L,ACCEL_YOUT_H,ACCEL_YOUT_L,ACCEL_ZOUT_H,ACCEL_ZOUT_L};
-		spi1.ReadRegisters(reg, temp, 6);
+		spi1.ReadRegisters(reg, tmp, 6);
 
-		r_accel[0] = (temp[0] << 8) | temp[1];
-		r_accel[1] = (temp[2] << 8) | temp[3];
-		r_accel[2] = (temp[4] << 8) | temp[5];
+		r_accel[0] = (tmp[0] << 8) | tmp[1];
+		r_accel[1] = (tmp[2] << 8) | tmp[3];
+		r_accel[2] = (tmp[4] << 8) | tmp[5];
 
 		for(int i = 0; i<3; i++){
 			accel[i] =  r_accel[i] / 16384.0;
@@ -108,19 +109,26 @@ namespace Sensor {
 	}
 
 	void ICM20689::ReadTemp(){
+		uint8_t tmp[2];
+		uint8_t reg[2];
 
+		spi1.ReadRegisters(reg, tmp, 2);
+
+		r_temp = (tmp[0] << 8) | tmp[1];
+
+		temp = ((r_temp - TEMP_OFFSET) / 326.8) + 25;
 	}
 
 //from I2cdevlib Calib
 	void ICM20689::FindOffset(){
 		//InitalizeCalibration();
-		for (int i = iAx; i <= iGz; i++)
+		for (int i = iGx; i <= iGz; i++)
 		  { // set targets and initial guesses
 			Target[i] = 0; // must fix for ZAccel
 			HighOffset[i] = 0;
 			LowOffset[i] = 0;
 		  } // set targets and initial guesses
-		Target[iAz] = 16384;
+		//Target[iAz] = 16384;
 		SetAveraging(NFast);
 
 		PullBracketsOut();
@@ -135,35 +143,34 @@ namespace Sensor {
 	}
 
 	void ICM20689::GetSmoothed(){
-		int16_t RawValue[6];
+		int16_t RawValue[3];
 		int i;
-		long Sums[6];
-		for (i = iAx; i <= iGz; i++){
+		long Sums[3];
+		for (i = iGx; i <= iGz; i++){
 			Sums[i] = 0;
 		}
 
 		for (i = 1; i <= N; i++)
 		{ // get sums
-			getMotion6(&RawValue[iAx], &RawValue[iAy], &RawValue[iAz],
-								 &RawValue[iGx], &RawValue[iGy], &RawValue[iGz]);
+			getMotion3(&RawValue[iGx], &RawValue[iGy], &RawValue[iGz]);
 			if ((i % 500) == 0)
 				HAL_UART_Transmit(&huart1, (uint8_t *)PERIOD,sizeof(PERIOD),100);
 
 			HAL_Delay(3);
 
-			for (int j = iAx; j <= iGz; j++)
+			for (int j = iGx; j <= iGz; j++)
 			  Sums[j] = Sums[j] + RawValue[j];
 		} // get sums
 
-		for (i = iAx; i <= iGz; i++){
+		for (i = iGx; i <= iGz; i++){
 			Smoothed[i] = (Sums[i] + N/2) / N ;
 		}
 	} // GetSmoothed
 
-	void ICM20689::SetOffsets(int16_t TheOffsets[6]){
-		setXAccelOffset(&TheOffsets [iAx]);
+	void ICM20689::SetOffsets(int16_t TheOffsets[3]){
+		/*setXAccelOffset(&TheOffsets [iAx]);
 	    setYAccelOffset(&TheOffsets [iAy]);
-	    setZAccelOffset(&TheOffsets [iAz]);
+	    setZAccelOffset(&TheOffsets [iAz]);*/
 	    setXGyroOffset (&TheOffsets [iGx]);
 	    setYGyroOffset (&TheOffsets [iGy]);
 	    setZGyroOffset (&TheOffsets [iGz]);
@@ -173,14 +180,14 @@ namespace Sensor {
 		if (LinesOut >= LinesBetweenHeaders){
 			// show header
 			HAL_UART_Transmit(&huart1, (uint8_t *)"\r\n", sizeof("\r\n"),100);
-			HAL_UART_Transmit(&huart1, (uint8_t *)"\tXAccel\t\t\tYAccel\t\t\t\tZAccel\t\t\tXGyro\t\t\tYGyro\t\t\tZGyro\r\n",sizeof("\tXAccel\t\t\tYAccel\t\t\t\tZAccel\t\t\tXGyro\t\t\tYGyro\t\t\tZGyro\r\n"),100);
+			HAL_UART_Transmit(&huart1, (uint8_t *)"\tXGyro\t\t\tYGyro\t\t\tZGyro\r\n",sizeof("\tXGyro\t\t\tYGyro\t\t\tZGyro\r\n"),100);
 			LinesOut = 0;
 
 		} // show header
 
 		HAL_UART_Transmit(&huart1, (uint8_t *)" ",sizeof(" "),100);
 		HAL_UART_Transmit(&huart1, (uint8_t *)"\r\n", sizeof("\r\n"),100);
-		for (int i = iAx; i <= iGz; i++){
+		for (int i = iGx; i <= iGz; i++){
 			char txt[32];
 			HAL_UART_Transmit(&huart1, (uint8_t *)"[",sizeof("["),100);
 			HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "%i", LowOffset[i]),100);
@@ -204,7 +211,7 @@ namespace Sensor {
 	void ICM20689::PullBracketsIn(){
 		bool AllBracketsNarrow;
 		bool StillWorking;
-		int16_t NewOffset[6];
+		int16_t NewOffset[3];
 
 		HAL_UART_Transmit(&huart1, (uint8_t *)"\nclosing in:", sizeof("\nclosing in:"),100);
 		AllBracketsNarrow = false;
@@ -222,7 +229,7 @@ namespace Sensor {
 				AllBracketsNarrow = true;
 			}// tentative
 
-			for (int i = iAx; i <= iGz; i++){
+			for (int i = iGx; i <= iGz; i++){
 				if (HighOffset[i] <= (LowOffset[i]+1)){
 					NewOffset[i] = LowOffset[i];
 				}
@@ -237,7 +244,7 @@ namespace Sensor {
 
 			SetOffsets(NewOffset);
 			GetSmoothed();
-			for (int i = iAx; i <= iGz; i++){ // closing in
+			for (int i = iGx; i <= iGz; i++){ // closing in
 				if (Smoothed[i] > Target[i]){
 					// use lower half
 					HighOffset[i] = NewOffset[i];
@@ -256,8 +263,8 @@ namespace Sensor {
 
 	void ICM20689::PullBracketsOut(){
 		bool Done = false;
-		int NextLowOffset[6];
-		int NextHighOffset[6];
+		int NextLowOffset[3];
+		int NextHighOffset[3];
 
 		HAL_UART_Transmit(&huart1, (uint8_t *)"expanding:\r\n",sizeof("expanding:\r\n"),100);
 		ForceHeader();
@@ -267,7 +274,7 @@ namespace Sensor {
 			SetOffsets(LowOffset);
 			GetSmoothed();
 
-			for (int i = iAx; i <= iGz; i++){
+			for (int i = iGx; i <= iGz; i++){
 				// got low values
 				LowValue[i] = Smoothed[i];
 				if (LowValue[i] >= Target[i]){
@@ -282,7 +289,7 @@ namespace Sensor {
 			SetOffsets(HighOffset);
 			GetSmoothed();
 
-			for (int i = iAx; i <= iGz; i++){
+			for (int i = iGx; i <= iGz; i++){
 				// got high values
 				HighValue[i] = Smoothed[i];
 				if (HighValue[i] <= Target[i]){
@@ -296,7 +303,7 @@ namespace Sensor {
 
 			ShowProgress();
 
-			for (int i = iAx; i <= iGz; i++){
+			for (int i = iGx; i <= iGz; i++){
 				LowOffset[i] = NextLowOffset[i];   // had to wait until ShowProgress done
 				HighOffset[i] = NextHighOffset[i]; // ..
 			}
@@ -311,17 +318,14 @@ namespace Sensor {
 		HAL_UART_Transmit(&huart1, (uint8_t *)" readings each time", sizeof(" readings each time"),100);
 	} // SetAveraging
 
-	void ICM20689::getMotion6(int16_t* ax, int16_t* ay, int16_t* az, int16_t* gx, int16_t* gy, int16_t* gz){
-		uint8_t buffer[12];
-		uint8_t reg[12] = {ACCEL_XOUT_H,ACCEL_XOUT_L,ACCEL_YOUT_H,ACCEL_YOUT_L,ACCEL_ZOUT_H,ACCEL_ZOUT_L,GYRO_XOUT_H,GYRO_XOUT_L,GYRO_YOUT_H,GYRO_YOUT_L,GYRO_ZOUT_H,GYRO_ZOUT_L};
+	void ICM20689::getMotion3(int16_t* gx, int16_t* gy, int16_t* gz){
+		uint8_t buffer[6];
+		uint8_t reg[6] = {GYRO_XOUT_H,GYRO_XOUT_L,GYRO_YOUT_H,GYRO_YOUT_L,GYRO_ZOUT_H,GYRO_ZOUT_L};
 
-		spi1.ReadRegisters(reg, buffer, 12);
-		*ax = (((int16_t)buffer[0]) << 8) | buffer[1];
-		*ay = (((int16_t)buffer[2]) << 8) | buffer[3];
-		*az = (((int16_t)buffer[4]) << 8) | buffer[5];
-		*gx = (((int16_t)buffer[6]) << 8) | buffer[7];
-		*gy = (((int16_t)buffer[8]) << 8) | buffer[9];
-		*gz = (((int16_t)buffer[10]) << 8) | buffer[11];
+		spi1.ReadRegisters(reg, buffer, 6);
+		*gx = (((int16_t)buffer[0]) << 8) | buffer[1];
+		*gy = (((int16_t)buffer[2]) << 8) | buffer[3];
+		*gz = (((int16_t)buffer[4]) << 8) | buffer[5];
 	}
 
 	void ICM20689::setXAccelOffset(int16_t* offs){

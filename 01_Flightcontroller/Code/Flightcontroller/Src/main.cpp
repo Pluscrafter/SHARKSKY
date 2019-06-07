@@ -222,6 +222,7 @@ int main(void)
   imu.Initalize();
 
 
+
   if(imu.init_ok == false){
 	  for(;;){
 		  HAL_GPIO_TogglePin(INIT_OK_GPIO_Port, INIT_OK_Pin);
@@ -241,6 +242,7 @@ int main(void)
 	  char txt[32];
 	  imu.ReadGyro();
 	  imu.ReadAccel();
+	  imu.ReadTemp();
 
 	  HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "GYROX: %2.3f \t", imu.ypr[0]),100);
 	  HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "GYROY: %2.3f \t", imu.ypr[1]),100);
@@ -249,6 +251,8 @@ int main(void)
 	  HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "ACCELX: %2.3f \t", imu.accel[0]),100);
 	  HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "ACCELY: %2.3f \t", imu.accel[1]),100);
 	  HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "ACCELZ: %2.3f \t \n\r", imu.accel[2]),100);
+
+	  HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "TEMP: %2.3f \t \n\r", imu.temp),100);
 	  HAL_Delay(100);
     /* USER CODE END WHILE */
 

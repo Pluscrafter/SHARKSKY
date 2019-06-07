@@ -19,12 +19,13 @@ namespace Interface {
 
 class I_SPI {
 public:
-	I_SPI(SPI_HandleTypeDef&hspi);
+	I_SPI(SPI_HandleTypeDef&hspi , GPIO_TypeDef *GPIOx, uint8_t r_Bit);
 	virtual ~I_SPI();
 
 
 	SPI_HandleTypeDef &spi;
-
+	GPIO_TypeDef *GPIOx;
+	uint8_t r_Bit, s_Bit;
 
 	void Start();
 

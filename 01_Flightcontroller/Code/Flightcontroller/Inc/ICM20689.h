@@ -65,13 +65,15 @@
 #define ZA_OFFSET_H			0x7D
 #define ZA_OFFSET_L			0x7E
 
-#define OFFSET_GYRO_X	17
-#define OFFSET_GYRO_Y	275
+#define OFFSET_GYRO_X	22
+#define OFFSET_GYRO_Y	0
 #define OFFSET_GYRO_Z	102
 
 #define OFFSET_ACCEL_X	0
 #define OFFSET_ACCEL_Y	0
 #define OFFSET_ACCEL_Z	0
+
+#define TEMP_OFFSET 	0
 
 #include "I_SPI.h"
 #include "usart.h"
@@ -88,8 +90,11 @@ public:
 
 	float ypr[3];
 	float accel[3];
+	float temp;
+
 	int16_t r_accel[3];
 	int16_t r_gyro[3];
+	int16_t r_temp;
 
 	void Initalize();
 	void SelfTest();
@@ -106,7 +111,7 @@ public:
 	void FindOffset();
 
 private:
-	Interface::I_SPI spi1 = Interface::I_SPI(hspi3);
+	Interface::I_SPI spi1 = Interface::I_SPI(hspi3, GPIOA, 20);
 
 	void SetGyroOffset();
 	void SetAccelOffset();
@@ -116,10 +121,10 @@ private:
 	void PullBracketsIn();
 	void ForceHeader();
 	void GetSmoothed();
-	void SetOffsets(int16_t TheOffsets[6]);
+	void SetOffsets(int16_t TheOffsets[3]);
 	void ShowProgress();
 	void SetAveraging(int NewN);
-	void getMotion6(int16_t* ax, int16_t* ay, int16_t* az, int16_t* gx, int16_t* gy, int16_t* gz);
+	void getMotion3(int16_t* gx, int16_t* gy, int16_t* gz);
 
 	void setXAccelOffset(int16_t* offs);
 	void setYAccelOffset(int16_t* offs);
@@ -136,23 +141,23 @@ private:
 	const char BLANK    = ' ';
 	const char PERIOD   = '.';
 
-	const int iAx = 0;
+	/*const int iAx = 0;
 	const int iAy = 1;
-	const int iAz = 2;
-	const int iGx = 3;
-	const int iGy = 4;
-	const int iGz = 5;
+	const int iAz = 2;*/
+	const int iGx = 0;
+	const int iGy = 1;
+	const int iGz = 2;
 
 	const int usDelay = 3150;   // empirical, to hold sampling to 200 Hz
 	const int NFast =  1000;    // the bigger, the better (but slower)
 	const int NSlow = 10000;    // ..
-	const int LinesBetweenHeaders = 5;
-	int16_t LowValue[6];
-	int16_t HighValue[6];
-	int Smoothed[6];
-	int16_t LowOffset[6];
-	int16_t HighOffset[6];
-	int Target[6];
+	const int LinesBetweenHeaders = 2;
+	int16_t LowValue[3];
+	int16_t HighValue[3];
+	int Smoothed[3];
+	int16_t LowOffset[3];
+	int16_t HighOffset[3];
+	int Target[3];
 	int LinesOut;
 	int N;
 
