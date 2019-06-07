@@ -143,6 +143,8 @@ uint8_t sawtooth[256] = {0, 1, 2, 3, 4, 5, 6, 7,
 
 Sensor::ICM20689 imu;
 float PI = 3.1415;
+
+
 /* USER CODE END 0 */
 
 /**
@@ -159,7 +161,8 @@ int main(void)
   /* MCU Configuration--------------------------------------------------------*/
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-  HAL_Init();
+
+	HAL_Init();
 
   /* USER CODE BEGIN Init */
 
@@ -227,6 +230,8 @@ int main(void)
   }
 
   HAL_GPIO_WritePin(INIT_OK_GPIO_Port, INIT_OK_Pin, GPIO_PIN_SET);
+
+  //imu.FindOffset();
   /* USER CODE END 2 */
 
   /* Infinite loop */
