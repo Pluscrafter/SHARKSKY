@@ -32,6 +32,7 @@
 #include "usart.h"
 #include "gpio.h"
 #include "ICM20689.h"
+#include "MPU6050.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -45,7 +46,15 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+#define ARM_CM_DEMCR      		(*(uint32_t *)0xE000EDFC)
+#define ARM_CM_DWT_CTRL   		(*(uint32_t *)0xE0001000)
+#define ARM_CM_DWT_CYCCNT 		(*(uint32_t *)0xE0001004)
 
+#define MPU6050_ENABLE 			0
+#define MPU6000_ENABLE 			0
+#define ICM20689_ENABLE 		1
+
+#define ICM20689_OFFSET_FIND  	0
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -107,44 +116,57 @@ uint8_t  sine[256] = {
   0x67, 0x6A, 0x6D, 0x70, 0x74, 0x77, 0x7A, 0x7D
 };
 
-uint8_t sawtooth[256] = {0, 1, 2, 3, 4, 5, 6, 7,
-		  8, 9, 10, 11, 12, 13, 14, 15,
-		  16, 17, 18, 19, 20, 21, 22, 23,
-		  24, 25, 26, 27, 28, 29, 30, 31,
-		  32, 33, 34, 35, 36, 37, 38, 39,
-		  40, 41, 42, 43, 44, 45, 46, 47,
-		  48, 49, 50, 51, 52, 53, 54, 55,56,
-		  57, 58, 59, 60, 61, 62, 63, 64,
-		  65, 66, 67, 68, 69, 70, 71, 72,
-		  73, 74, 75, 76, 77, 78, 79, 80,
-		  81, 82, 83, 84, 85, 86, 87, 88,
-		  89, 90, 91, 92, 93, 94, 95, 96,
-		  97, 98, 99, 100, 101, 102, 103,
-		  104, 105, 106,107,
-		  108, 109, 110, 111, 112, 113, 114, 115,
-		  116, 117, 118, 119, 120, 121, 122, 123,
-		  124, 125, 126, 127, 128, 129, 130, 131,
-		  132, 133, 134, 135, 136, 137, 138, 139,
-		  140, 141, 142, 143, 144, 145, 146, 147,
-		  148, 149, 150, 151, 152, 153, 154, 155,156,
-		  157, 158, 159, 160, 161, 162, 163, 164,
-		  165, 166, 167, 168, 169, 170, 171, 172,
-		  173, 174, 175, 176, 177, 178, 179, 180,
-		  181, 182, 183, 184, 185, 186, 187, 188,
-		  189, 190, 191, 192, 193, 194, 195, 196,
-		  197, 198, 199, 200, 201, 202, 203, 204,
-		  205, 206, 207, 208, 209,
-		  210, 211, 212, 213, 214, 215,
-		  216, 217, 218, 219, 220, 221, 222, 223,
-		  224, 225, 226, 227, 228, 229, 230, 231,
-		  232, 233, 234, 235, 236, 237, 238, 239,
-		  240, 241, 242, 243, 244, 245, 246, 247,
-		  248, 249, 250, 251, 252, 253, 254, 255};
+uint8_t sawtooth[256] = {
+0, 1, 2, 3, 4, 5, 6, 7,
+8, 9, 10, 11, 12, 13, 14, 15,
+16, 17, 18, 19, 20, 21, 22, 23,
+24, 25, 26, 27, 28, 29, 30, 31,
+32, 33, 34, 35, 36, 37, 38, 39,
+40, 41, 42, 43, 44, 45, 46, 47,
+48, 49, 50, 51, 52, 53, 54, 55,56,
+57, 58, 59, 60, 61, 62, 63, 64,
+65, 66, 67, 68, 69, 70, 71, 72,
+73, 74, 75, 76, 77, 78, 79, 80,
+81, 82, 83, 84, 85, 86, 87, 88,
+89, 90, 91, 92, 93, 94, 95, 96,
+97, 98, 99, 100, 101, 102, 103,
+104, 105, 106,107,
+108, 109, 110, 111, 112, 113, 114, 115,
+116, 117, 118, 119, 120, 121, 122, 123,
+124, 125, 126, 127, 128, 129, 130, 131,
+132, 133, 134, 135, 136, 137, 138, 139,
+140, 141, 142, 143, 144, 145, 146, 147,
+148, 149, 150, 151, 152, 153, 154, 155,156,
+157, 158, 159, 160, 161, 162, 163, 164,
+165, 166, 167, 168, 169, 170, 171, 172,
+173, 174, 175, 176, 177, 178, 179, 180,
+181, 182, 183, 184, 185, 186, 187, 188,
+189, 190, 191, 192, 193, 194, 195, 196,
+197, 198, 199, 200, 201, 202, 203, 204,
+205, 206, 207, 208, 209,
+210, 211, 212, 213, 214, 215,
+216, 217, 218, 219, 220, 221, 222, 223,
+224, 225, 226, 227, 228, 229, 230, 231,
+232, 233, 234, 235, 236, 237, 238, 239,
+240, 241, 242, 243, 244, 245, 246, 247,
+248, 249, 250, 251, 252, 253, 254, 255};
 
 Sensor::ICM20689 imu;
-float PI = 3.1415;
+float 		PI = 3.1415;
 
+uint32_t 	start = 0, stop = 0;
+double 		lptime = 0.101;
 
+//I2cdev MPU6050
+#if MPU6050_ENABLE == 1
+MPU6050 		mpu;
+uint16_t 		packetSize;
+uint16_t 		fifoCount;
+uint8_t	 		fifoBuffer[64];
+Quaternion 		q;
+VectorFloat 	gravity;
+float 			ypr[3];
+#endif
 /* USER CODE END 0 */
 
 /**
@@ -162,7 +184,7 @@ int main(void)
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
 
-	HAL_Init();
+  HAL_Init();
 
   /* USER CODE BEGIN Init */
 
@@ -219,9 +241,9 @@ int main(void)
   HAL_TIM_Base_Start(&htim6);
   HAL_DAC_Start_DMA(&hdac, DAC_CHANNEL_2, (uint32_t *)sawtooth, 256, DAC_ALIGN_8B_R);
 
+  //init IMU
+#if ICM20689_ENABLE == 1
   imu.Initalize();
-
-
 
   if(imu.init_ok == false){
 	  for(;;){
@@ -229,31 +251,99 @@ int main(void)
 		  HAL_Delay(100);
 	  }
   }
+#endif
 
   HAL_GPIO_WritePin(INIT_OK_GPIO_Port, INIT_OK_Pin, GPIO_PIN_SET);
+#if ICM20689_OFFSET_FIND == 1 and ICM20689_ENABLE == 1
+  imu.FindOffset();
+#endif
+  if (ARM_CM_DWT_CTRL != 0) {                  // See if DWT is available
+	  ARM_CM_DEMCR      |= 1 << 24;            // Set bit 24
+	  ARM_CM_DWT_CYCCNT  = 0;
+	  ARM_CM_DWT_CTRL   |= 1 << 0;             // Set bit 0
+  }
 
-  //imu.FindOffset();
+  //I2cdev MPU6050
+#if MPU6050_ENABLE == 1
+    mpu.initialize();
+  	mpu.dmpInitialize();
+  	mpu.setXGyroOffset(82);
+  	mpu.setYGyroOffset(-23);
+  	mpu.setZGyroOffset(-25);
+
+  	mpu.setXAccelOffset(686);
+  	mpu.setYAccelOffset(-3251);
+  	mpu.setZAccelOffset(1029);
+  	mpu.setDMPEnabled(true);
+  	packetSize = mpu.dmpGetFIFOPacketSize();
+  	fifoCount = mpu.getFIFOCount();
+#endif
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  start = ARM_CM_DWT_CYCCNT;
+#if ICM20689_ENABLE == 1
 	  char txt[32];
 	  imu.ReadGyro();
 	  //imu.ReadAccel();
 	  //imu.ReadTemp();
+	  imu.t_ypr[0] += imu.ypr[0]*lptime;
+	  imu.t_ypr[1] += imu.ypr[1]*lptime;
+	  imu.t_ypr[2] += imu.ypr[2]*lptime;
 
-	  HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "GYROX: %2.3f \t", imu.ypr[0]),100);
-	  HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "GYROY: %2.3f \t", imu.ypr[1]),100);
-	  HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "GYROZ: %2.3f \t \n\r", imu.ypr[2]),100);
+	  HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "GYROX: %2.3f \t", imu.t_ypr[0]),100);
+	  HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "GYROY: %2.3f \t", imu.t_ypr[1]),100);
+	  HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "GYROZ: %2.3f \t \n\r", imu.t_ypr[2]),100);
 
 	  //HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "ACCELX: %2.3f \t", imu.accel[0]),100);
 	  //HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "ACCELY: %2.3f \t", imu.accel[1]),100);
 	  //HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "ACCELZ: %2.3f \t \n\r", imu.accel[2]),100);
 
 	  //HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "TEMP: %2.3f \t \n\r", imu.temp),100);
+
+
 	  HAL_Delay(100);
+#endif
+#if MPU6050_ENABLE == 1
+	  while (fifoCount < packetSize) {
+		  fifoCount = mpu.getFIFOCount();
+	  }
+
+	  if (fifoCount >= 1024) {
+		  mpu.resetFIFO();
+	  }
+	  else{
+		if (fifoCount % packetSize != 0) {
+			mpu.resetFIFO();
+			fifoCount = mpu.getFIFOCount();
+		}
+		else{
+			while (fifoCount >= packetSize) {
+				mpu.getFIFOBytes(fifoBuffer,packetSize);
+				fifoCount -= packetSize;
+			}
+			mpu.dmpGetQuaternion(&q,fifoBuffer);
+			mpu.dmpGetGravity(&gravity,&q);
+			mpu.dmpGetYawPitchRoll(ypr,&q,&gravity);
+
+			char txt[32];
+
+			HAL_UART_Transmit(&huart1,(uint8_t*)txt,sprintf(txt, "GYROX: %2.3f \t", ypr[1]*180/PI),100);
+			HAL_UART_Transmit(&huart1,(uint8_t*)txt,sprintf(txt, "GYROY: %2.3f \t", ypr[2]*180/PI),100);
+			HAL_UART_Transmit(&huart1,(uint8_t*)txt,sprintf(txt, "GYROZ: %2.3f \n\r", ypr[0]*180/PI),100);
+			}
+	  }
+	HAL_Delay(50);
+#endif
+
+	  stop = ARM_CM_DWT_CYCCNT;
+	  lptime = (stop - start)/216000000.0;
+
+
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

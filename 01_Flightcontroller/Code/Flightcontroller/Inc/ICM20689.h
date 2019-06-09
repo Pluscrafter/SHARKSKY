@@ -65,15 +65,15 @@
 #define ZA_OFFSET_H			0x7D
 #define ZA_OFFSET_L			0x7E
 
-#define OFFSET_GYRO_X	15
-#define OFFSET_GYRO_Y	-49
-#define OFFSET_GYRO_Z	-2
+#define OFFSET_GYRO_X		15
+#define OFFSET_GYRO_Y		-49
+#define OFFSET_GYRO_Z		-2
 
-#define OFFSET_ACCEL_X	0
-#define OFFSET_ACCEL_Y	0
-#define OFFSET_ACCEL_Z	0
+#define OFFSET_ACCEL_X		0
+#define OFFSET_ACCEL_Y		0
+#define OFFSET_ACCEL_Z		0
 
-#define TEMP_OFFSET 	0
+#define TEMP_OFFSET 		0
 
 #include "I_SPI.h"
 #include "usart.h"
@@ -84,78 +84,76 @@ namespace Sensor {
 class ICM20689 {
 public:
 	ICM20689();
-	virtual ~ICM20689();
+	virtual 			~ICM20689();
 
-	bool init_ok = false;
+	bool 				init_ok = false;
 
-	float ypr[3];
-	float accel[3];
-	float temp;
+	float 				ypr[3];
+	float 				t_ypr[3];
+	float 				accel[3];
+	float 				temp;
 
-	int16_t r_accel[3];
-	int16_t r_gyro[3];
-	int16_t r_temp;
+	int16_t 			r_accel[3];
+	int16_t 			r_gyro[3];
+	int16_t 			r_temp;
 
-	void Initalize();
-	void SelfTest();
-	void DMPIntStatus();
-	void IntStatus();
-	void SigReset();
-	void FIFOCount();
-	void FIFORW();
+	void 				Initalize();
+	void 				SelfTest();
+	void 				DMPIntStatus();
+	void 				IntStatus();
+	void 				SigReset();
+	void 				FIFOCount();
+	void 				FIFORW();
 
-	void ReadGyro();
-	void ReadAccel();
-	void ReadTemp();
+	void 				ReadGyro();
+	void 				ReadAccel();
+	void 				ReadTemp();
 
-	void FindOffset();
+	void 				FindOffset();
 
 private:
-	Interface::I_SPI spi1 = Interface::I_SPI(hspi3, GPIOA, 20);
+	Interface::I_SPI 	spi1 = Interface::I_SPI(hspi3, GPIOA, 20);
 
-	void SetGyroOffset();
-	void SetAccelOffset();
+	void 				SetGyroOffset();
+	void 				SetAccelOffset();
 
-	void InitalizeCalibration();
-	void PullBracketsOut();
-	void PullBracketsIn();
-	void ForceHeader();
-	void GetSmoothed();
-	void SetOffsets(int16_t TheOffsets[3]);
-	void ShowProgress();
-	void SetAveraging(int NewN);
-	void getMotion3(int16_t& gx, int16_t& gy, int16_t& gz);
+	void 				InitalizeCalibration();
+	void 				PullBracketsOut();
+	void 				PullBracketsIn();
+	void 				ForceHeader();
+	void 				GetSmoothed();
+	void 				SetOffsets(int16_t TheOffsets[3]);
+	void 				ShowProgress();
+	void 				SetAveraging(int NewN);
+	void 				getMotion3(int16_t& gx, int16_t& gy, int16_t& gz);
 
-	void setXGyroOffset(int16_t offs);
-	void setYGyroOffset(int16_t offs);
-	void setZGyroOffset(int16_t offs);
+	void 				setXGyroOffset(int16_t offs);
+	void 				setYGyroOffset(int16_t offs);
+	void 				setZGyroOffset(int16_t offs);
 
 
-	const char LBRACKET = '[';
-	const char RBRACKET = ']';
-	const char COMMA    = ',';
-	const char BLANK    = ' ';
-	const char PERIOD   = '.';
+	const char 			LBRACKET = '[';
+	const char 			RBRACKET = ']';
+	const char 			COMMA    = ',';
+	const char 			BLANK    = ' ';
+	const char 			PERIOD   = '.';
 
-	/*const int iAx = 0;
-	const int iAy = 1;
-	const int iAz = 2;*/
-	const int iGx = 0;
-	const int iGy = 1;
-	const int iGz = 2;
+	const int 			iGx = 0;
+	const int 			iGy = 1;
+	const int 			iGz = 2;
 
-	const int usDelay = 3150;   // empirical, to hold sampling to 200 Hz
-	const int NFast =  1000;    // the bigger, the better (but slower)
-	const int NSlow = 10000;    // ..
-	const int LinesBetweenHeaders = 2;
-	int16_t LowValue[3];
-	int16_t HighValue[3];
-	int Smoothed[3];
-	int16_t LowOffset[3];
-	int16_t HighOffset[3];
-	int Target[3];
-	int LinesOut;
-	int N;
+	const int 			usDelay = 3150;   // empirical, to hold sampling to 200 Hz
+	const int 			NFast =  1000;    // the bigger, the better (but slower)
+	const int 			NSlow = 10000;    // ..
+	const int 			LinesBetweenHeaders = 2;
+	int16_t 			LowValue[3];
+	int16_t 			HighValue[3];
+	int 				Smoothed[3];
+	int16_t 			LowOffset[3];
+	int16_t 			HighOffset[3];
+	int 				Target[3];
+	int 				LinesOut;
+	int 				N;
 
 
 };
