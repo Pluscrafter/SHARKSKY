@@ -65,9 +65,9 @@
 #define ZA_OFFSET_H			0x7D
 #define ZA_OFFSET_L			0x7E
 
-#define OFFSET_GYRO_X	22
-#define OFFSET_GYRO_Y	0
-#define OFFSET_GYRO_Z	102
+#define OFFSET_GYRO_X	15
+#define OFFSET_GYRO_Y	-49
+#define OFFSET_GYRO_Z	-2
 
 #define OFFSET_ACCEL_X	0
 #define OFFSET_ACCEL_Y	0
@@ -124,15 +124,11 @@ private:
 	void SetOffsets(int16_t TheOffsets[3]);
 	void ShowProgress();
 	void SetAveraging(int NewN);
-	void getMotion3(int16_t* gx, int16_t* gy, int16_t* gz);
+	void getMotion3(int16_t& gx, int16_t& gy, int16_t& gz);
 
-	void setXAccelOffset(int16_t* offs);
-	void setYAccelOffset(int16_t* offs);
-	void setZAccelOffset(int16_t* offs);
-
-	void setXGyroOffset(int16_t* offs);
-	void setYGyroOffset(int16_t* offs);
-	void setZGyroOffset(int16_t* offs);
+	void setXGyroOffset(int16_t offs);
+	void setYGyroOffset(int16_t offs);
+	void setZGyroOffset(int16_t offs);
 
 
 	const char LBRACKET = '[';

@@ -48,10 +48,13 @@ namespace Sensor {
 	}
 
 	void ICM20689::SetGyroOffset(){
-		HAL_Delay(10);
-		setXGyroOffset((int16_t*)OFFSET_GYRO_X);
-		setYGyroOffset((int16_t*)OFFSET_GYRO_Y);
-		setZGyroOffset((int16_t*)OFFSET_GYRO_Z);
+		HAL_Delay(100);
+		setXGyroOffset(OFFSET_GYRO_X);
+		HAL_Delay(100);
+		setYGyroOffset(OFFSET_GYRO_Y);
+		HAL_Delay(100);
+		setZGyroOffset(OFFSET_GYRO_Z);
+		HAL_Delay(100);
 	}
 
 	void ICM20689::SetAccelOffset(){
@@ -152,11 +155,11 @@ namespace Sensor {
 
 		for (i = 1; i <= N; i++)
 		{ // get sums
-			getMotion3(&RawValue[iGx], &RawValue[iGy], &RawValue[iGz]);
+			getMotion3(RawValue[iGx], RawValue[iGy], RawValue[iGz]);
 			if ((i % 500) == 0)
-				HAL_UART_Transmit(&huart1, (uint8_t *)PERIOD,sizeof(PERIOD),100);
+				HAL_UART_Transmit(&huart1, (uint8_t *)".",sizeof("."),100);
 
-			HAL_Delay(3);
+			HAL_Delay(5);
 
 			for (int j = iGx; j <= iGz; j++)
 			  Sums[j] = Sums[j] + RawValue[j];
@@ -168,12 +171,9 @@ namespace Sensor {
 	} // GetSmoothed
 
 	void ICM20689::SetOffsets(int16_t TheOffsets[3]){
-		/*setXAccelOffset(&TheOffsets [iAx]);
-	    setYAccelOffset(&TheOffsets [iAy]);
-	    setZAccelOffset(&TheOffsets [iAz]);*/
-	    setXGyroOffset (&TheOffsets [iGx]);
-	    setYGyroOffset (&TheOffsets [iGy]);
-	    setZGyroOffset (&TheOffsets [iGz]);
+	    setXGyroOffset (TheOffsets [iGx]);
+	    setYGyroOffset (TheOffsets [iGy]);
+	    setZGyroOffset (TheOffsets [iGz]);
 	}
 
 	void ICM20689::ShowProgress(){
@@ -318,50 +318,38 @@ namespace Sensor {
 		HAL_UART_Transmit(&huart1, (uint8_t *)" readings each time", sizeof(" readings each time"),100);
 	} // SetAveraging
 
-	void ICM20689::getMotion3(int16_t* gx, int16_t* gy, int16_t* gz){
+	void ICM20689::getMotion3(int16_t &gx, int16_t &gy, int16_t &gz){
 		uint8_t buffer[6];
 		uint8_t reg[6] = {GYRO_XOUT_H,GYRO_XOUT_L,GYRO_YOUT_H,GYRO_YOUT_L,GYRO_ZOUT_H,GYRO_ZOUT_L};
 
 		spi1.ReadRegisters(reg, buffer, 6);
-		*gx = (((int16_t)buffer[0]) << 8) | buffer[1];
-		*gy = (((int16_t)buffer[2]) << 8) | buffer[3];
-		*gz = (((int16_t)buffer[4]) << 8) | buffer[5];
+		gx = (((int16_t)buffer[0]) << 8) | buffer[1];
+		gy = (((int16_t)buffer[2]) << 8) | buffer[3];
+		gz = (((int16_t)buffer[4]) << 8) | buffer[5];
 	}
 
-	void ICM20689::setXAccelOffset(int16_t* offs){
-		uint8_t regs[2] = {XA_OFFSET_H,XA_OFFSET_L};
-		uint8_t val[2] = {(uint8_t)offs[0] >> 8, (uint8_t)offs[1]};
-		spi1.WriteRegisters(regs, val, 2);
-	}
-
-	void ICM20689::setYAccelOffset(int16_t* offs){
-		uint8_t regs[2] = {YA_OFFSET_H,YA_OFFSET_L};
-		uint8_t val[2] = {(uint8_t)offs[0] >> 8, (uint8_t)offs[1]};
-		spi1.WriteRegisters(regs, val, 2);
-	}
-
-	void ICM20689::setZAccelOffset(int16_t* offs){
-		uint8_t regs[2] = {ZA_OFFSET_H,ZA_OFFSET_L};
-		uint8_t val[2] = {(uint8_t)offs[0] >> 8, (uint8_t)offs[1]};
-		spi1.WriteRegisters(regs, val, 2);
-	}
-
-	void ICM20689::setXGyroOffset(int16_t* offs){
+	void ICM20689::setXGyroOffset(int16_t offs){
 		uint8_t regs[2] = {XG_OFFS_USRH,XG_OFFS_USRL};
-		uint8_t val[2] = {(uint8_t)offs[0] >> 8, (uint8_t)offs[1]};
-		spi1.WriteRegisters(regs, val, 2);
+		uint8_t highval = (uint8_t)(offs >> 8) & 0xFF, lowval =  (uint8_t)offs & 0xFF;
+		uint8_t val[2] = {highval, lowval};
+		spi1.WriteRegister(regs[0], val[0]);
+		spi1.WriteRegister(regs[1], val[1]);
 	}
 
-	void ICM20689::setYGyroOffset(int16_t* offs){
+	void ICM20689::setYGyroOffset(int16_t offs){
 		uint8_t regs[2] = {YG_OFFS_USRH,YG_OFFS_USRL};
-		uint8_t val[2] = {(uint8_t)offs[0] >> 8, (uint8_t)offs[1]};
-		spi1.WriteRegisters(regs, val, 2);
+		uint8_t highval = (uint8_t)(offs >> 8) & 0xFF, lowval =  (uint8_t)offs & 0xFF;
+		uint8_t val[2] = {highval, lowval};
+		spi1.WriteRegister(regs[0], val[0]);
+		spi1.WriteRegister(regs[1], val[1]);
 	}
 
-	void ICM20689::setZGyroOffset(int16_t* offs){
+	void ICM20689::setZGyroOffset(int16_t offs){
 		uint8_t regs[2] = {ZG_OFFS_USRH,ZG_OFFS_USRL};
-		uint8_t val[2] = {(uint8_t)offs[0] >> 8, (uint8_t)offs[1]};
-		spi1.WriteRegisters(regs, val, 2);
+		uint8_t highval = (uint8_t)(offs >> 8) & 0xFF, lowval =  (uint8_t)offs & 0xFF;
+		uint8_t val[2] = {highval, lowval};
+		spi1.WriteRegister(regs[0], val[0]);
+		spi1.WriteRegister(regs[1], val[1]);
 	}
 
 } /* namespace Sensor */
