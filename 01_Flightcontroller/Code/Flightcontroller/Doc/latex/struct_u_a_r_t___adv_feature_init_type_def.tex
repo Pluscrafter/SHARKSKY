@@ -1,0 +1,105 @@
+\hypertarget{struct_u_a_r_t___adv_feature_init_type_def}{}\section{U\+A\+R\+T\+\_\+\+Adv\+Feature\+Init\+Type\+Def Struct Reference}
+\label{struct_u_a_r_t___adv_feature_init_type_def}\index{UART\_AdvFeatureInitTypeDef@{UART\_AdvFeatureInitTypeDef}}
+
+
+U\+A\+RT Advanced Features initialization structure definition.  
+
+
+
+
+{\ttfamily \#include $<$stm32f7xx\+\_\+hal\+\_\+uart.\+h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_u_a_r_t___adv_feature_init_type_def_a3182d0787600d70cb3c2a9d68a86e645}{Adv\+Feature\+Init}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_u_a_r_t___adv_feature_init_type_def_ad127398802b667228c2ccb5dd5272bb5}{Tx\+Pin\+Level\+Invert}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_u_a_r_t___adv_feature_init_type_def_a85fecac9f89ae9916dbfde4689a3bc9b}{Rx\+Pin\+Level\+Invert}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_u_a_r_t___adv_feature_init_type_def_aec98c08519e2f0c713b2c2a0213e0772}{Data\+Invert}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_u_a_r_t___adv_feature_init_type_def_a1bc32023897ca98005319c4de7b84a1f}{Swap}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_u_a_r_t___adv_feature_init_type_def_af2079d3cf82744589352950855551bbb}{Overrun\+Disable}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_u_a_r_t___adv_feature_init_type_def_a63254643e43080158d23d3bbe9d53430}{D\+M\+A\+Disableon\+Rx\+Error}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_u_a_r_t___adv_feature_init_type_def_aa329d2b83700bfe0de99708eb3f7a465}{Auto\+Baud\+Rate\+Enable}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_u_a_r_t___adv_feature_init_type_def_a2f962d68e84dd709079aadcadd9d11cc}{Auto\+Baud\+Rate\+Mode}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_u_a_r_t___adv_feature_init_type_def_a64f5cd00608df17cc6be37e98744f9ab}{M\+S\+B\+First}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+U\+A\+RT Advanced Features initialization structure definition. 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_u_a_r_t___adv_feature_init_type_def_a3182d0787600d70cb3c2a9d68a86e645}\label{struct_u_a_r_t___adv_feature_init_type_def_a3182d0787600d70cb3c2a9d68a86e645}} 
+\index{UART\_AdvFeatureInitTypeDef@{UART\_AdvFeatureInitTypeDef}!AdvFeatureInit@{AdvFeatureInit}}
+\index{AdvFeatureInit@{AdvFeatureInit}!UART\_AdvFeatureInitTypeDef@{UART\_AdvFeatureInitTypeDef}}
+\subsubsection{\texorpdfstring{AdvFeatureInit}{AdvFeatureInit}}
+{\footnotesize\ttfamily uint32\+\_\+t U\+A\+R\+T\+\_\+\+Adv\+Feature\+Init\+Type\+Def\+::\+Adv\+Feature\+Init}
+
+Specifies which advanced U\+A\+RT features is initialized. Several Advanced Features may be initialized at the same time . This parameter can be a value of \mbox{\hyperlink{group___u_a_r_t___advanced___features___initialization___type}{U\+A\+RT Advanced Feature Initialization Type}}. \mbox{\Hypertarget{struct_u_a_r_t___adv_feature_init_type_def_aa329d2b83700bfe0de99708eb3f7a465}\label{struct_u_a_r_t___adv_feature_init_type_def_aa329d2b83700bfe0de99708eb3f7a465}} 
+\index{UART\_AdvFeatureInitTypeDef@{UART\_AdvFeatureInitTypeDef}!AutoBaudRateEnable@{AutoBaudRateEnable}}
+\index{AutoBaudRateEnable@{AutoBaudRateEnable}!UART\_AdvFeatureInitTypeDef@{UART\_AdvFeatureInitTypeDef}}
+\subsubsection{\texorpdfstring{AutoBaudRateEnable}{AutoBaudRateEnable}}
+{\footnotesize\ttfamily uint32\+\_\+t U\+A\+R\+T\+\_\+\+Adv\+Feature\+Init\+Type\+Def\+::\+Auto\+Baud\+Rate\+Enable}
+
+Specifies whether auto Baud rate detection is enabled. This parameter can be a value of \mbox{\hyperlink{group___u_a_r_t___auto_baud_rate___enable}{U\+A\+RT Advanced Feature Auto Baud\+Rate Enable}}. \mbox{\Hypertarget{struct_u_a_r_t___adv_feature_init_type_def_a2f962d68e84dd709079aadcadd9d11cc}\label{struct_u_a_r_t___adv_feature_init_type_def_a2f962d68e84dd709079aadcadd9d11cc}} 
+\index{UART\_AdvFeatureInitTypeDef@{UART\_AdvFeatureInitTypeDef}!AutoBaudRateMode@{AutoBaudRateMode}}
+\index{AutoBaudRateMode@{AutoBaudRateMode}!UART\_AdvFeatureInitTypeDef@{UART\_AdvFeatureInitTypeDef}}
+\subsubsection{\texorpdfstring{AutoBaudRateMode}{AutoBaudRateMode}}
+{\footnotesize\ttfamily uint32\+\_\+t U\+A\+R\+T\+\_\+\+Adv\+Feature\+Init\+Type\+Def\+::\+Auto\+Baud\+Rate\+Mode}
+
+If auto Baud rate detection is enabled, specifies how the rate detection is carried out. This parameter can be a value of \mbox{\hyperlink{group___u_a_r_t___auto_baud___rate___mode}{U\+A\+RT Advanced Feature Auto\+Baud Rate Mode}}. \mbox{\Hypertarget{struct_u_a_r_t___adv_feature_init_type_def_aec98c08519e2f0c713b2c2a0213e0772}\label{struct_u_a_r_t___adv_feature_init_type_def_aec98c08519e2f0c713b2c2a0213e0772}} 
+\index{UART\_AdvFeatureInitTypeDef@{UART\_AdvFeatureInitTypeDef}!DataInvert@{DataInvert}}
+\index{DataInvert@{DataInvert}!UART\_AdvFeatureInitTypeDef@{UART\_AdvFeatureInitTypeDef}}
+\subsubsection{\texorpdfstring{DataInvert}{DataInvert}}
+{\footnotesize\ttfamily uint32\+\_\+t U\+A\+R\+T\+\_\+\+Adv\+Feature\+Init\+Type\+Def\+::\+Data\+Invert}
+
+Specifies whether data are inverted (positive/direct logic vs negative/inverted logic). This parameter can be a value of \mbox{\hyperlink{group___u_a_r_t___data___inv}{U\+A\+RT Advanced Feature Binary Data Inversion}}. \mbox{\Hypertarget{struct_u_a_r_t___adv_feature_init_type_def_a63254643e43080158d23d3bbe9d53430}\label{struct_u_a_r_t___adv_feature_init_type_def_a63254643e43080158d23d3bbe9d53430}} 
+\index{UART\_AdvFeatureInitTypeDef@{UART\_AdvFeatureInitTypeDef}!DMADisableonRxError@{DMADisableonRxError}}
+\index{DMADisableonRxError@{DMADisableonRxError}!UART\_AdvFeatureInitTypeDef@{UART\_AdvFeatureInitTypeDef}}
+\subsubsection{\texorpdfstring{DMADisableonRxError}{DMADisableonRxError}}
+{\footnotesize\ttfamily uint32\+\_\+t U\+A\+R\+T\+\_\+\+Adv\+Feature\+Init\+Type\+Def\+::\+D\+M\+A\+Disableon\+Rx\+Error}
+
+Specifies whether the D\+MA is disabled in case of reception error. This parameter can be a value of \mbox{\hyperlink{group___u_a_r_t___d_m_a___disable__on___rx___error}{U\+A\+RT Advanced Feature D\+MA Disable On Rx Error}}. \mbox{\Hypertarget{struct_u_a_r_t___adv_feature_init_type_def_a64f5cd00608df17cc6be37e98744f9ab}\label{struct_u_a_r_t___adv_feature_init_type_def_a64f5cd00608df17cc6be37e98744f9ab}} 
+\index{UART\_AdvFeatureInitTypeDef@{UART\_AdvFeatureInitTypeDef}!MSBFirst@{MSBFirst}}
+\index{MSBFirst@{MSBFirst}!UART\_AdvFeatureInitTypeDef@{UART\_AdvFeatureInitTypeDef}}
+\subsubsection{\texorpdfstring{MSBFirst}{MSBFirst}}
+{\footnotesize\ttfamily uint32\+\_\+t U\+A\+R\+T\+\_\+\+Adv\+Feature\+Init\+Type\+Def\+::\+M\+S\+B\+First}
+
+Specifies whether M\+SB is sent first on U\+A\+RT line. This parameter can be a value of \mbox{\hyperlink{group___u_a_r_t___m_s_b___first}{U\+A\+RT Advanced Feature M\+SB First}}. \mbox{\Hypertarget{struct_u_a_r_t___adv_feature_init_type_def_af2079d3cf82744589352950855551bbb}\label{struct_u_a_r_t___adv_feature_init_type_def_af2079d3cf82744589352950855551bbb}} 
+\index{UART\_AdvFeatureInitTypeDef@{UART\_AdvFeatureInitTypeDef}!OverrunDisable@{OverrunDisable}}
+\index{OverrunDisable@{OverrunDisable}!UART\_AdvFeatureInitTypeDef@{UART\_AdvFeatureInitTypeDef}}
+\subsubsection{\texorpdfstring{OverrunDisable}{OverrunDisable}}
+{\footnotesize\ttfamily uint32\+\_\+t U\+A\+R\+T\+\_\+\+Adv\+Feature\+Init\+Type\+Def\+::\+Overrun\+Disable}
+
+Specifies whether the reception overrun detection is disabled. This parameter can be a value of \mbox{\hyperlink{group___u_a_r_t___overrun___disable}{U\+A\+RT Advanced Feature Overrun Disable}}. \mbox{\Hypertarget{struct_u_a_r_t___adv_feature_init_type_def_a85fecac9f89ae9916dbfde4689a3bc9b}\label{struct_u_a_r_t___adv_feature_init_type_def_a85fecac9f89ae9916dbfde4689a3bc9b}} 
+\index{UART\_AdvFeatureInitTypeDef@{UART\_AdvFeatureInitTypeDef}!RxPinLevelInvert@{RxPinLevelInvert}}
+\index{RxPinLevelInvert@{RxPinLevelInvert}!UART\_AdvFeatureInitTypeDef@{UART\_AdvFeatureInitTypeDef}}
+\subsubsection{\texorpdfstring{RxPinLevelInvert}{RxPinLevelInvert}}
+{\footnotesize\ttfamily uint32\+\_\+t U\+A\+R\+T\+\_\+\+Adv\+Feature\+Init\+Type\+Def\+::\+Rx\+Pin\+Level\+Invert}
+
+Specifies whether the RX pin active level is inverted. This parameter can be a value of \mbox{\hyperlink{group___u_a_r_t___rx___inv}{U\+A\+RT Advanced Feature RX Pin Active Level Inversion}}. \mbox{\Hypertarget{struct_u_a_r_t___adv_feature_init_type_def_a1bc32023897ca98005319c4de7b84a1f}\label{struct_u_a_r_t___adv_feature_init_type_def_a1bc32023897ca98005319c4de7b84a1f}} 
+\index{UART\_AdvFeatureInitTypeDef@{UART\_AdvFeatureInitTypeDef}!Swap@{Swap}}
+\index{Swap@{Swap}!UART\_AdvFeatureInitTypeDef@{UART\_AdvFeatureInitTypeDef}}
+\subsubsection{\texorpdfstring{Swap}{Swap}}
+{\footnotesize\ttfamily uint32\+\_\+t U\+A\+R\+T\+\_\+\+Adv\+Feature\+Init\+Type\+Def\+::\+Swap}
+
+Specifies whether TX and RX pins are swapped. This parameter can be a value of \mbox{\hyperlink{group___u_a_r_t___rx___tx___swap}{U\+A\+RT Advanced Feature RX TX Pins Swap}}. \mbox{\Hypertarget{struct_u_a_r_t___adv_feature_init_type_def_ad127398802b667228c2ccb5dd5272bb5}\label{struct_u_a_r_t___adv_feature_init_type_def_ad127398802b667228c2ccb5dd5272bb5}} 
+\index{UART\_AdvFeatureInitTypeDef@{UART\_AdvFeatureInitTypeDef}!TxPinLevelInvert@{TxPinLevelInvert}}
+\index{TxPinLevelInvert@{TxPinLevelInvert}!UART\_AdvFeatureInitTypeDef@{UART\_AdvFeatureInitTypeDef}}
+\subsubsection{\texorpdfstring{TxPinLevelInvert}{TxPinLevelInvert}}
+{\footnotesize\ttfamily uint32\+\_\+t U\+A\+R\+T\+\_\+\+Adv\+Feature\+Init\+Type\+Def\+::\+Tx\+Pin\+Level\+Invert}
+
+Specifies whether the TX pin active level is inverted. This parameter can be a value of \mbox{\hyperlink{group___u_a_r_t___tx___inv}{U\+A\+RT Advanced Feature TX Pin Active Level Inversion}}. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Drivers/\+S\+T\+M32\+F7xx\+\_\+\+H\+A\+L\+\_\+\+Driver/\+Inc/\mbox{\hyperlink{stm32f7xx__hal__uart_8h}{stm32f7xx\+\_\+hal\+\_\+uart.\+h}}\end{DoxyCompactItemize}

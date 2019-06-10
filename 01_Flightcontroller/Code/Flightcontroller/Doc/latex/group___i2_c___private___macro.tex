@@ -1,0 +1,215 @@
+\hypertarget{group___i2_c___private___macro}{}\section{I2C Private Macros}
+\label{group___i2_c___private___macro}\index{I2C Private Macros@{I2C Private Macros}}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries I\+S\+\_\+\+I2\+C\+\_\+\+A\+D\+D\+R\+E\+S\+S\+I\+N\+G\+\_\+\+M\+O\+DE}(M\+O\+DE)
+\item 
+\#define {\bfseries I\+S\+\_\+\+I2\+C\+\_\+\+D\+U\+A\+L\+\_\+\+A\+D\+D\+R\+E\+SS}(A\+D\+D\+R\+E\+SS)
+\item 
+\#define {\bfseries I\+S\+\_\+\+I2\+C\+\_\+\+O\+W\+N\+\_\+\+A\+D\+D\+R\+E\+S\+S2\+\_\+\+M\+A\+SK}(M\+A\+SK)
+\item 
+\#define {\bfseries I\+S\+\_\+\+I2\+C\+\_\+\+G\+E\+N\+E\+R\+A\+L\+\_\+\+C\+A\+LL}(C\+A\+LL)
+\item 
+\#define {\bfseries I\+S\+\_\+\+I2\+C\+\_\+\+N\+O\+\_\+\+S\+T\+R\+E\+T\+CH}(S\+T\+R\+E\+T\+CH)
+\item 
+\#define {\bfseries I\+S\+\_\+\+I2\+C\+\_\+\+M\+E\+M\+A\+D\+D\+\_\+\+S\+I\+ZE}(S\+I\+ZE)
+\item 
+\#define {\bfseries I\+S\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+M\+O\+DE}(M\+O\+DE)
+\item 
+\#define {\bfseries I\+S\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+R\+E\+Q\+U\+E\+ST}(R\+E\+Q\+U\+E\+ST)
+\item 
+\#define {\bfseries I\+S\+\_\+\+I2\+C\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+O\+P\+T\+I\+O\+N\+S\+\_\+\+R\+E\+Q\+U\+E\+ST}(R\+E\+Q\+U\+E\+ST)
+\item 
+\#define {\bfseries I\+S\+\_\+\+I2\+C\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+O\+T\+H\+E\+R\+\_\+\+O\+P\+T\+I\+O\+N\+S\+\_\+\+R\+E\+Q\+U\+E\+ST}(R\+E\+Q\+U\+E\+ST)
+\item 
+\mbox{\Hypertarget{group___i2_c___private___macro_ga84085a3fd5b43f29ec449d86560a9378}\label{group___i2_c___private___macro_ga84085a3fd5b43f29ec449d86560a9378}} 
+\#define {\bfseries I2\+C\+\_\+\+R\+E\+S\+E\+T\+\_\+\+C\+R2}(\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+)~((\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+)-\/$>$Instance-\/$>$C\+R2 \&= (uint32\+\_\+t)$\sim$((uint32\+\_\+t)(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga1a0478d3d85fc6aba608390ee2ea2d1c}{I2\+C\+\_\+\+C\+R2\+\_\+\+S\+A\+DD}} $\vert$ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga2de0f12e6fb297c2c29bee5504e54377}{I2\+C\+\_\+\+C\+R2\+\_\+\+H\+E\+A\+D10R}} $\vert$ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga23a58895a897ccc34a8cbbe36b412b69}{I2\+C\+\_\+\+C\+R2\+\_\+\+N\+B\+Y\+T\+ES}} $\vert$ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga21a796045451013c964ef8b12ca6c9bb}{I2\+C\+\_\+\+C\+R2\+\_\+\+R\+E\+L\+O\+AD}} $\vert$ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga268ec714bbe4a75ea098c0e230a87697}{I2\+C\+\_\+\+C\+R2\+\_\+\+R\+D\+\_\+\+W\+RN}})))
+\item 
+\mbox{\Hypertarget{group___i2_c___private___macro_ga30d76b55c39e04efb077f47eb454261d}\label{group___i2_c___private___macro_ga30d76b55c39e04efb077f47eb454261d}} 
+\#define {\bfseries I2\+C\+\_\+\+G\+E\+T\+\_\+\+A\+D\+D\+R\+\_\+\+M\+A\+T\+CH}(\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+)~((uint16\+\_\+t)(((\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+)-\/$>$Instance-\/$>$I\+SR \& \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga9050a7e2c1d8777251352f51197e4c80}{I2\+C\+\_\+\+I\+S\+R\+\_\+\+A\+D\+D\+C\+O\+DE}}) $>$$>$ 16\+U))
+\item 
+\mbox{\Hypertarget{group___i2_c___private___macro_ga0359d435a6d984b3fefdc2da709e5764}\label{group___i2_c___private___macro_ga0359d435a6d984b3fefdc2da709e5764}} 
+\#define {\bfseries I2\+C\+\_\+\+G\+E\+T\+\_\+\+D\+IR}(\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+)~((uint8\+\_\+t)(((\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+)-\/$>$Instance-\/$>$I\+SR \& \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaa4890d7deb94106f946b28a7309e22aa}{I2\+C\+\_\+\+I\+S\+R\+\_\+\+D\+IR}}) $>$$>$ 16\+U))
+\item 
+\mbox{\Hypertarget{group___i2_c___private___macro_ga1bc559a860da12ee5a7517548facbc57}\label{group___i2_c___private___macro_ga1bc559a860da12ee5a7517548facbc57}} 
+\#define {\bfseries I2\+C\+\_\+\+G\+E\+T\+\_\+\+S\+T\+O\+P\+\_\+\+M\+O\+DE}(\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+)~((\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+)-\/$>$Instance-\/$>$C\+R2 \& \mbox{\hyperlink{group___peripheral___registers___bits___definition_gabcf789c74e217ec8967bcabc156a6c54}{I2\+C\+\_\+\+C\+R2\+\_\+\+A\+U\+T\+O\+E\+ND}})
+\item 
+\mbox{\Hypertarget{group___i2_c___private___macro_gaa80106d084f4027f8f341f2c3c49dcfa}\label{group___i2_c___private___macro_gaa80106d084f4027f8f341f2c3c49dcfa}} 
+\#define {\bfseries I2\+C\+\_\+\+G\+E\+T\+\_\+\+O\+W\+N\+\_\+\+A\+D\+D\+R\+E\+S\+S1}(\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+)~((uint16\+\_\+t)((\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+)-\/$>$Instance-\/$>$O\+A\+R1 \& \mbox{\hyperlink{group___peripheral___registers___bits___definition_gabb954a9a0e3e3898574643b6d725a70f}{I2\+C\+\_\+\+O\+A\+R1\+\_\+\+O\+A1}}))
+\item 
+\mbox{\Hypertarget{group___i2_c___private___macro_gad0b113e974debf6a9af783e1fe08ef23}\label{group___i2_c___private___macro_gad0b113e974debf6a9af783e1fe08ef23}} 
+\#define {\bfseries I2\+C\+\_\+\+G\+E\+T\+\_\+\+O\+W\+N\+\_\+\+A\+D\+D\+R\+E\+S\+S2}(\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+)~((uint16\+\_\+t)((\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+)-\/$>$Instance-\/$>$O\+A\+R2 \& \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga4627c5a89a3cbe9546321418f8cb9da2}{I2\+C\+\_\+\+O\+A\+R2\+\_\+\+O\+A2}}))
+\item 
+\mbox{\Hypertarget{group___i2_c___private___macro_gad84e8b9523d45b6105b4d5cb68994a79}\label{group___i2_c___private___macro_gad84e8b9523d45b6105b4d5cb68994a79}} 
+\#define {\bfseries I\+S\+\_\+\+I2\+C\+\_\+\+O\+W\+N\+\_\+\+A\+D\+D\+R\+E\+S\+S1}(A\+D\+D\+R\+E\+S\+S1)~((A\+D\+D\+R\+E\+S\+S1) $<$= 0x000003\+F\+F\+U)
+\item 
+\mbox{\Hypertarget{group___i2_c___private___macro_ga83001d53612b83ee90730d3bb2732537}\label{group___i2_c___private___macro_ga83001d53612b83ee90730d3bb2732537}} 
+\#define {\bfseries I\+S\+\_\+\+I2\+C\+\_\+\+O\+W\+N\+\_\+\+A\+D\+D\+R\+E\+S\+S2}(A\+D\+D\+R\+E\+S\+S2)~((A\+D\+D\+R\+E\+S\+S2) $<$= (uint16\+\_\+t)0x00\+F\+F\+U)
+\item 
+\mbox{\Hypertarget{group___i2_c___private___macro_ga2e42fa55be22240dc5a54a0304d01cfb}\label{group___i2_c___private___macro_ga2e42fa55be22240dc5a54a0304d01cfb}} 
+\#define {\bfseries I2\+C\+\_\+\+M\+E\+M\+\_\+\+A\+D\+D\+\_\+\+M\+SB}(\+\_\+\+\_\+\+A\+D\+D\+R\+E\+S\+S\+\_\+\+\_\+)~((uint8\+\_\+t)((uint16\+\_\+t)(((uint16\+\_\+t)((\+\_\+\+\_\+\+A\+D\+D\+R\+E\+S\+S\+\_\+\+\_\+) \& (uint16\+\_\+t)(0x\+F\+F00\+U))) $>$$>$ 8\+U)))
+\item 
+\mbox{\Hypertarget{group___i2_c___private___macro_ga9c8f1a763307d0c37bb4e2dcfdf3bb9f}\label{group___i2_c___private___macro_ga9c8f1a763307d0c37bb4e2dcfdf3bb9f}} 
+\#define {\bfseries I2\+C\+\_\+\+M\+E\+M\+\_\+\+A\+D\+D\+\_\+\+L\+SB}(\+\_\+\+\_\+\+A\+D\+D\+R\+E\+S\+S\+\_\+\+\_\+)~((uint8\+\_\+t)((uint16\+\_\+t)((\+\_\+\+\_\+\+A\+D\+D\+R\+E\+S\+S\+\_\+\+\_\+) \& (uint16\+\_\+t)(0x00\+F\+F\+U))))
+\item 
+\#define {\bfseries I2\+C\+\_\+\+G\+E\+N\+E\+R\+A\+T\+E\+\_\+\+S\+T\+A\+RT}(\+\_\+\+\_\+\+A\+D\+D\+M\+O\+D\+E\+\_\+\+\_\+,  \+\_\+\+\_\+\+A\+D\+D\+R\+E\+S\+S\+\_\+\+\_\+)
+\item 
+\mbox{\Hypertarget{group___i2_c___private___macro_ga31873e0595e29c80cffe00c2d2e073ab}\label{group___i2_c___private___macro_ga31873e0595e29c80cffe00c2d2e073ab}} 
+\#define {\bfseries I2\+C\+\_\+\+C\+H\+E\+C\+K\+\_\+\+F\+L\+AG}(\+\_\+\+\_\+\+I\+S\+R\+\_\+\+\_\+,  \+\_\+\+\_\+\+F\+L\+A\+G\+\_\+\+\_\+)~((((\+\_\+\+\_\+\+I\+S\+R\+\_\+\+\_\+) \& ((\+\_\+\+\_\+\+F\+L\+A\+G\+\_\+\+\_\+) \& \mbox{\hyperlink{group___i2_c___exported___macros_gafbc0a6e4113be03100fbae1314a8b395}{I2\+C\+\_\+\+F\+L\+A\+G\+\_\+\+M\+A\+SK}})) == ((\+\_\+\+\_\+\+F\+L\+A\+G\+\_\+\+\_\+) \& \mbox{\hyperlink{group___i2_c___exported___macros_gafbc0a6e4113be03100fbae1314a8b395}{I2\+C\+\_\+\+F\+L\+A\+G\+\_\+\+M\+A\+SK}})) ? S\+ET \+: R\+E\+S\+ET)
+\item 
+\mbox{\Hypertarget{group___i2_c___private___macro_gacc7c83a67d99d759923c6907f1a1751f}\label{group___i2_c___private___macro_gacc7c83a67d99d759923c6907f1a1751f}} 
+\#define {\bfseries I2\+C\+\_\+\+C\+H\+E\+C\+K\+\_\+\+I\+T\+\_\+\+S\+O\+U\+R\+CE}(\+\_\+\+\_\+\+C\+R1\+\_\+\+\_\+,  \+\_\+\+\_\+\+I\+T\+\_\+\+\_\+)~((((\+\_\+\+\_\+\+C\+R1\+\_\+\+\_\+) \& (\+\_\+\+\_\+\+I\+T\+\_\+\+\_\+)) == (\+\_\+\+\_\+\+I\+T\+\_\+\+\_\+)) ? S\+ET \+: R\+E\+S\+ET)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___i2_c___private___macro_ga5212d1dbe376d10b7ec3060032283a33}\label{group___i2_c___private___macro_ga5212d1dbe376d10b7ec3060032283a33}} 
+\index{I2C Private Macros@{I2C Private Macros}!I2C\_GENERATE\_START@{I2C\_GENERATE\_START}}
+\index{I2C\_GENERATE\_START@{I2C\_GENERATE\_START}!I2C Private Macros@{I2C Private Macros}}
+\subsubsection{\texorpdfstring{I2C\_GENERATE\_START}{I2C\_GENERATE\_START}}
+{\footnotesize\ttfamily \#define I2\+C\+\_\+\+G\+E\+N\+E\+R\+A\+T\+E\+\_\+\+S\+T\+A\+RT(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+A\+D\+D\+M\+O\+D\+E\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+A\+D\+D\+R\+E\+S\+S\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(((\_\_ADDMODE\_\_) == I2C\_ADDRESSINGMODE\_7BIT) ? (uint32\_t)((((uint32\_t)(\_\_ADDRESS\_\_) \& (\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga1a0478d3d85fc6aba608390ee2ea2d1c}{I2C\_CR2\_SADD}})) | (\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga5ac78b87a12a9eaf564f5a3f99928478}{I2C\_CR2\_START}}) | (\mbox{\hyperlink{group___peripheral___registers___bits___definition_gabcf789c74e217ec8967bcabc156a6c54}{I2C\_CR2\_AUTOEND}})) \& (~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga268ec714bbe4a75ea098c0e230a87697}{I2C\_CR2\_RD\_WRN}})) : \(\backslash\)}
+\DoxyCodeLine{                                                          (uint32\_t)((((uint32\_t)(\_\_ADDRESS\_\_) \& (\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga1a0478d3d85fc6aba608390ee2ea2d1c}{I2C\_CR2\_SADD}})) | (\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga5454de5709c0e68a0068f9f5d39e5674}{I2C\_CR2\_ADD10}}) | (\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga5ac78b87a12a9eaf564f5a3f99928478}{I2C\_CR2\_START}})) \& (~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga268ec714bbe4a75ea098c0e230a87697}{I2C\_CR2\_RD\_WRN}})))}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group___i2_c___private___macro_ga14b20c50be9fcafef1ce2f0b962b39a9}\label{group___i2_c___private___macro_ga14b20c50be9fcafef1ce2f0b962b39a9}} 
+\index{I2C Private Macros@{I2C Private Macros}!IS\_I2C\_ADDRESSING\_MODE@{IS\_I2C\_ADDRESSING\_MODE}}
+\index{IS\_I2C\_ADDRESSING\_MODE@{IS\_I2C\_ADDRESSING\_MODE}!I2C Private Macros@{I2C Private Macros}}
+\subsubsection{\texorpdfstring{IS\_I2C\_ADDRESSING\_MODE}{IS\_I2C\_ADDRESSING\_MODE}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+\+I2\+C\+\_\+\+A\+D\+D\+R\+E\+S\+S\+I\+N\+G\+\_\+\+M\+O\+DE(\begin{DoxyParamCaption}\item[{}]{M\+O\+DE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(((MODE) == I2C\_ADDRESSINGMODE\_7BIT) || \(\backslash\)}
+\DoxyCodeLine{                                         ((MODE) == I2C\_ADDRESSINGMODE\_10BIT))}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group___i2_c___private___macro_gae683c113d4088dfae90fbe6677f8296a}\label{group___i2_c___private___macro_gae683c113d4088dfae90fbe6677f8296a}} 
+\index{I2C Private Macros@{I2C Private Macros}!IS\_I2C\_DUAL\_ADDRESS@{IS\_I2C\_DUAL\_ADDRESS}}
+\index{IS\_I2C\_DUAL\_ADDRESS@{IS\_I2C\_DUAL\_ADDRESS}!I2C Private Macros@{I2C Private Macros}}
+\subsubsection{\texorpdfstring{IS\_I2C\_DUAL\_ADDRESS}{IS\_I2C\_DUAL\_ADDRESS}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+\+I2\+C\+\_\+\+D\+U\+A\+L\+\_\+\+A\+D\+D\+R\+E\+SS(\begin{DoxyParamCaption}\item[{}]{A\+D\+D\+R\+E\+SS }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(((ADDRESS) == I2C\_DUALADDRESS\_DISABLE) || \(\backslash\)}
+\DoxyCodeLine{                                         ((ADDRESS) == I2C\_DUALADDRESS\_ENABLE))}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group___i2_c___private___macro_ga36a9a7855d7f35a6b03b05c6079bf149}\label{group___i2_c___private___macro_ga36a9a7855d7f35a6b03b05c6079bf149}} 
+\index{I2C Private Macros@{I2C Private Macros}!IS\_I2C\_GENERAL\_CALL@{IS\_I2C\_GENERAL\_CALL}}
+\index{IS\_I2C\_GENERAL\_CALL@{IS\_I2C\_GENERAL\_CALL}!I2C Private Macros@{I2C Private Macros}}
+\subsubsection{\texorpdfstring{IS\_I2C\_GENERAL\_CALL}{IS\_I2C\_GENERAL\_CALL}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+\+I2\+C\+\_\+\+G\+E\+N\+E\+R\+A\+L\+\_\+\+C\+A\+LL(\begin{DoxyParamCaption}\item[{}]{C\+A\+LL }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(((CALL) == I2C\_GENERALCALL\_DISABLE) || \(\backslash\)}
+\DoxyCodeLine{                                         ((CALL) == I2C\_GENERALCALL\_ENABLE))}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group___i2_c___private___macro_gace95d2b6add7feef5805f1fa6d2e46be}\label{group___i2_c___private___macro_gace95d2b6add7feef5805f1fa6d2e46be}} 
+\index{I2C Private Macros@{I2C Private Macros}!IS\_I2C\_MEMADD\_SIZE@{IS\_I2C\_MEMADD\_SIZE}}
+\index{IS\_I2C\_MEMADD\_SIZE@{IS\_I2C\_MEMADD\_SIZE}!I2C Private Macros@{I2C Private Macros}}
+\subsubsection{\texorpdfstring{IS\_I2C\_MEMADD\_SIZE}{IS\_I2C\_MEMADD\_SIZE}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+\+I2\+C\+\_\+\+M\+E\+M\+A\+D\+D\+\_\+\+S\+I\+ZE(\begin{DoxyParamCaption}\item[{}]{S\+I\+ZE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(((SIZE) == I2C\_MEMADD\_SIZE\_8BIT) || \(\backslash\)}
+\DoxyCodeLine{                                         ((SIZE) == I2C\_MEMADD\_SIZE\_16BIT))}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group___i2_c___private___macro_gaf7d844f7c7f5c96067468ab47971d0fd}\label{group___i2_c___private___macro_gaf7d844f7c7f5c96067468ab47971d0fd}} 
+\index{I2C Private Macros@{I2C Private Macros}!IS\_I2C\_NO\_STRETCH@{IS\_I2C\_NO\_STRETCH}}
+\index{IS\_I2C\_NO\_STRETCH@{IS\_I2C\_NO\_STRETCH}!I2C Private Macros@{I2C Private Macros}}
+\subsubsection{\texorpdfstring{IS\_I2C\_NO\_STRETCH}{IS\_I2C\_NO\_STRETCH}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+\+I2\+C\+\_\+\+N\+O\+\_\+\+S\+T\+R\+E\+T\+CH(\begin{DoxyParamCaption}\item[{}]{S\+T\+R\+E\+T\+CH }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(((STRETCH) == I2C\_NOSTRETCH\_DISABLE) || \(\backslash\)}
+\DoxyCodeLine{                                         ((STRETCH) == I2C\_NOSTRETCH\_ENABLE))}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group___i2_c___private___macro_ga4f5ba081bbab937fa5137340492def13}\label{group___i2_c___private___macro_ga4f5ba081bbab937fa5137340492def13}} 
+\index{I2C Private Macros@{I2C Private Macros}!IS\_I2C\_OWN\_ADDRESS2\_MASK@{IS\_I2C\_OWN\_ADDRESS2\_MASK}}
+\index{IS\_I2C\_OWN\_ADDRESS2\_MASK@{IS\_I2C\_OWN\_ADDRESS2\_MASK}!I2C Private Macros@{I2C Private Macros}}
+\subsubsection{\texorpdfstring{IS\_I2C\_OWN\_ADDRESS2\_MASK}{IS\_I2C\_OWN\_ADDRESS2\_MASK}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+\+I2\+C\+\_\+\+O\+W\+N\+\_\+\+A\+D\+D\+R\+E\+S\+S2\+\_\+\+M\+A\+SK(\begin{DoxyParamCaption}\item[{}]{M\+A\+SK }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(((MASK) == I2C\_OA2\_NOMASK)  || \(\backslash\)}
+\DoxyCodeLine{                                         ((MASK) == I2C\_OA2\_MASK01) || \(\backslash\)}
+\DoxyCodeLine{                                         ((MASK) == I2C\_OA2\_MASK02) || \(\backslash\)}
+\DoxyCodeLine{                                         ((MASK) == I2C\_OA2\_MASK03) || \(\backslash\)}
+\DoxyCodeLine{                                         ((MASK) == I2C\_OA2\_MASK04) || \(\backslash\)}
+\DoxyCodeLine{                                         ((MASK) == I2C\_OA2\_MASK05) || \(\backslash\)}
+\DoxyCodeLine{                                         ((MASK) == I2C\_OA2\_MASK06) || \(\backslash\)}
+\DoxyCodeLine{                                         ((MASK) == I2C\_OA2\_MASK07))}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group___i2_c___private___macro_ga8f3522af9ffef268641698ac80f77859}\label{group___i2_c___private___macro_ga8f3522af9ffef268641698ac80f77859}} 
+\index{I2C Private Macros@{I2C Private Macros}!IS\_I2C\_TRANSFER\_OPTIONS\_REQUEST@{IS\_I2C\_TRANSFER\_OPTIONS\_REQUEST}}
+\index{IS\_I2C\_TRANSFER\_OPTIONS\_REQUEST@{IS\_I2C\_TRANSFER\_OPTIONS\_REQUEST}!I2C Private Macros@{I2C Private Macros}}
+\subsubsection{\texorpdfstring{IS\_I2C\_TRANSFER\_OPTIONS\_REQUEST}{IS\_I2C\_TRANSFER\_OPTIONS\_REQUEST}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+\+I2\+C\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+O\+P\+T\+I\+O\+N\+S\+\_\+\+R\+E\+Q\+U\+E\+ST(\begin{DoxyParamCaption}\item[{}]{R\+E\+Q\+U\+E\+ST }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(((REQUEST) == I2C\_FIRST\_FRAME)          || \(\backslash\)}
+\DoxyCodeLine{                                                   ((REQUEST) == I2C\_FIRST\_AND\_NEXT\_FRAME) || \(\backslash\)}
+\DoxyCodeLine{                                                   ((REQUEST) == I2C\_NEXT\_FRAME)           || \(\backslash\)}
+\DoxyCodeLine{                                                   ((REQUEST) == I2C\_FIRST\_AND\_LAST\_FRAME) || \(\backslash\)}
+\DoxyCodeLine{                                                   ((REQUEST) == I2C\_LAST\_FRAME)           || \(\backslash\)}
+\DoxyCodeLine{                                                   ((REQUEST) == I2C\_LAST\_FRAME\_NO\_STOP)   || \(\backslash\)}
+\DoxyCodeLine{                                                   IS\_I2C\_TRANSFER\_OTHER\_OPTIONS\_REQUEST(REQUEST))}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group___i2_c___private___macro_ga13a3986011ca018dd12ff39ea3bec11b}\label{group___i2_c___private___macro_ga13a3986011ca018dd12ff39ea3bec11b}} 
+\index{I2C Private Macros@{I2C Private Macros}!IS\_I2C\_TRANSFER\_OTHER\_OPTIONS\_REQUEST@{IS\_I2C\_TRANSFER\_OTHER\_OPTIONS\_REQUEST}}
+\index{IS\_I2C\_TRANSFER\_OTHER\_OPTIONS\_REQUEST@{IS\_I2C\_TRANSFER\_OTHER\_OPTIONS\_REQUEST}!I2C Private Macros@{I2C Private Macros}}
+\subsubsection{\texorpdfstring{IS\_I2C\_TRANSFER\_OTHER\_OPTIONS\_REQUEST}{IS\_I2C\_TRANSFER\_OTHER\_OPTIONS\_REQUEST}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+\+I2\+C\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+O\+T\+H\+E\+R\+\_\+\+O\+P\+T\+I\+O\+N\+S\+\_\+\+R\+E\+Q\+U\+E\+ST(\begin{DoxyParamCaption}\item[{}]{R\+E\+Q\+U\+E\+ST }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(((REQUEST) == I2C\_OTHER\_FRAME)     || \(\backslash\)}
+\DoxyCodeLine{                                                        ((REQUEST) == I2C\_OTHER\_AND\_LAST\_FRAME))}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group___i2_c___private___macro_gafaa6130d7e7e11240349d9e1476c7f06}\label{group___i2_c___private___macro_gafaa6130d7e7e11240349d9e1476c7f06}} 
+\index{I2C Private Macros@{I2C Private Macros}!IS\_TRANSFER\_MODE@{IS\_TRANSFER\_MODE}}
+\index{IS\_TRANSFER\_MODE@{IS\_TRANSFER\_MODE}!I2C Private Macros@{I2C Private Macros}}
+\subsubsection{\texorpdfstring{IS\_TRANSFER\_MODE}{IS\_TRANSFER\_MODE}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+M\+O\+DE(\begin{DoxyParamCaption}\item[{}]{M\+O\+DE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(((MODE) == I2C\_RELOAD\_MODE)   || \(\backslash\)}
+\DoxyCodeLine{                                         ((MODE) == I2C\_AUTOEND\_MODE) || \(\backslash\)}
+\DoxyCodeLine{                                         ((MODE) == I2C\_SOFTEND\_MODE))}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group___i2_c___private___macro_ga035522b30af949e6643a5c34bd07f9d2}\label{group___i2_c___private___macro_ga035522b30af949e6643a5c34bd07f9d2}} 
+\index{I2C Private Macros@{I2C Private Macros}!IS\_TRANSFER\_REQUEST@{IS\_TRANSFER\_REQUEST}}
+\index{IS\_TRANSFER\_REQUEST@{IS\_TRANSFER\_REQUEST}!I2C Private Macros@{I2C Private Macros}}
+\subsubsection{\texorpdfstring{IS\_TRANSFER\_REQUEST}{IS\_TRANSFER\_REQUEST}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+\+T\+R\+A\+N\+S\+F\+E\+R\+\_\+\+R\+E\+Q\+U\+E\+ST(\begin{DoxyParamCaption}\item[{}]{R\+E\+Q\+U\+E\+ST }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(((REQUEST) == I2C\_GENERATE\_STOP)        || \(\backslash\)}
+\DoxyCodeLine{                                         ((REQUEST) == I2C\_GENERATE\_START\_READ)  || \(\backslash\)}
+\DoxyCodeLine{                                         ((REQUEST) == I2C\_GENERATE\_START\_WRITE) || \(\backslash\)}
+\DoxyCodeLine{                                         ((REQUEST) == I2C\_NO\_STARTSTOP))}
+
+\end{DoxyCode}

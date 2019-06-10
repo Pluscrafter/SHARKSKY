@@ -1,0 +1,133 @@
+\hypertarget{struct_d_m_a___init_type_def}{}\section{D\+M\+A\+\_\+\+Init\+Type\+Def Struct Reference}
+\label{struct_d_m_a___init_type_def}\index{DMA\_InitTypeDef@{DMA\_InitTypeDef}}
+
+
+D\+MA Configuration Structure definition.  
+
+
+
+
+{\ttfamily \#include $<$stm32f7xx\+\_\+hal\+\_\+dma.\+h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_d_m_a___init_type_def_af62608eb25864208cae5d59acef282a6}{Channel}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_d_m_a___init_type_def_a0145b5d0e074fa8e2e185ecf2c4a15ca}{Direction}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_d_m_a___init_type_def_a46811eb656170cb5c542054d1a41db3a}{Periph\+Inc}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_d_m_a___init_type_def_a49b187ba5ab8ba4354e02837e8b99414}{Mem\+Inc}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_d_m_a___init_type_def_a10a4a549953efa20c235dcbb381b6f0b}{Periph\+Data\+Alignment}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_d_m_a___init_type_def_a7784efedc4a61325fa7364fcace10136}{Mem\+Data\+Alignment}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_d_m_a___init_type_def_adbbca090b53d32ac93cc7359b7994db2}{Mode}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_d_m_a___init_type_def_af110cc02c840207930e3c0e5de5d7dc4}{Priority}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_d_m_a___init_type_def_acda0396cf55baab166f51b1ea1deed0d}{F\+I\+F\+O\+Mode}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_d_m_a___init_type_def_a2f994cc2979b82cd215e9f38edbbc6ed}{F\+I\+F\+O\+Threshold}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_d_m_a___init_type_def_ad5e266a0b90f58365e21c349654bc68d}{Mem\+Burst}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_d_m_a___init_type_def_a3fbfe4dd664e24845dc75f5c8f43b5a3}{Periph\+Burst}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+D\+MA Configuration Structure definition. 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_d_m_a___init_type_def_af62608eb25864208cae5d59acef282a6}\label{struct_d_m_a___init_type_def_af62608eb25864208cae5d59acef282a6}} 
+\index{DMA\_InitTypeDef@{DMA\_InitTypeDef}!Channel@{Channel}}
+\index{Channel@{Channel}!DMA\_InitTypeDef@{DMA\_InitTypeDef}}
+\subsubsection{\texorpdfstring{Channel}{Channel}}
+{\footnotesize\ttfamily uint32\+\_\+t D\+M\+A\+\_\+\+Init\+Type\+Def\+::\+Channel}
+
+Specifies the channel used for the specified stream. This parameter can be a value of \mbox{\hyperlink{group___d_m_a_ex___channel__selection}{D\+MA Channel selection}} \mbox{\Hypertarget{struct_d_m_a___init_type_def_a0145b5d0e074fa8e2e185ecf2c4a15ca}\label{struct_d_m_a___init_type_def_a0145b5d0e074fa8e2e185ecf2c4a15ca}} 
+\index{DMA\_InitTypeDef@{DMA\_InitTypeDef}!Direction@{Direction}}
+\index{Direction@{Direction}!DMA\_InitTypeDef@{DMA\_InitTypeDef}}
+\subsubsection{\texorpdfstring{Direction}{Direction}}
+{\footnotesize\ttfamily uint32\+\_\+t D\+M\+A\+\_\+\+Init\+Type\+Def\+::\+Direction}
+
+Specifies if the data will be transferred from memory to peripheral, from memory to memory or from peripheral to memory. This parameter can be a value of \mbox{\hyperlink{group___d_m_a___data__transfer__direction}{D\+MA Data transfer direction}} \mbox{\Hypertarget{struct_d_m_a___init_type_def_acda0396cf55baab166f51b1ea1deed0d}\label{struct_d_m_a___init_type_def_acda0396cf55baab166f51b1ea1deed0d}} 
+\index{DMA\_InitTypeDef@{DMA\_InitTypeDef}!FIFOMode@{FIFOMode}}
+\index{FIFOMode@{FIFOMode}!DMA\_InitTypeDef@{DMA\_InitTypeDef}}
+\subsubsection{\texorpdfstring{FIFOMode}{FIFOMode}}
+{\footnotesize\ttfamily uint32\+\_\+t D\+M\+A\+\_\+\+Init\+Type\+Def\+::\+F\+I\+F\+O\+Mode}
+
+Specifies if the F\+I\+FO mode or Direct mode will be used for the specified stream. This parameter can be a value of \mbox{\hyperlink{group___d_m_a___f_i_f_o__direct__mode}{D\+MA F\+I\+FO direct mode}} \begin{DoxyNote}{Note}
+The Direct mode (F\+I\+FO mode disabled) cannot be used if the memory-\/to-\/memory data transfer is configured on the selected stream 
+\end{DoxyNote}
+\mbox{\Hypertarget{struct_d_m_a___init_type_def_a2f994cc2979b82cd215e9f38edbbc6ed}\label{struct_d_m_a___init_type_def_a2f994cc2979b82cd215e9f38edbbc6ed}} 
+\index{DMA\_InitTypeDef@{DMA\_InitTypeDef}!FIFOThreshold@{FIFOThreshold}}
+\index{FIFOThreshold@{FIFOThreshold}!DMA\_InitTypeDef@{DMA\_InitTypeDef}}
+\subsubsection{\texorpdfstring{FIFOThreshold}{FIFOThreshold}}
+{\footnotesize\ttfamily uint32\+\_\+t D\+M\+A\+\_\+\+Init\+Type\+Def\+::\+F\+I\+F\+O\+Threshold}
+
+Specifies the F\+I\+FO threshold level. This parameter can be a value of \mbox{\hyperlink{group___d_m_a___f_i_f_o__threshold__level}{D\+MA F\+I\+FO threshold level}} \mbox{\Hypertarget{struct_d_m_a___init_type_def_ad5e266a0b90f58365e21c349654bc68d}\label{struct_d_m_a___init_type_def_ad5e266a0b90f58365e21c349654bc68d}} 
+\index{DMA\_InitTypeDef@{DMA\_InitTypeDef}!MemBurst@{MemBurst}}
+\index{MemBurst@{MemBurst}!DMA\_InitTypeDef@{DMA\_InitTypeDef}}
+\subsubsection{\texorpdfstring{MemBurst}{MemBurst}}
+{\footnotesize\ttfamily uint32\+\_\+t D\+M\+A\+\_\+\+Init\+Type\+Def\+::\+Mem\+Burst}
+
+Specifies the Burst transfer configuration for the memory transfers. It specifies the amount of data to be transferred in a single non interruptible transaction. This parameter can be a value of \mbox{\hyperlink{group___d_m_a___memory__burst}{D\+MA Memory burst}} \begin{DoxyNote}{Note}
+The burst mode is possible only if the address Increment mode is enabled. 
+\end{DoxyNote}
+\mbox{\Hypertarget{struct_d_m_a___init_type_def_a7784efedc4a61325fa7364fcace10136}\label{struct_d_m_a___init_type_def_a7784efedc4a61325fa7364fcace10136}} 
+\index{DMA\_InitTypeDef@{DMA\_InitTypeDef}!MemDataAlignment@{MemDataAlignment}}
+\index{MemDataAlignment@{MemDataAlignment}!DMA\_InitTypeDef@{DMA\_InitTypeDef}}
+\subsubsection{\texorpdfstring{MemDataAlignment}{MemDataAlignment}}
+{\footnotesize\ttfamily uint32\+\_\+t D\+M\+A\+\_\+\+Init\+Type\+Def\+::\+Mem\+Data\+Alignment}
+
+Specifies the Memory data width. This parameter can be a value of \mbox{\hyperlink{group___d_m_a___memory__data__size}{D\+MA Memory data size}} \mbox{\Hypertarget{struct_d_m_a___init_type_def_a49b187ba5ab8ba4354e02837e8b99414}\label{struct_d_m_a___init_type_def_a49b187ba5ab8ba4354e02837e8b99414}} 
+\index{DMA\_InitTypeDef@{DMA\_InitTypeDef}!MemInc@{MemInc}}
+\index{MemInc@{MemInc}!DMA\_InitTypeDef@{DMA\_InitTypeDef}}
+\subsubsection{\texorpdfstring{MemInc}{MemInc}}
+{\footnotesize\ttfamily uint32\+\_\+t D\+M\+A\+\_\+\+Init\+Type\+Def\+::\+Mem\+Inc}
+
+Specifies whether the memory address register should be incremented or not. This parameter can be a value of \mbox{\hyperlink{group___d_m_a___memory__incremented__mode}{D\+MA Memory incremented mode}} \mbox{\Hypertarget{struct_d_m_a___init_type_def_adbbca090b53d32ac93cc7359b7994db2}\label{struct_d_m_a___init_type_def_adbbca090b53d32ac93cc7359b7994db2}} 
+\index{DMA\_InitTypeDef@{DMA\_InitTypeDef}!Mode@{Mode}}
+\index{Mode@{Mode}!DMA\_InitTypeDef@{DMA\_InitTypeDef}}
+\subsubsection{\texorpdfstring{Mode}{Mode}}
+{\footnotesize\ttfamily uint32\+\_\+t D\+M\+A\+\_\+\+Init\+Type\+Def\+::\+Mode}
+
+Specifies the operation mode of the D\+M\+Ay Streamx. This parameter can be a value of \mbox{\hyperlink{group___d_m_a__mode}{D\+MA mode}} \begin{DoxyNote}{Note}
+The circular buffer mode cannot be used if the memory-\/to-\/memory data transfer is configured on the selected Stream 
+\end{DoxyNote}
+\mbox{\Hypertarget{struct_d_m_a___init_type_def_a3fbfe4dd664e24845dc75f5c8f43b5a3}\label{struct_d_m_a___init_type_def_a3fbfe4dd664e24845dc75f5c8f43b5a3}} 
+\index{DMA\_InitTypeDef@{DMA\_InitTypeDef}!PeriphBurst@{PeriphBurst}}
+\index{PeriphBurst@{PeriphBurst}!DMA\_InitTypeDef@{DMA\_InitTypeDef}}
+\subsubsection{\texorpdfstring{PeriphBurst}{PeriphBurst}}
+{\footnotesize\ttfamily uint32\+\_\+t D\+M\+A\+\_\+\+Init\+Type\+Def\+::\+Periph\+Burst}
+
+Specifies the Burst transfer configuration for the peripheral transfers. It specifies the amount of data to be transferred in a single non interruptible transaction. This parameter can be a value of \mbox{\hyperlink{group___d_m_a___peripheral__burst}{D\+MA Peripheral burst}} \begin{DoxyNote}{Note}
+The burst mode is possible only if the address Increment mode is enabled. 
+\end{DoxyNote}
+\mbox{\Hypertarget{struct_d_m_a___init_type_def_a10a4a549953efa20c235dcbb381b6f0b}\label{struct_d_m_a___init_type_def_a10a4a549953efa20c235dcbb381b6f0b}} 
+\index{DMA\_InitTypeDef@{DMA\_InitTypeDef}!PeriphDataAlignment@{PeriphDataAlignment}}
+\index{PeriphDataAlignment@{PeriphDataAlignment}!DMA\_InitTypeDef@{DMA\_InitTypeDef}}
+\subsubsection{\texorpdfstring{PeriphDataAlignment}{PeriphDataAlignment}}
+{\footnotesize\ttfamily uint32\+\_\+t D\+M\+A\+\_\+\+Init\+Type\+Def\+::\+Periph\+Data\+Alignment}
+
+Specifies the Peripheral data width. This parameter can be a value of \mbox{\hyperlink{group___d_m_a___peripheral__data__size}{D\+MA Peripheral data size}} \mbox{\Hypertarget{struct_d_m_a___init_type_def_a46811eb656170cb5c542054d1a41db3a}\label{struct_d_m_a___init_type_def_a46811eb656170cb5c542054d1a41db3a}} 
+\index{DMA\_InitTypeDef@{DMA\_InitTypeDef}!PeriphInc@{PeriphInc}}
+\index{PeriphInc@{PeriphInc}!DMA\_InitTypeDef@{DMA\_InitTypeDef}}
+\subsubsection{\texorpdfstring{PeriphInc}{PeriphInc}}
+{\footnotesize\ttfamily uint32\+\_\+t D\+M\+A\+\_\+\+Init\+Type\+Def\+::\+Periph\+Inc}
+
+Specifies whether the Peripheral address register should be incremented or not. This parameter can be a value of \mbox{\hyperlink{group___d_m_a___peripheral__incremented__mode}{D\+MA Peripheral incremented mode}} \mbox{\Hypertarget{struct_d_m_a___init_type_def_af110cc02c840207930e3c0e5de5d7dc4}\label{struct_d_m_a___init_type_def_af110cc02c840207930e3c0e5de5d7dc4}} 
+\index{DMA\_InitTypeDef@{DMA\_InitTypeDef}!Priority@{Priority}}
+\index{Priority@{Priority}!DMA\_InitTypeDef@{DMA\_InitTypeDef}}
+\subsubsection{\texorpdfstring{Priority}{Priority}}
+{\footnotesize\ttfamily uint32\+\_\+t D\+M\+A\+\_\+\+Init\+Type\+Def\+::\+Priority}
+
+Specifies the software priority for the D\+M\+Ay Streamx. This parameter can be a value of \mbox{\hyperlink{group___d_m_a___priority__level}{D\+MA Priority level}} 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Drivers/\+S\+T\+M32\+F7xx\+\_\+\+H\+A\+L\+\_\+\+Driver/\+Inc/\mbox{\hyperlink{stm32f7xx__hal__dma_8h}{stm32f7xx\+\_\+hal\+\_\+dma.\+h}}\end{DoxyCompactItemize}

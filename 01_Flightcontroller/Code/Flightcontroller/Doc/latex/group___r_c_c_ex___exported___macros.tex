@@ -1,0 +1,1024 @@
+\hypertarget{group___r_c_c_ex___exported___macros}{}\section{R\+C\+C\+Ex Exported Macros}
+\label{group___r_c_c_ex___exported___macros}\index{RCCEx Exported Macros@{RCCEx Exported Macros}}
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___r_c_c_ex___peripheral___clock___enable___disable}{R\+C\+C\+Ex\+\_\+\+Peripheral\+\_\+\+Clock\+\_\+\+Enable\+\_\+\+Disable}}
+\begin{DoxyCompactList}\small\item\em Enables or disables the A\+H\+B/\+A\+PB peripheral clock. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___r_c_c_ex___peripheral___clock___enable___disable___status}{Peripheral Clock Enable Disable Status}}
+\begin{DoxyCompactList}\small\item\em Get the enable or disable status of the A\+H\+B/\+A\+PB peripheral clock. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___r_c_c_ex___force___release___peripheral___reset}{R\+C\+C\+Ex Force Release Peripheral Reset}}
+\begin{DoxyCompactList}\small\item\em Forces or releases A\+H\+B/\+A\+PB peripheral reset. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___r_c_c_ex___peripheral___clock___sleep___enable___disable}{R\+C\+C\+Ex Peripheral Clock Sleep Enable Disable}}
+\begin{DoxyCompactList}\small\item\em Enables or disables the A\+H\+B/\+A\+PB peripheral clock during Low Power (Sleep) mode. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___r_c_c___clock___sleep___enable___disable___status}{A\+H\+B/\+A\+P\+B Peripheral Clock Sleep Enable Disable Status}}
+\begin{DoxyCompactList}\small\item\em Get the enable or disable status of the A\+H\+B/\+A\+PB peripheral clock during Low Power (Sleep) mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___r_c_c_ex___exported___macros_ga56d9ad48b28e7aa4ad3aadca5b4fd431}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+P\+L\+L\+\_\+\+C\+O\+N\+F\+IG}}(\+\_\+\+\_\+\+R\+C\+C\+\_\+\+P\+L\+L\+Source\+\_\+\+\_\+,  \+\_\+\+\_\+\+P\+L\+L\+M\+\_\+\+\_\+,  \+\_\+\+\_\+\+P\+L\+L\+N\+\_\+\+\_\+,  \+\_\+\+\_\+\+P\+L\+L\+P\+\_\+\+\_\+,  \+\_\+\+\_\+\+P\+L\+L\+Q\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Macro to configure the main P\+LL clock source, multiplication and division factors. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_c_c_ex___exported___macros_ga292ca7c84f192778314125ed6d7c8333}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+T\+I\+M\+C\+L\+K\+P\+R\+E\+S\+C\+A\+L\+ER}}(\+\_\+\+\_\+\+P\+R\+E\+S\+C\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Macro to configure the Timers clocks prescalers. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_c_c_ex___exported___macros_ga829deb86fa0bf2b9303599f25143bb83}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+P\+L\+L\+S\+A\+I\+\_\+\+E\+N\+A\+B\+LE}}()~(R\+CC-\/$>$CR $\vert$= (R\+C\+C\+\_\+\+C\+R\+\_\+\+P\+L\+L\+S\+A\+I\+ON))
+\begin{DoxyCompactList}\small\item\em Macros to Enable or Disable the P\+L\+L\+I\+S\+AI. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___r_c_c_ex___exported___macros_ga8ec70b1740682f5145ac93c17eb87ce8}\label{group___r_c_c_ex___exported___macros_ga8ec70b1740682f5145ac93c17eb87ce8}} 
+\#define {\bfseries \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+P\+L\+L\+S\+A\+I\+\_\+\+D\+I\+S\+A\+B\+LE}()~(R\+CC-\/$>$CR \&= $\sim$(R\+C\+C\+\_\+\+C\+R\+\_\+\+P\+L\+L\+S\+A\+I\+ON))
+\item 
+\#define \mbox{\hyperlink{group___r_c_c_ex___exported___macros_gaceef24f97e3781b61c14681fb7cc7346}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+P\+L\+L\+S\+A\+I\+\_\+\+C\+O\+N\+F\+IG}}(\+\_\+\+\_\+\+P\+L\+L\+S\+A\+I\+N\+\_\+\+\_\+,  \+\_\+\+\_\+\+P\+L\+L\+S\+A\+I\+P\+\_\+\+\_\+,  \+\_\+\+\_\+\+P\+L\+L\+S\+A\+I\+Q\+\_\+\+\_\+,  \+\_\+\+\_\+\+P\+L\+L\+S\+A\+I\+R\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Macro to configure the P\+L\+L\+S\+AI clock multiplication and division factors. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_c_c_ex___exported___macros_ga9aafdab89de4a330a682731e28e535eb}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+P\+L\+L\+I2\+S\+\_\+\+C\+O\+N\+F\+IG}}(\+\_\+\+\_\+\+P\+L\+L\+I2\+S\+N\+\_\+\+\_\+,  \+\_\+\+\_\+\+P\+L\+L\+I2\+S\+P\+\_\+\+\_\+,  \+\_\+\+\_\+\+P\+L\+L\+I2\+S\+Q\+\_\+\+\_\+,  \+\_\+\+\_\+\+P\+L\+L\+I2\+S\+R\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Macro to configure the P\+L\+L\+I2S clock multiplication and division factors. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_c_c_ex___exported___macros_gafc7cf4dd4c7859bcefe0d46cc56426bb}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+P\+L\+L\+I2\+S\+\_\+\+P\+L\+L\+S\+A\+I\+C\+L\+K\+D\+I\+V\+Q\+\_\+\+C\+O\+N\+F\+IG}}(\+\_\+\+\_\+\+P\+L\+L\+I2\+S\+Div\+Q\+\_\+\+\_\+)~(M\+O\+D\+I\+F\+Y\+\_\+\+R\+EG(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R1, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R1\+\_\+\+P\+L\+L\+I2\+S\+D\+I\+VQ, (\+\_\+\+\_\+\+P\+L\+L\+I2\+S\+Div\+Q\+\_\+\+\_\+)-\/1))
+\begin{DoxyCompactList}\small\item\em Macro to configure the S\+AI clock Divider coming from P\+L\+L\+I2S. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_c_c_ex___exported___macros_gad4fc19bc8f6c50dca02f9d0b14fc41fd}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+P\+L\+L\+S\+A\+I\+\_\+\+P\+L\+L\+S\+A\+I\+C\+L\+K\+D\+I\+V\+Q\+\_\+\+C\+O\+N\+F\+IG}}(\+\_\+\+\_\+\+P\+L\+L\+S\+A\+I\+Div\+Q\+\_\+\+\_\+)~(M\+O\+D\+I\+F\+Y\+\_\+\+R\+EG(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R1, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R1\+\_\+\+P\+L\+L\+S\+A\+I\+D\+I\+VQ, ((\+\_\+\+\_\+\+P\+L\+L\+S\+A\+I\+Div\+Q\+\_\+\+\_\+)-\/1)$<$$<$8))
+\begin{DoxyCompactList}\small\item\em Macro to configure the S\+AI clock Divider coming from P\+L\+L\+S\+AI. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_c_c_ex___exported___macros_ga57c7909a2eb8ee312705c224607d00c6}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+S\+A\+I1\+\_\+\+C\+O\+N\+F\+IG}}(\+\_\+\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+)~M\+O\+D\+I\+F\+Y\+\_\+\+R\+EG(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R1, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R1\+\_\+\+S\+A\+I1\+S\+EL, (uint32\+\_\+t)(\+\_\+\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Macro to configure S\+A\+I1 clock source selection. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_c_c_ex___exported___macros_ga9af45dae7c2f2f1c8848be68d7bded7e}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+G\+E\+T\+\_\+\+S\+A\+I1\+\_\+\+S\+O\+U\+R\+CE}}()~((uint32\+\_\+t)(R\+E\+A\+D\+\_\+\+B\+IT(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R1, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R1\+\_\+\+S\+A\+I1\+S\+EL)))
+\begin{DoxyCompactList}\small\item\em Macro to get the S\+A\+I1 clock source. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_c_c_ex___exported___macros_ga18ab74d31998863f042a39d50f27c163}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+S\+A\+I2\+\_\+\+C\+O\+N\+F\+IG}}(\+\_\+\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+)~M\+O\+D\+I\+F\+Y\+\_\+\+R\+EG(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R1, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R1\+\_\+\+S\+A\+I2\+S\+EL, (uint32\+\_\+t)(\+\_\+\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Macro to configure S\+A\+I2 clock source selection. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_c_c_ex___exported___macros_gac12f70a6d677938196f8d8a64d0c743e}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+G\+E\+T\+\_\+\+S\+A\+I2\+\_\+\+S\+O\+U\+R\+CE}}()~((uint32\+\_\+t)(R\+E\+A\+D\+\_\+\+B\+IT(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R1, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R1\+\_\+\+S\+A\+I2\+S\+EL)))
+\begin{DoxyCompactList}\small\item\em Macro to get the S\+A\+I2 clock source. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___r_c_c_ex___exported___macros_ga8948d01638a1ff52529310a1eba70caa}\label{group___r_c_c_ex___exported___macros_ga8948d01638a1ff52529310a1eba70caa}} 
+\#define \mbox{\hyperlink{group___r_c_c_ex___exported___macros_ga8948d01638a1ff52529310a1eba70caa}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+P\+L\+L\+S\+A\+I\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+IT}}()~(R\+CC-\/$>$C\+IR $\vert$= (R\+C\+C\+\_\+\+C\+I\+R\+\_\+\+P\+L\+L\+S\+A\+I\+R\+D\+Y\+IE))
+\begin{DoxyCompactList}\small\item\em Enable P\+L\+L\+S\+A\+I\+\_\+\+R\+DY interrupt. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___r_c_c_ex___exported___macros_ga90647b25667347150cdf62a0f580736e}\label{group___r_c_c_ex___exported___macros_ga90647b25667347150cdf62a0f580736e}} 
+\#define \mbox{\hyperlink{group___r_c_c_ex___exported___macros_ga90647b25667347150cdf62a0f580736e}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+P\+L\+L\+S\+A\+I\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+IT}}()~(R\+CC-\/$>$C\+IR \&= $\sim$(R\+C\+C\+\_\+\+C\+I\+R\+\_\+\+P\+L\+L\+S\+A\+I\+R\+D\+Y\+IE))
+\begin{DoxyCompactList}\small\item\em Disable P\+L\+L\+S\+A\+I\+\_\+\+R\+DY interrupt. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___r_c_c_ex___exported___macros_ga9e755ee880ecfa4142683029c601a296}\label{group___r_c_c_ex___exported___macros_ga9e755ee880ecfa4142683029c601a296}} 
+\#define \mbox{\hyperlink{group___r_c_c_ex___exported___macros_ga9e755ee880ecfa4142683029c601a296}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+P\+L\+L\+S\+A\+I\+\_\+\+C\+L\+E\+A\+R\+\_\+\+IT}}()~(R\+CC-\/$>$C\+IR $\vert$= (R\+C\+C\+\_\+\+C\+I\+R\+\_\+\+P\+L\+L\+S\+A\+I\+R\+D\+YF))
+\begin{DoxyCompactList}\small\item\em Clear the P\+L\+L\+S\+AI R\+DY interrupt pending bits. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_c_c_ex___exported___macros_ga478a4064faa2f2f1fa7320fe6b60b5ba}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+P\+L\+L\+S\+A\+I\+\_\+\+G\+E\+T\+\_\+\+IT}}()~((R\+CC-\/$>$C\+IR \& (R\+C\+C\+\_\+\+C\+I\+R\+\_\+\+P\+L\+L\+S\+A\+I\+R\+D\+Y\+IE)) == (R\+C\+C\+\_\+\+C\+I\+R\+\_\+\+P\+L\+L\+S\+A\+I\+R\+D\+Y\+IE))
+\begin{DoxyCompactList}\small\item\em Check the P\+L\+L\+S\+AI R\+DY interrupt has occurred or not. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_c_c_ex___exported___macros_ga573e020db1ec841ff9c9d36da2b82a6b}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+P\+L\+L\+S\+A\+I\+\_\+\+G\+E\+T\+\_\+\+F\+L\+AG}}()~((R\+CC-\/$>$CR \& (R\+C\+C\+\_\+\+C\+R\+\_\+\+P\+L\+L\+S\+A\+I\+R\+DY)) == (R\+C\+C\+\_\+\+C\+R\+\_\+\+P\+L\+L\+S\+A\+I\+R\+DY))
+\begin{DoxyCompactList}\small\item\em Check P\+L\+L\+S\+AI R\+DY flag is set or not. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_c_c_ex___exported___macros_ga4a027bee91b86bd6c280265c43624fc6}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+G\+E\+T\+\_\+\+I2\+S\+C\+L\+K\+S\+O\+U\+R\+CE}}()~(R\+E\+A\+D\+\_\+\+B\+IT(R\+CC-\/$>$C\+F\+GR, R\+C\+C\+\_\+\+C\+F\+G\+R\+\_\+\+I2\+S\+S\+RC))
+\begin{DoxyCompactList}\small\item\em Macro to Get I2S clock source selection. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_c_c_ex___exported___macros_ga90e36ab9a2478f1c6066432e230845a2}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+I2\+C1\+\_\+\+C\+O\+N\+F\+IG}}(\+\_\+\+\_\+\+I2\+C1\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+)~M\+O\+D\+I\+F\+Y\+\_\+\+R\+EG(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+I2\+C1\+S\+EL, (uint32\+\_\+t)(\+\_\+\+\_\+\+I2\+C1\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Macro to configure the I2\+C1 clock (I2\+C1\+C\+LK). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_c_c_ex___exported___macros_gab9372aa811e622a602d2b3657790c8e7}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+G\+E\+T\+\_\+\+I2\+C1\+\_\+\+S\+O\+U\+R\+CE}}()~((uint32\+\_\+t)(R\+E\+A\+D\+\_\+\+B\+IT(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+I2\+C1\+S\+EL)))
+\begin{DoxyCompactList}\small\item\em Macro to get the I2\+C1 clock source. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_c_c_ex___exported___macros_ga49280a374f55802d8063a083350572ab}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+I2\+C2\+\_\+\+C\+O\+N\+F\+IG}}(\+\_\+\+\_\+\+I2\+C2\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+)~M\+O\+D\+I\+F\+Y\+\_\+\+R\+EG(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+I2\+C2\+S\+EL, (uint32\+\_\+t)(\+\_\+\+\_\+\+I2\+C2\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Macro to configure the I2\+C2 clock (I2\+C2\+C\+LK). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_c_c_ex___exported___macros_ga374d6807df83720c548fdea1d86d3852}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+G\+E\+T\+\_\+\+I2\+C2\+\_\+\+S\+O\+U\+R\+CE}}()~((uint32\+\_\+t)(R\+E\+A\+D\+\_\+\+B\+IT(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+I2\+C2\+S\+EL)))
+\begin{DoxyCompactList}\small\item\em Macro to get the I2\+C2 clock source. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_c_c_ex___exported___macros_ga2ca9240d0a7d79ca5f72b298255e73ee}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+I2\+C3\+\_\+\+C\+O\+N\+F\+IG}}(\+\_\+\+\_\+\+I2\+C3\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+)~M\+O\+D\+I\+F\+Y\+\_\+\+R\+EG(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+I2\+C3\+S\+EL, (uint32\+\_\+t)(\+\_\+\+\_\+\+I2\+C3\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Macro to configure the I2\+C3 clock (I2\+C3\+C\+LK). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_c_c_ex___exported___macros_gac1a897c77611227b305f8dde521c0d9e}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+G\+E\+T\+\_\+\+I2\+C3\+\_\+\+S\+O\+U\+R\+CE}}()~((uint32\+\_\+t)(R\+E\+A\+D\+\_\+\+B\+IT(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+I2\+C3\+S\+EL)))
+\begin{DoxyCompactList}\small\item\em macro to get the I2\+C3 clock source. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_c_c_ex___exported___macros_ga5ef626e39760793f37dd107f633c1404}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+I2\+C4\+\_\+\+C\+O\+N\+F\+IG}}(\+\_\+\+\_\+\+I2\+C4\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+)~M\+O\+D\+I\+F\+Y\+\_\+\+R\+EG(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+I2\+C4\+S\+EL, (uint32\+\_\+t)(\+\_\+\+\_\+\+I2\+C4\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Macro to configure the I2\+C4 clock (I2\+C4\+C\+LK). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_c_c_ex___exported___macros_ga6632a1fbc809f6f6dedde0d36cbaa3c9}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+G\+E\+T\+\_\+\+I2\+C4\+\_\+\+S\+O\+U\+R\+CE}}()~((uint32\+\_\+t)(R\+E\+A\+D\+\_\+\+B\+IT(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+I2\+C4\+S\+EL)))
+\begin{DoxyCompactList}\small\item\em macro to get the I2\+C4 clock source. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_c_c_ex___exported___macros_ga4a383ccb3cc3caaea1f4226e3e61f3e0}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+U\+S\+A\+R\+T1\+\_\+\+C\+O\+N\+F\+IG}}(\+\_\+\+\_\+\+U\+S\+A\+R\+T1\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+)~M\+O\+D\+I\+F\+Y\+\_\+\+R\+EG(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+U\+S\+A\+R\+T1\+S\+EL, (uint32\+\_\+t)(\+\_\+\+\_\+\+U\+S\+A\+R\+T1\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Macro to configure the U\+S\+A\+R\+T1 clock (U\+S\+A\+R\+T1\+C\+LK). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_c_c_ex___exported___macros_gaf6ff545446befd6af48cd5108e8fbc2e}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+G\+E\+T\+\_\+\+U\+S\+A\+R\+T1\+\_\+\+S\+O\+U\+R\+CE}}()~((uint32\+\_\+t)(R\+E\+A\+D\+\_\+\+B\+IT(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+U\+S\+A\+R\+T1\+S\+EL)))
+\begin{DoxyCompactList}\small\item\em macro to get the U\+S\+A\+R\+T1 clock source. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_c_c_ex___exported___macros_gaa413643f4a106ca54111e8ff510290ca}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+U\+S\+A\+R\+T2\+\_\+\+C\+O\+N\+F\+IG}}(\+\_\+\+\_\+\+U\+S\+A\+R\+T2\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+)~M\+O\+D\+I\+F\+Y\+\_\+\+R\+EG(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+U\+S\+A\+R\+T2\+S\+EL, (uint32\+\_\+t)(\+\_\+\+\_\+\+U\+S\+A\+R\+T2\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Macro to configure the U\+S\+A\+R\+T2 clock (U\+S\+A\+R\+T2\+C\+LK). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_c_c_ex___exported___macros_ga7f2fecdd9f75bb71677602f9b2c22dd7}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+G\+E\+T\+\_\+\+U\+S\+A\+R\+T2\+\_\+\+S\+O\+U\+R\+CE}}()~((uint32\+\_\+t)(R\+E\+A\+D\+\_\+\+B\+IT(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+U\+S\+A\+R\+T2\+S\+EL)))
+\begin{DoxyCompactList}\small\item\em macro to get the U\+S\+A\+R\+T2 clock source. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_c_c_ex___exported___macros_ga732383844537c59f16d5882a8fa1670d}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+C\+O\+N\+F\+IG}}(\+\_\+\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+)~M\+O\+D\+I\+F\+Y\+\_\+\+R\+EG(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+U\+S\+A\+R\+T3\+S\+EL, (uint32\+\_\+t)(\+\_\+\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Macro to configure the U\+S\+A\+R\+T3 clock (U\+S\+A\+R\+T3\+C\+LK). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_c_c_ex___exported___macros_gab52c0cea73126e6f71f7ea7cb9d37378}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+G\+E\+T\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+S\+O\+U\+R\+CE}}()~((uint32\+\_\+t)(R\+E\+A\+D\+\_\+\+B\+IT(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+U\+S\+A\+R\+T3\+S\+EL)))
+\begin{DoxyCompactList}\small\item\em macro to get the U\+S\+A\+R\+T3 clock source. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_c_c_ex___exported___macros_gab9ffca069f4dfc371811e084170998c5}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+U\+A\+R\+T4\+\_\+\+C\+O\+N\+F\+IG}}(\+\_\+\+\_\+\+U\+A\+R\+T4\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+)~M\+O\+D\+I\+F\+Y\+\_\+\+R\+EG(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+U\+A\+R\+T4\+S\+EL, (uint32\+\_\+t)(\+\_\+\+\_\+\+U\+A\+R\+T4\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Macro to configure the U\+A\+R\+T4 clock (U\+A\+R\+T4\+C\+LK). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_c_c_ex___exported___macros_ga91d2925bf5e1d3dad19e77d620591ae0}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+G\+E\+T\+\_\+\+U\+A\+R\+T4\+\_\+\+S\+O\+U\+R\+CE}}()~((uint32\+\_\+t)(R\+E\+A\+D\+\_\+\+B\+IT(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+U\+A\+R\+T4\+S\+EL)))
+\begin{DoxyCompactList}\small\item\em macro to get the U\+A\+R\+T4 clock source. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_c_c_ex___exported___macros_ga3115ed733d8be4b363e3324a024479b5}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+U\+A\+R\+T5\+\_\+\+C\+O\+N\+F\+IG}}(\+\_\+\+\_\+\+U\+A\+R\+T5\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+)~M\+O\+D\+I\+F\+Y\+\_\+\+R\+EG(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+U\+A\+R\+T5\+S\+EL, (uint32\+\_\+t)(\+\_\+\+\_\+\+U\+A\+R\+T5\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Macro to configure the U\+A\+R\+T5 clock (U\+A\+R\+T5\+C\+LK). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_c_c_ex___exported___macros_ga8c0fc64b4ab3fbb914788d1f5731f28e}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+G\+E\+T\+\_\+\+U\+A\+R\+T5\+\_\+\+S\+O\+U\+R\+CE}}()~((uint32\+\_\+t)(R\+E\+A\+D\+\_\+\+B\+IT(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+U\+A\+R\+T5\+S\+EL)))
+\begin{DoxyCompactList}\small\item\em macro to get the U\+A\+R\+T5 clock source. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_c_c_ex___exported___macros_ga43e1d7400af3a191b3fc89d461799f3d}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+U\+S\+A\+R\+T6\+\_\+\+C\+O\+N\+F\+IG}}(\+\_\+\+\_\+\+U\+S\+A\+R\+T6\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+)~M\+O\+D\+I\+F\+Y\+\_\+\+R\+EG(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+U\+S\+A\+R\+T6\+S\+EL, (uint32\+\_\+t)(\+\_\+\+\_\+\+U\+S\+A\+R\+T6\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Macro to configure the U\+S\+A\+R\+T6 clock (U\+S\+A\+R\+T6\+C\+LK). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_c_c_ex___exported___macros_ga544fa1b282526a1e12562e35bea55d13}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+G\+E\+T\+\_\+\+U\+S\+A\+R\+T6\+\_\+\+S\+O\+U\+R\+CE}}()~((uint32\+\_\+t)(R\+E\+A\+D\+\_\+\+B\+IT(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+U\+S\+A\+R\+T6\+S\+EL)))
+\begin{DoxyCompactList}\small\item\em macro to get the U\+S\+A\+R\+T6 clock source. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_c_c_ex___exported___macros_gaccf73dcde838afb32d15e578e2097607}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+U\+A\+R\+T7\+\_\+\+C\+O\+N\+F\+IG}}(\+\_\+\+\_\+\+U\+A\+R\+T7\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+)~M\+O\+D\+I\+F\+Y\+\_\+\+R\+EG(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+U\+A\+R\+T7\+S\+EL, (uint32\+\_\+t)(\+\_\+\+\_\+\+U\+A\+R\+T7\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Macro to configure the U\+A\+R\+T7 clock (U\+A\+R\+T7\+C\+LK). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_c_c_ex___exported___macros_ga50e3e434918cccde0b2a78df2c25ffed}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+G\+E\+T\+\_\+\+U\+A\+R\+T7\+\_\+\+S\+O\+U\+R\+CE}}()~((uint32\+\_\+t)(R\+E\+A\+D\+\_\+\+B\+IT(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+U\+A\+R\+T7\+S\+EL)))
+\begin{DoxyCompactList}\small\item\em macro to get the U\+A\+R\+T7 clock source. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_c_c_ex___exported___macros_ga2d9185e53c66b1b79d117988487093a2}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+U\+A\+R\+T8\+\_\+\+C\+O\+N\+F\+IG}}(\+\_\+\+\_\+\+U\+A\+R\+T8\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+)~M\+O\+D\+I\+F\+Y\+\_\+\+R\+EG(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+U\+A\+R\+T8\+S\+EL, (uint32\+\_\+t)(\+\_\+\+\_\+\+U\+A\+R\+T8\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Macro to configure the U\+A\+R\+T8 clock (U\+A\+R\+T8\+C\+LK). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_c_c_ex___exported___macros_gace745b2a77de9c74e19d6d029869fe5b}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+G\+E\+T\+\_\+\+U\+A\+R\+T8\+\_\+\+S\+O\+U\+R\+CE}}()~((uint32\+\_\+t)(R\+E\+A\+D\+\_\+\+B\+IT(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+U\+A\+R\+T8\+S\+EL)))
+\begin{DoxyCompactList}\small\item\em macro to get the U\+A\+R\+T8 clock source. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_c_c_ex___exported___macros_ga2a59d733248c7e8f36c2c6abd1dd2bb4}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+L\+P\+T\+I\+M1\+\_\+\+C\+O\+N\+F\+IG}}(\+\_\+\+\_\+\+L\+P\+T\+I\+M1\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+)~M\+O\+D\+I\+F\+Y\+\_\+\+R\+EG(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+L\+P\+T\+I\+M1\+S\+EL, (uint32\+\_\+t)(\+\_\+\+\_\+\+L\+P\+T\+I\+M1\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Macro to configure the L\+P\+T\+I\+M1 clock (L\+P\+T\+I\+M1\+C\+LK). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_c_c_ex___exported___macros_gad6688c07a2a8c314df547de8caf378bb}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+G\+E\+T\+\_\+\+L\+P\+T\+I\+M1\+\_\+\+S\+O\+U\+R\+CE}}()~((uint32\+\_\+t)(R\+E\+A\+D\+\_\+\+B\+IT(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+L\+P\+T\+I\+M1\+S\+EL)))
+\begin{DoxyCompactList}\small\item\em macro to get the L\+P\+T\+I\+M1 clock source. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_c_c_ex___exported___macros_ga9e0aa37c13e7e0751abf5c271ff0affb}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+C\+E\+C\+\_\+\+C\+O\+N\+F\+IG}}(\+\_\+\+\_\+\+C\+E\+C\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+)~M\+O\+D\+I\+F\+Y\+\_\+\+R\+EG(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+C\+E\+C\+S\+EL, (uint32\+\_\+t)(\+\_\+\+\_\+\+C\+E\+C\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Macro to configure the C\+EC clock (C\+E\+C\+C\+LK). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_c_c_ex___exported___macros_ga7a636a5c50887bba7270924c3eb6ef2f}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+G\+E\+T\+\_\+\+C\+E\+C\+\_\+\+S\+O\+U\+R\+CE}}()~((uint32\+\_\+t)(R\+E\+A\+D\+\_\+\+B\+IT(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+C\+E\+C\+S\+EL)))
+\begin{DoxyCompactList}\small\item\em macro to get the C\+EC clock source. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_c_c_ex___exported___macros_ga24e95e53683115f1e978ad1bff021a77}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+C\+L\+K48\+\_\+\+C\+O\+N\+F\+IG}}(\+\_\+\+\_\+\+C\+L\+K48\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+)~M\+O\+D\+I\+F\+Y\+\_\+\+R\+EG(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+C\+K48\+M\+S\+EL, (uint32\+\_\+t)(\+\_\+\+\_\+\+C\+L\+K48\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Macro to configure the C\+L\+K48 source (C\+L\+K48\+C\+LK). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_c_c_ex___exported___macros_ga9b3a77cb4bb659160407d3dcf96b6915}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+G\+E\+T\+\_\+\+C\+L\+K48\+\_\+\+S\+O\+U\+R\+CE}}()~((uint32\+\_\+t)(R\+E\+A\+D\+\_\+\+B\+IT(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+C\+K48\+M\+S\+EL)))
+\begin{DoxyCompactList}\small\item\em macro to get the C\+L\+K48 source. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_c_c_ex___exported___macros_gab0f67736ba0c44c47e38b83ceedd3c17}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+S\+D\+M\+M\+C1\+\_\+\+C\+O\+N\+F\+IG}}(\+\_\+\+\_\+\+S\+D\+M\+M\+C1\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+)~M\+O\+D\+I\+F\+Y\+\_\+\+R\+EG(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+S\+D\+M\+M\+C1\+S\+EL, (uint32\+\_\+t)(\+\_\+\+\_\+\+S\+D\+M\+M\+C1\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Macro to configure the S\+D\+M\+M\+C1 clock (S\+D\+M\+M\+C1\+C\+LK). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_c_c_ex___exported___macros_gaec0b9b20a99feaf35a2b072485b82b83}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+G\+E\+T\+\_\+\+S\+D\+M\+M\+C1\+\_\+\+S\+O\+U\+R\+CE}}()~((uint32\+\_\+t)(R\+E\+A\+D\+\_\+\+B\+IT(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+S\+D\+M\+M\+C1\+S\+EL)))
+\begin{DoxyCompactList}\small\item\em macro to get the S\+D\+M\+M\+C1 clock source. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___r_c_c_ex___exported___macros_ga9e0aa37c13e7e0751abf5c271ff0affb}\label{group___r_c_c_ex___exported___macros_ga9e0aa37c13e7e0751abf5c271ff0affb}} 
+\index{RCCEx Exported Macros@{RCCEx Exported Macros}!\_\_HAL\_RCC\_CEC\_CONFIG@{\_\_HAL\_RCC\_CEC\_CONFIG}}
+\index{\_\_HAL\_RCC\_CEC\_CONFIG@{\_\_HAL\_RCC\_CEC\_CONFIG}!RCCEx Exported Macros@{RCCEx Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_RCC\_CEC\_CONFIG}{\_\_HAL\_RCC\_CEC\_CONFIG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+C\+E\+C\+\_\+\+C\+O\+N\+F\+IG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+C\+E\+C\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+ }\end{DoxyParamCaption})~M\+O\+D\+I\+F\+Y\+\_\+\+R\+EG(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+C\+E\+C\+S\+EL, (uint32\+\_\+t)(\+\_\+\+\_\+\+C\+E\+C\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+))}
+
+
+
+Macro to configure the C\+EC clock (C\+E\+C\+C\+LK). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+C\+E\+C\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E$<$/strong$>$} & specifies the C\+EC clock source. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item R\+C\+C\+\_\+\+C\+E\+C\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+L\+SE\+: L\+SE selected as C\+EC clock \item R\+C\+C\+\_\+\+C\+E\+C\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+H\+SI\+: H\+SI divided by 488 selected as C\+EC clock \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group___r_c_c_ex___exported___macros_ga24e95e53683115f1e978ad1bff021a77}\label{group___r_c_c_ex___exported___macros_ga24e95e53683115f1e978ad1bff021a77}} 
+\index{RCCEx Exported Macros@{RCCEx Exported Macros}!\_\_HAL\_RCC\_CLK48\_CONFIG@{\_\_HAL\_RCC\_CLK48\_CONFIG}}
+\index{\_\_HAL\_RCC\_CLK48\_CONFIG@{\_\_HAL\_RCC\_CLK48\_CONFIG}!RCCEx Exported Macros@{RCCEx Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_RCC\_CLK48\_CONFIG}{\_\_HAL\_RCC\_CLK48\_CONFIG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+C\+L\+K48\+\_\+\+C\+O\+N\+F\+IG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+C\+L\+K48\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+ }\end{DoxyParamCaption})~M\+O\+D\+I\+F\+Y\+\_\+\+R\+EG(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+C\+K48\+M\+S\+EL, (uint32\+\_\+t)(\+\_\+\+\_\+\+C\+L\+K48\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+))}
+
+
+
+Macro to configure the C\+L\+K48 source (C\+L\+K48\+C\+LK). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+C\+L\+K48\+\_\+\+S\+O\+U\+R\+C\+E$<$/strong$>$} & specifies the C\+L\+K48 clock source. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item R\+C\+C\+\_\+\+C\+L\+K48\+S\+O\+U\+R\+C\+E\+\_\+\+P\+LL\+: P\+LL selected as C\+L\+K48 source \item R\+C\+C\+\_\+\+C\+L\+K48\+S\+O\+U\+R\+C\+E\+\_\+\+P\+L\+L\+S\+A\+IP\+: P\+L\+L\+S\+A\+IP selected as C\+L\+K48 source \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group___r_c_c_ex___exported___macros_ga7a636a5c50887bba7270924c3eb6ef2f}\label{group___r_c_c_ex___exported___macros_ga7a636a5c50887bba7270924c3eb6ef2f}} 
+\index{RCCEx Exported Macros@{RCCEx Exported Macros}!\_\_HAL\_RCC\_GET\_CEC\_SOURCE@{\_\_HAL\_RCC\_GET\_CEC\_SOURCE}}
+\index{\_\_HAL\_RCC\_GET\_CEC\_SOURCE@{\_\_HAL\_RCC\_GET\_CEC\_SOURCE}!RCCEx Exported Macros@{RCCEx Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_RCC\_GET\_CEC\_SOURCE}{\_\_HAL\_RCC\_GET\_CEC\_SOURCE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+G\+E\+T\+\_\+\+C\+E\+C\+\_\+\+S\+O\+U\+R\+CE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~((uint32\+\_\+t)(R\+E\+A\+D\+\_\+\+B\+IT(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+C\+E\+C\+S\+EL)))}
+
+
+
+macro to get the C\+EC clock source. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & clock source can be one of the following values\+: \begin{DoxyItemize}
+\item R\+C\+C\+\_\+\+C\+E\+C\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+L\+SE\+: L\+SE selected as C\+EC clock \item R\+C\+C\+\_\+\+C\+E\+C\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+H\+SI\+: H\+SI selected as C\+EC clock \end{DoxyItemize}
+\\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___r_c_c_ex___exported___macros_ga9b3a77cb4bb659160407d3dcf96b6915}\label{group___r_c_c_ex___exported___macros_ga9b3a77cb4bb659160407d3dcf96b6915}} 
+\index{RCCEx Exported Macros@{RCCEx Exported Macros}!\_\_HAL\_RCC\_GET\_CLK48\_SOURCE@{\_\_HAL\_RCC\_GET\_CLK48\_SOURCE}}
+\index{\_\_HAL\_RCC\_GET\_CLK48\_SOURCE@{\_\_HAL\_RCC\_GET\_CLK48\_SOURCE}!RCCEx Exported Macros@{RCCEx Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_RCC\_GET\_CLK48\_SOURCE}{\_\_HAL\_RCC\_GET\_CLK48\_SOURCE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+G\+E\+T\+\_\+\+C\+L\+K48\+\_\+\+S\+O\+U\+R\+CE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~((uint32\+\_\+t)(R\+E\+A\+D\+\_\+\+B\+IT(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+C\+K48\+M\+S\+EL)))}
+
+
+
+macro to get the C\+L\+K48 source. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & clock source can be one of the following values\+: \begin{DoxyItemize}
+\item R\+C\+C\+\_\+\+C\+L\+K48\+S\+O\+U\+R\+C\+E\+\_\+\+P\+LL\+: P\+LL used as C\+L\+K48 source \item R\+C\+C\+\_\+\+C\+L\+K48\+S\+O\+U\+R\+C\+E\+\_\+\+P\+L\+L\+S\+A\+IP\+: P\+L\+L\+S\+A\+IP used as C\+L\+K48 source \end{DoxyItemize}
+\\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___r_c_c_ex___exported___macros_gab9372aa811e622a602d2b3657790c8e7}\label{group___r_c_c_ex___exported___macros_gab9372aa811e622a602d2b3657790c8e7}} 
+\index{RCCEx Exported Macros@{RCCEx Exported Macros}!\_\_HAL\_RCC\_GET\_I2C1\_SOURCE@{\_\_HAL\_RCC\_GET\_I2C1\_SOURCE}}
+\index{\_\_HAL\_RCC\_GET\_I2C1\_SOURCE@{\_\_HAL\_RCC\_GET\_I2C1\_SOURCE}!RCCEx Exported Macros@{RCCEx Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_RCC\_GET\_I2C1\_SOURCE}{\_\_HAL\_RCC\_GET\_I2C1\_SOURCE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+G\+E\+T\+\_\+\+I2\+C1\+\_\+\+S\+O\+U\+R\+CE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~((uint32\+\_\+t)(R\+E\+A\+D\+\_\+\+B\+IT(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+I2\+C1\+S\+EL)))}
+
+
+
+Macro to get the I2\+C1 clock source. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & clock source can be one of the following values\+: \begin{DoxyItemize}
+\item R\+C\+C\+\_\+\+I2\+C1\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+P\+C\+L\+K1\+: P\+C\+L\+K1 selected as I2\+C1 clock \item R\+C\+C\+\_\+\+I2\+C1\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+H\+SI\+: H\+SI selected as I2\+C1 clock \item R\+C\+C\+\_\+\+I2\+C1\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+S\+Y\+S\+C\+LK\+: System Clock selected as I2\+C1 clock \end{DoxyItemize}
+\\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___r_c_c_ex___exported___macros_ga374d6807df83720c548fdea1d86d3852}\label{group___r_c_c_ex___exported___macros_ga374d6807df83720c548fdea1d86d3852}} 
+\index{RCCEx Exported Macros@{RCCEx Exported Macros}!\_\_HAL\_RCC\_GET\_I2C2\_SOURCE@{\_\_HAL\_RCC\_GET\_I2C2\_SOURCE}}
+\index{\_\_HAL\_RCC\_GET\_I2C2\_SOURCE@{\_\_HAL\_RCC\_GET\_I2C2\_SOURCE}!RCCEx Exported Macros@{RCCEx Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_RCC\_GET\_I2C2\_SOURCE}{\_\_HAL\_RCC\_GET\_I2C2\_SOURCE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+G\+E\+T\+\_\+\+I2\+C2\+\_\+\+S\+O\+U\+R\+CE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~((uint32\+\_\+t)(R\+E\+A\+D\+\_\+\+B\+IT(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+I2\+C2\+S\+EL)))}
+
+
+
+Macro to get the I2\+C2 clock source. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & clock source can be one of the following values\+: \begin{DoxyItemize}
+\item R\+C\+C\+\_\+\+I2\+C2\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+P\+C\+L\+K1\+: P\+C\+L\+K1 selected as I2\+C2 clock \item R\+C\+C\+\_\+\+I2\+C2\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+H\+SI\+: H\+SI selected as I2\+C2 clock \item R\+C\+C\+\_\+\+I2\+C2\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+S\+Y\+S\+C\+LK\+: System Clock selected as I2\+C2 clock \end{DoxyItemize}
+\\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___r_c_c_ex___exported___macros_gac1a897c77611227b305f8dde521c0d9e}\label{group___r_c_c_ex___exported___macros_gac1a897c77611227b305f8dde521c0d9e}} 
+\index{RCCEx Exported Macros@{RCCEx Exported Macros}!\_\_HAL\_RCC\_GET\_I2C3\_SOURCE@{\_\_HAL\_RCC\_GET\_I2C3\_SOURCE}}
+\index{\_\_HAL\_RCC\_GET\_I2C3\_SOURCE@{\_\_HAL\_RCC\_GET\_I2C3\_SOURCE}!RCCEx Exported Macros@{RCCEx Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_RCC\_GET\_I2C3\_SOURCE}{\_\_HAL\_RCC\_GET\_I2C3\_SOURCE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+G\+E\+T\+\_\+\+I2\+C3\+\_\+\+S\+O\+U\+R\+CE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~((uint32\+\_\+t)(R\+E\+A\+D\+\_\+\+B\+IT(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+I2\+C3\+S\+EL)))}
+
+
+
+macro to get the I2\+C3 clock source. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & clock source can be one of the following values\+: \begin{DoxyItemize}
+\item R\+C\+C\+\_\+\+I2\+C3\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+P\+C\+L\+K1\+: P\+C\+L\+K1 selected as I2\+C3 clock \item R\+C\+C\+\_\+\+I2\+C3\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+H\+SI\+: H\+SI selected as I2\+C3 clock \item R\+C\+C\+\_\+\+I2\+C3\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+S\+Y\+S\+C\+LK\+: System Clock selected as I2\+C3 clock \end{DoxyItemize}
+\\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___r_c_c_ex___exported___macros_ga6632a1fbc809f6f6dedde0d36cbaa3c9}\label{group___r_c_c_ex___exported___macros_ga6632a1fbc809f6f6dedde0d36cbaa3c9}} 
+\index{RCCEx Exported Macros@{RCCEx Exported Macros}!\_\_HAL\_RCC\_GET\_I2C4\_SOURCE@{\_\_HAL\_RCC\_GET\_I2C4\_SOURCE}}
+\index{\_\_HAL\_RCC\_GET\_I2C4\_SOURCE@{\_\_HAL\_RCC\_GET\_I2C4\_SOURCE}!RCCEx Exported Macros@{RCCEx Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_RCC\_GET\_I2C4\_SOURCE}{\_\_HAL\_RCC\_GET\_I2C4\_SOURCE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+G\+E\+T\+\_\+\+I2\+C4\+\_\+\+S\+O\+U\+R\+CE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~((uint32\+\_\+t)(R\+E\+A\+D\+\_\+\+B\+IT(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+I2\+C4\+S\+EL)))}
+
+
+
+macro to get the I2\+C4 clock source. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & clock source can be one of the following values\+: \begin{DoxyItemize}
+\item R\+C\+C\+\_\+\+I2\+C4\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+P\+C\+L\+K1\+: P\+C\+L\+K1 selected as I2\+C4 clock \item R\+C\+C\+\_\+\+I2\+C4\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+H\+SI\+: H\+SI selected as I2\+C4 clock \item R\+C\+C\+\_\+\+I2\+C4\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+S\+Y\+S\+C\+LK\+: System Clock selected as I2\+C4 clock \end{DoxyItemize}
+\\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___r_c_c_ex___exported___macros_ga4a027bee91b86bd6c280265c43624fc6}\label{group___r_c_c_ex___exported___macros_ga4a027bee91b86bd6c280265c43624fc6}} 
+\index{RCCEx Exported Macros@{RCCEx Exported Macros}!\_\_HAL\_RCC\_GET\_I2SCLKSOURCE@{\_\_HAL\_RCC\_GET\_I2SCLKSOURCE}}
+\index{\_\_HAL\_RCC\_GET\_I2SCLKSOURCE@{\_\_HAL\_RCC\_GET\_I2SCLKSOURCE}!RCCEx Exported Macros@{RCCEx Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_RCC\_GET\_I2SCLKSOURCE}{\_\_HAL\_RCC\_GET\_I2SCLKSOURCE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+G\+E\+T\+\_\+\+I2\+S\+C\+L\+K\+S\+O\+U\+R\+CE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(R\+E\+A\+D\+\_\+\+B\+IT(R\+CC-\/$>$C\+F\+GR, R\+C\+C\+\_\+\+C\+F\+G\+R\+\_\+\+I2\+S\+S\+RC))}
+
+
+
+Macro to Get I2S clock source selection. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & clock source can be one of the following values\+: \begin{DoxyItemize}
+\item R\+C\+C\+\_\+\+I2\+S\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+P\+L\+L\+I2S\+: P\+L\+L\+I2S V\+CO output clock divided by P\+L\+L\+I2\+SR used as I2S clock. \item R\+C\+C\+\_\+\+I2\+S\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+E\+XT\+: External clock mapped on the I2\+S\+\_\+\+C\+K\+IN pin used as I2S clock source \end{DoxyItemize}
+\\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___r_c_c_ex___exported___macros_gad6688c07a2a8c314df547de8caf378bb}\label{group___r_c_c_ex___exported___macros_gad6688c07a2a8c314df547de8caf378bb}} 
+\index{RCCEx Exported Macros@{RCCEx Exported Macros}!\_\_HAL\_RCC\_GET\_LPTIM1\_SOURCE@{\_\_HAL\_RCC\_GET\_LPTIM1\_SOURCE}}
+\index{\_\_HAL\_RCC\_GET\_LPTIM1\_SOURCE@{\_\_HAL\_RCC\_GET\_LPTIM1\_SOURCE}!RCCEx Exported Macros@{RCCEx Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_RCC\_GET\_LPTIM1\_SOURCE}{\_\_HAL\_RCC\_GET\_LPTIM1\_SOURCE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+G\+E\+T\+\_\+\+L\+P\+T\+I\+M1\+\_\+\+S\+O\+U\+R\+CE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~((uint32\+\_\+t)(R\+E\+A\+D\+\_\+\+B\+IT(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+L\+P\+T\+I\+M1\+S\+EL)))}
+
+
+
+macro to get the L\+P\+T\+I\+M1 clock source. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & clock source can be one of the following values\+: \begin{DoxyItemize}
+\item R\+C\+C\+\_\+\+L\+P\+T\+I\+M1\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+P\+C\+L\+K1\+: P\+C\+LK selected as L\+P\+T\+I\+M1 clock \item R\+C\+C\+\_\+\+L\+P\+T\+I\+M1\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+H\+SI\+: H\+SI selected as L\+P\+T\+I\+M1 clock \item R\+C\+C\+\_\+\+L\+P\+T\+I\+M1\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+L\+SI\+: L\+SI selected as L\+P\+T\+I\+M1 clock \item R\+C\+C\+\_\+\+L\+P\+T\+I\+M1\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+L\+SE\+: L\+SE selected as L\+P\+T\+I\+M1 clock \end{DoxyItemize}
+\\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___r_c_c_ex___exported___macros_ga9af45dae7c2f2f1c8848be68d7bded7e}\label{group___r_c_c_ex___exported___macros_ga9af45dae7c2f2f1c8848be68d7bded7e}} 
+\index{RCCEx Exported Macros@{RCCEx Exported Macros}!\_\_HAL\_RCC\_GET\_SAI1\_SOURCE@{\_\_HAL\_RCC\_GET\_SAI1\_SOURCE}}
+\index{\_\_HAL\_RCC\_GET\_SAI1\_SOURCE@{\_\_HAL\_RCC\_GET\_SAI1\_SOURCE}!RCCEx Exported Macros@{RCCEx Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_RCC\_GET\_SAI1\_SOURCE}{\_\_HAL\_RCC\_GET\_SAI1\_SOURCE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+G\+E\+T\+\_\+\+S\+A\+I1\+\_\+\+S\+O\+U\+R\+CE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~((uint32\+\_\+t)(R\+E\+A\+D\+\_\+\+B\+IT(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R1, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R1\+\_\+\+S\+A\+I1\+S\+EL)))}
+
+
+
+Macro to get the S\+A\+I1 clock source. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & clock source can be one of the following values\+: \begin{DoxyItemize}
+\item R\+C\+C\+\_\+\+S\+A\+I1\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+P\+L\+L\+I2S\+: P\+L\+L\+I2\+S\+\_\+Q clock divided by P\+L\+L\+I2\+S\+D\+I\+VQ used as S\+A\+I1 clock. \item R\+C\+C\+\_\+\+S\+A\+I1\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+P\+L\+L\+S\+AI\+: P\+L\+L\+I\+S\+A\+I\+\_\+Q clock divided by P\+L\+L\+S\+A\+I\+D\+I\+VQ used as S\+A\+I1 clock. \item R\+C\+C\+\_\+\+S\+A\+I1\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+P\+IN\+: External clock mapped on the I2\+S\+\_\+\+C\+K\+IN pin used as S\+A\+I1 clock. \item R\+C\+C\+\_\+\+S\+A\+I1\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+P\+L\+L\+S\+RC\+: H\+SI or H\+SE depending from P\+LL Source clock used as S\+A\+I1 clock. \end{DoxyItemize}
+\\
+\hline
+\end{DoxyRetVals}
+\begin{DoxyNote}{Note}
+The R\+C\+C\+\_\+\+S\+A\+I1\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+P\+L\+L\+S\+RC value is only available with S\+T\+M32\+F767/769/777/779xx Devices 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_c_c_ex___exported___macros_gac12f70a6d677938196f8d8a64d0c743e}\label{group___r_c_c_ex___exported___macros_gac12f70a6d677938196f8d8a64d0c743e}} 
+\index{RCCEx Exported Macros@{RCCEx Exported Macros}!\_\_HAL\_RCC\_GET\_SAI2\_SOURCE@{\_\_HAL\_RCC\_GET\_SAI2\_SOURCE}}
+\index{\_\_HAL\_RCC\_GET\_SAI2\_SOURCE@{\_\_HAL\_RCC\_GET\_SAI2\_SOURCE}!RCCEx Exported Macros@{RCCEx Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_RCC\_GET\_SAI2\_SOURCE}{\_\_HAL\_RCC\_GET\_SAI2\_SOURCE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+G\+E\+T\+\_\+\+S\+A\+I2\+\_\+\+S\+O\+U\+R\+CE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~((uint32\+\_\+t)(R\+E\+A\+D\+\_\+\+B\+IT(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R1, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R1\+\_\+\+S\+A\+I2\+S\+EL)))}
+
+
+
+Macro to get the S\+A\+I2 clock source. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & clock source can be one of the following values\+: \begin{DoxyItemize}
+\item R\+C\+C\+\_\+\+S\+A\+I2\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+P\+L\+L\+I2S\+: P\+L\+L\+I2\+S\+\_\+Q clock divided by P\+L\+L\+I2\+S\+D\+I\+VQ used as S\+A\+I2 clock. \item R\+C\+C\+\_\+\+S\+A\+I2\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+P\+L\+L\+S\+AI\+: P\+L\+L\+I\+S\+A\+I\+\_\+Q clock divided by P\+L\+L\+S\+A\+I\+D\+I\+VQ used as S\+A\+I2 clock. \item R\+C\+C\+\_\+\+S\+A\+I2\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+P\+IN\+: External clock mapped on the I2\+S\+\_\+\+C\+K\+IN pin used as S\+A\+I2 clock. \item R\+C\+C\+\_\+\+S\+A\+I2\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+P\+L\+L\+S\+RC\+: H\+SI or H\+SE depending from P\+LL Source clock used as S\+A\+I2 clock. \end{DoxyItemize}
+\\
+\hline
+\end{DoxyRetVals}
+\begin{DoxyNote}{Note}
+The R\+C\+C\+\_\+\+S\+A\+I2\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+P\+L\+L\+S\+RC value is only available with S\+T\+M32\+F767/769/777/779xx Devices 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_c_c_ex___exported___macros_gaec0b9b20a99feaf35a2b072485b82b83}\label{group___r_c_c_ex___exported___macros_gaec0b9b20a99feaf35a2b072485b82b83}} 
+\index{RCCEx Exported Macros@{RCCEx Exported Macros}!\_\_HAL\_RCC\_GET\_SDMMC1\_SOURCE@{\_\_HAL\_RCC\_GET\_SDMMC1\_SOURCE}}
+\index{\_\_HAL\_RCC\_GET\_SDMMC1\_SOURCE@{\_\_HAL\_RCC\_GET\_SDMMC1\_SOURCE}!RCCEx Exported Macros@{RCCEx Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_RCC\_GET\_SDMMC1\_SOURCE}{\_\_HAL\_RCC\_GET\_SDMMC1\_SOURCE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+G\+E\+T\+\_\+\+S\+D\+M\+M\+C1\+\_\+\+S\+O\+U\+R\+CE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~((uint32\+\_\+t)(R\+E\+A\+D\+\_\+\+B\+IT(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+S\+D\+M\+M\+C1\+S\+EL)))}
+
+
+
+macro to get the S\+D\+M\+M\+C1 clock source. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & clock source can be one of the following values\+: \begin{DoxyItemize}
+\item R\+C\+C\+\_\+\+S\+D\+M\+M\+C1\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+C\+L\+K48\+: C\+L\+K48 selected as S\+D\+M\+M\+C1 clock \item R\+C\+C\+\_\+\+S\+D\+M\+M\+C1\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+S\+Y\+S\+C\+LK\+: S\+Y\+S\+C\+LK selected as S\+D\+M\+M\+C1 clock \end{DoxyItemize}
+\\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___r_c_c_ex___exported___macros_ga91d2925bf5e1d3dad19e77d620591ae0}\label{group___r_c_c_ex___exported___macros_ga91d2925bf5e1d3dad19e77d620591ae0}} 
+\index{RCCEx Exported Macros@{RCCEx Exported Macros}!\_\_HAL\_RCC\_GET\_UART4\_SOURCE@{\_\_HAL\_RCC\_GET\_UART4\_SOURCE}}
+\index{\_\_HAL\_RCC\_GET\_UART4\_SOURCE@{\_\_HAL\_RCC\_GET\_UART4\_SOURCE}!RCCEx Exported Macros@{RCCEx Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_RCC\_GET\_UART4\_SOURCE}{\_\_HAL\_RCC\_GET\_UART4\_SOURCE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+G\+E\+T\+\_\+\+U\+A\+R\+T4\+\_\+\+S\+O\+U\+R\+CE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~((uint32\+\_\+t)(R\+E\+A\+D\+\_\+\+B\+IT(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+U\+A\+R\+T4\+S\+EL)))}
+
+
+
+macro to get the U\+A\+R\+T4 clock source. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & clock source can be one of the following values\+: \begin{DoxyItemize}
+\item R\+C\+C\+\_\+\+U\+A\+R\+T4\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+P\+C\+L\+K1\+: P\+C\+L\+K1 selected as U\+A\+R\+T4 clock \item R\+C\+C\+\_\+\+U\+A\+R\+T4\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+H\+SI\+: H\+SI selected as U\+A\+R\+T4 clock \item R\+C\+C\+\_\+\+U\+A\+R\+T4\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+S\+Y\+S\+C\+LK\+: System Clock selected as U\+A\+R\+T4 clock \item R\+C\+C\+\_\+\+U\+A\+R\+T4\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+L\+SE\+: L\+SE selected as U\+A\+R\+T4 clock \end{DoxyItemize}
+\\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___r_c_c_ex___exported___macros_ga8c0fc64b4ab3fbb914788d1f5731f28e}\label{group___r_c_c_ex___exported___macros_ga8c0fc64b4ab3fbb914788d1f5731f28e}} 
+\index{RCCEx Exported Macros@{RCCEx Exported Macros}!\_\_HAL\_RCC\_GET\_UART5\_SOURCE@{\_\_HAL\_RCC\_GET\_UART5\_SOURCE}}
+\index{\_\_HAL\_RCC\_GET\_UART5\_SOURCE@{\_\_HAL\_RCC\_GET\_UART5\_SOURCE}!RCCEx Exported Macros@{RCCEx Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_RCC\_GET\_UART5\_SOURCE}{\_\_HAL\_RCC\_GET\_UART5\_SOURCE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+G\+E\+T\+\_\+\+U\+A\+R\+T5\+\_\+\+S\+O\+U\+R\+CE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~((uint32\+\_\+t)(R\+E\+A\+D\+\_\+\+B\+IT(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+U\+A\+R\+T5\+S\+EL)))}
+
+
+
+macro to get the U\+A\+R\+T5 clock source. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & clock source can be one of the following values\+: \begin{DoxyItemize}
+\item R\+C\+C\+\_\+\+U\+A\+R\+T5\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+P\+C\+L\+K1\+: P\+C\+L\+K1 selected as U\+A\+R\+T5 clock \item R\+C\+C\+\_\+\+U\+A\+R\+T5\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+H\+SI\+: H\+SI selected as U\+A\+R\+T5 clock \item R\+C\+C\+\_\+\+U\+A\+R\+T5\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+S\+Y\+S\+C\+LK\+: System Clock selected as U\+A\+R\+T5 clock \item R\+C\+C\+\_\+\+U\+A\+R\+T5\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+L\+SE\+: L\+SE selected as U\+A\+R\+T5 clock \end{DoxyItemize}
+\\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___r_c_c_ex___exported___macros_ga50e3e434918cccde0b2a78df2c25ffed}\label{group___r_c_c_ex___exported___macros_ga50e3e434918cccde0b2a78df2c25ffed}} 
+\index{RCCEx Exported Macros@{RCCEx Exported Macros}!\_\_HAL\_RCC\_GET\_UART7\_SOURCE@{\_\_HAL\_RCC\_GET\_UART7\_SOURCE}}
+\index{\_\_HAL\_RCC\_GET\_UART7\_SOURCE@{\_\_HAL\_RCC\_GET\_UART7\_SOURCE}!RCCEx Exported Macros@{RCCEx Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_RCC\_GET\_UART7\_SOURCE}{\_\_HAL\_RCC\_GET\_UART7\_SOURCE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+G\+E\+T\+\_\+\+U\+A\+R\+T7\+\_\+\+S\+O\+U\+R\+CE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~((uint32\+\_\+t)(R\+E\+A\+D\+\_\+\+B\+IT(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+U\+A\+R\+T7\+S\+EL)))}
+
+
+
+macro to get the U\+A\+R\+T7 clock source. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & clock source can be one of the following values\+: \begin{DoxyItemize}
+\item R\+C\+C\+\_\+\+U\+A\+R\+T7\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+P\+C\+L\+K1\+: P\+C\+L\+K1 selected as U\+A\+R\+T7 clock \item R\+C\+C\+\_\+\+U\+A\+R\+T7\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+H\+SI\+: H\+SI selected as U\+A\+R\+T7 clock \item R\+C\+C\+\_\+\+U\+A\+R\+T7\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+S\+Y\+S\+C\+LK\+: System Clock selected as U\+A\+R\+T7 clock \item R\+C\+C\+\_\+\+U\+A\+R\+T7\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+L\+SE\+: L\+SE selected as U\+A\+R\+T7 clock \end{DoxyItemize}
+\\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___r_c_c_ex___exported___macros_gace745b2a77de9c74e19d6d029869fe5b}\label{group___r_c_c_ex___exported___macros_gace745b2a77de9c74e19d6d029869fe5b}} 
+\index{RCCEx Exported Macros@{RCCEx Exported Macros}!\_\_HAL\_RCC\_GET\_UART8\_SOURCE@{\_\_HAL\_RCC\_GET\_UART8\_SOURCE}}
+\index{\_\_HAL\_RCC\_GET\_UART8\_SOURCE@{\_\_HAL\_RCC\_GET\_UART8\_SOURCE}!RCCEx Exported Macros@{RCCEx Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_RCC\_GET\_UART8\_SOURCE}{\_\_HAL\_RCC\_GET\_UART8\_SOURCE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+G\+E\+T\+\_\+\+U\+A\+R\+T8\+\_\+\+S\+O\+U\+R\+CE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~((uint32\+\_\+t)(R\+E\+A\+D\+\_\+\+B\+IT(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+U\+A\+R\+T8\+S\+EL)))}
+
+
+
+macro to get the U\+A\+R\+T8 clock source. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & clock source can be one of the following values\+: \begin{DoxyItemize}
+\item R\+C\+C\+\_\+\+U\+A\+R\+T8\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+P\+C\+L\+K1\+: P\+C\+L\+K1 selected as U\+A\+R\+T8 clock \item R\+C\+C\+\_\+\+U\+A\+R\+T8\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+H\+SI\+: H\+SI selected as U\+A\+R\+T8 clock \item R\+C\+C\+\_\+\+U\+A\+R\+T8\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+S\+Y\+S\+C\+LK\+: System Clock selected as U\+A\+R\+T8 clock \item R\+C\+C\+\_\+\+U\+A\+R\+T8\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+L\+SE\+: L\+SE selected as U\+A\+R\+T8 clock \end{DoxyItemize}
+\\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___r_c_c_ex___exported___macros_gaf6ff545446befd6af48cd5108e8fbc2e}\label{group___r_c_c_ex___exported___macros_gaf6ff545446befd6af48cd5108e8fbc2e}} 
+\index{RCCEx Exported Macros@{RCCEx Exported Macros}!\_\_HAL\_RCC\_GET\_USART1\_SOURCE@{\_\_HAL\_RCC\_GET\_USART1\_SOURCE}}
+\index{\_\_HAL\_RCC\_GET\_USART1\_SOURCE@{\_\_HAL\_RCC\_GET\_USART1\_SOURCE}!RCCEx Exported Macros@{RCCEx Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_RCC\_GET\_USART1\_SOURCE}{\_\_HAL\_RCC\_GET\_USART1\_SOURCE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+G\+E\+T\+\_\+\+U\+S\+A\+R\+T1\+\_\+\+S\+O\+U\+R\+CE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~((uint32\+\_\+t)(R\+E\+A\+D\+\_\+\+B\+IT(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+U\+S\+A\+R\+T1\+S\+EL)))}
+
+
+
+macro to get the U\+S\+A\+R\+T1 clock source. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & clock source can be one of the following values\+: \begin{DoxyItemize}
+\item R\+C\+C\+\_\+\+U\+S\+A\+R\+T1\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+P\+C\+L\+K2\+: P\+C\+L\+K2 selected as U\+S\+A\+R\+T1 clock \item R\+C\+C\+\_\+\+U\+S\+A\+R\+T1\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+H\+SI\+: H\+SI selected as U\+S\+A\+R\+T1 clock \item R\+C\+C\+\_\+\+U\+S\+A\+R\+T1\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+S\+Y\+S\+C\+LK\+: System Clock selected as U\+S\+A\+R\+T1 clock \item R\+C\+C\+\_\+\+U\+S\+A\+R\+T1\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+L\+SE\+: L\+SE selected as U\+S\+A\+R\+T1 clock \end{DoxyItemize}
+\\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___r_c_c_ex___exported___macros_ga7f2fecdd9f75bb71677602f9b2c22dd7}\label{group___r_c_c_ex___exported___macros_ga7f2fecdd9f75bb71677602f9b2c22dd7}} 
+\index{RCCEx Exported Macros@{RCCEx Exported Macros}!\_\_HAL\_RCC\_GET\_USART2\_SOURCE@{\_\_HAL\_RCC\_GET\_USART2\_SOURCE}}
+\index{\_\_HAL\_RCC\_GET\_USART2\_SOURCE@{\_\_HAL\_RCC\_GET\_USART2\_SOURCE}!RCCEx Exported Macros@{RCCEx Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_RCC\_GET\_USART2\_SOURCE}{\_\_HAL\_RCC\_GET\_USART2\_SOURCE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+G\+E\+T\+\_\+\+U\+S\+A\+R\+T2\+\_\+\+S\+O\+U\+R\+CE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~((uint32\+\_\+t)(R\+E\+A\+D\+\_\+\+B\+IT(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+U\+S\+A\+R\+T2\+S\+EL)))}
+
+
+
+macro to get the U\+S\+A\+R\+T2 clock source. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & clock source can be one of the following values\+: \begin{DoxyItemize}
+\item R\+C\+C\+\_\+\+U\+S\+A\+R\+T2\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+P\+C\+L\+K1\+: P\+C\+L\+K1 selected as U\+S\+A\+R\+T2 clock \item R\+C\+C\+\_\+\+U\+S\+A\+R\+T2\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+H\+SI\+: H\+SI selected as U\+S\+A\+R\+T2 clock \item R\+C\+C\+\_\+\+U\+S\+A\+R\+T2\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+S\+Y\+S\+C\+LK\+: System Clock selected as U\+S\+A\+R\+T2 clock \item R\+C\+C\+\_\+\+U\+S\+A\+R\+T2\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+L\+SE\+: L\+SE selected as U\+S\+A\+R\+T2 clock \end{DoxyItemize}
+\\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___r_c_c_ex___exported___macros_gab52c0cea73126e6f71f7ea7cb9d37378}\label{group___r_c_c_ex___exported___macros_gab52c0cea73126e6f71f7ea7cb9d37378}} 
+\index{RCCEx Exported Macros@{RCCEx Exported Macros}!\_\_HAL\_RCC\_GET\_USART3\_SOURCE@{\_\_HAL\_RCC\_GET\_USART3\_SOURCE}}
+\index{\_\_HAL\_RCC\_GET\_USART3\_SOURCE@{\_\_HAL\_RCC\_GET\_USART3\_SOURCE}!RCCEx Exported Macros@{RCCEx Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_RCC\_GET\_USART3\_SOURCE}{\_\_HAL\_RCC\_GET\_USART3\_SOURCE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+G\+E\+T\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+S\+O\+U\+R\+CE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~((uint32\+\_\+t)(R\+E\+A\+D\+\_\+\+B\+IT(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+U\+S\+A\+R\+T3\+S\+EL)))}
+
+
+
+macro to get the U\+S\+A\+R\+T3 clock source. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & clock source can be one of the following values\+: \begin{DoxyItemize}
+\item R\+C\+C\+\_\+\+U\+S\+A\+R\+T3\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+P\+C\+L\+K1\+: P\+C\+L\+K1 selected as U\+S\+A\+R\+T3 clock \item R\+C\+C\+\_\+\+U\+S\+A\+R\+T3\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+H\+SI\+: H\+SI selected as U\+S\+A\+R\+T3 clock \item R\+C\+C\+\_\+\+U\+S\+A\+R\+T3\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+S\+Y\+S\+C\+LK\+: System Clock selected as U\+S\+A\+R\+T3 clock \item R\+C\+C\+\_\+\+U\+S\+A\+R\+T3\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+L\+SE\+: L\+SE selected as U\+S\+A\+R\+T3 clock \end{DoxyItemize}
+\\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___r_c_c_ex___exported___macros_ga544fa1b282526a1e12562e35bea55d13}\label{group___r_c_c_ex___exported___macros_ga544fa1b282526a1e12562e35bea55d13}} 
+\index{RCCEx Exported Macros@{RCCEx Exported Macros}!\_\_HAL\_RCC\_GET\_USART6\_SOURCE@{\_\_HAL\_RCC\_GET\_USART6\_SOURCE}}
+\index{\_\_HAL\_RCC\_GET\_USART6\_SOURCE@{\_\_HAL\_RCC\_GET\_USART6\_SOURCE}!RCCEx Exported Macros@{RCCEx Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_RCC\_GET\_USART6\_SOURCE}{\_\_HAL\_RCC\_GET\_USART6\_SOURCE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+G\+E\+T\+\_\+\+U\+S\+A\+R\+T6\+\_\+\+S\+O\+U\+R\+CE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~((uint32\+\_\+t)(R\+E\+A\+D\+\_\+\+B\+IT(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+U\+S\+A\+R\+T6\+S\+EL)))}
+
+
+
+macro to get the U\+S\+A\+R\+T6 clock source. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & clock source can be one of the following values\+: \begin{DoxyItemize}
+\item R\+C\+C\+\_\+\+U\+S\+A\+R\+T6\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+P\+C\+L\+K1\+: P\+C\+L\+K1 selected as U\+S\+A\+R\+T6 clock \item R\+C\+C\+\_\+\+U\+S\+A\+R\+T6\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+H\+SI\+: H\+SI selected as U\+S\+A\+R\+T6 clock \item R\+C\+C\+\_\+\+U\+S\+A\+R\+T6\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+S\+Y\+S\+C\+LK\+: System Clock selected as U\+S\+A\+R\+T6 clock \item R\+C\+C\+\_\+\+U\+S\+A\+R\+T6\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+L\+SE\+: L\+SE selected as U\+S\+A\+R\+T6 clock \end{DoxyItemize}
+\\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___r_c_c_ex___exported___macros_ga90e36ab9a2478f1c6066432e230845a2}\label{group___r_c_c_ex___exported___macros_ga90e36ab9a2478f1c6066432e230845a2}} 
+\index{RCCEx Exported Macros@{RCCEx Exported Macros}!\_\_HAL\_RCC\_I2C1\_CONFIG@{\_\_HAL\_RCC\_I2C1\_CONFIG}}
+\index{\_\_HAL\_RCC\_I2C1\_CONFIG@{\_\_HAL\_RCC\_I2C1\_CONFIG}!RCCEx Exported Macros@{RCCEx Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_RCC\_I2C1\_CONFIG}{\_\_HAL\_RCC\_I2C1\_CONFIG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+I2\+C1\+\_\+\+C\+O\+N\+F\+IG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+I2\+C1\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+ }\end{DoxyParamCaption})~M\+O\+D\+I\+F\+Y\+\_\+\+R\+EG(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+I2\+C1\+S\+EL, (uint32\+\_\+t)(\+\_\+\+\_\+\+I2\+C1\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+))}
+
+
+
+Macro to configure the I2\+C1 clock (I2\+C1\+C\+LK). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+I2\+C1\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E$<$/strong$>$} & specifies the I2\+C1 clock source. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item R\+C\+C\+\_\+\+I2\+C1\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+P\+C\+L\+K1\+: P\+C\+L\+K1 selected as I2\+C1 clock \item R\+C\+C\+\_\+\+I2\+C1\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+H\+SI\+: H\+SI selected as I2\+C1 clock \item R\+C\+C\+\_\+\+I2\+C1\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+S\+Y\+S\+C\+LK\+: System Clock selected as I2\+C1 clock \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group___r_c_c_ex___exported___macros_ga49280a374f55802d8063a083350572ab}\label{group___r_c_c_ex___exported___macros_ga49280a374f55802d8063a083350572ab}} 
+\index{RCCEx Exported Macros@{RCCEx Exported Macros}!\_\_HAL\_RCC\_I2C2\_CONFIG@{\_\_HAL\_RCC\_I2C2\_CONFIG}}
+\index{\_\_HAL\_RCC\_I2C2\_CONFIG@{\_\_HAL\_RCC\_I2C2\_CONFIG}!RCCEx Exported Macros@{RCCEx Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_RCC\_I2C2\_CONFIG}{\_\_HAL\_RCC\_I2C2\_CONFIG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+I2\+C2\+\_\+\+C\+O\+N\+F\+IG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+I2\+C2\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+ }\end{DoxyParamCaption})~M\+O\+D\+I\+F\+Y\+\_\+\+R\+EG(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+I2\+C2\+S\+EL, (uint32\+\_\+t)(\+\_\+\+\_\+\+I2\+C2\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+))}
+
+
+
+Macro to configure the I2\+C2 clock (I2\+C2\+C\+LK). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+I2\+C2\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E$<$/strong$>$} & specifies the I2\+C2 clock source. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item R\+C\+C\+\_\+\+I2\+C2\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+P\+C\+L\+K1\+: P\+C\+L\+K1 selected as I2\+C2 clock \item R\+C\+C\+\_\+\+I2\+C2\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+H\+SI\+: H\+SI selected as I2\+C2 clock \item R\+C\+C\+\_\+\+I2\+C2\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+S\+Y\+S\+C\+LK\+: System Clock selected as I2\+C2 clock \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group___r_c_c_ex___exported___macros_ga2ca9240d0a7d79ca5f72b298255e73ee}\label{group___r_c_c_ex___exported___macros_ga2ca9240d0a7d79ca5f72b298255e73ee}} 
+\index{RCCEx Exported Macros@{RCCEx Exported Macros}!\_\_HAL\_RCC\_I2C3\_CONFIG@{\_\_HAL\_RCC\_I2C3\_CONFIG}}
+\index{\_\_HAL\_RCC\_I2C3\_CONFIG@{\_\_HAL\_RCC\_I2C3\_CONFIG}!RCCEx Exported Macros@{RCCEx Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_RCC\_I2C3\_CONFIG}{\_\_HAL\_RCC\_I2C3\_CONFIG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+I2\+C3\+\_\+\+C\+O\+N\+F\+IG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+I2\+C3\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+ }\end{DoxyParamCaption})~M\+O\+D\+I\+F\+Y\+\_\+\+R\+EG(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+I2\+C3\+S\+EL, (uint32\+\_\+t)(\+\_\+\+\_\+\+I2\+C3\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+))}
+
+
+
+Macro to configure the I2\+C3 clock (I2\+C3\+C\+LK). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+I2\+C3\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E$<$/strong$>$} & specifies the I2\+C3 clock source. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item R\+C\+C\+\_\+\+I2\+C3\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+P\+C\+L\+K1\+: P\+C\+L\+K1 selected as I2\+C3 clock \item R\+C\+C\+\_\+\+I2\+C3\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+H\+SI\+: H\+SI selected as I2\+C3 clock \item R\+C\+C\+\_\+\+I2\+C3\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+S\+Y\+S\+C\+LK\+: System Clock selected as I2\+C3 clock \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group___r_c_c_ex___exported___macros_ga5ef626e39760793f37dd107f633c1404}\label{group___r_c_c_ex___exported___macros_ga5ef626e39760793f37dd107f633c1404}} 
+\index{RCCEx Exported Macros@{RCCEx Exported Macros}!\_\_HAL\_RCC\_I2C4\_CONFIG@{\_\_HAL\_RCC\_I2C4\_CONFIG}}
+\index{\_\_HAL\_RCC\_I2C4\_CONFIG@{\_\_HAL\_RCC\_I2C4\_CONFIG}!RCCEx Exported Macros@{RCCEx Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_RCC\_I2C4\_CONFIG}{\_\_HAL\_RCC\_I2C4\_CONFIG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+I2\+C4\+\_\+\+C\+O\+N\+F\+IG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+I2\+C4\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+ }\end{DoxyParamCaption})~M\+O\+D\+I\+F\+Y\+\_\+\+R\+EG(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+I2\+C4\+S\+EL, (uint32\+\_\+t)(\+\_\+\+\_\+\+I2\+C4\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+))}
+
+
+
+Macro to configure the I2\+C4 clock (I2\+C4\+C\+LK). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+I2\+C4\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E$<$/strong$>$} & specifies the I2\+C4 clock source. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item R\+C\+C\+\_\+\+I2\+C4\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+P\+C\+L\+K1\+: P\+C\+L\+K1 selected as I2\+C4 clock \item R\+C\+C\+\_\+\+I2\+C4\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+H\+SI\+: H\+SI selected as I2\+C4 clock \item R\+C\+C\+\_\+\+I2\+C4\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+S\+Y\+S\+C\+LK\+: System Clock selected as I2\+C4 clock \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group___r_c_c_ex___exported___macros_ga2a59d733248c7e8f36c2c6abd1dd2bb4}\label{group___r_c_c_ex___exported___macros_ga2a59d733248c7e8f36c2c6abd1dd2bb4}} 
+\index{RCCEx Exported Macros@{RCCEx Exported Macros}!\_\_HAL\_RCC\_LPTIM1\_CONFIG@{\_\_HAL\_RCC\_LPTIM1\_CONFIG}}
+\index{\_\_HAL\_RCC\_LPTIM1\_CONFIG@{\_\_HAL\_RCC\_LPTIM1\_CONFIG}!RCCEx Exported Macros@{RCCEx Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_RCC\_LPTIM1\_CONFIG}{\_\_HAL\_RCC\_LPTIM1\_CONFIG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+L\+P\+T\+I\+M1\+\_\+\+C\+O\+N\+F\+IG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+L\+P\+T\+I\+M1\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+ }\end{DoxyParamCaption})~M\+O\+D\+I\+F\+Y\+\_\+\+R\+EG(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+L\+P\+T\+I\+M1\+S\+EL, (uint32\+\_\+t)(\+\_\+\+\_\+\+L\+P\+T\+I\+M1\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+))}
+
+
+
+Macro to configure the L\+P\+T\+I\+M1 clock (L\+P\+T\+I\+M1\+C\+LK). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+L\+P\+T\+I\+M1\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E$<$/strong$>$} & specifies the L\+P\+T\+I\+M1 clock source. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item R\+C\+C\+\_\+\+L\+P\+T\+I\+M1\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+P\+C\+L\+K1\+: P\+C\+LK selected as L\+P\+T\+I\+M1 clock \item R\+C\+C\+\_\+\+L\+P\+T\+I\+M1\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+H\+SI\+: H\+SI selected as L\+P\+T\+I\+M1 clock \item R\+C\+C\+\_\+\+L\+P\+T\+I\+M1\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+L\+SI\+: L\+SI selected as L\+P\+T\+I\+M1 clock \item R\+C\+C\+\_\+\+L\+P\+T\+I\+M1\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+L\+SE\+: L\+SE selected as L\+P\+T\+I\+M1 clock \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group___r_c_c_ex___exported___macros_ga56d9ad48b28e7aa4ad3aadca5b4fd431}\label{group___r_c_c_ex___exported___macros_ga56d9ad48b28e7aa4ad3aadca5b4fd431}} 
+\index{RCCEx Exported Macros@{RCCEx Exported Macros}!\_\_HAL\_RCC\_PLL\_CONFIG@{\_\_HAL\_RCC\_PLL\_CONFIG}}
+\index{\_\_HAL\_RCC\_PLL\_CONFIG@{\_\_HAL\_RCC\_PLL\_CONFIG}!RCCEx Exported Macros@{RCCEx Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_RCC\_PLL\_CONFIG}{\_\_HAL\_RCC\_PLL\_CONFIG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+P\+L\+L\+\_\+\+C\+O\+N\+F\+IG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+R\+C\+C\+\_\+\+P\+L\+L\+Source\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+P\+L\+L\+M\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+P\+L\+L\+N\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+P\+L\+L\+P\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+P\+L\+L\+Q\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(RCC->PLLCFGR = (0x20000000 | (\_\_RCC\_PLLSource\_\_) | (\_\_PLLM\_\_)| \(\backslash\)}
+\DoxyCodeLine{                            ((\_\_PLLN\_\_) << RCC\_PLLCFGR\_PLLN\_Pos)                          | \(\backslash\)}
+\DoxyCodeLine{                            ((((\_\_PLLP\_\_) >> 1) -1) << RCC\_PLLCFGR\_PLLP\_Pos)              | \(\backslash\)}
+\DoxyCodeLine{                            ((\_\_PLLQ\_\_) << RCC\_PLLCFGR\_PLLQ\_Pos)))}
+
+\end{DoxyCode}
+
+
+Macro to configure the main P\+LL clock source, multiplication and division factors. 
+
+\begin{DoxyNote}{Note}
+This function must be used only when the main P\+LL is disabled. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+R\+C\+C\+\_\+\+P\+L\+L\+Source$<$/strong$>$} & specifies the P\+LL entry clock source. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item R\+C\+C\+\_\+\+P\+L\+L\+S\+O\+U\+R\+C\+E\+\_\+\+H\+SI\+: H\+SI oscillator clock selected as P\+LL clock entry \item R\+C\+C\+\_\+\+P\+L\+L\+S\+O\+U\+R\+C\+E\+\_\+\+H\+SE\+: H\+SE oscillator clock selected as P\+LL clock entry \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This clock source (R\+C\+C\+\_\+\+P\+L\+L\+Source) is common for the main P\+LL and P\+L\+L\+I2S. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+P\+L\+L\+M$<$/strong$>$} & specifies the division factor for P\+LL V\+CO input clock This parameter must be a number between Min\+\_\+\+Data = 2 and Max\+\_\+\+Data = 63. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+You have to set the P\+L\+LM parameter correctly to ensure that the V\+CO input frequency ranges from 1 to 2 M\+Hz. It is recommended to select a frequency of 2 M\+Hz to limit P\+LL jitter. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+P\+L\+L\+N$<$/strong$>$} & specifies the multiplication factor for P\+LL V\+CO output clock This parameter must be a number between Min\+\_\+\+Data = 50 and Max\+\_\+\+Data = 432. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+You have to set the P\+L\+LN parameter correctly to ensure that the V\+CO output frequency is between 100 and 432 M\+Hz. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+P\+L\+L\+P$<$/strong$>$} & specifies the division factor for main system clock (S\+Y\+S\+C\+LK) This parameter must be a number in the range \{2, 4, 6, or 8\}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+You have to set the P\+L\+LP parameter correctly to not exceed 216 M\+Hz on the System clock frequency. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+P\+L\+L\+Q$<$/strong$>$} & specifies the division factor for O\+TG FS, S\+D\+M\+MC and R\+NG clocks This parameter must be a number between Min\+\_\+\+Data = 2 and Max\+\_\+\+Data = 15. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+If the U\+SB O\+TG FS is used in your application, you have to set the P\+L\+LQ parameter correctly to have 48 M\+Hz clock for the U\+SB. However, the S\+D\+M\+MC and R\+NG need a frequency lower than or equal to 48 M\+Hz to work correctly. 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_c_c_ex___exported___macros_ga9aafdab89de4a330a682731e28e535eb}\label{group___r_c_c_ex___exported___macros_ga9aafdab89de4a330a682731e28e535eb}} 
+\index{RCCEx Exported Macros@{RCCEx Exported Macros}!\_\_HAL\_RCC\_PLLI2S\_CONFIG@{\_\_HAL\_RCC\_PLLI2S\_CONFIG}}
+\index{\_\_HAL\_RCC\_PLLI2S\_CONFIG@{\_\_HAL\_RCC\_PLLI2S\_CONFIG}!RCCEx Exported Macros@{RCCEx Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_RCC\_PLLI2S\_CONFIG}{\_\_HAL\_RCC\_PLLI2S\_CONFIG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+P\+L\+L\+I2\+S\+\_\+\+C\+O\+N\+F\+IG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+P\+L\+L\+I2\+S\+N\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+P\+L\+L\+I2\+S\+P\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+P\+L\+L\+I2\+S\+Q\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+P\+L\+L\+I2\+S\+R\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(RCC->PLLI2SCFGR = ((\_\_PLLI2SN\_\_) << RCC\_PLLI2SCFGR\_PLLI2SN\_Pos) |\(\backslash\)}
+\DoxyCodeLine{                               ((\_\_PLLI2SP\_\_) << RCC\_PLLI2SCFGR\_PLLI2SP\_Pos)                    |\(\backslash\)}
+\DoxyCodeLine{                               ((\_\_PLLI2SQ\_\_) << RCC\_PLLI2SCFGR\_PLLI2SQ\_Pos)                    |\(\backslash\)}
+\DoxyCodeLine{                               ((\_\_PLLI2SR\_\_) << RCC\_PLLI2SCFGR\_PLLI2SR\_Pos))}
+
+\end{DoxyCode}
+
+
+Macro to configure the P\+L\+L\+I2S clock multiplication and division factors. 
+
+\begin{DoxyNote}{Note}
+This macro must be used only when the P\+L\+L\+I2S is disabled. 
+
+P\+L\+L\+I2S clock source is common with the main P\+LL (configured in H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+Clock\+Config() A\+PI) 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+P\+L\+L\+I2\+S\+N$<$/strong$>$} & specifies the multiplication factor for P\+L\+L\+I2S V\+CO output clock. This parameter must be a number between Min\+\_\+\+Data = 50 and Max\+\_\+\+Data = 432. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+You have to set the P\+L\+L\+I2\+SN parameter correctly to ensure that the V\+CO output frequency is between Min\+\_\+\+Data = 100 and Max\+\_\+\+Data = 432 M\+Hz. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+P\+L\+L\+I2\+S\+P$<$/strong$>$} & specifies the division factor for S\+P\+D\+D\+I\+F-\/\+RX clock. This parameter can be a value of R\+C\+C\+Ex\+\_\+\+P\+L\+L\+I2\+S\+P\+\_\+\+Clock\+\_\+\+Divider. \\
+\hline
+{\em $<$strong$>$\+P\+L\+L\+I2\+S\+Q$<$/strong$>$} & specifies the division factor for S\+AI clock. This parameter must be a number between Min\+\_\+\+Data = 2 and Max\+\_\+\+Data = 15. \\
+\hline
+{\em $<$strong$>$\+P\+L\+L\+I2\+S\+R$<$/strong$>$} & specifies the division factor for I2S clock This parameter must be a number between Min\+\_\+\+Data = 2 and Max\+\_\+\+Data = 7. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+You have to set the P\+L\+L\+I2\+SR parameter correctly to not exceed 192 M\+Hz on the I2S clock frequency. 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_c_c_ex___exported___macros_gafc7cf4dd4c7859bcefe0d46cc56426bb}\label{group___r_c_c_ex___exported___macros_gafc7cf4dd4c7859bcefe0d46cc56426bb}} 
+\index{RCCEx Exported Macros@{RCCEx Exported Macros}!\_\_HAL\_RCC\_PLLI2S\_PLLSAICLKDIVQ\_CONFIG@{\_\_HAL\_RCC\_PLLI2S\_PLLSAICLKDIVQ\_CONFIG}}
+\index{\_\_HAL\_RCC\_PLLI2S\_PLLSAICLKDIVQ\_CONFIG@{\_\_HAL\_RCC\_PLLI2S\_PLLSAICLKDIVQ\_CONFIG}!RCCEx Exported Macros@{RCCEx Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_RCC\_PLLI2S\_PLLSAICLKDIVQ\_CONFIG}{\_\_HAL\_RCC\_PLLI2S\_PLLSAICLKDIVQ\_CONFIG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+P\+L\+L\+I2\+S\+\_\+\+P\+L\+L\+S\+A\+I\+C\+L\+K\+D\+I\+V\+Q\+\_\+\+C\+O\+N\+F\+IG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+P\+L\+L\+I2\+S\+Div\+Q\+\_\+\+\_\+ }\end{DoxyParamCaption})~(M\+O\+D\+I\+F\+Y\+\_\+\+R\+EG(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R1, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R1\+\_\+\+P\+L\+L\+I2\+S\+D\+I\+VQ, (\+\_\+\+\_\+\+P\+L\+L\+I2\+S\+Div\+Q\+\_\+\+\_\+)-\/1))}
+
+
+
+Macro to configure the S\+AI clock Divider coming from P\+L\+L\+I2S. 
+
+\begin{DoxyNote}{Note}
+This function must be called before enabling the P\+L\+L\+I2S. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+P\+L\+L\+I2\+S\+Div\+Q$<$/strong$>$} & specifies the P\+L\+L\+I2S division factor for S\+A\+I1 clock . This parameter must be a number between 1 and 32. S\+A\+I1 clock frequency = f(\+P\+L\+L\+I2\+S\+Q) / {\bfseries{P\+L\+L\+I2\+S\+DivQ}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group___r_c_c_ex___exported___macros_gaceef24f97e3781b61c14681fb7cc7346}\label{group___r_c_c_ex___exported___macros_gaceef24f97e3781b61c14681fb7cc7346}} 
+\index{RCCEx Exported Macros@{RCCEx Exported Macros}!\_\_HAL\_RCC\_PLLSAI\_CONFIG@{\_\_HAL\_RCC\_PLLSAI\_CONFIG}}
+\index{\_\_HAL\_RCC\_PLLSAI\_CONFIG@{\_\_HAL\_RCC\_PLLSAI\_CONFIG}!RCCEx Exported Macros@{RCCEx Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_RCC\_PLLSAI\_CONFIG}{\_\_HAL\_RCC\_PLLSAI\_CONFIG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+P\+L\+L\+S\+A\+I\+\_\+\+C\+O\+N\+F\+IG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+P\+L\+L\+S\+A\+I\+N\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+P\+L\+L\+S\+A\+I\+P\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+P\+L\+L\+S\+A\+I\+Q\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+P\+L\+L\+S\+A\+I\+R\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(RCC->PLLSAICFGR = ((\_\_PLLSAIN\_\_) << RCC\_PLLSAICFGR\_PLLSAIN\_Pos) |\(\backslash\)}
+\DoxyCodeLine{                               ((\_\_PLLSAIP\_\_) << RCC\_PLLSAICFGR\_PLLSAIP\_Pos)                    |\(\backslash\)}
+\DoxyCodeLine{                               ((\_\_PLLSAIQ\_\_) << RCC\_PLLSAICFGR\_PLLSAIQ\_Pos)                    |\(\backslash\)}
+\DoxyCodeLine{                               ((\_\_PLLSAIR\_\_) << RCC\_PLLSAICFGR\_PLLSAIR\_Pos))}
+
+\end{DoxyCode}
+
+
+Macro to configure the P\+L\+L\+S\+AI clock multiplication and division factors. 
+
+\begin{DoxyNote}{Note}
+This function must be used only when the P\+L\+L\+S\+AI is disabled. 
+
+P\+L\+L\+S\+AI clock source is common with the main P\+LL (configured in R\+C\+C\+\_\+\+P\+L\+L\+Config function ) 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+P\+L\+L\+S\+A\+I\+N$<$/strong$>$} & specifies the multiplication factor for P\+L\+L\+S\+AI V\+CO output clock. This parameter must be a number between Min\+\_\+\+Data = 50 and Max\+\_\+\+Data = 432. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+You have to set the P\+L\+L\+S\+A\+IN parameter correctly to ensure that the V\+CO output frequency is between Min\+\_\+\+Data = 100 and Max\+\_\+\+Data = 432 M\+Hz. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+P\+L\+L\+S\+A\+I\+P$<$/strong$>$} & specifies the division factor for U\+SB, R\+NG, S\+D\+M\+MC clocks This parameter can be a value of \mbox{\hyperlink{group___r_c_c_ex___p_l_l_s_a_i_p___clock___divider}{R\+C\+C\+Ex P\+L\+L\+S\+A\+IP Clock Divider}}. \\
+\hline
+{\em $<$strong$>$\+P\+L\+L\+S\+A\+I\+Q$<$/strong$>$} & specifies the division factor for S\+AI clock This parameter must be a number between Min\+\_\+\+Data = 2 and Max\+\_\+\+Data = 15. \\
+\hline
+{\em $<$strong$>$\+P\+L\+L\+S\+A\+I\+R$<$/strong$>$} & specifies the division factor for L\+T\+DC clock This parameter must be a number between Min\+\_\+\+Data = 2 and Max\+\_\+\+Data = 7. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group___r_c_c_ex___exported___macros_ga829deb86fa0bf2b9303599f25143bb83}\label{group___r_c_c_ex___exported___macros_ga829deb86fa0bf2b9303599f25143bb83}} 
+\index{RCCEx Exported Macros@{RCCEx Exported Macros}!\_\_HAL\_RCC\_PLLSAI\_ENABLE@{\_\_HAL\_RCC\_PLLSAI\_ENABLE}}
+\index{\_\_HAL\_RCC\_PLLSAI\_ENABLE@{\_\_HAL\_RCC\_PLLSAI\_ENABLE}!RCCEx Exported Macros@{RCCEx Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_RCC\_PLLSAI\_ENABLE}{\_\_HAL\_RCC\_PLLSAI\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+P\+L\+L\+S\+A\+I\+\_\+\+E\+N\+A\+B\+LE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(R\+CC-\/$>$CR $\vert$= (R\+C\+C\+\_\+\+C\+R\+\_\+\+P\+L\+L\+S\+A\+I\+ON))}
+
+
+
+Macros to Enable or Disable the P\+L\+L\+I\+S\+AI. 
+
+\begin{DoxyNote}{Note}
+The P\+L\+L\+S\+AI is disabled by hardware when entering S\+T\+OP and S\+T\+A\+N\+D\+BY modes. 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_c_c_ex___exported___macros_ga573e020db1ec841ff9c9d36da2b82a6b}\label{group___r_c_c_ex___exported___macros_ga573e020db1ec841ff9c9d36da2b82a6b}} 
+\index{RCCEx Exported Macros@{RCCEx Exported Macros}!\_\_HAL\_RCC\_PLLSAI\_GET\_FLAG@{\_\_HAL\_RCC\_PLLSAI\_GET\_FLAG}}
+\index{\_\_HAL\_RCC\_PLLSAI\_GET\_FLAG@{\_\_HAL\_RCC\_PLLSAI\_GET\_FLAG}!RCCEx Exported Macros@{RCCEx Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_RCC\_PLLSAI\_GET\_FLAG}{\_\_HAL\_RCC\_PLLSAI\_GET\_FLAG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+P\+L\+L\+S\+A\+I\+\_\+\+G\+E\+T\+\_\+\+F\+L\+AG(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~((R\+CC-\/$>$CR \& (R\+C\+C\+\_\+\+C\+R\+\_\+\+P\+L\+L\+S\+A\+I\+R\+DY)) == (R\+C\+C\+\_\+\+C\+R\+\_\+\+P\+L\+L\+S\+A\+I\+R\+DY))}
+
+
+
+Check P\+L\+L\+S\+AI R\+DY flag is set or not. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & new state (T\+R\+UE or F\+A\+L\+SE). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___r_c_c_ex___exported___macros_ga478a4064faa2f2f1fa7320fe6b60b5ba}\label{group___r_c_c_ex___exported___macros_ga478a4064faa2f2f1fa7320fe6b60b5ba}} 
+\index{RCCEx Exported Macros@{RCCEx Exported Macros}!\_\_HAL\_RCC\_PLLSAI\_GET\_IT@{\_\_HAL\_RCC\_PLLSAI\_GET\_IT}}
+\index{\_\_HAL\_RCC\_PLLSAI\_GET\_IT@{\_\_HAL\_RCC\_PLLSAI\_GET\_IT}!RCCEx Exported Macros@{RCCEx Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_RCC\_PLLSAI\_GET\_IT}{\_\_HAL\_RCC\_PLLSAI\_GET\_IT}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+P\+L\+L\+S\+A\+I\+\_\+\+G\+E\+T\+\_\+\+IT(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~((R\+CC-\/$>$C\+IR \& (R\+C\+C\+\_\+\+C\+I\+R\+\_\+\+P\+L\+L\+S\+A\+I\+R\+D\+Y\+IE)) == (R\+C\+C\+\_\+\+C\+I\+R\+\_\+\+P\+L\+L\+S\+A\+I\+R\+D\+Y\+IE))}
+
+
+
+Check the P\+L\+L\+S\+AI R\+DY interrupt has occurred or not. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & new state (T\+R\+UE or F\+A\+L\+SE). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___r_c_c_ex___exported___macros_gad4fc19bc8f6c50dca02f9d0b14fc41fd}\label{group___r_c_c_ex___exported___macros_gad4fc19bc8f6c50dca02f9d0b14fc41fd}} 
+\index{RCCEx Exported Macros@{RCCEx Exported Macros}!\_\_HAL\_RCC\_PLLSAI\_PLLSAICLKDIVQ\_CONFIG@{\_\_HAL\_RCC\_PLLSAI\_PLLSAICLKDIVQ\_CONFIG}}
+\index{\_\_HAL\_RCC\_PLLSAI\_PLLSAICLKDIVQ\_CONFIG@{\_\_HAL\_RCC\_PLLSAI\_PLLSAICLKDIVQ\_CONFIG}!RCCEx Exported Macros@{RCCEx Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_RCC\_PLLSAI\_PLLSAICLKDIVQ\_CONFIG}{\_\_HAL\_RCC\_PLLSAI\_PLLSAICLKDIVQ\_CONFIG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+P\+L\+L\+S\+A\+I\+\_\+\+P\+L\+L\+S\+A\+I\+C\+L\+K\+D\+I\+V\+Q\+\_\+\+C\+O\+N\+F\+IG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+P\+L\+L\+S\+A\+I\+Div\+Q\+\_\+\+\_\+ }\end{DoxyParamCaption})~(M\+O\+D\+I\+F\+Y\+\_\+\+R\+EG(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R1, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R1\+\_\+\+P\+L\+L\+S\+A\+I\+D\+I\+VQ, ((\+\_\+\+\_\+\+P\+L\+L\+S\+A\+I\+Div\+Q\+\_\+\+\_\+)-\/1)$<$$<$8))}
+
+
+
+Macro to configure the S\+AI clock Divider coming from P\+L\+L\+S\+AI. 
+
+\begin{DoxyNote}{Note}
+This function must be called before enabling the P\+L\+L\+S\+AI. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+P\+L\+L\+S\+A\+I\+Div\+Q$<$/strong$>$} & specifies the P\+L\+L\+S\+AI division factor for S\+A\+I1 clock . This parameter must be a number between Min\+\_\+\+Data = 1 and Max\+\_\+\+Data = 32. S\+A\+I1 clock frequency = f(\+P\+L\+L\+S\+A\+I\+Q) / {\bfseries{P\+L\+L\+S\+A\+I\+DivQ}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group___r_c_c_ex___exported___macros_ga57c7909a2eb8ee312705c224607d00c6}\label{group___r_c_c_ex___exported___macros_ga57c7909a2eb8ee312705c224607d00c6}} 
+\index{RCCEx Exported Macros@{RCCEx Exported Macros}!\_\_HAL\_RCC\_SAI1\_CONFIG@{\_\_HAL\_RCC\_SAI1\_CONFIG}}
+\index{\_\_HAL\_RCC\_SAI1\_CONFIG@{\_\_HAL\_RCC\_SAI1\_CONFIG}!RCCEx Exported Macros@{RCCEx Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_RCC\_SAI1\_CONFIG}{\_\_HAL\_RCC\_SAI1\_CONFIG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+S\+A\+I1\+\_\+\+C\+O\+N\+F\+IG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+ }\end{DoxyParamCaption})~M\+O\+D\+I\+F\+Y\+\_\+\+R\+EG(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R1, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R1\+\_\+\+S\+A\+I1\+S\+EL, (uint32\+\_\+t)(\+\_\+\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+))}
+
+
+
+Macro to configure S\+A\+I1 clock source selection. 
+
+\begin{DoxyNote}{Note}
+This function must be called before enabling P\+L\+L\+S\+AI, P\+L\+L\+I2S and the S\+AI clock. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+S\+O\+U\+R\+C\+E$<$/strong$>$} & specifies the S\+A\+I1 clock source. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item R\+C\+C\+\_\+\+S\+A\+I1\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+P\+L\+L\+I2S\+: P\+L\+L\+I2\+S\+\_\+Q clock divided by P\+L\+L\+I2\+S\+D\+I\+VQ used as S\+A\+I1 clock. \item R\+C\+C\+\_\+\+S\+A\+I1\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+P\+L\+L\+S\+AI\+: P\+L\+L\+I\+S\+A\+I\+\_\+Q clock divided by P\+L\+L\+S\+A\+I\+D\+I\+VQ used as S\+A\+I1 clock. \item R\+C\+C\+\_\+\+S\+A\+I1\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+P\+IN\+: External clock mapped on the I2\+S\+\_\+\+C\+K\+IN pin used as S\+A\+I1 clock. \item R\+C\+C\+\_\+\+S\+A\+I1\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+P\+L\+L\+S\+RC\+: H\+SI or H\+SE depending from P\+LL Source clock used as S\+A\+I1 clock. \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The R\+C\+C\+\_\+\+S\+A\+I1\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+P\+L\+L\+S\+RC value is only available with S\+T\+M32\+F767/769/777/779xx Devices 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_c_c_ex___exported___macros_ga18ab74d31998863f042a39d50f27c163}\label{group___r_c_c_ex___exported___macros_ga18ab74d31998863f042a39d50f27c163}} 
+\index{RCCEx Exported Macros@{RCCEx Exported Macros}!\_\_HAL\_RCC\_SAI2\_CONFIG@{\_\_HAL\_RCC\_SAI2\_CONFIG}}
+\index{\_\_HAL\_RCC\_SAI2\_CONFIG@{\_\_HAL\_RCC\_SAI2\_CONFIG}!RCCEx Exported Macros@{RCCEx Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_RCC\_SAI2\_CONFIG}{\_\_HAL\_RCC\_SAI2\_CONFIG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+S\+A\+I2\+\_\+\+C\+O\+N\+F\+IG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+ }\end{DoxyParamCaption})~M\+O\+D\+I\+F\+Y\+\_\+\+R\+EG(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R1, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R1\+\_\+\+S\+A\+I2\+S\+EL, (uint32\+\_\+t)(\+\_\+\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+))}
+
+
+
+Macro to configure S\+A\+I2 clock source selection. 
+
+\begin{DoxyNote}{Note}
+This function must be called before enabling P\+L\+L\+S\+AI, P\+L\+L\+I2S and the S\+AI clock. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+S\+O\+U\+R\+C\+E$<$/strong$>$} & specifies the S\+A\+I2 clock source. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item R\+C\+C\+\_\+\+S\+A\+I2\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+P\+L\+L\+I2S\+: P\+L\+L\+I2\+S\+\_\+Q clock divided by P\+L\+L\+I2\+S\+D\+I\+VQ used as S\+A\+I2 clock. \item R\+C\+C\+\_\+\+S\+A\+I2\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+P\+L\+L\+S\+AI\+: P\+L\+L\+I\+S\+A\+I\+\_\+Q clock divided by P\+L\+L\+S\+A\+I\+D\+I\+VQ used as S\+A\+I2 clock. \item R\+C\+C\+\_\+\+S\+A\+I2\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+P\+IN\+: External clock mapped on the I2\+S\+\_\+\+C\+K\+IN pin used as S\+A\+I2 clock. \item R\+C\+C\+\_\+\+S\+A\+I2\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+P\+L\+L\+S\+RC\+: H\+SI or H\+SE depending from P\+LL Source clock used as S\+A\+I2 clock. \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The R\+C\+C\+\_\+\+S\+A\+I2\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+P\+L\+L\+S\+RC value is only available with S\+T\+M32\+F767/769/777/779xx Devices 
+\end{DoxyNote}
+\mbox{\Hypertarget{group___r_c_c_ex___exported___macros_gab0f67736ba0c44c47e38b83ceedd3c17}\label{group___r_c_c_ex___exported___macros_gab0f67736ba0c44c47e38b83ceedd3c17}} 
+\index{RCCEx Exported Macros@{RCCEx Exported Macros}!\_\_HAL\_RCC\_SDMMC1\_CONFIG@{\_\_HAL\_RCC\_SDMMC1\_CONFIG}}
+\index{\_\_HAL\_RCC\_SDMMC1\_CONFIG@{\_\_HAL\_RCC\_SDMMC1\_CONFIG}!RCCEx Exported Macros@{RCCEx Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_RCC\_SDMMC1\_CONFIG}{\_\_HAL\_RCC\_SDMMC1\_CONFIG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+S\+D\+M\+M\+C1\+\_\+\+C\+O\+N\+F\+IG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+S\+D\+M\+M\+C1\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+ }\end{DoxyParamCaption})~M\+O\+D\+I\+F\+Y\+\_\+\+R\+EG(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+S\+D\+M\+M\+C1\+S\+EL, (uint32\+\_\+t)(\+\_\+\+\_\+\+S\+D\+M\+M\+C1\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+))}
+
+
+
+Macro to configure the S\+D\+M\+M\+C1 clock (S\+D\+M\+M\+C1\+C\+LK). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+S\+D\+M\+M\+C1\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E$<$/strong$>$} & specifies the S\+D\+M\+M\+C1 clock source. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item R\+C\+C\+\_\+\+S\+D\+M\+M\+C1\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+C\+L\+K48\+: C\+L\+K48 selected as S\+D\+M\+MC clock \item R\+C\+C\+\_\+\+S\+D\+M\+M\+C1\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+S\+Y\+S\+C\+LK\+: S\+Y\+S\+C\+LK selected as S\+D\+M\+MC clock \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group___r_c_c_ex___exported___macros_ga292ca7c84f192778314125ed6d7c8333}\label{group___r_c_c_ex___exported___macros_ga292ca7c84f192778314125ed6d7c8333}} 
+\index{RCCEx Exported Macros@{RCCEx Exported Macros}!\_\_HAL\_RCC\_TIMCLKPRESCALER@{\_\_HAL\_RCC\_TIMCLKPRESCALER}}
+\index{\_\_HAL\_RCC\_TIMCLKPRESCALER@{\_\_HAL\_RCC\_TIMCLKPRESCALER}!RCCEx Exported Macros@{RCCEx Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_RCC\_TIMCLKPRESCALER}{\_\_HAL\_RCC\_TIMCLKPRESCALER}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+T\+I\+M\+C\+L\+K\+P\+R\+E\+S\+C\+A\+L\+ER(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+P\+R\+E\+S\+C\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{do} \{RCC->DCKCFGR1 \&= ~(RCC\_DCKCFGR1\_TIMPRE);\(\backslash\)}
+\DoxyCodeLine{                                                 RCC->DCKCFGR1 |= (\_\_PRESC\_\_);           \(\backslash\)}
+\DoxyCodeLine{                                                \}\textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+
+
+Macro to configure the Timers clocks prescalers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+P\+R\+E\+S\+C$<$/strong$>$} & specifies the Timers clocks prescalers selection This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item R\+C\+C\+\_\+\+T\+I\+M\+P\+R\+E\+S\+\_\+\+D\+E\+S\+A\+C\+T\+I\+V\+A\+T\+ED\+: The Timers kernels clocks prescaler is equal to H\+P\+RE if P\+P\+R\+Ex is corresponding to division by 1 or 2, else it is equal to \mbox{[}(H\+P\+RE $\ast$ P\+P\+R\+Ex) / 2\mbox{]} if P\+P\+R\+Ex is corresponding to division by 4 or more. \item R\+C\+C\+\_\+\+T\+I\+M\+P\+R\+E\+S\+\_\+\+A\+C\+T\+I\+V\+A\+T\+ED\+: The Timers kernels clocks prescaler is equal to H\+P\+RE if P\+P\+R\+Ex is corresponding to division by 1, 2 or 4, else it is equal to \mbox{[}(H\+P\+RE $\ast$ P\+P\+R\+Ex) / 4\mbox{]} if P\+P\+R\+Ex is corresponding to division by 8 or more. \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group___r_c_c_ex___exported___macros_gab9ffca069f4dfc371811e084170998c5}\label{group___r_c_c_ex___exported___macros_gab9ffca069f4dfc371811e084170998c5}} 
+\index{RCCEx Exported Macros@{RCCEx Exported Macros}!\_\_HAL\_RCC\_UART4\_CONFIG@{\_\_HAL\_RCC\_UART4\_CONFIG}}
+\index{\_\_HAL\_RCC\_UART4\_CONFIG@{\_\_HAL\_RCC\_UART4\_CONFIG}!RCCEx Exported Macros@{RCCEx Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_RCC\_UART4\_CONFIG}{\_\_HAL\_RCC\_UART4\_CONFIG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+U\+A\+R\+T4\+\_\+\+C\+O\+N\+F\+IG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+U\+A\+R\+T4\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+ }\end{DoxyParamCaption})~M\+O\+D\+I\+F\+Y\+\_\+\+R\+EG(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+U\+A\+R\+T4\+S\+EL, (uint32\+\_\+t)(\+\_\+\+\_\+\+U\+A\+R\+T4\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+))}
+
+
+
+Macro to configure the U\+A\+R\+T4 clock (U\+A\+R\+T4\+C\+LK). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+U\+A\+R\+T4\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E$<$/strong$>$} & specifies the U\+A\+R\+T4 clock source. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item R\+C\+C\+\_\+\+U\+A\+R\+T4\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+P\+C\+L\+K1\+: P\+C\+L\+K1 selected as U\+A\+R\+T4 clock \item R\+C\+C\+\_\+\+U\+A\+R\+T4\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+H\+SI\+: H\+SI selected as U\+A\+R\+T4 clock \item R\+C\+C\+\_\+\+U\+A\+R\+T4\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+S\+Y\+S\+C\+LK\+: System Clock selected as U\+A\+R\+T4 clock \item R\+C\+C\+\_\+\+U\+A\+R\+T4\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+L\+SE\+: L\+SE selected as U\+A\+R\+T4 clock \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group___r_c_c_ex___exported___macros_ga3115ed733d8be4b363e3324a024479b5}\label{group___r_c_c_ex___exported___macros_ga3115ed733d8be4b363e3324a024479b5}} 
+\index{RCCEx Exported Macros@{RCCEx Exported Macros}!\_\_HAL\_RCC\_UART5\_CONFIG@{\_\_HAL\_RCC\_UART5\_CONFIG}}
+\index{\_\_HAL\_RCC\_UART5\_CONFIG@{\_\_HAL\_RCC\_UART5\_CONFIG}!RCCEx Exported Macros@{RCCEx Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_RCC\_UART5\_CONFIG}{\_\_HAL\_RCC\_UART5\_CONFIG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+U\+A\+R\+T5\+\_\+\+C\+O\+N\+F\+IG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+U\+A\+R\+T5\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+ }\end{DoxyParamCaption})~M\+O\+D\+I\+F\+Y\+\_\+\+R\+EG(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+U\+A\+R\+T5\+S\+EL, (uint32\+\_\+t)(\+\_\+\+\_\+\+U\+A\+R\+T5\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+))}
+
+
+
+Macro to configure the U\+A\+R\+T5 clock (U\+A\+R\+T5\+C\+LK). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+U\+A\+R\+T5\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E$<$/strong$>$} & specifies the U\+A\+R\+T5 clock source. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item R\+C\+C\+\_\+\+U\+A\+R\+T5\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+P\+C\+L\+K1\+: P\+C\+L\+K1 selected as U\+A\+R\+T5 clock \item R\+C\+C\+\_\+\+U\+A\+R\+T5\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+H\+SI\+: H\+SI selected as U\+A\+R\+T5 clock \item R\+C\+C\+\_\+\+U\+A\+R\+T5\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+S\+Y\+S\+C\+LK\+: System Clock selected as U\+A\+R\+T5 clock \item R\+C\+C\+\_\+\+U\+A\+R\+T5\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+L\+SE\+: L\+SE selected as U\+A\+R\+T5 clock \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group___r_c_c_ex___exported___macros_gaccf73dcde838afb32d15e578e2097607}\label{group___r_c_c_ex___exported___macros_gaccf73dcde838afb32d15e578e2097607}} 
+\index{RCCEx Exported Macros@{RCCEx Exported Macros}!\_\_HAL\_RCC\_UART7\_CONFIG@{\_\_HAL\_RCC\_UART7\_CONFIG}}
+\index{\_\_HAL\_RCC\_UART7\_CONFIG@{\_\_HAL\_RCC\_UART7\_CONFIG}!RCCEx Exported Macros@{RCCEx Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_RCC\_UART7\_CONFIG}{\_\_HAL\_RCC\_UART7\_CONFIG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+U\+A\+R\+T7\+\_\+\+C\+O\+N\+F\+IG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+U\+A\+R\+T7\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+ }\end{DoxyParamCaption})~M\+O\+D\+I\+F\+Y\+\_\+\+R\+EG(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+U\+A\+R\+T7\+S\+EL, (uint32\+\_\+t)(\+\_\+\+\_\+\+U\+A\+R\+T7\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+))}
+
+
+
+Macro to configure the U\+A\+R\+T7 clock (U\+A\+R\+T7\+C\+LK). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+U\+A\+R\+T7\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E$<$/strong$>$} & specifies the U\+A\+R\+T7 clock source. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item R\+C\+C\+\_\+\+U\+A\+R\+T7\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+P\+C\+L\+K1\+: P\+C\+L\+K1 selected as U\+A\+R\+T7 clock \item R\+C\+C\+\_\+\+U\+A\+R\+T7\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+H\+SI\+: H\+SI selected as U\+A\+R\+T7 clock \item R\+C\+C\+\_\+\+U\+A\+R\+T7\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+S\+Y\+S\+C\+LK\+: System Clock selected as U\+A\+R\+T7 clock \item R\+C\+C\+\_\+\+U\+A\+R\+T7\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+L\+SE\+: L\+SE selected as U\+A\+R\+T7 clock \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group___r_c_c_ex___exported___macros_ga2d9185e53c66b1b79d117988487093a2}\label{group___r_c_c_ex___exported___macros_ga2d9185e53c66b1b79d117988487093a2}} 
+\index{RCCEx Exported Macros@{RCCEx Exported Macros}!\_\_HAL\_RCC\_UART8\_CONFIG@{\_\_HAL\_RCC\_UART8\_CONFIG}}
+\index{\_\_HAL\_RCC\_UART8\_CONFIG@{\_\_HAL\_RCC\_UART8\_CONFIG}!RCCEx Exported Macros@{RCCEx Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_RCC\_UART8\_CONFIG}{\_\_HAL\_RCC\_UART8\_CONFIG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+U\+A\+R\+T8\+\_\+\+C\+O\+N\+F\+IG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+U\+A\+R\+T8\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+ }\end{DoxyParamCaption})~M\+O\+D\+I\+F\+Y\+\_\+\+R\+EG(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+U\+A\+R\+T8\+S\+EL, (uint32\+\_\+t)(\+\_\+\+\_\+\+U\+A\+R\+T8\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+))}
+
+
+
+Macro to configure the U\+A\+R\+T8 clock (U\+A\+R\+T8\+C\+LK). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+U\+A\+R\+T8\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E$<$/strong$>$} & specifies the U\+A\+R\+T8 clock source. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item R\+C\+C\+\_\+\+U\+A\+R\+T8\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+P\+C\+L\+K1\+: P\+C\+L\+K1 selected as U\+A\+R\+T8 clock \item R\+C\+C\+\_\+\+U\+A\+R\+T8\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+H\+SI\+: H\+SI selected as U\+A\+R\+T8 clock \item R\+C\+C\+\_\+\+U\+A\+R\+T8\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+S\+Y\+S\+C\+LK\+: System Clock selected as U\+A\+R\+T8 clock \item R\+C\+C\+\_\+\+U\+A\+R\+T8\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+L\+SE\+: L\+SE selected as U\+A\+R\+T8 clock \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group___r_c_c_ex___exported___macros_ga4a383ccb3cc3caaea1f4226e3e61f3e0}\label{group___r_c_c_ex___exported___macros_ga4a383ccb3cc3caaea1f4226e3e61f3e0}} 
+\index{RCCEx Exported Macros@{RCCEx Exported Macros}!\_\_HAL\_RCC\_USART1\_CONFIG@{\_\_HAL\_RCC\_USART1\_CONFIG}}
+\index{\_\_HAL\_RCC\_USART1\_CONFIG@{\_\_HAL\_RCC\_USART1\_CONFIG}!RCCEx Exported Macros@{RCCEx Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_RCC\_USART1\_CONFIG}{\_\_HAL\_RCC\_USART1\_CONFIG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+U\+S\+A\+R\+T1\+\_\+\+C\+O\+N\+F\+IG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+U\+S\+A\+R\+T1\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+ }\end{DoxyParamCaption})~M\+O\+D\+I\+F\+Y\+\_\+\+R\+EG(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+U\+S\+A\+R\+T1\+S\+EL, (uint32\+\_\+t)(\+\_\+\+\_\+\+U\+S\+A\+R\+T1\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+))}
+
+
+
+Macro to configure the U\+S\+A\+R\+T1 clock (U\+S\+A\+R\+T1\+C\+LK). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+U\+S\+A\+R\+T1\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E$<$/strong$>$} & specifies the U\+S\+A\+R\+T1 clock source. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item R\+C\+C\+\_\+\+U\+S\+A\+R\+T1\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+P\+C\+L\+K2\+: P\+C\+L\+K2 selected as U\+S\+A\+R\+T1 clock \item R\+C\+C\+\_\+\+U\+S\+A\+R\+T1\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+H\+SI\+: H\+SI selected as U\+S\+A\+R\+T1 clock \item R\+C\+C\+\_\+\+U\+S\+A\+R\+T1\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+S\+Y\+S\+C\+LK\+: System Clock selected as U\+S\+A\+R\+T1 clock \item R\+C\+C\+\_\+\+U\+S\+A\+R\+T1\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+L\+SE\+: L\+SE selected as U\+S\+A\+R\+T1 clock \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group___r_c_c_ex___exported___macros_gaa413643f4a106ca54111e8ff510290ca}\label{group___r_c_c_ex___exported___macros_gaa413643f4a106ca54111e8ff510290ca}} 
+\index{RCCEx Exported Macros@{RCCEx Exported Macros}!\_\_HAL\_RCC\_USART2\_CONFIG@{\_\_HAL\_RCC\_USART2\_CONFIG}}
+\index{\_\_HAL\_RCC\_USART2\_CONFIG@{\_\_HAL\_RCC\_USART2\_CONFIG}!RCCEx Exported Macros@{RCCEx Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_RCC\_USART2\_CONFIG}{\_\_HAL\_RCC\_USART2\_CONFIG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+U\+S\+A\+R\+T2\+\_\+\+C\+O\+N\+F\+IG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+U\+S\+A\+R\+T2\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+ }\end{DoxyParamCaption})~M\+O\+D\+I\+F\+Y\+\_\+\+R\+EG(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+U\+S\+A\+R\+T2\+S\+EL, (uint32\+\_\+t)(\+\_\+\+\_\+\+U\+S\+A\+R\+T2\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+))}
+
+
+
+Macro to configure the U\+S\+A\+R\+T2 clock (U\+S\+A\+R\+T2\+C\+LK). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+U\+S\+A\+R\+T2\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E$<$/strong$>$} & specifies the U\+S\+A\+R\+T2 clock source. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item R\+C\+C\+\_\+\+U\+S\+A\+R\+T2\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+P\+C\+L\+K1\+: P\+C\+L\+K1 selected as U\+S\+A\+R\+T2 clock \item R\+C\+C\+\_\+\+U\+S\+A\+R\+T2\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+H\+SI\+: H\+SI selected as U\+S\+A\+R\+T2 clock \item R\+C\+C\+\_\+\+U\+S\+A\+R\+T2\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+S\+Y\+S\+C\+LK\+: System Clock selected as U\+S\+A\+R\+T2 clock \item R\+C\+C\+\_\+\+U\+S\+A\+R\+T2\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+L\+SE\+: L\+SE selected as U\+S\+A\+R\+T2 clock \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group___r_c_c_ex___exported___macros_ga732383844537c59f16d5882a8fa1670d}\label{group___r_c_c_ex___exported___macros_ga732383844537c59f16d5882a8fa1670d}} 
+\index{RCCEx Exported Macros@{RCCEx Exported Macros}!\_\_HAL\_RCC\_USART3\_CONFIG@{\_\_HAL\_RCC\_USART3\_CONFIG}}
+\index{\_\_HAL\_RCC\_USART3\_CONFIG@{\_\_HAL\_RCC\_USART3\_CONFIG}!RCCEx Exported Macros@{RCCEx Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_RCC\_USART3\_CONFIG}{\_\_HAL\_RCC\_USART3\_CONFIG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+C\+O\+N\+F\+IG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+ }\end{DoxyParamCaption})~M\+O\+D\+I\+F\+Y\+\_\+\+R\+EG(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+U\+S\+A\+R\+T3\+S\+EL, (uint32\+\_\+t)(\+\_\+\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+))}
+
+
+
+Macro to configure the U\+S\+A\+R\+T3 clock (U\+S\+A\+R\+T3\+C\+LK). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+U\+S\+A\+R\+T3\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E$<$/strong$>$} & specifies the U\+S\+A\+R\+T3 clock source. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item R\+C\+C\+\_\+\+U\+S\+A\+R\+T3\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+P\+C\+L\+K1\+: P\+C\+L\+K1 selected as U\+S\+A\+R\+T3 clock \item R\+C\+C\+\_\+\+U\+S\+A\+R\+T3\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+H\+SI\+: H\+SI selected as U\+S\+A\+R\+T3 clock \item R\+C\+C\+\_\+\+U\+S\+A\+R\+T3\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+S\+Y\+S\+C\+LK\+: System Clock selected as U\+S\+A\+R\+T3 clock \item R\+C\+C\+\_\+\+U\+S\+A\+R\+T3\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+L\+SE\+: L\+SE selected as U\+S\+A\+R\+T3 clock \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group___r_c_c_ex___exported___macros_ga43e1d7400af3a191b3fc89d461799f3d}\label{group___r_c_c_ex___exported___macros_ga43e1d7400af3a191b3fc89d461799f3d}} 
+\index{RCCEx Exported Macros@{RCCEx Exported Macros}!\_\_HAL\_RCC\_USART6\_CONFIG@{\_\_HAL\_RCC\_USART6\_CONFIG}}
+\index{\_\_HAL\_RCC\_USART6\_CONFIG@{\_\_HAL\_RCC\_USART6\_CONFIG}!RCCEx Exported Macros@{RCCEx Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_RCC\_USART6\_CONFIG}{\_\_HAL\_RCC\_USART6\_CONFIG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+U\+S\+A\+R\+T6\+\_\+\+C\+O\+N\+F\+IG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+U\+S\+A\+R\+T6\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+ }\end{DoxyParamCaption})~M\+O\+D\+I\+F\+Y\+\_\+\+R\+EG(R\+CC-\/$>$D\+C\+K\+C\+F\+G\+R2, R\+C\+C\+\_\+\+D\+C\+K\+C\+F\+G\+R2\+\_\+\+U\+S\+A\+R\+T6\+S\+EL, (uint32\+\_\+t)(\+\_\+\+\_\+\+U\+S\+A\+R\+T6\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+))}
+
+
+
+Macro to configure the U\+S\+A\+R\+T6 clock (U\+S\+A\+R\+T6\+C\+LK). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+U\+S\+A\+R\+T6\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E$<$/strong$>$} & specifies the U\+S\+A\+R\+T6 clock source. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item R\+C\+C\+\_\+\+U\+S\+A\+R\+T6\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+P\+C\+L\+K1\+: P\+C\+L\+K1 selected as U\+S\+A\+R\+T6 clock \item R\+C\+C\+\_\+\+U\+S\+A\+R\+T6\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+H\+SI\+: H\+SI selected as U\+S\+A\+R\+T6 clock \item R\+C\+C\+\_\+\+U\+S\+A\+R\+T6\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+S\+Y\+S\+C\+LK\+: System Clock selected as U\+S\+A\+R\+T6 clock \item R\+C\+C\+\_\+\+U\+S\+A\+R\+T6\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+L\+SE\+: L\+SE selected as U\+S\+A\+R\+T6 clock \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}

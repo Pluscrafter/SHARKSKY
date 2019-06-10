@@ -1,0 +1,93 @@
+\hypertarget{struct_t_i_m___o_c___init_type_def}{}\section{T\+I\+M\+\_\+\+O\+C\+\_\+\+Init\+Type\+Def Struct Reference}
+\label{struct_t_i_m___o_c___init_type_def}\index{TIM\_OC\_InitTypeDef@{TIM\_OC\_InitTypeDef}}
+
+
+T\+IM Output Compare Configuration Structure definition.  
+
+
+
+
+{\ttfamily \#include $<$stm32f7xx\+\_\+hal\+\_\+tim.\+h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_t_i_m___o_c___init_type_def_ae5faa1cba0b3f1ab6179cc54e1015ee8}{O\+C\+Mode}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_t_i_m___o_c___init_type_def_a61fb5b9ef4154de67620ac81085a0e39}{Pulse}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_t_i_m___o_c___init_type_def_a556b7137d041aceed3e45c87cbfb39cd}{O\+C\+Polarity}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_t_i_m___o_c___init_type_def_a21922d8e2fee659d081c4be4c500d1d4}{O\+C\+N\+Polarity}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_t_i_m___o_c___init_type_def_a4c4203c5ed779ac86fb793bb9d628e55}{O\+C\+Fast\+Mode}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_t_i_m___o_c___init_type_def_ace3e2b76ca2fca0f4961585ed9ebecf5}{O\+C\+Idle\+State}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_t_i_m___o_c___init_type_def_a0d70cc51990d7433fd76cc6ed1d06237}{O\+C\+N\+Idle\+State}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+T\+IM Output Compare Configuration Structure definition. 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_t_i_m___o_c___init_type_def_a4c4203c5ed779ac86fb793bb9d628e55}\label{struct_t_i_m___o_c___init_type_def_a4c4203c5ed779ac86fb793bb9d628e55}} 
+\index{TIM\_OC\_InitTypeDef@{TIM\_OC\_InitTypeDef}!OCFastMode@{OCFastMode}}
+\index{OCFastMode@{OCFastMode}!TIM\_OC\_InitTypeDef@{TIM\_OC\_InitTypeDef}}
+\subsubsection{\texorpdfstring{OCFastMode}{OCFastMode}}
+{\footnotesize\ttfamily uint32\+\_\+t T\+I\+M\+\_\+\+O\+C\+\_\+\+Init\+Type\+Def\+::\+O\+C\+Fast\+Mode}
+
+Specifies the Fast mode state. This parameter can be a value of \mbox{\hyperlink{group___t_i_m___output___fast___state}{T\+IM Output Fast State}} \begin{DoxyNote}{Note}
+This parameter is valid only in P\+W\+M1 and P\+W\+M2 mode. 
+\end{DoxyNote}
+\mbox{\Hypertarget{struct_t_i_m___o_c___init_type_def_ace3e2b76ca2fca0f4961585ed9ebecf5}\label{struct_t_i_m___o_c___init_type_def_ace3e2b76ca2fca0f4961585ed9ebecf5}} 
+\index{TIM\_OC\_InitTypeDef@{TIM\_OC\_InitTypeDef}!OCIdleState@{OCIdleState}}
+\index{OCIdleState@{OCIdleState}!TIM\_OC\_InitTypeDef@{TIM\_OC\_InitTypeDef}}
+\subsubsection{\texorpdfstring{OCIdleState}{OCIdleState}}
+{\footnotesize\ttfamily uint32\+\_\+t T\+I\+M\+\_\+\+O\+C\+\_\+\+Init\+Type\+Def\+::\+O\+C\+Idle\+State}
+
+Specifies the T\+IM Output Compare pin state during Idle state. This parameter can be a value of \mbox{\hyperlink{group___t_i_m___output___compare___idle___state}{T\+IM Output Compare Idle State}} \begin{DoxyNote}{Note}
+This parameter is valid only for timer instances supporting break feature. 
+\end{DoxyNote}
+\mbox{\Hypertarget{struct_t_i_m___o_c___init_type_def_ae5faa1cba0b3f1ab6179cc54e1015ee8}\label{struct_t_i_m___o_c___init_type_def_ae5faa1cba0b3f1ab6179cc54e1015ee8}} 
+\index{TIM\_OC\_InitTypeDef@{TIM\_OC\_InitTypeDef}!OCMode@{OCMode}}
+\index{OCMode@{OCMode}!TIM\_OC\_InitTypeDef@{TIM\_OC\_InitTypeDef}}
+\subsubsection{\texorpdfstring{OCMode}{OCMode}}
+{\footnotesize\ttfamily uint32\+\_\+t T\+I\+M\+\_\+\+O\+C\+\_\+\+Init\+Type\+Def\+::\+O\+C\+Mode}
+
+Specifies the T\+IM mode. This parameter can be a value of \mbox{\hyperlink{group___t_i_m___output___compare__and___p_w_m__modes}{T\+IM Output Compare and P\+WM Modes}} \mbox{\Hypertarget{struct_t_i_m___o_c___init_type_def_a0d70cc51990d7433fd76cc6ed1d06237}\label{struct_t_i_m___o_c___init_type_def_a0d70cc51990d7433fd76cc6ed1d06237}} 
+\index{TIM\_OC\_InitTypeDef@{TIM\_OC\_InitTypeDef}!OCNIdleState@{OCNIdleState}}
+\index{OCNIdleState@{OCNIdleState}!TIM\_OC\_InitTypeDef@{TIM\_OC\_InitTypeDef}}
+\subsubsection{\texorpdfstring{OCNIdleState}{OCNIdleState}}
+{\footnotesize\ttfamily uint32\+\_\+t T\+I\+M\+\_\+\+O\+C\+\_\+\+Init\+Type\+Def\+::\+O\+C\+N\+Idle\+State}
+
+Specifies the T\+IM Output Compare pin state during Idle state. This parameter can be a value of \mbox{\hyperlink{group___t_i_m___output___compare___n___idle___state}{T\+IM Complementary Output Compare Idle State}} \begin{DoxyNote}{Note}
+This parameter is valid only for timer instances supporting break feature. 
+\end{DoxyNote}
+\mbox{\Hypertarget{struct_t_i_m___o_c___init_type_def_a21922d8e2fee659d081c4be4c500d1d4}\label{struct_t_i_m___o_c___init_type_def_a21922d8e2fee659d081c4be4c500d1d4}} 
+\index{TIM\_OC\_InitTypeDef@{TIM\_OC\_InitTypeDef}!OCNPolarity@{OCNPolarity}}
+\index{OCNPolarity@{OCNPolarity}!TIM\_OC\_InitTypeDef@{TIM\_OC\_InitTypeDef}}
+\subsubsection{\texorpdfstring{OCNPolarity}{OCNPolarity}}
+{\footnotesize\ttfamily uint32\+\_\+t T\+I\+M\+\_\+\+O\+C\+\_\+\+Init\+Type\+Def\+::\+O\+C\+N\+Polarity}
+
+Specifies the complementary output polarity. This parameter can be a value of \mbox{\hyperlink{group___t_i_m___output___compare___n___polarity}{T\+IM Complementary Output Compare Polarity}} \begin{DoxyNote}{Note}
+This parameter is valid only for timer instances supporting break feature. 
+\end{DoxyNote}
+\mbox{\Hypertarget{struct_t_i_m___o_c___init_type_def_a556b7137d041aceed3e45c87cbfb39cd}\label{struct_t_i_m___o_c___init_type_def_a556b7137d041aceed3e45c87cbfb39cd}} 
+\index{TIM\_OC\_InitTypeDef@{TIM\_OC\_InitTypeDef}!OCPolarity@{OCPolarity}}
+\index{OCPolarity@{OCPolarity}!TIM\_OC\_InitTypeDef@{TIM\_OC\_InitTypeDef}}
+\subsubsection{\texorpdfstring{OCPolarity}{OCPolarity}}
+{\footnotesize\ttfamily uint32\+\_\+t T\+I\+M\+\_\+\+O\+C\+\_\+\+Init\+Type\+Def\+::\+O\+C\+Polarity}
+
+Specifies the output polarity. This parameter can be a value of \mbox{\hyperlink{group___t_i_m___output___compare___polarity}{T\+IM Output Compare Polarity}} \mbox{\Hypertarget{struct_t_i_m___o_c___init_type_def_a61fb5b9ef4154de67620ac81085a0e39}\label{struct_t_i_m___o_c___init_type_def_a61fb5b9ef4154de67620ac81085a0e39}} 
+\index{TIM\_OC\_InitTypeDef@{TIM\_OC\_InitTypeDef}!Pulse@{Pulse}}
+\index{Pulse@{Pulse}!TIM\_OC\_InitTypeDef@{TIM\_OC\_InitTypeDef}}
+\subsubsection{\texorpdfstring{Pulse}{Pulse}}
+{\footnotesize\ttfamily uint32\+\_\+t T\+I\+M\+\_\+\+O\+C\+\_\+\+Init\+Type\+Def\+::\+Pulse}
+
+Specifies the pulse value to be loaded into the Capture Compare Register. This parameter can be a number between Min\+\_\+\+Data = 0x0000 and Max\+\_\+\+Data = 0x\+F\+F\+FF 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Drivers/\+S\+T\+M32\+F7xx\+\_\+\+H\+A\+L\+\_\+\+Driver/\+Inc/\mbox{\hyperlink{stm32f7xx__hal__tim_8h}{stm32f7xx\+\_\+hal\+\_\+tim.\+h}}\end{DoxyCompactItemize}

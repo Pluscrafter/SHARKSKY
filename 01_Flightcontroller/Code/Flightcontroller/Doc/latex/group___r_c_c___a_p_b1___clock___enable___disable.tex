@@ -1,0 +1,65 @@
+\hypertarget{group___r_c_c___a_p_b1___clock___enable___disable}{}\section{A\+P\+B1 Peripheral Clock Enable Disable}
+\label{group___r_c_c___a_p_b1___clock___enable___disable}\index{APB1 Peripheral Clock Enable Disable@{APB1 Peripheral Clock Enable Disable}}
+
+
+Enable or disable the Low Speed A\+PB (A\+P\+B1) peripheral clock.  
+
+
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+W\+W\+D\+G\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE}()
+\item 
+\#define {\bfseries \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+P\+W\+R\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE}()
+\item 
+\mbox{\Hypertarget{group___r_c_c___a_p_b1___clock___enable___disable_ga6afa0a633cf2553743a494d97aa5b997}\label{group___r_c_c___a_p_b1___clock___enable___disable_ga6afa0a633cf2553743a494d97aa5b997}} 
+\#define {\bfseries \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+W\+W\+D\+G\+\_\+\+C\+L\+K\+\_\+\+D\+I\+S\+A\+B\+LE}()~(R\+CC-\/$>$A\+P\+B1\+E\+NR \&= $\sim$(R\+C\+C\+\_\+\+A\+P\+B1\+E\+N\+R\+\_\+\+W\+W\+D\+G\+EN))
+\item 
+\mbox{\Hypertarget{group___r_c_c___a_p_b1___clock___enable___disable_gaf3db86d2db2bad45732a742b6a91ea0b}\label{group___r_c_c___a_p_b1___clock___enable___disable_gaf3db86d2db2bad45732a742b6a91ea0b}} 
+\#define {\bfseries \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+P\+W\+R\+\_\+\+C\+L\+K\+\_\+\+D\+I\+S\+A\+B\+LE}()~(R\+CC-\/$>$A\+P\+B1\+E\+NR \&= $\sim$(R\+C\+C\+\_\+\+A\+P\+B1\+E\+N\+R\+\_\+\+P\+W\+R\+EN))
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Enable or disable the Low Speed A\+PB (A\+P\+B1) peripheral clock. 
+
+\begin{DoxyNote}{Note}
+After reset, the peripheral clock (used for registers read/write access) is disabled and the application software has to enable this clock before using it. 
+\end{DoxyNote}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___r_c_c___a_p_b1___clock___enable___disable_ga6c7399cc977622172aeda52a86ceed92}\label{group___r_c_c___a_p_b1___clock___enable___disable_ga6c7399cc977622172aeda52a86ceed92}} 
+\index{APB1 Peripheral Clock Enable Disable@{APB1 Peripheral Clock Enable Disable}!\_\_HAL\_RCC\_PWR\_CLK\_ENABLE@{\_\_HAL\_RCC\_PWR\_CLK\_ENABLE}}
+\index{\_\_HAL\_RCC\_PWR\_CLK\_ENABLE@{\_\_HAL\_RCC\_PWR\_CLK\_ENABLE}!APB1 Peripheral Clock Enable Disable@{APB1 Peripheral Clock Enable Disable}}
+\subsubsection{\texorpdfstring{\_\_HAL\_RCC\_PWR\_CLK\_ENABLE}{\_\_HAL\_RCC\_PWR\_CLK\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+P\+W\+R\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{do} \{ \(\backslash\)}
+\DoxyCodeLine{                                        \_\_IO uint32\_t tmpreg; \(\backslash\)}
+\DoxyCodeLine{                                        SET\_BIT(RCC->APB1ENR, RCC\_APB1ENR\_PWREN);\(\backslash\)}
+\DoxyCodeLine{                                        \textcolor{comment}{/* Delay after an RCC peripheral clock enabling */} \(\backslash\)}
+\DoxyCodeLine{                                        tmpreg = READ\_BIT(RCC->APB1ENR, RCC\_APB1ENR\_PWREN);\(\backslash\)}
+\DoxyCodeLine{                                        UNUSED(tmpreg); \(\backslash\)}
+\DoxyCodeLine{                                      \} \textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group___r_c_c___a_p_b1___clock___enable___disable_gab0c13cc10b36c32d750be226d2fda3b2}\label{group___r_c_c___a_p_b1___clock___enable___disable_gab0c13cc10b36c32d750be226d2fda3b2}} 
+\index{APB1 Peripheral Clock Enable Disable@{APB1 Peripheral Clock Enable Disable}!\_\_HAL\_RCC\_WWDG\_CLK\_ENABLE@{\_\_HAL\_RCC\_WWDG\_CLK\_ENABLE}}
+\index{\_\_HAL\_RCC\_WWDG\_CLK\_ENABLE@{\_\_HAL\_RCC\_WWDG\_CLK\_ENABLE}!APB1 Peripheral Clock Enable Disable@{APB1 Peripheral Clock Enable Disable}}
+\subsubsection{\texorpdfstring{\_\_HAL\_RCC\_WWDG\_CLK\_ENABLE}{\_\_HAL\_RCC\_WWDG\_CLK\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+W\+W\+D\+G\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{do} \{ \(\backslash\)}
+\DoxyCodeLine{                                        \_\_IO uint32\_t tmpreg; \(\backslash\)}
+\DoxyCodeLine{                                        SET\_BIT(RCC->APB1ENR, RCC\_APB1ENR\_WWDGEN);\(\backslash\)}
+\DoxyCodeLine{                                        \textcolor{comment}{/* Delay after an RCC peripheral clock enabling */} \(\backslash\)}
+\DoxyCodeLine{                                        tmpreg = READ\_BIT(RCC->APB1ENR, RCC\_APB1ENR\_WWDGEN);\(\backslash\)}
+\DoxyCodeLine{                                        UNUSED(tmpreg); \(\backslash\)}
+\DoxyCodeLine{                                      \} \textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}

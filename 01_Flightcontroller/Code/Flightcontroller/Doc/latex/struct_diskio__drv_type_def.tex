@@ -1,0 +1,65 @@
+\hypertarget{struct_diskio__drv_type_def}{}\section{Diskio\+\_\+drv\+Type\+Def Struct Reference}
+\label{struct_diskio__drv_type_def}\index{Diskio\_drvTypeDef@{Diskio\_drvTypeDef}}
+
+
+Disk IO Driver structure definition.  
+
+
+
+
+{\ttfamily \#include $<$ff\+\_\+gen\+\_\+drv.\+h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+D\+S\+T\+A\+T\+US($\ast$ \mbox{\hyperlink{struct_diskio__drv_type_def_a6eb1dab68fd01043e7366dc419c693cf}{disk\+\_\+initialize}} )(B\+Y\+TE)
+\item 
+D\+S\+T\+A\+T\+US($\ast$ \mbox{\hyperlink{struct_diskio__drv_type_def_a6f441b818250523924b6e67cace07ed3}{disk\+\_\+status}} )(B\+Y\+TE)
+\item 
+D\+R\+E\+S\+U\+LT($\ast$ \mbox{\hyperlink{struct_diskio__drv_type_def_a4efc1e15fda6831ec1bf18199ea2d6fc}{disk\+\_\+read}} )(B\+Y\+TE, B\+Y\+TE $\ast$, D\+W\+O\+RD, U\+I\+NT)
+\item 
+D\+R\+E\+S\+U\+LT($\ast$ \mbox{\hyperlink{struct_diskio__drv_type_def_a3754d2ae169d02ba6996c4e672bff2a9}{disk\+\_\+write}} )(B\+Y\+TE, const B\+Y\+TE $\ast$, D\+W\+O\+RD, U\+I\+NT)
+\item 
+D\+R\+E\+S\+U\+LT($\ast$ \mbox{\hyperlink{struct_diskio__drv_type_def_aa6bcafbb089551805e88d4ee7e13d746}{disk\+\_\+ioctl}} )(B\+Y\+TE, B\+Y\+TE, void $\ast$)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Disk IO Driver structure definition. 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_diskio__drv_type_def_a6eb1dab68fd01043e7366dc419c693cf}\label{struct_diskio__drv_type_def_a6eb1dab68fd01043e7366dc419c693cf}} 
+\index{Diskio\_drvTypeDef@{Diskio\_drvTypeDef}!disk\_initialize@{disk\_initialize}}
+\index{disk\_initialize@{disk\_initialize}!Diskio\_drvTypeDef@{Diskio\_drvTypeDef}}
+\subsubsection{\texorpdfstring{disk\_initialize}{disk\_initialize}}
+{\footnotesize\ttfamily D\+S\+T\+A\+T\+US($\ast$ Diskio\+\_\+drv\+Type\+Def\+::disk\+\_\+initialize) (B\+Y\+TE)}
+
+Initialize Disk Drive \mbox{\Hypertarget{struct_diskio__drv_type_def_aa6bcafbb089551805e88d4ee7e13d746}\label{struct_diskio__drv_type_def_aa6bcafbb089551805e88d4ee7e13d746}} 
+\index{Diskio\_drvTypeDef@{Diskio\_drvTypeDef}!disk\_ioctl@{disk\_ioctl}}
+\index{disk\_ioctl@{disk\_ioctl}!Diskio\_drvTypeDef@{Diskio\_drvTypeDef}}
+\subsubsection{\texorpdfstring{disk\_ioctl}{disk\_ioctl}}
+{\footnotesize\ttfamily D\+R\+E\+S\+U\+LT($\ast$ Diskio\+\_\+drv\+Type\+Def\+::disk\+\_\+ioctl) (B\+Y\+TE, B\+Y\+TE, void $\ast$)}
+
+I/O control operation when \+\_\+\+U\+S\+E\+\_\+\+I\+O\+C\+TL = 1 \mbox{\Hypertarget{struct_diskio__drv_type_def_a4efc1e15fda6831ec1bf18199ea2d6fc}\label{struct_diskio__drv_type_def_a4efc1e15fda6831ec1bf18199ea2d6fc}} 
+\index{Diskio\_drvTypeDef@{Diskio\_drvTypeDef}!disk\_read@{disk\_read}}
+\index{disk\_read@{disk\_read}!Diskio\_drvTypeDef@{Diskio\_drvTypeDef}}
+\subsubsection{\texorpdfstring{disk\_read}{disk\_read}}
+{\footnotesize\ttfamily D\+R\+E\+S\+U\+LT($\ast$ Diskio\+\_\+drv\+Type\+Def\+::disk\+\_\+read) (B\+Y\+TE, B\+Y\+TE $\ast$, D\+W\+O\+RD, U\+I\+NT)}
+
+Read Sector(s) \mbox{\Hypertarget{struct_diskio__drv_type_def_a6f441b818250523924b6e67cace07ed3}\label{struct_diskio__drv_type_def_a6f441b818250523924b6e67cace07ed3}} 
+\index{Diskio\_drvTypeDef@{Diskio\_drvTypeDef}!disk\_status@{disk\_status}}
+\index{disk\_status@{disk\_status}!Diskio\_drvTypeDef@{Diskio\_drvTypeDef}}
+\subsubsection{\texorpdfstring{disk\_status}{disk\_status}}
+{\footnotesize\ttfamily D\+S\+T\+A\+T\+US($\ast$ Diskio\+\_\+drv\+Type\+Def\+::disk\+\_\+status) (B\+Y\+TE)}
+
+Get Disk Status \mbox{\Hypertarget{struct_diskio__drv_type_def_a3754d2ae169d02ba6996c4e672bff2a9}\label{struct_diskio__drv_type_def_a3754d2ae169d02ba6996c4e672bff2a9}} 
+\index{Diskio\_drvTypeDef@{Diskio\_drvTypeDef}!disk\_write@{disk\_write}}
+\index{disk\_write@{disk\_write}!Diskio\_drvTypeDef@{Diskio\_drvTypeDef}}
+\subsubsection{\texorpdfstring{disk\_write}{disk\_write}}
+{\footnotesize\ttfamily D\+R\+E\+S\+U\+LT($\ast$ Diskio\+\_\+drv\+Type\+Def\+::disk\+\_\+write) (B\+Y\+TE, const B\+Y\+TE $\ast$, D\+W\+O\+RD, U\+I\+NT)}
+
+Write Sector(s) when \+\_\+\+U\+S\+E\+\_\+\+W\+R\+I\+TE = 0 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+Third\+\_\+\+Party/\+Fat\+Fs/src/\mbox{\hyperlink{ff__gen__drv_8h}{ff\+\_\+gen\+\_\+drv.\+h}}\end{DoxyCompactItemize}

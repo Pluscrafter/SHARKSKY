@@ -1,0 +1,55 @@
+\hypertarget{group___p_w_r_ex___i_s___p_w_r___definitions}{}\section{P\+W\+R\+Ex Private macros to check input parameters}
+\label{group___p_w_r_ex___i_s___p_w_r___definitions}\index{PWREx Private macros to check input parameters@{PWREx Private macros to check input parameters}}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries I\+S\+\_\+\+P\+W\+R\+\_\+\+R\+E\+G\+U\+L\+A\+T\+O\+R\+\_\+\+U\+N\+D\+E\+R\+D\+R\+I\+VE}(R\+E\+G\+U\+L\+A\+T\+OR)
+\item 
+\#define {\bfseries I\+S\+\_\+\+P\+W\+R\+\_\+\+W\+A\+K\+E\+U\+P\+\_\+\+P\+IN}(\+\_\+\+\_\+\+P\+I\+N\+\_\+\+\_\+)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___p_w_r_ex___i_s___p_w_r___definitions_ga33dc716af19621b8c3ad42d7d41abef5}\label{group___p_w_r_ex___i_s___p_w_r___definitions_ga33dc716af19621b8c3ad42d7d41abef5}} 
+\index{PWREx Private macros to check input parameters@{PWREx Private macros to check input parameters}!IS\_PWR\_REGULATOR\_UNDERDRIVE@{IS\_PWR\_REGULATOR\_UNDERDRIVE}}
+\index{IS\_PWR\_REGULATOR\_UNDERDRIVE@{IS\_PWR\_REGULATOR\_UNDERDRIVE}!PWREx Private macros to check input parameters@{PWREx Private macros to check input parameters}}
+\subsubsection{\texorpdfstring{IS\_PWR\_REGULATOR\_UNDERDRIVE}{IS\_PWR\_REGULATOR\_UNDERDRIVE}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+\+P\+W\+R\+\_\+\+R\+E\+G\+U\+L\+A\+T\+O\+R\+\_\+\+U\+N\+D\+E\+R\+D\+R\+I\+VE(\begin{DoxyParamCaption}\item[{}]{R\+E\+G\+U\+L\+A\+T\+OR }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(((REGULATOR) == PWR\_MAINREGULATOR\_UNDERDRIVE\_ON) || \(\backslash\)}
+\DoxyCodeLine{                                                ((REGULATOR) == PWR\_LOWPOWERREGULATOR\_UNDERDRIVE\_ON))}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group___p_w_r_ex___i_s___p_w_r___definitions_gaeaf76825d2cd2408f3eee718c1275a6d}\label{group___p_w_r_ex___i_s___p_w_r___definitions_gaeaf76825d2cd2408f3eee718c1275a6d}} 
+\index{PWREx Private macros to check input parameters@{PWREx Private macros to check input parameters}!IS\_PWR\_WAKEUP\_PIN@{IS\_PWR\_WAKEUP\_PIN}}
+\index{IS\_PWR\_WAKEUP\_PIN@{IS\_PWR\_WAKEUP\_PIN}!PWREx Private macros to check input parameters@{PWREx Private macros to check input parameters}}
+\subsubsection{\texorpdfstring{IS\_PWR\_WAKEUP\_PIN}{IS\_PWR\_WAKEUP\_PIN}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+\+P\+W\+R\+\_\+\+W\+A\+K\+E\+U\+P\+\_\+\+P\+IN(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+P\+I\+N\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(((\_\_PIN\_\_) == PWR\_WAKEUP\_PIN1)       || \(\backslash\)}
+\DoxyCodeLine{                                            ((\_\_PIN\_\_) == PWR\_WAKEUP\_PIN2)       || \(\backslash\)}
+\DoxyCodeLine{                                            ((\_\_PIN\_\_) == PWR\_WAKEUP\_PIN3)       || \(\backslash\)}
+\DoxyCodeLine{                                            ((\_\_PIN\_\_) == PWR\_WAKEUP\_PIN4)       || \(\backslash\)}
+\DoxyCodeLine{                                            ((\_\_PIN\_\_) == PWR\_WAKEUP\_PIN5)       || \(\backslash\)}
+\DoxyCodeLine{                                            ((\_\_PIN\_\_) == PWR\_WAKEUP\_PIN6)           || \(\backslash\)}
+\DoxyCodeLine{                                            ((\_\_PIN\_\_) == PWR\_WAKEUP\_PIN1\_HIGH)  || \(\backslash\)}
+\DoxyCodeLine{                                            ((\_\_PIN\_\_) == PWR\_WAKEUP\_PIN2\_HIGH)  || \(\backslash\)}
+\DoxyCodeLine{                                            ((\_\_PIN\_\_) == PWR\_WAKEUP\_PIN3\_HIGH)  || \(\backslash\)}
+\DoxyCodeLine{                                            ((\_\_PIN\_\_) == PWR\_WAKEUP\_PIN4\_HIGH)  || \(\backslash\)}
+\DoxyCodeLine{                                            ((\_\_PIN\_\_) == PWR\_WAKEUP\_PIN5\_HIGH)  || \(\backslash\)}
+\DoxyCodeLine{                                            ((\_\_PIN\_\_) == PWR\_WAKEUP\_PIN6\_HIGH)  || \(\backslash\)}
+\DoxyCodeLine{                                            ((\_\_PIN\_\_) == PWR\_WAKEUP\_PIN1\_LOW)   || \(\backslash\)}
+\DoxyCodeLine{                                            ((\_\_PIN\_\_) == PWR\_WAKEUP\_PIN2\_LOW)   || \(\backslash\)}
+\DoxyCodeLine{                                            ((\_\_PIN\_\_) == PWR\_WAKEUP\_PIN3\_LOW)   || \(\backslash\)}
+\DoxyCodeLine{                                            ((\_\_PIN\_\_) == PWR\_WAKEUP\_PIN4\_LOW)   || \(\backslash\)}
+\DoxyCodeLine{                                            ((\_\_PIN\_\_) == PWR\_WAKEUP\_PIN5\_LOW)   || \(\backslash\)}
+\DoxyCodeLine{                                            ((\_\_PIN\_\_) == PWR\_WAKEUP\_PIN6\_LOW))}
+
+\end{DoxyCode}

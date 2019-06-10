@@ -7,7 +7,7 @@
 
 #include <MPU6050_.h>
 
-namespace Sensors {
+namespace Sensor {
 
 uint16_t MPU6050::address;
 bool MPU6050::IntEnable;

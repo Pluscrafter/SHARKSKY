@@ -1,0 +1,438 @@
+\hypertarget{group___s_d_m_m_c___l_l___interrupt___clock}{}\section{Interrupt And Clock Configuration}
+\label{group___s_d_m_m_c___l_l___interrupt___clock}\index{Interrupt And Clock Configuration@{Interrupt And Clock Configuration}}
+
+
+macros to handle interrupts and specific clock configurations  
+
+
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___s_d_m_m_c___l_l___interrupt___clock_ga20f2287a3097b96bd7e020919a4d0057}{\+\_\+\+\_\+\+S\+D\+M\+M\+C\+\_\+\+E\+N\+A\+B\+LE}}(\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+)~((\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+)-\/$>$C\+L\+K\+CR $\vert$= \mbox{\hyperlink{group___peripheral___registers___bits___definition_gac1e13de2f05aca8fb35f2ed47a4e02a6}{S\+D\+M\+M\+C\+\_\+\+C\+L\+K\+C\+R\+\_\+\+C\+L\+K\+EN}})
+\begin{DoxyCompactList}\small\item\em Enable the S\+D\+M\+MC device. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_d_m_m_c___l_l___interrupt___clock_gaf3ddbea0ba674cf1bc84fc1a4558840b}{\+\_\+\+\_\+\+S\+D\+M\+M\+C\+\_\+\+D\+I\+S\+A\+B\+LE}}(\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+)~((\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+)-\/$>$C\+L\+K\+CR \&= $\sim$\mbox{\hyperlink{group___peripheral___registers___bits___definition_gac1e13de2f05aca8fb35f2ed47a4e02a6}{S\+D\+M\+M\+C\+\_\+\+C\+L\+K\+C\+R\+\_\+\+C\+L\+K\+EN}})
+\begin{DoxyCompactList}\small\item\em Disable the S\+D\+M\+MC device. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_d_m_m_c___l_l___interrupt___clock_ga57d82a8c4be7b1dc8d2ff4cae11c2339}{\+\_\+\+\_\+\+S\+D\+M\+M\+C\+\_\+\+D\+M\+A\+\_\+\+E\+N\+A\+B\+LE}}(\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+)~((\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+)-\/$>$D\+C\+T\+RL $\vert$= \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga47f4fcb4a5ec9a4e8d077a5edc82ebf8}{S\+D\+M\+M\+C\+\_\+\+D\+C\+T\+R\+L\+\_\+\+D\+M\+A\+EN}})
+\begin{DoxyCompactList}\small\item\em Enable the S\+D\+M\+MC D\+MA transfer. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_d_m_m_c___l_l___interrupt___clock_ga4fca947c530ed9f953460eb48583fd9d}{\+\_\+\+\_\+\+S\+D\+M\+M\+C\+\_\+\+D\+M\+A\+\_\+\+D\+I\+S\+A\+B\+LE}}(\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+)~((\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+)-\/$>$D\+C\+T\+RL \&= $\sim$\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga47f4fcb4a5ec9a4e8d077a5edc82ebf8}{S\+D\+M\+M\+C\+\_\+\+D\+C\+T\+R\+L\+\_\+\+D\+M\+A\+EN}})
+\begin{DoxyCompactList}\small\item\em Disable the S\+D\+M\+MC D\+MA transfer. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_d_m_m_c___l_l___interrupt___clock_ga086886ffa7d502709c637568ed6e0466}{\+\_\+\+\_\+\+S\+D\+M\+M\+C\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+IT}}(\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+,  \+\_\+\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+\_\+)~((\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+)-\/$>$M\+A\+SK $\vert$= (\+\_\+\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Enable the S\+D\+M\+MC device interrupt. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_d_m_m_c___l_l___interrupt___clock_gadc1f20eee0d4a76c9f416893569ad5d0}{\+\_\+\+\_\+\+S\+D\+M\+M\+C\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+IT}}(\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+,  \+\_\+\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+\_\+)~((\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+)-\/$>$M\+A\+SK \&= $\sim$(\+\_\+\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Disable the S\+D\+M\+MC device interrupt. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_d_m_m_c___l_l___interrupt___clock_gaec3b40ed50180866f4b6329457157166}{\+\_\+\+\_\+\+S\+D\+M\+M\+C\+\_\+\+G\+E\+T\+\_\+\+F\+L\+AG}}(\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+,  \+\_\+\+\_\+\+F\+L\+A\+G\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+)-\/$>$S\+TA \&(\+\_\+\+\_\+\+F\+L\+A\+G\+\_\+\+\_\+)) != R\+E\+S\+ET)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified S\+D\+M\+MC flag is set or not. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_d_m_m_c___l_l___interrupt___clock_ga1f35f651980bee563bd9c7d00052cdc8}{\+\_\+\+\_\+\+S\+D\+M\+M\+C\+\_\+\+C\+L\+E\+A\+R\+\_\+\+F\+L\+AG}}(\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+,  \+\_\+\+\_\+\+F\+L\+A\+G\+\_\+\+\_\+)~((\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+)-\/$>$I\+CR = (\+\_\+\+\_\+\+F\+L\+A\+G\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Clears the S\+D\+M\+MC pending flags. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_d_m_m_c___l_l___interrupt___clock_gaf2f7410908e86bd0a59f398f7a52ea1c}{\+\_\+\+\_\+\+S\+D\+M\+M\+C\+\_\+\+G\+E\+T\+\_\+\+IT}}~(\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+, \+\_\+\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+\_\+)  (((\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+)-\/$>$S\+TA \&(\+\_\+\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+\_\+)) == (\+\_\+\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Checks whether the specified S\+D\+M\+MC interrupt has occurred or not. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_d_m_m_c___l_l___interrupt___clock_ga86db406c85993ed8b12903ca403538f0}{\+\_\+\+\_\+\+S\+D\+M\+M\+C\+\_\+\+C\+L\+E\+A\+R\+\_\+\+IT}}(\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+,  \+\_\+\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+\_\+)~((\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+)-\/$>$I\+CR = (\+\_\+\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Clears the S\+D\+M\+MC\textquotesingle{}s interrupt pending bits. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_d_m_m_c___l_l___interrupt___clock_ga6fc4b7016cb0e6474a0aeb04d658d30a}{\+\_\+\+\_\+\+S\+D\+M\+M\+C\+\_\+\+S\+T\+A\+R\+T\+\_\+\+R\+E\+A\+D\+W\+A\+I\+T\+\_\+\+E\+N\+A\+B\+LE}}(\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+)~((\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+)-\/$>$D\+C\+T\+RL $\vert$= \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga4302f186ec1e43bc38a4357db38fc0fa}{S\+D\+M\+M\+C\+\_\+\+D\+C\+T\+R\+L\+\_\+\+R\+W\+S\+T\+A\+RT}})
+\begin{DoxyCompactList}\small\item\em Enable Start the SD I/O Read Wait operation. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_d_m_m_c___l_l___interrupt___clock_gadd96ec39161ec584cfbeb743c2e0955f}{\+\_\+\+\_\+\+S\+D\+M\+M\+C\+\_\+\+S\+T\+A\+R\+T\+\_\+\+R\+E\+A\+D\+W\+A\+I\+T\+\_\+\+D\+I\+S\+A\+B\+LE}}(\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+)~((\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+)-\/$>$D\+C\+T\+RL \&= $\sim$\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga4302f186ec1e43bc38a4357db38fc0fa}{S\+D\+M\+M\+C\+\_\+\+D\+C\+T\+R\+L\+\_\+\+R\+W\+S\+T\+A\+RT}})
+\begin{DoxyCompactList}\small\item\em Disable Start the SD I/O Read Wait operations. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_d_m_m_c___l_l___interrupt___clock_ga1ef11b32dd9c3243b229a621fe6c0617}{\+\_\+\+\_\+\+S\+D\+M\+M\+C\+\_\+\+S\+T\+O\+P\+\_\+\+R\+E\+A\+D\+W\+A\+I\+T\+\_\+\+E\+N\+A\+B\+LE}}(\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+)~((\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+)-\/$>$D\+C\+T\+RL $\vert$= \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga68b631bb91b55ad41472640bff5e2d34}{S\+D\+M\+M\+C\+\_\+\+D\+C\+T\+R\+L\+\_\+\+R\+W\+S\+T\+OP}})
+\begin{DoxyCompactList}\small\item\em Enable Start the SD I/O Read Wait operation. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_d_m_m_c___l_l___interrupt___clock_ga0f1ff381bd70d14433ae582539005904}{\+\_\+\+\_\+\+S\+D\+M\+M\+C\+\_\+\+S\+T\+O\+P\+\_\+\+R\+E\+A\+D\+W\+A\+I\+T\+\_\+\+D\+I\+S\+A\+B\+LE}}(\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+)~((\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+)-\/$>$D\+C\+T\+RL \&= $\sim$\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga68b631bb91b55ad41472640bff5e2d34}{S\+D\+M\+M\+C\+\_\+\+D\+C\+T\+R\+L\+\_\+\+R\+W\+S\+T\+OP}})
+\begin{DoxyCompactList}\small\item\em Disable Stop the SD I/O Read Wait operations. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_d_m_m_c___l_l___interrupt___clock_gae827e25ed818df7dcd6110a16b72caec}{\+\_\+\+\_\+\+S\+D\+M\+M\+C\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+E\+N\+A\+B\+LE}}(\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+)~((\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+)-\/$>$D\+C\+T\+RL $\vert$= \mbox{\hyperlink{group___peripheral___registers___bits___definition_gab66312264da16d4693a3c9a9cba33c9e}{S\+D\+M\+M\+C\+\_\+\+D\+C\+T\+R\+L\+\_\+\+S\+D\+I\+O\+EN}})
+\begin{DoxyCompactList}\small\item\em Enable the SD I/O Mode Operation. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_d_m_m_c___l_l___interrupt___clock_gab72fdd2401a780492474349fd45592d1}{\+\_\+\+\_\+\+S\+D\+M\+M\+C\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+D\+I\+S\+A\+B\+LE}}(\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+)~((\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+)-\/$>$D\+C\+T\+RL \&= $\sim$\mbox{\hyperlink{group___peripheral___registers___bits___definition_gab66312264da16d4693a3c9a9cba33c9e}{S\+D\+M\+M\+C\+\_\+\+D\+C\+T\+R\+L\+\_\+\+S\+D\+I\+O\+EN}})
+\begin{DoxyCompactList}\small\item\em Disable the SD I/O Mode Operation. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_d_m_m_c___l_l___interrupt___clock_ga58bc9956e8a4edaffd8828923ded632a}{\+\_\+\+\_\+\+S\+D\+M\+M\+C\+\_\+\+S\+U\+S\+P\+E\+N\+D\+\_\+\+C\+M\+D\+\_\+\+E\+N\+A\+B\+LE}}(\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+)~((\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+)-\/$>$C\+MD $\vert$= \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaebb2a41639369a8c17cdb7b900b645a9}{S\+D\+M\+M\+C\+\_\+\+C\+M\+D\+\_\+\+S\+D\+I\+O\+S\+U\+S\+P\+E\+ND}})
+\begin{DoxyCompactList}\small\item\em Enable the SD I/O Suspend command sending. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_d_m_m_c___l_l___interrupt___clock_ga5086b97bef527e383097b4843d49769a}{\+\_\+\+\_\+\+S\+D\+M\+M\+C\+\_\+\+S\+U\+S\+P\+E\+N\+D\+\_\+\+C\+M\+D\+\_\+\+D\+I\+S\+A\+B\+LE}}(\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+)~((\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+)-\/$>$C\+MD \&= $\sim$\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaebb2a41639369a8c17cdb7b900b645a9}{S\+D\+M\+M\+C\+\_\+\+C\+M\+D\+\_\+\+S\+D\+I\+O\+S\+U\+S\+P\+E\+ND}})
+\begin{DoxyCompactList}\small\item\em Disable the SD I/O Suspend command sending. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+macros to handle interrupts and specific clock configurations 
+
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___s_d_m_m_c___l_l___interrupt___clock_ga1f35f651980bee563bd9c7d00052cdc8}\label{group___s_d_m_m_c___l_l___interrupt___clock_ga1f35f651980bee563bd9c7d00052cdc8}} 
+\index{Interrupt And Clock Configuration@{Interrupt And Clock Configuration}!\_\_SDMMC\_CLEAR\_FLAG@{\_\_SDMMC\_CLEAR\_FLAG}}
+\index{\_\_SDMMC\_CLEAR\_FLAG@{\_\_SDMMC\_CLEAR\_FLAG}!Interrupt And Clock Configuration@{Interrupt And Clock Configuration}}
+\subsubsection{\texorpdfstring{\_\_SDMMC\_CLEAR\_FLAG}{\_\_SDMMC\_CLEAR\_FLAG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+S\+D\+M\+M\+C\+\_\+\+C\+L\+E\+A\+R\+\_\+\+F\+L\+AG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+F\+L\+A\+G\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+)-\/$>$I\+CR = (\+\_\+\+\_\+\+F\+L\+A\+G\+\_\+\+\_\+))}
+
+
+
+Clears the S\+D\+M\+MC pending flags. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+I\+N\+S\+T\+A\+N\+C\+E$<$/strong$>$} & Pointer to S\+D\+M\+MC register base\\
+\hline
+{\em $<$strong$>$\+F\+L\+A\+G$<$/strong$>$} & specifies the flag to clear.\\
+\hline
+\end{DoxyParams}
+This parameter can be one or a combination of the following values\+: \begin{DoxyItemize}
+\item S\+D\+M\+M\+C\+\_\+\+F\+L\+A\+G\+\_\+\+C\+C\+R\+C\+F\+A\+IL\+: Command response received (C\+RC check failed) \item S\+D\+M\+M\+C\+\_\+\+F\+L\+A\+G\+\_\+\+D\+C\+R\+C\+F\+A\+IL\+: Data block sent/received (C\+RC check failed) \item S\+D\+M\+M\+C\+\_\+\+F\+L\+A\+G\+\_\+\+C\+T\+I\+M\+E\+O\+UT\+: Command response timeout \item S\+D\+M\+M\+C\+\_\+\+F\+L\+A\+G\+\_\+\+D\+T\+I\+M\+E\+O\+UT\+: Data timeout \item S\+D\+M\+M\+C\+\_\+\+F\+L\+A\+G\+\_\+\+T\+X\+U\+N\+D\+E\+RR\+: Transmit F\+I\+FO underrun error \item S\+D\+M\+M\+C\+\_\+\+F\+L\+A\+G\+\_\+\+R\+X\+O\+V\+E\+RR\+: Received F\+I\+FO overrun error \item S\+D\+M\+M\+C\+\_\+\+F\+L\+A\+G\+\_\+\+C\+M\+D\+R\+E\+ND\+: Command response received (C\+RC check passed) \item S\+D\+M\+M\+C\+\_\+\+F\+L\+A\+G\+\_\+\+C\+M\+D\+S\+E\+NT\+: Command sent (no response required) \item S\+D\+M\+M\+C\+\_\+\+F\+L\+A\+G\+\_\+\+D\+A\+T\+A\+E\+ND\+: Data end (data counter, S\+D\+I\+D\+C\+O\+U\+NT, is zero) \item S\+D\+M\+M\+C\+\_\+\+F\+L\+A\+G\+\_\+\+D\+B\+C\+K\+E\+ND\+: Data block sent/received (C\+RC check passed) \item S\+D\+M\+M\+C\+\_\+\+F\+L\+A\+G\+\_\+\+S\+D\+M\+M\+C\+IT\+: SD I/O interrupt received 
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\end{DoxyItemize}
+\mbox{\Hypertarget{group___s_d_m_m_c___l_l___interrupt___clock_ga86db406c85993ed8b12903ca403538f0}\label{group___s_d_m_m_c___l_l___interrupt___clock_ga86db406c85993ed8b12903ca403538f0}} 
+\index{Interrupt And Clock Configuration@{Interrupt And Clock Configuration}!\_\_SDMMC\_CLEAR\_IT@{\_\_SDMMC\_CLEAR\_IT}}
+\index{\_\_SDMMC\_CLEAR\_IT@{\_\_SDMMC\_CLEAR\_IT}!Interrupt And Clock Configuration@{Interrupt And Clock Configuration}}
+\subsubsection{\texorpdfstring{\_\_SDMMC\_CLEAR\_IT}{\_\_SDMMC\_CLEAR\_IT}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+S\+D\+M\+M\+C\+\_\+\+C\+L\+E\+A\+R\+\_\+\+IT(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+)-\/$>$I\+CR = (\+\_\+\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+\_\+))}
+
+
+
+Clears the S\+D\+M\+MC\textquotesingle{}s interrupt pending bits. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+I\+N\+S\+T\+A\+N\+C\+E$<$/strong$>$} & Pointer to S\+D\+M\+MC register base \\
+\hline
+{\em $<$strong$>$\+I\+N\+T\+E\+R\+R\+U\+P\+T$<$/strong$>$} & specifies the interrupt pending bit to clear. This parameter can be one or a combination of the following values\+: \begin{DoxyItemize}
+\item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+C\+C\+R\+C\+F\+A\+IL\+: Command response received (C\+RC check failed) interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+D\+C\+R\+C\+F\+A\+IL\+: Data block sent/received (C\+RC check failed) interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+C\+T\+I\+M\+E\+O\+UT\+: Command response timeout interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+D\+T\+I\+M\+E\+O\+UT\+: Data timeout interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+T\+X\+U\+N\+D\+E\+RR\+: Transmit F\+I\+FO underrun error interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+R\+X\+O\+V\+E\+RR\+: Received F\+I\+FO overrun error interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+C\+M\+D\+R\+E\+ND\+: Command response received (C\+RC check passed) interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+C\+M\+D\+S\+E\+NT\+: Command sent (no response required) interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+D\+A\+T\+A\+E\+ND\+: Data end (data counter, S\+D\+M\+M\+C\+\_\+\+D\+C\+O\+U\+NT, is zero) interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+S\+D\+I\+O\+IT\+: SD I/O interrupt received interrupt \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___s_d_m_m_c___l_l___interrupt___clock_gaf3ddbea0ba674cf1bc84fc1a4558840b}\label{group___s_d_m_m_c___l_l___interrupt___clock_gaf3ddbea0ba674cf1bc84fc1a4558840b}} 
+\index{Interrupt And Clock Configuration@{Interrupt And Clock Configuration}!\_\_SDMMC\_DISABLE@{\_\_SDMMC\_DISABLE}}
+\index{\_\_SDMMC\_DISABLE@{\_\_SDMMC\_DISABLE}!Interrupt And Clock Configuration@{Interrupt And Clock Configuration}}
+\subsubsection{\texorpdfstring{\_\_SDMMC\_DISABLE}{\_\_SDMMC\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+S\+D\+M\+M\+C\+\_\+\+D\+I\+S\+A\+B\+LE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+)-\/$>$C\+L\+K\+CR \&= $\sim$\mbox{\hyperlink{group___peripheral___registers___bits___definition_gac1e13de2f05aca8fb35f2ed47a4e02a6}{S\+D\+M\+M\+C\+\_\+\+C\+L\+K\+C\+R\+\_\+\+C\+L\+K\+EN}})}
+
+
+
+Disable the S\+D\+M\+MC device. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+I\+N\+S\+T\+A\+N\+C\+E$<$/strong$>$} & S\+D\+M\+MC Instance\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___s_d_m_m_c___l_l___interrupt___clock_gadc1f20eee0d4a76c9f416893569ad5d0}\label{group___s_d_m_m_c___l_l___interrupt___clock_gadc1f20eee0d4a76c9f416893569ad5d0}} 
+\index{Interrupt And Clock Configuration@{Interrupt And Clock Configuration}!\_\_SDMMC\_DISABLE\_IT@{\_\_SDMMC\_DISABLE\_IT}}
+\index{\_\_SDMMC\_DISABLE\_IT@{\_\_SDMMC\_DISABLE\_IT}!Interrupt And Clock Configuration@{Interrupt And Clock Configuration}}
+\subsubsection{\texorpdfstring{\_\_SDMMC\_DISABLE\_IT}{\_\_SDMMC\_DISABLE\_IT}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+S\+D\+M\+M\+C\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+IT(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+)-\/$>$M\+A\+SK \&= $\sim$(\+\_\+\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+\_\+))}
+
+
+
+Disable the S\+D\+M\+MC device interrupt. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+I\+N\+S\+T\+A\+N\+C\+E$<$/strong$>$} & Pointer to S\+D\+M\+MC register base\\
+\hline
+{\em $<$strong$>$\+I\+N\+T\+E\+R\+R\+U\+P\+T$<$/strong$>$} & specifies the S\+D\+M\+MC interrupt sources to be disabled. This parameter can be one or a combination of the following values\+: \begin{DoxyItemize}
+\item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+C\+C\+R\+C\+F\+A\+IL\+: Command response received (C\+RC check failed) interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+D\+C\+R\+C\+F\+A\+IL\+: Data block sent/received (C\+RC check failed) interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+C\+T\+I\+M\+E\+O\+UT\+: Command response timeout interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+D\+T\+I\+M\+E\+O\+UT\+: Data timeout interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+T\+X\+U\+N\+D\+E\+RR\+: Transmit F\+I\+FO underrun error interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+R\+X\+O\+V\+E\+RR\+: Received F\+I\+FO overrun error interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+C\+M\+D\+R\+E\+ND\+: Command response received (C\+RC check passed) interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+C\+M\+D\+S\+E\+NT\+: Command sent (no response required) interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+D\+A\+T\+A\+E\+ND\+: Data end (data counter, S\+D\+I\+D\+C\+O\+U\+NT, is zero) interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+D\+B\+C\+K\+E\+ND\+: Data block sent/received (C\+RC check passed) interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+C\+M\+D\+A\+CT\+: Command transfer in progress interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+T\+X\+A\+CT\+: Data transmit in progress interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+R\+X\+A\+CT\+: Data receive in progress interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+T\+X\+F\+I\+F\+O\+HE\+: Transmit F\+I\+FO Half Empty interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+R\+X\+F\+I\+F\+O\+HF\+: Receive F\+I\+FO Half Full interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+T\+X\+F\+I\+F\+OF\+: Transmit F\+I\+FO full interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+R\+X\+F\+I\+F\+OF\+: Receive F\+I\+FO full interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+T\+X\+F\+I\+F\+OE\+: Transmit F\+I\+FO empty interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+R\+X\+F\+I\+F\+OE\+: Receive F\+I\+FO empty interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+T\+X\+D\+A\+VL\+: Data available in transmit F\+I\+FO interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+R\+X\+D\+A\+VL\+: Data available in receive F\+I\+FO interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+S\+D\+I\+O\+IT\+: SD I/O interrupt received interrupt\end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___s_d_m_m_c___l_l___interrupt___clock_ga4fca947c530ed9f953460eb48583fd9d}\label{group___s_d_m_m_c___l_l___interrupt___clock_ga4fca947c530ed9f953460eb48583fd9d}} 
+\index{Interrupt And Clock Configuration@{Interrupt And Clock Configuration}!\_\_SDMMC\_DMA\_DISABLE@{\_\_SDMMC\_DMA\_DISABLE}}
+\index{\_\_SDMMC\_DMA\_DISABLE@{\_\_SDMMC\_DMA\_DISABLE}!Interrupt And Clock Configuration@{Interrupt And Clock Configuration}}
+\subsubsection{\texorpdfstring{\_\_SDMMC\_DMA\_DISABLE}{\_\_SDMMC\_DMA\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+S\+D\+M\+M\+C\+\_\+\+D\+M\+A\+\_\+\+D\+I\+S\+A\+B\+LE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+)-\/$>$D\+C\+T\+RL \&= $\sim$\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga47f4fcb4a5ec9a4e8d077a5edc82ebf8}{S\+D\+M\+M\+C\+\_\+\+D\+C\+T\+R\+L\+\_\+\+D\+M\+A\+EN}})}
+
+
+
+Disable the S\+D\+M\+MC D\+MA transfer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+I\+N\+S\+T\+A\+N\+C\+E$<$/strong$>$} & S\+D\+M\+MC Instance\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___s_d_m_m_c___l_l___interrupt___clock_ga57d82a8c4be7b1dc8d2ff4cae11c2339}\label{group___s_d_m_m_c___l_l___interrupt___clock_ga57d82a8c4be7b1dc8d2ff4cae11c2339}} 
+\index{Interrupt And Clock Configuration@{Interrupt And Clock Configuration}!\_\_SDMMC\_DMA\_ENABLE@{\_\_SDMMC\_DMA\_ENABLE}}
+\index{\_\_SDMMC\_DMA\_ENABLE@{\_\_SDMMC\_DMA\_ENABLE}!Interrupt And Clock Configuration@{Interrupt And Clock Configuration}}
+\subsubsection{\texorpdfstring{\_\_SDMMC\_DMA\_ENABLE}{\_\_SDMMC\_DMA\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+S\+D\+M\+M\+C\+\_\+\+D\+M\+A\+\_\+\+E\+N\+A\+B\+LE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+)-\/$>$D\+C\+T\+RL $\vert$= \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga47f4fcb4a5ec9a4e8d077a5edc82ebf8}{S\+D\+M\+M\+C\+\_\+\+D\+C\+T\+R\+L\+\_\+\+D\+M\+A\+EN}})}
+
+
+
+Enable the S\+D\+M\+MC D\+MA transfer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+I\+N\+S\+T\+A\+N\+C\+E$<$/strong$>$} & S\+D\+M\+MC Instance\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___s_d_m_m_c___l_l___interrupt___clock_ga20f2287a3097b96bd7e020919a4d0057}\label{group___s_d_m_m_c___l_l___interrupt___clock_ga20f2287a3097b96bd7e020919a4d0057}} 
+\index{Interrupt And Clock Configuration@{Interrupt And Clock Configuration}!\_\_SDMMC\_ENABLE@{\_\_SDMMC\_ENABLE}}
+\index{\_\_SDMMC\_ENABLE@{\_\_SDMMC\_ENABLE}!Interrupt And Clock Configuration@{Interrupt And Clock Configuration}}
+\subsubsection{\texorpdfstring{\_\_SDMMC\_ENABLE}{\_\_SDMMC\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+S\+D\+M\+M\+C\+\_\+\+E\+N\+A\+B\+LE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+)-\/$>$C\+L\+K\+CR $\vert$= \mbox{\hyperlink{group___peripheral___registers___bits___definition_gac1e13de2f05aca8fb35f2ed47a4e02a6}{S\+D\+M\+M\+C\+\_\+\+C\+L\+K\+C\+R\+\_\+\+C\+L\+K\+EN}})}
+
+
+
+Enable the S\+D\+M\+MC device. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+I\+N\+S\+T\+A\+N\+C\+E$<$/strong$>$} & S\+D\+M\+MC Instance\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___s_d_m_m_c___l_l___interrupt___clock_ga086886ffa7d502709c637568ed6e0466}\label{group___s_d_m_m_c___l_l___interrupt___clock_ga086886ffa7d502709c637568ed6e0466}} 
+\index{Interrupt And Clock Configuration@{Interrupt And Clock Configuration}!\_\_SDMMC\_ENABLE\_IT@{\_\_SDMMC\_ENABLE\_IT}}
+\index{\_\_SDMMC\_ENABLE\_IT@{\_\_SDMMC\_ENABLE\_IT}!Interrupt And Clock Configuration@{Interrupt And Clock Configuration}}
+\subsubsection{\texorpdfstring{\_\_SDMMC\_ENABLE\_IT}{\_\_SDMMC\_ENABLE\_IT}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+S\+D\+M\+M\+C\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+IT(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+)-\/$>$M\+A\+SK $\vert$= (\+\_\+\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+\_\+))}
+
+
+
+Enable the S\+D\+M\+MC device interrupt. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+I\+N\+S\+T\+A\+N\+C\+E$<$/strong$>$} & Pointer to S\+D\+M\+MC register base\\
+\hline
+{\em $<$strong$>$\+I\+N\+T\+E\+R\+R\+U\+P\+T$<$/strong$>$} & specifies the S\+D\+M\+MC interrupt sources to be enabled. This parameter can be one or a combination of the following values\+: \begin{DoxyItemize}
+\item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+C\+C\+R\+C\+F\+A\+IL\+: Command response received (C\+RC check failed) interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+D\+C\+R\+C\+F\+A\+IL\+: Data block sent/received (C\+RC check failed) interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+C\+T\+I\+M\+E\+O\+UT\+: Command response timeout interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+D\+T\+I\+M\+E\+O\+UT\+: Data timeout interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+T\+X\+U\+N\+D\+E\+RR\+: Transmit F\+I\+FO underrun error interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+R\+X\+O\+V\+E\+RR\+: Received F\+I\+FO overrun error interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+C\+M\+D\+R\+E\+ND\+: Command response received (C\+RC check passed) interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+C\+M\+D\+S\+E\+NT\+: Command sent (no response required) interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+D\+A\+T\+A\+E\+ND\+: Data end (data counter, S\+D\+I\+D\+C\+O\+U\+NT, is zero) interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+D\+B\+C\+K\+E\+ND\+: Data block sent/received (C\+RC check passed) interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+C\+M\+D\+A\+CT\+: Command transfer in progress interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+T\+X\+A\+CT\+: Data transmit in progress interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+R\+X\+A\+CT\+: Data receive in progress interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+T\+X\+F\+I\+F\+O\+HE\+: Transmit F\+I\+FO Half Empty interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+R\+X\+F\+I\+F\+O\+HF\+: Receive F\+I\+FO Half Full interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+T\+X\+F\+I\+F\+OF\+: Transmit F\+I\+FO full interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+R\+X\+F\+I\+F\+OF\+: Receive F\+I\+FO full interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+T\+X\+F\+I\+F\+OE\+: Transmit F\+I\+FO empty interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+R\+X\+F\+I\+F\+OE\+: Receive F\+I\+FO empty interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+T\+X\+D\+A\+VL\+: Data available in transmit F\+I\+FO interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+R\+X\+D\+A\+VL\+: Data available in receive F\+I\+FO interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+S\+D\+I\+O\+IT\+: SD I/O interrupt received interrupt\end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___s_d_m_m_c___l_l___interrupt___clock_gaec3b40ed50180866f4b6329457157166}\label{group___s_d_m_m_c___l_l___interrupt___clock_gaec3b40ed50180866f4b6329457157166}} 
+\index{Interrupt And Clock Configuration@{Interrupt And Clock Configuration}!\_\_SDMMC\_GET\_FLAG@{\_\_SDMMC\_GET\_FLAG}}
+\index{\_\_SDMMC\_GET\_FLAG@{\_\_SDMMC\_GET\_FLAG}!Interrupt And Clock Configuration@{Interrupt And Clock Configuration}}
+\subsubsection{\texorpdfstring{\_\_SDMMC\_GET\_FLAG}{\_\_SDMMC\_GET\_FLAG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+S\+D\+M\+M\+C\+\_\+\+G\+E\+T\+\_\+\+F\+L\+AG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+F\+L\+A\+G\+\_\+\+\_\+ }\end{DoxyParamCaption})~(((\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+)-\/$>$S\+TA \&(\+\_\+\+\_\+\+F\+L\+A\+G\+\_\+\+\_\+)) != R\+E\+S\+ET)}
+
+
+
+Checks whether the specified S\+D\+M\+MC flag is set or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+I\+N\+S\+T\+A\+N\+C\+E$<$/strong$>$} & Pointer to S\+D\+M\+MC register base\\
+\hline
+{\em $<$strong$>$\+F\+L\+A\+G$<$/strong$>$} & specifies the flag to check. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item S\+D\+M\+M\+C\+\_\+\+F\+L\+A\+G\+\_\+\+C\+C\+R\+C\+F\+A\+IL\+: Command response received (C\+RC check failed) \item S\+D\+M\+M\+C\+\_\+\+F\+L\+A\+G\+\_\+\+D\+C\+R\+C\+F\+A\+IL\+: Data block sent/received (C\+RC check failed) \item S\+D\+M\+M\+C\+\_\+\+F\+L\+A\+G\+\_\+\+C\+T\+I\+M\+E\+O\+UT\+: Command response timeout \item S\+D\+M\+M\+C\+\_\+\+F\+L\+A\+G\+\_\+\+D\+T\+I\+M\+E\+O\+UT\+: Data timeout \item S\+D\+M\+M\+C\+\_\+\+F\+L\+A\+G\+\_\+\+T\+X\+U\+N\+D\+E\+RR\+: Transmit F\+I\+FO underrun error \item S\+D\+M\+M\+C\+\_\+\+F\+L\+A\+G\+\_\+\+R\+X\+O\+V\+E\+RR\+: Received F\+I\+FO overrun error \item S\+D\+M\+M\+C\+\_\+\+F\+L\+A\+G\+\_\+\+C\+M\+D\+R\+E\+ND\+: Command response received (C\+RC check passed) \item S\+D\+M\+M\+C\+\_\+\+F\+L\+A\+G\+\_\+\+C\+M\+D\+S\+E\+NT\+: Command sent (no response required) \item S\+D\+M\+M\+C\+\_\+\+F\+L\+A\+G\+\_\+\+D\+A\+T\+A\+E\+ND\+: Data end (data counter, S\+D\+I\+D\+C\+O\+U\+NT, is zero) \item S\+D\+M\+M\+C\+\_\+\+F\+L\+A\+G\+\_\+\+D\+B\+C\+K\+E\+ND\+: Data block sent/received (C\+RC check passed) \item S\+D\+M\+M\+C\+\_\+\+F\+L\+A\+G\+\_\+\+C\+M\+D\+A\+CT\+: Command transfer in progress \item S\+D\+M\+M\+C\+\_\+\+F\+L\+A\+G\+\_\+\+T\+X\+A\+CT\+: Data transmit in progress \item S\+D\+M\+M\+C\+\_\+\+F\+L\+A\+G\+\_\+\+R\+X\+A\+CT\+: Data receive in progress \item S\+D\+M\+M\+C\+\_\+\+F\+L\+A\+G\+\_\+\+T\+X\+F\+I\+F\+O\+HE\+: Transmit F\+I\+FO Half Empty \item S\+D\+M\+M\+C\+\_\+\+F\+L\+A\+G\+\_\+\+R\+X\+F\+I\+F\+O\+HF\+: Receive F\+I\+FO Half Full \item S\+D\+M\+M\+C\+\_\+\+F\+L\+A\+G\+\_\+\+T\+X\+F\+I\+F\+OF\+: Transmit F\+I\+FO full \item S\+D\+M\+M\+C\+\_\+\+F\+L\+A\+G\+\_\+\+R\+X\+F\+I\+F\+OF\+: Receive F\+I\+FO full \item S\+D\+M\+M\+C\+\_\+\+F\+L\+A\+G\+\_\+\+T\+X\+F\+I\+F\+OE\+: Transmit F\+I\+FO empty \item S\+D\+M\+M\+C\+\_\+\+F\+L\+A\+G\+\_\+\+R\+X\+F\+I\+F\+OE\+: Receive F\+I\+FO empty \item S\+D\+M\+M\+C\+\_\+\+F\+L\+A\+G\+\_\+\+T\+X\+D\+A\+VL\+: Data available in transmit F\+I\+FO \item S\+D\+M\+M\+C\+\_\+\+F\+L\+A\+G\+\_\+\+R\+X\+D\+A\+VL\+: Data available in receive F\+I\+FO \item S\+D\+M\+M\+C\+\_\+\+F\+L\+A\+G\+\_\+\+S\+D\+M\+M\+C\+IT\+: SD I/O interrupt received \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & new state of S\+D\+M\+M\+C\+\_\+\+F\+L\+AG (S\+ET or R\+E\+S\+ET). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___s_d_m_m_c___l_l___interrupt___clock_gaf2f7410908e86bd0a59f398f7a52ea1c}\label{group___s_d_m_m_c___l_l___interrupt___clock_gaf2f7410908e86bd0a59f398f7a52ea1c}} 
+\index{Interrupt And Clock Configuration@{Interrupt And Clock Configuration}!\_\_SDMMC\_GET\_IT@{\_\_SDMMC\_GET\_IT}}
+\index{\_\_SDMMC\_GET\_IT@{\_\_SDMMC\_GET\_IT}!Interrupt And Clock Configuration@{Interrupt And Clock Configuration}}
+\subsubsection{\texorpdfstring{\_\_SDMMC\_GET\_IT}{\_\_SDMMC\_GET\_IT}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+S\+D\+M\+M\+C\+\_\+\+G\+E\+T\+\_\+\+IT~(\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+, \+\_\+\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+\_\+)  (((\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+)-\/$>$S\+TA \&(\+\_\+\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+\_\+)) == (\+\_\+\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+\_\+))}
+
+
+
+Checks whether the specified S\+D\+M\+MC interrupt has occurred or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+I\+N\+S\+T\+A\+N\+C\+E$<$/strong$>$} & Pointer to S\+D\+M\+MC register base\\
+\hline
+{\em $<$strong$>$\+I\+N\+T\+E\+R\+R\+U\+P\+T$<$/strong$>$} & specifies the S\+D\+M\+MC interrupt source to check. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+C\+C\+R\+C\+F\+A\+IL\+: Command response received (C\+RC check failed) interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+D\+C\+R\+C\+F\+A\+IL\+: Data block sent/received (C\+RC check failed) interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+C\+T\+I\+M\+E\+O\+UT\+: Command response timeout interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+D\+T\+I\+M\+E\+O\+UT\+: Data timeout interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+T\+X\+U\+N\+D\+E\+RR\+: Transmit F\+I\+FO underrun error interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+R\+X\+O\+V\+E\+RR\+: Received F\+I\+FO overrun error interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+C\+M\+D\+R\+E\+ND\+: Command response received (C\+RC check passed) interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+C\+M\+D\+S\+E\+NT\+: Command sent (no response required) interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+D\+A\+T\+A\+E\+ND\+: Data end (data counter, S\+D\+I\+D\+C\+O\+U\+NT, is zero) interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+D\+B\+C\+K\+E\+ND\+: Data block sent/received (C\+RC check passed) interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+C\+M\+D\+A\+CT\+: Command transfer in progress interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+T\+X\+A\+CT\+: Data transmit in progress interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+R\+X\+A\+CT\+: Data receive in progress interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+T\+X\+F\+I\+F\+O\+HE\+: Transmit F\+I\+FO Half Empty interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+R\+X\+F\+I\+F\+O\+HF\+: Receive F\+I\+FO Half Full interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+T\+X\+F\+I\+F\+OF\+: Transmit F\+I\+FO full interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+R\+X\+F\+I\+F\+OF\+: Receive F\+I\+FO full interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+T\+X\+F\+I\+F\+OE\+: Transmit F\+I\+FO empty interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+R\+X\+F\+I\+F\+OE\+: Receive F\+I\+FO empty interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+T\+X\+D\+A\+VL\+: Data available in transmit F\+I\+FO interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+R\+X\+D\+A\+VL\+: Data available in receive F\+I\+FO interrupt \item S\+D\+M\+M\+C\+\_\+\+I\+T\+\_\+\+S\+D\+I\+O\+IT\+: SD I/O interrupt received interrupt \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & new state of S\+D\+M\+M\+C\+\_\+\+IT (S\+ET or R\+E\+S\+ET). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___s_d_m_m_c___l_l___interrupt___clock_gab72fdd2401a780492474349fd45592d1}\label{group___s_d_m_m_c___l_l___interrupt___clock_gab72fdd2401a780492474349fd45592d1}} 
+\index{Interrupt And Clock Configuration@{Interrupt And Clock Configuration}!\_\_SDMMC\_OPERATION\_DISABLE@{\_\_SDMMC\_OPERATION\_DISABLE}}
+\index{\_\_SDMMC\_OPERATION\_DISABLE@{\_\_SDMMC\_OPERATION\_DISABLE}!Interrupt And Clock Configuration@{Interrupt And Clock Configuration}}
+\subsubsection{\texorpdfstring{\_\_SDMMC\_OPERATION\_DISABLE}{\_\_SDMMC\_OPERATION\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+S\+D\+M\+M\+C\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+D\+I\+S\+A\+B\+LE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+)-\/$>$D\+C\+T\+RL \&= $\sim$\mbox{\hyperlink{group___peripheral___registers___bits___definition_gab66312264da16d4693a3c9a9cba33c9e}{S\+D\+M\+M\+C\+\_\+\+D\+C\+T\+R\+L\+\_\+\+S\+D\+I\+O\+EN}})}
+
+
+
+Disable the SD I/O Mode Operation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+I\+N\+S\+T\+A\+N\+C\+E$<$/strong$>$} & Pointer to S\+D\+M\+MC register base \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___s_d_m_m_c___l_l___interrupt___clock_gae827e25ed818df7dcd6110a16b72caec}\label{group___s_d_m_m_c___l_l___interrupt___clock_gae827e25ed818df7dcd6110a16b72caec}} 
+\index{Interrupt And Clock Configuration@{Interrupt And Clock Configuration}!\_\_SDMMC\_OPERATION\_ENABLE@{\_\_SDMMC\_OPERATION\_ENABLE}}
+\index{\_\_SDMMC\_OPERATION\_ENABLE@{\_\_SDMMC\_OPERATION\_ENABLE}!Interrupt And Clock Configuration@{Interrupt And Clock Configuration}}
+\subsubsection{\texorpdfstring{\_\_SDMMC\_OPERATION\_ENABLE}{\_\_SDMMC\_OPERATION\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+S\+D\+M\+M\+C\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+E\+N\+A\+B\+LE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+)-\/$>$D\+C\+T\+RL $\vert$= \mbox{\hyperlink{group___peripheral___registers___bits___definition_gab66312264da16d4693a3c9a9cba33c9e}{S\+D\+M\+M\+C\+\_\+\+D\+C\+T\+R\+L\+\_\+\+S\+D\+I\+O\+EN}})}
+
+
+
+Enable the SD I/O Mode Operation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+I\+N\+S\+T\+A\+N\+C\+E$<$/strong$>$} & Pointer to S\+D\+M\+MC register base\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___s_d_m_m_c___l_l___interrupt___clock_gadd96ec39161ec584cfbeb743c2e0955f}\label{group___s_d_m_m_c___l_l___interrupt___clock_gadd96ec39161ec584cfbeb743c2e0955f}} 
+\index{Interrupt And Clock Configuration@{Interrupt And Clock Configuration}!\_\_SDMMC\_START\_READWAIT\_DISABLE@{\_\_SDMMC\_START\_READWAIT\_DISABLE}}
+\index{\_\_SDMMC\_START\_READWAIT\_DISABLE@{\_\_SDMMC\_START\_READWAIT\_DISABLE}!Interrupt And Clock Configuration@{Interrupt And Clock Configuration}}
+\subsubsection{\texorpdfstring{\_\_SDMMC\_START\_READWAIT\_DISABLE}{\_\_SDMMC\_START\_READWAIT\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+S\+D\+M\+M\+C\+\_\+\+S\+T\+A\+R\+T\+\_\+\+R\+E\+A\+D\+W\+A\+I\+T\+\_\+\+D\+I\+S\+A\+B\+LE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+)-\/$>$D\+C\+T\+RL \&= $\sim$\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga4302f186ec1e43bc38a4357db38fc0fa}{S\+D\+M\+M\+C\+\_\+\+D\+C\+T\+R\+L\+\_\+\+R\+W\+S\+T\+A\+RT}})}
+
+
+
+Disable Start the SD I/O Read Wait operations. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+I\+N\+S\+T\+A\+N\+C\+E$<$/strong$>$} & Pointer to S\+D\+M\+MC register base\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___s_d_m_m_c___l_l___interrupt___clock_ga6fc4b7016cb0e6474a0aeb04d658d30a}\label{group___s_d_m_m_c___l_l___interrupt___clock_ga6fc4b7016cb0e6474a0aeb04d658d30a}} 
+\index{Interrupt And Clock Configuration@{Interrupt And Clock Configuration}!\_\_SDMMC\_START\_READWAIT\_ENABLE@{\_\_SDMMC\_START\_READWAIT\_ENABLE}}
+\index{\_\_SDMMC\_START\_READWAIT\_ENABLE@{\_\_SDMMC\_START\_READWAIT\_ENABLE}!Interrupt And Clock Configuration@{Interrupt And Clock Configuration}}
+\subsubsection{\texorpdfstring{\_\_SDMMC\_START\_READWAIT\_ENABLE}{\_\_SDMMC\_START\_READWAIT\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+S\+D\+M\+M\+C\+\_\+\+S\+T\+A\+R\+T\+\_\+\+R\+E\+A\+D\+W\+A\+I\+T\+\_\+\+E\+N\+A\+B\+LE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+)-\/$>$D\+C\+T\+RL $\vert$= \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga4302f186ec1e43bc38a4357db38fc0fa}{S\+D\+M\+M\+C\+\_\+\+D\+C\+T\+R\+L\+\_\+\+R\+W\+S\+T\+A\+RT}})}
+
+
+
+Enable Start the SD I/O Read Wait operation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+I\+N\+S\+T\+A\+N\+C\+E$<$/strong$>$} & Pointer to S\+D\+M\+MC register base\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___s_d_m_m_c___l_l___interrupt___clock_ga0f1ff381bd70d14433ae582539005904}\label{group___s_d_m_m_c___l_l___interrupt___clock_ga0f1ff381bd70d14433ae582539005904}} 
+\index{Interrupt And Clock Configuration@{Interrupt And Clock Configuration}!\_\_SDMMC\_STOP\_READWAIT\_DISABLE@{\_\_SDMMC\_STOP\_READWAIT\_DISABLE}}
+\index{\_\_SDMMC\_STOP\_READWAIT\_DISABLE@{\_\_SDMMC\_STOP\_READWAIT\_DISABLE}!Interrupt And Clock Configuration@{Interrupt And Clock Configuration}}
+\subsubsection{\texorpdfstring{\_\_SDMMC\_STOP\_READWAIT\_DISABLE}{\_\_SDMMC\_STOP\_READWAIT\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+S\+D\+M\+M\+C\+\_\+\+S\+T\+O\+P\+\_\+\+R\+E\+A\+D\+W\+A\+I\+T\+\_\+\+D\+I\+S\+A\+B\+LE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+)-\/$>$D\+C\+T\+RL \&= $\sim$\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga68b631bb91b55ad41472640bff5e2d34}{S\+D\+M\+M\+C\+\_\+\+D\+C\+T\+R\+L\+\_\+\+R\+W\+S\+T\+OP}})}
+
+
+
+Disable Stop the SD I/O Read Wait operations. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+I\+N\+S\+T\+A\+N\+C\+E$<$/strong$>$} & Pointer to S\+D\+M\+MC register base\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___s_d_m_m_c___l_l___interrupt___clock_ga1ef11b32dd9c3243b229a621fe6c0617}\label{group___s_d_m_m_c___l_l___interrupt___clock_ga1ef11b32dd9c3243b229a621fe6c0617}} 
+\index{Interrupt And Clock Configuration@{Interrupt And Clock Configuration}!\_\_SDMMC\_STOP\_READWAIT\_ENABLE@{\_\_SDMMC\_STOP\_READWAIT\_ENABLE}}
+\index{\_\_SDMMC\_STOP\_READWAIT\_ENABLE@{\_\_SDMMC\_STOP\_READWAIT\_ENABLE}!Interrupt And Clock Configuration@{Interrupt And Clock Configuration}}
+\subsubsection{\texorpdfstring{\_\_SDMMC\_STOP\_READWAIT\_ENABLE}{\_\_SDMMC\_STOP\_READWAIT\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+S\+D\+M\+M\+C\+\_\+\+S\+T\+O\+P\+\_\+\+R\+E\+A\+D\+W\+A\+I\+T\+\_\+\+E\+N\+A\+B\+LE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+)-\/$>$D\+C\+T\+RL $\vert$= \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga68b631bb91b55ad41472640bff5e2d34}{S\+D\+M\+M\+C\+\_\+\+D\+C\+T\+R\+L\+\_\+\+R\+W\+S\+T\+OP}})}
+
+
+
+Enable Start the SD I/O Read Wait operation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+I\+N\+S\+T\+A\+N\+C\+E$<$/strong$>$} & Pointer to S\+D\+M\+MC register base\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___s_d_m_m_c___l_l___interrupt___clock_ga5086b97bef527e383097b4843d49769a}\label{group___s_d_m_m_c___l_l___interrupt___clock_ga5086b97bef527e383097b4843d49769a}} 
+\index{Interrupt And Clock Configuration@{Interrupt And Clock Configuration}!\_\_SDMMC\_SUSPEND\_CMD\_DISABLE@{\_\_SDMMC\_SUSPEND\_CMD\_DISABLE}}
+\index{\_\_SDMMC\_SUSPEND\_CMD\_DISABLE@{\_\_SDMMC\_SUSPEND\_CMD\_DISABLE}!Interrupt And Clock Configuration@{Interrupt And Clock Configuration}}
+\subsubsection{\texorpdfstring{\_\_SDMMC\_SUSPEND\_CMD\_DISABLE}{\_\_SDMMC\_SUSPEND\_CMD\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+S\+D\+M\+M\+C\+\_\+\+S\+U\+S\+P\+E\+N\+D\+\_\+\+C\+M\+D\+\_\+\+D\+I\+S\+A\+B\+LE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+)-\/$>$C\+MD \&= $\sim$\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaebb2a41639369a8c17cdb7b900b645a9}{S\+D\+M\+M\+C\+\_\+\+C\+M\+D\+\_\+\+S\+D\+I\+O\+S\+U\+S\+P\+E\+ND}})}
+
+
+
+Disable the SD I/O Suspend command sending. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+I\+N\+S\+T\+A\+N\+C\+E$<$/strong$>$} & Pointer to S\+D\+M\+MC register base\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___s_d_m_m_c___l_l___interrupt___clock_ga58bc9956e8a4edaffd8828923ded632a}\label{group___s_d_m_m_c___l_l___interrupt___clock_ga58bc9956e8a4edaffd8828923ded632a}} 
+\index{Interrupt And Clock Configuration@{Interrupt And Clock Configuration}!\_\_SDMMC\_SUSPEND\_CMD\_ENABLE@{\_\_SDMMC\_SUSPEND\_CMD\_ENABLE}}
+\index{\_\_SDMMC\_SUSPEND\_CMD\_ENABLE@{\_\_SDMMC\_SUSPEND\_CMD\_ENABLE}!Interrupt And Clock Configuration@{Interrupt And Clock Configuration}}
+\subsubsection{\texorpdfstring{\_\_SDMMC\_SUSPEND\_CMD\_ENABLE}{\_\_SDMMC\_SUSPEND\_CMD\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+S\+D\+M\+M\+C\+\_\+\+S\+U\+S\+P\+E\+N\+D\+\_\+\+C\+M\+D\+\_\+\+E\+N\+A\+B\+LE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+\_\+)-\/$>$C\+MD $\vert$= \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaebb2a41639369a8c17cdb7b900b645a9}{S\+D\+M\+M\+C\+\_\+\+C\+M\+D\+\_\+\+S\+D\+I\+O\+S\+U\+S\+P\+E\+ND}})}
+
+
+
+Enable the SD I/O Suspend command sending. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+I\+N\+S\+T\+A\+N\+C\+E$<$/strong$>$} & Pointer to S\+D\+M\+MC register base\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}

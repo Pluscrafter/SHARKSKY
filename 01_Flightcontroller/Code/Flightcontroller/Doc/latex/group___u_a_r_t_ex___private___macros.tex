@@ -1,0 +1,117 @@
+\hypertarget{group___u_a_r_t_ex___private___macros}{}\section{U\+A\+R\+T\+Ex Private Macros}
+\label{group___u_a_r_t_ex___private___macros}\index{UARTEx Private Macros@{UARTEx Private Macros}}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___u_a_r_t_ex___private___macros_ga2d8ffd4cb12754846ace609dff92e8df}{U\+A\+R\+T\+\_\+\+G\+E\+T\+C\+L\+O\+C\+K\+S\+O\+U\+R\+CE}}(\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+,  \+\_\+\+\_\+\+C\+L\+O\+C\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Report the U\+A\+RT clock source. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___u_a_r_t_ex___private___macros_gad9330184a8bd9399a36bcc93215a50d1}{U\+A\+R\+T\+\_\+\+M\+A\+S\+K\+\_\+\+C\+O\+M\+P\+U\+T\+A\+T\+I\+ON}}(\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Report the U\+A\+RT mask to apply to retrieve the received data according to the word length and to the parity bits activation. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___u_a_r_t_ex___private___macros_gaf856254e5a61d2ee81086918bffabde5}{I\+S\+\_\+\+U\+A\+R\+T\+\_\+\+W\+O\+R\+D\+\_\+\+L\+E\+N\+G\+TH}}(\+\_\+\+\_\+\+L\+E\+N\+G\+T\+H\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Ensure that U\+A\+RT frame length is valid. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___u_a_r_t_ex___private___macros_gaa4cf2a15ad7ae46e2905debeef35a908}{I\+S\+\_\+\+U\+A\+R\+T\+\_\+\+A\+D\+D\+R\+E\+S\+S\+L\+E\+N\+G\+T\+H\+\_\+\+D\+E\+T\+E\+CT}}(\+\_\+\+\_\+\+A\+D\+D\+R\+E\+S\+S\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Ensure that U\+A\+RT wake-\/up address length is valid. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___u_a_r_t_ex___private___macros_gaa4cf2a15ad7ae46e2905debeef35a908}\label{group___u_a_r_t_ex___private___macros_gaa4cf2a15ad7ae46e2905debeef35a908}} 
+\index{UARTEx Private Macros@{UARTEx Private Macros}!IS\_UART\_ADDRESSLENGTH\_DETECT@{IS\_UART\_ADDRESSLENGTH\_DETECT}}
+\index{IS\_UART\_ADDRESSLENGTH\_DETECT@{IS\_UART\_ADDRESSLENGTH\_DETECT}!UARTEx Private Macros@{UARTEx Private Macros}}
+\subsubsection{\texorpdfstring{IS\_UART\_ADDRESSLENGTH\_DETECT}{IS\_UART\_ADDRESSLENGTH\_DETECT}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+\+U\+A\+R\+T\+\_\+\+A\+D\+D\+R\+E\+S\+S\+L\+E\+N\+G\+T\+H\+\_\+\+D\+E\+T\+E\+CT(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+A\+D\+D\+R\+E\+S\+S\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(((\_\_ADDRESS\_\_) == \mbox{\hyperlink{group___u_a_r_t_ex___wake_up___address___length_ga6599292020c484faeea894307d9dc6d5}{UART\_ADDRESS\_DETECT\_4B}}) || \(\backslash\)}
+\DoxyCodeLine{                                                   ((\_\_ADDRESS\_\_) == \mbox{\hyperlink{group___u_a_r_t_ex___wake_up___address___length_ga4dbd5995e0e4998cb1a312c183d7cbb0}{UART\_ADDRESS\_DETECT\_7B}}))}
+
+\end{DoxyCode}
+
+
+Ensure that U\+A\+RT wake-\/up address length is valid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+A\+D\+D\+R\+E\+S\+S$<$/strong$>$} & U\+A\+RT wake-\/up address length. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em S\+ET} & ({\bfseries{A\+D\+D\+R\+E\+SS}} is valid) or R\+E\+S\+ET ({\bfseries{A\+D\+D\+R\+E\+SS}} is invalid) \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___u_a_r_t_ex___private___macros_gaf856254e5a61d2ee81086918bffabde5}\label{group___u_a_r_t_ex___private___macros_gaf856254e5a61d2ee81086918bffabde5}} 
+\index{UARTEx Private Macros@{UARTEx Private Macros}!IS\_UART\_WORD\_LENGTH@{IS\_UART\_WORD\_LENGTH}}
+\index{IS\_UART\_WORD\_LENGTH@{IS\_UART\_WORD\_LENGTH}!UARTEx Private Macros@{UARTEx Private Macros}}
+\subsubsection{\texorpdfstring{IS\_UART\_WORD\_LENGTH}{IS\_UART\_WORD\_LENGTH}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+\+U\+A\+R\+T\+\_\+\+W\+O\+R\+D\+\_\+\+L\+E\+N\+G\+TH(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+L\+E\+N\+G\+T\+H\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(((\_\_LENGTH\_\_) == \mbox{\hyperlink{group___u_a_r_t_ex___word___length_gadaec9a23646032a333a5327d66aae4fe}{UART\_WORDLENGTH\_7B}}) || \(\backslash\)}
+\DoxyCodeLine{                                         ((\_\_LENGTH\_\_) == \mbox{\hyperlink{group___u_a_r_t_ex___word___length_gaf394e9abaf17932ee89591f990fe6407}{UART\_WORDLENGTH\_8B}}) || \(\backslash\)}
+\DoxyCodeLine{                                         ((\_\_LENGTH\_\_) == \mbox{\hyperlink{group___u_a_r_t_ex___word___length_gaf867be43de35fd3c32fe0b4dd4058f7e}{UART\_WORDLENGTH\_9B}}))}
+
+\end{DoxyCode}
+
+
+Ensure that U\+A\+RT frame length is valid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+L\+E\+N\+G\+T\+H$<$/strong$>$} & U\+A\+RT frame length. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em S\+ET} & ({\bfseries{L\+E\+N\+G\+TH}} is valid) or R\+E\+S\+ET ({\bfseries{L\+E\+N\+G\+TH}} is invalid) \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___u_a_r_t_ex___private___macros_ga2d8ffd4cb12754846ace609dff92e8df}\label{group___u_a_r_t_ex___private___macros_ga2d8ffd4cb12754846ace609dff92e8df}} 
+\index{UARTEx Private Macros@{UARTEx Private Macros}!UART\_GETCLOCKSOURCE@{UART\_GETCLOCKSOURCE}}
+\index{UART\_GETCLOCKSOURCE@{UART\_GETCLOCKSOURCE}!UARTEx Private Macros@{UARTEx Private Macros}}
+\subsubsection{\texorpdfstring{UART\_GETCLOCKSOURCE}{UART\_GETCLOCKSOURCE}}
+{\footnotesize\ttfamily \#define U\+A\+R\+T\+\_\+\+G\+E\+T\+C\+L\+O\+C\+K\+S\+O\+U\+R\+CE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+C\+L\+O\+C\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+
+
+Report the U\+A\+RT clock source. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+H\+A\+N\+D\+L\+E$<$/strong$>$} & specifies the U\+A\+RT Handle. \\
+\hline
+{\em $<$strong$>$\+C\+L\+O\+C\+K\+S\+O\+U\+R\+C\+E$<$/strong$>$} & output variable. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em U\+A\+RT} & clocking source, written in {\bfseries{C\+L\+O\+C\+K\+S\+O\+U\+R\+CE}}. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___u_a_r_t_ex___private___macros_gad9330184a8bd9399a36bcc93215a50d1}\label{group___u_a_r_t_ex___private___macros_gad9330184a8bd9399a36bcc93215a50d1}} 
+\index{UARTEx Private Macros@{UARTEx Private Macros}!UART\_MASK\_COMPUTATION@{UART\_MASK\_COMPUTATION}}
+\index{UART\_MASK\_COMPUTATION@{UART\_MASK\_COMPUTATION}!UARTEx Private Macros@{UARTEx Private Macros}}
+\subsubsection{\texorpdfstring{UART\_MASK\_COMPUTATION}{UART\_MASK\_COMPUTATION}}
+{\footnotesize\ttfamily \#define U\+A\+R\+T\+\_\+\+M\+A\+S\+K\+\_\+\+C\+O\+M\+P\+U\+T\+A\+T\+I\+ON(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+
+
+Report the U\+A\+RT mask to apply to retrieve the received data according to the word length and to the parity bits activation. 
+
+\begin{DoxyNote}{Note}
+If P\+CE = 1, the parity bit is not included in the data extracted by the reception A\+P\+I(). This masking operation is not carried out in the case of D\+MA transfers. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+H\+A\+N\+D\+L\+E$<$/strong$>$} & specifies the U\+A\+RT Handle. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None,the} & mask to apply to U\+A\+RT R\+DR register is stored in ({\bfseries{H\+A\+N\+D\+LE}})-\/$>$Mask field. \\
+\hline
+\end{DoxyRetVals}

@@ -1,0 +1,62 @@
+\hypertarget{struct_s_cn_s_c_b___type}{}\section{S\+Cn\+S\+C\+B\+\_\+\+Type Struct Reference}
+\label{struct_s_cn_s_c_b___type}\index{SCnSCB\_Type@{SCnSCB\_Type}}
+
+
+Structure type to access the System Control and ID Register not in the S\+CB.  
+
+
+
+
+{\ttfamily \#include $<$core\+\_\+armv8mml.\+h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_s_cn_s_c_b___type_a758b3cae751b227e20698256b6249dd4}\label{struct_s_cn_s_c_b___type_a758b3cae751b227e20698256b6249dd4}} 
+uint32\+\_\+t {\bfseries R\+E\+S\+E\+R\+V\+E\+D0} \mbox{[}1\+U\mbox{]}
+\item 
+\+\_\+\+\_\+\+IM uint32\+\_\+t \mbox{\hyperlink{struct_s_cn_s_c_b___type_a34ec1d771245eb9bd0e3ec9336949762}{I\+C\+TR}}
+\item 
+\+\_\+\+\_\+\+I\+OM uint32\+\_\+t \mbox{\hyperlink{struct_s_cn_s_c_b___type_a13af9b718dde7481f1c0344f00593c23}{A\+C\+T\+LR}}
+\item 
+\+\_\+\+\_\+\+I\+OM uint32\+\_\+t \mbox{\hyperlink{struct_s_cn_s_c_b___type_a356efebfcbdaecaf1176e6cd86a60bf1}{C\+P\+P\+WR}}
+\item 
+\mbox{\Hypertarget{struct_s_cn_s_c_b___type_a0bce3f86e9f6e00085cf5a126ae201c6}\label{struct_s_cn_s_c_b___type_a0bce3f86e9f6e00085cf5a126ae201c6}} 
+uint32\+\_\+t {\bfseries R\+E\+S\+E\+R\+V\+E\+D1} \mbox{[}1\+U\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Structure type to access the System Control and ID Register not in the S\+CB. 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_s_cn_s_c_b___type_a13af9b718dde7481f1c0344f00593c23}\label{struct_s_cn_s_c_b___type_a13af9b718dde7481f1c0344f00593c23}} 
+\index{SCnSCB\_Type@{SCnSCB\_Type}!ACTLR@{ACTLR}}
+\index{ACTLR@{ACTLR}!SCnSCB\_Type@{SCnSCB\_Type}}
+\subsubsection{\texorpdfstring{ACTLR}{ACTLR}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+I\+OM uint32\+\_\+t S\+Cn\+S\+C\+B\+\_\+\+Type\+::\+A\+C\+T\+LR}
+
+Offset\+: 0x008 (R/W) Auxiliary Control Register \mbox{\Hypertarget{struct_s_cn_s_c_b___type_a356efebfcbdaecaf1176e6cd86a60bf1}\label{struct_s_cn_s_c_b___type_a356efebfcbdaecaf1176e6cd86a60bf1}} 
+\index{SCnSCB\_Type@{SCnSCB\_Type}!CPPWR@{CPPWR}}
+\index{CPPWR@{CPPWR}!SCnSCB\_Type@{SCnSCB\_Type}}
+\subsubsection{\texorpdfstring{CPPWR}{CPPWR}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+I\+OM uint32\+\_\+t S\+Cn\+S\+C\+B\+\_\+\+Type\+::\+C\+P\+P\+WR}
+
+Offset\+: 0x00C (R/W) Coprocessor Power Control Register \mbox{\Hypertarget{struct_s_cn_s_c_b___type_a34ec1d771245eb9bd0e3ec9336949762}\label{struct_s_cn_s_c_b___type_a34ec1d771245eb9bd0e3ec9336949762}} 
+\index{SCnSCB\_Type@{SCnSCB\_Type}!ICTR@{ICTR}}
+\index{ICTR@{ICTR}!SCnSCB\_Type@{SCnSCB\_Type}}
+\subsubsection{\texorpdfstring{ICTR}{ICTR}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IM uint32\+\_\+t S\+Cn\+S\+C\+B\+\_\+\+Type\+::\+I\+C\+TR}
+
+Offset\+: 0x004 (R/ ) Interrupt Controller Type Register 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Drivers/\+C\+M\+S\+I\+S/\+Include/\mbox{\hyperlink{core__armv8mml_8h}{core\+\_\+armv8mml.\+h}}\item 
+Drivers/\+C\+M\+S\+I\+S/\+Include/\mbox{\hyperlink{core__cm1_8h}{core\+\_\+cm1.\+h}}\item 
+Drivers/\+C\+M\+S\+I\+S/\+Include/\mbox{\hyperlink{core__cm3_8h}{core\+\_\+cm3.\+h}}\item 
+Drivers/\+C\+M\+S\+I\+S/\+Include/\mbox{\hyperlink{core__cm33_8h}{core\+\_\+cm33.\+h}}\item 
+Drivers/\+C\+M\+S\+I\+S/\+Include/\mbox{\hyperlink{core__cm4_8h}{core\+\_\+cm4.\+h}}\item 
+Drivers/\+C\+M\+S\+I\+S/\+Include/\mbox{\hyperlink{core__cm7_8h}{core\+\_\+cm7.\+h}}\item 
+Drivers/\+C\+M\+S\+I\+S/\+Include/\mbox{\hyperlink{core__sc000_8h}{core\+\_\+sc000.\+h}}\item 
+Drivers/\+C\+M\+S\+I\+S/\+Include/\mbox{\hyperlink{core__sc300_8h}{core\+\_\+sc300.\+h}}\end{DoxyCompactItemize}

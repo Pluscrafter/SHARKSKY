@@ -1,0 +1,78 @@
+\hypertarget{classSensor_1_1MPU6050}{}\section{Sensor\+::M\+P\+U6050 Class Reference}
+\label{classSensor_1_1MPU6050}\index{Sensor::MPU6050@{Sensor::MPU6050}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSensor_1_1MPU6050_a4337504892ac68158e931db396394cb4}\label{classSensor_1_1MPU6050_a4337504892ac68158e931db396394cb4}} 
+{\bfseries M\+P\+U6050} (uint16\+\_\+t address, bool Int\+Enable)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSensor_1_1MPU6050_a032dc1628ba752682e9946af354806e0}\label{classSensor_1_1MPU6050_a032dc1628ba752682e9946af354806e0}} 
+static void {\bfseries Selftest} ()
+\item 
+\mbox{\Hypertarget{classSensor_1_1MPU6050_aff1ddd176379260467d6c9298ff4947e}\label{classSensor_1_1MPU6050_aff1ddd176379260467d6c9298ff4947e}} 
+static void {\bfseries Config} ()
+\item 
+\mbox{\Hypertarget{classSensor_1_1MPU6050_a99ea2843428bb6a5e1be7918f801c740}\label{classSensor_1_1MPU6050_a99ea2843428bb6a5e1be7918f801c740}} 
+static void {\bfseries Init} ()
+\item 
+\mbox{\Hypertarget{classSensor_1_1MPU6050_a884ce6f3611872be1e2ae8edc2597148}\label{classSensor_1_1MPU6050_a884ce6f3611872be1e2ae8edc2597148}} 
+static void {\bfseries Set\+Gyro\+Resolution} ()
+\item 
+\mbox{\Hypertarget{classSensor_1_1MPU6050_af55129df7e9ab209a493fd13769515b3}\label{classSensor_1_1MPU6050_af55129df7e9ab209a493fd13769515b3}} 
+static void {\bfseries Set\+A\+C\+C\+L\+Resolution} ()
+\item 
+\mbox{\Hypertarget{classSensor_1_1MPU6050_a382126e687b83396014cbcbbc40d758c}\label{classSensor_1_1MPU6050_a382126e687b83396014cbcbbc40d758c}} 
+static void {\bfseries read\+Gyro\+R\+AW} ()
+\item 
+\mbox{\Hypertarget{classSensor_1_1MPU6050_aa04bc07a49d6d7f187127c9fea171e8c}\label{classSensor_1_1MPU6050_aa04bc07a49d6d7f187127c9fea171e8c}} 
+static void {\bfseries read\+Accl\+R\+AW} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSensor_1_1MPU6050_a9e1b7e7fae58eda13a4a01dace4dce31}\label{classSensor_1_1MPU6050_a9e1b7e7fae58eda13a4a01dace4dce31}} 
+static uint16\+\_\+t {\bfseries raw\+G\+Y\+RO} \mbox{[}3\mbox{]}
+\item 
+\mbox{\Hypertarget{classSensor_1_1MPU6050_ac65f4884966872a95ed292a86419be41}\label{classSensor_1_1MPU6050_ac65f4884966872a95ed292a86419be41}} 
+static uint16\+\_\+t {\bfseries raw\+A\+C\+CL} \mbox{[}3\mbox{]}
+\item 
+\mbox{\Hypertarget{classSensor_1_1MPU6050_a23ca89d6631e30ffe5bc70196f991bba}\label{classSensor_1_1MPU6050_a23ca89d6631e30ffe5bc70196f991bba}} 
+static uint16\+\_\+t {\bfseries error\+DL} =0
+\item 
+\mbox{\Hypertarget{classSensor_1_1MPU6050_a0a14bd353bb0ef0828c8a97a31759c9f}\label{classSensor_1_1MPU6050_a0a14bd353bb0ef0828c8a97a31759c9f}} 
+static uint16\+\_\+t {\bfseries DL} =0
+\item 
+\mbox{\Hypertarget{classSensor_1_1MPU6050_ad3fcb168d63e452bfa871672a10ea27b}\label{classSensor_1_1MPU6050_ad3fcb168d63e452bfa871672a10ea27b}} 
+static uint16\+\_\+t {\bfseries peak} =0
+\item 
+\mbox{\Hypertarget{classSensor_1_1MPU6050_a0824a5a6c37256c078dd861fbe5678f6}\label{classSensor_1_1MPU6050_a0824a5a6c37256c078dd861fbe5678f6}} 
+static uint8\+\_\+t {\bfseries Tx\+Data} \mbox{[}6\mbox{]}
+\item 
+\mbox{\Hypertarget{classSensor_1_1MPU6050_a8f379aeb0bbbc448d9393419ac489e94}\label{classSensor_1_1MPU6050_a8f379aeb0bbbc448d9393419ac489e94}} 
+static bool {\bfseries data\+R\+DY} = false
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSensor_1_1MPU6050_a8014d9dbc6b1671decf74e9deddb8ad3}\label{classSensor_1_1MPU6050_a8014d9dbc6b1671decf74e9deddb8ad3}} 
+static uint16\+\_\+t {\bfseries address}
+\item 
+\mbox{\Hypertarget{classSensor_1_1MPU6050_a416da3b52ff7bf4c151b26f7c4c31d23}\label{classSensor_1_1MPU6050_a416da3b52ff7bf4c151b26f7c4c31d23}} 
+static bool {\bfseries Int\+Enable}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 72 of file M\+P\+U6050\+\_\+.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+M\+P\+U6050\+\_\+.\+h\item 
+M\+P\+U6050\+\_\+.\+cpp\end{DoxyCompactItemize}

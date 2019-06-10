@@ -1,0 +1,585 @@
+\hypertarget{group___s_p_i___private___macros}{}\section{S\+PI Private Macros}
+\label{group___s_p_i___private___macros}\index{SPI Private Macros@{SPI Private Macros}}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___macros_gae3b2eb5e818e58b66474d42dedac5523}{S\+P\+I\+\_\+1\+L\+I\+N\+E\+\_\+\+TX}}(\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+)~S\+E\+T\+\_\+\+B\+IT((\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+)-\/$>$Instance-\/$>$C\+R1, \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga378953916b7701bd49f063c0366b703f}{S\+P\+I\+\_\+\+C\+R1\+\_\+\+B\+I\+D\+I\+OE}})
+\begin{DoxyCompactList}\small\item\em Set the S\+PI transmit-\/only mode. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___macros_gaa8d58cef91c1874d5a4dde4014cf6269}{S\+P\+I\+\_\+1\+L\+I\+N\+E\+\_\+\+RX}}(\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+)~C\+L\+E\+A\+R\+\_\+\+B\+IT((\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+)-\/$>$Instance-\/$>$C\+R1, \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga378953916b7701bd49f063c0366b703f}{S\+P\+I\+\_\+\+C\+R1\+\_\+\+B\+I\+D\+I\+OE}})
+\begin{DoxyCompactList}\small\item\em Set the S\+PI receive-\/only mode. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___macros_gab120a0085b72939e7d19c4f6b3381a99}{S\+P\+I\+\_\+\+R\+E\+S\+E\+T\+\_\+\+C\+RC}}(\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Reset the C\+RC calculation of the S\+PI. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___macros_gae9c6be610681f2142fb012de95e6e59d}{S\+P\+I\+\_\+\+C\+H\+E\+C\+K\+\_\+\+F\+L\+AG}}(\+\_\+\+\_\+\+S\+R\+\_\+\+\_\+,  \+\_\+\+\_\+\+F\+L\+A\+G\+\_\+\+\_\+)~((((\+\_\+\+\_\+\+S\+R\+\_\+\+\_\+) \& ((\+\_\+\+\_\+\+F\+L\+A\+G\+\_\+\+\_\+) \& S\+P\+I\+\_\+\+F\+L\+A\+G\+\_\+\+M\+A\+SK)) == ((\+\_\+\+\_\+\+F\+L\+A\+G\+\_\+\+\_\+) \& S\+P\+I\+\_\+\+F\+L\+A\+G\+\_\+\+M\+A\+SK)) ? S\+ET \+: R\+E\+S\+ET)
+\begin{DoxyCompactList}\small\item\em Check whether the specified S\+PI flag is set or not. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___macros_ga8ab087388d8930531498165ac8f066a2}{S\+P\+I\+\_\+\+C\+H\+E\+C\+K\+\_\+\+I\+T\+\_\+\+S\+O\+U\+R\+CE}}(\+\_\+\+\_\+\+C\+R2\+\_\+\+\_\+,  \+\_\+\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+\_\+)~((((\+\_\+\+\_\+\+C\+R2\+\_\+\+\_\+) \& (\+\_\+\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+\_\+)) == (\+\_\+\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+\_\+)) ? S\+ET \+: R\+E\+S\+ET)
+\begin{DoxyCompactList}\small\item\em Check whether the specified S\+PI Interrupt is set or not. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___macros_ga3dd95189a3729f12ca354b757519ca01}{I\+S\+\_\+\+S\+P\+I\+\_\+\+M\+O\+DE}}(\+\_\+\+\_\+\+M\+O\+D\+E\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Checks if S\+PI Mode parameter is in allowed range. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___macros_ga6c66285d42fc3baf5ecaceadb54ee42a}{I\+S\+\_\+\+S\+P\+I\+\_\+\+D\+I\+R\+E\+C\+T\+I\+ON}}(\+\_\+\+\_\+\+M\+O\+D\+E\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Checks if S\+PI Direction Mode parameter is in allowed range. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___macros_gaff84471ab30ddd79cefd0c43dfe628c8}{I\+S\+\_\+\+S\+P\+I\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+2\+L\+I\+N\+ES}}(\+\_\+\+\_\+\+M\+O\+D\+E\+\_\+\+\_\+)~((\+\_\+\+\_\+\+M\+O\+D\+E\+\_\+\+\_\+) == S\+P\+I\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+2\+L\+I\+N\+ES)
+\begin{DoxyCompactList}\small\item\em Checks if S\+PI Direction Mode parameter is 2 lines. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___macros_ga525d9decc1251ec9037bd3c66c0e3a8c}{I\+S\+\_\+\+S\+P\+I\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+2\+L\+I\+N\+E\+S\+\_\+\+O\+R\+\_\+1\+L\+I\+NE}}(\+\_\+\+\_\+\+M\+O\+D\+E\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Checks if S\+PI Direction Mode parameter is 1 or 2 lines. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___macros_gac04b1218a162772dca3854aa3a441856}{I\+S\+\_\+\+S\+P\+I\+\_\+\+D\+A\+T\+A\+S\+I\+ZE}}(\+\_\+\+\_\+\+D\+A\+T\+A\+S\+I\+Z\+E\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Checks if S\+PI Data Size parameter is in allowed range. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___macros_gad60cb1a9c1e1f89e8e9740a0ca734443}{I\+S\+\_\+\+S\+P\+I\+\_\+\+C\+P\+OL}}(\+\_\+\+\_\+\+C\+P\+O\+L\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Checks if S\+PI Serial clock steady state parameter is in allowed range. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___macros_gaf5ed92fbe83dada8ebcce64c04ef0f72}{I\+S\+\_\+\+S\+P\+I\+\_\+\+C\+P\+HA}}(\+\_\+\+\_\+\+C\+P\+H\+A\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Checks if S\+PI Clock Phase parameter is in allowed range. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___macros_ga7e90530e595a47ab465e3e222014f5e3}{I\+S\+\_\+\+S\+P\+I\+\_\+\+N\+SS}}(\+\_\+\+\_\+\+N\+S\+S\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Checks if S\+PI Slave Select parameter is in allowed range. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___macros_ga59317f70e75953c1c2f7d1d67d173db1}{I\+S\+\_\+\+S\+P\+I\+\_\+\+N\+S\+SP}}(\+\_\+\+\_\+\+N\+S\+S\+P\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Checks if S\+PI N\+SS Pulse parameter is in allowed range. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___macros_gad15d5bdc7ac1698d1956a25b200e1f25}{I\+S\+\_\+\+S\+P\+I\+\_\+\+B\+A\+U\+D\+R\+A\+T\+E\+\_\+\+P\+R\+E\+S\+C\+A\+L\+ER}}(\+\_\+\+\_\+\+P\+R\+E\+S\+C\+A\+L\+E\+R\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Checks if S\+PI Baudrate prescaler parameter is in allowed range. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___macros_ga780c503aa8adae30dea1f034ac500d7f}{I\+S\+\_\+\+S\+P\+I\+\_\+\+F\+I\+R\+S\+T\+\_\+\+B\+IT}}(\+\_\+\+\_\+\+B\+I\+T\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Checks if S\+PI M\+SB L\+SB transmission parameter is in allowed range. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___macros_ga8e3c348af57cf973277018958fccfed9}{I\+S\+\_\+\+S\+P\+I\+\_\+\+T\+I\+M\+O\+DE}}(\+\_\+\+\_\+\+M\+O\+D\+E\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Checks if S\+PI TI mode parameter is in allowed range. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___macros_ga5416429a2e9024b142c972eacb1fd021}{I\+S\+\_\+\+S\+P\+I\+\_\+\+C\+R\+C\+\_\+\+C\+A\+L\+C\+U\+L\+A\+T\+I\+ON}}(\+\_\+\+\_\+\+C\+A\+L\+C\+U\+L\+A\+T\+I\+O\+N\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Checks if S\+PI C\+RC calculation enabled state is in allowed range. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___macros_ga772f85d2cf9be95f50c9b9526462a85e}{I\+S\+\_\+\+S\+P\+I\+\_\+\+C\+R\+C\+\_\+\+L\+E\+N\+G\+TH}}(\+\_\+\+\_\+\+L\+E\+N\+G\+T\+H\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Checks if S\+PI C\+RC length is in allowed range. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___macros_ga1b4b6bb5771cb0070af660d169d4ef09}{I\+S\+\_\+\+S\+P\+I\+\_\+\+C\+R\+C\+\_\+\+P\+O\+L\+Y\+N\+O\+M\+I\+AL}}(\+\_\+\+\_\+\+P\+O\+L\+Y\+N\+O\+M\+I\+A\+L\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+P\+O\+L\+Y\+N\+O\+M\+I\+A\+L\+\_\+\+\_\+) $>$= 0x1\+U) \&\& ((\+\_\+\+\_\+\+P\+O\+L\+Y\+N\+O\+M\+I\+A\+L\+\_\+\+\_\+) $<$= 0x\+F\+F\+F\+F\+U) \&\& (((\+\_\+\+\_\+\+P\+O\+L\+Y\+N\+O\+M\+I\+A\+L\+\_\+\+\_\+)\&0x1\+U) != 0\+U))
+\begin{DoxyCompactList}\small\item\em Checks if S\+PI polynomial value to be used for the C\+RC calculation, is in allowed range. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___macros_gae54950bcff11d9165b99957cf8746ae4}{I\+S\+\_\+\+S\+P\+I\+\_\+\+D\+M\+A\+\_\+\+H\+A\+N\+D\+LE}}(\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+)~((\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+) != N\+U\+LL)
+\begin{DoxyCompactList}\small\item\em Checks if D\+MA handle is valid. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___s_p_i___private___macros_gad15d5bdc7ac1698d1956a25b200e1f25}\label{group___s_p_i___private___macros_gad15d5bdc7ac1698d1956a25b200e1f25}} 
+\index{SPI Private Macros@{SPI Private Macros}!IS\_SPI\_BAUDRATE\_PRESCALER@{IS\_SPI\_BAUDRATE\_PRESCALER}}
+\index{IS\_SPI\_BAUDRATE\_PRESCALER@{IS\_SPI\_BAUDRATE\_PRESCALER}!SPI Private Macros@{SPI Private Macros}}
+\subsubsection{\texorpdfstring{IS\_SPI\_BAUDRATE\_PRESCALER}{IS\_SPI\_BAUDRATE\_PRESCALER}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+\+S\+P\+I\+\_\+\+B\+A\+U\+D\+R\+A\+T\+E\+\_\+\+P\+R\+E\+S\+C\+A\+L\+ER(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+P\+R\+E\+S\+C\+A\+L\+E\+R\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(((\_\_PRESCALER\_\_) == SPI\_BAUDRATEPRESCALER\_2)   || \(\backslash\)}
+\DoxyCodeLine{                                                  ((\_\_PRESCALER\_\_) == SPI\_BAUDRATEPRESCALER\_4)   || \(\backslash\)}
+\DoxyCodeLine{                                                  ((\_\_PRESCALER\_\_) == SPI\_BAUDRATEPRESCALER\_8)   || \(\backslash\)}
+\DoxyCodeLine{                                                  ((\_\_PRESCALER\_\_) == SPI\_BAUDRATEPRESCALER\_16)  || \(\backslash\)}
+\DoxyCodeLine{                                                  ((\_\_PRESCALER\_\_) == SPI\_BAUDRATEPRESCALER\_32)  || \(\backslash\)}
+\DoxyCodeLine{                                                  ((\_\_PRESCALER\_\_) == SPI\_BAUDRATEPRESCALER\_64)  || \(\backslash\)}
+\DoxyCodeLine{                                                  ((\_\_PRESCALER\_\_) == SPI\_BAUDRATEPRESCALER\_128) || \(\backslash\)}
+\DoxyCodeLine{                                                  ((\_\_PRESCALER\_\_) == SPI\_BAUDRATEPRESCALER\_256))}
+
+\end{DoxyCode}
+
+
+Checks if S\+PI Baudrate prescaler parameter is in allowed range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+P\+R\+E\+S\+C\+A\+L\+E\+R$<$/strong$>$} & specifies the S\+PI Baudrate prescaler. This parameter can be a value of \mbox{\hyperlink{group___s_p_i___baud_rate___prescaler}{S\+PI Baud\+Rate Prescaler}} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___s_p_i___private___macros_gaf5ed92fbe83dada8ebcce64c04ef0f72}\label{group___s_p_i___private___macros_gaf5ed92fbe83dada8ebcce64c04ef0f72}} 
+\index{SPI Private Macros@{SPI Private Macros}!IS\_SPI\_CPHA@{IS\_SPI\_CPHA}}
+\index{IS\_SPI\_CPHA@{IS\_SPI\_CPHA}!SPI Private Macros@{SPI Private Macros}}
+\subsubsection{\texorpdfstring{IS\_SPI\_CPHA}{IS\_SPI\_CPHA}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+\+S\+P\+I\+\_\+\+C\+P\+HA(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+C\+P\+H\+A\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(((\_\_CPHA\_\_) == SPI\_PHASE\_1EDGE) || \(\backslash\)}
+\DoxyCodeLine{                               ((\_\_CPHA\_\_) == SPI\_PHASE\_2EDGE))}
+
+\end{DoxyCode}
+
+
+Checks if S\+PI Clock Phase parameter is in allowed range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+C\+P\+H\+A$<$/strong$>$} & specifies the S\+PI Clock Phase. This parameter can be a value of \mbox{\hyperlink{group___s_p_i___clock___phase}{S\+PI Clock Phase}} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___s_p_i___private___macros_gad60cb1a9c1e1f89e8e9740a0ca734443}\label{group___s_p_i___private___macros_gad60cb1a9c1e1f89e8e9740a0ca734443}} 
+\index{SPI Private Macros@{SPI Private Macros}!IS\_SPI\_CPOL@{IS\_SPI\_CPOL}}
+\index{IS\_SPI\_CPOL@{IS\_SPI\_CPOL}!SPI Private Macros@{SPI Private Macros}}
+\subsubsection{\texorpdfstring{IS\_SPI\_CPOL}{IS\_SPI\_CPOL}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+\+S\+P\+I\+\_\+\+C\+P\+OL(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+C\+P\+O\+L\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(((\_\_CPOL\_\_) == SPI\_POLARITY\_LOW) || \(\backslash\)}
+\DoxyCodeLine{                               ((\_\_CPOL\_\_) == SPI\_POLARITY\_HIGH))}
+
+\end{DoxyCode}
+
+
+Checks if S\+PI Serial clock steady state parameter is in allowed range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+C\+P\+O\+L$<$/strong$>$} & specifies the S\+PI serial clock steady state. This parameter can be a value of \mbox{\hyperlink{group___s_p_i___clock___polarity}{S\+PI Clock Polarity}} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___s_p_i___private___macros_ga5416429a2e9024b142c972eacb1fd021}\label{group___s_p_i___private___macros_ga5416429a2e9024b142c972eacb1fd021}} 
+\index{SPI Private Macros@{SPI Private Macros}!IS\_SPI\_CRC\_CALCULATION@{IS\_SPI\_CRC\_CALCULATION}}
+\index{IS\_SPI\_CRC\_CALCULATION@{IS\_SPI\_CRC\_CALCULATION}!SPI Private Macros@{SPI Private Macros}}
+\subsubsection{\texorpdfstring{IS\_SPI\_CRC\_CALCULATION}{IS\_SPI\_CRC\_CALCULATION}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+\+S\+P\+I\+\_\+\+C\+R\+C\+\_\+\+C\+A\+L\+C\+U\+L\+A\+T\+I\+ON(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+C\+A\+L\+C\+U\+L\+A\+T\+I\+O\+N\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(((\_\_CALCULATION\_\_) == SPI\_CRCCALCULATION\_DISABLE) || \(\backslash\)}
+\DoxyCodeLine{                                                 ((\_\_CALCULATION\_\_) == SPI\_CRCCALCULATION\_ENABLE))}
+
+\end{DoxyCode}
+
+
+Checks if S\+PI C\+RC calculation enabled state is in allowed range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+C\+A\+L\+C\+U\+L\+A\+T\+I\+O\+N$<$/strong$>$} & specifies the S\+PI C\+RC calculation enable state. This parameter can be a value of \mbox{\hyperlink{group___s_p_i___c_r_c___calculation}{S\+PI C\+RC Calculation}} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___s_p_i___private___macros_ga772f85d2cf9be95f50c9b9526462a85e}\label{group___s_p_i___private___macros_ga772f85d2cf9be95f50c9b9526462a85e}} 
+\index{SPI Private Macros@{SPI Private Macros}!IS\_SPI\_CRC\_LENGTH@{IS\_SPI\_CRC\_LENGTH}}
+\index{IS\_SPI\_CRC\_LENGTH@{IS\_SPI\_CRC\_LENGTH}!SPI Private Macros@{SPI Private Macros}}
+\subsubsection{\texorpdfstring{IS\_SPI\_CRC\_LENGTH}{IS\_SPI\_CRC\_LENGTH}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+\+S\+P\+I\+\_\+\+C\+R\+C\+\_\+\+L\+E\+N\+G\+TH(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+L\+E\+N\+G\+T\+H\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(((\_\_LENGTH\_\_) == SPI\_CRC\_LENGTH\_DATASIZE) ||\(\backslash\)}
+\DoxyCodeLine{                                       ((\_\_LENGTH\_\_) == SPI\_CRC\_LENGTH\_8BIT)  ||   \(\backslash\)}
+\DoxyCodeLine{                                       ((\_\_LENGTH\_\_) == SPI\_CRC\_LENGTH\_16BIT))}
+
+\end{DoxyCode}
+
+
+Checks if S\+PI C\+RC length is in allowed range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+L\+E\+N\+G\+T\+H$<$/strong$>$} & specifies the S\+PI C\+RC length. This parameter can be a value of \mbox{\hyperlink{group___s_p_i___c_r_c__length}{S\+PI C\+RC Length}} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___s_p_i___private___macros_ga1b4b6bb5771cb0070af660d169d4ef09}\label{group___s_p_i___private___macros_ga1b4b6bb5771cb0070af660d169d4ef09}} 
+\index{SPI Private Macros@{SPI Private Macros}!IS\_SPI\_CRC\_POLYNOMIAL@{IS\_SPI\_CRC\_POLYNOMIAL}}
+\index{IS\_SPI\_CRC\_POLYNOMIAL@{IS\_SPI\_CRC\_POLYNOMIAL}!SPI Private Macros@{SPI Private Macros}}
+\subsubsection{\texorpdfstring{IS\_SPI\_CRC\_POLYNOMIAL}{IS\_SPI\_CRC\_POLYNOMIAL}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+\+S\+P\+I\+\_\+\+C\+R\+C\+\_\+\+P\+O\+L\+Y\+N\+O\+M\+I\+AL(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+P\+O\+L\+Y\+N\+O\+M\+I\+A\+L\+\_\+\+\_\+ }\end{DoxyParamCaption})~(((\+\_\+\+\_\+\+P\+O\+L\+Y\+N\+O\+M\+I\+A\+L\+\_\+\+\_\+) $>$= 0x1\+U) \&\& ((\+\_\+\+\_\+\+P\+O\+L\+Y\+N\+O\+M\+I\+A\+L\+\_\+\+\_\+) $<$= 0x\+F\+F\+F\+F\+U) \&\& (((\+\_\+\+\_\+\+P\+O\+L\+Y\+N\+O\+M\+I\+A\+L\+\_\+\+\_\+)\&0x1\+U) != 0\+U))}
+
+
+
+Checks if S\+PI polynomial value to be used for the C\+RC calculation, is in allowed range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+P\+O\+L\+Y\+N\+O\+M\+I\+A\+L$<$/strong$>$} & specifies the S\+PI polynomial value to be used for the C\+RC calculation. This parameter must be a number between Min\+\_\+\+Data = 0 and Max\+\_\+\+Data = 65535 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___s_p_i___private___macros_gac04b1218a162772dca3854aa3a441856}\label{group___s_p_i___private___macros_gac04b1218a162772dca3854aa3a441856}} 
+\index{SPI Private Macros@{SPI Private Macros}!IS\_SPI\_DATASIZE@{IS\_SPI\_DATASIZE}}
+\index{IS\_SPI\_DATASIZE@{IS\_SPI\_DATASIZE}!SPI Private Macros@{SPI Private Macros}}
+\subsubsection{\texorpdfstring{IS\_SPI\_DATASIZE}{IS\_SPI\_DATASIZE}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+\+S\+P\+I\+\_\+\+D\+A\+T\+A\+S\+I\+ZE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+D\+A\+T\+A\+S\+I\+Z\+E\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(((\_\_DATASIZE\_\_) == SPI\_DATASIZE\_16BIT) || \(\backslash\)}
+\DoxyCodeLine{                                       ((\_\_DATASIZE\_\_) == SPI\_DATASIZE\_15BIT) || \(\backslash\)}
+\DoxyCodeLine{                                       ((\_\_DATASIZE\_\_) == SPI\_DATASIZE\_14BIT) || \(\backslash\)}
+\DoxyCodeLine{                                       ((\_\_DATASIZE\_\_) == SPI\_DATASIZE\_13BIT) || \(\backslash\)}
+\DoxyCodeLine{                                       ((\_\_DATASIZE\_\_) == SPI\_DATASIZE\_12BIT) || \(\backslash\)}
+\DoxyCodeLine{                                       ((\_\_DATASIZE\_\_) == SPI\_DATASIZE\_11BIT) || \(\backslash\)}
+\DoxyCodeLine{                                       ((\_\_DATASIZE\_\_) == SPI\_DATASIZE\_10BIT) || \(\backslash\)}
+\DoxyCodeLine{                                       ((\_\_DATASIZE\_\_) == SPI\_DATASIZE\_9BIT)  || \(\backslash\)}
+\DoxyCodeLine{                                       ((\_\_DATASIZE\_\_) == SPI\_DATASIZE\_8BIT)  || \(\backslash\)}
+\DoxyCodeLine{                                       ((\_\_DATASIZE\_\_) == SPI\_DATASIZE\_7BIT)  || \(\backslash\)}
+\DoxyCodeLine{                                       ((\_\_DATASIZE\_\_) == SPI\_DATASIZE\_6BIT)  || \(\backslash\)}
+\DoxyCodeLine{                                       ((\_\_DATASIZE\_\_) == SPI\_DATASIZE\_5BIT)  || \(\backslash\)}
+\DoxyCodeLine{                                       ((\_\_DATASIZE\_\_) == SPI\_DATASIZE\_4BIT))}
+
+\end{DoxyCode}
+
+
+Checks if S\+PI Data Size parameter is in allowed range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+D\+A\+T\+A\+S\+I\+Z\+E$<$/strong$>$} & specifies the S\+PI Data Size. This parameter can be a value of \mbox{\hyperlink{group___s_p_i___data___size}{S\+PI Data Size}} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___s_p_i___private___macros_ga6c66285d42fc3baf5ecaceadb54ee42a}\label{group___s_p_i___private___macros_ga6c66285d42fc3baf5ecaceadb54ee42a}} 
+\index{SPI Private Macros@{SPI Private Macros}!IS\_SPI\_DIRECTION@{IS\_SPI\_DIRECTION}}
+\index{IS\_SPI\_DIRECTION@{IS\_SPI\_DIRECTION}!SPI Private Macros@{SPI Private Macros}}
+\subsubsection{\texorpdfstring{IS\_SPI\_DIRECTION}{IS\_SPI\_DIRECTION}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+\+S\+P\+I\+\_\+\+D\+I\+R\+E\+C\+T\+I\+ON(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+M\+O\+D\+E\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(((\_\_MODE\_\_) == SPI\_DIRECTION\_2LINES)        || \(\backslash\)}
+\DoxyCodeLine{                                    ((\_\_MODE\_\_) == SPI\_DIRECTION\_2LINES\_RXONLY) || \(\backslash\)}
+\DoxyCodeLine{                                    ((\_\_MODE\_\_) == SPI\_DIRECTION\_1LINE))}
+
+\end{DoxyCode}
+
+
+Checks if S\+PI Direction Mode parameter is in allowed range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+M\+O\+D\+E$<$/strong$>$} & specifies the S\+PI Direction Mode. This parameter can be a value of \mbox{\hyperlink{group___s_p_i___direction}{S\+PI Direction Mode}} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___s_p_i___private___macros_gaff84471ab30ddd79cefd0c43dfe628c8}\label{group___s_p_i___private___macros_gaff84471ab30ddd79cefd0c43dfe628c8}} 
+\index{SPI Private Macros@{SPI Private Macros}!IS\_SPI\_DIRECTION\_2LINES@{IS\_SPI\_DIRECTION\_2LINES}}
+\index{IS\_SPI\_DIRECTION\_2LINES@{IS\_SPI\_DIRECTION\_2LINES}!SPI Private Macros@{SPI Private Macros}}
+\subsubsection{\texorpdfstring{IS\_SPI\_DIRECTION\_2LINES}{IS\_SPI\_DIRECTION\_2LINES}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+\+S\+P\+I\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+2\+L\+I\+N\+ES(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+M\+O\+D\+E\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+M\+O\+D\+E\+\_\+\+\_\+) == S\+P\+I\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+2\+L\+I\+N\+ES)}
+
+
+
+Checks if S\+PI Direction Mode parameter is 2 lines. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+M\+O\+D\+E$<$/strong$>$} & specifies the S\+PI Direction Mode. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___s_p_i___private___macros_ga525d9decc1251ec9037bd3c66c0e3a8c}\label{group___s_p_i___private___macros_ga525d9decc1251ec9037bd3c66c0e3a8c}} 
+\index{SPI Private Macros@{SPI Private Macros}!IS\_SPI\_DIRECTION\_2LINES\_OR\_1LINE@{IS\_SPI\_DIRECTION\_2LINES\_OR\_1LINE}}
+\index{IS\_SPI\_DIRECTION\_2LINES\_OR\_1LINE@{IS\_SPI\_DIRECTION\_2LINES\_OR\_1LINE}!SPI Private Macros@{SPI Private Macros}}
+\subsubsection{\texorpdfstring{IS\_SPI\_DIRECTION\_2LINES\_OR\_1LINE}{IS\_SPI\_DIRECTION\_2LINES\_OR\_1LINE}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+\+S\+P\+I\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+2\+L\+I\+N\+E\+S\+\_\+\+O\+R\+\_\+1\+L\+I\+NE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+M\+O\+D\+E\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(((\_\_MODE\_\_) == SPI\_DIRECTION\_2LINES) || \(\backslash\)}
+\DoxyCodeLine{                                                    ((\_\_MODE\_\_) == SPI\_DIRECTION\_1LINE))}
+
+\end{DoxyCode}
+
+
+Checks if S\+PI Direction Mode parameter is 1 or 2 lines. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+M\+O\+D\+E$<$/strong$>$} & specifies the S\+PI Direction Mode. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___s_p_i___private___macros_gae54950bcff11d9165b99957cf8746ae4}\label{group___s_p_i___private___macros_gae54950bcff11d9165b99957cf8746ae4}} 
+\index{SPI Private Macros@{SPI Private Macros}!IS\_SPI\_DMA\_HANDLE@{IS\_SPI\_DMA\_HANDLE}}
+\index{IS\_SPI\_DMA\_HANDLE@{IS\_SPI\_DMA\_HANDLE}!SPI Private Macros@{SPI Private Macros}}
+\subsubsection{\texorpdfstring{IS\_SPI\_DMA\_HANDLE}{IS\_SPI\_DMA\_HANDLE}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+\+S\+P\+I\+\_\+\+D\+M\+A\+\_\+\+H\+A\+N\+D\+LE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+) != N\+U\+LL)}
+
+
+
+Checks if D\+MA handle is valid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+H\+A\+N\+D\+L\+E$<$/strong$>$} & specifies a D\+MA Handle. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___s_p_i___private___macros_ga780c503aa8adae30dea1f034ac500d7f}\label{group___s_p_i___private___macros_ga780c503aa8adae30dea1f034ac500d7f}} 
+\index{SPI Private Macros@{SPI Private Macros}!IS\_SPI\_FIRST\_BIT@{IS\_SPI\_FIRST\_BIT}}
+\index{IS\_SPI\_FIRST\_BIT@{IS\_SPI\_FIRST\_BIT}!SPI Private Macros@{SPI Private Macros}}
+\subsubsection{\texorpdfstring{IS\_SPI\_FIRST\_BIT}{IS\_SPI\_FIRST\_BIT}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+\+S\+P\+I\+\_\+\+F\+I\+R\+S\+T\+\_\+\+B\+IT(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+B\+I\+T\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(((\_\_BIT\_\_) == SPI\_FIRSTBIT\_MSB) || \(\backslash\)}
+\DoxyCodeLine{                                   ((\_\_BIT\_\_) == SPI\_FIRSTBIT\_LSB))}
+
+\end{DoxyCode}
+
+
+Checks if S\+PI M\+SB L\+SB transmission parameter is in allowed range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+B\+I\+T$<$/strong$>$} & specifies the S\+PI M\+SB L\+SB transmission (whether data transfer starts from M\+SB or L\+SB bit). This parameter can be a value of \mbox{\hyperlink{group___s_p_i___m_s_b___l_s_b__transmission}{S\+PI M\+SB L\+SB Transmission}} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___s_p_i___private___macros_ga3dd95189a3729f12ca354b757519ca01}\label{group___s_p_i___private___macros_ga3dd95189a3729f12ca354b757519ca01}} 
+\index{SPI Private Macros@{SPI Private Macros}!IS\_SPI\_MODE@{IS\_SPI\_MODE}}
+\index{IS\_SPI\_MODE@{IS\_SPI\_MODE}!SPI Private Macros@{SPI Private Macros}}
+\subsubsection{\texorpdfstring{IS\_SPI\_MODE}{IS\_SPI\_MODE}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+\+S\+P\+I\+\_\+\+M\+O\+DE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+M\+O\+D\+E\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(((\_\_MODE\_\_) == SPI\_MODE\_SLAVE) || \(\backslash\)}
+\DoxyCodeLine{                               ((\_\_MODE\_\_) == SPI\_MODE\_MASTER))}
+
+\end{DoxyCode}
+
+
+Checks if S\+PI Mode parameter is in allowed range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+M\+O\+D\+E$<$/strong$>$} & specifies the S\+PI Mode. This parameter can be a value of \mbox{\hyperlink{group___s_p_i___mode}{S\+PI Mode}} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___s_p_i___private___macros_ga7e90530e595a47ab465e3e222014f5e3}\label{group___s_p_i___private___macros_ga7e90530e595a47ab465e3e222014f5e3}} 
+\index{SPI Private Macros@{SPI Private Macros}!IS\_SPI\_NSS@{IS\_SPI\_NSS}}
+\index{IS\_SPI\_NSS@{IS\_SPI\_NSS}!SPI Private Macros@{SPI Private Macros}}
+\subsubsection{\texorpdfstring{IS\_SPI\_NSS}{IS\_SPI\_NSS}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+\+S\+P\+I\+\_\+\+N\+SS(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+N\+S\+S\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(((\_\_NSS\_\_) == SPI\_NSS\_SOFT)       || \(\backslash\)}
+\DoxyCodeLine{                             ((\_\_NSS\_\_) == SPI\_NSS\_HARD\_INPUT) || \(\backslash\)}
+\DoxyCodeLine{                             ((\_\_NSS\_\_) == SPI\_NSS\_HARD\_OUTPUT))}
+
+\end{DoxyCode}
+
+
+Checks if S\+PI Slave Select parameter is in allowed range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+N\+S\+S$<$/strong$>$} & specifies the S\+PI Slave Select management parameter. This parameter can be a value of \mbox{\hyperlink{group___s_p_i___slave___select__management}{S\+PI Slave Select Management}} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___s_p_i___private___macros_ga59317f70e75953c1c2f7d1d67d173db1}\label{group___s_p_i___private___macros_ga59317f70e75953c1c2f7d1d67d173db1}} 
+\index{SPI Private Macros@{SPI Private Macros}!IS\_SPI\_NSSP@{IS\_SPI\_NSSP}}
+\index{IS\_SPI\_NSSP@{IS\_SPI\_NSSP}!SPI Private Macros@{SPI Private Macros}}
+\subsubsection{\texorpdfstring{IS\_SPI\_NSSP}{IS\_SPI\_NSSP}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+\+S\+P\+I\+\_\+\+N\+S\+SP(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+N\+S\+S\+P\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(((\_\_NSSP\_\_) == SPI\_NSS\_PULSE\_ENABLE) || \(\backslash\)}
+\DoxyCodeLine{                               ((\_\_NSSP\_\_) == SPI\_NSS\_PULSE\_DISABLE))}
+
+\end{DoxyCode}
+
+
+Checks if S\+PI N\+SS Pulse parameter is in allowed range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+N\+S\+S\+P$<$/strong$>$} & specifies the S\+PI N\+SS Pulse Mode parameter. This parameter can be a value of \mbox{\hyperlink{group___s_p_i___n_s_s_p___mode}{S\+PI N\+SS Pulse Mode}} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___s_p_i___private___macros_ga8e3c348af57cf973277018958fccfed9}\label{group___s_p_i___private___macros_ga8e3c348af57cf973277018958fccfed9}} 
+\index{SPI Private Macros@{SPI Private Macros}!IS\_SPI\_TIMODE@{IS\_SPI\_TIMODE}}
+\index{IS\_SPI\_TIMODE@{IS\_SPI\_TIMODE}!SPI Private Macros@{SPI Private Macros}}
+\subsubsection{\texorpdfstring{IS\_SPI\_TIMODE}{IS\_SPI\_TIMODE}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+\+S\+P\+I\+\_\+\+T\+I\+M\+O\+DE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+M\+O\+D\+E\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(((\_\_MODE\_\_) == SPI\_TIMODE\_DISABLE) || \(\backslash\)}
+\DoxyCodeLine{                                 ((\_\_MODE\_\_) == SPI\_TIMODE\_ENABLE))}
+
+\end{DoxyCode}
+
+
+Checks if S\+PI TI mode parameter is in allowed range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+M\+O\+D\+E$<$/strong$>$} & specifies the S\+PI TI mode. This parameter can be a value of \mbox{\hyperlink{group___s_p_i___t_i__mode}{S\+PI TI Mode}} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___s_p_i___private___macros_gaa8d58cef91c1874d5a4dde4014cf6269}\label{group___s_p_i___private___macros_gaa8d58cef91c1874d5a4dde4014cf6269}} 
+\index{SPI Private Macros@{SPI Private Macros}!SPI\_1LINE\_RX@{SPI\_1LINE\_RX}}
+\index{SPI\_1LINE\_RX@{SPI\_1LINE\_RX}!SPI Private Macros@{SPI Private Macros}}
+\subsubsection{\texorpdfstring{SPI\_1LINE\_RX}{SPI\_1LINE\_RX}}
+{\footnotesize\ttfamily \#define S\+P\+I\+\_\+1\+L\+I\+N\+E\+\_\+\+RX(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+ }\end{DoxyParamCaption})~C\+L\+E\+A\+R\+\_\+\+B\+IT((\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+)-\/$>$Instance-\/$>$C\+R1, \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga378953916b7701bd49f063c0366b703f}{S\+P\+I\+\_\+\+C\+R1\+\_\+\+B\+I\+D\+I\+OE}})}
+
+
+
+Set the S\+PI receive-\/only mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+H\+A\+N\+D\+L\+E$<$/strong$>$} & specifies the S\+PI Handle. This parameter can be S\+PI where x\+: 1, 2, or 3 to select the S\+PI peripheral. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___s_p_i___private___macros_gae3b2eb5e818e58b66474d42dedac5523}\label{group___s_p_i___private___macros_gae3b2eb5e818e58b66474d42dedac5523}} 
+\index{SPI Private Macros@{SPI Private Macros}!SPI\_1LINE\_TX@{SPI\_1LINE\_TX}}
+\index{SPI\_1LINE\_TX@{SPI\_1LINE\_TX}!SPI Private Macros@{SPI Private Macros}}
+\subsubsection{\texorpdfstring{SPI\_1LINE\_TX}{SPI\_1LINE\_TX}}
+{\footnotesize\ttfamily \#define S\+P\+I\+\_\+1\+L\+I\+N\+E\+\_\+\+TX(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+ }\end{DoxyParamCaption})~S\+E\+T\+\_\+\+B\+IT((\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+)-\/$>$Instance-\/$>$C\+R1, \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga378953916b7701bd49f063c0366b703f}{S\+P\+I\+\_\+\+C\+R1\+\_\+\+B\+I\+D\+I\+OE}})}
+
+
+
+Set the S\+PI transmit-\/only mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+H\+A\+N\+D\+L\+E$<$/strong$>$} & specifies the S\+PI Handle. This parameter can be S\+PI where x\+: 1, 2, or 3 to select the S\+PI peripheral. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___s_p_i___private___macros_gae9c6be610681f2142fb012de95e6e59d}\label{group___s_p_i___private___macros_gae9c6be610681f2142fb012de95e6e59d}} 
+\index{SPI Private Macros@{SPI Private Macros}!SPI\_CHECK\_FLAG@{SPI\_CHECK\_FLAG}}
+\index{SPI\_CHECK\_FLAG@{SPI\_CHECK\_FLAG}!SPI Private Macros@{SPI Private Macros}}
+\subsubsection{\texorpdfstring{SPI\_CHECK\_FLAG}{SPI\_CHECK\_FLAG}}
+{\footnotesize\ttfamily \#define S\+P\+I\+\_\+\+C\+H\+E\+C\+K\+\_\+\+F\+L\+AG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+S\+R\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+F\+L\+A\+G\+\_\+\+\_\+ }\end{DoxyParamCaption})~((((\+\_\+\+\_\+\+S\+R\+\_\+\+\_\+) \& ((\+\_\+\+\_\+\+F\+L\+A\+G\+\_\+\+\_\+) \& S\+P\+I\+\_\+\+F\+L\+A\+G\+\_\+\+M\+A\+SK)) == ((\+\_\+\+\_\+\+F\+L\+A\+G\+\_\+\+\_\+) \& S\+P\+I\+\_\+\+F\+L\+A\+G\+\_\+\+M\+A\+SK)) ? S\+ET \+: R\+E\+S\+ET)}
+
+
+
+Check whether the specified S\+PI flag is set or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+S\+R$<$/strong$>$} & copy of S\+PI SR regsiter. \\
+\hline
+{\em $<$strong$>$\+F\+L\+A\+G$<$/strong$>$} & specifies the flag to check. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item S\+P\+I\+\_\+\+F\+L\+A\+G\+\_\+\+R\+X\+NE\+: Receive buffer not empty flag \item S\+P\+I\+\_\+\+F\+L\+A\+G\+\_\+\+T\+XE\+: Transmit buffer empty flag \item S\+P\+I\+\_\+\+F\+L\+A\+G\+\_\+\+C\+R\+C\+E\+RR\+: C\+RC error flag \item S\+P\+I\+\_\+\+F\+L\+A\+G\+\_\+\+M\+O\+DF\+: Mode fault flag \item S\+P\+I\+\_\+\+F\+L\+A\+G\+\_\+\+O\+VR\+: Overrun flag \item S\+P\+I\+\_\+\+F\+L\+A\+G\+\_\+\+B\+SY\+: Busy flag \item S\+P\+I\+\_\+\+F\+L\+A\+G\+\_\+\+F\+RE\+: Frame format error flag \item S\+P\+I\+\_\+\+F\+L\+A\+G\+\_\+\+F\+T\+L\+VL\+: S\+PI fifo transmission level \item S\+P\+I\+\_\+\+F\+L\+A\+G\+\_\+\+F\+R\+L\+VL\+: S\+PI fifo reception level \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em S\+ET} & or R\+E\+S\+ET. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___s_p_i___private___macros_ga8ab087388d8930531498165ac8f066a2}\label{group___s_p_i___private___macros_ga8ab087388d8930531498165ac8f066a2}} 
+\index{SPI Private Macros@{SPI Private Macros}!SPI\_CHECK\_IT\_SOURCE@{SPI\_CHECK\_IT\_SOURCE}}
+\index{SPI\_CHECK\_IT\_SOURCE@{SPI\_CHECK\_IT\_SOURCE}!SPI Private Macros@{SPI Private Macros}}
+\subsubsection{\texorpdfstring{SPI\_CHECK\_IT\_SOURCE}{SPI\_CHECK\_IT\_SOURCE}}
+{\footnotesize\ttfamily \#define S\+P\+I\+\_\+\+C\+H\+E\+C\+K\+\_\+\+I\+T\+\_\+\+S\+O\+U\+R\+CE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+C\+R2\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+\_\+ }\end{DoxyParamCaption})~((((\+\_\+\+\_\+\+C\+R2\+\_\+\+\_\+) \& (\+\_\+\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+\_\+)) == (\+\_\+\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+\_\+)) ? S\+ET \+: R\+E\+S\+ET)}
+
+
+
+Check whether the specified S\+PI Interrupt is set or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+C\+R2$<$/strong$>$} & copy of S\+PI C\+R2 regsiter. \\
+\hline
+{\em $<$strong$>$\+I\+N\+T\+E\+R\+R\+U\+P\+T$<$/strong$>$} & specifies the S\+PI interrupt source to check. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item S\+P\+I\+\_\+\+I\+T\+\_\+\+T\+XE\+: Tx buffer empty interrupt enable \item S\+P\+I\+\_\+\+I\+T\+\_\+\+R\+X\+NE\+: RX buffer not empty interrupt enable \item S\+P\+I\+\_\+\+I\+T\+\_\+\+E\+RR\+: Error interrupt enable \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em S\+ET} & or R\+E\+S\+ET. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___s_p_i___private___macros_gab120a0085b72939e7d19c4f6b3381a99}\label{group___s_p_i___private___macros_gab120a0085b72939e7d19c4f6b3381a99}} 
+\index{SPI Private Macros@{SPI Private Macros}!SPI\_RESET\_CRC@{SPI\_RESET\_CRC}}
+\index{SPI\_RESET\_CRC@{SPI\_RESET\_CRC}!SPI Private Macros@{SPI Private Macros}}
+\subsubsection{\texorpdfstring{SPI\_RESET\_CRC}{SPI\_RESET\_CRC}}
+{\footnotesize\ttfamily \#define S\+P\+I\+\_\+\+R\+E\+S\+E\+T\+\_\+\+C\+RC(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{do}\{CLEAR\_BIT((\_\_HANDLE\_\_)->Instance->CR1, \mbox{\hyperlink{group___peripheral___registers___bits___definition_gac9339b7c6466f09ad26c26b3bb81c51b}{SPI\_CR1\_CRCEN}});\(\backslash\)}
+\DoxyCodeLine{                                       SET\_BIT((\_\_HANDLE\_\_)->Instance->CR1, \mbox{\hyperlink{group___peripheral___registers___bits___definition_gac9339b7c6466f09ad26c26b3bb81c51b}{SPI\_CR1\_CRCEN}});\}\textcolor{keywordflow}{while}(0U)}
+
+\end{DoxyCode}
+
+
+Reset the C\+RC calculation of the S\+PI. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+H\+A\+N\+D\+L\+E$<$/strong$>$} & specifies the S\+PI Handle. This parameter can be S\+PI where x\+: 1, 2, or 3 to select the S\+PI peripheral. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}

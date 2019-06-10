@@ -1,0 +1,67 @@
+\hypertarget{struct_r_c_c___clk_init_type_def}{}\section{R\+C\+C\+\_\+\+Clk\+Init\+Type\+Def Struct Reference}
+\label{struct_r_c_c___clk_init_type_def}\index{RCC\_ClkInitTypeDef@{RCC\_ClkInitTypeDef}}
+
+
+R\+CC System, A\+HB and A\+PB busses clock configuration structure definition.  
+
+
+
+
+{\ttfamily \#include $<$stm32f7xx\+\_\+hal\+\_\+rcc.\+h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_r_c_c___clk_init_type_def_a93a53676a1cfc5b55b8b990e7ff4dac5}{Clock\+Type}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_r_c_c___clk_init_type_def_a4ceff1fdbf423e347c63052ca2c1d7e1}{S\+Y\+S\+C\+L\+K\+Source}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_r_c_c___clk_init_type_def_abd9bcaa8dcf4b816462ee2930ab3e993}{A\+H\+B\+C\+L\+K\+Divider}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_r_c_c___clk_init_type_def_a21ceb024102adc3c4dc7eb270cf02ebd}{A\+P\+B1\+C\+L\+K\+Divider}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_r_c_c___clk_init_type_def_aa75c110cd93855d49249f38da8cf94f7}{A\+P\+B2\+C\+L\+K\+Divider}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+R\+CC System, A\+HB and A\+PB busses clock configuration structure definition. 
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_r_c_c___clk_init_type_def_abd9bcaa8dcf4b816462ee2930ab3e993}\label{struct_r_c_c___clk_init_type_def_abd9bcaa8dcf4b816462ee2930ab3e993}} 
+\index{RCC\_ClkInitTypeDef@{RCC\_ClkInitTypeDef}!AHBCLKDivider@{AHBCLKDivider}}
+\index{AHBCLKDivider@{AHBCLKDivider}!RCC\_ClkInitTypeDef@{RCC\_ClkInitTypeDef}}
+\subsubsection{\texorpdfstring{AHBCLKDivider}{AHBCLKDivider}}
+{\footnotesize\ttfamily uint32\+\_\+t R\+C\+C\+\_\+\+Clk\+Init\+Type\+Def\+::\+A\+H\+B\+C\+L\+K\+Divider}
+
+The A\+HB clock (H\+C\+LK) divider. This clock is derived from the system clock (S\+Y\+S\+C\+LK). This parameter can be a value of \mbox{\hyperlink{group___r_c_c___a_h_b___clock___source}{R\+CC A\+HB Clock Source}} \mbox{\Hypertarget{struct_r_c_c___clk_init_type_def_a21ceb024102adc3c4dc7eb270cf02ebd}\label{struct_r_c_c___clk_init_type_def_a21ceb024102adc3c4dc7eb270cf02ebd}} 
+\index{RCC\_ClkInitTypeDef@{RCC\_ClkInitTypeDef}!APB1CLKDivider@{APB1CLKDivider}}
+\index{APB1CLKDivider@{APB1CLKDivider}!RCC\_ClkInitTypeDef@{RCC\_ClkInitTypeDef}}
+\subsubsection{\texorpdfstring{APB1CLKDivider}{APB1CLKDivider}}
+{\footnotesize\ttfamily uint32\+\_\+t R\+C\+C\+\_\+\+Clk\+Init\+Type\+Def\+::\+A\+P\+B1\+C\+L\+K\+Divider}
+
+The A\+P\+B1 clock (P\+C\+L\+K1) divider. This clock is derived from the A\+HB clock (H\+C\+LK). This parameter can be a value of \mbox{\hyperlink{group___r_c_c___a_p_b1___a_p_b2___clock___source}{R\+CC A\+P\+B1/\+A\+P\+B2 Clock Source}} \mbox{\Hypertarget{struct_r_c_c___clk_init_type_def_aa75c110cd93855d49249f38da8cf94f7}\label{struct_r_c_c___clk_init_type_def_aa75c110cd93855d49249f38da8cf94f7}} 
+\index{RCC\_ClkInitTypeDef@{RCC\_ClkInitTypeDef}!APB2CLKDivider@{APB2CLKDivider}}
+\index{APB2CLKDivider@{APB2CLKDivider}!RCC\_ClkInitTypeDef@{RCC\_ClkInitTypeDef}}
+\subsubsection{\texorpdfstring{APB2CLKDivider}{APB2CLKDivider}}
+{\footnotesize\ttfamily uint32\+\_\+t R\+C\+C\+\_\+\+Clk\+Init\+Type\+Def\+::\+A\+P\+B2\+C\+L\+K\+Divider}
+
+The A\+P\+B2 clock (P\+C\+L\+K2) divider. This clock is derived from the A\+HB clock (H\+C\+LK). This parameter can be a value of \mbox{\hyperlink{group___r_c_c___a_p_b1___a_p_b2___clock___source}{R\+CC A\+P\+B1/\+A\+P\+B2 Clock Source}} \mbox{\Hypertarget{struct_r_c_c___clk_init_type_def_a93a53676a1cfc5b55b8b990e7ff4dac5}\label{struct_r_c_c___clk_init_type_def_a93a53676a1cfc5b55b8b990e7ff4dac5}} 
+\index{RCC\_ClkInitTypeDef@{RCC\_ClkInitTypeDef}!ClockType@{ClockType}}
+\index{ClockType@{ClockType}!RCC\_ClkInitTypeDef@{RCC\_ClkInitTypeDef}}
+\subsubsection{\texorpdfstring{ClockType}{ClockType}}
+{\footnotesize\ttfamily uint32\+\_\+t R\+C\+C\+\_\+\+Clk\+Init\+Type\+Def\+::\+Clock\+Type}
+
+The clock to be configured. This parameter can be a value of \mbox{\hyperlink{group___r_c_c___system___clock___type}{R\+CC System Clock Type}} \mbox{\Hypertarget{struct_r_c_c___clk_init_type_def_a4ceff1fdbf423e347c63052ca2c1d7e1}\label{struct_r_c_c___clk_init_type_def_a4ceff1fdbf423e347c63052ca2c1d7e1}} 
+\index{RCC\_ClkInitTypeDef@{RCC\_ClkInitTypeDef}!SYSCLKSource@{SYSCLKSource}}
+\index{SYSCLKSource@{SYSCLKSource}!RCC\_ClkInitTypeDef@{RCC\_ClkInitTypeDef}}
+\subsubsection{\texorpdfstring{SYSCLKSource}{SYSCLKSource}}
+{\footnotesize\ttfamily uint32\+\_\+t R\+C\+C\+\_\+\+Clk\+Init\+Type\+Def\+::\+S\+Y\+S\+C\+L\+K\+Source}
+
+The clock source (S\+Y\+S\+C\+L\+KS) used as system clock. This parameter can be a value of \mbox{\hyperlink{group___r_c_c___system___clock___source}{R\+CC System Clock Source}} 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Drivers/\+S\+T\+M32\+F7xx\+\_\+\+H\+A\+L\+\_\+\+Driver/\+Inc/\mbox{\hyperlink{stm32f7xx__hal__rcc_8h}{stm32f7xx\+\_\+hal\+\_\+rcc.\+h}}\end{DoxyCompactItemize}

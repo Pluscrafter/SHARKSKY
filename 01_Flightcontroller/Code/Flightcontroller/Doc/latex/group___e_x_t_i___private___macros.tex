@@ -1,0 +1,38 @@
+\hypertarget{group___e_x_t_i___private___macros}{}\section{E\+X\+TI Private Macros}
+\label{group___e_x_t_i___private___macros}\index{EXTI Private Macros@{EXTI Private Macros}}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___e_x_t_i___private___macros_gab9eb047b8a317ec5f38c9bfcca65744c}\label{group___e_x_t_i___private___macros_gab9eb047b8a317ec5f38c9bfcca65744c}} 
+\#define {\bfseries I\+S\+\_\+\+E\+X\+T\+I\+\_\+\+L\+I\+NE}(\+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+)~((((\+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+) \& $\sim$\mbox{\hyperlink{group___peripheral___registers___bits___definition_gae4f23236f2d0bb9ed886556064714c50}{E\+X\+T\+I\+\_\+\+I\+M\+R\+\_\+\+IM}}) == 0x00\+U) \&\& (\+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+))
+\item 
+\mbox{\Hypertarget{group___e_x_t_i___private___macros_gaa8a0977af667f831424dcd75ecb6709b}\label{group___e_x_t_i___private___macros_gaa8a0977af667f831424dcd75ecb6709b}} 
+\#define {\bfseries I\+S\+\_\+\+E\+X\+T\+I\+\_\+\+M\+O\+DE}(\+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+)~((((\+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+) \& $\sim$\mbox{\hyperlink{group___e_x_t_i___private___constants_ga657f081646b552ee10bdfc7af94b5cdf}{E\+X\+T\+I\+\_\+\+M\+O\+D\+E\+\_\+\+M\+A\+SK}}) == 0x00\+U))
+\item 
+\mbox{\Hypertarget{group___e_x_t_i___private___macros_ga0a4ff8a2705f40043db7c3e5d7cf0059}\label{group___e_x_t_i___private___macros_ga0a4ff8a2705f40043db7c3e5d7cf0059}} 
+\#define {\bfseries I\+S\+\_\+\+E\+X\+T\+I\+\_\+\+T\+R\+I\+G\+G\+ER}(\+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+)  \& $\sim$\mbox{\hyperlink{group___e_x_t_i___private___constants_ga3e14df666414849fd5a3907a96a2a892}{E\+X\+T\+I\+\_\+\+T\+R\+I\+G\+G\+E\+R\+\_\+\+M\+A\+SK}}) == 0x00\+U)
+\item 
+\#define {\bfseries I\+S\+\_\+\+E\+X\+T\+I\+\_\+\+P\+E\+N\+D\+I\+N\+G\+\_\+\+E\+D\+GE}(\+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+)
+\item 
+\mbox{\Hypertarget{group___e_x_t_i___private___macros_ga82f191b2ea96948f302dc6c2108ea534}\label{group___e_x_t_i___private___macros_ga82f191b2ea96948f302dc6c2108ea534}} 
+\#define {\bfseries I\+S\+\_\+\+E\+X\+T\+I\+\_\+\+G\+P\+I\+O\+\_\+\+P\+IN}(\+\_\+\+\_\+\+P\+I\+N\+\_\+\+\_\+)~((\+\_\+\+\_\+\+P\+I\+N\+\_\+\+\_\+) $<$ 16\+U)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___e_x_t_i___private___macros_ga11d59f58f3608c79dc729205e6421e93}\label{group___e_x_t_i___private___macros_ga11d59f58f3608c79dc729205e6421e93}} 
+\index{EXTI Private Macros@{EXTI Private Macros}!IS\_EXTI\_PENDING\_EDGE@{IS\_EXTI\_PENDING\_EDGE}}
+\index{IS\_EXTI\_PENDING\_EDGE@{IS\_EXTI\_PENDING\_EDGE}!EXTI Private Macros@{EXTI Private Macros}}
+\subsubsection{\texorpdfstring{IS\_EXTI\_PENDING\_EDGE}{IS\_EXTI\_PENDING\_EDGE}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+\+E\+X\+T\+I\+\_\+\+P\+E\+N\+D\+I\+N\+G\+\_\+\+E\+D\+GE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(((\_\_LINE\_\_) == EXTI\_TRIGGER\_FALLING) || \(\backslash\)}
+\DoxyCodeLine{                                         ((\_\_LINE\_\_) == EXTI\_TRIGGER\_RISING)  || \(\backslash\)}
+\DoxyCodeLine{                                         ((\_\_LINE\_\_) == EXTI\_TRIGGER\_RISING\_FALLING))}
+
+\end{DoxyCode}

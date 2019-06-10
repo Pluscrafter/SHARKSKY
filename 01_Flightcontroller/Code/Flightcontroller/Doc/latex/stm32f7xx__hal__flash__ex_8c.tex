@@ -1,0 +1,56 @@
+\hypertarget{stm32f7xx__hal__flash__ex_8c}{}\section{Drivers/\+S\+T\+M32\+F7xx\+\_\+\+H\+A\+L\+\_\+\+Driver/\+Src/stm32f7xx\+\_\+hal\+\_\+flash\+\_\+ex.c File Reference}
+\label{stm32f7xx__hal__flash__ex_8c}\index{Drivers/STM32F7xx\_HAL\_Driver/Src/stm32f7xx\_hal\_flash\_ex.c@{Drivers/STM32F7xx\_HAL\_Driver/Src/stm32f7xx\_hal\_flash\_ex.c}}
+
+
+Extended F\+L\+A\+SH H\+AL module driver. This file provides firmware functions to manage the following functionalities of the F\+L\+A\+SH extension peripheral\+:  
+
+
+{\ttfamily \#include \char`\"{}stm32f7xx\+\_\+hal.\+h\char`\"{}}\newline
+
+
+\subsection{Detailed Description}
+Extended F\+L\+A\+SH H\+AL module driver. This file provides firmware functions to manage the following functionalities of the F\+L\+A\+SH extension peripheral\+: 
+
+\begin{DoxyAuthor}{Author}
+M\+CD Application Team
+\begin{DoxyItemize}
+\item Extended programming operations functions
+\end{DoxyItemize}
+\end{DoxyAuthor}
+\begin{DoxyVerb}==============================================================================
+                 ##### Flash Extension features #####
+==============================================================================
+         
+[..] Comparing to other previous devices, the FLASH interface for STM32F76xx/STM32F77xx 
+     devices contains the following additional features 
+     
+     (+) Capacity up to 2 Mbyte with dual bank architecture supporting read-while-write
+         capability (RWW)
+     (+) Dual bank memory organization       
+     (+) Dual boot mode
+ 
+                    ##### How to use this driver #####
+==============================================================================
+[..] This driver provides functions to configure and program the FLASH memory 
+     of all STM32F7xx devices. It includes
+    (#) FLASH Memory Erase functions: 
+         (++) Lock and Unlock the FLASH interface using HAL_FLASH_Unlock() and 
+              HAL_FLASH_Lock() functions
+         (++) Erase function: Erase sector, erase all sectors
+         (++) There are two modes of erase :
+           (+++) Polling Mode using HAL_FLASHEx_Erase()
+           (+++) Interrupt Mode using HAL_FLASHEx_Erase_IT()
+           
+    (#) Option Bytes Programming functions: Use HAL_FLASHEx_OBProgram() to :
+         (++) Set/Reset the write protection
+         (++) Set the Read protection Level
+         (++) Set the BOR level
+         (++) Program the user Option Bytes\end{DoxyVerb}
+
+
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\subsubsection*{\begin{center}\copyright{} Copyright (c) 2017 S\+T\+Microelectronics. All rights reserved.\end{center} }
+
+This software component is licensed by ST under B\+SD 3-\/Clause license, the \char`\"{}\+License\char`\"{}; You may not use this file except in compliance with the License. You may obtain a copy of the License at\+: opensource.\+org/licenses/\+B\+S\+D-\/3-\/\+Clause 

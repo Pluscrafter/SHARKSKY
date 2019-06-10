@@ -1,0 +1,89 @@
+\hypertarget{struct_u_s_b___o_t_g___i_n_endpoint_type_def}{}\section{U\+S\+B\+\_\+\+O\+T\+G\+\_\+\+I\+N\+Endpoint\+Type\+Def Struct Reference}
+\label{struct_u_s_b___o_t_g___i_n_endpoint_type_def}\index{USB\_OTG\_INEndpointTypeDef@{USB\_OTG\_INEndpointTypeDef}}
+
+
+U\+S\+B\+\_\+\+O\+T\+G\+\_\+\+I\+N\+\_\+\+Endpoint-\/\+Specific\+\_\+\+Register.  
+
+
+
+
+{\ttfamily \#include $<$stm32f722xx.\+h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{core__sc300_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} uint32\+\_\+t \mbox{\hyperlink{struct_u_s_b___o_t_g___i_n_endpoint_type_def_a7ae9a62fb2acdc8981930ceb8ba5f100}{D\+I\+E\+P\+C\+TL}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_u_s_b___o_t_g___i_n_endpoint_type_def_ab40b947e437eea142bb6682282b073d6}{Reserved04}}
+\item 
+\mbox{\hyperlink{core__sc300_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} uint32\+\_\+t \mbox{\hyperlink{struct_u_s_b___o_t_g___i_n_endpoint_type_def_af66b4da67fb3732d6fd4f98dd0e9f824}{D\+I\+E\+P\+I\+NT}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_u_s_b___o_t_g___i_n_endpoint_type_def_a30c3ab77aa3174965375dfe1a01bdddb}{Reserved0C}}
+\item 
+\mbox{\hyperlink{core__sc300_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} uint32\+\_\+t \mbox{\hyperlink{struct_u_s_b___o_t_g___i_n_endpoint_type_def_aeda9700dcd52e252d7809cabed971bab}{D\+I\+E\+P\+T\+S\+IZ}}
+\item 
+\mbox{\hyperlink{core__sc300_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} uint32\+\_\+t \mbox{\hyperlink{struct_u_s_b___o_t_g___i_n_endpoint_type_def_a8a7731263a0403b02e369ca387dce8e0}{D\+I\+E\+P\+D\+MA}}
+\item 
+\mbox{\hyperlink{core__sc300_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} uint32\+\_\+t \mbox{\hyperlink{struct_u_s_b___o_t_g___i_n_endpoint_type_def_a2343fef0358d8713918d26eb93f1fa8b}{D\+T\+X\+F\+S\+TS}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_u_s_b___o_t_g___i_n_endpoint_type_def_a525d6997cba563967fd7ea22898ed4f6}{Reserved18}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+U\+S\+B\+\_\+\+O\+T\+G\+\_\+\+I\+N\+\_\+\+Endpoint-\/\+Specific\+\_\+\+Register. 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_u_s_b___o_t_g___i_n_endpoint_type_def_a7ae9a62fb2acdc8981930ceb8ba5f100}\label{struct_u_s_b___o_t_g___i_n_endpoint_type_def_a7ae9a62fb2acdc8981930ceb8ba5f100}} 
+\index{USB\_OTG\_INEndpointTypeDef@{USB\_OTG\_INEndpointTypeDef}!DIEPCTL@{DIEPCTL}}
+\index{DIEPCTL@{DIEPCTL}!USB\_OTG\_INEndpointTypeDef@{USB\_OTG\_INEndpointTypeDef}}
+\subsubsection{\texorpdfstring{DIEPCTL}{DIEPCTL}}
+{\footnotesize\ttfamily \mbox{\hyperlink{core__sc300_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} uint32\+\_\+t U\+S\+B\+\_\+\+O\+T\+G\+\_\+\+I\+N\+Endpoint\+Type\+Def\+::\+D\+I\+E\+P\+C\+TL}
+
+dev IN Endpoint Control Reg 900h + (ep\+\_\+num $\ast$ 20h) + 00h \mbox{\Hypertarget{struct_u_s_b___o_t_g___i_n_endpoint_type_def_a8a7731263a0403b02e369ca387dce8e0}\label{struct_u_s_b___o_t_g___i_n_endpoint_type_def_a8a7731263a0403b02e369ca387dce8e0}} 
+\index{USB\_OTG\_INEndpointTypeDef@{USB\_OTG\_INEndpointTypeDef}!DIEPDMA@{DIEPDMA}}
+\index{DIEPDMA@{DIEPDMA}!USB\_OTG\_INEndpointTypeDef@{USB\_OTG\_INEndpointTypeDef}}
+\subsubsection{\texorpdfstring{DIEPDMA}{DIEPDMA}}
+{\footnotesize\ttfamily \mbox{\hyperlink{core__sc300_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} uint32\+\_\+t U\+S\+B\+\_\+\+O\+T\+G\+\_\+\+I\+N\+Endpoint\+Type\+Def\+::\+D\+I\+E\+P\+D\+MA}
+
+IN Endpoint D\+MA Address Reg 900h + (ep\+\_\+num $\ast$ 20h) + 14h \mbox{\Hypertarget{struct_u_s_b___o_t_g___i_n_endpoint_type_def_af66b4da67fb3732d6fd4f98dd0e9f824}\label{struct_u_s_b___o_t_g___i_n_endpoint_type_def_af66b4da67fb3732d6fd4f98dd0e9f824}} 
+\index{USB\_OTG\_INEndpointTypeDef@{USB\_OTG\_INEndpointTypeDef}!DIEPINT@{DIEPINT}}
+\index{DIEPINT@{DIEPINT}!USB\_OTG\_INEndpointTypeDef@{USB\_OTG\_INEndpointTypeDef}}
+\subsubsection{\texorpdfstring{DIEPINT}{DIEPINT}}
+{\footnotesize\ttfamily \mbox{\hyperlink{core__sc300_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} uint32\+\_\+t U\+S\+B\+\_\+\+O\+T\+G\+\_\+\+I\+N\+Endpoint\+Type\+Def\+::\+D\+I\+E\+P\+I\+NT}
+
+dev IN Endpoint Itr Reg 900h + (ep\+\_\+num $\ast$ 20h) + 08h \mbox{\Hypertarget{struct_u_s_b___o_t_g___i_n_endpoint_type_def_aeda9700dcd52e252d7809cabed971bab}\label{struct_u_s_b___o_t_g___i_n_endpoint_type_def_aeda9700dcd52e252d7809cabed971bab}} 
+\index{USB\_OTG\_INEndpointTypeDef@{USB\_OTG\_INEndpointTypeDef}!DIEPTSIZ@{DIEPTSIZ}}
+\index{DIEPTSIZ@{DIEPTSIZ}!USB\_OTG\_INEndpointTypeDef@{USB\_OTG\_INEndpointTypeDef}}
+\subsubsection{\texorpdfstring{DIEPTSIZ}{DIEPTSIZ}}
+{\footnotesize\ttfamily \mbox{\hyperlink{core__sc300_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} uint32\+\_\+t U\+S\+B\+\_\+\+O\+T\+G\+\_\+\+I\+N\+Endpoint\+Type\+Def\+::\+D\+I\+E\+P\+T\+S\+IZ}
+
+IN Endpoint Txfer Size 900h + (ep\+\_\+num $\ast$ 20h) + 10h \mbox{\Hypertarget{struct_u_s_b___o_t_g___i_n_endpoint_type_def_a2343fef0358d8713918d26eb93f1fa8b}\label{struct_u_s_b___o_t_g___i_n_endpoint_type_def_a2343fef0358d8713918d26eb93f1fa8b}} 
+\index{USB\_OTG\_INEndpointTypeDef@{USB\_OTG\_INEndpointTypeDef}!DTXFSTS@{DTXFSTS}}
+\index{DTXFSTS@{DTXFSTS}!USB\_OTG\_INEndpointTypeDef@{USB\_OTG\_INEndpointTypeDef}}
+\subsubsection{\texorpdfstring{DTXFSTS}{DTXFSTS}}
+{\footnotesize\ttfamily \mbox{\hyperlink{core__sc300_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} uint32\+\_\+t U\+S\+B\+\_\+\+O\+T\+G\+\_\+\+I\+N\+Endpoint\+Type\+Def\+::\+D\+T\+X\+F\+S\+TS}
+
+IN Endpoint Tx F\+I\+FO Status Reg 900h + (ep\+\_\+num $\ast$ 20h) + 18h \mbox{\Hypertarget{struct_u_s_b___o_t_g___i_n_endpoint_type_def_ab40b947e437eea142bb6682282b073d6}\label{struct_u_s_b___o_t_g___i_n_endpoint_type_def_ab40b947e437eea142bb6682282b073d6}} 
+\index{USB\_OTG\_INEndpointTypeDef@{USB\_OTG\_INEndpointTypeDef}!Reserved04@{Reserved04}}
+\index{Reserved04@{Reserved04}!USB\_OTG\_INEndpointTypeDef@{USB\_OTG\_INEndpointTypeDef}}
+\subsubsection{\texorpdfstring{Reserved04}{Reserved04}}
+{\footnotesize\ttfamily uint32\+\_\+t U\+S\+B\+\_\+\+O\+T\+G\+\_\+\+I\+N\+Endpoint\+Type\+Def\+::\+Reserved04}
+
+Reserved 900h + (ep\+\_\+num $\ast$ 20h) + 04h \mbox{\Hypertarget{struct_u_s_b___o_t_g___i_n_endpoint_type_def_a30c3ab77aa3174965375dfe1a01bdddb}\label{struct_u_s_b___o_t_g___i_n_endpoint_type_def_a30c3ab77aa3174965375dfe1a01bdddb}} 
+\index{USB\_OTG\_INEndpointTypeDef@{USB\_OTG\_INEndpointTypeDef}!Reserved0C@{Reserved0C}}
+\index{Reserved0C@{Reserved0C}!USB\_OTG\_INEndpointTypeDef@{USB\_OTG\_INEndpointTypeDef}}
+\subsubsection{\texorpdfstring{Reserved0C}{Reserved0C}}
+{\footnotesize\ttfamily uint32\+\_\+t U\+S\+B\+\_\+\+O\+T\+G\+\_\+\+I\+N\+Endpoint\+Type\+Def\+::\+Reserved0C}
+
+Reserved 900h + (ep\+\_\+num $\ast$ 20h) + 0Ch \mbox{\Hypertarget{struct_u_s_b___o_t_g___i_n_endpoint_type_def_a525d6997cba563967fd7ea22898ed4f6}\label{struct_u_s_b___o_t_g___i_n_endpoint_type_def_a525d6997cba563967fd7ea22898ed4f6}} 
+\index{USB\_OTG\_INEndpointTypeDef@{USB\_OTG\_INEndpointTypeDef}!Reserved18@{Reserved18}}
+\index{Reserved18@{Reserved18}!USB\_OTG\_INEndpointTypeDef@{USB\_OTG\_INEndpointTypeDef}}
+\subsubsection{\texorpdfstring{Reserved18}{Reserved18}}
+{\footnotesize\ttfamily uint32\+\_\+t U\+S\+B\+\_\+\+O\+T\+G\+\_\+\+I\+N\+Endpoint\+Type\+Def\+::\+Reserved18}
+
+Reserved 900h+(ep\+\_\+num$\ast$20h)+1Ch-\/900h+ (ep\+\_\+num $\ast$ 20h) + 1Ch 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Drivers/\+C\+M\+S\+I\+S/\+Device/\+S\+T/\+S\+T\+M32\+F7xx/\+Include/\mbox{\hyperlink{stm32f722xx_8h}{stm32f722xx.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,298 @@
+\hypertarget{group___s_p_i___exported___macros}{}\section{S\+PI Exported Macros}
+\label{group___s_p_i___exported___macros}\index{SPI Exported Macros@{SPI Exported Macros}}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___exported___macros_ga0d846f9517715960873e854b4a0790b0}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+S\+P\+I\+\_\+\+R\+E\+S\+E\+T\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+S\+T\+A\+TE}}(\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+)~((\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+)-\/$>$State = \mbox{\hyperlink{group___s_p_i___exported___types_gga8891cb64e76198a860172d94c638c9b4adbc218df2c9841b561282b40b3ded69d}{H\+A\+L\+\_\+\+S\+P\+I\+\_\+\+S\+T\+A\+T\+E\+\_\+\+R\+E\+S\+ET}})
+\begin{DoxyCompactList}\small\item\em Reset S\+PI handle state. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___exported___macros_ga76064652f6f56d8868720b5541e854f5}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+S\+P\+I\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+IT}}(\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+,  \+\_\+\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+\_\+)~S\+E\+T\+\_\+\+B\+IT((\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+)-\/$>$Instance-\/$>$C\+R2, (\+\_\+\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Enable the specified S\+PI interrupts. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___exported___macros_ga47fa7321c5755bfbff1a7229fbe5b21c}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+S\+P\+I\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+IT}}(\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+,  \+\_\+\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+\_\+)~C\+L\+E\+A\+R\+\_\+\+B\+IT((\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+)-\/$>$Instance-\/$>$C\+R2, (\+\_\+\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Disable the specified S\+PI interrupts. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___exported___macros_gabdaab061e4603331a0ec4b9d651df0b5}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+S\+P\+I\+\_\+\+G\+E\+T\+\_\+\+I\+T\+\_\+\+S\+O\+U\+R\+CE}}(\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+,  \+\_\+\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+\_\+)~((((\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+)-\/$>$Instance-\/$>$C\+R2 \& (\+\_\+\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+\_\+)) == (\+\_\+\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+\_\+)) ? S\+ET \+: R\+E\+S\+ET)
+\begin{DoxyCompactList}\small\item\em Check whether the specified S\+PI interrupt source is enabled or not. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___exported___macros_gaa0bbe5fb55f93fd277ddb6acf58cec53}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+S\+P\+I\+\_\+\+G\+E\+T\+\_\+\+F\+L\+AG}}(\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+,  \+\_\+\+\_\+\+F\+L\+A\+G\+\_\+\+\_\+)~((((\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+)-\/$>$Instance-\/$>$SR) \& (\+\_\+\+\_\+\+F\+L\+A\+G\+\_\+\+\_\+)) == (\+\_\+\+\_\+\+F\+L\+A\+G\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Check whether the specified S\+PI flag is set or not. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___exported___macros_gad1cb4100b67726531ad426d300f4cd26}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+S\+P\+I\+\_\+\+C\+L\+E\+A\+R\+\_\+\+C\+R\+C\+E\+R\+R\+F\+L\+AG}}(\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+)~((\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+)-\/$>$Instance-\/$>$SR = (uint16\+\_\+t)($\sim$S\+P\+I\+\_\+\+F\+L\+A\+G\+\_\+\+C\+R\+C\+E\+RR))
+\begin{DoxyCompactList}\small\item\em Clear the S\+PI C\+R\+C\+E\+RR pending flag. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___exported___macros_ga6c88becbe528c542156bc201622efba2}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+S\+P\+I\+\_\+\+C\+L\+E\+A\+R\+\_\+\+M\+O\+D\+F\+F\+L\+AG}}(\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Clear the S\+PI M\+O\+DF pending flag. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___exported___macros_gaf6af33b1c5d334b9fe7bb778c5b6442e}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+S\+P\+I\+\_\+\+C\+L\+E\+A\+R\+\_\+\+O\+V\+R\+F\+L\+AG}}(\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Clear the S\+PI O\+VR pending flag. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___exported___macros_ga7ff182f5cf6c731318c882351d6d7ac2}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+S\+P\+I\+\_\+\+C\+L\+E\+A\+R\+\_\+\+F\+R\+E\+F\+L\+AG}}(\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Clear the S\+PI F\+RE pending flag. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___exported___macros_ga16d2d73c2b16004499ae8d492e71fd4e}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+S\+P\+I\+\_\+\+E\+N\+A\+B\+LE}}(\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+)~S\+E\+T\+\_\+\+B\+IT((\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+)-\/$>$Instance-\/$>$C\+R1, \mbox{\hyperlink{group___peripheral___registers___bits___definition_gac5a646d978d3b98eb7c6a5d95d75c3f9}{S\+P\+I\+\_\+\+C\+R1\+\_\+\+S\+PE}})
+\begin{DoxyCompactList}\small\item\em Enable the S\+PI peripheral. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___exported___macros_gaa10d88f87d16de53bd81dfb33bd56959}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+S\+P\+I\+\_\+\+D\+I\+S\+A\+B\+LE}}(\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+)~C\+L\+E\+A\+R\+\_\+\+B\+IT((\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+)-\/$>$Instance-\/$>$C\+R1, \mbox{\hyperlink{group___peripheral___registers___bits___definition_gac5a646d978d3b98eb7c6a5d95d75c3f9}{S\+P\+I\+\_\+\+C\+R1\+\_\+\+S\+PE}})
+\begin{DoxyCompactList}\small\item\em Disable the S\+PI peripheral. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___s_p_i___exported___macros_gad1cb4100b67726531ad426d300f4cd26}\label{group___s_p_i___exported___macros_gad1cb4100b67726531ad426d300f4cd26}} 
+\index{SPI Exported Macros@{SPI Exported Macros}!\_\_HAL\_SPI\_CLEAR\_CRCERRFLAG@{\_\_HAL\_SPI\_CLEAR\_CRCERRFLAG}}
+\index{\_\_HAL\_SPI\_CLEAR\_CRCERRFLAG@{\_\_HAL\_SPI\_CLEAR\_CRCERRFLAG}!SPI Exported Macros@{SPI Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_SPI\_CLEAR\_CRCERRFLAG}{\_\_HAL\_SPI\_CLEAR\_CRCERRFLAG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+S\+P\+I\+\_\+\+C\+L\+E\+A\+R\+\_\+\+C\+R\+C\+E\+R\+R\+F\+L\+AG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+)-\/$>$Instance-\/$>$SR = (uint16\+\_\+t)($\sim$S\+P\+I\+\_\+\+F\+L\+A\+G\+\_\+\+C\+R\+C\+E\+RR))}
+
+
+
+Clear the S\+PI C\+R\+C\+E\+RR pending flag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+H\+A\+N\+D\+L\+E$<$/strong$>$} & specifies the S\+PI Handle. This parameter can be S\+PI where x\+: 1, 2, or 3 to select the S\+PI peripheral. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___s_p_i___exported___macros_ga7ff182f5cf6c731318c882351d6d7ac2}\label{group___s_p_i___exported___macros_ga7ff182f5cf6c731318c882351d6d7ac2}} 
+\index{SPI Exported Macros@{SPI Exported Macros}!\_\_HAL\_SPI\_CLEAR\_FREFLAG@{\_\_HAL\_SPI\_CLEAR\_FREFLAG}}
+\index{\_\_HAL\_SPI\_CLEAR\_FREFLAG@{\_\_HAL\_SPI\_CLEAR\_FREFLAG}!SPI Exported Macros@{SPI Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_SPI\_CLEAR\_FREFLAG}{\_\_HAL\_SPI\_CLEAR\_FREFLAG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+S\+P\+I\+\_\+\+C\+L\+E\+A\+R\+\_\+\+F\+R\+E\+F\+L\+AG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{do}\{                                              \(\backslash\)}
+\DoxyCodeLine{  \_\_IO uint32\_t tmpreg\_fre = 0x00U;                \(\backslash\)}
+\DoxyCodeLine{  tmpreg\_fre = (\_\_HANDLE\_\_)->Instance->SR;         \(\backslash\)}
+\DoxyCodeLine{  UNUSED(tmpreg\_fre);                              \(\backslash\)}
+\DoxyCodeLine{  \}\textcolor{keywordflow}{while}(0U)}
+
+\end{DoxyCode}
+
+
+Clear the S\+PI F\+RE pending flag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+H\+A\+N\+D\+L\+E$<$/strong$>$} & specifies the S\+PI Handle. This parameter can be S\+PI where x\+: 1, 2, or 3 to select the S\+PI peripheral. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___s_p_i___exported___macros_ga6c88becbe528c542156bc201622efba2}\label{group___s_p_i___exported___macros_ga6c88becbe528c542156bc201622efba2}} 
+\index{SPI Exported Macros@{SPI Exported Macros}!\_\_HAL\_SPI\_CLEAR\_MODFFLAG@{\_\_HAL\_SPI\_CLEAR\_MODFFLAG}}
+\index{\_\_HAL\_SPI\_CLEAR\_MODFFLAG@{\_\_HAL\_SPI\_CLEAR\_MODFFLAG}!SPI Exported Macros@{SPI Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_SPI\_CLEAR\_MODFFLAG}{\_\_HAL\_SPI\_CLEAR\_MODFFLAG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+S\+P\+I\+\_\+\+C\+L\+E\+A\+R\+\_\+\+M\+O\+D\+F\+F\+L\+AG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{do}\{                                                    \(\backslash\)}
+\DoxyCodeLine{    \_\_IO uint32\_t tmpreg\_modf = 0x00U;                   \(\backslash\)}
+\DoxyCodeLine{    tmpreg\_modf = (\_\_HANDLE\_\_)->Instance->SR;            \(\backslash\)}
+\DoxyCodeLine{    CLEAR\_BIT((\_\_HANDLE\_\_)->Instance->CR1, \mbox{\hyperlink{group___peripheral___registers___bits___definition_gac5a646d978d3b98eb7c6a5d95d75c3f9}{SPI\_CR1\_SPE}}); \(\backslash\)}
+\DoxyCodeLine{    UNUSED(tmpreg\_modf);                                 \(\backslash\)}
+\DoxyCodeLine{  \} \textcolor{keywordflow}{while}(0U)}
+
+\end{DoxyCode}
+
+
+Clear the S\+PI M\+O\+DF pending flag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+H\+A\+N\+D\+L\+E$<$/strong$>$} & specifies the S\+PI Handle. This parameter can be S\+PI where x\+: 1, 2, or 3 to select the S\+PI peripheral. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___s_p_i___exported___macros_gaf6af33b1c5d334b9fe7bb778c5b6442e}\label{group___s_p_i___exported___macros_gaf6af33b1c5d334b9fe7bb778c5b6442e}} 
+\index{SPI Exported Macros@{SPI Exported Macros}!\_\_HAL\_SPI\_CLEAR\_OVRFLAG@{\_\_HAL\_SPI\_CLEAR\_OVRFLAG}}
+\index{\_\_HAL\_SPI\_CLEAR\_OVRFLAG@{\_\_HAL\_SPI\_CLEAR\_OVRFLAG}!SPI Exported Macros@{SPI Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_SPI\_CLEAR\_OVRFLAG}{\_\_HAL\_SPI\_CLEAR\_OVRFLAG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+S\+P\+I\+\_\+\+C\+L\+E\+A\+R\+\_\+\+O\+V\+R\+F\+L\+AG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{do}\{                                              \(\backslash\)}
+\DoxyCodeLine{    \_\_IO uint32\_t tmpreg\_ovr = 0x00U;              \(\backslash\)}
+\DoxyCodeLine{    tmpreg\_ovr = (\_\_HANDLE\_\_)->Instance->DR;       \(\backslash\)}
+\DoxyCodeLine{    tmpreg\_ovr = (\_\_HANDLE\_\_)->Instance->SR;       \(\backslash\)}
+\DoxyCodeLine{    UNUSED(tmpreg\_ovr);                            \(\backslash\)}
+\DoxyCodeLine{  \} \textcolor{keywordflow}{while}(0U)}
+
+\end{DoxyCode}
+
+
+Clear the S\+PI O\+VR pending flag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+H\+A\+N\+D\+L\+E$<$/strong$>$} & specifies the S\+PI Handle. This parameter can be S\+PI where x\+: 1, 2, or 3 to select the S\+PI peripheral. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___s_p_i___exported___macros_gaa10d88f87d16de53bd81dfb33bd56959}\label{group___s_p_i___exported___macros_gaa10d88f87d16de53bd81dfb33bd56959}} 
+\index{SPI Exported Macros@{SPI Exported Macros}!\_\_HAL\_SPI\_DISABLE@{\_\_HAL\_SPI\_DISABLE}}
+\index{\_\_HAL\_SPI\_DISABLE@{\_\_HAL\_SPI\_DISABLE}!SPI Exported Macros@{SPI Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_SPI\_DISABLE}{\_\_HAL\_SPI\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+S\+P\+I\+\_\+\+D\+I\+S\+A\+B\+LE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+ }\end{DoxyParamCaption})~C\+L\+E\+A\+R\+\_\+\+B\+IT((\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+)-\/$>$Instance-\/$>$C\+R1, \mbox{\hyperlink{group___peripheral___registers___bits___definition_gac5a646d978d3b98eb7c6a5d95d75c3f9}{S\+P\+I\+\_\+\+C\+R1\+\_\+\+S\+PE}})}
+
+
+
+Disable the S\+PI peripheral. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+H\+A\+N\+D\+L\+E$<$/strong$>$} & specifies the S\+PI Handle. This parameter can be S\+PI where x\+: 1, 2, or 3 to select the S\+PI peripheral. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___s_p_i___exported___macros_ga47fa7321c5755bfbff1a7229fbe5b21c}\label{group___s_p_i___exported___macros_ga47fa7321c5755bfbff1a7229fbe5b21c}} 
+\index{SPI Exported Macros@{SPI Exported Macros}!\_\_HAL\_SPI\_DISABLE\_IT@{\_\_HAL\_SPI\_DISABLE\_IT}}
+\index{\_\_HAL\_SPI\_DISABLE\_IT@{\_\_HAL\_SPI\_DISABLE\_IT}!SPI Exported Macros@{SPI Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_SPI\_DISABLE\_IT}{\_\_HAL\_SPI\_DISABLE\_IT}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+S\+P\+I\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+IT(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+\_\+ }\end{DoxyParamCaption})~C\+L\+E\+A\+R\+\_\+\+B\+IT((\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+)-\/$>$Instance-\/$>$C\+R2, (\+\_\+\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+\_\+))}
+
+
+
+Disable the specified S\+PI interrupts. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+H\+A\+N\+D\+L\+E$<$/strong$>$} & specifies the S\+PI handle. This parameter can be S\+P\+Ix where x\+: 1, 2, or 3 to select the S\+PI peripheral. \\
+\hline
+{\em $<$strong$>$\+I\+N\+T\+E\+R\+R\+U\+P\+T$<$/strong$>$} & specifies the interrupt source to disable. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item S\+P\+I\+\_\+\+I\+T\+\_\+\+T\+XE\+: Tx buffer empty interrupt enable \item S\+P\+I\+\_\+\+I\+T\+\_\+\+R\+X\+NE\+: RX buffer not empty interrupt enable \item S\+P\+I\+\_\+\+I\+T\+\_\+\+E\+RR\+: Error interrupt enable \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___s_p_i___exported___macros_ga16d2d73c2b16004499ae8d492e71fd4e}\label{group___s_p_i___exported___macros_ga16d2d73c2b16004499ae8d492e71fd4e}} 
+\index{SPI Exported Macros@{SPI Exported Macros}!\_\_HAL\_SPI\_ENABLE@{\_\_HAL\_SPI\_ENABLE}}
+\index{\_\_HAL\_SPI\_ENABLE@{\_\_HAL\_SPI\_ENABLE}!SPI Exported Macros@{SPI Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_SPI\_ENABLE}{\_\_HAL\_SPI\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+S\+P\+I\+\_\+\+E\+N\+A\+B\+LE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+ }\end{DoxyParamCaption})~S\+E\+T\+\_\+\+B\+IT((\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+)-\/$>$Instance-\/$>$C\+R1, \mbox{\hyperlink{group___peripheral___registers___bits___definition_gac5a646d978d3b98eb7c6a5d95d75c3f9}{S\+P\+I\+\_\+\+C\+R1\+\_\+\+S\+PE}})}
+
+
+
+Enable the S\+PI peripheral. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+H\+A\+N\+D\+L\+E$<$/strong$>$} & specifies the S\+PI Handle. This parameter can be S\+PI where x\+: 1, 2, or 3 to select the S\+PI peripheral. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___s_p_i___exported___macros_ga76064652f6f56d8868720b5541e854f5}\label{group___s_p_i___exported___macros_ga76064652f6f56d8868720b5541e854f5}} 
+\index{SPI Exported Macros@{SPI Exported Macros}!\_\_HAL\_SPI\_ENABLE\_IT@{\_\_HAL\_SPI\_ENABLE\_IT}}
+\index{\_\_HAL\_SPI\_ENABLE\_IT@{\_\_HAL\_SPI\_ENABLE\_IT}!SPI Exported Macros@{SPI Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_SPI\_ENABLE\_IT}{\_\_HAL\_SPI\_ENABLE\_IT}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+S\+P\+I\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+IT(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+\_\+ }\end{DoxyParamCaption})~S\+E\+T\+\_\+\+B\+IT((\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+)-\/$>$Instance-\/$>$C\+R2, (\+\_\+\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+\_\+))}
+
+
+
+Enable the specified S\+PI interrupts. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+H\+A\+N\+D\+L\+E$<$/strong$>$} & specifies the S\+PI Handle. This parameter can be S\+PI where x\+: 1, 2, or 3 to select the S\+PI peripheral. \\
+\hline
+{\em $<$strong$>$\+I\+N\+T\+E\+R\+R\+U\+P\+T$<$/strong$>$} & specifies the interrupt source to enable. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item S\+P\+I\+\_\+\+I\+T\+\_\+\+T\+XE\+: Tx buffer empty interrupt enable \item S\+P\+I\+\_\+\+I\+T\+\_\+\+R\+X\+NE\+: RX buffer not empty interrupt enable \item S\+P\+I\+\_\+\+I\+T\+\_\+\+E\+RR\+: Error interrupt enable \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___s_p_i___exported___macros_gaa0bbe5fb55f93fd277ddb6acf58cec53}\label{group___s_p_i___exported___macros_gaa0bbe5fb55f93fd277ddb6acf58cec53}} 
+\index{SPI Exported Macros@{SPI Exported Macros}!\_\_HAL\_SPI\_GET\_FLAG@{\_\_HAL\_SPI\_GET\_FLAG}}
+\index{\_\_HAL\_SPI\_GET\_FLAG@{\_\_HAL\_SPI\_GET\_FLAG}!SPI Exported Macros@{SPI Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_SPI\_GET\_FLAG}{\_\_HAL\_SPI\_GET\_FLAG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+S\+P\+I\+\_\+\+G\+E\+T\+\_\+\+F\+L\+AG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+F\+L\+A\+G\+\_\+\+\_\+ }\end{DoxyParamCaption})~((((\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+)-\/$>$Instance-\/$>$SR) \& (\+\_\+\+\_\+\+F\+L\+A\+G\+\_\+\+\_\+)) == (\+\_\+\+\_\+\+F\+L\+A\+G\+\_\+\+\_\+))}
+
+
+
+Check whether the specified S\+PI flag is set or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+H\+A\+N\+D\+L\+E$<$/strong$>$} & specifies the S\+PI Handle. This parameter can be S\+PI where x\+: 1, 2, or 3 to select the S\+PI peripheral. \\
+\hline
+{\em $<$strong$>$\+F\+L\+A\+G$<$/strong$>$} & specifies the flag to check. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item S\+P\+I\+\_\+\+F\+L\+A\+G\+\_\+\+R\+X\+NE\+: Receive buffer not empty flag \item S\+P\+I\+\_\+\+F\+L\+A\+G\+\_\+\+T\+XE\+: Transmit buffer empty flag \item S\+P\+I\+\_\+\+F\+L\+A\+G\+\_\+\+C\+R\+C\+E\+RR\+: C\+RC error flag \item S\+P\+I\+\_\+\+F\+L\+A\+G\+\_\+\+M\+O\+DF\+: Mode fault flag \item S\+P\+I\+\_\+\+F\+L\+A\+G\+\_\+\+O\+VR\+: Overrun flag \item S\+P\+I\+\_\+\+F\+L\+A\+G\+\_\+\+B\+SY\+: Busy flag \item S\+P\+I\+\_\+\+F\+L\+A\+G\+\_\+\+F\+RE\+: Frame format error flag \item S\+P\+I\+\_\+\+F\+L\+A\+G\+\_\+\+F\+T\+L\+VL\+: S\+PI fifo transmission level \item S\+P\+I\+\_\+\+F\+L\+A\+G\+\_\+\+F\+R\+L\+VL\+: S\+PI fifo reception level \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & new state of {\bfseries{F\+L\+AG}} (T\+R\+UE or F\+A\+L\+SE). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___s_p_i___exported___macros_gabdaab061e4603331a0ec4b9d651df0b5}\label{group___s_p_i___exported___macros_gabdaab061e4603331a0ec4b9d651df0b5}} 
+\index{SPI Exported Macros@{SPI Exported Macros}!\_\_HAL\_SPI\_GET\_IT\_SOURCE@{\_\_HAL\_SPI\_GET\_IT\_SOURCE}}
+\index{\_\_HAL\_SPI\_GET\_IT\_SOURCE@{\_\_HAL\_SPI\_GET\_IT\_SOURCE}!SPI Exported Macros@{SPI Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_SPI\_GET\_IT\_SOURCE}{\_\_HAL\_SPI\_GET\_IT\_SOURCE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+S\+P\+I\+\_\+\+G\+E\+T\+\_\+\+I\+T\+\_\+\+S\+O\+U\+R\+CE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+\_\+ }\end{DoxyParamCaption})~((((\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+)-\/$>$Instance-\/$>$C\+R2 \& (\+\_\+\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+\_\+)) == (\+\_\+\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+\_\+)) ? S\+ET \+: R\+E\+S\+ET)}
+
+
+
+Check whether the specified S\+PI interrupt source is enabled or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+H\+A\+N\+D\+L\+E$<$/strong$>$} & specifies the S\+PI Handle. This parameter can be S\+PI where x\+: 1, 2, or 3 to select the S\+PI peripheral. \\
+\hline
+{\em $<$strong$>$\+I\+N\+T\+E\+R\+R\+U\+P\+T$<$/strong$>$} & specifies the S\+PI interrupt source to check. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item S\+P\+I\+\_\+\+I\+T\+\_\+\+T\+XE\+: Tx buffer empty interrupt enable \item S\+P\+I\+\_\+\+I\+T\+\_\+\+R\+X\+NE\+: RX buffer not empty interrupt enable \item S\+P\+I\+\_\+\+I\+T\+\_\+\+E\+RR\+: Error interrupt enable \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & new state of {\bfseries{IT}} (T\+R\+UE or F\+A\+L\+SE). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___s_p_i___exported___macros_ga0d846f9517715960873e854b4a0790b0}\label{group___s_p_i___exported___macros_ga0d846f9517715960873e854b4a0790b0}} 
+\index{SPI Exported Macros@{SPI Exported Macros}!\_\_HAL\_SPI\_RESET\_HANDLE\_STATE@{\_\_HAL\_SPI\_RESET\_HANDLE\_STATE}}
+\index{\_\_HAL\_SPI\_RESET\_HANDLE\_STATE@{\_\_HAL\_SPI\_RESET\_HANDLE\_STATE}!SPI Exported Macros@{SPI Exported Macros}}
+\subsubsection{\texorpdfstring{\_\_HAL\_SPI\_RESET\_HANDLE\_STATE}{\_\_HAL\_SPI\_RESET\_HANDLE\_STATE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+S\+P\+I\+\_\+\+R\+E\+S\+E\+T\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+S\+T\+A\+TE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+)-\/$>$State = \mbox{\hyperlink{group___s_p_i___exported___types_gga8891cb64e76198a860172d94c638c9b4adbc218df2c9841b561282b40b3ded69d}{H\+A\+L\+\_\+\+S\+P\+I\+\_\+\+S\+T\+A\+T\+E\+\_\+\+R\+E\+S\+ET}})}
+
+
+
+Reset S\+PI handle state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+H\+A\+N\+D\+L\+E$<$/strong$>$} & specifies the S\+PI Handle. This parameter can be S\+PI where x\+: 1, 2, or 3 to select the S\+PI peripheral. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}

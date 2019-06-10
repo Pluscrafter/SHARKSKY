@@ -1,0 +1,98 @@
+\hypertarget{stm32f7xx__hal__adc__ex_8c}{}\section{Drivers/\+S\+T\+M32\+F7xx\+\_\+\+H\+A\+L\+\_\+\+Driver/\+Src/stm32f7xx\+\_\+hal\+\_\+adc\+\_\+ex.c File Reference}
+\label{stm32f7xx__hal__adc__ex_8c}\index{Drivers/STM32F7xx\_HAL\_Driver/Src/stm32f7xx\_hal\_adc\_ex.c@{Drivers/STM32F7xx\_HAL\_Driver/Src/stm32f7xx\_hal\_adc\_ex.c}}
+
+
+This file provides firmware functions to manage the following functionalities of the A\+DC extension peripheral\+:  
+
+
+{\ttfamily \#include \char`\"{}stm32f7xx\+\_\+hal.\+h\char`\"{}}\newline
+
+
+\subsection{Detailed Description}
+This file provides firmware functions to manage the following functionalities of the A\+DC extension peripheral\+: 
+
+\begin{DoxyAuthor}{Author}
+M\+CD Application Team
+\begin{DoxyItemize}
+\item Extended features functions
+\end{DoxyItemize}
+\end{DoxyAuthor}
+\begin{DoxyVerb}==============================================================================
+                  ##### How to use this driver #####
+==============================================================================
+  [..]
+  (#)Initialize the ADC low level resources by implementing the HAL_ADC_MspInit():
+     (##) Enable the ADC interface clock using __HAL_RCC_ADC_CLK_ENABLE()
+     (##) ADC pins configuration
+           (+++) Enable the clock for the ADC GPIOs using the following function:
+                 __HAL_RCC_GPIOx_CLK_ENABLE()  
+           (+++) Configure these ADC pins in analog mode using HAL_GPIO_Init() 
+     (##) In case of using interrupts (e.g. HAL_ADC_Start_IT())
+           (+++) Configure the ADC interrupt priority using HAL_NVIC_SetPriority()
+           (+++) Enable the ADC IRQ handler using HAL_NVIC_EnableIRQ()
+           (+++) In ADC IRQ handler, call HAL_ADC_IRQHandler()
+    (##) In case of using DMA to control data transfer (e.g. HAL_ADC_Start_DMA())
+           (+++) Enable the DMAx interface clock using __HAL_RCC_DMAx_CLK_ENABLE()
+           (+++) Configure and enable two DMA streams stream for managing data
+               transfer from peripheral to memory (output stream)
+           (+++) Associate the initialized DMA handle to the ADC DMA handle
+               using  __HAL_LINKDMA()
+           (+++) Configure the priority and enable the NVIC for the transfer complete
+               interrupt on the two DMA Streams. The output stream should have higher
+               priority than the input stream.                  
+   (#) Configure the ADC Prescaler, conversion resolution and data alignment 
+       using the HAL_ADC_Init() function. 
+
+   (#) Configure the ADC Injected channels group features, use HAL_ADC_Init()
+       and HAL_ADC_ConfigChannel() functions.
+       
+   (#) Three operation modes are available within this driver :     
+
+   *** Polling mode IO operation ***
+   =================================
+   [..]    
+     (+) Start the ADC peripheral using HAL_ADCEx_InjectedStart() 
+     (+) Wait for end of conversion using HAL_ADCEx_InjectedPollForConversion(), at this stage
+         user can specify the value of timeout according to his end application      
+     (+) To read the ADC converted values, use the HAL_ADCEx_InjectedGetValue() function.
+     (+) Stop the ADC peripheral using HAL_ADCEx_InjectedStop()
+
+   *** Interrupt mode IO operation ***    
+   ===================================
+   [..]    
+     (+) Start the ADC peripheral using HAL_ADCEx_InjectedStart_IT() 
+     (+) Use HAL_ADC_IRQHandler() called under ADC_IRQHandler() Interrupt subroutine
+     (+) At ADC end of conversion HAL_ADCEx_InjectedConvCpltCallback() function is executed and user can 
+          add his own code by customization of function pointer HAL_ADCEx_InjectedConvCpltCallback 
+     (+) In case of ADC Error, HAL_ADCEx_InjectedErrorCallback() function is executed and user can 
+          add his own code by customization of function pointer HAL_ADCEx_InjectedErrorCallback
+     (+) Stop the ADC peripheral using HAL_ADCEx_InjectedStop_IT()
+     
+          
+   *** DMA mode IO operation ***    
+   ==============================
+   [..]    
+     (+) Start the ADC peripheral using HAL_ADCEx_InjectedStart_DMA(), at this stage the user specify the length 
+         of data to be transferred at each end of conversion 
+     (+) At The end of data transfer ba HAL_ADCEx_InjectedConvCpltCallback() function is executed and user can 
+          add his own code by customization of function pointer HAL_ADCEx_InjectedConvCpltCallback 
+     (+) In case of transfer Error, HAL_ADCEx_InjectedErrorCallback() function is executed and user can 
+          add his own code by customization of function pointer HAL_ADCEx_InjectedErrorCallback
+      (+) Stop the ADC peripheral using HAL_ADCEx_InjectedStop_DMA()
+      
+   *** Multi mode ADCs Regular channels configuration ***
+   ======================================================
+   [..]        
+     (+) Select the Multi mode ADC regular channels features (dual or triple mode)  
+        and configure the DMA mode using HAL_ADCEx_MultiModeConfigChannel() functions. 
+     (+) Start the ADC peripheral using HAL_ADCEx_MultiModeStart_DMA(), at this stage the user specify the length 
+         of data to be transferred at each end of conversion           
+     (+) Read the ADCs converted values using the HAL_ADCEx_MultiModeGetValue() function.\end{DoxyVerb}
+
+
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\subsubsection*{\begin{center}\copyright{} Copyright (c) 2017 S\+T\+Microelectronics. All rights reserved.\end{center} }
+
+This software component is licensed by ST under B\+SD 3-\/Clause license, the \char`\"{}\+License\char`\"{}; You may not use this file except in compliance with the License. You may obtain a copy of the License at\+: opensource.\+org/licenses/\+B\+S\+D-\/3-\/\+Clause 

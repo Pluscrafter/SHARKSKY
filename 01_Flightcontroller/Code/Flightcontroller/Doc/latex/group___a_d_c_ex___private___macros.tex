@@ -1,0 +1,154 @@
+\hypertarget{group___a_d_c_ex___private___macros}{}\section{A\+DC Private Macros}
+\label{group___a_d_c_ex___private___macros}\index{ADC Private Macros@{ADC Private Macros}}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries I\+S\+\_\+\+A\+D\+C\+\_\+\+C\+H\+A\+N\+N\+EL}(C\+H\+A\+N\+N\+EL)
+\item 
+\#define {\bfseries I\+S\+\_\+\+A\+D\+C\+\_\+\+M\+O\+DE}(\+\_\+\+\_\+\+M\+O\+D\+E\+\_\+\+\_\+)
+\item 
+\#define {\bfseries I\+S\+\_\+\+A\+D\+C\+\_\+\+D\+M\+A\+\_\+\+A\+C\+C\+E\+S\+S\+\_\+\+M\+O\+DE}(\+\_\+\+\_\+\+M\+O\+D\+E\+\_\+\+\_\+)
+\item 
+\#define {\bfseries I\+S\+\_\+\+A\+D\+C\+\_\+\+E\+X\+T\+\_\+\+I\+N\+J\+E\+C\+\_\+\+T\+R\+I\+G\+\_\+\+E\+D\+GE}(\+\_\+\+\_\+\+E\+D\+G\+E\+\_\+\+\_\+)
+\item 
+\#define {\bfseries I\+S\+\_\+\+A\+D\+C\+\_\+\+E\+X\+T\+\_\+\+I\+N\+J\+E\+C\+\_\+\+T\+R\+IG}(\+\_\+\+\_\+\+I\+N\+J\+T\+R\+I\+G\+\_\+\+\_\+)
+\item 
+\#define {\bfseries I\+S\+\_\+\+A\+D\+C\+\_\+\+I\+N\+J\+E\+C\+T\+E\+D\+\_\+\+R\+A\+NK}(\+\_\+\+\_\+\+R\+A\+N\+K\+\_\+\+\_\+)
+\item 
+\mbox{\Hypertarget{group___a_d_c_ex___private___macros_gaa5050427278d3365405f1297638ca936}\label{group___a_d_c_ex___private___macros_gaa5050427278d3365405f1297638ca936}} 
+\#define {\bfseries I\+S\+\_\+\+A\+D\+C\+\_\+\+I\+N\+J\+E\+C\+T\+E\+D\+\_\+\+L\+E\+N\+G\+TH}(\+\_\+\+\_\+\+L\+E\+N\+G\+T\+H\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+L\+E\+N\+G\+T\+H\+\_\+\+\_\+) $>$= ((uint32\+\_\+t)1)) \&\& ((\+\_\+\+\_\+\+L\+E\+N\+G\+T\+H\+\_\+\+\_\+) $<$= ((uint32\+\_\+t)4)))
+\item 
+\#define \mbox{\hyperlink{group___a_d_c_ex___private___macros_gaa40c3e803cf20a8aebc3735a714606ad}{A\+D\+C\+\_\+\+J\+S\+QR}}(\+\_\+\+C\+H\+A\+N\+N\+E\+L\+N\+B\+\_\+,  \+\_\+\+R\+A\+N\+K\+N\+B\+\_\+,  \+\_\+\+J\+S\+Q\+R\+\_\+\+J\+L\+\_\+)~(((uint32\+\_\+t)((uint16\+\_\+t)(\+\_\+\+C\+H\+A\+N\+N\+E\+L\+N\+B\+\_\+))) $<$$<$ (5 $\ast$ (uint8\+\_\+t)(((\+\_\+\+R\+A\+N\+K\+N\+B\+\_\+) + 3) -\/ (\+\_\+\+J\+S\+Q\+R\+\_\+\+J\+L\+\_\+))))
+\begin{DoxyCompactList}\small\item\em Set the selected injected Channel rank. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___a_d_c_ex___private___macros_gaa40c3e803cf20a8aebc3735a714606ad}\label{group___a_d_c_ex___private___macros_gaa40c3e803cf20a8aebc3735a714606ad}} 
+\index{ADC Private Macros@{ADC Private Macros}!ADC\_JSQR@{ADC\_JSQR}}
+\index{ADC\_JSQR@{ADC\_JSQR}!ADC Private Macros@{ADC Private Macros}}
+\subsubsection{\texorpdfstring{ADC\_JSQR}{ADC\_JSQR}}
+{\footnotesize\ttfamily \#define A\+D\+C\+\_\+\+J\+S\+QR(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+C\+H\+A\+N\+N\+E\+L\+N\+B\+\_\+,  }\item[{}]{\+\_\+\+R\+A\+N\+K\+N\+B\+\_\+,  }\item[{}]{\+\_\+\+J\+S\+Q\+R\+\_\+\+J\+L\+\_\+ }\end{DoxyParamCaption})~(((uint32\+\_\+t)((uint16\+\_\+t)(\+\_\+\+C\+H\+A\+N\+N\+E\+L\+N\+B\+\_\+))) $<$$<$ (5 $\ast$ (uint8\+\_\+t)(((\+\_\+\+R\+A\+N\+K\+N\+B\+\_\+) + 3) -\/ (\+\_\+\+J\+S\+Q\+R\+\_\+\+J\+L\+\_\+))))}
+
+
+
+Set the selected injected Channel rank. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$em$>$\+C\+H\+A\+N\+N\+E\+L\+N\+B$<$/em$>$} & Channel number. \\
+\hline
+{\em $<$em$>$\+R\+A\+N\+K\+N\+B$<$/em$>$} & Rank number. \\
+\hline
+{\em $<$em$>$\+J\+S\+Q\+R\+\_\+\+J\+L$<$/em$>$} & Sequence length.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___a_d_c_ex___private___macros_gaba41910dcb2b449c613a5ef638862e77}\label{group___a_d_c_ex___private___macros_gaba41910dcb2b449c613a5ef638862e77}} 
+\index{ADC Private Macros@{ADC Private Macros}!IS\_ADC\_CHANNEL@{IS\_ADC\_CHANNEL}}
+\index{IS\_ADC\_CHANNEL@{IS\_ADC\_CHANNEL}!ADC Private Macros@{ADC Private Macros}}
+\subsubsection{\texorpdfstring{IS\_ADC\_CHANNEL}{IS\_ADC\_CHANNEL}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+\+A\+D\+C\+\_\+\+C\+H\+A\+N\+N\+EL(\begin{DoxyParamCaption}\item[{}]{C\+H\+A\+N\+N\+EL }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(((CHANNEL) <= ADC\_CHANNEL\_18)  || \(\backslash\)}
+\DoxyCodeLine{                                 ((CHANNEL) == ADC\_CHANNEL\_TEMPSENSOR))}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group___a_d_c_ex___private___macros_ga3f1b6dc061d9f656fdf3b45183767b5d}\label{group___a_d_c_ex___private___macros_ga3f1b6dc061d9f656fdf3b45183767b5d}} 
+\index{ADC Private Macros@{ADC Private Macros}!IS\_ADC\_DMA\_ACCESS\_MODE@{IS\_ADC\_DMA\_ACCESS\_MODE}}
+\index{IS\_ADC\_DMA\_ACCESS\_MODE@{IS\_ADC\_DMA\_ACCESS\_MODE}!ADC Private Macros@{ADC Private Macros}}
+\subsubsection{\texorpdfstring{IS\_ADC\_DMA\_ACCESS\_MODE}{IS\_ADC\_DMA\_ACCESS\_MODE}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+\+A\+D\+C\+\_\+\+D\+M\+A\+\_\+\+A\+C\+C\+E\+S\+S\+\_\+\+M\+O\+DE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+M\+O\+D\+E\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(((\_\_MODE\_\_) == \mbox{\hyperlink{group___a_d_c_ex___direct__memory__access__mode__for__multi__mode_ga59163da6d23f587f951ce21d74542795}{ADC\_DMAACCESSMODE\_DISABLED}}) || \(\backslash\)}
+\DoxyCodeLine{                                          ((\_\_MODE\_\_) == \mbox{\hyperlink{group___a_d_c_ex___direct__memory__access__mode__for__multi__mode_gadb55bb780e7c0a58878287f205f88e33}{ADC\_DMAACCESSMODE\_1}})        || \(\backslash\)}
+\DoxyCodeLine{                                          ((\_\_MODE\_\_) == \mbox{\hyperlink{group___a_d_c_ex___direct__memory__access__mode__for__multi__mode_ga33b7e654725c8de70c9ca5a1e1b3d139}{ADC\_DMAACCESSMODE\_2}})        || \(\backslash\)}
+\DoxyCodeLine{                                          ((\_\_MODE\_\_) == \mbox{\hyperlink{group___a_d_c_ex___direct__memory__access__mode__for__multi__mode_ga2613348408ee2a5685f1d06f6f7780dc}{ADC\_DMAACCESSMODE\_3}}))}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group___a_d_c_ex___private___macros_ga010182b3f9970e8618655a8c09e22bd6}\label{group___a_d_c_ex___private___macros_ga010182b3f9970e8618655a8c09e22bd6}} 
+\index{ADC Private Macros@{ADC Private Macros}!IS\_ADC\_EXT\_INJEC\_TRIG@{IS\_ADC\_EXT\_INJEC\_TRIG}}
+\index{IS\_ADC\_EXT\_INJEC\_TRIG@{IS\_ADC\_EXT\_INJEC\_TRIG}!ADC Private Macros@{ADC Private Macros}}
+\subsubsection{\texorpdfstring{IS\_ADC\_EXT\_INJEC\_TRIG}{IS\_ADC\_EXT\_INJEC\_TRIG}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+\+A\+D\+C\+\_\+\+E\+X\+T\+\_\+\+I\+N\+J\+E\+C\+\_\+\+T\+R\+IG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+I\+N\+J\+T\+R\+I\+G\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(((\_\_INJTRIG\_\_) == ADC\_EXTERNALTRIGINJECCONV\_T1\_TRGO)  || \(\backslash\)}
+\DoxyCodeLine{                                            ((\_\_INJTRIG\_\_) == ADC\_EXTERNALTRIGINJECCONV\_T1\_CC4)   || \(\backslash\)}
+\DoxyCodeLine{                                            ((\_\_INJTRIG\_\_) == ADC\_EXTERNALTRIGINJECCONV\_T2\_TRGO)  || \(\backslash\)}
+\DoxyCodeLine{                                            ((\_\_INJTRIG\_\_) == ADC\_EXTERNALTRIGINJECCONV\_T2\_CC1)   || \(\backslash\)}
+\DoxyCodeLine{                                            ((\_\_INJTRIG\_\_) == ADC\_EXTERNALTRIGINJECCONV\_T3\_CC4)   || \(\backslash\)}
+\DoxyCodeLine{                                            ((\_\_INJTRIG\_\_) == ADC\_EXTERNALTRIGINJECCONV\_T4\_TRGO)  || \(\backslash\)}
+\DoxyCodeLine{                                            ((\_\_INJTRIG\_\_) == ADC\_EXTERNALTRIGINJECCONV\_T8\_CC4)   || \(\backslash\)}
+\DoxyCodeLine{                                            ((\_\_INJTRIG\_\_) == ADC\_EXTERNALTRIGINJECCONV\_T1\_TRGO2) || \(\backslash\)}
+\DoxyCodeLine{                                            ((\_\_INJTRIG\_\_) == ADC\_EXTERNALTRIGINJECCONV\_T8\_TRGO)  || \(\backslash\)}
+\DoxyCodeLine{                                            ((\_\_INJTRIG\_\_) == ADC\_EXTERNALTRIGINJECCONV\_T8\_TRGO2) || \(\backslash\)}
+\DoxyCodeLine{                                            ((\_\_INJTRIG\_\_) == ADC\_EXTERNALTRIGINJECCONV\_T3\_CC3)   || \(\backslash\)}
+\DoxyCodeLine{                                            ((\_\_INJTRIG\_\_) == ADC\_EXTERNALTRIGINJECCONV\_T5\_TRGO)  || \(\backslash\)}
+\DoxyCodeLine{                                            ((\_\_INJTRIG\_\_) == ADC\_EXTERNALTRIGINJECCONV\_T3\_CC1)   || \(\backslash\)}
+\DoxyCodeLine{                                            ((\_\_INJTRIG\_\_) == ADC\_EXTERNALTRIGINJECCONV\_T6\_TRGO)  || \(\backslash\)}
+\DoxyCodeLine{                                            ((\_\_INJTRIG\_\_) == ADC\_INJECTED\_SOFTWARE\_START))}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group___a_d_c_ex___private___macros_ga069ce447fbcf609060c60f0c365331df}\label{group___a_d_c_ex___private___macros_ga069ce447fbcf609060c60f0c365331df}} 
+\index{ADC Private Macros@{ADC Private Macros}!IS\_ADC\_EXT\_INJEC\_TRIG\_EDGE@{IS\_ADC\_EXT\_INJEC\_TRIG\_EDGE}}
+\index{IS\_ADC\_EXT\_INJEC\_TRIG\_EDGE@{IS\_ADC\_EXT\_INJEC\_TRIG\_EDGE}!ADC Private Macros@{ADC Private Macros}}
+\subsubsection{\texorpdfstring{IS\_ADC\_EXT\_INJEC\_TRIG\_EDGE}{IS\_ADC\_EXT\_INJEC\_TRIG\_EDGE}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+\+A\+D\+C\+\_\+\+E\+X\+T\+\_\+\+I\+N\+J\+E\+C\+\_\+\+T\+R\+I\+G\+\_\+\+E\+D\+GE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+E\+D\+G\+E\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(((\_\_EDGE\_\_) == ADC\_EXTERNALTRIGINJECCONVEDGE\_NONE)    || \(\backslash\)}
+\DoxyCodeLine{                                              ((\_\_EDGE\_\_) == ADC\_EXTERNALTRIGINJECCONVEDGE\_RISING)  || \(\backslash\)}
+\DoxyCodeLine{                                              ((\_\_EDGE\_\_) == ADC\_EXTERNALTRIGINJECCONVEDGE\_FALLING) || \(\backslash\)}
+\DoxyCodeLine{                                              ((\_\_EDGE\_\_) == ADC\_EXTERNALTRIGINJECCONVEDGE\_RISINGFALLING))}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group___a_d_c_ex___private___macros_ga4bc1e0b0f685be6d9751328a25b3716d}\label{group___a_d_c_ex___private___macros_ga4bc1e0b0f685be6d9751328a25b3716d}} 
+\index{ADC Private Macros@{ADC Private Macros}!IS\_ADC\_INJECTED\_RANK@{IS\_ADC\_INJECTED\_RANK}}
+\index{IS\_ADC\_INJECTED\_RANK@{IS\_ADC\_INJECTED\_RANK}!ADC Private Macros@{ADC Private Macros}}
+\subsubsection{\texorpdfstring{IS\_ADC\_INJECTED\_RANK}{IS\_ADC\_INJECTED\_RANK}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+\+A\+D\+C\+\_\+\+I\+N\+J\+E\+C\+T\+E\+D\+\_\+\+R\+A\+NK(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+R\+A\+N\+K\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(((\_\_RANK\_\_) == ADC\_INJECTED\_RANK\_1) || \(\backslash\)}
+\DoxyCodeLine{                                       ((\_\_RANK\_\_) == ADC\_INJECTED\_RANK\_2) || \(\backslash\)}
+\DoxyCodeLine{                                       ((\_\_RANK\_\_) == ADC\_INJECTED\_RANK\_3) || \(\backslash\)}
+\DoxyCodeLine{                                       ((\_\_RANK\_\_) == ADC\_INJECTED\_RANK\_4))}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group___a_d_c_ex___private___macros_ga1af1742a766704131ab0cfed3a1c56fb}\label{group___a_d_c_ex___private___macros_ga1af1742a766704131ab0cfed3a1c56fb}} 
+\index{ADC Private Macros@{ADC Private Macros}!IS\_ADC\_MODE@{IS\_ADC\_MODE}}
+\index{IS\_ADC\_MODE@{IS\_ADC\_MODE}!ADC Private Macros@{ADC Private Macros}}
+\subsubsection{\texorpdfstring{IS\_ADC\_MODE}{IS\_ADC\_MODE}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+\+A\+D\+C\+\_\+\+M\+O\+DE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+M\+O\+D\+E\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(((\_\_MODE\_\_) == ADC\_MODE\_INDEPENDENT)                 || \(\backslash\)}
+\DoxyCodeLine{                               ((\_\_MODE\_\_) == ADC\_DUALMODE\_REGSIMULT\_INJECSIMULT)   || \(\backslash\)}
+\DoxyCodeLine{                               ((\_\_MODE\_\_) == ADC\_DUALMODE\_REGSIMULT\_ALTERTRIG)     || \(\backslash\)}
+\DoxyCodeLine{                               ((\_\_MODE\_\_) == ADC\_DUALMODE\_INJECSIMULT)             || \(\backslash\)}
+\DoxyCodeLine{                               ((\_\_MODE\_\_) == ADC\_DUALMODE\_REGSIMULT)               || \(\backslash\)}
+\DoxyCodeLine{                               ((\_\_MODE\_\_) == ADC\_DUALMODE\_INTERL)                  || \(\backslash\)}
+\DoxyCodeLine{                               ((\_\_MODE\_\_) == ADC\_DUALMODE\_ALTERTRIG)               || \(\backslash\)}
+\DoxyCodeLine{                               ((\_\_MODE\_\_) == ADC\_TRIPLEMODE\_REGSIMULT\_INJECSIMULT) || \(\backslash\)}
+\DoxyCodeLine{                               ((\_\_MODE\_\_) == ADC\_TRIPLEMODE\_REGSIMULT\_AlterTrig)   || \(\backslash\)}
+\DoxyCodeLine{                               ((\_\_MODE\_\_) == ADC\_TRIPLEMODE\_INJECSIMULT)           || \(\backslash\)}
+\DoxyCodeLine{                               ((\_\_MODE\_\_) == ADC\_TRIPLEMODE\_REGSIMULT)             || \(\backslash\)}
+\DoxyCodeLine{                               ((\_\_MODE\_\_) == ADC\_TRIPLEMODE\_INTERL)                || \(\backslash\)}
+\DoxyCodeLine{                               ((\_\_MODE\_\_) == ADC\_TRIPLEMODE\_ALTERTRIG))}
+
+\end{DoxyCode}

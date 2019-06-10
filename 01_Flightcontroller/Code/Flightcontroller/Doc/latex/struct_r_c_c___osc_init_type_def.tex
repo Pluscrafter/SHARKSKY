@@ -1,0 +1,83 @@
+\hypertarget{struct_r_c_c___osc_init_type_def}{}\section{R\+C\+C\+\_\+\+Osc\+Init\+Type\+Def Struct Reference}
+\label{struct_r_c_c___osc_init_type_def}\index{RCC\_OscInitTypeDef@{RCC\_OscInitTypeDef}}
+
+
+R\+CC Internal/\+External Oscillator (H\+SE, H\+SI, L\+SE and L\+SI) configuration structure definition.  
+
+
+
+
+{\ttfamily \#include $<$stm32f7xx\+\_\+hal\+\_\+rcc.\+h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_r_c_c___osc_init_type_def_af9e7bc89cab81c1705d94c74c7a81088}{Oscillator\+Type}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_r_c_c___osc_init_type_def_a7e05d6eec98ed8cdaba00ca3d167ff72}{H\+S\+E\+State}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_r_c_c___osc_init_type_def_a7c1294e9407e69e80fe034caf35fe7ea}{L\+S\+E\+State}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_r_c_c___osc_init_type_def_a39b62cae65fe7a251000354e5bba8cb6}{H\+S\+I\+State}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_r_c_c___osc_init_type_def_a9b2e48e452d0c334f2b9473216064560}{H\+S\+I\+Calibration\+Value}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_r_c_c___osc_init_type_def_a955de90db8882fde02c4fb59c7c000f0}{L\+S\+I\+State}}
+\item 
+\mbox{\hyperlink{struct_r_c_c___p_l_l_init_type_def}{R\+C\+C\+\_\+\+P\+L\+L\+Init\+Type\+Def}} \mbox{\hyperlink{struct_r_c_c___osc_init_type_def_af76de5ee86798f0c3a4c83c84dfa58be}{P\+LL}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+R\+CC Internal/\+External Oscillator (H\+SE, H\+SI, L\+SE and L\+SI) configuration structure definition. 
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_r_c_c___osc_init_type_def_a7e05d6eec98ed8cdaba00ca3d167ff72}\label{struct_r_c_c___osc_init_type_def_a7e05d6eec98ed8cdaba00ca3d167ff72}} 
+\index{RCC\_OscInitTypeDef@{RCC\_OscInitTypeDef}!HSEState@{HSEState}}
+\index{HSEState@{HSEState}!RCC\_OscInitTypeDef@{RCC\_OscInitTypeDef}}
+\subsubsection{\texorpdfstring{HSEState}{HSEState}}
+{\footnotesize\ttfamily uint32\+\_\+t R\+C\+C\+\_\+\+Osc\+Init\+Type\+Def\+::\+H\+S\+E\+State}
+
+The new state of the H\+SE. This parameter can be a value of \mbox{\hyperlink{group___r_c_c___h_s_e___config}{R\+CC H\+SE Config}} \mbox{\Hypertarget{struct_r_c_c___osc_init_type_def_a9b2e48e452d0c334f2b9473216064560}\label{struct_r_c_c___osc_init_type_def_a9b2e48e452d0c334f2b9473216064560}} 
+\index{RCC\_OscInitTypeDef@{RCC\_OscInitTypeDef}!HSICalibrationValue@{HSICalibrationValue}}
+\index{HSICalibrationValue@{HSICalibrationValue}!RCC\_OscInitTypeDef@{RCC\_OscInitTypeDef}}
+\subsubsection{\texorpdfstring{HSICalibrationValue}{HSICalibrationValue}}
+{\footnotesize\ttfamily uint32\+\_\+t R\+C\+C\+\_\+\+Osc\+Init\+Type\+Def\+::\+H\+S\+I\+Calibration\+Value}
+
+The H\+SI calibration trimming value (default is R\+C\+C\+\_\+\+H\+S\+I\+C\+A\+L\+I\+B\+R\+A\+T\+I\+O\+N\+\_\+\+D\+E\+F\+A\+U\+LT). This parameter must be a number between Min\+\_\+\+Data = 0x00 and Max\+\_\+\+Data = 0x1F \mbox{\Hypertarget{struct_r_c_c___osc_init_type_def_a39b62cae65fe7a251000354e5bba8cb6}\label{struct_r_c_c___osc_init_type_def_a39b62cae65fe7a251000354e5bba8cb6}} 
+\index{RCC\_OscInitTypeDef@{RCC\_OscInitTypeDef}!HSIState@{HSIState}}
+\index{HSIState@{HSIState}!RCC\_OscInitTypeDef@{RCC\_OscInitTypeDef}}
+\subsubsection{\texorpdfstring{HSIState}{HSIState}}
+{\footnotesize\ttfamily uint32\+\_\+t R\+C\+C\+\_\+\+Osc\+Init\+Type\+Def\+::\+H\+S\+I\+State}
+
+The new state of the H\+SI. This parameter can be a value of \mbox{\hyperlink{group___r_c_c___h_s_i___config}{R\+CC H\+SI Config}} \mbox{\Hypertarget{struct_r_c_c___osc_init_type_def_a7c1294e9407e69e80fe034caf35fe7ea}\label{struct_r_c_c___osc_init_type_def_a7c1294e9407e69e80fe034caf35fe7ea}} 
+\index{RCC\_OscInitTypeDef@{RCC\_OscInitTypeDef}!LSEState@{LSEState}}
+\index{LSEState@{LSEState}!RCC\_OscInitTypeDef@{RCC\_OscInitTypeDef}}
+\subsubsection{\texorpdfstring{LSEState}{LSEState}}
+{\footnotesize\ttfamily uint32\+\_\+t R\+C\+C\+\_\+\+Osc\+Init\+Type\+Def\+::\+L\+S\+E\+State}
+
+The new state of the L\+SE. This parameter can be a value of \mbox{\hyperlink{group___r_c_c___l_s_e___config}{R\+CC L\+SE Config}} \mbox{\Hypertarget{struct_r_c_c___osc_init_type_def_a955de90db8882fde02c4fb59c7c000f0}\label{struct_r_c_c___osc_init_type_def_a955de90db8882fde02c4fb59c7c000f0}} 
+\index{RCC\_OscInitTypeDef@{RCC\_OscInitTypeDef}!LSIState@{LSIState}}
+\index{LSIState@{LSIState}!RCC\_OscInitTypeDef@{RCC\_OscInitTypeDef}}
+\subsubsection{\texorpdfstring{LSIState}{LSIState}}
+{\footnotesize\ttfamily uint32\+\_\+t R\+C\+C\+\_\+\+Osc\+Init\+Type\+Def\+::\+L\+S\+I\+State}
+
+The new state of the L\+SI. This parameter can be a value of \mbox{\hyperlink{group___r_c_c___l_s_i___config}{R\+CC L\+SI Config}} \mbox{\Hypertarget{struct_r_c_c___osc_init_type_def_af9e7bc89cab81c1705d94c74c7a81088}\label{struct_r_c_c___osc_init_type_def_af9e7bc89cab81c1705d94c74c7a81088}} 
+\index{RCC\_OscInitTypeDef@{RCC\_OscInitTypeDef}!OscillatorType@{OscillatorType}}
+\index{OscillatorType@{OscillatorType}!RCC\_OscInitTypeDef@{RCC\_OscInitTypeDef}}
+\subsubsection{\texorpdfstring{OscillatorType}{OscillatorType}}
+{\footnotesize\ttfamily uint32\+\_\+t R\+C\+C\+\_\+\+Osc\+Init\+Type\+Def\+::\+Oscillator\+Type}
+
+The oscillators to be configured. This parameter can be a value of \mbox{\hyperlink{group___r_c_c___oscillator___type}{Oscillator Type}} \mbox{\Hypertarget{struct_r_c_c___osc_init_type_def_af76de5ee86798f0c3a4c83c84dfa58be}\label{struct_r_c_c___osc_init_type_def_af76de5ee86798f0c3a4c83c84dfa58be}} 
+\index{RCC\_OscInitTypeDef@{RCC\_OscInitTypeDef}!PLL@{PLL}}
+\index{PLL@{PLL}!RCC\_OscInitTypeDef@{RCC\_OscInitTypeDef}}
+\subsubsection{\texorpdfstring{PLL}{PLL}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_r_c_c___p_l_l_init_type_def}{R\+C\+C\+\_\+\+P\+L\+L\+Init\+Type\+Def}} R\+C\+C\+\_\+\+Osc\+Init\+Type\+Def\+::\+P\+LL}
+
+P\+LL structure parameters 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Drivers/\+S\+T\+M32\+F7xx\+\_\+\+H\+A\+L\+\_\+\+Driver/\+Inc/\mbox{\hyperlink{stm32f7xx__hal__rcc_8h}{stm32f7xx\+\_\+hal\+\_\+rcc.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,65 @@
+\hypertarget{struct_s_d_m_m_c___cmd_init_type_def}{}\section{S\+D\+M\+M\+C\+\_\+\+Cmd\+Init\+Type\+Def Struct Reference}
+\label{struct_s_d_m_m_c___cmd_init_type_def}\index{SDMMC\_CmdInitTypeDef@{SDMMC\_CmdInitTypeDef}}
+
+
+S\+D\+M\+MC Command Control structure.  
+
+
+
+
+{\ttfamily \#include $<$stm32f7xx\+\_\+ll\+\_\+sdmmc.\+h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_s_d_m_m_c___cmd_init_type_def_aa427e5ad70465e03b0d5b591efa3c598}{Argument}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_s_d_m_m_c___cmd_init_type_def_a644b96b2db05401103e4845fcf6be89e}{Cmd\+Index}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_s_d_m_m_c___cmd_init_type_def_aee8e8e417ecc5aa3ef8c3926d3521fb6}{Response}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_s_d_m_m_c___cmd_init_type_def_abffa8b5e053b202adf3fae688b78f2af}{Wait\+For\+Interrupt}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_s_d_m_m_c___cmd_init_type_def_a0dfe4dc8a7f873c0e878a2ed12d1df54}{C\+P\+SM}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+S\+D\+M\+MC Command Control structure. 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_s_d_m_m_c___cmd_init_type_def_aa427e5ad70465e03b0d5b591efa3c598}\label{struct_s_d_m_m_c___cmd_init_type_def_aa427e5ad70465e03b0d5b591efa3c598}} 
+\index{SDMMC\_CmdInitTypeDef@{SDMMC\_CmdInitTypeDef}!Argument@{Argument}}
+\index{Argument@{Argument}!SDMMC\_CmdInitTypeDef@{SDMMC\_CmdInitTypeDef}}
+\subsubsection{\texorpdfstring{Argument}{Argument}}
+{\footnotesize\ttfamily uint32\+\_\+t S\+D\+M\+M\+C\+\_\+\+Cmd\+Init\+Type\+Def\+::\+Argument}
+
+Specifies the S\+D\+M\+MC command argument which is sent to a card as part of a command message. If a command contains an argument, it must be loaded into this register before writing the command to the command register. \mbox{\Hypertarget{struct_s_d_m_m_c___cmd_init_type_def_a644b96b2db05401103e4845fcf6be89e}\label{struct_s_d_m_m_c___cmd_init_type_def_a644b96b2db05401103e4845fcf6be89e}} 
+\index{SDMMC\_CmdInitTypeDef@{SDMMC\_CmdInitTypeDef}!CmdIndex@{CmdIndex}}
+\index{CmdIndex@{CmdIndex}!SDMMC\_CmdInitTypeDef@{SDMMC\_CmdInitTypeDef}}
+\subsubsection{\texorpdfstring{CmdIndex}{CmdIndex}}
+{\footnotesize\ttfamily uint32\+\_\+t S\+D\+M\+M\+C\+\_\+\+Cmd\+Init\+Type\+Def\+::\+Cmd\+Index}
+
+Specifies the S\+D\+M\+MC command index. It must be Min\+\_\+\+Data = 0 and Max\+\_\+\+Data = 64 \mbox{\Hypertarget{struct_s_d_m_m_c___cmd_init_type_def_a0dfe4dc8a7f873c0e878a2ed12d1df54}\label{struct_s_d_m_m_c___cmd_init_type_def_a0dfe4dc8a7f873c0e878a2ed12d1df54}} 
+\index{SDMMC\_CmdInitTypeDef@{SDMMC\_CmdInitTypeDef}!CPSM@{CPSM}}
+\index{CPSM@{CPSM}!SDMMC\_CmdInitTypeDef@{SDMMC\_CmdInitTypeDef}}
+\subsubsection{\texorpdfstring{CPSM}{CPSM}}
+{\footnotesize\ttfamily uint32\+\_\+t S\+D\+M\+M\+C\+\_\+\+Cmd\+Init\+Type\+Def\+::\+C\+P\+SM}
+
+Specifies whether S\+D\+M\+MC Command path state machine (C\+P\+SM) is enabled or disabled. This parameter can be a value of \mbox{\hyperlink{group___s_d_m_m_c___l_l___c_p_s_m___state}{C\+P\+SM State}} \mbox{\Hypertarget{struct_s_d_m_m_c___cmd_init_type_def_aee8e8e417ecc5aa3ef8c3926d3521fb6}\label{struct_s_d_m_m_c___cmd_init_type_def_aee8e8e417ecc5aa3ef8c3926d3521fb6}} 
+\index{SDMMC\_CmdInitTypeDef@{SDMMC\_CmdInitTypeDef}!Response@{Response}}
+\index{Response@{Response}!SDMMC\_CmdInitTypeDef@{SDMMC\_CmdInitTypeDef}}
+\subsubsection{\texorpdfstring{Response}{Response}}
+{\footnotesize\ttfamily uint32\+\_\+t S\+D\+M\+M\+C\+\_\+\+Cmd\+Init\+Type\+Def\+::\+Response}
+
+Specifies the S\+D\+M\+MC response type. This parameter can be a value of \mbox{\hyperlink{group___s_d_m_m_c___l_l___response___type}{Response Type}} \mbox{\Hypertarget{struct_s_d_m_m_c___cmd_init_type_def_abffa8b5e053b202adf3fae688b78f2af}\label{struct_s_d_m_m_c___cmd_init_type_def_abffa8b5e053b202adf3fae688b78f2af}} 
+\index{SDMMC\_CmdInitTypeDef@{SDMMC\_CmdInitTypeDef}!WaitForInterrupt@{WaitForInterrupt}}
+\index{WaitForInterrupt@{WaitForInterrupt}!SDMMC\_CmdInitTypeDef@{SDMMC\_CmdInitTypeDef}}
+\subsubsection{\texorpdfstring{WaitForInterrupt}{WaitForInterrupt}}
+{\footnotesize\ttfamily uint32\+\_\+t S\+D\+M\+M\+C\+\_\+\+Cmd\+Init\+Type\+Def\+::\+Wait\+For\+Interrupt}
+
+Specifies whether S\+D\+M\+MC wait for interrupt request is enabled or disabled. This parameter can be a value of \mbox{\hyperlink{group___s_d_m_m_c___l_l___wait___interrupt___state}{Wait Interrupt}} 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Drivers/\+S\+T\+M32\+F7xx\+\_\+\+H\+A\+L\+\_\+\+Driver/\+Inc/\mbox{\hyperlink{stm32f7xx__ll__sdmmc_8h}{stm32f7xx\+\_\+ll\+\_\+sdmmc.\+h}}\end{DoxyCompactItemize}

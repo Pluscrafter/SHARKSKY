@@ -1,0 +1,63 @@
+\hypertarget{classInterface_1_1I__SPI}{}\section{Interface\+::I\+\_\+\+S\+PI Class Reference}
+\label{classInterface_1_1I__SPI}\index{Interface::I\_SPI@{Interface::I\_SPI}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classInterface_1_1I__SPI_ab925fd980267faf9d2c96d24e4f0d5bd}\label{classInterface_1_1I__SPI_ab925fd980267faf9d2c96d24e4f0d5bd}} 
+{\bfseries I\+\_\+\+S\+PI} (S\+P\+I\+\_\+\+Handle\+Type\+Def \&hspi, G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox, uint8\+\_\+t r\+\_\+\+Bit)
+\item 
+\mbox{\Hypertarget{classInterface_1_1I__SPI_a876689bfd573068d6e44ce24e3672b35}\label{classInterface_1_1I__SPI_a876689bfd573068d6e44ce24e3672b35}} 
+void {\bfseries Start} ()
+\item 
+\mbox{\Hypertarget{classInterface_1_1I__SPI_af345850e3e9d67d1f5bddfc6cc755c32}\label{classInterface_1_1I__SPI_af345850e3e9d67d1f5bddfc6cc755c32}} 
+void {\bfseries Transfer} (uint8\+\_\+t msg)
+\item 
+\mbox{\Hypertarget{classInterface_1_1I__SPI_a6d800ecd87b0ac920f5c650c8ddbad30}\label{classInterface_1_1I__SPI_a6d800ecd87b0ac920f5c650c8ddbad30}} 
+void {\bfseries Transfer} (uint8\+\_\+t msg\mbox{[}$\,$\mbox{]}, uint8\+\_\+t bytes)
+\item 
+\mbox{\Hypertarget{classInterface_1_1I__SPI_ab94e196b8b8a7de032d0a8cbe34590b9}\label{classInterface_1_1I__SPI_ab94e196b8b8a7de032d0a8cbe34590b9}} 
+uint8\+\_\+t {\bfseries Transfer\+Receive} (uint8\+\_\+t msg)
+\item 
+\mbox{\Hypertarget{classInterface_1_1I__SPI_a2a5d262b609429383ad0125174f91cd8}\label{classInterface_1_1I__SPI_a2a5d262b609429383ad0125174f91cd8}} 
+void {\bfseries Transfer\+Receive} (uint8\+\_\+t msg\mbox{[}$\,$\mbox{]}, uint8\+\_\+t rec\mbox{[}$\,$\mbox{]}, uint8\+\_\+t bytes)
+\item 
+\mbox{\Hypertarget{classInterface_1_1I__SPI_af293dff982a82316809ad09732557540}\label{classInterface_1_1I__SPI_af293dff982a82316809ad09732557540}} 
+void {\bfseries Write\+Register} (uint8\+\_\+t reg, uint8\+\_\+t val)
+\item 
+\mbox{\Hypertarget{classInterface_1_1I__SPI_ae265b1d2ba8bda18174b670ae30c9d4e}\label{classInterface_1_1I__SPI_ae265b1d2ba8bda18174b670ae30c9d4e}} 
+void {\bfseries Write\+Registers} (uint8\+\_\+t reg\mbox{[}$\,$\mbox{]}, uint8\+\_\+t val\mbox{[}$\,$\mbox{]}, uint8\+\_\+t bytes)
+\item 
+\mbox{\Hypertarget{classInterface_1_1I__SPI_a11106cef4e7614c65b88c1f885d38e96}\label{classInterface_1_1I__SPI_a11106cef4e7614c65b88c1f885d38e96}} 
+uint8\+\_\+t {\bfseries Read\+Register} (uint8\+\_\+t reg)
+\item 
+\mbox{\Hypertarget{classInterface_1_1I__SPI_ac2ffd8435e629f8d12a4287da9728b2e}\label{classInterface_1_1I__SPI_ac2ffd8435e629f8d12a4287da9728b2e}} 
+void {\bfseries Read\+Registers} (uint8\+\_\+t reg\mbox{[}$\,$\mbox{]}, uint8\+\_\+t rec\mbox{[}$\,$\mbox{]}, uint8\+\_\+t bytes)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classInterface_1_1I__SPI_a0be454a2782b5ecbcc6e08a20a8a28e9}\label{classInterface_1_1I__SPI_a0be454a2782b5ecbcc6e08a20a8a28e9}} 
+S\+P\+I\+\_\+\+Handle\+Type\+Def \& {\bfseries spi}
+\item 
+\mbox{\Hypertarget{classInterface_1_1I__SPI_ae85ceec2c946c77fa97124b2274dbcb0}\label{classInterface_1_1I__SPI_ae85ceec2c946c77fa97124b2274dbcb0}} 
+G\+P\+I\+O\+\_\+\+Type\+Def $\ast$ {\bfseries G\+P\+I\+Ox}
+\item 
+\mbox{\Hypertarget{classInterface_1_1I__SPI_abfa0f664f69477085b19599bf195e636}\label{classInterface_1_1I__SPI_abfa0f664f69477085b19599bf195e636}} 
+uint8\+\_\+t {\bfseries r\+\_\+\+Bit}
+\item 
+\mbox{\Hypertarget{classInterface_1_1I__SPI_ac574d7e0b257cee5afc6b951774bff60}\label{classInterface_1_1I__SPI_ac574d7e0b257cee5afc6b951774bff60}} 
+uint8\+\_\+t {\bfseries s\+\_\+\+Bit}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 20 of file I\+\_\+\+S\+P\+I.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+I\+\_\+\+S\+P\+I.\+h\item 
+I\+\_\+\+S\+P\+I.\+cpp\end{DoxyCompactItemize}

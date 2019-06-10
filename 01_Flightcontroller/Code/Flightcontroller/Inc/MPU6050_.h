@@ -67,7 +67,7 @@
 #include "main.h"
 #include "i2c.h"
 
-namespace Sensors {
+namespace Sensor {
 
 class MPU6050 {
 public:

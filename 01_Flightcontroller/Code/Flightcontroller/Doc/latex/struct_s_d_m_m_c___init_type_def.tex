@@ -1,0 +1,75 @@
+\hypertarget{struct_s_d_m_m_c___init_type_def}{}\section{S\+D\+M\+M\+C\+\_\+\+Init\+Type\+Def Struct Reference}
+\label{struct_s_d_m_m_c___init_type_def}\index{SDMMC\_InitTypeDef@{SDMMC\_InitTypeDef}}
+
+
+S\+D\+M\+MC Configuration Structure definition.  
+
+
+
+
+{\ttfamily \#include $<$stm32f7xx\+\_\+ll\+\_\+sdmmc.\+h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_s_d_m_m_c___init_type_def_a999356b930b15af6c9ecf2c9eed89bb6}{Clock\+Edge}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_s_d_m_m_c___init_type_def_a9283eaa673082cbb79274eabaf6ddbc9}{Clock\+Bypass}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_s_d_m_m_c___init_type_def_a7336635628d6818a05abe74f92ca6323}{Clock\+Power\+Save}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_s_d_m_m_c___init_type_def_a69c420db438efebc43156437f35c1502}{Bus\+Wide}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_s_d_m_m_c___init_type_def_aa03b90f33a100609508a929e9fb2edc1}{Hardware\+Flow\+Control}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_s_d_m_m_c___init_type_def_a8f3083375d977df0ecd41bb622a6e683}{Clock\+Div}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+S\+D\+M\+MC Configuration Structure definition. 
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_s_d_m_m_c___init_type_def_a69c420db438efebc43156437f35c1502}\label{struct_s_d_m_m_c___init_type_def_a69c420db438efebc43156437f35c1502}} 
+\index{SDMMC\_InitTypeDef@{SDMMC\_InitTypeDef}!BusWide@{BusWide}}
+\index{BusWide@{BusWide}!SDMMC\_InitTypeDef@{SDMMC\_InitTypeDef}}
+\subsubsection{\texorpdfstring{BusWide}{BusWide}}
+{\footnotesize\ttfamily uint32\+\_\+t S\+D\+M\+M\+C\+\_\+\+Init\+Type\+Def\+::\+Bus\+Wide}
+
+Specifies the S\+D\+M\+MC bus width. This parameter can be a value of \mbox{\hyperlink{group___s_d_m_m_c___l_l___bus___wide}{Bus Width}} \mbox{\Hypertarget{struct_s_d_m_m_c___init_type_def_a9283eaa673082cbb79274eabaf6ddbc9}\label{struct_s_d_m_m_c___init_type_def_a9283eaa673082cbb79274eabaf6ddbc9}} 
+\index{SDMMC\_InitTypeDef@{SDMMC\_InitTypeDef}!ClockBypass@{ClockBypass}}
+\index{ClockBypass@{ClockBypass}!SDMMC\_InitTypeDef@{SDMMC\_InitTypeDef}}
+\subsubsection{\texorpdfstring{ClockBypass}{ClockBypass}}
+{\footnotesize\ttfamily uint32\+\_\+t S\+D\+M\+M\+C\+\_\+\+Init\+Type\+Def\+::\+Clock\+Bypass}
+
+Specifies whether the S\+D\+M\+MC Clock divider bypass is enabled or disabled. This parameter can be a value of \mbox{\hyperlink{group___s_d_m_m_c___l_l___clock___bypass}{Clock Bypass}} \mbox{\Hypertarget{struct_s_d_m_m_c___init_type_def_a8f3083375d977df0ecd41bb622a6e683}\label{struct_s_d_m_m_c___init_type_def_a8f3083375d977df0ecd41bb622a6e683}} 
+\index{SDMMC\_InitTypeDef@{SDMMC\_InitTypeDef}!ClockDiv@{ClockDiv}}
+\index{ClockDiv@{ClockDiv}!SDMMC\_InitTypeDef@{SDMMC\_InitTypeDef}}
+\subsubsection{\texorpdfstring{ClockDiv}{ClockDiv}}
+{\footnotesize\ttfamily uint32\+\_\+t S\+D\+M\+M\+C\+\_\+\+Init\+Type\+Def\+::\+Clock\+Div}
+
+Specifies the clock frequency of the S\+D\+M\+MC controller. This parameter can be a value between Min\+\_\+\+Data = 0 and Max\+\_\+\+Data = 255 \mbox{\Hypertarget{struct_s_d_m_m_c___init_type_def_a999356b930b15af6c9ecf2c9eed89bb6}\label{struct_s_d_m_m_c___init_type_def_a999356b930b15af6c9ecf2c9eed89bb6}} 
+\index{SDMMC\_InitTypeDef@{SDMMC\_InitTypeDef}!ClockEdge@{ClockEdge}}
+\index{ClockEdge@{ClockEdge}!SDMMC\_InitTypeDef@{SDMMC\_InitTypeDef}}
+\subsubsection{\texorpdfstring{ClockEdge}{ClockEdge}}
+{\footnotesize\ttfamily uint32\+\_\+t S\+D\+M\+M\+C\+\_\+\+Init\+Type\+Def\+::\+Clock\+Edge}
+
+Specifies the clock transition on which the bit capture is made. This parameter can be a value of \mbox{\hyperlink{group___s_d_m_m_c___l_l___clock___edge}{Clock Edge}} \mbox{\Hypertarget{struct_s_d_m_m_c___init_type_def_a7336635628d6818a05abe74f92ca6323}\label{struct_s_d_m_m_c___init_type_def_a7336635628d6818a05abe74f92ca6323}} 
+\index{SDMMC\_InitTypeDef@{SDMMC\_InitTypeDef}!ClockPowerSave@{ClockPowerSave}}
+\index{ClockPowerSave@{ClockPowerSave}!SDMMC\_InitTypeDef@{SDMMC\_InitTypeDef}}
+\subsubsection{\texorpdfstring{ClockPowerSave}{ClockPowerSave}}
+{\footnotesize\ttfamily uint32\+\_\+t S\+D\+M\+M\+C\+\_\+\+Init\+Type\+Def\+::\+Clock\+Power\+Save}
+
+Specifies whether S\+D\+M\+MC Clock output is enabled or disabled when the bus is idle. This parameter can be a value of \mbox{\hyperlink{group___s_d_m_m_c___l_l___clock___power___save}{Clock Power Saving}} \mbox{\Hypertarget{struct_s_d_m_m_c___init_type_def_aa03b90f33a100609508a929e9fb2edc1}\label{struct_s_d_m_m_c___init_type_def_aa03b90f33a100609508a929e9fb2edc1}} 
+\index{SDMMC\_InitTypeDef@{SDMMC\_InitTypeDef}!HardwareFlowControl@{HardwareFlowControl}}
+\index{HardwareFlowControl@{HardwareFlowControl}!SDMMC\_InitTypeDef@{SDMMC\_InitTypeDef}}
+\subsubsection{\texorpdfstring{HardwareFlowControl}{HardwareFlowControl}}
+{\footnotesize\ttfamily uint32\+\_\+t S\+D\+M\+M\+C\+\_\+\+Init\+Type\+Def\+::\+Hardware\+Flow\+Control}
+
+Specifies whether the S\+D\+M\+MC hardware flow control is enabled or disabled. This parameter can be a value of \mbox{\hyperlink{group___s_d_m_m_c___l_l___hardware___flow___control}{Hardware Flow Control}} 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Drivers/\+S\+T\+M32\+F7xx\+\_\+\+H\+A\+L\+\_\+\+Driver/\+Inc/\mbox{\hyperlink{stm32f7xx__ll__sdmmc_8h}{stm32f7xx\+\_\+ll\+\_\+sdmmc.\+h}}\end{DoxyCompactItemize}

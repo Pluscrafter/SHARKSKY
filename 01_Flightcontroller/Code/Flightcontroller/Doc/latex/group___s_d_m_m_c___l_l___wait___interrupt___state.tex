@@ -1,0 +1,35 @@
+\hypertarget{group___s_d_m_m_c___l_l___wait___interrupt___state}{}\section{Wait Interrupt}
+\label{group___s_d_m_m_c___l_l___wait___interrupt___state}\index{Wait Interrupt@{Wait Interrupt}}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___s_d_m_m_c___l_l___wait___interrupt___state_gaed576222893de29d2f77a39600e86daf}\label{group___s_d_m_m_c___l_l___wait___interrupt___state_gaed576222893de29d2f77a39600e86daf}} 
+\#define {\bfseries S\+D\+M\+M\+C\+\_\+\+W\+A\+I\+T\+\_\+\+NO}~((uint32\+\_\+t)0x00000000\+U)
+\item 
+\mbox{\Hypertarget{group___s_d_m_m_c___l_l___wait___interrupt___state_gaf48c98d1a6df7b4b84e4cccd7c374938}\label{group___s_d_m_m_c___l_l___wait___interrupt___state_gaf48c98d1a6df7b4b84e4cccd7c374938}} 
+\#define {\bfseries S\+D\+M\+M\+C\+\_\+\+W\+A\+I\+T\+\_\+\+IT}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaf1e27932e37eb3de74eea7f9f07e689a}{S\+D\+M\+M\+C\+\_\+\+C\+M\+D\+\_\+\+W\+A\+I\+T\+I\+NT}}
+\item 
+\mbox{\Hypertarget{group___s_d_m_m_c___l_l___wait___interrupt___state_gaea81a66e19abd478aee6ae6715383eca}\label{group___s_d_m_m_c___l_l___wait___interrupt___state_gaea81a66e19abd478aee6ae6715383eca}} 
+\#define {\bfseries S\+D\+M\+M\+C\+\_\+\+W\+A\+I\+T\+\_\+\+P\+E\+ND}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaae91836cca981d6b0fde3621876ce078}{S\+D\+M\+M\+C\+\_\+\+C\+M\+D\+\_\+\+W\+A\+I\+T\+P\+E\+ND}}
+\item 
+\#define {\bfseries I\+S\+\_\+\+S\+D\+M\+M\+C\+\_\+\+W\+A\+IT}(W\+A\+IT)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___s_d_m_m_c___l_l___wait___interrupt___state_gaddf9d4ffd6581a6c57e8e62f7b5ac8a2}\label{group___s_d_m_m_c___l_l___wait___interrupt___state_gaddf9d4ffd6581a6c57e8e62f7b5ac8a2}} 
+\index{Wait Interrupt@{Wait Interrupt}!IS\_SDMMC\_WAIT@{IS\_SDMMC\_WAIT}}
+\index{IS\_SDMMC\_WAIT@{IS\_SDMMC\_WAIT}!Wait Interrupt@{Wait Interrupt}}
+\subsubsection{\texorpdfstring{IS\_SDMMC\_WAIT}{IS\_SDMMC\_WAIT}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+\+S\+D\+M\+M\+C\+\_\+\+W\+A\+IT(\begin{DoxyParamCaption}\item[{}]{W\+A\+IT }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(((WAIT) == SDMMC\_WAIT\_NO) || \(\backslash\)}
+\DoxyCodeLine{                             ((WAIT) == SDMMC\_WAIT\_IT) || \(\backslash\)}
+\DoxyCodeLine{                             ((WAIT) == SDMMC\_WAIT\_PEND))}
+
+\end{DoxyCode}
