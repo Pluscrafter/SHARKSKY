@@ -33,6 +33,7 @@
 #include "gpio.h"
 #include "ICM20689.h"
 #include "MPU6050.h"
+#include "RF24.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -52,7 +53,7 @@
 
 #define MPU6050_ENABLE 			0
 #define MPU6000_ENABLE 			0
-#define ICM20689_ENABLE 		1
+#define ICM20689_ENABLE 		0
 
 #define ICM20689_OFFSET_FIND  	0
 /* USER CODE END PD */
@@ -278,6 +279,14 @@ int main(void)
   	packetSize = mpu.dmpGetFIFOPacketSize();
   	fifoCount = mpu.getFIFOCount();
 #endif
+  	RF24 radio(hspi2, GPIOC, 22, GPIOB, 28);
+  	const uint64_t pipe = 0xe7e7e7e7e8;
+  	radio.begin();
+
+  	radio.openWritingPipe(pipe);
+  	radio.startListening();
+  	radio.printDetails();
+  	uint8_t data[1]={0x41};
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -285,6 +294,10 @@ int main(void)
   while (1)
   {
 	  start = ARM_CM_DWT_CYCCNT;
+	  radio.write(data,1);
+	  HAL_GPIO_WritePin(INIT_OK_GPIO_Port, INIT_OK_Pin, GPIO_PIN_RESET);
+
+
 #if ICM20689_ENABLE == 1
 	  char txt[32];
 	  imu.ReadGyro();
@@ -341,7 +354,7 @@ int main(void)
 
 	  stop = ARM_CM_DWT_CYCCNT;
 	  lptime = (stop - start)/216000000.0;
-
+	  HAL_Delay(10);
 
 
     /* USER CODE END WHILE */
