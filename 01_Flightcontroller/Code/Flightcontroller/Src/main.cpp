@@ -20,6 +20,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "math.h"
 #include "stdio.h"
 #include "adc.h"
 #include "dac.h"
@@ -33,7 +34,6 @@
 #include "gpio.h"
 #include "ICM20689.h"
 #include "MPU6050.h"
-#include "RF24.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -53,7 +53,7 @@
 
 #define MPU6050_ENABLE 			0
 #define MPU6000_ENABLE 			0
-#define ICM20689_ENABLE 		0
+#define ICM20689_ENABLE 		1
 
 #define ICM20689_OFFSET_FIND  	0
 /* USER CODE END PD */
@@ -279,14 +279,7 @@ int main(void)
   	packetSize = mpu.dmpGetFIFOPacketSize();
   	fifoCount = mpu.getFIFOCount();
 #endif
-  	RF24 radio(hspi2, GPIOC, 22, GPIOB, 28);
-  	const uint64_t pipe = 0xe7e7e7e7e8;
-  	radio.begin();
 
-  	radio.openWritingPipe(pipe);
-  	radio.startListening();
-  	radio.printDetails();
-  	uint8_t data[1]={0x41};
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -294,18 +287,26 @@ int main(void)
   while (1)
   {
 	  start = ARM_CM_DWT_CYCCNT;
-	  radio.write(data,1);
-	  HAL_GPIO_WritePin(INIT_OK_GPIO_Port, INIT_OK_Pin, GPIO_PIN_RESET);
-
 
 #if ICM20689_ENABLE == 1
 	  char txt[32];
+
 	  imu.ReadGyro();
-	  //imu.ReadAccel();
+	  imu.ReadAccel();
+
+	  float fullvec = sqrt(pow(imu.accel[0],2) + pow(imu.accel[1],2) + pow(imu.accel[2],2));
+	  float acangle[2];
+
+	  acangle[0] = asin(imu.accel[0]/fullvec) * -57.29577951;
+	  acangle[1] = asin(imu.accel[1]/fullvec) * 57.29577951;
 	  //imu.ReadTemp();
+
 	  imu.t_ypr[0] += imu.ypr[0]*lptime;
 	  imu.t_ypr[1] += imu.ypr[1]*lptime;
 	  imu.t_ypr[2] += imu.ypr[2]*lptime;
+
+	  imu.t_ypr[0] = imu.t_ypr[0] * 0.96 + acangle[1] * 0.04;
+	  imu.t_ypr[1] = imu.t_ypr[1] * 0.96 + acangle[0] * 0.04;
 
 	  HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "GYROX: %2.3f \t", imu.t_ypr[0]),100);
 	  HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "GYROY: %2.3f \t", imu.t_ypr[1]),100);
@@ -318,7 +319,7 @@ int main(void)
 	  //HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "TEMP: %2.3f \t \n\r", imu.temp),100);
 
 
-	  HAL_Delay(100);
+	  HAL_Delay(10);
 #endif
 #if MPU6050_ENABLE == 1
 	  while (fifoCount < packetSize) {
@@ -354,7 +355,6 @@ int main(void)
 
 	  stop = ARM_CM_DWT_CYCCNT;
 	  lptime = (stop - start)/216000000.0;
-	  HAL_Delay(10);
 
 
     /* USER CODE END WHILE */
