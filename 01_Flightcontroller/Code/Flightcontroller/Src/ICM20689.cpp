@@ -5,11 +5,10 @@
  *      Author: Pluscrafter
  */
 
-#include <ICM20689.h>
+#include "ICM20689.h"
 
 namespace Sensor {
-	ICM20689::ICM20689() {
-		// TODO Auto-generated constructor stub
+	ICM20689::ICM20689(){
 
 	}
 
@@ -24,7 +23,7 @@ namespace Sensor {
 		HAL_Delay(10);
 		spi1.WriteRegister(PWR_MGMT_1, 0x00);	// START IMU
 		HAL_Delay(10);
-		uint8_t whoami = spi1.ReadRegister(WHO_AM_I); //CONTROL ID
+		uint8_t whoami = spi1.ReadRegister(WHO_AM_I|0x80); //CONTROL ID
 		if (whoami == 0x98){
 			init_ok = true;
 		}
@@ -83,7 +82,7 @@ namespace Sensor {
 
 	void ICM20689::ReadGyro(){
 		uint8_t tmp[6];
-		uint8_t reg[6]={GYRO_XOUT_H,GYRO_XOUT_L,GYRO_YOUT_H,GYRO_YOUT_L,GYRO_ZOUT_H,GYRO_ZOUT_L};
+		uint8_t reg[6]={GYRO_XOUT_H|0x80,GYRO_XOUT_L|0x80,GYRO_YOUT_H|0x80,GYRO_YOUT_L|0x80,GYRO_ZOUT_H|0x80,GYRO_ZOUT_L|0x80};
 		spi1.ReadRegisters(reg, tmp, 6);
 
 		r_gyro[0] = (tmp[0] << 8) | tmp[1];
@@ -98,7 +97,7 @@ namespace Sensor {
 
 	void ICM20689::ReadAccel(){
 		uint8_t tmp[6];
-		uint8_t reg[6]={ACCEL_XOUT_H,ACCEL_XOUT_L,ACCEL_YOUT_H,ACCEL_YOUT_L,ACCEL_ZOUT_H,ACCEL_ZOUT_L};
+		uint8_t reg[6]={ACCEL_XOUT_H|0x80,ACCEL_XOUT_L|0x80,ACCEL_YOUT_H|0x80,ACCEL_YOUT_L|0x80,ACCEL_ZOUT_H|0x80,ACCEL_ZOUT_L|0x80};
 		spi1.ReadRegisters(reg, tmp, 6);
 
 		r_accel[0] = (tmp[0] << 8) | tmp[1];
@@ -320,7 +319,7 @@ namespace Sensor {
 
 	void ICM20689::getMotion3(int16_t &gx, int16_t &gy, int16_t &gz){
 		uint8_t buffer[6];
-		uint8_t reg[6] = {GYRO_XOUT_H,GYRO_XOUT_L,GYRO_YOUT_H,GYRO_YOUT_L,GYRO_ZOUT_H,GYRO_ZOUT_L};
+		uint8_t reg[6] = {GYRO_XOUT_H|0x80,GYRO_XOUT_L|0x80,GYRO_YOUT_H|0x80,GYRO_YOUT_L|0x80,GYRO_ZOUT_H|0x80,GYRO_ZOUT_L|0x80};
 
 		spi1.ReadRegisters(reg, buffer, 6);
 		gx = (((int16_t)buffer[0]) << 8) | buffer[1];

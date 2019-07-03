@@ -27,6 +27,8 @@ namespace Interface {
 		GPIOx->BSRR = (1<<s_Bit);//HAL_GPIO_WritePin(GPIOA,GPIO_PIN_4,GPIO_PIN_SET);
 	}
 
+
+
 	void I_SPI::Transfer(uint8_t msg[], uint8_t bytes){
 		GPIOx->BSRR = (1<<r_Bit);//http://hertaville.com/stm32f0-gpio-tutorial-part-1.html 26.04.2019
 		HAL_SPI_Transmit_DMA(&spi, msg, bytes);
@@ -75,7 +77,7 @@ namespace Interface {
 	}
 
 	uint8_t I_SPI::ReadRegister(uint8_t reg){
-		return TransferReceive(reg|0x80);
+		return TransferReceive(reg);
 	}
 
 	void I_SPI::ReadRegisters(uint8_t reg[],uint8_t rec[], uint8_t bytes){

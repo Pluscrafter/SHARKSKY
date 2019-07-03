@@ -153,7 +153,7 @@ private:
 	int16_t 			HighOffset[3];
 	int 				Target[3];
 	int 				LinesOut;
-	int 				N;
+	int 				N 		;
 
 
 };

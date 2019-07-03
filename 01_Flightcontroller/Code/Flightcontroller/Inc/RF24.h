@@ -15,53 +15,14 @@
 #ifndef __RF24_H__
 #define __RF24_H__
 
-#define _BV(x) (1<<(x))
-
-#undef SERIAL_DEBUG
-#ifdef SERIAL_DEBUG
-#define IF_SERIAL_DEBUG(x) ({x;})
-#else
-#define IF_SERIAL_DEBUG(x)
-#endif
-
-// Avoid spurious warnings
-#if 1
-#if ! defined( NATIVE ) && defined( ARDUINO )
-#undef PROGMEM
-#define PROGMEM __attribute__(( section(".progmem.data") ))
-#undef PSTR
-#define PSTR(s) (__extension__({static const char __c[] PROGMEM = (s); &__c[0];}))
-#endif
-#endif
-
-//typedef uint16_t prog_uint16_t;
-#define PSTR(x) (x)
-#define printf_P printf
-#define strlen_P strlen
-#define PROGMEM
-#define pgm_read_word(p) (*(p))
-#define PRIPSTR "%s"
-#define pgm_read_byte(p) (*(p))
-#define pgm_read_ptr(p) (*(p))
-
-#include <stddef.h>
-#include "spi.h"
-#include <stdint.h>
-#include <stdio.h>
-#include <string.h>
-
-
 #include "RF24_config.h"
-#include "stm32f7xx_hal.h"
-#include "dma.h"
-#include "spi.h"
-#include "usart.h"
+#include "main.h"
 
-#if defined (RF24_LINUX) || defined (LITTLEWIRE)
-  #include "utility/includes.h"
-#elif defined SOFTSPI
-  #include <DigitalIO.h>
-#endif
+#define LOW 		GPIO_PIN_RESET
+#define HIGH 		GPIO_PIN_SET
+
+#define DMA  
+//#undef DMA
 
 /**
  * Power Amplifier level.
@@ -104,19 +65,30 @@ private:
   GPIO gpio;
 #endif
 
+
+  GPIO_TypeDef * ce_pin_port;
   uint16_t ce_pin; /**< "Chip Enable" pin, activates the RX or TX role */
+  GPIO_TypeDef * csn_pin_port;
   uint16_t csn_pin; /**< SPI Chip select */
+  SPI_HandleTypeDef * hspix;
   uint16_t spi_speed; /**< SPI Bus Speed */
+
+  GPIO_TypeDef *GPIOce;
+  uint8_t s_bit_ce;
+  GPIO_TypeDef *GPIOcsn;
+  uint8_t s_bit_csn,r_bit_ce,r_bit_csn;
+  SPI_HandleTypeDef &spi;
+
 #if defined (RF24_LINUX) || defined (XMEGA_D3)
   uint8_t spi_rxbuff[32+1] ; //SPI receive buffer (payload max 32 bytes)
   uint8_t spi_txbuff[32+1] ; //SPI transmit buffer (payload max 32 bytes + 1 byte for the command)
-#endif  
+#endif
   bool p_variant; /* False for RF24L01 and true for RF24L01P */
   uint8_t payload_size; /**< Fixed size of payloads */
   bool dynamic_payloads_enabled; /**< Whether dynamic payloads are enabled. */
   uint8_t pipe0_reading_address[5]; /**< Last address set on pipe 0 for reading. */
   uint8_t addr_width; /**< The address width to use - 3,4 or 5 bytes. */
-  
+
 
 protected:
   /**
@@ -147,9 +119,6 @@ public:
    * @param _cepin The pin attached to Chip Enable on the RF module
    * @param _cspin The pin attached to Chip Select
    */
-  RF24(uint16_t _cepin, uint16_t _cspin);
-
-  RF24(SPI_HandleTypeDef&hspi , GPIO_TypeDef *_cepinx, uint8_t _cepinr, GPIO_TypeDef *_cspinx, uint8_t _cspinr );
   //#if defined (RF24_LINUX)
   
     /**
@@ -162,17 +131,12 @@ public:
   * @param _cspin The pin attached to Chip Select
   * @param spispeed For RPi, the SPI speed in MHZ ie: BCM2835_SPI_SPEED_8MHZ
   */
-  
-  SPI_HandleTypeDef &spi;
-
-  GPIO_TypeDef *_cepinx;
-  GPIO_TypeDef *_cspinx;
-
-  uint8_t _cepinr, _cepins;
-  uint8_t _cspinr, _cspins;
-
-  RF24(uint16_t _cepin, uint16_t _cspin, uint32_t spispeed );
-  //#endif
+#ifdef DMA
+  RF24(GPIO_TypeDef *GPIOce, uint8_t s_bit_ce,GPIO_TypeDef *GPIOcsn,uint8_t s_bit_csn , SPI_HandleTypeDef &hspi);
+#else
+  RF24(GPIO_TypeDef *GPIOce, uint8_t s_bit_ce,GPIO_TypeDef *GPIOcsn,uint8_t s_bit_csn , SPI_HandleTypeDef &hspi , uint32_t spispeed );
+  RF24(GPIO_TypeDef * _cepin_port, uint16_t _cepin, GPIO_TypeDef * _cspin_port, uint16_t _cspin, SPI_HandleTypeDef * _hspix);
+#endif
 
   #if defined (RF24_LINUX)
   virtual ~RF24() {};
@@ -1076,7 +1040,7 @@ private:
    *
    * @param mode HIGH to take this unit off the SPI bus, LOW to put it on
    */
-  void csn(bool mode);
+  void csn(GPIO_PinState mode);
 
   /**
    * Set chip enable
@@ -1084,7 +1048,7 @@ private:
    * @param level HIGH to actively begin transmission or LOW to put in standby.  Please see data sheet
    * for a much more detailed description of this pin.
    */
-  void ce(bool level);
+  void ce(GPIO_PinState mode);
 
   /**
    * Read a chunk of data in from a register
@@ -1112,8 +1076,8 @@ private:
    * @param len How many bytes of data to transfer
    * @return Current value of status register
    */
-  uint8_t write_register(uint8_t reg, const uint8_t* const buf, uint8_t len);
-
+  uint8_t write_register(uint8_t reg, const uint8_t* buf, uint8_t len);
+  uint8_t write_register(uint8_t reg, uint8_t* buf, uint8_t len);
   /**
    * Write a single byte to a register
    *
@@ -1132,7 +1096,7 @@ private:
    * @param len Number of bytes to be sent
    * @return Current value of status register
    */
-  uint8_t write_payload(const void* buf, uint8_t len,  uint8_t writeType);
+  uint8_t write_payload(const void* buf, uint8_t len, const uint8_t writeType);
 
   /**
    * Read the receive payload

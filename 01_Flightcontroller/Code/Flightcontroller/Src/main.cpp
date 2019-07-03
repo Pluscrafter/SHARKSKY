@@ -56,6 +56,9 @@
 #define ICM20689_ENABLE 		1
 
 #define ICM20689_OFFSET_FIND  	0
+
+#define TEST_1					0
+#define TEST_2					0
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -255,6 +258,7 @@ int main(void)
 #endif
 
   HAL_GPIO_WritePin(INIT_OK_GPIO_Port, INIT_OK_Pin, GPIO_PIN_SET);
+
 #if ICM20689_OFFSET_FIND == 1 and ICM20689_ENABLE == 1
   imu.FindOffset();
 #endif

@@ -30,10 +30,14 @@ public:
 	void Start();
 
 	void Transfer(uint8_t msg);
+
 	void Transfer(uint8_t msg[], uint8_t bytes);
+
+
 
 	uint8_t TransferReceive(uint8_t msg);
 	void TransferReceive(uint8_t msg[],uint8_t rec[],uint8_t bytes);
+
 
 	void WriteRegister(uint8_t reg, uint8_t val);
 	void WriteRegisters(uint8_t reg[], uint8_t val[], uint8_t bytes);
