@@ -1,0 +1,43 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+* linguist-vendored
+<<<<<<< HEAD
+*.cpp linguist-vendored=false
+<<<<<<< HEAD
+=======
+03_Datasheets/* linguist-vendored=false04_Schriftliches/* linguist-vendored=false
+>>>>>>> 69d5ac7... update gitattributes
+=======
+03_Datasheets/* linguist-vendored=falseSchriftliches/* linguist-vendored=false
+>>>>>>> 6b63626... update gitattributes
+=======
+03_Datasheets/* linguist-vendored=falseSchriftliches/ linguist-vendored=false
+>>>>>>> 9d935fc... update gitattributes
+=======
+03_Datasheets/* linguist-vendored=falseSchriftliches/* linguist-vendored=false
+>>>>>>> f77140f... update gitattributes
+=======
+Schriftliches/* linguist-vendored=false
+>>>>>>> 89a9493... update gitattributes
+=======
+Schriftliches/* linguist-vendored=falseSchriftliches/* linguist-generated=true
+>>>>>>> e0a7390... Update .gitattributes
+=======
+Schriftliches/* linguist-vendored
+>>>>>>> 02b123e... Update .gitattributes
+=======
+* linguist-vendored
+*.cpp linguist-vendored
+>>>>>>> 846fc35... Update .gitattributes
+=======
+*.c linguist-vendored=false
+>>>>>>> b710555... Update .gitattributes
+=======
+*.cpp linguist-vendored=false
+>>>>>>> 90164f8... Update .gitattributes
