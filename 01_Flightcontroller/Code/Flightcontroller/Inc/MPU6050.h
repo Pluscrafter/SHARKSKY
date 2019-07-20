@@ -61,7 +61,7 @@ THE SOFTWARE.
 
         #define PROGMEM
         #define PGM_P  const char *
-        #define PSTR(str) (str)
+        //#define PSTR(str) (str)
         #define F(x) x
 
         typedef void prog_void;
@@ -79,7 +79,7 @@ THE SOFTWARE.
         #define strcmp_P(a, b) strcmp((a), (b))
         
         #define pgm_read_byte(addr) (*(const unsigned char *)(addr))
-        #define pgm_read_word(addr) (*(const unsigned short *)(addr))
+        //#define pgm_read_word(addr) (*(const unsigned short *)(addr))
         #define pgm_read_dword(addr) (*(const unsigned long *)(addr))
         #define pgm_read_float(addr) (*(const float *)(addr))
         

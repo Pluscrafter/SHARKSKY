@@ -22,7 +22,7 @@
 #define HIGH 		GPIO_PIN_SET
 
 #define DMA  
-//#undef DMA
+#undef DMA
 
 /**
  * Power Amplifier level.
@@ -77,7 +77,9 @@ private:
   uint8_t s_bit_ce;
   GPIO_TypeDef *GPIOcsn;
   uint8_t s_bit_csn,r_bit_ce,r_bit_csn;
+#ifdef DMA
   SPI_HandleTypeDef &spi;
+#endif
 
 #if defined (RF24_LINUX) || defined (XMEGA_D3)
   uint8_t spi_rxbuff[32+1] ; //SPI receive buffer (payload max 32 bytes)

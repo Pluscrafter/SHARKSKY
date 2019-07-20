@@ -34,6 +34,7 @@
 #include "gpio.h"
 #include "ICM20689.h"
 #include "MPU6050.h"
+#include "RF24.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -53,7 +54,7 @@
 
 #define MPU6050_ENABLE 			0
 #define MPU6000_ENABLE 			0
-#define ICM20689_ENABLE 		1
+#define ICM20689_ENABLE 		0
 
 #define ICM20689_OFFSET_FIND  	0
 
@@ -161,6 +162,11 @@ float 		PI = 3.1415;
 uint32_t 	start = 0, stop = 0;
 double 		lptime = 0.101;
 
+RF24 radio(GPIOC, CE_Pin, RF24_NSS_GPIO_Port, RF24_NSS_Pin, &hspi2);
+const uint8_t addresses[][6] = {"1Node","2Node"};
+
+uint8_t data[1] =
+{ 0x41};
 //I2cdev MPU6050
 #if MPU6050_ENABLE == 1
 MPU6050 		mpu;
@@ -283,6 +289,14 @@ int main(void)
   	packetSize = mpu.dmpGetFIFOPacketSize();
   	fifoCount = mpu.getFIFOCount();
 #endif
+  	//init RF24
+  	const uint64_t pipe = 0xE8E8F0F0E2;
+  	radio.begin();
+  	//radio.openReadingPipe(1, pipe);
+  	radio.openWritingPipe(pipe);
+  	radio.setDataRate(RF24_250KBPS);
+  	radio.printDetails();
+  	//radio.startListening();
 
   /* USER CODE END 2 */
 
@@ -291,7 +305,14 @@ int main(void)
   while (1)
   {
 	  start = ARM_CM_DWT_CYCCNT;
-
+	/*if (radio.available()){
+		radio.read(data, 1);
+		HAL_UART_Transmit(&huart1,data,1,100);
+		HAL_UART_Transmit(&huart1,(uint8_t *)"\n",1,100);
+	}else{
+		//HAL_UART_Transmit(&huart1,(uint8_t *)"NODATA\n",8,100);
+	}*/
+	radio.write(data,1);
 #if ICM20689_ENABLE == 1
 	  char txt[32];
 
@@ -359,7 +380,7 @@ int main(void)
 
 	  stop = ARM_CM_DWT_CYCCNT;
 	  lptime = (stop - start)/216000000.0;
-
+	HAL_Delay(500);
 
     /* USER CODE END WHILE */
 

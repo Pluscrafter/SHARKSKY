@@ -68,7 +68,9 @@ uint8_t RF24::read_register(uint8_t reg, uint8_t* buf, uint8_t len)
 	beginTransaction();
 #ifdef DMA
 	HAL_SPI_Transmit_DMA(&spi,&temp,1);
+	while (HAL_SPI_GetState(&spi) != HAL_SPI_STATE_READY);
 	HAL_SPI_Receive_DMA(&spi,&status,1);
+	while (HAL_SPI_GetState(&spi) != HAL_SPI_STATE_READY);
 	HAL_SPI_Receive_DMA(&spi,buf,len);
 	while (HAL_SPI_GetState(&spi) != HAL_SPI_STATE_READY);
 #else
@@ -89,6 +91,7 @@ uint8_t RF24::read_register(uint8_t reg)
 	beginTransaction();
 #ifdef DMA
 	HAL_SPI_Transmit_DMA(&spi,&temp,1);
+	while (HAL_SPI_GetState(&spi) != HAL_SPI_STATE_READY);
 	HAL_SPI_Receive_DMA(&spi,&result,1);
 	while (HAL_SPI_GetState(&spi) != HAL_SPI_STATE_READY);
 #else
@@ -109,7 +112,9 @@ uint8_t RF24::write_register(uint8_t reg, uint8_t* buf, uint8_t len)
 	beginTransaction();
 #ifdef DMA
 	HAL_SPI_Transmit_DMA(&spi,&temp,1);
+	while (HAL_SPI_GetState(&spi) != HAL_SPI_STATE_READY);
 	HAL_SPI_Receive_DMA(&spi,&status,1);
+	while (HAL_SPI_GetState(&spi) != HAL_SPI_STATE_READY);
 	HAL_SPI_Transmit_DMA(&spi,buf,len);
 	while (HAL_SPI_GetState(&spi) != HAL_SPI_STATE_READY);
 #else
@@ -120,6 +125,8 @@ uint8_t RF24::write_register(uint8_t reg, uint8_t* buf, uint8_t len)
 
 	return status;
 }
+
+
 
 /****************************************************************************/
 
@@ -135,7 +142,9 @@ uint8_t RF24::write_register(uint8_t reg, uint8_t value)
 	beginTransaction();
 #ifdef DMA
 	HAL_SPI_Transmit_DMA(&spi,&temp,1);
+	while (HAL_SPI_GetState(&spi) != HAL_SPI_STATE_READY);
 	HAL_SPI_Receive_DMA(&spi,&status,1);
+	while (HAL_SPI_GetState(&spi) != HAL_SPI_STATE_READY);
 	HAL_SPI_Transmit_DMA(&spi,&value,1);
 	while (HAL_SPI_GetState(&spi) != HAL_SPI_STATE_READY);
 #else
@@ -166,11 +175,14 @@ uint8_t RF24::write_payload(const void* buf, uint8_t data_len, uint8_t writeType
 	beginTransaction();
 #ifdef DMA
 	HAL_SPI_Transmit_DMA(&spi,&writeType,1);
+	while (HAL_SPI_GetState(&spi) != HAL_SPI_STATE_READY);
 	HAL_SPI_Receive_DMA(&spi,&status,1);
+	while (HAL_SPI_GetState(&spi) != HAL_SPI_STATE_READY);
 	HAL_SPI_Transmit_DMA(&spi,(uint8_t *) current,data_len);
 	temp = LOW;
 	while (blank_len--){
 		HAL_SPI_Receive_DMA(&spi,&temp,1);
+		while (HAL_SPI_GetState(&spi) != HAL_SPI_STATE_READY);
 	}
 	while (HAL_SPI_GetState(&spi) != HAL_SPI_STATE_READY);
 #else
@@ -212,6 +224,7 @@ uint8_t RF24::read_payload(void* buf, uint8_t data_len)
 	temp = HIGH;
 	while (blank_len--){
 		HAL_SPI_Transmit_DMA(&spi,&temp,1);
+		while (HAL_SPI_GetState(&spi) != HAL_SPI_STATE_READY);
 	}
 	while (HAL_SPI_GetState(&spi) != HAL_SPI_STATE_READY);
 #else
@@ -1041,9 +1054,9 @@ void RF24::openReadingPipe(uint8_t child, uint64_t address)
 	{
 		// For pipes 2-5, only write the LSB
 		if (child < 2)
-			write_register(pgm_read_byte(&child_pipe[child]), reinterpret_cast<const uint8_t*>(&address), addr_width);
+			write_register(pgm_read_byte(&child_pipe[child]), reinterpret_cast< uint8_t*>(&address), addr_width);
 		else
-			write_register(pgm_read_byte(&child_pipe[child]), reinterpret_cast<const uint8_t*>(&address), 1);
+			write_register(pgm_read_byte(&child_pipe[child]), reinterpret_cast< uint8_t*>(&address), 1);
 
 		write_register(pgm_read_byte(&child_payload_size[child]), payload_size);
 
@@ -1223,7 +1236,10 @@ void RF24::writeAckPayload(uint8_t pipe, const void* buf, uint8_t len)
 {
 	const uint8_t* current = reinterpret_cast<const uint8_t*>(buf);
 	uint8_t temp = (W_ACK_PAYLOAD | (pipe & 0x07));
-	//uint8_t data_len = rf24_min(len, 32);
+
+#ifndef DMA
+	uint8_t data_len = rf24_min(len, 32);
+#endif
 
 	beginTransaction();
 #ifdef DMA
