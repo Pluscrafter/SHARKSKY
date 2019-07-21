@@ -1,0 +1,125 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.3.25)  31 MAR 2019 22:42
+entering extended mode
+**./Maturarbeit.tex
+(Maturarbeit.tex
+LaTeX2e <2018-12-01>
+(D:\Programs\MiKTeX\tex/latex/base\article.cls
+Document Class: article 2018/09/03 v1.4i Standard LaTeX document class
+(D:\Programs\MiKTeX\tex/latex/base\size12.clo
+File: size12.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
+)
+\c@part=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(D:\Programs\MiKTeX\tex/generic/babel\babel.sty
+Package: babel 2018/11/13 3.27 The Babel package
+
+(D:\Programs\MiKTeX\tex/generic/babel\switch.def
+File: switch.def 2018/11/13 3.27 Babel switching mechanism
+)
+*************************************
+* Local config file bblopts.cfg used
+*
+(C:\Users\Pluscrafter\AppData\Roaming\MiKTeX\2.9\tex/latex/arabi\bblopts.cfg
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
+(D:\Programs\MiKTeX\tex/latex/babel-german\ngerman.ldf
+Language: ngerman 2018/12/08 v2.11 German support for babel (post-1996 orthogra
+phy)
+
+(D:\Programs\MiKTeX\tex/latex/babel-german\ngermanb.ldf
+Language: ngermanb 2018/12/08 v2.11 German support for babel (post-1996 orthogr
+aphy)
+
+(D:\Programs\MiKTeX\tex/generic/babel\babel.def
+File: babel.def 2018/11/13 3.27 Babel common definitions
+\babel@savecnt=\count88
+\U@D=\dimen103
+
+(D:\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
+\bbl@dirlevel=\count89
+)
+Package babel Info: Making " an active character on input line 121.
+)))
+(C:\Users\Pluscrafter\AppData\Roaming\MiKTeX\2.9\tex/latex/natbib\natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip43
+\bibsep=\skip44
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count90
+)
+(Maturarbeit.aux)
+\openout1 = `Maturarbeit.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 9.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 9.
+ [1
+
+{C:/Users/Pluscrafter/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] (Matu
+rarbeit.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 4.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 4.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 4.
+)
+\tf@toc=\write3
+\openout3 = `Maturarbeit.toc'.
+
+ [1
+
+] [1]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 28.
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--28
+[][][]\OT1/cmr/m/n/10 https://blog.dronetrest.com/inertial-sensor-comparison-mp
+u6000-vs-mpu6050-vs-
+ []
+
+[2] [3] [4] [5] [6] (Maturarbeit.aux) ) 
+Here is how much of TeX's memory you used:
+ 1177 strings out of 492945
+ 14994 string characters out of 3139494
+ 90583 words of memory out of 3000000
+ 5119 multiletter control sequences out of 15000+200000
+ 9107 words of font info for 32 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 27i,8n,27p,3202b,198s stack positions out of 5000i,500n,10000p,200000b,50000s
+<D:/Programs/MiKTeX/fonts/type1/public/a
+msfonts/cm/cmbx12.pfb><D:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.
+pfb><D:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/Programs/M
+iKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><D:/Programs/MiKTeX/fonts/type1/
+public/amsfonts/cm/cmr7.pfb><D:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
+cmr8.pfb>
+Output written on Maturarbeit.pdf (8 pages, 89867 bytes).
+PDF statistics:
+ 53 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

@@ -1,0 +1,3 @@
+https://en.wikibooks.org/wiki/LaTeX/Document_Structure
+https://tex.stackexchange.com/questions/54333/how-to-avoid-numbering-the-first-page-of-the-document
+https://www.namsu.de/Extra/pakete/Babel_V2017.html
