@@ -14,7 +14,7 @@ extern UART_HandleTypeDef huart1;
 void RF24::csn(GPIO_PinState mode)
 {
 #ifdef DMA
-	if (mode == HIGH){
+	if (mode == GPIO_PIN_SET){
 		GPIOcsn->BSRR = 1 << s_bit_csn;
 	}
 	else{
@@ -30,7 +30,7 @@ void RF24::csn(GPIO_PinState mode)
 void RF24::ce(GPIO_PinState level)
 {
 #ifdef DMA
-	if (level == HIGH){
+	if (level == GPIO_PIN_SET){
 		GPIOce->BSRR = 1 << s_bit_ce;
 	}
 	else{
@@ -68,7 +68,6 @@ uint8_t RF24::read_register(uint8_t reg, uint8_t* buf, uint8_t len)
 	beginTransaction();
 #ifdef DMA
 	HAL_SPI_Transmit_DMA(&spi,&temp,1);
-	while (HAL_SPI_GetState(&spi) != HAL_SPI_STATE_READY);
 	HAL_SPI_Receive_DMA(&spi,&status,1);
 	while (HAL_SPI_GetState(&spi) != HAL_SPI_STATE_READY);
 	HAL_SPI_Receive_DMA(&spi,buf,len);
@@ -91,7 +90,6 @@ uint8_t RF24::read_register(uint8_t reg)
 	beginTransaction();
 #ifdef DMA
 	HAL_SPI_Transmit_DMA(&spi,&temp,1);
-	while (HAL_SPI_GetState(&spi) != HAL_SPI_STATE_READY);
 	HAL_SPI_Receive_DMA(&spi,&result,1);
 	while (HAL_SPI_GetState(&spi) != HAL_SPI_STATE_READY);
 #else
@@ -112,7 +110,6 @@ uint8_t RF24::write_register(uint8_t reg, uint8_t* buf, uint8_t len)
 	beginTransaction();
 #ifdef DMA
 	HAL_SPI_Transmit_DMA(&spi,&temp,1);
-	while (HAL_SPI_GetState(&spi) != HAL_SPI_STATE_READY);
 	HAL_SPI_Receive_DMA(&spi,&status,1);
 	while (HAL_SPI_GetState(&spi) != HAL_SPI_STATE_READY);
 	HAL_SPI_Transmit_DMA(&spi,buf,len);
@@ -142,7 +139,6 @@ uint8_t RF24::write_register(uint8_t reg, uint8_t value)
 	beginTransaction();
 #ifdef DMA
 	HAL_SPI_Transmit_DMA(&spi,&temp,1);
-	while (HAL_SPI_GetState(&spi) != HAL_SPI_STATE_READY);
 	HAL_SPI_Receive_DMA(&spi,&status,1);
 	while (HAL_SPI_GetState(&spi) != HAL_SPI_STATE_READY);
 	HAL_SPI_Transmit_DMA(&spi,&value,1);
@@ -175,16 +171,15 @@ uint8_t RF24::write_payload(const void* buf, uint8_t data_len, uint8_t writeType
 	beginTransaction();
 #ifdef DMA
 	HAL_SPI_Transmit_DMA(&spi,&writeType,1);
-	while (HAL_SPI_GetState(&spi) != HAL_SPI_STATE_READY);
 	HAL_SPI_Receive_DMA(&spi,&status,1);
 	while (HAL_SPI_GetState(&spi) != HAL_SPI_STATE_READY);
 	HAL_SPI_Transmit_DMA(&spi,(uint8_t *) current,data_len);
+	while (HAL_SPI_GetState(&spi) != HAL_SPI_STATE_READY);
 	temp = LOW;
 	while (blank_len--){
 		HAL_SPI_Receive_DMA(&spi,&temp,1);
 		while (HAL_SPI_GetState(&spi) != HAL_SPI_STATE_READY);
 	}
-	while (HAL_SPI_GetState(&spi) != HAL_SPI_STATE_READY);
 #else
 	HAL_SPI_TransmitReceive(hspix, &writeType, &status, 1, HAL_MAX_DELAY);
 	HAL_SPI_Transmit(hspix, (uint8_t *) current, data_len, HAL_MAX_DELAY);
@@ -220,13 +215,13 @@ uint8_t RF24::read_payload(void* buf, uint8_t data_len)
 #ifdef DMA
 	HAL_SPI_Transmit_DMA(&spi,&temp,1);
 	HAL_SPI_Receive_DMA(&spi,&status,1);
+	while (HAL_SPI_GetState(&spi) != HAL_SPI_STATE_READY);
 	HAL_SPI_Receive_DMA(&spi,current,data_len);
 	temp = HIGH;
 	while (blank_len--){
 		HAL_SPI_Transmit_DMA(&spi,&temp,1);
 		while (HAL_SPI_GetState(&spi) != HAL_SPI_STATE_READY);
 	}
-	while (HAL_SPI_GetState(&spi) != HAL_SPI_STATE_READY);
 #else
 	HAL_SPI_TransmitReceive(hspix, &temp, &status, 1, HAL_MAX_DELAY);
 	HAL_SPI_Receive(hspix, current, data_len, HAL_MAX_DELAY);
@@ -1131,6 +1126,7 @@ void RF24::toggle_features(void)
 	beginTransaction();
 #ifdef DMA
 	HAL_SPI_Transmit_DMA(&spi,&temp,1);
+	while (HAL_SPI_GetState(&spi) != HAL_SPI_STATE_READY);
 	temp = 0x73;
 	HAL_SPI_Transmit_DMA(&spi,&temp,1);
 	while (HAL_SPI_GetState(&spi) != HAL_SPI_STATE_READY);
