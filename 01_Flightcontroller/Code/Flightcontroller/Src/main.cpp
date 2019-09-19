@@ -436,9 +436,9 @@ int main(void)
 
 	setMotorSpeed();
 
-	  stop = ARM_CM_DWT_CYCCNT;
-	  lptime = (stop - start)/216000000.0;
-	HAL_Delay(500);
+	stop = ARM_CM_DWT_CYCCNT;
+	lptime = (stop - start)/216000000.0;
+	HAL_Delay(500); //TODO: Uncomment when in flightmode
 
     /* USER CODE END WHILE */
 
