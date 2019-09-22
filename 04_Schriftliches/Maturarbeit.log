@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.3.25)  31 MAR 2019 22:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.3.25)  23 SEP 2019 00:15
 entering extended mode
 **./Maturarbeit.tex
 (Maturarbeit.tex
@@ -105,19 +105,19 @@ u6000-vs-mpu6050-vs-
 [2] [3] [4] [5] [6] (Maturarbeit.aux) ) 
 Here is how much of TeX's memory you used:
  1177 strings out of 492945
- 14994 string characters out of 3139494
+ 14897 string characters out of 3139494
  90583 words of memory out of 3000000
  5119 multiletter control sequences out of 15000+200000
  9107 words of font info for 32 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 27i,8n,27p,3202b,198s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 27i,8n,27p,3201b,198s stack positions out of 5000i,500n,10000p,200000b,50000s
 <D:/Programs/MiKTeX/fonts/type1/public/a
 msfonts/cm/cmbx12.pfb><D:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.
 pfb><D:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/Programs/M
 iKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><D:/Programs/MiKTeX/fonts/type1/
 public/amsfonts/cm/cmr7.pfb><D:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
 cmr8.pfb>
-Output written on Maturarbeit.pdf (8 pages, 89867 bytes).
+Output written on Maturarbeit.pdf (8 pages, 89866 bytes).
 PDF statistics:
  53 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
