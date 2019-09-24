@@ -54,7 +54,7 @@
 
 #define MPU6050_ENABLE 			0
 #define MPU6000_ENABLE 			0
-#define ICM20689_ENABLE 		0
+#define ICM20689_ENABLE 		1
 
 #define ICM20689_OFFSET_FIND  	0
 
@@ -79,6 +79,7 @@
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
+void loopRadio();
 
 /* USER CODE END PFP */
 
@@ -209,6 +210,17 @@ uint16_t motor_speed[4];
 int main(void)
 {
   /* USER CODE BEGIN 1 */
+	pid_gain_ta[0][0] = 30;
+	pid_gain_ta[0][1] = 30;
+	pid_gain_ta[0][2] = 30;
+
+	pid_gain_ta[1][0] = 30;
+	pid_gain_ta[1][1] = 30;
+	pid_gain_ta[1][2] = 30;
+
+	pid_gain_ta[2][0] = 30;
+	pid_gain_ta[2][1] = 30;
+	pid_gain_ta[2][2] = 30;
 
   /* USER CODE END 1 */
   
@@ -366,6 +378,8 @@ int main(void)
 	  acangle[1] = asin(imu.accel[1]/fullvec) * 57.29577951;
 	  //imu.ReadTemp();
 
+	  lptime = 0.001325;
+
 	  imu.t_ypr[0] += imu.ypr[0]*lptime;
 	  imu.t_ypr[1] += imu.ypr[1]*lptime;
 	  imu.t_ypr[2] += imu.ypr[2]*lptime;
@@ -373,15 +387,16 @@ int main(void)
 	  imu.t_ypr[0] = imu.t_ypr[0] * 0.96 + acangle[1] * 0.04;
 	  imu.t_ypr[1] = imu.t_ypr[1] * 0.96 + acangle[0] * 0.04;
 
-	  HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "GYROX: %2.3f \t", imu.t_ypr[0]),100);
-	  HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "GYROY: %2.3f \t", imu.t_ypr[1]),100);
-	  HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "GYROZ: %2.3f \t \n\r", imu.t_ypr[2]),100);
+	  //HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "throttle: %u \t", recvData.throttle),100);
+	 // HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "pitch   : %u \t", recvData.pitch),100);
+	 // HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "roll    : %u \t", recvData.roll),100);
 
-	  //HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "ACCELX: %2.3f \t", imu.accel[0]),100);
-	  //HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "ACCELY: %2.3f \t", imu.accel[1]),100);
-	  //HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "ACCELZ: %2.3f \t \n\r", imu.accel[2]),100);
+	  //HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "GYROX	 : %2.3f \t", imu.t_ypr[0]),100);
+	  //HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "GYROY	 : %2.3f \t", imu.t_ypr[1]),100);
+	  //HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "GYROZ	 : %2.3f \t", imu.t_ypr[2]),100);
+	  //HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "%2.3f \n\r", lptime),100);
 
-	  //HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "TEMP: %2.3f \t \n\r", imu.temp),100);
+//	  HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "TEMP: %2.3f \t \n\r", imu.temp),100);
 
 	  for (uint8_t i = 0;  i < 3; i++){
 		  previous_error[i] = error[i];
@@ -391,7 +406,7 @@ int main(void)
 		  error[i] = imu.t_ypr[i];
 	  }
 
-	  HAL_Delay(10);
+	  //HAL_Delay(10);
 #endif
 
 #if MPU6050_ENABLE == 1
@@ -431,14 +446,18 @@ int main(void)
 #endif
 
 #if PID_TRUE_ANGLE == 1
+	error[0] = imu.t_ypr[2] - recvData.yaw;
+	error[1] = imu.t_ypr[1] - recvData.pitch;
+	error[2] = imu.t_ypr[0] - recvData.roll;
+
 	PID_TrueAngle();
 #endif
-
+	loopRadio();
 	setMotorSpeed();
 
 	stop = ARM_CM_DWT_CYCCNT;
 	lptime = (stop - start)/216000000.0;
-	HAL_Delay(500); //TODO: Uncomment when in flightmode
+	//HAL_Delay(500); //TtODO: Uncomment when in flightmode
 
     /* USER CODE END WHILE */
 
@@ -559,11 +578,12 @@ void PID_AngleMotion(){
 }
 
 void setMotorSpeed(){
-	/*if (recvData.throttle < 100){
+	if (recvData.throttle < 100){
 		for (int i = 0; i < 4 ;i++){
-			motor_speed[i] = 1024 + recvData.throttle;
+			motor_speed[i] = 1024 + 10;
 		}
-	}*/
+	}
+	else{
 #if PID_TRUE_ANGLE == 1
 	motor_speed[0] = (1024 + recvData.throttle) - pid_ta[1] + pid_ta[2] - pid_ta[0];
 	motor_speed[1] = (1024 + recvData.throttle) - pid_ta[1] - pid_ta[2] + pid_ta[0];
@@ -584,6 +604,7 @@ void setMotorSpeed(){
 	motor_speed[2] = (float)(0.5 * ((1024 + recvData.throttle) + pid_ta[1] - pid_ta[2] - pid_ta[0]) + 0.5 * ((1024 + recvData.throttle) + pid_am[1] - pid_am[2] - pid_am[0]));
 	motor_speed[3] = (float)(0.5 * ((1024 + recvData.throttle) + pid_ta[1] + pid_ta[2] + pid_ta[0]) + 0.5 * ((1024 + recvData.throttle) + pid_am[1] + pid_am[2] + pid_am[0]));
 #endif
+	}
 
 	for (int i = 0; i < 4 ;i++){
 		if (motor_speed[i] > 2048){
@@ -598,6 +619,16 @@ void setMotorSpeed(){
 	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_2,motor_speed[1]);
 	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_3,motor_speed[2]);
 	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_4,motor_speed[3]);
+}
+
+void loopRadio(){
+	if(radio.available()){
+		radio.read(&recvData,sizeof(RadioData));
+		radio.writeAckPayload(1,&ackData,sizeof(AckData));
+	}
+	else{
+
+	}
 }
 /* USER CODE END 4 */
 

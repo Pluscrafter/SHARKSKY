@@ -20,7 +20,6 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "cmsis_os.h"
 #include "adc.h"
 #include "dma.h"
 #include "eth.h"
@@ -28,13 +27,17 @@
 #include "i2c.h"
 #include "sdmmc.h"
 #include "spi.h"
+#include "tim.h"
 #include "usart.h"
 #include "usb_otg.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "lcd_hd44780.h"
+#include <string.h>
+#include<stdio.h>
+#include "RF24.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -55,14 +58,52 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
+uint32_t adc3[6];
+
+LCD_HD44780 lcd;
+
+//Radio
+RF24 radio(GPIOD, GPIO_PIN_15 ,GPIOD , GPIO_PIN_14, &hspi1);
+const uint8_t addresses[][6] = {"1Node","2Node"};
+
+uint8_t data[1] = { 0x41};
+
+//! Acknowlegement struct
+struct AckData{
+	int16_t 	yaw;									//!<2 bytes 2
+	int16_t 	pitch;									//!<2 bytes 4
+	int16_t 	roll;									//!<2 bytes 6
+
+	uint16_t 	heading;								//!<2 bytes 8
+	uint32_t 	altitude; 								//!<4 bytes 12
+
+	uint32_t 	LV03x;									//!<4 byte 16
+	uint32_t 	LV03y;									//!<4 byte 20
+
+	uint16_t 	flags;									//!<2 bytes 22
+	uint32_t	uptdate_time; 							//!<4 bytes 26
+};
+
+//! receive message struct
+struct RadioData{
+	int16_t		yaw;									//!<2 bytes 2
+	int16_t		pitch;									//!<2 bytes 4
+	int16_t		roll;									//!<2 bytes 6
+	uint16_t	throttle;								//!<2 bytes 8
+
+	uint16_t	flags;									//!<2 bytes 10
+	uint32_t	data;									//!<4 bytes 14
+};
+
+AckData 		ackData;								//!< define acknowlegement data
+RadioData 		transData;								//!< define transmit data
 
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
-void MX_FREERTOS_Init(void);
 /* USER CODE BEGIN PFP */
-
+void loopRadio();
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -105,24 +146,53 @@ int main(void)
   MX_ADC3_Init();
   MX_SDMMC1_SD_Init();
   MX_SPI1_Init();
+  MX_FATFS_Init();
   MX_I2C1_Init();
   MX_ETH_Init();
+  MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
+  HAL_TIM_Base_Start(&htim2);
+  HAL_ADC_Start_DMA(&hadc3, adc3, 6);
+
+  lcd.lcdInit(&hi2c1, (uint8_t)0x27, (uint8_t)4, (uint8_t)20);
+  lcd.lcdBacklightOn();
+
+  char txt[20];
+
+  const uint64_t pipe = 0xE8E8F0F0E2;
+  radio.begin();
+  radio.setPayloadSize(32);
+  radio.setChannel(125);
+  radio.setDataRate(RF24_250KBPS);
+  radio.setPALevel(RF24_PA_MAX);
+  radio.setAutoAck(true);
+  radio.enableDynamicPayloads();
+  radio.enableAckPayload();
+  radio.openWritingPipe(pipe);
 
   /* USER CODE END 2 */
-
-  /* Call init function for freertos objects (in freertos.c) */
-  MX_FREERTOS_Init(); 
-
-  /* Start scheduler */
-  osKernelStart();
-  
-  /* We should never get here as control is now taken by the scheduler */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  transData.throttle = (int16_t)adc3[3];
+	  transData.yaw = (int16_t)(((int16_t)adc3[2]- 470) * (30.0/470.0));
+	  transData.pitch = (int16_t)(((int16_t)adc3[0]- 470) * (30.0/470.0));
+	  transData.roll = (int16_t)(((int16_t)adc3[1]- 470) * (30.0/470.0));
+
+	  lcd.lcdSetCursorPosition(0, 0);
+	  lcd.lcdPrintStr((uint8_t*)txt, sprintf(txt,"Throttle :%i  %lu  ",transData.throttle, adc3[3]));
+	  lcd.lcdSetCursorPosition(0, 1);
+	  lcd.lcdPrintStr((uint8_t*)txt, sprintf(txt,"Yaw      :%i  %lu  ",transData.yaw, adc3[2]));
+	  lcd.lcdSetCursorPosition(0, 2);
+	  lcd.lcdPrintStr((uint8_t*)txt, sprintf(txt,"Pitch    :%i  %lu  ",transData.pitch, adc3[0]));
+	  lcd.lcdSetCursorPosition(0, 3);
+	  lcd.lcdPrintStr((uint8_t*)txt, sprintf(txt,"Roll     :%i  %lu  ",transData.roll, adc3[1]));
+
+	  loopRadio();
+	  //lcd.lcdDisplayClear();
+	  //HAL_Delay(1);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -193,6 +263,13 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
+void loopRadio(){
+	radio.write(&transData,sizeof(RadioData));
+
+	if(radio.isAckPayloadAvailable()){
+		radio.read(&ackData,radio.getDynamicPayloadSize());
+	}
+}
 
 /* USER CODE END 4 */
 

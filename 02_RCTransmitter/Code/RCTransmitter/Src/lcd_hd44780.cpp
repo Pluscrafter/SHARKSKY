@@ -34,15 +34,13 @@
 
 #include "stdlib.h"
 #include "string.h"
-#include "FreeRTOS.h"
-#include "task.h"
-#include "lcd_hd44780_i2c.h"
+#include "lcd_hd44780.h"
 
 uint8_t lcdCommandBuffer[6] = {0x00};
 
 static LCDParams lcdParams;
 
-static bool lcdWriteByte(uint8_t rsRwBits, uint8_t * data);
+
 
 /**
  * @brief  Turn display on and init it params
@@ -55,9 +53,18 @@ static bool lcdWriteByte(uint8_t rsRwBits, uint8_t * data);
  * @param  columns Number of colums
  * @return         true if success
  */
-bool lcdInit(I2C_HandleTypeDef *hi2c, uint8_t address, uint8_t lines, uint8_t columns) {
 
-    TickType_t xLastWakeTime;
+LCD_HD44780::LCD_HD44780(){
+
+}
+
+LCD_HD44780::~LCD_HD44780(){
+
+}
+
+
+bool LCD_HD44780::lcdInit(I2C_HandleTypeDef *hi2c, uint8_t address, uint8_t lines, uint8_t columns) {
+
 
     uint8_t lcdData = LCD_BIT_5x8DOTS;
 
@@ -73,22 +80,20 @@ bool lcdInit(I2C_HandleTypeDef *hi2c, uint8_t address, uint8_t lines, uint8_t co
 
     /* First 3 steps of init cycles. They are the same. */
     for (uint8_t i = 0; i < 3; ++i) {
-        if (HAL_I2C_Master_Transmit_DMA(lcdParams.hi2c, lcdParams.address, (uint8_t*)lcdCommandBuffer, 3) != HAL_OK) {
+        if (HAL_I2C_Master_Transmit(lcdParams.hi2c, lcdParams.address, (uint8_t*)lcdCommandBuffer, 3,100) != HAL_OK) {
             return false;
         }
 
-        xLastWakeTime = xTaskGetTickCount();
-
         while (HAL_I2C_GetState(lcdParams.hi2c) != HAL_I2C_STATE_READY) {
-            vTaskDelay(1);
+        	HAL_Delay(1);
         }
 
         if (i == 2) {
             // For the last cycle delay is less then 1 ms (100us by datasheet)
-            vTaskDelayUntil(&xLastWakeTime, (TickType_t)1);
+        	HAL_Delay(1);
         } else {
             // For first 2 cycles delay is less then 5ms (4100us by datasheet)
-            vTaskDelayUntil(&xLastWakeTime, (TickType_t)5);
+        	HAL_Delay(5);
         }
     }
 
@@ -97,12 +102,12 @@ bool lcdInit(I2C_HandleTypeDef *hi2c, uint8_t address, uint8_t lines, uint8_t co
     lcdCommandBuffer[1] = lcdCommandBuffer[0];
     lcdCommandBuffer[2] = LCD_BIT_BACKIGHT_ON | (LCD_MODE_4BITS << 4);
 
-    if (HAL_I2C_Master_Transmit_DMA(lcdParams.hi2c, lcdParams.address, (uint8_t*)lcdCommandBuffer, 3) != HAL_OK) {
+    if (HAL_I2C_Master_Transmit(lcdParams.hi2c, lcdParams.address, (uint8_t*)lcdCommandBuffer, 3,100) != HAL_OK) {
         return false;
     }
 
     while (HAL_I2C_GetState(lcdParams.hi2c) != HAL_I2C_STATE_READY) {
-        vTaskDelay(1);
+    	HAL_Delay(1);
     }
 
     /* Lets set display params */
@@ -134,7 +139,7 @@ bool lcdInit(I2C_HandleTypeDef *hi2c, uint8_t address, uint8_t lines, uint8_t co
  * @param  action   LCD_PARAM_SET or LCD_PARAM_UNSET
  * @return          true if success
  */
-bool lcdCommand(LCDCommands command, LCDParamsActions action) {
+bool LCD_HD44780::lcdCommand(LCDCommands command, LCDParamsActions action) {
     uint8_t lcdData = 0x00;
 
     /* First of all lest store the command */
@@ -159,7 +164,7 @@ bool lcdCommand(LCDCommands command, LCDParamsActions action) {
                     if (lcdWriteByte((uint8_t)0x00, &lcdData) == false) {
                         return false;
                     } else {
-                        vTaskDelay(2);
+                    	HAL_Delay(1);
                         return true;
                     }
 
@@ -169,7 +174,7 @@ bool lcdCommand(LCDCommands command, LCDParamsActions action) {
                     if (lcdWriteByte((uint8_t)0x00, &lcdData) == false) {
                         return false;
                     } else {
-                        vTaskDelay(2);
+                    	HAL_Delay(1);
                         return true;
                     }
 
@@ -254,15 +259,15 @@ bool lcdCommand(LCDCommands command, LCDParamsActions action) {
  *                 LCD_BIT_BACKIGHT_OFF (or 0x00) to turn display Off
  * @return         true if success
  */
-bool lcdBacklight(uint8_t command) {
+bool LCD_HD44780::lcdBacklight(uint8_t command) {
     lcdParams.backlight = command;
 
-    if (HAL_I2C_Master_Transmit_DMA(lcdParams.hi2c, lcdParams.address, &lcdParams.backlight, 1) != HAL_OK) {
+    if (HAL_I2C_Master_Transmit(lcdParams.hi2c, lcdParams.address, &lcdParams.backlight, 1,100) != HAL_OK) {
         return false;
     }
 
     while (HAL_I2C_GetState(lcdParams.hi2c) != HAL_I2C_STATE_READY) {
-        vTaskDelay(1);
+    	HAL_Delay(1);
     }
 
     return true;
@@ -274,7 +279,7 @@ bool lcdBacklight(uint8_t command) {
  * @param  line   counting from 0
  * @return        true if success
  */
-bool lcdSetCursorPosition(uint8_t column, uint8_t line) {
+bool LCD_HD44780::lcdSetCursorPosition(uint8_t column, uint8_t line) {
     // We will setup offsets for 4 lines maximum
     static const uint8_t lineOffsets[4] = { 0x00, 0x40, 0x14, 0x54 };
 
@@ -293,7 +298,7 @@ bool lcdSetCursorPosition(uint8_t column, uint8_t line) {
  * @param  length Number of symbols to print
  * @return        true if success
  */
-bool lcdPrintStr(uint8_t * data, uint8_t length) {
+bool LCD_HD44780::lcdPrintStr(uint8_t * data, uint8_t length) {
     for (uint8_t i = 0; i < length; ++i) {
         if (lcdWriteByte(LCD_BIT_RS, &data[i]) == false) {
             return false;
@@ -308,7 +313,7 @@ bool lcdPrintStr(uint8_t * data, uint8_t length) {
  * @param  data Symbol to print
  * @return      true if success
  */
-bool lcdPrintChar(uint8_t data) {
+bool LCD_HD44780::lcdPrintChar(uint8_t data) {
     return lcdWriteByte(LCD_BIT_RS, &data);
 }
 
@@ -324,7 +329,7 @@ bool lcdPrintChar(uint8_t data) {
  *                  Example: { 0x07, 0x09, 0x09, 0x09, 0x09, 0x1F, 0x11 }
  * @return          true if success
  */
-bool lcdLoadCustomChar(uint8_t cell, uint8_t * charMap) {
+bool LCD_HD44780::lcdLoadCustomChar(uint8_t cell, uint8_t * charMap) {
 
     // Stop, if trying to load to incorrect cell
     if (cell > 7) {
@@ -352,7 +357,7 @@ bool lcdLoadCustomChar(uint8_t cell, uint8_t * charMap) {
  * @param  data     Pointer to byte to send
  * @return          true if success
  */
-static bool lcdWriteByte(uint8_t rsRwBits, uint8_t * data) {
+bool LCD_HD44780::lcdWriteByte(uint8_t rsRwBits, uint8_t * data) {
 
     /* Higher 4 bits*/
     lcdCommandBuffer[0] = rsRwBits | LCD_BIT_E | lcdParams.backlight | (*data & 0xF0);  // Send data and set strobe
@@ -365,12 +370,12 @@ static bool lcdWriteByte(uint8_t rsRwBits, uint8_t * data) {
     lcdCommandBuffer[5] = rsRwBits | lcdParams.backlight | ((*data << 4) & 0xF0);              // Turning strobe off
 
 
-    if (HAL_I2C_Master_Transmit_DMA(lcdParams.hi2c, lcdParams.address, (uint8_t*)lcdCommandBuffer, 6) != HAL_OK) {
+    if (HAL_I2C_Master_Transmit(lcdParams.hi2c, lcdParams.address, (uint8_t*)lcdCommandBuffer, 6,100) != HAL_OK) {
         return false;
     }
 
     while (HAL_I2C_GetState(lcdParams.hi2c) != HAL_I2C_STATE_READY) {
-        vTaskDelay(1);
+    	HAL_Delay(1);
     }
 
     return true;

@@ -27,11 +27,6 @@
 #ifndef LCD_HD44780_I2C_H
 #define LCD_HD44780_I2C_H 120
 
-/* C++ detection */
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 #include "stm32f7xx_hal.h"
 
 #define LCD_BIT_RS                 ((uint8_t)0x01U)
@@ -88,13 +83,6 @@ extern "C" {
 #define lcdCursorDirToLeft()       lcdCommand(LCD_CURSOR_DIR_LEFT, LCD_PARAM_SET)
 #define lcdCursorHome()            lcdCommand(LCD_CURSOR_HOME, LCD_PARAM_SET)
 
-#ifndef bool
-typedef enum {
-    false,
-    true
-} bool;
-#endif
-
 typedef struct {
     I2C_HandleTypeDef * hi2c;  // I2C Struct
     uint8_t lines;             // Lines of the display
@@ -122,18 +110,26 @@ typedef enum {
     LCD_DISPLAY_SHIFT
 } LCDCommands;
 
+class LCD_HD44780{
+public:
+	LCD_HD44780();
+	~LCD_HD44780();
 
-bool lcdInit(I2C_HandleTypeDef *hi2c, uint8_t address, uint8_t lines, uint8_t rows);
-bool lcdCommand(LCDCommands command, LCDParamsActions action);
-bool lcdBacklight(uint8_t command);
-bool lcdSetCursorPosition(uint8_t line, uint8_t row);
-bool lcdPrintStr(uint8_t * data, uint8_t length);
-bool lcdPrintChar(uint8_t data);
-bool lcdLoadCustomChar(uint8_t cell, uint8_t * charMap);
+	bool lcdInit(I2C_HandleTypeDef *hi2c, uint8_t address, uint8_t lines, uint8_t rows);
+	bool lcdCommand(LCDCommands command, LCDParamsActions action);
+	bool lcdBacklight(uint8_t command);
+	bool lcdSetCursorPosition(uint8_t line, uint8_t row);
+	bool lcdPrintStr(uint8_t * data, uint8_t length);
+	bool lcdPrintChar(uint8_t data);
+	bool lcdLoadCustomChar(uint8_t cell, uint8_t * charMap);
 
-/* C++ detection */
-#ifdef __cplusplus
-}
-#endif
+private:
+	static bool lcdWriteByte(uint8_t rsRwBits, uint8_t * data);
+
+};
+
+
+
+
 
 #endif
