@@ -210,17 +210,17 @@ uint16_t motor_speed[4];
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-	pid_gain_ta[0][0] = 30;
-	pid_gain_ta[0][1] = 30;
-	pid_gain_ta[0][2] = 30;
+	pid_gain_ta[0][0] = 0;
+	pid_gain_ta[0][1] = 0;
+	pid_gain_ta[0][2] = 0;
 
-	pid_gain_ta[1][0] = 30;
-	pid_gain_ta[1][1] = 30;
-	pid_gain_ta[1][2] = 30;
+	pid_gain_ta[1][0] = 15;
+	pid_gain_ta[1][1] = 0;
+	pid_gain_ta[1][2] = 0;
 
-	pid_gain_ta[2][0] = 30;
-	pid_gain_ta[2][1] = 30;
-	pid_gain_ta[2][2] = 30;
+	pid_gain_ta[2][0] = 15;
+	pid_gain_ta[2][1] = 0;
+	pid_gain_ta[2][2] = 0;
 
   /* USER CODE END 1 */
   
@@ -446,7 +446,7 @@ int main(void)
 #endif
 
 #if PID_TRUE_ANGLE == 1
-	error[0] = imu.t_ypr[2] - recvData.yaw;
+	//error[0] = imu.t_ypr[2] - recvData.yaw;
 	error[1] = imu.t_ypr[1] - recvData.pitch;
 	error[2] = imu.t_ypr[0] - recvData.roll;
 
