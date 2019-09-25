@@ -447,8 +447,8 @@ int main(void)
 
 #if PID_TRUE_ANGLE == 1
 	//error[0] = imu.t_ypr[2] - recvData.yaw;
-	error[1] = imu.t_ypr[1] - recvData.pitch;
-	error[2] = imu.t_ypr[0] - recvData.roll;
+	error[1] = recvData.pitch - imu.t_ypr[1];
+	error[2] = recvData.roll - imu.t_ypr[0];
 
 	PID_TrueAngle();
 #endif
@@ -585,24 +585,24 @@ void setMotorSpeed(){
 	}
 	else{
 #if PID_TRUE_ANGLE == 1
-	motor_speed[0] = (1024 + recvData.throttle) - pid_ta[1] + pid_ta[2] - pid_ta[0];
-	motor_speed[1] = (1024 + recvData.throttle) - pid_ta[1] - pid_ta[2] + pid_ta[0];
-	motor_speed[2] = (1024 + recvData.throttle) + pid_ta[1] - pid_ta[2] - pid_ta[0];
-	motor_speed[3] = (1024 + recvData.throttle) + pid_ta[1] + pid_ta[2] + pid_ta[0];
+	motor_speed[0] = (1024 + recvData.throttle) + pid_ta[1] + pid_ta[2] - pid_ta[0];
+	motor_speed[1] = (1024 + recvData.throttle) + pid_ta[1] - pid_ta[2] + pid_ta[0];
+	motor_speed[2] = (1024 + recvData.throttle) - pid_ta[1] - pid_ta[2] - pid_ta[0];
+	motor_speed[3] = (1024 + recvData.throttle) - pid_ta[1] + pid_ta[2] + pid_ta[0];
 #endif
 
 #if PID_ANGLE_MOTION == 1
-	motor_speed[0] = (1024 + recvData.throttle) - pid_am[1] + pid_am[2] - pid_am[0];
-	motor_speed[1] = (1024 + recvData.throttle) - pid_am[1] - pid_am[2] + pid_am[0];
-	motor_speed[2] = (1024 + recvData.throttle) + pid_am[1] - pid_am[2] - pid_am[0];
-	motor_speed[3] = (1024 + recvData.throttle) + pid_am[1] + pid_am[2] + pid_am[0];
+	motor_speed[0] = (1024 + recvData.throttle) + pid_am[1] + pid_am[2] - pid_am[0];
+	motor_speed[1] = (1024 + recvData.throttle) + pid_am[1] - pid_am[2] + pid_am[0];
+	motor_speed[2] = (1024 + recvData.throttle) - pid_am[1] - pid_am[2] - pid_am[0];
+	motor_speed[3] = (1024 + recvData.throttle) - pid_am[1] + pid_am[2] + pid_am[0];
 #endif
 
 #if PID_TRUE_ANGLE == 1 &&  PID_ANGLE_MOTION == 1
-	motor_speed[0] = (float)(0.5 * ((1024 + recvData.throttle) - pid_ta[1] + pid_ta[2] - pid_ta[0]) + 0.5 * ((1024 + recvData.throttle) - pid_am[1] + pid_am[2] - pid_am[0]));
-	motor_speed[1] = (float)(0.5 * ((1024 + recvData.throttle) - pid_ta[1] - pid_ta[2] + pid_ta[0]) + 0.5 * ((1024 + recvData.throttle) - pid_am[1] - pid_am[2] + pid_am[0]));
-	motor_speed[2] = (float)(0.5 * ((1024 + recvData.throttle) + pid_ta[1] - pid_ta[2] - pid_ta[0]) + 0.5 * ((1024 + recvData.throttle) + pid_am[1] - pid_am[2] - pid_am[0]));
-	motor_speed[3] = (float)(0.5 * ((1024 + recvData.throttle) + pid_ta[1] + pid_ta[2] + pid_ta[0]) + 0.5 * ((1024 + recvData.throttle) + pid_am[1] + pid_am[2] + pid_am[0]));
+	motor_speed[0] = (float)(0.5 * ((1024 + recvData.throttle) + pid_ta[1] + pid_ta[2] - pid_ta[0]) + 0.5 * ((1024 + recvData.throttle) + pid_am[1] + pid_am[2] - pid_am[0]));
+	motor_speed[1] = (float)(0.5 * ((1024 + recvData.throttle) + pid_ta[1] - pid_ta[2] + pid_ta[0]) + 0.5 * ((1024 + recvData.throttle) + pid_am[1] - pid_am[2] + pid_am[0]));
+	motor_speed[2] = (float)(0.5 * ((1024 + recvData.throttle) - pid_ta[1] - pid_ta[2] - pid_ta[0]) + 0.5 * ((1024 + recvData.throttle) - pid_am[1] - pid_am[2] - pid_am[0]));
+	motor_speed[3] = (float)(0.5 * ((1024 + recvData.throttle) - pid_ta[1] + pid_ta[2] + pid_ta[0]) + 0.5 * ((1024 + recvData.throttle) - pid_am[1] + pid_am[2] + pid_am[0]));
 #endif
 	}
 
