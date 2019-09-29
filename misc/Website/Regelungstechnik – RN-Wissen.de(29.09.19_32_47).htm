@@ -1,0 +1,1921 @@
+<!DOCTYPE html>
+<html dir="ltr" class="client-js" lang="de"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Regelungstechnik – RN-Wissen.de</title>
+<meta name="generator" content="MediaWiki 1.25.1">
+<link rel="shortcut icon" href="https://rn-wissen.de/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://rn-wissen.de/wiki/opensearch_desc.php" title="RN-Wissen.de (de)">
+<link rel="EditURI" type="application/rsd+xml" href="https://rn-wissen.de/wiki/api.php?action=rsd">
+<link rel="alternate" hreflang="x-default" href="https://rn-wissen.de/wiki/index.php?title=Regelungstechnik">
+<link rel="alternate" type="application/atom+xml" title="Atom-Feed für „RN-Wissen.de“" href="https://rn-wissen.de/wiki/index.php?title=Spezial:Letzte_%C3%84nderungen&amp;feed=atom">
+<link rel="stylesheet" href="Regelungstechnik%20%E2%80%93%20RN-Wissen.de(29.09.19_32_47)-Dateien/load.css">
+<style>
+.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}  .mw-content-ltr .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr .mw-collapsible-toggle{float:right} .mw-content-rtl .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl .mw-collapsible-toggle{float:left}.mw-customtoggle,.mw-collapsible-toggle{cursor:pointer} caption .mw-collapsible-toggle,.mw-content-ltr caption .mw-collapsible-toggle,.mw-content-rtl caption .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr caption .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl caption .mw-collapsible-toggle{float:none} li .mw-collapsible-toggle,.mw-content-ltr li .mw-collapsible-toggle,.mw-content-rtl li .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr li .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+/* cache key: d0280de8-mw:resourceloader:filter:minify-css:7:e1ffd603cbaaa5f1a36e0d13fe843535 */
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.highlight{font-weight:bold}
+/* cache key: d0280de8-mw:resourceloader:filter:minify-css:7:f8d0c6895ce3ae14434c16b8fca59432 */
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba(255,255,255,0.5);border-radius:5px;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAABblBMVEUAAAD///////9PfTf///80aRdTgjn///9Feij///////////9Rfzf///////////9PfjZRgDh1o1xOfTb///////+bwYqLtnj///////9PfTa82K////9WhT6YxIL///9QgDdTgzr////////j7uDl7eLq8efi693k7OH///////9UhjuBr2rp9uRUhjr///9YljVKgir///9WiTlYjT3////9/v57vFlbkT5PjC9dlD/5/fhuq09stUTs9uhxuElctCpfnT1huDFloEZloUZmpENmvDZpvDxpvTxqvjxrvT5rvT9rwTxsqktswD5uwkBvuUdxw0NztFBztU9ztVBzwkp0tlJ1xkd2t1R3uVR4w1F4xk54x014yE15uVZ5v1R5xVB6v1R7yFJ8wVh9xVl9yFR9yVd9ylN+xVh+yFd/x1l/yFeAylmEx1+Ny2uY0Hqe04Wj1Ymv3Ze33qLD47TJ5L3O6cPU7Mrq9eb2+/Q4j37OAAAAQHRSTlMAAQIEBAUFBQwPFB4fJCUoKiosQEhJS01RUlZZXmdydXaChYuSlJSWmJmoq6uur8LExcvM19fg5ejt8fX2+Pr7SljgewAAAKpJREFUGBkFwQNCAwAAAMDLtl3LtrG4rWXbtvX77gAgZ6grFwC0bhwNVgKgdPZx8b0dgLi+s7Wn0VoAqpfOI9+BNADZI7fLrz2pSEwGHZuH+78lSK8ZLkLezF3ooyUG3VPXq2USei9WngeyoG195yBYWDF3E/2pAhl1e9Gr8bGT+bfOFCC2fnvh4X7rcqIAQNNu+HT6sxkAjceTL/2ZAIhv+PorBwBJxfkA//dFHSCBy/UTAAAAAElFTkSuQmCC);background-image:url(https://rn-wissen.de/wiki/resources/src/mediawiki.action/images/green-checkmark.png?2015-05-25T21:00:00Z)!ie;background-position:left}.postedit-close{position:absolute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:black;text-shadow:0 0.0625em 0 white;text-decoration:none;opacity:0.2;filter:alpha(opacity=20)}.postedit-close:hover{color:black;text-decoration:none;opacity:0.4;filter:alpha(opacity=40)}
+/* cache key: d0280de8-mw:resourceloader:filter:minify-css:7:ee18c37f9abe9468308f806e66dffc6a */</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{color:black;text-decoration:none}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:white}.suggestions a.mw-searchSuggest-link .special-query{ overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}
+/* cache key: d0280de8-mw:resourceloader:filter:minify-css:7:ae3fa4570b5ac0c6cf7b3776c8ae4d6f */</style><meta name="ResourceLoaderDynamicStyles" content="">
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: d0280de8-mw:resourceloader:filter:minify-css:7:2ec331895b5303488ea7bd91ff91059b */</style>
+<script src="Regelungstechnik%20%E2%80%93%20RN-Wissen.de(29.09.19_32_47)-Dateien/load.php"></script><script src="Regelungstechnik%20%E2%80%93%20RN-Wissen.de(29.09.19_32_47)-Dateien/load_002.php"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Regelungstechnik","wgTitle":"Regelungstechnik","wgCurRevisionId":25252,"wgRevisionId":25252,"wgArticleId":1388,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Microcontroller","Software","Elektronik"],"wgBreakFrames":false,"wgPageContentLanguage":"de","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t.",".\t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"],"wgMonthNamesShort":["","Jan.","Feb.","Mär.","Apr.","Mai","Jun.","Jul.","Aug.","Sep.","Okt.","Nov.","Dez."],"wgRelevantPageName":"Regelungstechnik","wgRelevantArticleId":1388,"wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":false,"dialogs":false,"hidesig":true,"preview":false,"publish":false}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"de"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: d0280de8-mw:resourceloader:filter:minify-js:7:afe5a015a1f68a7615dfc51aac7ccec8 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script><script src="Regelungstechnik%20%E2%80%93%20RN-Wissen.de(29.09.19_32_47)-Dateien/load_003.php"></script>
+<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1px; bottom: 2px; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style type="text/css">.MathJax_Display {text-align: center; margin: 1em 0em; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax .merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MathJax .MJX-monospace {font-family: monospace}
+.MathJax .MJX-sans-serif {font-family: sans-serif}
+#MathJax_Tooltip {background-color: InfoBackground; color: InfoText; border: 1px solid black; box-shadow: 2px 2px 5px #AAAAAA; -webkit-box-shadow: 2px 2px 5px #AAAAAA; -moz-box-shadow: 2px 2px 5px #AAAAAA; -khtml-box-shadow: 2px 2px 5px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true'); padding: 3px 4px; z-index: 401; position: absolute; left: 0; top: 0; width: auto; height: auto; display: none}
+.MathJax {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax:focus, body :focus .MathJax {display: inline-table}
+.MathJax.MathJax_FullWidth {text-align: center; display: table-cell!important; width: 10000em!important}
+.MathJax img, .MathJax nobr, .MathJax a {border: 0; padding: 0; margin: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+img.MathJax_strut {border: 0!important; padding: 0!important; margin: 0!important; vertical-align: 0!important}
+.MathJax span {display: inline; position: static; border: 0; padding: 0; margin: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+.MathJax nobr {white-space: nowrap!important}
+.MathJax img {display: inline!important; float: none!important}
+.MathJax * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.MathJax_Processing {visibility: hidden; position: fixed; width: 0; height: 0; overflow: hidden}
+.MathJax_Processed {display: none!important}
+.MathJax_ExBox {display: block!important; overflow: hidden; width: 1px; height: 60ex; min-height: 0; max-height: none}
+.MathJax .MathJax_EmBox {display: block!important; overflow: hidden; width: 1px; height: 60em; min-height: 0; max-height: none}
+.MathJax_LineBox {display: table!important}
+.MathJax_LineBox span {display: table-cell!important; width: 10000em!important; min-width: 0; max-width: none; padding: 0; border: 0; margin: 0}
+.MathJax .MathJax_HitBox {cursor: text; background: white; opacity: 0; filter: alpha(opacity=0)}
+.MathJax .MathJax_HitBox * {filter: none; opacity: 1; background: transparent}
+#MathJax_Tooltip * {filter: none; opacity: 1; background: transparent}
+@font-face {font-family: MathJax_Main; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Main-Regular.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Main; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Main-Bold.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Main-Bold.otf?V=2.7.1') format('opentype'); font-weight: bold}
+@font-face {font-family: MathJax_Main; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Main-Italic.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Main-Italic.otf?V=2.7.1') format('opentype'); font-style: italic}
+@font-face {font-family: MathJax_Math; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Math-Italic.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Math-Italic.otf?V=2.7.1') format('opentype'); font-style: italic}
+@font-face {font-family: MathJax_Caligraphic; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Caligraphic-Regular.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Caligraphic-Regular.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Size1; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Size1-Regular.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Size1-Regular.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Size2; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Size2-Regular.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Size2-Regular.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Size3; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Size3-Regular.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Size3-Regular.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Size4; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Size4-Regular.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Size4-Regular.otf?V=2.7.1') format('opentype')}
+.MathJax .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style type="text/css">@font-face {font-family: MathJax_AMS; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_AMS-Regular.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_AMS-Regular.otf?V=2.7.1') format('opentype')}
+</style></head>
+<body class="mediawiki ltr sitedir-ltr capitalize-all-nouns ns-0 ns-subject page-Regelungstechnik skin-modern action-view"><div style="visibility: hidden; overflow: hidden; position: absolute; top: 0px; height: 1px; width: auto; padding: 0px; border: 0px none; margin: 0px; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal;"><div id="MathJax_Hidden"></div></div><div id="MathJax_Message" style="display: none;"></div>
+
+		<!-- heading -->
+		<div id="mw_header">
+			<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" lang="de">Regelungstechnik</h1>		</div>
+
+		<div id="mw_main">
+			<div id="mw_contentwrapper">
+				<!-- navigation portlet -->
+						<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Ansichten</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="https://rn-wissen.de/wiki/index.php?title=Regelungstechnik" title="Seiteninhalt anzeigen [Alt+Umschalt+c]" accesskey="c">Seite</a></li>
+				<li id="ca-talk"><a href="https://rn-wissen.de/wiki/index.php?title=Diskussion:Regelungstechnik" title="Diskussion zum Seiteninhalt [Alt+Umschalt+t]" accesskey="t">Diskussion</a></li>
+				<li id="ca-viewsource"><a href="https://rn-wissen.de/wiki/index.php?title=Regelungstechnik&amp;action=edit" title="Diese Seite ist geschützt. Ihr Quelltext kann dennoch angesehen und kopiert werden. [Alt+Umschalt+e]" accesskey="e">Quelltext anzeigen</a></li>
+				<li id="ca-history"><a href="https://rn-wissen.de/wiki/index.php?title=Regelungstechnik&amp;action=history" title="Frühere Versionen dieser Seite [Alt+Umschalt+h]" accesskey="h">Versionsgeschichte</a></li>
+				</ul>
+							</div>
+		</div>
+	
+				<!-- content -->
+				<div id="mw_content" role="main">
+					<!-- contentholder does nothing by default, but it allows users to style the text inside
+						 the content area without affecting the meaning of 'em' in #mw_content, which is used
+						 for the margins -->
+					<div id="mw_contentholder" class="mw-body">
+						<div class="mw-topboxes">
+							<div id="mw-js-message" style="display:none;"></div>
+							<div class="mw-topbox" id="siteSub">Aus RN-Wissen.de</div>
+																				</div>
+
+						<div id="contentSub"></div>
+
+												<div id="jump-to-nav">Wechseln zu:							<a href="#mw_portlets">Navigation</a>, 							<a href="#searchInput">Suche</a>
+		
+		</div>
+							
+							
+	
+<!-- Google Analytics entfernt -->
+
+
+	
+<script src="Regelungstechnik%20%E2%80%93%20RN-Wissen.de(29.09.19_32_47)-Dateien/cookiechoices.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function(event) {
+    cookieChoices.showCookieConsentBar('Diese Webseite verwendet Cookies. Cookies helfen dabei, diese Webseite besser zu machen.',
+      'Ok einverstanden', 'mehr Informationen', 'https://rn-wissen.de/wiki/index.php?title=RN-Wissen.de:Datenschutz#Cookies');
+  });
+</script>    
+    						
+						
+
+				<center>
+
+<script async="" src="Regelungstechnik%20%E2%80%93%20RN-Wissen.de(29.09.19_32_47)-Dateien/adsbygoogle.js"></script>
+<!-- RN-Wissen Kopf 728x90 -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-7479754841705808" data-ad-slot="6846190624"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<br>
+<br>
+</center> 		
+
+
+
+
+
+
+						<div id="mw-content-text" dir="ltr" class="mw-content-ltr" lang="de"><p><b>Regelungen</b> sind ein Bestandteil unseres Lebens und das nicht nur seit Erfindung der Dampfmaschine. 
+</p><p>Allein schon der aufrechte Gang funktioniert nur mit Regelung. 
+Dabei wirken die Sinne als Sensoren, das Gehirn als Regler und die 
+Muskeln als Aktuatoren. Weitere Regelungen in unserem Körper sind z.B. 
+die Konstanthaltung der Körpertemperatur, der Blutdruck, die Anpassung 
+der Pupille auf Helligkeitsänderungen usw.
+</p><p>Im technischen Zeitalter ist der erste geschichtlich bedeutende 
+Regler der Fliehkraftregler von James Watt, der für die Drehzahlregelung
+ seiner Dampfmaschine eingesetzt wurde. Seitdem ist die Regelungstechnik
+ aus keinem Technikbereich mehr wegzudenken. Die Regelungstechnik 
+begegnet uns im täglichen Leben auf Schritt und Tritt: Der 
+Temperaturregler der Zentralheizung, der Temperaturregler des 
+Kühlschranks, der Regler für die Belichtungsautomatik im Fotoapparat, 
+das ABS-System im Auto und die Netzspannungs- und Frequenzregelung des 
+europäischen Versorgungsnetzes sind nur einige wenige Beispiele aus 
+diesem Bereich. 
+</p><p><i>Autor Waste</i>
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Inhaltsverzeichnis</h2><span class="toctoggle">&nbsp;[<a href="#" id="togglelink">Verbergen</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Einleitung"><span class="tocnumber">1</span> <span class="toctext">Einleitung</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Der_Regelkreis"><span class="tocnumber">2</span> <span class="toctext">Der Regelkreis</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Begriffe"><span class="tocnumber">2.1</span> <span class="toctext">Begriffe</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#Die_Regelstrecke"><span class="tocnumber">3</span> <span class="toctext">Die Regelstrecke</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Proportionalglied_.28P-Glied.29"><span class="tocnumber">3.1</span> <span class="toctext">Proportionalglied (P-Glied)</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Integrator_.28I-Glied.29"><span class="tocnumber">3.2</span> <span class="toctext">Integrator (I-Glied)</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Verz.C3.B6gerungsglied_0.Ordnung_.28Totzeitglied.29"><span class="tocnumber">3.3</span> <span class="toctext">Verzögerungsglied 0.Ordnung (Totzeitglied)</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Verz.C3.B6gerungsglied_1.Ordnung_.28PT1-Glied.29"><span class="tocnumber">3.4</span> <span class="toctext">Verzögerungsglied 1.Ordnung (PT1-Glied)</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Verz.C3.B6gerungsglied_2.Ordnung_.28PT2-Glied.29"><span class="tocnumber">3.5</span> <span class="toctext">Verzögerungsglied 2.Ordnung (PT2-Glied)</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="#Der_Regler"><span class="tocnumber">4</span> <span class="toctext">Der Regler</span></a>
+<ul>
+<li class="toclevel-2 tocsection-11"><a href="#P-Regler"><span class="tocnumber">4.1</span> <span class="toctext">P-Regler</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#I-Regler"><span class="tocnumber">4.2</span> <span class="toctext">I-Regler</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#PI-Regler"><span class="tocnumber">4.3</span> <span class="toctext">PI-Regler</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#PD-Regler"><span class="tocnumber">4.4</span> <span class="toctext">PD-Regler</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#PID-Regler"><span class="tocnumber">4.5</span> <span class="toctext">PID-Regler</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-16"><a href="#Vergleich_der_Reglertypen"><span class="tocnumber">5</span> <span class="toctext">Vergleich der Reglertypen</span></a></li>
+<li class="toclevel-1 tocsection-17"><a href="#Digitaler_Regler"><span class="tocnumber">6</span> <span class="toctext">Digitaler Regler</span></a></li>
+<li class="toclevel-1 tocsection-18"><a href="#Dimensionierung_des_Reglers"><span class="tocnumber">7</span> <span class="toctext">Dimensionierung des Reglers</span></a>
+<ul>
+<li class="toclevel-2 tocsection-19"><a href="#Dimensionierung_durch_Probieren_.28Empirisches_Einstellen.29"><span class="tocnumber">7.1</span> <span class="toctext">Dimensionierung durch Probieren (Empirisches Einstellen)</span></a>
+<ul>
+<li class="toclevel-3 tocsection-20"><a href="#Methode_1"><span class="tocnumber">7.1.1</span> <span class="toctext">Methode 1</span></a></li>
+<li class="toclevel-3 tocsection-21"><a href="#Methode_2"><span class="tocnumber">7.1.2</span> <span class="toctext">Methode 2</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-22"><a href="#Dimensionierung_nach_Einstellregeln"><span class="tocnumber">7.2</span> <span class="toctext">Dimensionierung nach Einstellregeln</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#Dimensionierung_mit_dem_Bodediagramm"><span class="tocnumber">7.3</span> <span class="toctext">Dimensionierung mit dem Bodediagramm</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#Dimensionierung_mit_der_Ortskurve"><span class="tocnumber">7.4</span> <span class="toctext">Dimensionierung mit der Ortskurve</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-25"><a href="#Hilfsprogramme_zur_Analyse_und_Optimierung"><span class="tocnumber">8</span> <span class="toctext">Hilfsprogramme zur Analyse und Optimierung</span></a>
+<ul>
+<li class="toclevel-2 tocsection-26"><a href="#Scilab.2FScicos"><span class="tocnumber">8.1</span> <span class="toctext">Scilab/Scicos</span></a>
+<ul>
+<li class="toclevel-3 tocsection-27"><a href="#Scilab"><span class="tocnumber">8.1.1</span> <span class="toctext">Scilab</span></a></li>
+<li class="toclevel-3 tocsection-28"><a href="#Scicos"><span class="tocnumber">8.1.2</span> <span class="toctext">Scicos</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-29"><a href="#LTspice.2FSwitcherCad_III"><span class="tocnumber">8.2</span> <span class="toctext">LTspice/SwitcherCad III</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-30"><a href="#Modellierung_eines_Motors.2FAntriebs"><span class="tocnumber">9</span> <span class="toctext">Modellierung eines Motors/Antriebs</span></a>
+<ul>
+<li class="toclevel-2 tocsection-31"><a href="#Einfaches_Modell_mit_PT1-Glied"><span class="tocnumber">9.1</span> <span class="toctext">Einfaches Modell mit PT1-Glied</span></a></li>
+<li class="toclevel-2 tocsection-32"><a href="#Detailliertes_Modell"><span class="tocnumber">9.2</span> <span class="toctext">Detailliertes Modell</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-33"><a href="#Beispiel:_Drehzahlregelung"><span class="tocnumber">10</span> <span class="toctext">Beispiel: Drehzahlregelung</span></a>
+<ul>
+<li class="toclevel-2 tocsection-34"><a href="#Realisierung_mit_analogem_Regler"><span class="tocnumber">10.1</span> <span class="toctext">Realisierung mit analogem Regler</span></a></li>
+<li class="toclevel-2 tocsection-35"><a href="#Realisierung_mit_digitalem_Regler"><span class="tocnumber">10.2</span> <span class="toctext">Realisierung mit digitalem Regler</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-36"><a href="#Beispiel:_Lageregelung"><span class="tocnumber">11</span> <span class="toctext">Beispiel: Lageregelung</span></a></li>
+<li class="toclevel-1 tocsection-37"><a href="#Autoren"><span class="tocnumber">12</span> <span class="toctext">Autoren</span></a></li>
+<li class="toclevel-1 tocsection-38"><a href="#Siehe_auch"><span class="tocnumber">13</span> <span class="toctext">Siehe auch</span></a></li>
+<li class="toclevel-1 tocsection-39"><a href="#External_links"><span class="tocnumber">14</span> <span class="toctext">External links</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Einleitung">Einleitung</span></h2>
+<p>Der Begriff <i>Regelung</i> ist zu unterscheiden von dem im allgemeinen Sprachgebrauch oft synonym gebrauchten Begriff der <i>Steuerung</i>.
+ Das Steuern ist ein rein vorwärts gerichteter Prozess ohne 
+Rückkopplung. Die Ausgangsgröße wird dabei nicht überwacht und kann sich
+ durch Störungen von außen verändern. Ein Beispiel ist die Steuerung 
+eines Motors mit einer einstellbaren Spannung. Durch Laständerungen wird
+ sich die Drehzahl des Motors ändern. Soll nun die Drehzahl konstant 
+gehalten werden, bedarf es einer Rückkopplung um über die Spannung die 
+Drehzahl anzupassen. Diese Rückkopplung ist das Kennzeichen einer 
+Regelung.
+</p><p>Das Regeln ist ein Vorgang, bei dem die Ausgangsgröße, im 
+Beispiel die Drehzahl, fortlaufend überwacht wird und bei Abweichung 
+über die Stellgröße, im Beispiel die Spannung, korrigiert wird. Der sich
+ dabei ergebende Wirkungsablauf findet in einem geschlossenen Kreis, dem
+ Regelkreis, statt.
+</p>
+<h2><span class="mw-headline" id="Der_Regelkreis">Der Regelkreis</span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://rn-wissen.de/wiki/index.php?title=Datei:Regelkreis1.png" class="image"><img alt="" src="Regelungstechnik%20%E2%80%93%20RN-Wissen.de(29.09.19_32_47)-Dateien/300px-Regelkreis1.png" class="thumbimage" srcset="/wiki/images/thumb/2/25/Regelkreis1.png/450px-Regelkreis1.png 1.5x, /wiki/images/2/25/Regelkreis1.png 2x" width="300" height="186"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://rn-wissen.de/wiki/index.php?title=Datei:Regelkreis1.png" class="internal" title="vergrößern"></a></div>Ein Regelkreis (Prinzip)</div></div></div>
+<p>Das Prinzip einer Regelung ist das fortlaufende: <b>Messen – Vergleichen – Stellen</b>
+</p>
+<dl><dt>Messen</dt>
+<dd> Die Regelgröße wird direkt oder mittels Sensoren gemessen.</dd>
+<dt>Vergleichen</dt>
+<dd> Der Wert der Regelgröße wird mit dem Sollwert verglichen. Die Differenz ist die <i>Regelabweichung</i>.</dd>
+<dt>Stellen</dt>
+<dd> Aus der Regelabweichung wird unter Berücksichtigung der dynamischen Eigenschaften der Regelstrecke die <i>Stellgröße</i> bestimmt.</dd></dl>
+<hr style="visibility:hidden;clear:both;">
+<div class="thumb tright"><div class="thumbinner" style="width:352px;"><a href="https://rn-wissen.de/wiki/index.php?title=Datei:Regelkreis2.png" class="image"><img alt="" src="Regelungstechnik%20%E2%80%93%20RN-Wissen.de(29.09.19_32_47)-Dateien/350px-Regelkreis2.png" class="thumbimage" srcset="/wiki/images/5/5d/Regelkreis2.png 1.5x, /wiki/images/5/5d/Regelkreis2.png 2x" width="350" height="153"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://rn-wissen.de/wiki/index.php?title=Datei:Regelkreis2.png" class="internal" title="vergrößern"></a></div>Wirkunsweise einer Regelung</div></div></div>
+<p>Ein Regelkreis dient dazu, eine vorgegebene physikalische Größe, die <i>Regelgröße</i>,
+ auf einen gewünschten Wert (Sollwert) zu bringen und dort zu halten, 
+unabhängig von eventuell auftretenden Störungen.
+Um die Regelungsaufgabe zu erfüllen, muss der Augenblickswert der 
+Regelgröße – der Istwert – gemessen und mit dem Sollwert verglichen 
+werden. Bei auftretenden Abweichungen muss in geeigneter Art und Weise 
+nachgestellt werden.
+</p><p>Um nun diese Aufgabe technisch zu lösen, gibt es die 
+Regelungstechnik. Sie baut im wesentlichen auf die mathematische 
+Beschreibung und Modellbildung des Systems Regelkreis. Zur Modellierung,
+ Beschreibung und Simulation werden Blockschaltbilder mit diskreten 
+Signalgliedern verwendet.
+</p>
+<hr style="visibility:hidden;clear:both;">
+<div class="thumb tright"><div class="thumbinner" style="width:352px;"><a href="https://rn-wissen.de/wiki/index.php?title=Datei:Regelkreis3.png" class="image"><img alt="" src="Regelungstechnik%20%E2%80%93%20RN-Wissen.de(29.09.19_32_47)-Dateien/350px-Regelkreis3.png" class="thumbimage" srcset="/wiki/images/f/ff/Regelkreis3.png 1.5x, /wiki/images/f/ff/Regelkreis3.png 2x" width="350" height="152"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://rn-wissen.de/wiki/index.php?title=Datei:Regelkreis3.png" class="internal" title="vergrößern"></a></div>Beispiel einer Geschwindigkeits­regelung</div></div></div>
+<p>Ein typisches Beispiel für einen Regelkreis – eine 
+Geschwindigkeits­regelung – wird im nebenstehenden Bild gezeigt. Die 
+Sollgeschwindigkeit ist 80 km/h. Durch eine äußere Störung, in dem Fall 
+eine Steigung, verlangsamt sich das Fahrzeug auf 70 km/h. Die Abweichung
+ wird durch das Tachometer erfasst. Als Korrekturmaßnahme wird mehr Gas 
+gegeben, um wieder auf die Sollgeschwindigkeit von 80 km/h zu kommen.
+</p>
+<hr style="visibility:hidden;clear:both;">
+<h3><span class="mw-headline" id="Begriffe">Begriffe</span></h3>
+<div class="floatright"><a href="https://rn-wissen.de/wiki/index.php?title=Datei:Regelkreis4.png" class="image"><img alt="Regelkreis4.png" src="Regelungstechnik%20%E2%80%93%20RN-Wissen.de(29.09.19_32_47)-Dateien/Regelkreis4.png" width="433" height="124"></a></div>
+<p>Ein Regelkreis besteht entsprechend des vereinfachten 
+Blockschaltbildes, wie es oft in der Regelungstechnik verwendet wird, 
+aus den Hauptteilen <i>Regler</i> und <i>Regelstrecke</i>:
+</p>
+<dl><dt>Regler</dt>
+<dd> Ist der Teil des Regelkreises, der unter Berücksichtigung der 
+dynamischen Eigenschaften der Regelstrecke aus der Regelabweichung die 
+Korrekturmaßnahmen zum Ausregeln ergreift.</dd></dl>
+<dl><dt>Regelstrecke</dt>
+<dd> Ist der Teil des Regelkreises, der vom Regler ausgeregelt werden soll.</dd></dl>
+<dl><dt>Führungsgröße (Sollwert) w</dt>
+<dd> Vorgegebener Wert, auf dem die Regelgröße durch die Regelung 
+gehalten werden soll. Sie ist eine von der Regelung nicht beeinflusste 
+Größe und wird von außen zugeführt.</dd></dl>
+<dl><dt>Regelgröße (Istwert) x</dt>
+<dd> Ist die Ausgangsgröße der Regelstrecke, die zum Zweck des Regelns 
+erfasst und zum Vergleich rückgeführt wird. In vielen Fällen ist in der 
+Rückführung noch eine Messeinrichtung (Sensor) gezeichnet, die den 
+Istwert erfasst, hier der Einfachheit halber weggelassen.</dd></dl>
+<dl><dt>Regelabweichung e</dt>
+<dd> Differenz zwischen Führungsgröße und Regelgröße <b>e = w – x</b>, bildet die eigentliche Eingangsgröße des Reglers.</dd></dl>
+<dl><dt>Stellgröße y</dt>
+<dd> Ausgangsgröße der Regeleinrichtung und zugleich Eingangsgröße der 
+Strecke. Sie überträgt die steuernde Wirkung des Reglers auf die 
+Strecke.</dd></dl>
+<dl><dt>Störgröße z</dt>
+<dd> Eine von außen wirkende Größe, die eine Änderung des Istwertes der Regelgröße bewirkt und einen Regelvorgang auslöst.</dd></dl>
+<h2><span class="mw-headline" id="Die_Regelstrecke">Die Regelstrecke</span></h2>
+<p>Die Regelstrecke stellt den zu regelnden Teil bzw. den zu regelnden 
+Prozess dar und umfasst normalerweise eine Reihe von einzelnen Gliedern.
+ Die Glieder werden entsprechend ihrem Zeitverhalten charakterisiert. Um
+ das Zeitverhalten herauszufinden, legt man an den Eingang ein 
+Testsignal an und zeichnet die Antwort auf. Im einfachsten Fall wird der
+ Eingang mit einer sprunghaften Änderung beaufschlagt. Die Antwort auf 
+die sprunghafte Änderung der Eingangsgröße wird Sprungantwort genannt 
+und gibt Aufschluss über die Art der Regelstrecke und kann eventuell 
+bereits genutzt werden, um die Parameter der Regelstrecke zu bestimmen.
+</p><p>Für den Aufbau eines gut funktionierenden Regelkreises und die 
+Auslegung von Reglern ist es eine Voraussetzung zu wissen, wie die 
+Regelstrecke reagiert. Ohne ein genaues Wissen um das dynamische 
+Verhalten der Regelstrecke ist es nicht möglich geeignete Regler 
+auszuwählen und diese zu parametrieren.
+</p><p>Die wichtigsten dynamischen Grundelemente zur Charakterisierung 
+der Regelstrecke sind nachfolgend aufgelistet. Jedes Element wird mit 
+einem Block dargestellt und darin durch ein Symbol oder der stilisierten
+ Sprungantwort gekennzeichnet.
+</p>
+<hr>
+<h3><span class="mw-headline" id="Proportionalglied_.28P-Glied.29">Proportionalglied (P-Glied)</span></h3>
+<p><a href="https://rn-wissen.de/wiki/index.php?title=Datei:Pglied.gif" class="image"><img alt="Pglied.gif" src="Regelungstechnik%20%E2%80%93%20RN-Wissen.de(29.09.19_32_47)-Dateien/Pglied.gif" width="599" height="133"></a>
+</p><p>Die einfachste Art einer Regelstrecke.
+</p>
+<dl><dt>Beispiele</dt>
+<dd> Hebel, Getriebe, Verstärker, Spannungsteiler, Sensoren bei denen das Zeitverhalten vernachlässigt werden kann</dd></dl>
+<hr>
+<h3><span class="mw-headline" id="Integrator_.28I-Glied.29">Integrator (I-Glied)</span></h3>
+<p><a href="https://rn-wissen.de/wiki/index.php?title=Datei:Iglied.gif" class="image"><img alt="Iglied.gif" src="Regelungstechnik%20%E2%80%93%20RN-Wissen.de(29.09.19_32_47)-Dateien/Iglied.gif" width="599" height="133"></a>
+</p><p>Strecke ohne Ausgleich, ist häufig in Regelstrecken vorhanden.
+</p>
+<dl><dt>Beispiele</dt>
+<dd> Beschleunigung → Geschwindigkeit → Weg, Strom → Kondensatorspannung</dd></dl>
+<hr>
+<h3><span class="mw-headline" id="Verz.C3.B6gerungsglied_0.Ordnung_.28Totzeitglied.29">Verzögerungsglied 0.Ordnung (Totzeitglied)</span></h3>
+<p><a href="https://rn-wissen.de/wiki/index.php?title=Datei:Ttglied.gif" class="image"><img alt="Ttglied.gif" src="Regelungstechnik%20%E2%80%93%20RN-Wissen.de(29.09.19_32_47)-Dateien/Ttglied.gif" width="599" height="133"></a>
+</p><p>Entsteht durch Laufzeiten von Material oder Signalen. Je größer 
+die Verzögerungszeit einer Regelstrecke ist, um so schwieriger ist sie 
+zu regeln. 
+</p>
+<dl><dt>Beispiele</dt>
+<dd> Förderband, Rechenzeit, A/D-Wandler</dd></dl>
+<p>Nicht zu verwechseln mit der Totzeit, die durch das asynchrone 
+Auftreten eines Ereignisses auf einen Zyklus entsteht. Vom 
+Verzögerungsglied 0.Ordnung unterscheidet sich diese dadurch, daß sie 
+mit einer gleichverteilten Wahrscheinlichkeit zwischen "gar nicht"  und 
+dem gesamten Umfang auftritt. Diese Totzeit ist mechanisch mit einem 
+Spiel vergleichbar das "gar nicht" bis zum vollen Umfang zu einem Fehler
+ beiträgt. 
+</p>
+<dl><dt>Beispiele</dt>
+<dd> Erkennen eines Signals an einem Mikroprozessor</dd></dl>
+<hr>
+<h3><span class="mw-headline" id="Verz.C3.B6gerungsglied_1.Ordnung_.28PT1-Glied.29">Verzögerungsglied 1.Ordnung (PT1-Glied)</span></h3>
+<p><a href="https://rn-wissen.de/wiki/index.php?title=Datei:Pt1glied.gif" class="image"><img alt="Pt1glied.gif" src="Regelungstechnik%20%E2%80%93%20RN-Wissen.de(29.09.19_32_47)-Dateien/Pt1glied.gif" width="599" height="133"></a>
+</p><p>Viele einfache Regelstrecken haben ein solches Verhalten bzw. 
+können näherungsweise damit beschrieben werden. Ist ein P-Glied mit 
+nicht vernachlässigbarem Zeitverhalten.
+</p>
+<dl><dt>Beispiele</dt>
+<dd> Gleichstrommotor (Spannung → Drehzahl), näherungsweise; Widerstand-Kondensator-Schaltung (RC-Glied)</dd></dl>
+<hr>
+<h3><span class="mw-headline" id="Verz.C3.B6gerungsglied_2.Ordnung_.28PT2-Glied.29">Verzögerungsglied 2.Ordnung (PT2-Glied)</span></h3>
+<p>Man unterscheidet schwingungsfähige und nicht schwingungsfähige 
+PT2-Glieder. Zur Charakterisierung gibt es die Parameter Dämpfung D und 
+Eckfrequenz w<sub>0</sub> oder die Zeitkonstanten T<sub>1</sub> und T<sub>2</sub>. Für Dämpfung D&lt;1 ist es schwingungsfähig.
+</p><p><b>Schwingfähiges PT2-Glied:</b><br>
+<a href="https://rn-wissen.de/wiki/index.php?title=Datei:Pt2aglied.gif" class="image"><img alt="Pt2aglied.gif" src="Regelungstechnik%20%E2%80%93%20RN-Wissen.de(29.09.19_32_47)-Dateien/Pt2aglied.gif" width="599" height="149"></a>
+</p>
+<dl><dt>Beispiele</dt>
+<dd> Mechanischer Schwinger (Feder-Masse-System), elektrischer Schwingkreis (RLC-Kreis)</dd></dl>
+<p><br>
+<b>Nicht schwingfähiges PT2-Glied:</b><br>
+<a href="https://rn-wissen.de/wiki/index.php?title=Datei:Pt2bglied.gif" class="image"><img alt="Pt2bglied.gif" src="Regelungstechnik%20%E2%80%93%20RN-Wissen.de(29.09.19_32_47)-Dateien/Pt2bglied.gif" width="599" height="133"></a>
+</p>
+<dl><dt>Beispiele</dt>
+<dd> Zwei hintereinander geschaltete PT1-Glieder, Gleichstrommotor (Spannung → Drehzahl) mit berücksichtigter Induktivität</dd></dl>
+<h2><span class="mw-headline" id="Der_Regler">Der Regler</span></h2>
+<p>Der Regler hat die Aufgabe, die Regelgröße zu messen, sie mit dem 
+Sollwert zu vergleichen und bei Abweichungen die Stellgröße so zu 
+verändern, dass Soll- und Istwert der Regelgröße wieder übereinstimmen 
+bzw. die Differenz minimal wird.
+</p><p>Die Wahl eines bestimmten Reglertyps richtet sich nach dem 
+geforderten Zeitverhalten und der geforderten Regelgenauigkeit der 
+Regelstrecke. Nachfolgend finden Sie eine Zusammenfassung der 
+wichtigsten klassischen Reglertypen:
+</p>
+<h3><span class="mw-headline" id="P-Regler">P-Regler</span></h3>
+<p>Der proportionalwirkende Regler multipliziert die Regelabweichung mit seinem Verstärkungsfaktor <b>Kp</b>
+ und gibt das Ergebnis unverzögert weiter. Er unterscheidet sich 
+prinzipiell nicht vom dynamischen Element P-Glied, ist nur eben 
+künstlich hergestellt für den Einsatz als Regler. Der P-geregelte Kreis 
+ist einfach und mittelschnell im Vergleich zu anderen Regelungen. Das 
+Problem ist die bleibende Regelabweichung!
+</p><p><a href="https://rn-wissen.de/wiki/index.php?title=Datei:Pregler.gif" class="image"><img alt="Pregler.gif" src="Regelungstechnik%20%E2%80%93%20RN-Wissen.de(29.09.19_32_47)-Dateien/Pregler.gif" width="583" height="277"></a>
+</p><p><b>Software P-Regler:</b>
+</p>
+<pre>y = Kp * e
+</pre>
+<hr>
+<h3><span class="mw-headline" id="I-Regler">I-Regler</span></h3>
+<p>Der integralwirkende Regler summiert die Regelabweichung über der 
+Zeit auf und multipliziert die Summe (d.h. das Integral) mit dem Faktor <b>Ki</b>.
+ Je länger eine Regelabweichung ansteht, desto größer wird die 
+Stellgröße des I-Reglers. Er unterscheidet sich prinzipiell nicht vom 
+dynamischen Element I-Glied, ist nur eben künstlich hergestellt für den 
+Einsatz als Regler. Der I-geregelte Kreis ist langsam im Vergleich zu 
+anderen Regelungen. Er hat aber den Vorteil, dass die Abweichung 
+vollständig eliminiert wird.
+</p><p><a href="https://rn-wissen.de/wiki/index.php?title=Datei:Iregler.gif" class="image"><img alt="Iregler.gif" src="Regelungstechnik%20%E2%80%93%20RN-Wissen.de(29.09.19_32_47)-Dateien/Iregler.gif" width="583" height="277"></a>
+</p><p><b>Software I-Regler:</b>
+</p>
+<pre>esum = esum + e
+y = Ki * Ta * esum
+</pre>
+<p><b>esum</b> ist die Summe aller bisherigen Abweichungen <b>e</b>. Der Parameter des Software I-Reglers ist abhängig von der Rechenschrittweite <b>Ta</b>
+ (Abtastzeit). Je öfter gerechnet wird, desto öfter wird auch 
+hinzugezählt (aufintegriert). Eine kleine Abtastzeit erfordert also 
+einen kleineren Faktor, dies wird durch die Multiplikation mit <b>Ta</b> verwirklicht.
+</p>
+<hr>
+<h3><span class="mw-headline" id="PI-Regler">PI-Regler</span></h3>
+<p>Der PI-Regler ist die Kombination aus P- und I-Regler und kombiniert 
+den Vorteil des P-Reglers, nämlich schnelle Reaktion, mit dem Vorteil 
+des I-Reglers, der exakten Ausregelung.  Der PI-geregelte Kreis ist also
+ genau und mittelschnell.
+</p><p><a href="https://rn-wissen.de/wiki/index.php?title=Datei:Piregler.gif" class="image"><img alt="Piregler.gif" src="Regelungstechnik%20%E2%80%93%20RN-Wissen.de(29.09.19_32_47)-Dateien/Piregler.gif" width="583" height="277"></a>
+</p><p><b>Software PI-Regler:</b>
+</p>
+<pre>esum = esum + e
+y = Kp * e + Ki * Ta * esum
+</pre>
+<hr>
+<h3><span class="mw-headline" id="PD-Regler">PD-Regler</span></h3>
+<p>Der proportional-differential wirkende Regler kombiniert den P-Regler
+ mit einem D-Anteil. 
+Der D-Anteil bewertet die Änderung einer Regelabweichung (er 
+differenziert) und berechnet so deren Änderungsgeschwindigkeit. Diese 
+wird mit dem Faktor <b>Kd</b> multipliziert und zum P-Anteil 
+hinzuaddiert. Der PD-Regler reagiert damit schon auf Ankündigungen von 
+Veränderungen, das bewirkt sozusagen ein Vorhalten beim Regeln.
+</p><p>Der PD-geregelte Kreis ist sehr schnell im Vergleich zu anderen 
+Regelungen, und manche Regelkreise (solche mit zweifacher Integration) 
+sind ohne D-Anteil überhaupt nicht stabilisierbar. Das Problem der 
+proportionalen Regler, die bleibende Regelabweichung, ist beim PD-Regler
+ allerdings weiterhin vorhanden!
+</p><p>Ein Nachteil aller Regler mit D-Anteil kann die Unruhe im Kreis 
+sein. Ist das Sensorsignal verrauscht, so wird dieses Rauschen durch die
+ Differenziation weiter verstärkt und wieder in den Kreis hineingegeben.
+ Dadurch wird der Aktuator stärker belastet. Macht der Regler 
+insbesondere sehr hohe Ausschläge als Folge von schnellen Änderungen des
+ Sollwertes, dann kann es sein, dass das Stellglied oder der Aktuator 
+diese nicht umsetzen kann - die Wirkung des D-Anteils würde dann durch 
+die Begrenzung verpuffen, und das Einschwingverhalten wäre nicht wie 
+berechnet, sondern meist langsamer. Dies gilt aber nur für große 
+Sprünge. Bei den normalen kleinen Regelvorgängen zum Ausgleich von 
+Störeinflüssen wirkt der D-Anteil wie beabsichtigt.
+</p><p><a href="https://rn-wissen.de/wiki/index.php?title=Datei:Pdregler.gif" class="image"><img alt="Pdregler.gif" src="Regelungstechnik%20%E2%80%93%20RN-Wissen.de(29.09.19_32_47)-Dateien/Pdregler.gif" width="583" height="277"></a>
+</p><p><b>Software PD-Regler:</b>
+</p>
+<pre>y = Kp * e + Kd * (e – ealt)/Ta
+ealt = e
+</pre>
+<p>Mit der neuesten Regelabweichung <b>e</b> und der vorhergehenden <b>ealt</b> wird der D-Anteil berechnet. Die Differenziation erfolgt damit angenähert durch Bildung des Differenzquotienten (e - ealt)/Ta.
+</p>
+<hr>
+<h3><span class="mw-headline" id="PID-Regler">PID-Regler</span></h3>
+<p>Der PID Regler ist der universellste der klassischen Regler und 
+vereinigt die guten Eigenschaften der anderen Regler. Zur Beschreibung 
+der Eigenschaften des P-, I- und D-Anteils siehe die anderen 
+Reglertypen. Der PID-geregelte Kreis ist genau und sehr schnell. In den 
+meisten Anwendungen kommt deshalb der PID-Regler zum Einsatz.
+</p><p><a href="https://rn-wissen.de/wiki/index.php?title=Datei:Pidregler.gif" class="image"><img alt="Pidregler.gif" src="Regelungstechnik%20%E2%80%93%20RN-Wissen.de(29.09.19_32_47)-Dateien/Pidregler.gif" width="583" height="285"></a>
+</p><p><b>Software PID-Regler:</b>
+</p>
+<pre>esum = esum + e
+y = Kp * e + Ki * Ta * esum + Kd * (e – ealt)/Ta
+ealt = e
+</pre>
+<p><br>
+<b>Alternative PID-Reglerstruktur:</b>
+</p><p>Es gibt 2 Darstellungsmöglichkeiten, die inhaltlich identisch 
+sind. In der analogen Regeltechnik ist noch die Darstellung mit der 
+Nachstellzeit <b>Tn</b> und der Vorhaltezeit <b>Tv</b> üblich. Die Umrechnung zwischen den beiden Strukturen ist mit den angegebenen Formeln möglich.
+</p><p><a href="https://rn-wissen.de/wiki/index.php?title=Datei:PIDstruktur.gif" class="image"><img alt="PIDstruktur.gif" src="Regelungstechnik%20%E2%80%93%20RN-Wissen.de(29.09.19_32_47)-Dateien/PIDstruktur.gif" width="503" height="217"></a>
+</p>
+<h2><span class="mw-headline" id="Vergleich_der_Reglertypen">Vergleich der Reglertypen</span></h2>
+<p>In der folgenden Abbildung ist der Vergleich von P-, I-, PI-, PD- und
+ PID-Regler in einem Regelkreis mit PT2-Glied als Regelstrecke 
+dargestellt. Es ist deutlich zu sehen, dass die Regler ohne I-Anteil (P 
+und PD) eine bleibende Regelabweichung aufweisen. Erst die Regler mit 
+I-Anteil können auf den Endwert von 1 ausregeln. Beim reinen I-Regler 
+geht das so langsam, dass es gar nicht mehr auf dem Diagramm zu sehen 
+ist. Der Hauptzweck eines I-Anteils ist also die Vermeidung bleibender 
+Regelabweichungen. Daher ist ein
+I-Anteil normalerweise nicht nötig, wenn die Strecke schon einen 
+I-Anteil besitzt.
+Ausnahme: Es wird ein doppelter I-Anteil zur Vermeidung von 
+Schleppfehlern benötigt.
+</p><p>Die schnellsten Regler sind die mit einem D-Anteil (PD und PID). 
+Der D-Anteil kommt deshalb hauptsächlich zum Einsatz, wenn schnelle 
+Dynamik gefragt ist oder die Strecke selbst schon instabil ist. 
+Voraussetzung für die Schnelligkeit ist allerdings, dass keine 
+Begrenzung im Stellglied oder Aktuator auftritt. In der Praxis ist eine 
+Begrenzung meistens nicht zu vermeiden, deshalb gilt die Sprungantwort 
+in der Praxis nur für kleine Sprünge.
+</p><p>Die Regler ohne D-Anteil, aber mit P-Anteil (P und PI) sind 
+mittelschnell. Für einfache Regelaufgaben reicht auch oft schon ein 
+reiner P-Regler aus, wenn die bleibende Regelabweichung vernachlässigt 
+werden kann oder weil die Strecke schon einen I-Anteil besitzt.
+</p><p><a href="https://rn-wissen.de/wiki/index.php?title=Datei:Reglervergleich.gif" class="image"><img alt="Reglervergleich.gif" src="Regelungstechnik%20%E2%80%93%20RN-Wissen.de(29.09.19_32_47)-Dateien/Reglervergleich.gif" width="523" height="299"></a>
+</p><p>Aus diesem Vergleich wird klar, warum der PID-Regler so beliebt ist, er vereinigt die Vorzüge aller anderen Regler.
+</p>
+<h2><span class="mw-headline" id="Digitaler_Regler">Digitaler Regler</span></h2>
+<p>Durch die Einführung leistungsfähiger und preiswerter 
+Mikroprozessoren hat sich der digitale Regler mehr und mehr 
+durchgesetzt. Im Gegensatz zum analogen Regler werden die Signale nicht 
+mehr analog mit Operationsverstärker verarbeitet, sondern mit einem 
+Mikroprozessor errechnet. Bevor das Signal vom Mikroprozessor bearbeitet
+ werden kann, muss zunächst das Eingangssignal (Istwert) mit einem 
+Analog-Digital-Umsetzer (ADU) digitalisiert werden, d.h. in einen 
+Zahlenwert umgewandelt werden. Das vom digitalen Regler errechnete 
+Ausgangssignal (Stellgröße) wird wiederum zur Ansteuerung des 
+Stellglieds mit einem Digital-Analog-Umsetzer (DAU) in ein analoges 
+Signal gewandelt. Funktionell unterscheiden sich analoger und digitaler 
+Regler jedoch nicht wesentlich, es müssen nur die Schnittstellen 
+angepasst werden.
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:483px;"><a href="https://rn-wissen.de/wiki/index.php?title=Datei:Digreg.gif" class="image"><img alt="" src="Regelungstechnik%20%E2%80%93%20RN-Wissen.de(29.09.19_32_47)-Dateien/Digreg.gif" class="thumbimage" width="481" height="157"></a>  <div class="thumbcaption">Digitaler Regler (Prinzip)</div></div></div>
+<p>Da die Wandlungen und das Regelprogramm eine gewisse Zeit 
+beanspruchen, vergeht pro Durchlauf die sogenannte Takt- oder 
+Abtastzeit. Diese Zeit wirkt sich im Regelkreis wie ein Totzeitglied mit
+ der halben Abtastzeit als Totzeit aus. Das verursacht eine zusätzliche 
+Phasenverschiebung, was sich ungünstig auf die Stabilität des 
+Regelkreises auswirken kann. Ist die Abtastzeit sehr viel kleiner als 
+die dominierende Zeitkonstante der Strecke, dann spricht man von 
+quasi-kontinuierlichem Verhalten, da sich der digitale Regler ähnlich 
+wie ein analoger Regler verhält. Der digitale Regler kann dann wie ein 
+analoger dimensioniert werden. Ist die Abtastzeit größer, kann sie nicht
+ mehr vernachlässigt werden, dann muss sie auch beim Reglerentwurf 
+berücksichtigt werden.
+</p><p><b>Vorteile digitaler Regler:</b>
+</p>
+<ul><li> Die Verarbeitung erfolgt driftfrei.</li>
+<li> Es lassen sich nichtlineare Kennlinien, intelligentes Verhalten oder adaptive Regelung leichter realisieren.</li>
+<li> Der Regler kann bei Bedarf per Software neu konfiguriert und parametriert werden</li></ul>
+<p><br>
+<b>Digitale Realisierung am Beispiel des PID-Algorithmus</b>
+</p><p>Ausgehend von der Differentialgleichung für kontinuierliche 
+Systeme wird die Differenzengleichung für zeitdiskrete Systeme erstellt.
+ Daraus folgt dann der Stellungsalgorithmus in allgemeiner Form.
+</p><p>Ta = Abtastzeit; k = Nummer der Abtastung
+</p><p>Kp = Proportionalbeiwert; Ki = Integrierbeiwert; Kd = Differenzierbeiwert
+</p><p><br>
+<b>Differentialgleichung für den kontinuierlichen PID-Regler:</b>
+</p>
+<dl><dd><span class="mathjax-wrapper"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><div class="MathJax_Display" style="text-align: left;"><span class="MathJax" id="MathJax-Element-1-Frame" tabindex="0" style="text-align: left; position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;block&quot;&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;mspace width=&quot;thickmathspace&quot; /&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mspace width=&quot;thickmathspace&quot; /&gt;&lt;mi&gt;K&lt;/mi&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mspace width=&quot;negativethinmathspace&quot; /&gt;&lt;mo&gt;&amp;#x22C5;&lt;/mo&gt;&lt;mspace width=&quot;negativethinmathspace&quot; /&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;K&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;msubsup&gt;&lt;mo&gt;&amp;#x222B;&lt;/mo&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;/msubsup&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;&amp;#x03C4;&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;mspace width=&quot;thinmathspace&quot; /&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;&amp;#x03C4;&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;K&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mspace width=&quot;thinmathspace&quot; /&gt;&lt;mfrac&gt;&lt;mrow&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mrow&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;/mrow&gt;&lt;/mfrac&gt;&lt;/math&gt;" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1" style="width: 23.337em; display: inline-block;"><span style="display: inline-block; position: relative; width: 19.423em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(0.585em, 1019.42em, 3.412em, -1000em); top: -2.308em; left: 0em;"><span class="mrow" id="MathJax-Span-2"><span class="mi" id="MathJax-Span-3" style="font-family: MathJax_Math; font-style: italic;">y<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.006em;"></span></span><span class="mo" id="MathJax-Span-4" style="font-family: MathJax_Main;">(</span><span class="mi" id="MathJax-Span-5" style="font-family: MathJax_Math; font-style: italic;">t</span><span class="mo" id="MathJax-Span-6" style="font-family: MathJax_Main;">)</span><span class="mspace" id="MathJax-Span-7" style="height: 0em; vertical-align: 0em; width: 0.278em; display: inline-block; overflow: hidden;"></span><span class="mo" id="MathJax-Span-8" style="font-family: MathJax_Main; padding-left: 0.278em;">=</span><span class="mspace" id="MathJax-Span-9" style="height: 0em; vertical-align: 0em; width: 0.278em; display: inline-block; overflow: hidden;"></span><span class="mi" id="MathJax-Span-10" style="font-family: MathJax_Math; font-style: italic; padding-left: 0.278em;">K<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.04em;"></span></span><span class="mi" id="MathJax-Span-11" style="font-family: MathJax_Math; font-style: italic;">p</span><span class="mspace" id="MathJax-Span-12" style="height: 0em; vertical-align: 0em; margin-left: -0.167em;"></span><span class="mo" id="MathJax-Span-13" style="font-family: MathJax_Main; padding-left: 0.222em;">⋅</span><span class="mspace" id="MathJax-Span-14" style="height: 0em; vertical-align: 0em; margin-left: -0.167em;"></span><span class="mi" id="MathJax-Span-15" style="font-family: MathJax_Math; font-style: italic; padding-left: 0.222em;">e</span><span class="mo" id="MathJax-Span-16" style="font-family: MathJax_Main;">(</span><span class="mi" id="MathJax-Span-17" style="font-family: MathJax_Math; font-style: italic;">t</span><span class="mo" id="MathJax-Span-18" style="font-family: MathJax_Main;">)</span><span class="mo" id="MathJax-Span-19" style="font-family: MathJax_Main; padding-left: 0.222em;">+</span><span class="mi" id="MathJax-Span-20" style="font-family: MathJax_Math; font-style: italic; padding-left: 0.222em;">K<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.04em;"></span></span><span class="mi" id="MathJax-Span-21" style="font-family: MathJax_Math; font-style: italic;">i</span><span class="msubsup" id="MathJax-Span-22" style="padding-left: 0.167em;"><span style="display: inline-block; position: relative; width: 1.441em; height: 0px;"><span style="position: absolute; clip: rect(2.421em, 1000.94em, 5.028em, -1000em); top: -3.974em; left: 0em;"><span class="mo" id="MathJax-Span-23" style="font-family: MathJax_Size2; text-rendering: optimizelegibility; vertical-align: 0.001em;">∫<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.388em;"></span></span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span><span style="position: absolute; clip: rect(3.339em, 1000.33em, 4.174em, -1000em); top: -5.062em; left: 1.11em;"><span class="mi" id="MathJax-Span-24" style="font-size: 70.7%; font-family: MathJax_Math; font-style: italic;">t</span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span><span style="position: absolute; clip: rect(3.311em, 1000.43em, 4.182em, -1000em); top: -3.078em; left: 0.556em;"><span class="mn" id="MathJax-Span-25" style="font-size: 70.7%; font-family: MathJax_Main;">0</span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span></span></span><span class="mi" id="MathJax-Span-26" style="font-family: MathJax_Math; font-style: italic; padding-left: 0.167em;">e</span><span class="mo" id="MathJax-Span-27" style="font-family: MathJax_Main;">(</span><span class="mi" id="MathJax-Span-28" style="font-family: MathJax_Math; font-style: italic;">τ<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.08em;"></span></span><span class="mo" id="MathJax-Span-29" style="font-family: MathJax_Main;">)</span><span class="mspace" id="MathJax-Span-30" style="height: 0em; vertical-align: 0em; width: 0.167em; display: inline-block; overflow: hidden;"></span><span class="mi" id="MathJax-Span-31" style="font-family: MathJax_Math; font-style: italic;">d<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mi" id="MathJax-Span-32" style="font-family: MathJax_Math; font-style: italic;">τ<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.08em;"></span></span><span class="mo" id="MathJax-Span-33" style="font-family: MathJax_Main; padding-left: 0.222em;">+</span><span class="mi" id="MathJax-Span-34" style="font-family: MathJax_Math; font-style: italic; padding-left: 0.222em;">K<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.04em;"></span></span><span class="mi" id="MathJax-Span-35" style="font-family: MathJax_Math; font-style: italic;">d<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mspace" id="MathJax-Span-36" style="height: 0em; vertical-align: 0em; width: 0.167em; display: inline-block; overflow: hidden;"></span><span class="mfrac" id="MathJax-Span-37"><span style="display: inline-block; position: relative; width: 2.248em; height: 0px; margin-right: 0.12em; margin-left: 0.12em;"><span style="position: absolute; clip: rect(3.032em, 1002.03em, 4.417em, -1000em); top: -4.725em; left: 50%; margin-left: -1.064em;"><span class="mrow" id="MathJax-Span-38"><span class="mi" id="MathJax-Span-39" style="font-family: MathJax_Math; font-style: italic;">d<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mi" id="MathJax-Span-40" style="font-family: MathJax_Math; font-style: italic;">e</span><span class="mo" id="MathJax-Span-41" style="font-family: MathJax_Main;">(</span><span class="mi" id="MathJax-Span-42" style="font-family: MathJax_Math; font-style: italic;">t</span><span class="mo" id="MathJax-Span-43" style="font-family: MathJax_Main;">)</span></span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span><span style="position: absolute; clip: rect(3.088em, 1000.85em, 4.178em, -1000em); top: -3.28em; left: 50%; margin-left: -0.442em;"><span class="mrow" id="MathJax-Span-44"><span class="mi" id="MathJax-Span-45" style="font-family: MathJax_Math; font-style: italic;">d<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mi" id="MathJax-Span-46" style="font-family: MathJax_Math; font-style: italic;">t</span></span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span><span style="position: absolute; clip: rect(0.817em, 1002.25em, 1.282em, -1000em); top: -1.31em; left: 0em;"><span style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 2.248em; height: 0px;"></span><span style="display: inline-block; width: 0px; height: 1.09em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.308em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -1.171em; border-left: 0px solid; width: 0px; height: 3.085em;"></span></span></nobr><span class="MJX_Assistive_MathML MJX_Assistive_MathML_Block" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>y</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mspace width="thickmathspace"></mspace><mo>=</mo><mspace width="thickmathspace"></mspace><mi>K</mi><mi>p</mi><mspace width="negativethinmathspace"></mspace><mo>⋅</mo><mspace width="negativethinmathspace"></mspace><mi>e</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo>+</mo><mi>K</mi><mi>i</mi><msubsup><mo>∫</mo><mn>0</mn><mi>t</mi></msubsup><mi>e</mi><mo stretchy="false">(</mo><mi>τ</mi><mo stretchy="false">)</mo><mspace width="thinmathspace"></mspace><mi>d</mi><mi>τ</mi><mo>+</mo><mi>K</mi><mi>d</mi><mspace width="thinmathspace"></mspace><mfrac><mrow><mi>d</mi><mi>e</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac></math></span></span></div><script type="math/tex; mode=display" id="MathJax-Element-1">
+y(t) \;=\;  Kp \!\cdot\! e(t) 
+          + Ki \int_0^t e(\tau) \, d\tau 
+          + Kd \, \frac{de(t)}{dt}
+</script></span></dd></dl>
+<p><b>Differenzengleichung für den zeitdiskreten PID-Regler:</b>
+</p>
+<dl><dd><span class="mathjax-wrapper"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><div class="MathJax_Display" style="text-align: left;"><span class="MathJax" id="MathJax-Element-2-Frame" tabindex="0" style="text-align: left; position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;block&quot;&gt;&lt;msub&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mi&gt;k&lt;/mi&gt;&lt;/msub&gt;&lt;mspace width=&quot;thickmathspace&quot; /&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mspace width=&quot;thickmathspace&quot; /&gt;&lt;mi&gt;K&lt;/mi&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mspace width=&quot;negativethinmathspace&quot; /&gt;&lt;mo&gt;&amp;#x22C5;&lt;/mo&gt;&lt;mspace width=&quot;negativethinmathspace&quot; /&gt;&lt;msub&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;k&lt;/mi&gt;&lt;/msub&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;K&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mspace width=&quot;negativethinmathspace&quot; /&gt;&lt;mo&gt;&amp;#x22C5;&lt;/mo&gt;&lt;mspace width=&quot;negativethinmathspace&quot; /&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;munderover&gt;&lt;mo&gt;&amp;#x2211;&lt;/mo&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/mrow&gt;&lt;mi&gt;k&lt;/mi&gt;&lt;/munderover&gt;&lt;msub&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/msub&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mfrac&gt;&lt;mrow&gt;&lt;mi&gt;K&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;/mrow&gt;&lt;mrow&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;/mrow&gt;&lt;/mfrac&gt;&lt;mspace width=&quot;thinmathspace&quot; /&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;k&lt;/mi&gt;&lt;/msub&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi&gt;k&lt;/mi&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/math&gt;" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-47" style="width: 24.106em; display: inline-block;"><span style="display: inline-block; position: relative; width: 20.064em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(0.375em, 1019.97em, 3.703em, -1000em); top: -2.308em; left: 0em;"><span class="mrow" id="MathJax-Span-48"><span class="msubsup" id="MathJax-Span-49"><span style="display: inline-block; position: relative; width: 0.933em; height: 0px;"><span style="position: absolute; clip: rect(3.34em, 1000.5em, 4.372em, -1000em); top: -3.974em; left: 0em;"><span class="mi" id="MathJax-Span-50" style="font-family: MathJax_Math; font-style: italic;">y<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.006em;"></span></span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span><span style="position: absolute; top: -3.824em; left: 0.49em;"><span class="mi" id="MathJax-Span-51" style="font-size: 70.7%; font-family: MathJax_Math; font-style: italic;">k</span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span></span></span><span class="mspace" id="MathJax-Span-52" style="height: 0em; vertical-align: 0em; width: 0.278em; display: inline-block; overflow: hidden;"></span><span class="mo" id="MathJax-Span-53" style="font-family: MathJax_Main; padding-left: 0.278em;">=</span><span class="mspace" id="MathJax-Span-54" style="height: 0em; vertical-align: 0em; width: 0.278em; display: inline-block; overflow: hidden;"></span><span class="mi" id="MathJax-Span-55" style="font-family: MathJax_Math; font-style: italic; padding-left: 0.278em;">K<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.04em;"></span></span><span class="mi" id="MathJax-Span-56" style="font-family: MathJax_Math; font-style: italic;">p</span><span class="mspace" id="MathJax-Span-57" style="height: 0em; vertical-align: 0em; margin-left: -0.167em;"></span><span class="mo" id="MathJax-Span-58" style="font-family: MathJax_Main; padding-left: 0.222em;">⋅</span><span class="mspace" id="MathJax-Span-59" style="height: 0em; vertical-align: 0em; margin-left: -0.167em;"></span><span class="msubsup" id="MathJax-Span-60" style="padding-left: 0.222em;"><span style="display: inline-block; position: relative; width: 0.909em; height: 0px;"><span style="position: absolute; clip: rect(3.34em, 1000.43em, 4.178em, -1000em); top: -3.974em; left: 0em;"><span class="mi" id="MathJax-Span-61" style="font-family: MathJax_Math; font-style: italic;">e</span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span><span style="position: absolute; top: -3.824em; left: 0.466em;"><span class="mi" id="MathJax-Span-62" style="font-size: 70.7%; font-family: MathJax_Math; font-style: italic;">k</span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span></span></span><span class="mo" id="MathJax-Span-63" style="font-family: MathJax_Main; padding-left: 0.222em;">+</span><span class="mi" id="MathJax-Span-64" style="font-family: MathJax_Math; font-style: italic; padding-left: 0.222em;">K<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.04em;"></span></span><span class="mi" id="MathJax-Span-65" style="font-family: MathJax_Math; font-style: italic;">i</span><span class="mspace" id="MathJax-Span-66" style="height: 0em; vertical-align: 0em; margin-left: -0.167em;"></span><span class="mo" id="MathJax-Span-67" style="font-family: MathJax_Main; padding-left: 0.222em;">⋅</span><span class="mspace" id="MathJax-Span-68" style="height: 0em; vertical-align: 0em; margin-left: -0.167em;"></span><span class="mi" id="MathJax-Span-69" style="font-family: MathJax_Math; font-style: italic; padding-left: 0.222em;">T<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.12em;"></span></span><span class="mi" id="MathJax-Span-70" style="font-family: MathJax_Math; font-style: italic;">a</span><span class="munderover" id="MathJax-Span-71" style="padding-left: 0.167em;"><span style="display: inline-block; position: relative; width: 1.444em; height: 0px;"><span style="position: absolute; clip: rect(2.832em, 1001.39em, 4.617em, -1000em); top: -3.974em; left: 0em;"><span class="mo" id="MathJax-Span-72" style="font-family: MathJax_Size2; vertical-align: 0em;">∑</span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span><span style="position: absolute; clip: rect(3.311em, 1001.12em, 4.282em, -1000em); top: -2.887em; left: 0.148em;"><span class="texatom" id="MathJax-Span-73"><span class="mrow" id="MathJax-Span-74"><span class="mi" id="MathJax-Span-75" style="font-size: 70.7%; font-family: MathJax_Math; font-style: italic;">i</span><span class="mo" id="MathJax-Span-76" style="font-size: 70.7%; font-family: MathJax_Main;">=</span><span class="mn" id="MathJax-Span-77" style="font-size: 70.7%; font-family: MathJax_Main;">0</span></span></span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span><span style="position: absolute; clip: rect(3.191em, 1000.36em, 4.174em, -1000em); top: -5.124em; left: 0.538em;"><span class="mi" id="MathJax-Span-78" style="font-size: 70.7%; font-family: MathJax_Math; font-style: italic;">k</span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span></span></span><span class="msubsup" id="MathJax-Span-79" style="padding-left: 0.167em;"><span style="display: inline-block; position: relative; width: 0.785em; height: 0px;"><span style="position: absolute; clip: rect(3.34em, 1000.43em, 4.178em, -1000em); top: -3.974em; left: 0em;"><span class="mi" id="MathJax-Span-80" style="font-family: MathJax_Math; font-style: italic;">e</span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span><span style="position: absolute; top: -3.824em; left: 0.466em;"><span class="mi" id="MathJax-Span-81" style="font-size: 70.7%; font-family: MathJax_Math; font-style: italic;">i</span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span></span></span><span class="mo" id="MathJax-Span-82" style="font-family: MathJax_Main; padding-left: 0.222em;">+</span><span class="mfrac" id="MathJax-Span-83" style="padding-left: 0.222em;"><span style="display: inline-block; position: relative; width: 1.532em; height: 0px; margin-right: 0.12em; margin-left: 0.12em;"><span style="position: absolute; clip: rect(3.088em, 1001.41em, 4.177em, -1000em); top: -4.651em; left: 50%; margin-left: -0.706em;"><span class="mrow" id="MathJax-Span-84"><span class="mi" id="MathJax-Span-85" style="font-family: MathJax_Math; font-style: italic;">K<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.04em;"></span></span><span class="mi" id="MathJax-Span-86" style="font-family: MathJax_Math; font-style: italic;">d<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span></span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span><span style="position: absolute; clip: rect(3.105em, 1001.21em, 4.177em, -1000em); top: -3.288em; left: 50%; margin-left: -0.617em;"><span class="mrow" id="MathJax-Span-87"><span class="mi" id="MathJax-Span-88" style="font-family: MathJax_Math; font-style: italic;">T<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.12em;"></span></span><span class="mi" id="MathJax-Span-89" style="font-family: MathJax_Math; font-style: italic;">a</span></span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span><span style="position: absolute; clip: rect(0.817em, 1001.53em, 1.282em, -1000em); top: -1.31em; left: 0em;"><span style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 1.532em; height: 0px;"></span><span style="display: inline-block; width: 0px; height: 1.09em;"></span></span></span></span><span class="mspace" id="MathJax-Span-90" style="height: 0em; vertical-align: 0em; width: 0.167em; display: inline-block; overflow: hidden;"></span><span class="mo" id="MathJax-Span-91" style="font-family: MathJax_Main;">(</span><span class="msubsup" id="MathJax-Span-92"><span style="display: inline-block; position: relative; width: 0.909em; height: 0px;"><span style="position: absolute; clip: rect(3.34em, 1000.43em, 4.178em, -1000em); top: -3.974em; left: 0em;"><span class="mi" id="MathJax-Span-93" style="font-family: MathJax_Math; font-style: italic;">e</span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span><span style="position: absolute; top: -3.824em; left: 0.466em;"><span class="mi" id="MathJax-Span-94" style="font-size: 70.7%; font-family: MathJax_Math; font-style: italic;">k</span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span></span></span><span class="mo" id="MathJax-Span-95" style="font-family: MathJax_Main; padding-left: 0.222em;">−</span><span class="msubsup" id="MathJax-Span-96" style="padding-left: 0.222em;"><span style="display: inline-block; position: relative; width: 1.813em; height: 0px;"><span style="position: absolute; clip: rect(3.34em, 1000.43em, 4.178em, -1000em); top: -3.974em; left: 0em;"><span class="mi" id="MathJax-Span-97" style="font-family: MathJax_Math; font-style: italic;">e</span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span><span style="position: absolute; top: -3.824em; left: 0.466em;"><span class="texatom" id="MathJax-Span-98"><span class="mrow" id="MathJax-Span-99"><span class="mi" id="MathJax-Span-100" style="font-size: 70.7%; font-family: MathJax_Math; font-style: italic;">k</span><span class="mo" id="MathJax-Span-101" style="font-size: 70.7%; font-family: MathJax_Main;">−</span><span class="mn" id="MathJax-Span-102" style="font-size: 70.7%; font-family: MathJax_Main;">1</span></span></span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span></span></span><span class="mo" id="MathJax-Span-103" style="font-family: MathJax_Main;">)</span></span><span style="display: inline-block; width: 0px; height: 2.308em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -1.521em; border-left: 0px solid; width: 0px; height: 3.687em;"></span></span></nobr><span class="MJX_Assistive_MathML MJX_Assistive_MathML_Block" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msub><mi>y</mi><mi>k</mi></msub><mspace width="thickmathspace"></mspace><mo>=</mo><mspace width="thickmathspace"></mspace><mi>K</mi><mi>p</mi><mspace width="negativethinmathspace"></mspace><mo>⋅</mo><mspace width="negativethinmathspace"></mspace><msub><mi>e</mi><mi>k</mi></msub><mo>+</mo><mi>K</mi><mi>i</mi><mspace width="negativethinmathspace"></mspace><mo>⋅</mo><mspace width="negativethinmathspace"></mspace><mi>T</mi><mi>a</mi><munderover><mo>∑</mo><mrow class="MJX-TeXAtom-ORD"><mi>i</mi><mo>=</mo><mn>0</mn></mrow><mi>k</mi></munderover><msub><mi>e</mi><mi>i</mi></msub><mo>+</mo><mfrac><mrow><mi>K</mi><mi>d</mi></mrow><mrow><mi>T</mi><mi>a</mi></mrow></mfrac><mspace width="thinmathspace"></mspace><mo stretchy="false">(</mo><msub><mi>e</mi><mi>k</mi></msub><mo>−</mo><msub><mi>e</mi><mrow class="MJX-TeXAtom-ORD"><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo></math></span></span></div><script type="math/tex; mode=display" id="MathJax-Element-2">
+y_k \;=\;  Kp \!\cdot\! e_k
+          + Ki \!\cdot\! Ta \sum_{i=0}^k e_i
+          + \frac{Kd}{Ta}\, ( e_k - e_{k-1} )
+</script></span></dd></dl>
+<p><b>PID Stellungs-Algorithmus:</b>
+</p>
+<dl><dd><b> <span class="mathjax-wrapper"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><div class="MathJax_Display" style="text-align: left;"><span class="MathJax" id="MathJax-Element-3-Frame" tabindex="0" style="text-align: left; position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;block&quot;&gt;&lt;msub&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mi&gt;k&lt;/mi&gt;&lt;/msub&gt;&lt;mspace width=&quot;thickmathspace&quot; /&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mspace width=&quot;thickmathspace&quot; /&gt;&lt;msub&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi&gt;k&lt;/mi&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;q&lt;/mi&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/msub&gt;&lt;mspace width=&quot;negativethinmathspace&quot; /&gt;&lt;mo&gt;&amp;#x22C5;&lt;/mo&gt;&lt;mspace width=&quot;negativethinmathspace&quot; /&gt;&lt;msub&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;k&lt;/mi&gt;&lt;/msub&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;q&lt;/mi&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/msub&gt;&lt;mspace width=&quot;negativethinmathspace&quot; /&gt;&lt;mo&gt;&amp;#x22C5;&lt;/mo&gt;&lt;mspace width=&quot;negativethinmathspace&quot; /&gt;&lt;msub&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi&gt;k&lt;/mi&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;q&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msub&gt;&lt;mspace width=&quot;negativethinmathspace&quot; /&gt;&lt;mo&gt;&amp;#x22C5;&lt;/mo&gt;&lt;mspace width=&quot;negativethinmathspace&quot; /&gt;&lt;msub&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi&gt;k&lt;/mi&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;/math&gt;" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-104" style="width: 20.003em; display: inline-block;"><span style="display: inline-block; position: relative; width: 16.667em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.468em, 1016.67em, 2.644em, -1000em); top: -2.244em; left: 0em;"><span class="mrow" id="MathJax-Span-105"><span class="msubsup" id="MathJax-Span-106"><span style="display: inline-block; position: relative; width: 0.933em; height: 0px;"><span style="position: absolute; clip: rect(3.34em, 1000.5em, 4.372em, -1000em); top: -3.974em; left: 0em;"><span class="mi" id="MathJax-Span-107" style="font-family: MathJax_Math; font-style: italic;">y<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.006em;"></span></span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span><span style="position: absolute; top: -3.824em; left: 0.49em;"><span class="mi" id="MathJax-Span-108" style="font-size: 70.7%; font-family: MathJax_Math; font-style: italic;">k</span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span></span></span><span class="mspace" id="MathJax-Span-109" style="height: 0em; vertical-align: 0em; width: 0.278em; display: inline-block; overflow: hidden;"></span><span class="mo" id="MathJax-Span-110" style="font-family: MathJax_Main; padding-left: 0.278em;">=</span><span class="mspace" id="MathJax-Span-111" style="height: 0em; vertical-align: 0em; width: 0.278em; display: inline-block; overflow: hidden;"></span><span class="msubsup" id="MathJax-Span-112" style="padding-left: 0.278em;"><span style="display: inline-block; position: relative; width: 1.837em; height: 0px;"><span style="position: absolute; clip: rect(3.34em, 1000.5em, 4.372em, -1000em); top: -3.974em; left: 0em;"><span class="mi" id="MathJax-Span-113" style="font-family: MathJax_Math; font-style: italic;">y<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.006em;"></span></span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span><span style="position: absolute; top: -3.824em; left: 0.49em;"><span class="texatom" id="MathJax-Span-114"><span class="mrow" id="MathJax-Span-115"><span class="mi" id="MathJax-Span-116" style="font-size: 70.7%; font-family: MathJax_Math; font-style: italic;">k</span><span class="mo" id="MathJax-Span-117" style="font-size: 70.7%; font-family: MathJax_Main;">−</span><span class="mn" id="MathJax-Span-118" style="font-size: 70.7%; font-family: MathJax_Main;">1</span></span></span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span></span></span><span class="mo" id="MathJax-Span-119" style="font-family: MathJax_Main; padding-left: 0.222em;">+</span><span class="msubsup" id="MathJax-Span-120" style="padding-left: 0.222em;"><span style="display: inline-block; position: relative; width: 0.875em; height: 0px;"><span style="position: absolute; clip: rect(3.34em, 1000.46em, 4.361em, -1000em); top: -3.974em; left: 0em;"><span class="mi" id="MathJax-Span-121" style="font-family: MathJax_Math; font-style: italic;">q<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.014em;"></span></span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span><span style="position: absolute; top: -3.824em; left: 0.446em;"><span class="mn" id="MathJax-Span-122" style="font-size: 70.7%; font-family: MathJax_Main;">0</span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span></span></span><span class="mspace" id="MathJax-Span-123" style="height: 0em; vertical-align: 0em; margin-left: -0.167em;"></span><span class="mo" id="MathJax-Span-124" style="font-family: MathJax_Main; padding-left: 0.222em;">⋅</span><span class="mspace" id="MathJax-Span-125" style="height: 0em; vertical-align: 0em; margin-left: -0.167em;"></span><span class="msubsup" id="MathJax-Span-126" style="padding-left: 0.222em;"><span style="display: inline-block; position: relative; width: 0.909em; height: 0px;"><span style="position: absolute; clip: rect(3.34em, 1000.43em, 4.178em, -1000em); top: -3.974em; left: 0em;"><span class="mi" id="MathJax-Span-127" style="font-family: MathJax_Math; font-style: italic;">e</span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span><span style="position: absolute; top: -3.824em; left: 0.466em;"><span class="mi" id="MathJax-Span-128" style="font-size: 70.7%; font-family: MathJax_Math; font-style: italic;">k</span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span></span></span><span class="mo" id="MathJax-Span-129" style="font-family: MathJax_Main; padding-left: 0.222em;">+</span><span class="msubsup" id="MathJax-Span-130" style="padding-left: 0.222em;"><span style="display: inline-block; position: relative; width: 0.875em; height: 0px;"><span style="position: absolute; clip: rect(3.34em, 1000.46em, 4.361em, -1000em); top: -3.974em; left: 0em;"><span class="mi" id="MathJax-Span-131" style="font-family: MathJax_Math; font-style: italic;">q<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.014em;"></span></span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span><span style="position: absolute; top: -3.824em; left: 0.446em;"><span class="mn" id="MathJax-Span-132" style="font-size: 70.7%; font-family: MathJax_Main;">1</span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span></span></span><span class="mspace" id="MathJax-Span-133" style="height: 0em; vertical-align: 0em; margin-left: -0.167em;"></span><span class="mo" id="MathJax-Span-134" style="font-family: MathJax_Main; padding-left: 0.222em;">⋅</span><span class="mspace" id="MathJax-Span-135" style="height: 0em; vertical-align: 0em; margin-left: -0.167em;"></span><span class="msubsup" id="MathJax-Span-136" style="padding-left: 0.222em;"><span style="display: inline-block; position: relative; width: 1.813em; height: 0px;"><span style="position: absolute; clip: rect(3.34em, 1000.43em, 4.178em, -1000em); top: -3.974em; left: 0em;"><span class="mi" id="MathJax-Span-137" style="font-family: MathJax_Math; font-style: italic;">e</span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span><span style="position: absolute; top: -3.824em; left: 0.466em;"><span class="texatom" id="MathJax-Span-138"><span class="mrow" id="MathJax-Span-139"><span class="mi" id="MathJax-Span-140" style="font-size: 70.7%; font-family: MathJax_Math; font-style: italic;">k</span><span class="mo" id="MathJax-Span-141" style="font-size: 70.7%; font-family: MathJax_Main;">−</span><span class="mn" id="MathJax-Span-142" style="font-size: 70.7%; font-family: MathJax_Main;">1</span></span></span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span></span></span><span class="mo" id="MathJax-Span-143" style="font-family: MathJax_Main; padding-left: 0.222em;">+</span><span class="msubsup" id="MathJax-Span-144" style="padding-left: 0.222em;"><span style="display: inline-block; position: relative; width: 0.875em; height: 0px;"><span style="position: absolute; clip: rect(3.34em, 1000.46em, 4.361em, -1000em); top: -3.974em; left: 0em;"><span class="mi" id="MathJax-Span-145" style="font-family: MathJax_Math; font-style: italic;">q<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.014em;"></span></span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span><span style="position: absolute; top: -3.824em; left: 0.446em;"><span class="mn" id="MathJax-Span-146" style="font-size: 70.7%; font-family: MathJax_Main;">2</span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span></span></span><span class="mspace" id="MathJax-Span-147" style="height: 0em; vertical-align: 0em; margin-left: -0.167em;"></span><span class="mo" id="MathJax-Span-148" style="font-family: MathJax_Main; padding-left: 0.222em;">⋅</span><span class="mspace" id="MathJax-Span-149" style="height: 0em; vertical-align: 0em; margin-left: -0.167em;"></span><span class="msubsup" id="MathJax-Span-150" style="padding-left: 0.222em;"><span style="display: inline-block; position: relative; width: 1.813em; height: 0px;"><span style="position: absolute; clip: rect(3.34em, 1000.43em, 4.178em, -1000em); top: -3.974em; left: 0em;"><span class="mi" id="MathJax-Span-151" style="font-family: MathJax_Math; font-style: italic;">e</span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span><span style="position: absolute; top: -3.824em; left: 0.466em;"><span class="texatom" id="MathJax-Span-152"><span class="mrow" id="MathJax-Span-153"><span class="mi" id="MathJax-Span-154" style="font-size: 70.7%; font-family: MathJax_Math; font-style: italic;">k</span><span class="mo" id="MathJax-Span-155" style="font-size: 70.7%; font-family: MathJax_Main;">−</span><span class="mn" id="MathJax-Span-156" style="font-size: 70.7%; font-family: MathJax_Main;">2</span></span></span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.244em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.327em; border-left: 0px solid; width: 0px; height: 1.103em;"></span></span></nobr><span class="MJX_Assistive_MathML MJX_Assistive_MathML_Block" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msub><mi>y</mi><mi>k</mi></msub><mspace width="thickmathspace"></mspace><mo>=</mo><mspace width="thickmathspace"></mspace><msub><mi>y</mi><mrow class="MJX-TeXAtom-ORD"><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>+</mo><msub><mi>q</mi><mn>0</mn></msub><mspace width="negativethinmathspace"></mspace><mo>⋅</mo><mspace width="negativethinmathspace"></mspace><msub><mi>e</mi><mi>k</mi></msub><mo>+</mo><msub><mi>q</mi><mn>1</mn></msub><mspace width="negativethinmathspace"></mspace><mo>⋅</mo><mspace width="negativethinmathspace"></mspace><msub><mi>e</mi><mrow class="MJX-TeXAtom-ORD"><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>+</mo><msub><mi>q</mi><mn>2</mn></msub><mspace width="negativethinmathspace"></mspace><mo>⋅</mo><mspace width="negativethinmathspace"></mspace><msub><mi>e</mi><mrow class="MJX-TeXAtom-ORD"><mi>k</mi><mo>−</mo><mn>2</mn></mrow></msub></math></span></span></div><script type="math/tex; mode=display" id="MathJax-Element-3">
+y_k \;=\;  y_{k-1} 
+          + q_0 \!\cdot\! e_k
+          + q_1 \!\cdot\! e_{k-1}
+          + q_2 \!\cdot\! e_{k-2}
+</script></span></b></dd></dl>
+<p>Mit den Parametern:
+</p>
+<dl><dd><span class="mathjax-wrapper"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><div class="MathJax_Display" style="text-align: left;"><span class="MathJax" id="MathJax-Element-4-Frame" tabindex="0" style="text-align: left; position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;block&quot;&gt;&lt;msub&gt;&lt;mi&gt;q&lt;/mi&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/msub&gt;&lt;mspace width=&quot;thinmathspace&quot; /&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mspace width=&quot;thinmathspace&quot; /&gt;&lt;mi&gt;K&lt;/mi&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;K&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mspace width=&quot;negativethinmathspace&quot; /&gt;&lt;mo&gt;&amp;#x22C5;&lt;/mo&gt;&lt;mspace width=&quot;negativethinmathspace&quot; /&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mfrac&gt;&lt;mrow&gt;&lt;mi&gt;K&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;/mrow&gt;&lt;mrow&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;/mrow&gt;&lt;/mfrac&gt;&lt;mspace width=&quot;thinmathspace&quot; /&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mspace width=&quot;1em&quot; /&gt;&lt;msub&gt;&lt;mi&gt;q&lt;/mi&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/msub&gt;&lt;mspace width=&quot;thinmathspace&quot; /&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mspace width=&quot;thinmathspace&quot; /&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mi&gt;K&lt;/mi&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mspace width=&quot;thinmathspace&quot; /&gt;&lt;mfrac&gt;&lt;mrow&gt;&lt;mi&gt;K&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;/mrow&gt;&lt;mrow&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;/mrow&gt;&lt;/mfrac&gt;&lt;mspace width=&quot;thinmathspace&quot; /&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mspace width=&quot;1em&quot; /&gt;&lt;msub&gt;&lt;mi&gt;q&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msub&gt;&lt;mspace width=&quot;thinmathspace&quot; /&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mspace width=&quot;thinmathspace&quot; /&gt;&lt;mfrac&gt;&lt;mrow&gt;&lt;mi&gt;K&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;/mrow&gt;&lt;mrow&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;/mrow&gt;&lt;/mfrac&gt;&lt;/math&gt;" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-157" style="width: 32.311em; display: inline-block;"><span style="display: inline-block; position: relative; width: 26.923em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(0.745em, 1026.92em, 3.196em, -1000em); top: -2.308em; left: 0em;"><span class="mrow" id="MathJax-Span-158"><span class="msubsup" id="MathJax-Span-159"><span style="display: inline-block; position: relative; width: 0.875em; height: 0px;"><span style="position: absolute; clip: rect(3.34em, 1000.46em, 4.361em, -1000em); top: -3.974em; left: 0em;"><span class="mi" id="MathJax-Span-160" style="font-family: MathJax_Math; font-style: italic;">q<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.014em;"></span></span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span><span style="position: absolute; top: -3.824em; left: 0.446em;"><span class="mn" id="MathJax-Span-161" style="font-size: 70.7%; font-family: MathJax_Main;">0</span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span></span></span><span class="mspace" id="MathJax-Span-162" style="height: 0em; vertical-align: 0em; width: 0.167em; display: inline-block; overflow: hidden;"></span><span class="mo" id="MathJax-Span-163" style="font-family: MathJax_Main; padding-left: 0.278em;">=</span><span class="mspace" id="MathJax-Span-164" style="height: 0em; vertical-align: 0em; width: 0.167em; display: inline-block; overflow: hidden;"></span><span class="mi" id="MathJax-Span-165" style="font-family: MathJax_Math; font-style: italic; padding-left: 0.278em;">K<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.04em;"></span></span><span class="mi" id="MathJax-Span-166" style="font-family: MathJax_Math; font-style: italic;">p</span><span class="mo" id="MathJax-Span-167" style="font-family: MathJax_Main; padding-left: 0.222em;">+</span><span class="mi" id="MathJax-Span-168" style="font-family: MathJax_Math; font-style: italic; padding-left: 0.222em;">K<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.04em;"></span></span><span class="mi" id="MathJax-Span-169" style="font-family: MathJax_Math; font-style: italic;">i</span><span class="mspace" id="MathJax-Span-170" style="height: 0em; vertical-align: 0em; margin-left: -0.167em;"></span><span class="mo" id="MathJax-Span-171" style="font-family: MathJax_Main; padding-left: 0.222em;">⋅</span><span class="mspace" id="MathJax-Span-172" style="height: 0em; vertical-align: 0em; margin-left: -0.167em;"></span><span class="mi" id="MathJax-Span-173" style="font-family: MathJax_Math; font-style: italic; padding-left: 0.222em;">T<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.12em;"></span></span><span class="mi" id="MathJax-Span-174" style="font-family: MathJax_Math; font-style: italic;">a</span><span class="mo" id="MathJax-Span-175" style="font-family: MathJax_Main; padding-left: 0.222em;">+</span><span class="mfrac" id="MathJax-Span-176" style="padding-left: 0.222em;"><span style="display: inline-block; position: relative; width: 1.532em; height: 0px; margin-right: 0.12em; margin-left: 0.12em;"><span style="position: absolute; clip: rect(3.088em, 1001.41em, 4.177em, -1000em); top: -4.651em; left: 50%; margin-left: -0.706em;"><span class="mrow" id="MathJax-Span-177"><span class="mi" id="MathJax-Span-178" style="font-family: MathJax_Math; font-style: italic;">K<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.04em;"></span></span><span class="mi" id="MathJax-Span-179" style="font-family: MathJax_Math; font-style: italic;">d<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span></span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span><span style="position: absolute; clip: rect(3.105em, 1001.21em, 4.177em, -1000em); top: -3.288em; left: 50%; margin-left: -0.617em;"><span class="mrow" id="MathJax-Span-180"><span class="mi" id="MathJax-Span-181" style="font-family: MathJax_Math; font-style: italic;">T<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.12em;"></span></span><span class="mi" id="MathJax-Span-182" style="font-family: MathJax_Math; font-style: italic;">a</span></span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span><span style="position: absolute; clip: rect(0.817em, 1001.53em, 1.282em, -1000em); top: -1.31em; left: 0em;"><span style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 1.532em; height: 0px;"></span><span style="display: inline-block; width: 0px; height: 1.09em;"></span></span></span></span><span class="mspace" id="MathJax-Span-183" style="height: 0em; vertical-align: 0em; width: 0.167em; display: inline-block; overflow: hidden;"></span><span class="mo" id="MathJax-Span-184" style="font-family: MathJax_Main;">,</span><span class="mspace" id="MathJax-Span-185" style="height: 0em; vertical-align: 0em; width: 1em; display: inline-block; overflow: hidden;"></span><span class="msubsup" id="MathJax-Span-186" style="padding-left: 0.167em;"><span style="display: inline-block; position: relative; width: 0.875em; height: 0px;"><span style="position: absolute; clip: rect(3.34em, 1000.46em, 4.361em, -1000em); top: -3.974em; left: 0em;"><span class="mi" id="MathJax-Span-187" style="font-family: MathJax_Math; font-style: italic;">q<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.014em;"></span></span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span><span style="position: absolute; top: -3.824em; left: 0.446em;"><span class="mn" id="MathJax-Span-188" style="font-size: 70.7%; font-family: MathJax_Main;">1</span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span></span></span><span class="mspace" id="MathJax-Span-189" style="height: 0em; vertical-align: 0em; width: 0.167em; display: inline-block; overflow: hidden;"></span><span class="mo" id="MathJax-Span-190" style="font-family: MathJax_Main; padding-left: 0.278em;">=</span><span class="mspace" id="MathJax-Span-191" style="height: 0em; vertical-align: 0em; width: 0.167em; display: inline-block; overflow: hidden;"></span><span class="mo" id="MathJax-Span-192" style="font-family: MathJax_Main; padding-left: 0.278em;">−</span><span class="mi" id="MathJax-Span-193" style="font-family: MathJax_Math; font-style: italic;">K<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.04em;"></span></span><span class="mi" id="MathJax-Span-194" style="font-family: MathJax_Math; font-style: italic;">p</span><span class="mo" id="MathJax-Span-195" style="font-family: MathJax_Main; padding-left: 0.222em;">−</span><span class="mn" id="MathJax-Span-196" style="font-family: MathJax_Main; padding-left: 0.222em;">2</span><span class="mspace" id="MathJax-Span-197" style="height: 0em; vertical-align: 0em; width: 0.167em; display: inline-block; overflow: hidden;"></span><span class="mfrac" id="MathJax-Span-198"><span style="display: inline-block; position: relative; width: 1.532em; height: 0px; margin-right: 0.12em; margin-left: 0.12em;"><span style="position: absolute; clip: rect(3.088em, 1001.41em, 4.177em, -1000em); top: -4.651em; left: 50%; margin-left: -0.706em;"><span class="mrow" id="MathJax-Span-199"><span class="mi" id="MathJax-Span-200" style="font-family: MathJax_Math; font-style: italic;">K<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.04em;"></span></span><span class="mi" id="MathJax-Span-201" style="font-family: MathJax_Math; font-style: italic;">d<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span></span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span><span style="position: absolute; clip: rect(3.105em, 1001.21em, 4.177em, -1000em); top: -3.288em; left: 50%; margin-left: -0.617em;"><span class="mrow" id="MathJax-Span-202"><span class="mi" id="MathJax-Span-203" style="font-family: MathJax_Math; font-style: italic;">T<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.12em;"></span></span><span class="mi" id="MathJax-Span-204" style="font-family: MathJax_Math; font-style: italic;">a</span></span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span><span style="position: absolute; clip: rect(0.817em, 1001.53em, 1.282em, -1000em); top: -1.31em; left: 0em;"><span style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 1.532em; height: 0px;"></span><span style="display: inline-block; width: 0px; height: 1.09em;"></span></span></span></span><span class="mspace" id="MathJax-Span-205" style="height: 0em; vertical-align: 0em; width: 0.167em; display: inline-block; overflow: hidden;"></span><span class="mo" id="MathJax-Span-206" style="font-family: MathJax_Main;">,</span><span class="mspace" id="MathJax-Span-207" style="height: 0em; vertical-align: 0em; width: 1em; display: inline-block; overflow: hidden;"></span><span class="msubsup" id="MathJax-Span-208" style="padding-left: 0.167em;"><span style="display: inline-block; position: relative; width: 0.875em; height: 0px;"><span style="position: absolute; clip: rect(3.34em, 1000.46em, 4.361em, -1000em); top: -3.974em; left: 0em;"><span class="mi" id="MathJax-Span-209" style="font-family: MathJax_Math; font-style: italic;">q<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.014em;"></span></span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span><span style="position: absolute; top: -3.824em; left: 0.446em;"><span class="mn" id="MathJax-Span-210" style="font-size: 70.7%; font-family: MathJax_Main;">2</span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span></span></span><span class="mspace" id="MathJax-Span-211" style="height: 0em; vertical-align: 0em; width: 0.167em; display: inline-block; overflow: hidden;"></span><span class="mo" id="MathJax-Span-212" style="font-family: MathJax_Main; padding-left: 0.278em;">=</span><span class="mspace" id="MathJax-Span-213" style="height: 0em; vertical-align: 0em; width: 0.167em; display: inline-block; overflow: hidden;"></span><span class="mfrac" id="MathJax-Span-214" style="padding-left: 0.278em;"><span style="display: inline-block; position: relative; width: 1.532em; height: 0px; margin-right: 0.12em; margin-left: 0.12em;"><span style="position: absolute; clip: rect(3.088em, 1001.41em, 4.177em, -1000em); top: -4.651em; left: 50%; margin-left: -0.706em;"><span class="mrow" id="MathJax-Span-215"><span class="mi" id="MathJax-Span-216" style="font-family: MathJax_Math; font-style: italic;">K<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.04em;"></span></span><span class="mi" id="MathJax-Span-217" style="font-family: MathJax_Math; font-style: italic;">d<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span></span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span><span style="position: absolute; clip: rect(3.105em, 1001.21em, 4.177em, -1000em); top: -3.288em; left: 50%; margin-left: -0.617em;"><span class="mrow" id="MathJax-Span-218"><span class="mi" id="MathJax-Span-219" style="font-family: MathJax_Math; font-style: italic;">T<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.12em;"></span></span><span class="mi" id="MathJax-Span-220" style="font-family: MathJax_Math; font-style: italic;">a</span></span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span><span style="position: absolute; clip: rect(0.817em, 1001.53em, 1.282em, -1000em); top: -1.31em; left: 0em;"><span style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 1.532em; height: 0px;"></span><span style="display: inline-block; width: 0px; height: 1.09em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.308em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.912em; border-left: 0px solid; width: 0px; height: 2.634em;"></span></span></nobr><span class="MJX_Assistive_MathML MJX_Assistive_MathML_Block" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msub><mi>q</mi><mn>0</mn></msub><mspace width="thinmathspace"></mspace><mo>=</mo><mspace width="thinmathspace"></mspace><mi>K</mi><mi>p</mi><mo>+</mo><mi>K</mi><mi>i</mi><mspace width="negativethinmathspace"></mspace><mo>⋅</mo><mspace width="negativethinmathspace"></mspace><mi>T</mi><mi>a</mi><mo>+</mo><mfrac><mrow><mi>K</mi><mi>d</mi></mrow><mrow><mi>T</mi><mi>a</mi></mrow></mfrac><mspace width="thinmathspace"></mspace><mo>,</mo><mspace width="1em"></mspace><msub><mi>q</mi><mn>1</mn></msub><mspace width="thinmathspace"></mspace><mo>=</mo><mspace width="thinmathspace"></mspace><mo>−</mo><mi>K</mi><mi>p</mi><mo>−</mo><mn>2</mn><mspace width="thinmathspace"></mspace><mfrac><mrow><mi>K</mi><mi>d</mi></mrow><mrow><mi>T</mi><mi>a</mi></mrow></mfrac><mspace width="thinmathspace"></mspace><mo>,</mo><mspace width="1em"></mspace><msub><mi>q</mi><mn>2</mn></msub><mspace width="thinmathspace"></mspace><mo>=</mo><mspace width="thinmathspace"></mspace><mfrac><mrow><mi>K</mi><mi>d</mi></mrow><mrow><mi>T</mi><mi>a</mi></mrow></mfrac></math></span></span></div><script type="math/tex; mode=display" id="MathJax-Element-4">
+q_0 \,=\, Kp + Ki \!\cdot\! Ta + \frac{Kd}{Ta}
+     \, , \quad
+q_1 \,=\, -Kp  - 2 \, \frac{Kd}{Ta}
+     \, , \quad
+q_2 \,=\, \frac{Kd}{Ta}
+</script></span></dd></dl>
+<p><br>
+<b>Umsetzung in Code nach der Differenzengleichung:</b>
+</p><p>Im Code wurden einige Variablen umbenannt, da die Indexschreibweise nicht möglich ist.
+</p><p>y entspricht y<sub>k</sub>, e entspricht e<sub>k</sub>, ealt entspricht e<sub>k-1</sub>, esum ist die Summenbildung
+</p><p>In der Praxis wird man die Ausdrücke Ki*Ta und Kd/Ta vorab 
+berechnen und mit Ersatzvariablen in die Reglergleichung einsetzen. Der 
+Verständlichkeit halber wurde es hier im Code belassen. Des weiteren 
+kann eine Begrenzung von esum notwendig werden, um einen 
+Variablenüberlauf oder Windup-Effekt zu vermeiden.
+</p><p>Der nachfolgende Code wird im Rhythmus der Abtastzeit Ta immer wieder aufgerufen.
+</p>
+<pre>e = w - x;					//Vergleich
+esum = esum + e;				//Integration I-Anteil
+y = Kp*e + Ki*Ta*esum + Kd/Ta*(e – ealt);	//Reglergleichung
+ealt = e;
+</pre>
+<hr>
+<p><b>Alternative Umsetzung in Code nach dem Stellungsalgorithmus:</b><br>
+y entspricht y<sub>k</sub>, yalt entspricht y<sub>k-1</sub>, e entspricht e<sub>k</sub>, ealt entspricht e<sub>k-1</sub>, ealt2 entspricht e<sub>k-2</sub>
+</p>
+<pre>e = w - x;					//Vergleich
+y = yalt + q0*e + q1*ealt + q2*ealt2;		//Reglergleichung
+ealt2 = ealt;
+ealt = e;
+yalt = y;
+</pre>
+<h2><span class="mw-headline" id="Dimensionierung_des_Reglers">Dimensionierung des Reglers</span></h2>
+<p>Die Auswahl des Reglertyps ist heutzutage bei den digitalen Reglern 
+nicht mehr so kritisch, da der Mehraufwand in Software für einen 
+PID-Regler gegenüber einfacheren Typen kaum zu Buche schlägt. Im Prinzip
+ ist man deshalb mit einem PID-Regler fast immer auf der richtigen 
+Seite, mit einer Ausnahme, bei einer Strecke mit reiner Totzeit. Die 
+folgende Tabelle gibt eine Hilfestellung zur Auswahl des Reglers. 
+</p>
+<dl><dd><table rules="all" style="margin:1em 1em 1em 0; border:solid 1px #0060B5; border-collapse:collapse; background-color:#F5F7FF; font-size:100%; empty-cells:show;" cellspacing="0" cellpadding="4" border="2">
+<caption> <b>Geeignete Reglertypen für die unterschiedlichen Regelstrecken</b>
+</caption>
+<tbody><tr>
+<th rowspan="2"> Strecke
+</th>
+<th colspan="4"> Regler
+</th></tr>
+<tr>
+<th> P </th>
+<th> PD </th>
+<th> PI </th>
+<th> PID
+</th></tr>
+<tr>
+<td>reine Totzeit
+</td>
+<td>&nbsp;
+</td>
+<td>&nbsp;
+</td>
+<td><div align="center">geeignet</div>
+</td>
+<td>&nbsp;
+</td></tr>
+<tr>
+<td>1.Ordnung mit kleiner Totzeit
+</td>
+<td>&nbsp;
+</td>
+<td>&nbsp;
+</td>
+<td>gut geeignet
+</td>
+<td>gut geeignet
+</td></tr>
+<tr>
+<td>2.Ordnung mit kleiner Totzeit
+</td>
+<td>&nbsp;
+</td>
+<td>&nbsp;
+</td>
+<td>&nbsp;
+</td>
+<td>gut geeignet
+</td></tr>
+<tr>
+<td>höhere Ordnung
+</td>
+<td>&nbsp;
+</td>
+<td>&nbsp;
+</td>
+<td>&nbsp;
+</td>
+<td>gut geeignet
+</td></tr>
+<tr>
+<td>I-Glied und Verzögerung
+</td>
+<td>geeignet
+</td>
+<td>gut geeignet
+</td>
+<td><div align="center">geeignet</div>
+</td>
+<td>gut geeignet
+</td></tr></tbody></table></dd></dl>
+<p>Nachdem man einen geeigneten Reglertyp ausgewählt hat, stellt sich 
+noch die Frage, wie man die Reglerparameter Kp, Ki, und Kd optimiert. Im
+ Laufe der Zeit wurden viele Methoden zur Dimensionierung der 
+Reglerparameter entwickelt, aber es können hier nicht alle aufgelistet 
+werden. Diese Aufzählung beschränkt sich auf die einfacheren und 
+gängigen Methoden der Parametrierung.
+</p>
+<h3><span class="mw-headline" id="Dimensionierung_durch_Probieren_.28Empirisches_Einstellen.29">Dimensionierung durch Probieren (Empirisches Einstellen)</span></h3>
+<h4><span class="mw-headline" id="Methode_1">Methode 1</span></h4>
+<p>Diese Methode ist geeignet um einfache Systeme zu dimensionieren, 
+insbesondere wenn man bereits Erfahrung mit ähnlichen Regelkreisen hat. 
+Man fängt mit einer unkritischen Einstellung (Kp klein, Ki = 0, Kd = 0) 
+an und erhöht langsam die Verstärkung Kp, bis die Dämpfung schlecht 
+wird. Falls eine Schwingneigung auftritt, muss die Verstärkung wieder 
+etwas zurück genommen werden. Dann nimmt man allmählich den 
+Integralanteil hinzu, erhöht ihn in Schritten und probiert solange 
+herum, bis das Ergebnis einigermaßen passt. Bei Bedarf kann noch ein 
+D-Anteil (PID-Struktur) probiert werden. Wenn dabei die Regelung 
+stabiler wird, kann noch mal Kp und Ki erhöht werden, bis man endgültig 
+zufrieden ist. 
+</p>
+<h4><span class="mw-headline" id="Methode_2">Methode 2</span></h4>
+<p>Alle Anteile erstmal auf 0. Dann erhöht man Kp so lange bis das 
+System deutlich schwingt. Danach wird der Kd so lange erhöht bis das 
+System nicht mehr schwingt. Anschliessend kann noch ein kleiner Ki 
+Anteil hinzugegeben werden.
+</p><p>Es dürfte klar sein, dass so eine Optimierung im Blindflug nicht 
+immer das Optimum ergibt, aber es ist eine gängige praktische Methode 
+zur Ermittlung der Reglerparameter. Besser sieht es aus, wenn in einer 
+Simulation empirisch optimiert wird. Zusätzliche Informationen über die 
+Stabilität erlauben hierbei eine gezieltere Optimierung. Zudem ist das 
+Probieren im Simulator gefahrlos möglich, was in der Realität nicht 
+immer der Fall ist. Geeignete Programme zur Simulation sind <a href="https://rn-wissen.de/wiki/index.php?title=Regelungstechnik#Hilfsprogramme_zur_Analyse_und_Optimierung" title="Regelungstechnik"> hier</a>
+ vorgestellt. Allerdings muss für eine Simulation die Regelstrecke 
+bekannt sein. Ist das nicht der Fall, so bleibt nur das einfache 
+Probieren oder das Einstellen nach der Schwingungsmethode wie im 
+folgenden beschrieben.
+</p>
+<h3><span class="mw-headline" id="Dimensionierung_nach_Einstellregeln">Dimensionierung nach Einstellregeln</span></h3>
+<p>Die Dimensionierung nach Rezept ist eine praktische Methode ohne viel
+ Rechnerei und Hilfsmittel, eine Methode also für den Praktiker. Die 
+bekanntesten Einstellregeln sind von Ziegler/Nichols und von 
+Chien/Hrones/Reswick. Darüber hinaus gibt es noch eine Vielzahl anderer 
+Einstelltabellen, auf die hier aber verzichtet wird, das würde den 
+Rahmen dieses Artikels sprengen. An der Vielzahl kann man schon ersehen,
+ dass es kein universell gültiges Rezept gibt und mit diesen Tabellen 
+nicht unbedingt das Optimum erreicht wird, eine Nachoptimierung kann 
+nötig sein.
+</p><p>Bei Ziegler/Nichols unterscheidet man noch zwischen der Schwingungsmethode und der Einstellung nach der Sprungantwort.
+</p><p><b>Einstellung nach der Schwingungsmethode:</b>
+</p><p>Bei der Schwingungsmethode nach Ziegler/Nichols werden die 
+Reglerparameter so verstellt, dass die Stabilitätsgrenze erreicht wird 
+und der Regelkreis zu schwingen beginnt, d.h. die Regelgröße periodische
+ Schwingungen ausführt. Aus der so gefundenen Einstellung können die 
+Reglerparameter ermittelt werden. Dieses Verfahren ist nur auf 
+Regelstrecken anwendbar, bei denen ein Schwingen keinen Schaden 
+anrichtet und die überhaupt instabil gemacht werden können. Die 
+Vorgehensweise ist folgende:
+</p>
+<ol><li> Einstellung des Reglers als reinen P-Regler: Ki = 0 und Kd = 0</li>
+<li> Die Reglerverstärkung Kp wird solange vergrößert, bis sich der 
+geschlossene Regelkreis an der Stabilitätsgrenze befindet und 
+Dauerschwingungen ausführt.</li>
+<li> Der dabei eingestellte Wert Kp wird als Kp<sub>krit</sub> bezeichnet. </li>
+<li> Die Periodendauer der sich einstellenden Dauerschwingung T<sub>krit</sub> wird gemessen.</li>
+<li> Anhand der folgenden Tabelle werden dann die Reglerparameter bestimmt.</li></ol>
+<table cellpadding="10">
+<tbody><tr>
+<td>
+<table rules="all" style="margin:1em 1em 1em 0; border:solid 1px #0060B5; border-collapse:collapse; background-color:#F5F7FF; font-size:100%; empty-cells:show;" cellspacing="0" cellpadding="4" border="2">
+<tbody><tr>
+<th> Regler </th>
+<th> Kp </th>
+<th> Tn </th>
+<th> Tv
+</th></tr>
+<tr>
+<th> P
+</th>
+<td> 0.5·Kp<sub>krit</sub> </td>
+<td> </td>
+<td>
+</td></tr>
+<tr>
+<th> PI
+</th>
+<td> 0.45·Kp<sub>krit</sub> </td>
+<td> 0.85·T<sub>krit</sub> </td>
+<td>
+</td></tr>
+<tr>
+<th> PID
+</th>
+<td> 0.6·Kp<sub>krit</sub> </td>
+<td> 0.5·T<sub>krit</sub> </td>
+<td> 0.12·T<sub>krit</sub>
+</td></tr></tbody></table>
+</td>
+<td>
+<table cellpadding="4" border="0">
+<tbody><tr>
+<th> Ki = Kp/Tn
+</th></tr>
+<tr>
+<th> Kd = Kp·Tv
+</th></tr></tbody></table>
+</td></tr></tbody></table>
+<p>Der Vorteil dieses Verfahrens liegt darin, dass die Untersuchung 
+während des Betriebes und ohne Öffnen des Regelkreises durchgeführt 
+werden kann. Der Nachteil an dem Verfahren ist, dass es nur auf Strecken
+ angewendet werden kann, die auch zum Schwingen gebracht werden können. 
+</p><p><b>Einstellung nach der Sprungantwort:</b><br>
+Diese Methode der Parameterbestimmung beruht auf der Aufnahme der 
+Sprungantwort der Regelstrecke. Es eignet sich auch für Strecken, die 
+nicht zum Schwingen gebracht werden können. Der Regelkreis muss 
+allerdings geöffnet werden.
+Vorgehensweise: Es wird die Sprungantwort aufgenommen und durch 
+Einzeichnen der Wendetangente die Verzugszeit Tu und die Ausgleichszeit 
+Tg ermittelt.
+</p><p><a href="https://rn-wissen.de/wiki/index.php?title=Datei:Tu_Tg.gif" class="image"><img alt="Tu Tg.gif" src="Regelungstechnik%20%E2%80%93%20RN-Wissen.de(29.09.19_32_47)-Dateien/Tu_Tg.gif" width="459" height="261"></a>
+</p><p>Mit den so festgestellten Werten werden die Parameter für den einzusetzenden Regler gemäß nachstehenden Tabellen ermittelt.
+</p>
+<table cellpadding="10">
+<tbody><tr>
+<td>
+<table rules="all" style="margin:1em 1em 1em 0; border:solid 1px #0060B5; border-collapse:collapse; background-color:#F5F7FF; font-size:100%; empty-cells:show;" cellspacing="0" cellpadding="4" border="2">
+<caption> <b>Einstellregeln nach<br>Ziegler/Nichols</b>
+</caption>
+<tbody><tr>
+<th> Regler </th>
+<th> Kp </th>
+<th> Tn </th>
+<th> Tv
+</th></tr>
+<tr>
+<th> P
+</th>
+<td> 1/Ks·Tg/Tu </td>
+<td> </td>
+<td>
+</td></tr>
+<tr>
+<th> PI
+</th>
+<td> 0.9/Ks·Tg/Tu </td>
+<td> 3.3·Tu </td>
+<td>
+</td></tr>
+<tr>
+<th> PID
+</th>
+<td> 1.2/Ks·Tg/Tu </td>
+<td> 2·Tu </td>
+<td> 0.5·Tu
+</td></tr></tbody></table>
+</td>
+<td>
+</td>
+<td>
+<table rules="all" style="margin:1em 1em 1em 0; border:solid 1px #0060B5; border-collapse:collapse; background-color:#F5F7FF; font-size:100%; empty-cells:show;" cellspacing="0" cellpadding="4" border="2">
+<caption> <b>Einstellregeln nach<br>Chien/Hrones/Reswick</b>
+</caption>
+<tbody><tr>
+<th> Regler </th>
+<th> Kp </th>
+<th> Tn </th>
+<th> Tv
+</th></tr>
+<tr>
+<th> P
+</th>
+<td> 0.3/Ks·Tg/Tu </td>
+<td> </td>
+<td>
+</td></tr>
+<tr>
+<th> PI
+</th>
+<td> 0.35/Ks·Tg/Tu </td>
+<td> 1.2·Tg </td>
+<td>
+</td></tr>
+<tr>
+<th> PID
+</th>
+<td> 0.6/Ks·Tg/Tu </td>
+<td> Tg </td>
+<td> 0.5·Tu
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+<table cellpadding="10">
+<tbody><tr>
+<td>
+<table cellpadding="4" border="0">
+<tbody><tr>
+<th> Ki = Kp/Tn
+</th></tr>
+<tr>
+<th> Kd = Kp·Tv
+</th></tr></tbody></table>
+</td>
+<td>
+<table width="420" cellpadding="4">
+<tbody><tr>
+<td>Die Parameter Tn und Tv sind aus der analogen Regelungstechnik und 
+sind dort sehr geläufig. Die Umrechnung in die Parameter Ki und Kd 
+erfolgt mit nebenstehenden Formeln, siehe auch <a href="https://rn-wissen.de/wiki/index.php?title=Regelungstechnik#PID-Regler" title="Regelungstechnik"> PID-Regler</a>.
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Dimensionierung_mit_dem_Bodediagramm">Dimensionierung mit dem Bodediagramm</span></h3>
+<p>Ein Bode-Diagramm ist die grafische Darstellung des Frequenzganges. 
+Es werden der Betrag der Übertragungsfunktion (Amplitudengang) und der 
+Verlauf des Phasenwinkels (Phasengang) als Funktion der Frequenz 
+aufgetragen. Die Frequenzachse und die Amplitudenachse werden 
+logarithmisch dargestellt. Die logarithmische Darstellung hat den 
+Vorteil, dass eine Multiplikation auf eine einfache Addition 
+zurückgeführt wird. Somit wird eine Hintereinanderschaltung von Systemen
+ im Blockschaltbild zu einer einfachen Addition im Bodediagramm.
+</p><p>Das Zeitverhalten des rückgekoppelten Regelkreises hängt 
+entscheidend vom Verlauf
+des Frequenzganges der offenen Regelschleife in der Umgebung des 
+Durchtretens durch
+die 0dB-Achse ab. In der Regelungstechnik wird daher der offene 
+Regelkreis im Bode-Diagramm aufgetragen. Das erlaubt einen schnellen 
+Überblick über Stabilität und möglichen Reserven zur Optimierung. Ein 
+Kriterium für die Stabilität der Schleife ist der Phasenrand und der 
+Amplitudenrand. Der Phasenrand ist der Abstand (Phasenreserve) zur 
+-180°-Linie bei der Durchtrittsfrequenz. Die Durchtrittsfrequenz ist 
+diejenige Frequenz, bei der der Amplitudengang durch die 0dB-Linie geht.
+ Siehe auch folgendes Bode-Diagramm.
+</p><p><a href="https://rn-wissen.de/wiki/index.php?title=Datei:Phasenrand.gif" class="image"><img alt="Phasenrand.gif" src="Regelungstechnik%20%E2%80%93%20RN-Wissen.de(29.09.19_32_47)-Dateien/Phasenrand.gif" width="465" height="420"></a>
+</p>
+<table rules="all" style="margin:1em 1em 1em 0; border:solid 1px #0060B5; border-collapse:collapse; background-color:#F5F7FF; font-size:100%; empty-cells:show;" cellspacing="0" cellpadding="4" border="2">
+<tbody><tr>
+<td><b>Regel:</b> Eine geschlossene Regelschleife arbeitet genau dann stabil, wenn der Phasenrand positiv ist.
+</td></tr></tbody></table>
+<p>Wird diese Bedingung verletzt, so wird in diesem Frequenzbereich die 
+im Rückführzweig der Regelung eingebrachte Gegenkopplung zu einer 
+Mitkopplung und das System kann schwingen.
+</p><p><b>Beim Reglerentwurf sind folgende Punkte zu beachten:</b>
+</p>
+<ul><li> Der Phasenrand muss positiv sein. Der geschlossene Regelkreis kann sonst instabil sein. </li>
+<li> Je größer der Phasenrand ist, desto größer ist die 
+Stabilitätsreserve des Regelkreises und desto höher ist die Dämpfung des
+ Regelkreises. Üblich sind Werte von 40°...70° für gutes 
+Führungsverhalten und 20°...50° für gutes Störverhalten.</li>
+<li> Die Durchtrittsfrequenz ist ein Maß für die Schnelligkeit des 
+Regelkreises, je höher, desto schneller ist die Reaktion auf Änderungen 
+der Führungsgröße oder Störungen.</li></ul>
+<p><br>
+Hier ein Beispiel zur Dimensionierung mit dem Bode-Diagramm.
+</p><p><a href="https://rn-wissen.de/wiki/index.php?title=Datei:Bode1.gif" class="image"><img alt="Bode1.gif" src="Regelungstechnik%20%E2%80%93%20RN-Wissen.de(29.09.19_32_47)-Dateien/Bode1.gif" width="559" height="391"></a>
+</p><p>Die Strecke ist rot dargestellt und besteht in dem Beispiel aus 
+einem nicht schwingfähigem PT2-Glied. Man sucht sich den Punkt, wo die 
+Strecke für sich alleine noch ausreichend Phasenreserve hat, z.B. 70°. 
+In dem Beispiel also die Frequenz, bei der die Strecke –110° 
+Phasendrehung aufweist. Das ist etwa bei 15Hz. Da hat die Strecke 
+ungefähr eine Dämpfung von 25dB. Wenn man nun diese Dämpfung durch eine 
+Verstärkung von 25dB kompensiert, dann wird dieser Punkt zur 
+Durchtrittsfrequenz. D.h. man wählt den P-Anteil des Reglers Kp=18, denn
+ 25dB entspricht ungefähr dem Faktor 18. Um die Regelabweichung zu 
+minimieren, wird noch ein I-Anteil hinzugefügt.
+</p><p>Üblicherweise wählt man für die Grenzfrequenz des PI-Reglers die 
+Grenzfrequenz des dominierenden Streckenteils, in dem Beispiel ca. 
+1.4Hz. Damit ergibt sich ein I-Anteil von 170. Im Bode-Diagramm ist der 
+PI-Regler als schwarze Kurve eingezeichnet. Die Addition der Strecke und
+ des Reglers im Bode-Diagramm führt dann zum Frequenzgang des offenen 
+Regelkreises (blaue Kurve). Die resultierende Durchtrittsfrequenz ist 
+wie gewählt bei etwa 15Hz. Der Phasenrand hat sich durch den I-Anteil im
+ Regler auf ca. 60° reduziert, ist aber noch ausreichend. Das 
+Einschwingen des geschlossenen Regelkreises für diese Dimensionierung 
+sieht dann folgendermaßen aus:
+</p><p><a href="https://rn-wissen.de/wiki/index.php?title=Datei:Sprungantwort3.gif" class="image"><img alt="Sprungantwort3.gif" src="Regelungstechnik%20%E2%80%93%20RN-Wissen.de(29.09.19_32_47)-Dateien/Sprungantwort3.gif" width="437" height="323"></a>
+</p><p>Bei Bedarf könnte noch ein D-Anteil (PID-Regler) hinzugenommen 
+werden, das würde die Phase anheben und man könnte dadurch die 
+Durchtrittsfrequenz weiter nach oben schieben. In der Praxis wird dies 
+allerdings wegen der wahrscheinlichen Begrenzung des Stellglieds kein 
+schnelleres Einschwingen mehr bringen. 
+</p><p>Begrenzungen oder Nichtlinearitäten werden bei der 
+Dimensionierung mit dem Bode-Diagramm nicht berücksichtigt. Das ist ein 
+Nachteil dieser Methode. Eventuell muss deshalb noch einmal im 
+Zeitbereich nachoptimiert werden.
+</p>
+<h3><span class="mw-headline" id="Dimensionierung_mit_der_Ortskurve">Dimensionierung mit der Ortskurve</span></h3>
+<p>Eine Alternative zur Dimensionierung mit dem Bodediagramm stellt die 
+Methode über die Ortskurve des offenen Regelkreises dar.  Bei diesem 
+Verfahren ist schnell auf einem Blick ersichtlich ob der Regelkreis 
+stabil ist.
+</p><p>Liegt der Punkt –1 auf der Realteilachse links von der Ortskurve in Richtung steigendem ω (omega) so ist der Regelkreis stabil.
+Der Abstand zu der kritischen Kreisfrequenz ω<sub>Krit</sub> von der 
+Imaginärteilachse ist die Verstärkung Vr. Mit diesem Wert lässt sich der
+ Amplitudenrand nach folgender Formelermitteln: Ar = 20 lg (1/Vr) in dB
+</p><p>Die Durchtrittskreisfrequenz ω<sub>D</sub> liegt an dem Punkt, wo
+ der Betrag aus Realteil und Imaginärteil 1 ergibt. Wenn man weiß, wo 
+die Durchtrittskreisfrequenz ist, dann kann man den Phasenrand 
+bestimmen.
+Dies ist der Winkel zwischen der –180°-Linie zu ω<sub>D</sub>.
+</p><p><a href="https://rn-wissen.de/wiki/index.php?title=Datei:Ortskurve.jpg" class="image"><img alt="Ortskurve.jpg" src="Regelungstechnik%20%E2%80%93%20RN-Wissen.de(29.09.19_32_47)-Dateien/Ortskurve.jpg" width="436" height="372"></a>
+</p>
+<h2><span class="mw-headline" id="Hilfsprogramme_zur_Analyse_und_Optimierung">Hilfsprogramme zur Analyse und Optimierung</span></h2>
+<p>Die Analyse und Optimierung von Regelkreisen wird wesentlich 
+erleichtert durch die Zuhilfenahme von Programmen. Es erspart einem eine
+ komplizierte Rechnerei von Hand oder umfangreiche Testläufe. 
+Stellvertretend für all die verfügbaren Programme werden hier zwei 
+Freeware-Programme vorgestellt, die dafür gut geeignet sind. Die 
+Beschreibung hier ersetzt aber keine Tutorials, es wird nur die 
+Anwendung für die Regelungstechnik beschrieben. 
+</p>
+<h3><span class="mw-headline" id="Scilab.2FScicos">Scilab/Scicos</span></h3>
+<p>Scilab ist ein wissenschaftlich-technisches Softwarepaket für 
+numerische Berechnungen. Scicos ist eine Erweiterung dazu, die eine 
+blockorientierte und modellbasierte Simulation und Analyse von 
+dynamischen Systemen bietet. Dieses Softwarepaket kann von der <a class="external text" href="http://www.scilab.org/">Scilab Homepage</a> herunter geladen werden.
+</p>
+<h4><span class="mw-headline" id="Scilab">Scilab</span></h4>
+<p>Mit Scilab ist es sehr einfach ein Bode-Diagramm zu zeichnen, es bedarf nur 3 Zeilen Code.
+</p>
+<pre>s=poly(0,'s');
+G=syslin('c',0.72/(0.11*s+1));
+bode(G)
+</pre>
+<p>Die 1.Zeile <b>s=poly(0,'s');</b> legt die Variable s als Polynomvariable fest. Dies braucht in einer Sitzung nur einmal gemacht zu werden. Die 2.Zeile <b>G=syslin('c',0.72/(0.11*s+1));</b> definiert ein lineares System mit der Übertragungsfunktion 0.72/(0.11s+1). Die 3.Zeile <b>bode(G)</b>
+ zeichnet das Bode-Diagramm des zuvor mit syslin definierten Systems G. 
+Zu beachten ist, dass Scilab auf der x-Achse im Bode-Diagramm die 
+Frequenz in Hertz und nicht wie üblich die Kreisfrequenz darstellt. 
+Anstelle des Bode-Diagramms kann auch die Sprungantwort gezeichnet 
+werden. Dies geschieht mit folgenden Befehlen:
+</p>
+<pre>xbasc();
+t=[0:0.001:2];
+y=csim('step',t,G);
+plot2d(t,y)
+</pre>
+<p><b>xbasc()</b> löscht den letzten Plot mit dem Bode-Diagramm und mit <b>t=[0:0.001:2]</b> wird ein Vektor t mit den angegebenen Zeiten im Intervall von 1ms definiert. Die Zeile <b>y=csim('step',t,G)</b> berechnet die Sprungantwort des zuvor mit syslin definierten Systems G und speichert sie in y ab. Das Ergebnis wird dann mit <b>plot2d(t,y)</b> dargestellt. Bei Bedarf können noch Gitternetzlinien mit dem Befehl <b>xgrid()</b> hinzugefügt werden.
+</p><p>Ergänzend hier noch ein Scilab-Skript, welches recht hilfreich 
+bei der Dimensionierung mit dem Bode-Diagramm ist. Den nachfolgenden 
+Code einfach in das SciPad-Fenster (Editor von Scilab) kopieren und 
+starten. Es werden 2 Grafikfenster angezeigt, eines mit dem 
+Bode-Diagramm und ein zweites mit der Sprungantwort. Man kann im Skript 
+die Streckencharakteristik anpassen und verschiedene Reglerparameter 
+ausprobieren.
+</p>
+<pre>Ks=0.72;                            // Verstärkung der Strecke
+T1=0.11;                            // Zeitkonstante 1
+T2=0.005;                           // Zeitkonstante 2
+Kp=18;                              // Proportionalbeiwert
+Ki=170;                             // Integralbeiwert
+Kd=0;                               // Differenzialbeiwert
+ 
+s=poly(0,'s');                      // definiert s als Polynomvariable
+P=(T1*s+1)*(T2*s+1);                // Streckencharakteristik
+Gs=syslin('c',Ks,P)                 // Übertragungsfunktion der Strecke
+
+RZ=poly([Ki Kp Kd],'s','coeff')     // Zählerpolynom des Reglers
+RN=poly([0 1],'s','coeff')          // Nennerpolynom des Reglers
+Gr=syslin('c',RZ,RN)                // Übertragungsfunktion des Reglers
+
+G=Gr*Gs                             // Übertragungsfunktion gesamt
+xset("window",0);
+xbasc(0);
+bode([Gr;G;Gs],0.1,100,['Regler';'gesamt';'Strecke'])
+
+Gcl=G/(G+1)                         // geschlossene Regelschleife
+t=0:0.001:0.2;
+y=csim('step',t,Gcl);               // berechnet Sprungantwort
+xset("window",1);
+xbasc(1);
+plot2d(t,y,2);
+xgrid();
+xtitle("Sprungantwort","sec");
+</pre>
+<p><br>
+</p>
+<h4><span class="mw-headline" id="Scicos">Scicos</span></h4>
+<p>Eine weitere Möglichkeit zur Simulation im Zeitbereich bietet Scicos.
+ Die Modellierung geschieht mit einem grafischen Editor, in dem Blöcke 
+mit vordefinierten oder selbstgemachten Funktionen miteinander verbunden
+ werden. Ein einfaches Modell eines Regelkreises mit PID-Regler sieht 
+folgendermaßen aus:
+</p><p><a href="https://rn-wissen.de/wiki/index.php?title=Datei:Scicos_anaReg.gif" class="image"><img alt="Scicos anaReg.gif" src="Regelungstechnik%20%E2%80%93%20RN-Wissen.de(29.09.19_32_47)-Dateien/Scicos_anaReg.gif" width="563" height="257"></a>
+</p><p>Der PID-Regler ist mit seinen 3 Zweigen (P, I und D) dargestellt.
+ In den Verstärkerblöcken kann durch Ändern der Reglerparameter (KP, KI 
+und KD) der Regler optimiert werden. Die Strecke ist in diesem Beispiel 
+nur ein einzelner Block, in dem die Übertragungsfunktion eingegeben 
+wird. Man kann die Strecke auch detaillierter mit einzelnen 
+Funktionsblöcken darstellen. Ein Beispiel eines komplexen 
+Blockschaltbilds für einen balancierenden Bot ist unter diesem <a class="external text" href="http://www.roboternetz.de/phpBB2/download.php?id=5082">Link</a> zu finden.
+</p><p>Der Vorteil der Simulation mit Scicos ist die Möglichkeit 
+Nichtlinearitäten zu berücksichtigen und die Kombination von 
+kontinuierlichen und diskreten Funktionen. Das heißt, man kann einen 
+digitalen Regler mit seinen diskreten Schritten und eine analoge 
+Strecke, als kontinuierliche Funktion eingegeben, zusammen simulieren. 
+Scicos bietet sogar einen 'Scifunc'-Block, mit dem Rechenschritte des 
+digitalen Reglers nachgebildet werden können. Damit wird sowohl das 
+dynamische Verhalten, verursacht durch die Abtastzeit Ta, als auch die 
+etwas unterschiedliche Dynamik durch die digitale Ausführung eines I- 
+und D-Anteils richtig simuliert. Ein Beispiel für den Einsatz des 
+Scifunc-Blocks ist in folgendem Blockschaltbild zu sehen.
+</p><p><a href="https://rn-wissen.de/wiki/index.php?title=Datei:Scicos_digReg.png" class="image"><img alt="Scicos digReg.png" src="Regelungstechnik%20%E2%80%93%20RN-Wissen.de(29.09.19_32_47)-Dateien/Scicos_digReg.png" width="563" height="207"></a>
+</p><p>Beispiel: <a href="https://rn-wissen.de/wiki/index.php?title=Regelungstechnik#Beispiel:_Drehzahlregelung" title="Regelungstechnik"> Drehzahlregelung</a> mit digitalem Regler
+</p><p>Die globalen Variablen für die Reglerparameter und die Abtastzeit werden unter dem Menüpunkt „Edit - Context“ abgelegt.
+</p>
+<pre>Kp=18;
+Ki=60;
+Ta=0.01;
+</pre>
+<p>In den Taktgeber für den digitalen Regler wird als Clock-Periode die 
+Abtastzeit Ta eingetragen. In das Dialogfenster zum Scifunc-Block wird 
+folgender Code zur Simulation des digitalen PI-Reglers eingetragen:
+</p>
+<pre>z=z+Ki*Ta*u1
+if z&gt;5 then
+z=5;
+end
+y1=Kp*u1+z
+if y1&gt;5 then
+y1=5;
+end
+</pre>
+<p>z entspricht der Variable esum vom Beispiel des <a href="https://rn-wissen.de/wiki/index.php?title=Regelungstechnik#Realisierung_mit_digitalem_Regler" title="Regelungstechnik"> digitalen Drehzahlreglers</a>;
+ u1 ist die Eingangsvariable und y1 die Ausgangsvariable des 
+Scifunc-Blocks.
+In den Block für die Strecke wird die Übertragungsfunktion eingetragen. 
+Als Zähler die Verstärkung Ks, also 0.72. Im Nenner das Polynom 
+(1+0.11*s) für die Charakteristik der Strecke. Mit ‚Simulate – Run’ wird
+ die Simulation gestartet. Als Ergebnis sollte das Einschwingen der 
+Stellgröße (schwarz) und der Regelgröße (grün), wie in folgender 
+Abbildung erscheinen.
+</p><p><a href="https://rn-wissen.de/wiki/index.php?title=Datei:Sprungantwort_DZR.png" class="image"><img alt="Sprungantwort DZR.png" src="Regelungstechnik%20%E2%80%93%20RN-Wissen.de(29.09.19_32_47)-Dateien/Sprungantwort_DZR.png" width="405" height="365"></a>
+</p><p>Man kann nun mit den Reglerparametern und verschiedenen 
+Abtastzeiten spielen, um zu sehen wie sich die Änderungen auswirken. Zum
+ Beispiel wird bei einer Verdopplung der Abtastzeit der Regelkreis 
+bereits instabil.
+</p><p>Diese Beispiele sind nur ein kurzer Auszug von den Möglichkeiten 
+mit Scilab/Scicos für den Einsatz in der Regelungstechnik. Darüber 
+hinaus ist es auch sehr gut geeignet bei anderen Optimierungsverfahren 
+wie z.B. beim WOK-Verfahren (Wurzelortskurven) oder zur Analyse und 
+Optimierung von modernen Reglern wie z.B. Zustandsregler und 
+Kalmanfilter.
+</p>
+<h3><span class="mw-headline" id="LTspice.2FSwitcherCad_III">LTspice/SwitcherCad III</span></h3>
+<p>Dieses Programm ist ein SPICE-Derivat von der Firma Linear Technology
+ und ist unter den 2 Namen LTspice und SwitcherCad III bekannt. Der 
+Einfachheit halber wird für die weitere Beschreibung hier nur der Name 
+LTspice verwendet. Das Programm ist Freeware und kann unter diesem Link 
+herunter geladen werden. <a class="external free" href="http://ltspice.linear.com/software/LTspiceIV.exe">http://ltspice.linear.com/software/LTspiceIV.exe</a>
+</p><p>LTspice ist ein Simulationsprogramm zur Analyse von 
+elektronischen Schaltungen. Mit LTspice kann sowohl im Zeitbereich als 
+auch im Frequenzbereich analysiert werden und bietet sich dadurch mit 
+den entsprechenden Modellen auch für den Einsatz in der Regelungstechnik
+ an. Wer sich bereits mit SPICE-Programmen auskennt, für den sollte es 
+auch in der Regelungstechnik die 1.Wahl sein. 
+</p><p>Der Vorteil von LTspice ist die Möglichkeit einer sehr 
+detaillierten Analyse, vorausgesetzt die Modelle sind auch so 
+detailliert nachgebildet. Insbesondere für analoge Regler, wo die 
+elektrische Schaltung direkt umgesetzt werden kann, empfiehlt sich der 
+Einsatz von LTspice. Der Nachteil ist, LTspice ist nicht auf 
+regeltechnische Belange ausgelegt worden und spezifische Symbole für die
+ Regelungstechnik müssen selbst erstellt werden. Einige selbst erstellte
+ Symbole für dynamische Grundelemente in LTspice sind hier abgebildet.
+</p><p><a href="https://rn-wissen.de/wiki/index.php?title=Datei:LTSpiceSymb.png" class="image"><img alt="LTSpiceSymb.png" src="Regelungstechnik%20%E2%80%93%20RN-Wissen.de(29.09.19_32_47)-Dateien/LTSpiceSymb.png" width="369" height="133"></a>
+</p><p>Die 3 Symbole können <a class="external text" href="http://www.roboternetz.de/phpBB2/dload.php?action=file&amp;file_id=285">hier</a>
+ heruntergeladen werden. Weitere Symbole können anhand dieser Beispiele 
+sehr leicht selbst erstellt werden. Ein P-Glied kann durch eine 
+spannungsgesteuerte Spannungsquelle (E-Source) oder Operationsverstärker
+ mit einstellbarer Verstärkung dargestellt werden.
+</p><p><b>Analyse im Zeitbereich</b>
+</p><p>Das Beispiel des <a href="https://rn-wissen.de/wiki/index.php?title=Regelungstechnik#Beispiel:_Drehzahlregelung" title="Regelungstechnik"> Drehzahlreglers</a> mit analogem Regler wird hier mit LTspice simuliert. Das Schaltbild des Regelkreises zeigt nachfolgende Abbildung.
+</p><p><a href="https://rn-wissen.de/wiki/index.php?title=Datei:LTspice_TRAN.png" class="image"><img alt="LTspice TRAN.png" src="Regelungstechnik%20%E2%80%93%20RN-Wissen.de(29.09.19_32_47)-Dateien/LTspice_TRAN.png" width="591" height="237"></a>
+</p><p>Der Vergleicher (U1) und der analoge PI-Regler (U2) sind so 
+dargestellt, wie es auch in Wirklichkeit ausgeführt werden kann. Da der 
+PI-Regler in der Schaltung bereits invertiert, wurden die Eingänge am 
+Vergleicher vertauscht, damit die Polarität wieder stimmt. Der Rest des 
+Regelkreises wurde stark vereinfacht, kann aber nach Bedarf auch 
+ausführlicher dargestellt werden. Das PT1-Glied U3 simuliert die Strecke
+ des Regelkreises und der Verstärker U4 dient nur zur Umrechnung auf die
+ Drehzahl. Zur Simulation im Zeitbereich wird auf den Führungswert w mit
+ der Spannungsquelle V1 ein Sprung gegeben. In der Reglerschaltung wurde
+ bewusst ein Operationsverstärker mit Versorgungsspannung gewählt, damit
+ auch der Einfluss einer Begrenzung mit simuliert wird. Die 
+Zeitbereichsanalyse wird durch den LTspicebefehl .TRAN erreicht. Die 
+Sprungantwort (Tachospannung) bei diesem Regelkreis sieht dann 
+folgendermaßen aus.
+</p><p><a href="https://rn-wissen.de/wiki/index.php?title=Datei:Tacho2.png" class="image"><img alt="Tacho2.png" src="Regelungstechnik%20%E2%80%93%20RN-Wissen.de(29.09.19_32_47)-Dateien/Tacho2.png" width="348" height="236"></a>
+</p><p>Durch Ändern der Bauelemente R5, R6 und C1 kann man den Regler 
+optimieren. Eine Umrechnung auf die Reglerparameter Kp und Ki ist mit 
+folgenden Formeln möglich, siehe auch <a href="https://rn-wissen.de/wiki/index.php?title=Regelungstechnik#PI-Regler" title="Regelungstechnik"> PI-Regler</a>:
+</p><p>Kp = R6/R5
+</p><p>Ki = 1/(R5*C1)
+</p><p>Mit einem Mausklick auf den entsprechenden Knoten in der 
+Schaltung können noch weitere Signale, wie z.B. die Stellgröße y 
+angezeigt werden. Durch Verändern der Versorgungsspannung V3, V4 kann 
+man sich auch die Auswirkung der Begrenzung ansehen. 
+</p><p><b>Analyse im Frequenzbereich</b>
+</p><p>Für die Darstellung des Bode-Diagramms der offenen Regelschleife 
+in LTspice muss ein Trick angewendet werden, denn durch das Auftrennen 
+der Regelschleife würde der Arbeitspunkt verloren gehen und dadurch die 
+offene Schleife ohne Gegenkopplung an den Anschlag fahren.
+</p><p>Mit einer zusätzlichen Spannungsquelle in der Schleife kann man 
+dieses Problem umgehen. Die Schleife bleibt für den Erhalt des 
+Arbeitspunktes weiterhin geschlossen und man kann trotzdem die 
+Verstärkung der offenen Schleife durch das Verhältnis der Spannung vor 
+und hinter der Spannungsquelle bestimmen. Das erweiterte Blockschaltbild
+ sieht folgendermaßen aus.
+</p><p><a href="https://rn-wissen.de/wiki/index.php?title=Datei:LTspice_AC.png" class="image"><img alt="LTspice AC.png" src="Regelungstechnik%20%E2%80%93%20RN-Wissen.de(29.09.19_32_47)-Dateien/LTspice_AC.png" width="559" height="233"></a>
+</p><p>V2 ist die zusätzliche Spannungsquelle für die AC-Analyse. Die 
+Spannungsquelle V1 wird von Pulsform auf Gleichspannung umgestellt. Sie 
+wird so gewählt, dass sich der gewünschte Arbeitspunkt einstellt. Durch 
+den LTspicebefehl .AC wird die Analyse im Frequenzbereich veranlasst. Um
+ das Bode-Diagramm des offenen Regelkreises darzustellen, wird als Kurve
+ nicht ein einzelner Knoten ausgewählt, sondern das Verhältnis der 
+Spannung vom Ende zum Anfang des Regelkreises, in unserem Beispiel also 
+V(tacho)/V(x). Zur Anzeige kommt dann das Bode-Diagramm (grüne Kurve) 
+der offenen Schleife, wie in der folgenden Abbildung zu sehen. Für den 
+Amplitudengang (durchgezogene Linien) gilt die linke Skala in dB, für 
+den Phasengang (gestrichelte Linien) die rechte Skala in Grad.
+</p><p><a href="https://rn-wissen.de/wiki/index.php?title=Datei:LTspice_Bode.png" class="image"><img alt="LTspice Bode.png" src="Regelungstechnik%20%E2%80%93%20RN-Wissen.de(29.09.19_32_47)-Dateien/LTspice_Bode.png" width="452" height="292"></a>
+</p><p>Zusätzlich ist noch das Bode-Diagramm der Strecke (rote Kurve) zu
+ sehen. Dies ist durch einfaches Hinzufügen einer weiteren Kurve mit dem
+ Ausdruck V(tacho)/V(y) durchgeführt worden. 
+</p><p>Im Gegensatz zur üblichen Darstellung des Bode-Diagramms eines 
+offenen Regelkreises, beinhaltet das mit LTspice erstellte Bode-Diagramm
+ auch die -180 Grad Phasendrehung der Gegenkopplung. Der Phasenrand ist 
+deshalb nicht auf -180 Grad sondern auf 0 Grad zu beziehen. In unserem 
+Beispiel ist der Phasenrand etwa 90 Grad, also ein sehr stabiler 
+Regelkreis. Zu beachten ist, dass die Frequenzachse des Bode-Diagramms 
+wie auch schon bei Scilab in der Einheit Hertz anstatt wie üblich in der
+ Kreisfrequenzeinheit rad/s dargestellt ist.
+</p>
+<h2><span class="mw-headline" id="Modellierung_eines_Motors.2FAntriebs">Modellierung eines Motors/Antriebs</span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:322px;"><a href="https://rn-wissen.de/wiki/index.php?title=Datei:ESB_Motor.png" class="image"><img alt="" src="Regelungstechnik%20%E2%80%93%20RN-Wissen.de(29.09.19_32_47)-Dateien/320px-ESB_Motor.png" class="thumbimage" srcset="/wiki/images/thumb/5/56/ESB_Motor.png/480px-ESB_Motor.png 1.5x, /wiki/images/5/56/ESB_Motor.png 2x" width="320" height="157"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://rn-wissen.de/wiki/index.php?title=Datei:ESB_Motor.png" class="internal" title="vergrößern"></a></div>Ersatzschaltbild DC-Motor</div></div></div>
+<p>Der Motor ist ein oft verwendeter Aktuator in der Robotik. Deshalb 
+wird hier am Beispiel des Gleichstrommotors mit Permanentmagnet 
+(Nebenschlussmotor) die Modellbildung gezeigt. Zur Modellierung gibt es 
+mehrere Möglichkeiten. Je nachdem wie detailliert die Simulation sein 
+soll, kann man sich ein Modell, von sehr einfach bis sehr detailliert, 
+auswählen. Zwei Zeitkonstanten bestimmen die Dynamik eines 
+Gleichstrommotors. Eine davon ist die mechanische Zeitkonstante, die ist
+ meistens die dominierende Zeitkonstante und wird durch das 
+Trägheitsmoment J des Rotors verursacht. Die zweite Zeitkonstante ist 
+die elektrische Zeitkonstante, sie wird durch die Induktivität L 
+bestimmt. Bei einfachen Regelungen kann in den meisten Fällen die 
+elektrische Zeitkonstante vernachlässigt werden, damit reduziert sich 
+das Modell auf ein einzelnes PT1-Glied.
+</p><p><b>Definition: Motor und Antrieb</b>
+</p><p>Als <b>Motor</b> wird hier der Motor alleine verstanden. Die Ausgangsgröße ist die Winkelgeschwindigkeit w (Drehzahl).
+</p><p>Als <b>Antrieb</b> wird hier der komplette Antrieb eines 
+Fahrzeugs verstanden, also Motor inklusive Getriebe und Masse des 
+Fahrzeugs. Für die Dynamik ist nicht nur das Trägheitsmoment des Motors 
+sondern auch die Masse des Fahrzeugs verantwortlich. Die Ausgangsgröße 
+der Einheit „Antrieb“ ist die Geschwindigkeit v.
+</p><p>Die hier vorgestellten Modelle gelten sowohl für einen Motor als 
+auch für einen kompletten Antrieb, wenn man die Elastizität und das 
+Spiel des Getriebes vernachlässigt.
+</p>
+<h3><span class="mw-headline" id="Einfaches_Modell_mit_PT1-Glied">Einfaches Modell mit PT1-Glied</span></h3>
+<p>Die einfachste Art einen Motor oder Antrieb zu simulieren, ist mit einem PT1-Glied als Modell. Das Simulationsprogramm <a href="https://rn-wissen.de/wiki/index.php?title=Regelungstechnik#Scicos" title="Regelungstechnik">Scicos</a> bietet dazu einen Block zur Eingabe der Übertragungsfunktion (num(s)=Zähler, den(s)=Nenner der Übertragungsfunktion).
+</p>
+<table cellpadding="10" border="0">
+<tbody><tr>
+<td>Übertragungsfunktion:
+<p><br>
+<span class="mathjax-wrapper"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><div class="MathJax_Display" style="text-align: left;"><span class="MathJax" id="MathJax-Element-5-Frame" tabindex="0" style="text-align: left; position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;block&quot;&gt;&lt;mi&gt;G&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mi&gt;K&lt;/mi&gt;&lt;mrow&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;/mrow&gt;&lt;/mfrac&gt;&lt;/math&gt;" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-221" style="width: 7.952em; display: inline-block;"><span style="display: inline-block; position: relative; width: 6.603em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(0.756em, 1006.6em, 3.268em, -1000em); top: -2.308em; left: 0em;"><span class="mrow" id="MathJax-Span-222"><span class="mi" id="MathJax-Span-223" style="font-family: MathJax_Math; font-style: italic;">G</span><span class="mo" id="MathJax-Span-224" style="font-family: MathJax_Main;">(</span><span class="mi" id="MathJax-Span-225" style="font-family: MathJax_Math; font-style: italic;">s</span><span class="mo" id="MathJax-Span-226" style="font-family: MathJax_Main;">)</span><span class="mo" id="MathJax-Span-227" style="font-family: MathJax_Main; padding-left: 0.278em;">=</span><span class="mfrac" id="MathJax-Span-228" style="padding-left: 0.278em;"><span style="display: inline-block; position: relative; width: 3.015em; height: 0px; margin-right: 0.12em; margin-left: 0.12em;"><span style="position: absolute; clip: rect(3.099em, 1000.89em, 4.167em, -1000em); top: -4.651em; left: 50%; margin-left: -0.445em;"><span class="mi" id="MathJax-Span-229" style="font-family: MathJax_Math; font-style: italic;">K<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.04em;"></span></span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span><span style="position: absolute; clip: rect(3.105em, 1002.85em, 4.249em, -1000em); top: -3.288em; left: 50%; margin-left: -1.448em;"><span class="mrow" id="MathJax-Span-230"><span class="mn" id="MathJax-Span-231" style="font-family: MathJax_Main;">1</span><span class="mo" id="MathJax-Span-232" style="font-family: MathJax_Main; padding-left: 0.222em;">+</span><span class="mi" id="MathJax-Span-233" style="font-family: MathJax_Math; font-style: italic; padding-left: 0.222em;">T<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.12em;"></span></span><span class="mi" id="MathJax-Span-234" style="font-family: MathJax_Math; font-style: italic;">s</span></span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span><span style="position: absolute; clip: rect(0.817em, 1003.02em, 1.282em, -1000em); top: -1.31em; left: 0em;"><span style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 3.015em; height: 0px;"></span><span style="display: inline-block; width: 0px; height: 1.09em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.308em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.998em; border-left: 0px solid; width: 0px; height: 2.707em;"></span></span></nobr><span class="MJX_Assistive_MathML MJX_Assistive_MathML_Block" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>G</mi><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo><mo>=</mo><mfrac><mi>K</mi><mrow><mn>1</mn><mo>+</mo><mi>T</mi><mi>s</mi></mrow></mfrac></math></span></span></div><script type="math/tex; mode=display" id="MathJax-Element-5">G(s)=\frac{K}{1+Ts}</script></span>
+</p>
+</td>
+<td>Beispiel:
+<pre>num(s) = K = 0.72
+den(s) = 1 + Ts = 1 + 0.11s
+</pre>
+</td>
+<td><a href="https://rn-wissen.de/wiki/index.php?title=Datei:Scicos_TF.png" class="image"><img alt="Scicos TF.png" src="Regelungstechnik%20%E2%80%93%20RN-Wissen.de(29.09.19_32_47)-Dateien/Scicos_TF.png" width="139" height="107"></a>
+</td></tr></tbody></table>
+<p>Wird nicht nur das Ausgangssignal, also die Geschwindigkeit oder 
+Drehzahl in der Simulation benötigt, sondern auch die Beschleunigung, 
+dann kann nachfolgendes Modell verwendet werden. Dieses Modell ist der 
+Differentialgleichung eines PT1-Glieds nachempfunden und liefert das 
+gleiche Ergebnis wie vorheriges Modell, bietet aber noch den Zugriff auf
+ das Beschleunigungssignal.
+</p>
+<table cellpadding="10" border="0">
+<tbody><tr>
+<td>Differentialgleichung:
+<p><br>
+<span class="mathjax-wrapper"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><div class="MathJax_Display" style="text-align: left;"><span class="MathJax" id="MathJax-Element-6-Frame" tabindex="0" style="text-align: left; position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;block&quot;&gt;&lt;msup&gt;&lt;mi&gt;v&lt;/mi&gt;&lt;mo&gt;&amp;#x2032;&lt;/mo&gt;&lt;/msup&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mi&gt;K&lt;/mi&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;/mfrac&gt;&lt;mi&gt;U&lt;/mi&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mfrac&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;/mfrac&gt;&lt;mi&gt;v&lt;/mi&gt;&lt;/math&gt;" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-235" style="width: 8.272em; display: inline-block;"><span style="display: inline-block; position: relative; width: 6.859em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(0.756em, 1006.84em, 3.186em, -1000em); top: -2.308em; left: 0em;"><span class="mrow" id="MathJax-Span-236"><span class="msup" id="MathJax-Span-237"><span style="display: inline-block; position: relative; width: 0.754em; height: 0px;"><span style="position: absolute; clip: rect(3.339em, 1000.47em, 4.178em, -1000em); top: -3.974em; left: 0em;"><span class="mi" id="MathJax-Span-238" style="font-family: MathJax_Math; font-style: italic;">v</span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span><span style="position: absolute; top: -4.387em; left: 0.485em;"><span class="mo" id="MathJax-Span-239" style="font-size: 70.7%; font-family: MathJax_Main;">′</span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span></span></span><span class="mo" id="MathJax-Span-240" style="font-family: MathJax_Main; padding-left: 0.278em;">=</span><span class="mfrac" id="MathJax-Span-241" style="padding-left: 0.278em;"><span style="display: inline-block; position: relative; width: 1.009em; height: 0px; margin-right: 0.12em; margin-left: 0.12em;"><span style="position: absolute; clip: rect(3.099em, 1000.89em, 4.167em, -1000em); top: -4.651em; left: 50%; margin-left: -0.445em;"><span class="mi" id="MathJax-Span-242" style="font-family: MathJax_Math; font-style: italic;">K<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.04em;"></span></span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span><span style="position: absolute; clip: rect(3.105em, 1000.7em, 4.167em, -1000em); top: -3.288em; left: 50%; margin-left: -0.352em;"><span class="mi" id="MathJax-Span-243" style="font-family: MathJax_Math; font-style: italic;">T<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.12em;"></span></span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span><span style="position: absolute; clip: rect(0.817em, 1001.01em, 1.282em, -1000em); top: -1.31em; left: 0em;"><span style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 1.009em; height: 0px;"></span><span style="display: inline-block; width: 0px; height: 1.09em;"></span></span></span></span><span class="mi" id="MathJax-Span-244" style="font-family: MathJax_Math; font-style: italic;">U<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.084em;"></span></span><span class="mo" id="MathJax-Span-245" style="font-family: MathJax_Main; padding-left: 0.222em;">−</span><span class="mfrac" id="MathJax-Span-246" style="padding-left: 0.222em;"><span style="display: inline-block; position: relative; width: 0.824em; height: 0px; margin-right: 0.12em; margin-left: 0.12em;"><span style="position: absolute; clip: rect(3.116em, 1000.43em, 4.167em, -1000em); top: -4.651em; left: 50%; margin-left: -0.25em;"><span class="mn" id="MathJax-Span-247" style="font-family: MathJax_Main;">1</span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span><span style="position: absolute; clip: rect(3.105em, 1000.7em, 4.167em, -1000em); top: -3.288em; left: 50%; margin-left: -0.352em;"><span class="mi" id="MathJax-Span-248" style="font-family: MathJax_Math; font-style: italic;">T<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.12em;"></span></span><span style="display: inline-block; width: 0px; height: 3.974em;"></span></span><span style="position: absolute; clip: rect(0.817em, 1000.82em, 1.282em, -1000em); top: -1.31em; left: 0em;"><span style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 0.824em; height: 0px;"></span><span style="display: inline-block; width: 0px; height: 1.09em;"></span></span></span></span><span class="mi" id="MathJax-Span-249" style="font-family: MathJax_Math; font-style: italic;">v</span></span><span style="display: inline-block; width: 0px; height: 2.308em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.9em; border-left: 0px solid; width: 0px; height: 2.608em;"></span></span></nobr><span class="MJX_Assistive_MathML MJX_Assistive_MathML_Block" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msup><mi>v</mi><mo>′</mo></msup><mo>=</mo><mfrac><mi>K</mi><mi>T</mi></mfrac><mi>U</mi><mo>−</mo><mfrac><mn>1</mn><mi>T</mi></mfrac><mi>v</mi></math></span></span></div><script type="math/tex; mode=display" id="MathJax-Element-6">v'=\frac{K}{T}U-\frac{1}{T}v</script></span>
+</p>
+</td>
+<td>
+<pre>v = Geschwindigkeit
+v’= Beschleunigung (Ableitung von v)
+K = Übertragungsmaß
+T = Zeitkonstante
+U = Eingangsgröße (z.B. Spannung)
+</pre>
+</td>
+<td><div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://rn-wissen.de/wiki/index.php?title=Datei:Antrieb_PT1.png" class="image"><img alt="" src="Regelungstechnik%20%E2%80%93%20RN-Wissen.de(29.09.19_32_47)-Dateien/300px-Antrieb_PT1.png" class="thumbimage" srcset="/wiki/images/thumb/f/ff/Antrieb_PT1.png/450px-Antrieb_PT1.png 1.5x, /wiki/images/f/ff/Antrieb_PT1.png 2x" width="300" height="191"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://rn-wissen.de/wiki/index.php?title=Datei:Antrieb_PT1.png" class="internal" title="vergrößern"></a></div>Einfaches Modell eines Antriebs</div></div></div>
+</td></tr></tbody></table>
+<p>Die beiden Parameter K und T müssen ausgemessen werden, wenn sie 
+nicht bekannt sind. Die Zeitkonstante T kann in einem Anlaufversuch 
+ermittelt werden. Dazu wird auf den Motor ein Spannungssprung gegeben 
+und die Sprungantwort am Ausgang nachgemessen. Bei einem Antrieb erspart
+ diese Methode die aufwändige Ermittlung der elektrischen und 
+mechanischen Daten der einzelnen Elemente (Motor, Getriebe, Fahrzeug). 
+Bei der Ermittlung des Übertragungsmaß K ist zu beachten, dass sich 
+möglicherweise der Motor durch starke Reibung erst ab einer bestimmten 
+Spannung dreht. Hier ist die Steigung der Kennlinie mit 
+delta&nbsp;v&nbsp;/&nbsp;delta&nbsp;U auszuwerten, wie im folgenden Bild
+ zu sehen ist.
+</p><p><a href="https://rn-wissen.de/wiki/index.php?title=Datei:Antrieb_stat.png" class="image"><img alt="Antrieb stat.png" src="Regelungstechnik%20%E2%80%93%20RN-Wissen.de(29.09.19_32_47)-Dateien/Antrieb_stat.png" width="478" height="321"></a>
+</p><p>Die einfachen Modelle gelten nur für den linearen Teil der 
+Kennlinie. Soll auch die Nichtlinearität durch Reibung modelliert 
+werden, dann sind detailliertere Modelle, wie im Folgenden beschrieben, 
+zu verwenden. Die Auswirkung einer Haftreibung ist auch in dem 
+Geschwindigkeitsdiagramm durch die Hysterese in der Kennlinie zu sehen. 
+Beim Hochfahren der Ansteuerspannung bewegt sich das Fahrzeug erst ab 
+ca. 1.25V, während beim Herunterfahren der Ansteuerspannung das Fahrzeug
+ noch bis 0.75V rollt und erst unter 0.75V stehen bleibt.
+</p>
+<h3><span class="mw-headline" id="Detailliertes_Modell">Detailliertes Modell</span></h3>
+<div class="thumb tright"><div class="thumbinner" style="width:352px;"><a href="https://rn-wissen.de/wiki/index.php?title=Datei:Motor_Model.png" class="image"><img alt="" src="Regelungstechnik%20%E2%80%93%20RN-Wissen.de(29.09.19_32_47)-Dateien/350px-Motor_Model.png" class="thumbimage" srcset="/wiki/images/thumb/c/c4/Motor_Model.png/525px-Motor_Model.png 1.5x, /wiki/images/thumb/c/c4/Motor_Model.png/700px-Motor_Model.png 2x" width="350" height="92"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://rn-wissen.de/wiki/index.php?title=Datei:Motor_Model.png" class="internal" title="vergrößern"></a></div>Detailliertes Motormodell</div></div></div>
+<p>Ein detailliertes Motormodell ist rechts in dem Bild zu sehen. Es hat
+ auf der linken Seite den elektrischen Teil mit den Parametern R 
+(Widerstand) und L (Induktivität) und auf der rechten Seite den 
+mechanischen Teil mit den Blöcken Trägheitsmoment und Reibung. Der 
+elektrische Teil liefert das Stromsignal i, welches mit der 
+Motorkonstante Km in das Drehmoment M umgerechnet wird. Mit dem 
+folgenden Summierglied kann über einen zusätzlichen Eingang auch ein 
+extern angreifendes Lastmoment mit simuliert werden. Am Ausgang des 
+mechanischen Teils steht die Winkelgeschwindigkeit w in der Einheit 
+[rad/s] bzw. über den Umrechnungsfaktor 9.55 die Drehzahl in [Upm] zur 
+Verfügung. Die Reibung wird in einem nichtlinearen Block mittels 
+Lookup-Table simuliert. In der einschlägigen Literatur wird die Reibung 
+meistens mit einem Dämpfungsfaktor (linear) simuliert, was einer 
+viskosen Reibung entspricht. Das passt aber nicht so gut für 
+Kleinmotoren, da überwiegt vor allem die trockene Reibung. Die trockene 
+Reibung hat ein konstantes Bremsmoment wenn sich der Motor dreht 
+(unabhängig von Drehzahl, Vorzeichen abhängig von Drehrichtung). So eine
+ Funktion kann sehr einfach mit einer Lookup-Table realisiert werden. 
+Die Lookup-Table kann auch dazu verwendet werden, Mischformen von 
+trockener, viskoser und turbulenter Reibung und sogar noch Haftreibung 
+in einem Block zu simulieren, wenn man will.
+</p><p>Bei einigen Herstellern, wie z.B. Faulhaber und Maxon, kann man 
+die für das Modell nötigen Parameter im Datenblatt finden. Das 
+Bremsmoment der Reibung berechnet sich aus dem Leerlaufstrom wie folgt: 
+Bremsmoment&nbsp;=&nbsp;Motorkonstante&nbsp;*&nbsp;Leerlaufstrom 
+</p><p>Falls die Daten nicht verfügbar sind, muss man sie selbst 
+ausmessen. Eine Hilfestellung zur Bestimmung der Motorkonstante und des 
+Trägheitsmoments gibt es hier:
+</p>
+<ul><li><a class="external free" href="http://www.roboternetz.de/phpBB2/zeigebeitrag.php?p=96750&amp;highlight=#96750">http://www.roboternetz.de/phpBB2/zeigebeitrag.php?p=96750&amp;highlight=#96750</a></li>
+<li><a class="external free" href="http://www.roboternetz.de/phpBB2/viewtopic.php?t=12793">http://www.roboternetz.de/phpBB2/viewtopic.php?t=12793</a></li></ul>
+<div class="thumb tright"><div class="thumbinner" style="width:352px;"><a href="https://rn-wissen.de/wiki/index.php?title=Datei:Antrieb_Modell.png" class="image"><img alt="" src="Regelungstechnik%20%E2%80%93%20RN-Wissen.de(29.09.19_32_47)-Dateien/350px-Antrieb_Modell.png" class="thumbimage" srcset="/wiki/images/thumb/7/73/Antrieb_Modell.png/525px-Antrieb_Modell.png 1.5x, /wiki/images/thumb/7/73/Antrieb_Modell.png/700px-Antrieb_Modell.png 2x" width="350" height="106"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://rn-wissen.de/wiki/index.php?title=Datei:Antrieb_Modell.png" class="internal" title="vergrößern"></a></div>Modell eines Antriebs</div></div></div>
+<p>Das detaillierte Motormodell kann auch für einen Antrieb verwendet 
+werden, wenn man eine starre Kopplung zwischen Motor und Antriebsrad 
+voraussetzt, also Elastizität und Spiel des Getriebes vernachlässigt. 
+Anstelle der rotatorischen Kenngrößen (Drehmoment M, Trägheitsmoment J, 
+Winkelgeschwindigkeit w) werden die translatorischen Kenngrößen (Kraft 
+F, Masse m, Geschwindigkeit v) eingesetzt. Das Drehmoment wird mittels 
+Getriebeübersetzung ü und Radius r des Antriebsrades in die 
+entsprechende Vortriebskraft umgerechnet. Daraus ergibt sich die 
+Kraftkonstante Kf, die für das Antriebsmodell verwendet wird.
+</p><p>Die Umrechnung ist: Kf = Km * ü/r
+</p><p>Bei der Trägheitsmasse m muss neben der Masse des Fahrzeugs auch 
+das Trägheitsmoment des Motors mit berücksichtigt werden. Die Umrechnung
+ von Trägheitsmoment in eine äquivalente Masse = J * (ü/r)²
+</p><p>Der Reibungsblock in diesem Modellbeispiel enthält eine Mischform
+ aus Haftreibung, trockener und viskoser Reibung, wie sie typisch für 
+einen Kleinbot mit 2 Antriebsrädern und einem Gleitpin ist.
+</p>
+<h2><span class="mw-headline" id="Beispiel:_Drehzahlregelung">Beispiel: Drehzahlregelung</span></h2>
+<p>Es wird ein Gleichstrommotor in der Drehzahl geregelt. Als Sensor ist
+ ein Tachogenerator vorhanden, der direkt auf der Motorwelle sitzt. Das 
+System ist in einem kleinen Modellfahrzeug eingebaut und wird zur 
+Geschwindigkeitsregelung eingesetzt, da die Drehzahl proportional zur 
+Geschwindigkeit ist.
+</p><p>Das Funktionsschaltbild sieht folgendermaßen aus:
+</p><p><a class="external free" href="http://www.roboternetz.de/wiki/uploads/Main/drehzahl1.gif">http://www.roboternetz.de/wiki/uploads/Main/drehzahl1.gif</a>
+</p><p>Als Störgröße können unterschiedliche Reibwerte oder Steigung und
+ Gefälle rückwirkend über das Getriebe die Drehzahl beeinflussen. Das 
+Getriebe und die Last sind zwar außerhalb der Regelschleife, 
+beeinflussen aber durch die feste Kopplung des Getriebes die Dynamik des
+ Regelkreises. Durch die starre Kopplung kann das Trägheitsmoment des 
+Motors und die Masse des Fahrzeugs zusammengefasst werden. Das Gleiche 
+gilt auch für die Reibwerte. Damit vereinfacht sich die Modellierung und
+ das Blockschaltbild reduziert sich auf folgende Schaltung:
+</p><p><a class="external free" href="http://www.roboternetz.de/wiki/uploads/Main/drehzahl2.gif">http://www.roboternetz.de/wiki/uploads/Main/drehzahl2.gif</a>
+</p><p>Zur Ermittlung des dynamischen Verhaltens der Regelstrecke wird 
+die Sprungantwort gemessen. Dazu wird auf den Eingang der Regelstrecke 
+(Stellglied) ein Spannungssprung gegeben und die Antwort am Ausgang des 
+Tachogenerators nachgemessen. Diese Methode erspart die aufwändige 
+Ermittlung der elektrischen und mechanischen Daten der einzelnen 
+Elemente der Regelstrecke (Motor, Getriebe, Fahrzeug). Die Messung ergab
+ folgende Sprungantwort der Regelstrecke:
+</p><p><a class="external free" href="http://www.roboternetz.de/wiki/uploads/Main/tacho.gif">http://www.roboternetz.de/wiki/uploads/Main/tacho.gif</a>
+</p><p>Wie zu erwarten, ist die Sprungantwort annähernd ein 
+Verzögerungsglied 1.Ordnung. Die abgelesene Zeitkonstante ist 0.11s. Die
+ Verstärkung der Regelstrecke ist Ks = 0.72. Das Übertragungsmaß des 
+Tachogenerators ist 1V pro 2480Upm. Damit kann auf die Drehzahl 
+rückgerechnet werden.
+</p><p>Da die Regelstrecke nur aus einem PT1-Glied besteht, könnte eine 
+analoge Regelung fast beliebig schnell gemacht werden. Wegen der 
+Begrenzung bringt aber das Ausreizen der Optimierung für das 
+Führungsverhalten nicht viel, nur für das Störverhalten wäre eine 
+schnellere Regelung sinnvoll. Um aber einen Vergleich zwischen analogem 
+und digitalem Regler anstellen zu können wird eine Parametrierung 
+gewählt, die auch für den digitalen Regler mit seiner Totzeit noch 
+stabil ist. Es wird deshalb auch auf einen D-Anteil im Regler verzichtet
+ und nur ein PI-Regler realisiert. Das vereinfachte Blockschaltbild mit 
+den dynamischen Elementen sieht damit folgendermaßen aus:
+</p><p><a class="external free" href="http://www.roboternetz.de/wiki/uploads/Main/drehzahl3.gif">http://www.roboternetz.de/wiki/uploads/Main/drehzahl3.gif</a>
+</p><p>Zur Veranschaulichung wurde ein analoger als auch ein digitaler 
+Regler realisiert. Die Parametrierung des analogen Reglers wurde mit dem
+ Programm <a href="https://rn-wissen.de/wiki/index.php?title=Regelungstechnik#LTspice.2FSwitcherCad_III" title="Regelungstechnik"> LTspice</a>
+ durchgeführt. Es bot sich an, da die analoge Reglerschaltung exakt 
+simuliert werden konnte. Für die Optimierung des digitalen Reglers wurde
+ dann <a href="https://rn-wissen.de/wiki/index.php?title=Regelungstechnik#Scicos" title="Regelungstechnik"> Scicos</a> verwendet. 
+</p>
+<h3><span class="mw-headline" id="Realisierung_mit_analogem_Regler">Realisierung mit analogem Regler</span></h3>
+<p>Die elektrische Schaltung für einen analogen PI-Regler ist in der 
+nächsten Abbildung zu sehen. Der erste Operationsverstärker vergleicht 
+den Sollwert w mit dem Istwert x. Der zweite Operationsverstärker bildet
+ den PI-Regler. Die Werte R5, R6 und C1 sind für die Charakteristik des 
+PI-Reglers zuständig. Mit R6 kann der P-Anteil und mit C1 der I-Anteil 
+eingestellt werden. Die Optimierung der Werte wurde empirisch in einer 
+Simulation mit LTspice durchgeführt. Da die Schaltung des PI-Reglers 
+invertiert, wurden zum Ausgleich am Vergleicher die Eingänge an U1 
+vertauscht, so dass sich über die gesamte Schaltung wieder die richtige 
+Polarität ergibt.
+</p><p><a href="https://rn-wissen.de/wiki/index.php?title=Datei:Analogregler.png" class="image"><img alt="Analogregler.png" src="Regelungstechnik%20%E2%80%93%20RN-Wissen.de(29.09.19_32_47)-Dateien/Analogregler.png" width="383" height="179"></a>
+</p><p>Zum Umrechnen auf Kp und Ki können diese Formeln verwendet werden, siehe auch <a href="https://rn-wissen.de/wiki/index.php?title=Regelungstechnik#PI-Regler" title="Regelungstechnik"> PI-Regler</a>:
+</p><p>Kp = R6/R5 = 18
+</p><p>Ki = 1/(R5*C1) = 147
+</p>
+<h3><span class="mw-headline" id="Realisierung_mit_digitalem_Regler">Realisierung mit digitalem Regler</span></h3>
+<p>Im digitalen Regelkreis wird der Istwert <b>x</b> vom Tachogenerator mit einem A/D-Wandler digitalisiert. Der Sollwert <b>w</b> wird dem µC als digitaler Wert übergeben. Die Stellgröße <b>y</b>
+ entspricht dem PWM-Wert für den Motortreiber. Um zum analogen Regler 
+vergleichbar zu sein, wurde sowohl für den A/D-Wandler als auch für den 
+PWM-Steller eine 8-Bit-Breite vorgesehen. Damit ist die Verstärkung in 
+beiden Fällen gleich und analoger und digitaler Regler besser 
+vergleichbar.
+</p><p>Eigentlich könnte man bei kleiner Abtastzeit direkt die 
+Parametrierung des analogen Reglers für die digitale Realisierung 
+übernehmen. Aber es gibt doch kleine Unterschiede in der Dynamik 
+zwischen analoger und digitaler Ausführung und um sicher zu gehen, dass 
+die gewählte Abtastzeit einen nicht zu großen Einfluss hat, wird noch 
+einmal mit <a href="https://rn-wissen.de/wiki/index.php?title=Regelungstechnik#Scicos" title="Regelungstechnik"> Scicos</a>
+ nachoptimiert. Mit einer Abtastzeit Ta = 10ms und den Parametern des 
+analogen Reglers ergibt sich ein Überschwingen, das nur sehr langsam auf
+ den Endwert abklingt. Durch Verringern des I-Anteils auf 60 wird ein 
+optimales Einschwingen für den digitalen Regler erreicht. Die Parameter 
+sind:
+</p><p>Kp = 18
+</p><p>Ki = 60
+</p><p>Ta = 0.01
+</p><p>Zur Umsetzung in einen Code wurde die Programmiersprache C 
+gewählt. Da der Code sehr einfach ist, sollte es auch kein Problem sein,
+ den Code als Beispiel für andere Sprachen zu verwenden. Der Algorithmus
+ wird im Takt der Abtastzeit, also alle 10ms aufgerufen. In der 
+Reglergleichung kann zur Vereinfachung das Produkt Ki*Ta durch eine 
+Ersatzvariable, die gleich das Ergebnis aus dem Produkt 60*0.01 = 0.6 
+hat, ersetzt werden. Zum besseren Verständnis wurde es hier beim Ki*Ta 
+belassen. Um einen Windup-Effekt zu verhindern, wird die Summenbildung 
+esum auf +-400 begrenzt. Der Wert wurde so gewählt, dass noch eine volle
+ Aussteuerung durch den I-Anteil möglich ist. Zum Schluss wird die 
+Stellgröße y auf die mögliche Aussteuerung des Stellglieds (0...255) 
+begrenzt.
+</p><p><b>Programmbeispiel digitaler PI-Regler:</b>
+</p>
+<pre>	e = w - x;				//Vergleich
+	esum = esum + e;			//Integration I-Anteil
+	if (esum &lt; -400) {esum = -400;}	        //Begrenzung I-Anteil
+	if (esum &gt; 400) {esum = 400;}
+	y = Kp*e + Ki*Ta*esum;			//Reglergleichung
+	if (y &lt; 0) {y = 0;}			//Begrenzung Stellgröße
+	if (y &gt; 255) {y = 255;}
+	PWM = y;				//Übergabe Stellgröße
+</pre>
+<h2><span class="mw-headline" id="Beispiel:_Lageregelung">Beispiel: Lageregelung</span></h2>
+<p>Unter einer Lageregelung versteht man die Positionierung von 
+Objekten. Als Beispiel soll hier ein kleiner Bot mit Radencoder eine 
+bestimmte Weglänge fahren. Gegenüber der Drehzahl- oder 
+Geschwindigkeitsregelung ist bei der Lageregelung noch ein zusätzlicher 
+Integrator in der Strecke vorhanden. Die gesamte Strecke ist damit ein 
+I-Glied mit Verzögerung. Laut Tabelle im Abschnitt „Dimensionierung des 
+Reglers“ ist dafür ein PD-Regler gut geeignet. Der PD-Regler wird 
+digital ausgeführt, zur Simulation und Parametrierung bietet sich 
+deshalb Scicos an. 
+</p><p>Da bei einer Lageregelung der Geschwindigkeitsbereich von Null 
+aus geht, also über den nichtlinearen Bereich geht, sollte auch in der 
+Simulation die Nichtlinearität berücksichtigt sein. Für das Beispiel 
+wird deshalb das Modell eines Antriebs mit Haft- und Gleitreibung 
+genommen, wie es unter "Modellierung eines Antriebs – detailliertes 
+Modell" bereits vorgestellt wurde. Im Scicos-Modell ist der Antrieb der 
+Übersichtlichkeit wegen als Superblock ausgeführt. Das Blockschaltbild 
+des Antriebs im Detail ist <a class="external text" href="http://www.roboternetz.de/wissen/images/7/73/Antrieb_Modell.png">hier</a> zu sehen. Die Daten sind:
+</p><p>R = 16 Ohm; L = 6 mH; m = 0.31 kg; Kf = 6.6 N/A
+</p><p>Als Sensor kommt ein Inkrementalgeber zum Einsatz, allerdings 
+muss der richtungssensibel sein, sonst ist keine Lageregelung möglich. 
+Der Sensor wird in Scicos mit der Rundungsformel (round(u1*500)) 
+simuliert. Das ergibt bei einer Auflösung von 2mm ganzzahlige Schritte, 
+wie es auch die Hardware (Inkrementalgeber mit nachfolgendem Zähler) in 
+Wirklichkeit macht.
+</p><p><a href="https://rn-wissen.de/wiki/index.php?title=Datei:Lageregelung.png" class="image"><img alt="Lageregelung.png" src="Regelungstechnik%20%E2%80%93%20RN-Wissen.de(29.09.19_32_47)-Dateien/Lageregelung.png" width="643" height="262"></a>
+</p><p>Nach dem Regler folgt ein Block mit der Verstärkung (5/255), der 
+den PWM-Wert auf die Ansteuerspannung für den Motor umsetzt. Der Bruch 
+5/255 entspricht der Ansteuerspannung von 5V bei PWM=255. Der PD-Regler 
+kann damit in Scicos exakt so simuliert werden, wie er schlussendlich 
+auch als C-Code umgesetzt wird. Dazu wird der Code des PD-Reglers als 
+Funktion in den Scifunc-Block eingegeben. Der Code ist etwas 
+unterschiedlich zum C-Code des realen Bots, da die Syntax in Scicos doch
+ geringfügig anders ist und die Eingangs- und Ausgangsvariablen nur 
+bestimmte Bezeichnungen haben dürfen. Im nachfolgenden Codefenster sind 
+beide Varianten im Vergleich zu sehen.
+</p>
+<table>
+<tbody><tr>
+<td> <b>Scifunc-Code:</b>
+<pre>
+y1=Kp*u1+Kd/Ta*(u1-z);
+z=u1;
+if y1&gt;255 then
+y1=255;
+end
+if y1&lt;-255 then
+y1=-255;
+end
+</pre>
+</td>
+<td> <b>C-Code für µC:</b>
+<pre>e = w - x;
+y = Kp*e + Kd/Ta*(e-ealt);
+ealt = e;
+if (y &gt; 255) {
+    y = 255;
+    }
+if (y &lt; -255) {
+    y = -255;
+    }
+</pre>
+</td>
+<td> <b>Kommentar:</b>
+<pre>Vergleich
+PD-Reglergleichung
+alten Wert speichern
+
+pos. Begrenzung
+
+
+neg. Begrenzung
+
+</pre>
+</td></tr></tbody></table>
+<p>In der praktischen Umsetzung des C-Codes wird man den Bruch Kd/Ta 
+durch eine Ersatzvariable oder Konstante ersetzen. Dabei ergibt sich 
+(wie in diesem Beispiel 2/0.01 = 200) meistens ein ganzzahliger Wert, 
+was sich positiv auf die Rechenzeit auswirkt.
+</p><p>Für die Abtastzeit Ta wurde 10ms gewählt. Das ist einerseits 
+nicht zu schnell für einen µC und andererseits nicht zu lang, um die 
+Regelung unnötig zu verlangsamen. Die Parametrierung von Kp und Kd 
+erfolgte empirisch durch Probieren in der Simulation. Begonnen wurde mit
+ einem reinen P-Regler und kleinem P-Anteil (Kp=1, Kd=0). In groben 
+Schritten wurde Kp solange erhöht, bis sich deutlich Überschwinger 
+zeigten. Dann wurde ein D-Anteil hinzugefügt und Kd so variiert, dass 
+der Überschwinger verschwindet. Mit ein bisschen Feintuning ergaben sich
+ so die Werte Kp=61 und Kd=2. Das Simulationsergebnis für 
+Ansteuerspannung, Geschwindigkeit und Weg sieht damit folgendermaßen 
+aus:
+</p><p><a href="https://rn-wissen.de/wiki/index.php?title=Datei:Lage_antwort.png" class="image"><img alt="Lage antwort.png" src="Regelungstechnik%20%E2%80%93%20RN-Wissen.de(29.09.19_32_47)-Dateien/Lage_antwort.png" width="483" height="428"></a>
+</p>
+<h2><span class="mw-headline" id="Autoren">Autoren</span></h2>
+<ul><li> <a href="https://rn-wissen.de/wiki/index.php?title=Benutzer:Waste" title="Benutzer:Waste">Waste</a></li></ul>
+<h2><span class="mw-headline" id="Siehe_auch">Siehe auch</span></h2>
+<ul><li> <a href="https://rn-wissen.de/wiki/index.php?title=SwitcherCAD-Tutorial" title="SwitcherCAD-Tutorial">SwitcherCAD-Tutorial</a></li></ul>
+<p><br>
+</p>
+<h2><span class="mw-headline" id="External_links">External links</span></h2>
+<ul><li><a class="external text" href="http://www.roboternetz.de/phpBB2/viewtopic.php?t=11818">Post: Line follower with PID controller</a></li>
+<li><a class="external text" href="http://www.scicos.org/">Scicos Homepage</a></li>
+<li> <a class="external text" href="http://www.scicoslab.org/">ScicosLab Homepage</a></li>
+<li> <a class="external text" href="http://www.scilab.org/">Scilab Homepage</a></li>
+<li> <a class="external text" href="http://ltspice.linear.com/software/swcadiii.exe">LTspice / SwitcherCAD III Download</a></li>
+<li> <a class="external text" href="http://www.kahlert.com/web">set_download.php demo version of WinFACT 7</a></li>
+<li> <a class="external text" href="http://www.physi.uni-heidelberg.de/fp/anleitg/E01.pdf">instructions for electronic placement, the last part is based PID controller</a></li>
+<li> <a class="external text" href="http://www.simapp.com/">SimApp website</a> with trial</li>
+<li> <a class="external text" href="http://www.expertcontrol.com/">ExpertControl Homepage, Automatische Reglerauslegung mit ecICP</a> ecICP-Trial über Support-Seite verfügbar</li>
+<li> <a class="external text" href="http://www.me.th-mittelhessen.de/personen/professoren/orlowski/simulation-regelungstechnik/">TH-Mittelhessen Prof. Peter F. Orlowski, Simulationsprogramm SIMLER-PC</a></li></ul>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.052 seconds
+Real time usage: 0.066 seconds
+Preprocessor visited node count: 296/1000000
+Preprocessor generated node count: 488/1000000
+Post‐expand include size: 1112/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    2.167      1 - -total
+ 38.03%    0.824      3 - Vorlage:Absatz
+ 29.66%    0.643      5 - Vorlage:Blauetabelle
+-->
+
+<!-- Saved in parser cache with key d0280de8-mw:pcache:idhash:1388-0!*!0!!de!5!* and timestamp 20190929183253 and revision id 25252
+ -->
+</div><div class="printfooter">
+Von „<a dir="ltr" href="https://rn-wissen.de/wiki/index.php?title=Regelungstechnik&amp;oldid=25252">https://rn-wissen.de/wiki/index.php?title=Regelungstechnik&amp;oldid=25252</a>“</div>
+						<div class="mw_clear"></div>
+						
+						
+<center>
+<br>
+
+<script async="" src="Regelungstechnik%20%E2%80%93%20RN-Wissen.de(29.09.19_32_47)-Dateien/adsbygoogle.js"></script>
+<!-- RN-Wissen Footer -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-7479754841705808" data-ad-slot="7673758231"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<br>
+<br>
+<script async="" src="Regelungstechnik%20%E2%80%93%20RN-Wissen.de(29.09.19_32_47)-Dateien/adsbygoogle.js"></script>
+<!-- RN-Wissen Linkblock 728 -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7479754841705808" data-ad-slot="5463845539"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</center>			
+						
+						
+						<div id="catlinks" class="catlinks"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://rn-wissen.de/wiki/index.php?title=Spezial:Kategorien" title="Spezial:Kategorien">Kategorien</a>: <ul><li><a href="https://rn-wissen.de/wiki/index.php?title=Kategorie:Microcontroller" title="Kategorie:Microcontroller">Microcontroller</a></li><li><a href="https://rn-wissen.de/wiki/index.php?title=Kategorie:Software" title="Kategorie:Software">Software</a></li><li><a href="https://rn-wissen.de/wiki/index.php?title=Kategorie:Elektronik" title="Kategorie:Elektronik">Elektronik</a></li></ul></div></div>												
+					</div><!-- mw_contentholder -->
+				</div><!-- mw_content -->
+			</div><!-- mw_contentwrapper -->
+
+			<div id="mw_portlets">
+				<h2>Navigationsmenü</h2>
+
+				<!-- portlets -->
+					<div class="generated-sidebar portlet" id="p-Hauptthemen" role="navigation">
+		<h3>Hauptthemen</h3>
+		<div class="pBody">
+							<ul>
+											<li id="n-Home"><a href="https://rn-wissen.de/wiki/index.php?title=Hauptseite">Home</a></li>
+											<li id="n-Robotikeinstieg"><a href="https://rn-wissen.de/wiki/index.php?title=Kategorie:Robotikeinstieg">Robotikeinstieg</a></li>
+											<li id="n-Mechanik"><a href="https://rn-wissen.de/wiki/index.php?title=Kategorie:Mechanik">Mechanik</a></li>
+											<li id="n-Elektronik"><a href="https://rn-wissen.de/wiki/index.php?title=Kategorie:Elektronik">Elektronik</a></li>
+											<li id="n-Sensoren"><a href="https://rn-wissen.de/wiki/index.php?title=Kategorie:Sensoren">Sensoren</a></li>
+											<li id="n-Microcontroller"><a href="https://rn-wissen.de/wiki/index.php?title=Kategorie:Microcontroller">Microcontroller</a></li>
+											<li id="n-Motoren"><a href="https://rn-wissen.de/wiki/index.php?title=Kategorie:Motoren">Motoren</a></li>
+											<li id="n-Software"><a href="https://rn-wissen.de/wiki/index.php?title=Kategorie:Software">Software</a></li>
+											<li id="n-Quellcode-Bascom"><a href="https://rn-wissen.de/wiki/index.php?title=Kategorie:Quellcode_Bascom">Quellcode Bascom</a></li>
+											<li id="n-Quellcode-C"><a href="https://rn-wissen.de/wiki/index.php?title=Kategorie:Quellcode_C">Quellcode C</a></li>
+											<li id="n-Quellc.Assembler-AVR"><a href="https://rn-wissen.de/wiki/index.php?title=Kategorie:Quellcode_Assembler_AVR">Quellc.Assembler AVR</a></li>
+											<li id="n-Projekte.2FSchaltungen"><a href="https://rn-wissen.de/wiki/index.php?title=Kategorie:Projekte">Projekte/Schaltungen</a></li>
+											<li id="n-Praxis"><a href="https://rn-wissen.de/wiki/index.php?title=Kategorie:Praxis">Praxis</a></li>
+											<li id="n-Grundlagen"><a href="https://rn-wissen.de/wiki/index.php?title=Kategorie:Grundlagen">Grundlagen</a></li>
+											<li id="n-Buchvorstellungen"><a href="https://rn-wissen.de/wiki/index.php?title=Buchvorstellungen">Buchvorstellungen</a></li>
+											<li id="n-Saugroboter-.2F-Wischroboter"><a href="https://rn-wissen.de/wiki/index.php?title=Staubsaugerroboter">Saugroboter / Wischroboter</a></li>
+											<li id="n-Abk.C3.BCrzungen"><a href="https://rn-wissen.de/wiki/index.php?title=Kategorie:Abk%C3%BCrzung">Abkürzungen</a></li>
+											<li id="n-Youtube-Kanal"><a href="https://www.youtube.com/user/Roboternetz?feature=mhee">Youtube-Kanal</a></li>
+											<li id="n-Forum"><a href="http://www.roboternetz.de/community/forum.php">Forum</a></li>
+											<li id="n-Produkt-Check"><a href="http://www.roboternetz.de/community/content/55-produkt-check">Produkt-Check</a></li>
+									</ul>
+					</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class="pBody">
+							<ul>
+											<li id="n-mainpage"><a href="https://rn-wissen.de/wiki/index.php?title=Hauptseite" title="Hauptseite anzeigen [Alt+Umschalt+z]" accesskey="z">Hauptseite</a></li>
+											<li id="n-randompage"><a href="https://rn-wissen.de/wiki/index.php?title=Spezial:Zuf%C3%A4llige_Seite" title="Zufällige Seite aufrufen [Alt+Umschalt+x]" accesskey="x">Zufällige Seite</a></li>
+											<li id="n-Testseite-f.C3.BCr-Autoren"><a href="https://rn-wissen.de/wiki/index.php?title=Testseite">Testseite für Autoren</a></li>
+											<li id="n-FAQ"><a href="https://rn-wissen.de/wiki/index.php?title=Hilfe:FAQ">Häufig gestellte Fragen</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="Hilfeseite anzeigen">Hilfe</a></li>
+											<li id="n-Neuste-Bilder"><a href="https://rn-wissen.de/wiki/index.php?title=Spezial:Neue_Dateien">Neuste Bilder</a></li>
+											<li id="n-L.C3.B6schkandidaten"><a href="https://rn-wissen.de/wiki/index.php?title=Kategorie:L%C3%B6schkandidat">Löschkandidaten</a></li>
+											<li id="n-Wunschthemen"><a href="https://rn-wissen.de/wiki/index.php?title=Wunschthemen">Wunschthemen</a></li>
+											<li id="n-Aktuelles"><a href="https://rn-wissen.de/wiki/index.php?title=Aktuelles">Aktuelles</a></li>
+											<li id="n-Unterst.C3.BCtzen"><a href="https://rn-wissen.de/wiki/index.php?title=Sitesupport-url">Unterstützen</a></li>
+											<li id="n-RN-Community"><a href="http://www.roboternetz.de/community/content/1-Roboternetz-Startseite">RN-Community</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Suche</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="/wiki/index.php" id="searchform">
+					<input type="hidden" name="title" value="Spezial:Suche">
+					<input type="search" name="search" placeholder="Suchen" title="RN-Wissen.de durchsuchen [Alt+Umschalt+f]" accesskey="f" id="searchInput" autocomplete="off">
+					<input type="submit" name="go" value="Seite" title="Gehe direkt zu der Seite, die exakt dem eingegebenen Namen entspricht." id="searchGoButton" class="searchButton">&nbsp;
+						<input type="submit" name="fulltext" value="Suchen" title="Suche nach Seiten, die diesen Text enthalten" id="mw-searchButton" class="searchButton">
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Werkzeuge</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://rn-wissen.de/wiki/index.php?title=Spezial:Linkliste/Regelungstechnik" title="Liste aller Seiten, die hierher verlinken [Alt+Umschalt+j]" accesskey="j">Links auf diese Seite</a></li>
+											<li id="t-recentchangeslinked"><a href="https://rn-wissen.de/wiki/index.php?title=Spezial:%C3%84nderungen_an_verlinkten_Seiten/Regelungstechnik" title="Letzte Änderungen an Seiten, die von hier verlinkt sind [Alt+Umschalt+k]" accesskey="k">Änderungen an verlinkten Seiten</a></li>
+											<li id="t-specialpages"><a href="https://rn-wissen.de/wiki/index.php?title=Spezial:Spezialseiten" title="Liste aller Spezialseiten [Alt+Umschalt+q]" accesskey="q">Spezialseiten</a></li>
+											<li id="t-print"><a href="https://rn-wissen.de/wiki/index.php?title=Regelungstechnik&amp;printable=yes" rel="alternate" title="Druckansicht dieser Seite [Alt+Umschalt+p]" accesskey="p">Druckversion</a></li>
+											<li id="t-permalink"><a href="https://rn-wissen.de/wiki/index.php?title=Regelungstechnik&amp;oldid=25252" title="Dauerhafter Link zu dieser Seitenversion">Permanenter Link</a></li>
+											<li id="t-info"><a href="https://rn-wissen.de/wiki/index.php?title=Regelungstechnik&amp;action=info" title="Weitere Informationen über diese Seite">Seiten­informationen</a></li>
+									</ul>
+							</div>
+		</div>
+	
+
+
+
+
+
+<p style="font-size: 12px;padding-left:18px;line-height:1.2;"><a href="http://www.multi-cb.de/" target="_blank">
+<b>Leiterplatten Shop</b></a><br>
+Prototypen &amp; Serie<br>
+1-48 Lagen ab 1AT<br>
+Nur für Gewerbe<br>
+<span style="font-size: 8px;color:#090">www.multi-cb.de</span>
+</p>
+
+<p style="font-size: 12px;padding-left:18px;line-height:1.2;"><a href="https://www.akku-und-roboter-staubsauger.de/" target="_blank"><b>Bester  Staubsaugerroboter</b></a><br>
+Wir haben einige<br>
+in der Praxis getestet!<br>
+
+
+<span style="font-size: 8px;color:#090">akku-und-roboter-staubsauger.de</span>
+</p>
+
+<p style="font-size: 12px;padding-left:18px;line-height:1.2;"><a href="https://www.akku-und-roboter-staubsauger.de/" target="_blank"><b>Akku-Staubsauger</b></a><br>
+Wir gut sind diese?<br>
+
+<span style="font-size: 8px;color:#090">akku-und-roboter-staubsauger.de</span>
+</p>
+
+<p style="font-size: 12px;padding-left:18px;line-height:1.2;"><a href="http://www.mikrocontroller-elektronik.de/" target="_blank"><b>Elektronik-Bauanleitungen</b></a><br>
+Elektronik &amp; Mikrocontroller Projekte und Tipps!<br>
+
+<span style="font-size: 8px;color:#090">mikrocontroller-elektronik.de/</span>
+</p>
+
+<p style="font-size: 12px;padding-left:18px;line-height:1.2;"><a href="https://www.tueftler-und-heimwerker.de/" target="_blank"><b>Tüftler und Heimwerker</b></a><br>
+Projekte und Tipps fuer Heimwerker<br>
+
+<span style="font-size: 8px;color:#090">tueftler-und-heimwerker.de/</span>
+</p>
+
+
+<p style="font-size: 12px;padding-left:18px;line-height:1.2;"><a href="https://www.einbruchschutz-und-alarmanlagen.de/" target="_blank"><b>Einbruchschutz und Alarmanlagen</b></a><br>
+Funk Alarmanlagen im Test<br>
+
+<span style="font-size: 8px;color:#090">einbruchschutz-und-alarmanlagen.de/</span>
+</p>
+
+
+
+<center>	
+<br>	
+<script async="" src="Regelungstechnik%20%E2%80%93%20RN-Wissen.de(29.09.19_32_47)-Dateien/adsbygoogle.js"></script>
+<!-- RN-Wissen Seite -->
+<ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-7479754841705808" data-ad-slot="2005203131"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<br>
+<br> -
+</center>
+
+
+			</div><!-- mw_portlets -->
+
+
+		</div><!-- main -->
+
+		<div class="mw_clear"></div>
+
+		<!-- personal portlet -->
+		<div class="portlet" id="p-personal" role="navigation">
+			<h3>Meine Werkzeuge</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="pt-createaccount"><a href="https://rn-wissen.de/wiki/index.php?title=Spezial:Anmelden&amp;returnto=Regelungstechnik&amp;type=signup" title="Wir ermutigen dich dazu, ein Benutzerkonto zu erstellen und dich anzumelden. Es ist jedoch nicht zwingend erforderlich.">Benutzerkonto erstellen</a></li>
+											<li id="pt-login"><a href="https://rn-wissen.de/wiki/index.php?title=Spezial:Anmelden&amp;returnto=Regelungstechnik" title="Sich anzumelden wird gerne gesehen, ist jedoch nicht zwingend erforderlich. [Alt+Umschalt+o]" accesskey="o">Anmelden</a></li>
+									</ul>
+			</div>
+		</div>
+
+
+		<!-- footer -->
+		<div id="footer" role="contentinfo">
+			<ul id="f-list">
+										<li id="lastmod"> Diese Seite wurde zuletzt am 13. September 2014 um 10:50 Uhr geändert.</li>
+											<li id="privacy"><a href="https://rn-wissen.de/wiki/index.php?title=RN-Wissen.de:Datenschutz" title="RN-Wissen.de:Datenschutz">Datenschutz</a></li>
+											<li id="about"><a href="https://rn-wissen.de/wiki/index.php?title=RN-Wissen.de:%C3%9Cber_RN-Wissen.de" title="RN-Wissen.de:Über RN-Wissen.de">Über RN-Wissen.de</a></li>
+											<li id="disclaimer"><a href="https://rn-wissen.de/wiki/index.php?title=RN-Wissen.de:Impressum" title="RN-Wissen.de:Impressum">Impressum</a></li>
+								</ul>
+							<div id="mw_poweredby">
+											<a href="https://www.mediawiki.org/">Powered by MediaWiki</a>
+									</div>
+					</div>
+
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"ready","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<style>.MathJax_Display{display:inline !important;}
+.mathjax-wrapper{font-size:100%;}</style>
+<script type="text/x-mathjax-config;executed=true">MathJax.Hub.Config({displayAlign:'left',tex2jax:{displayMath:[['[math]','[/math]']]}})</script>
+<script src="Regelungstechnik%20%E2%80%93%20RN-Wissen.de(29.09.19_32_47)-Dateien/MathJax.js" id=""></script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":82});
+}</script>
+	
+
+		<div id="cookieChoiceInfo" style="position: fixed; width: 100%; background-color: rgb(238, 238, 238); margin: 0px; left: 0px; top: 0px; padding: 4px; z-index: 1000; text-align: center;"><span>Diese Webseite verwendet Cookies. Cookies helfen dabei, diese Webseite besser zu machen.</span><a href="https://rn-wissen.de/wiki/index.php?title=RN-Wissen.de:Datenschutz#Cookies" target="_blank" style="margin-left: 8px;">mehr Informationen</a><a id="cookieChoiceDismiss" href="#" style="margin-left: 24px;">Ok einverstanden</a></div><div style="display: none; font-size: 13.3333px;" class="suggestions"><div class="suggestions-results"></div><div class="suggestions-special"></div></div><div style="position: absolute; width: 0px; height: 0px; overflow: hidden; padding: 0px; border: 0px none; margin: 0px;"><div id="MathJax_Font_Test" style="position: absolute; visibility: hidden; top: 0px; left: 0px; width: auto; padding: 0px; border: 0px none; margin: 0px; white-space: nowrap; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; font-size: 40px; font-weight: normal; font-style: normal; font-size-adjust: none; font-family: MathJax_AMS, monospace;"></div></div></body></html>
