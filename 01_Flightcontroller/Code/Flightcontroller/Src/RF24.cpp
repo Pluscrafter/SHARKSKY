@@ -5,6 +5,7 @@
  version 2 as published by the Free Software Foundation.
  */
 
+
 #include "nRF24L01.h"
 #include "RF24_config.h"
 #include "RF24.h"
@@ -13,32 +14,26 @@ extern UART_HandleTypeDef huart1;
 
 void RF24::csn(GPIO_PinState mode)
 {
-#ifdef DMA
+
 	if (mode == GPIO_PIN_SET){
 		GPIOcsn->BSRR = 1 << s_bit_csn;
 	}
 	else{
 		GPIOcsn->BSRR = 1 << r_bit_csn;
 	}
-#else
-	HAL_GPIO_WritePin(csn_pin_port, csn_pin, mode);
-#endif
 }
 
 /****************************************************************************/
 
 void RF24::ce(GPIO_PinState level)
 {
-#ifdef DMA
+
 	if (level == GPIO_PIN_SET){
 		GPIOce->BSRR = 1 << s_bit_ce;
 	}
 	else{
 		GPIOce->BSRR = 1 << r_bit_ce;
 	}
-#else
-	HAL_GPIO_WritePin(ce_pin_port, ce_pin, level);
-#endif
 }
 
 /****************************************************************************/
@@ -357,11 +352,12 @@ RF24::RF24(GPIO_TypeDef *GPIOce, uint8_t s_bit_ce,GPIO_TypeDef *GPIOcsn,uint8_t 
 	r_bit_csn = s_bit_csn + 16;
 }
 #else
-RF24::RF24(GPIO_TypeDef * _cepin_port, uint16_t _cepin, GPIO_TypeDef * _cspin_port, uint16_t _cspin, SPI_HandleTypeDef * _hspix) :
-		ce_pin_port(_cepin_port), ce_pin(_cepin), csn_pin_port(_cspin_port), csn_pin(_cspin), hspix(_hspix), p_variant(false), payload_size(32), dynamic_payloads_enabled(false), addr_width(5), csDelay(
-				5)  //,pipe0_reading_addressHAL_MAX_DELAY
+RF24::RF24(GPIO_TypeDef * GPIOce, uint16_t s_bit_ce, GPIO_TypeDef * GPIOcsn, uint16_t s_bit_csn, SPI_HandleTypeDef * _hspix) :
+		GPIOce(GPIOce), s_bit_ce(s_bit_ce), GPIOcsn(GPIOcsn), s_bit_csn(s_bit_csn), hspix(_hspix), p_variant(false), payload_size(32), dynamic_payloads_enabled(false), addr_width(5), csDelay(5)  //,pipe0_reading_addressHAL_MAX_DELAY
 {
 	pipe0_reading_address[0] = 0;
+	r_bit_ce = s_bit_ce + 16;
+	r_bit_csn = s_bit_csn + 16;
 }
 #endif
 

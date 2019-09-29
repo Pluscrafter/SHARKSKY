@@ -134,7 +134,7 @@ uint32_t 	start = 0, stop = 0;
 double 		lptime = 0.101;
 
 //Radio
-RF24 radio(GPIOC, CE_Pin, RF24_NSS_GPIO_Port, RF24_NSS_Pin, &hspi2);
+RF24 radio(GPIOC, 6, GPIOB, 12, &hspi2);
 const uint8_t addresses[][6] = {"1Node","2Node"};
 
 uint8_t data[1] = { 0x41};
@@ -340,6 +340,7 @@ int main(void)
   	radio.openWritingPipe(pipe);
 #endif
   	radio.printDetails();
+  	HAL_Delay(1000);
 
 #if TEST_NRF_T == 0
   	radio.startListening();
@@ -387,9 +388,9 @@ int main(void)
 	  imu.t_ypr[0] = imu.t_ypr[0] * 0.96 + acangle[1] * 0.04;
 	  imu.t_ypr[1] = imu.t_ypr[1] * 0.96 + acangle[0] * 0.04;
 
-	  //HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "throttle: %u \t", recvData.throttle),100);
-	 // HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "pitch   : %u \t", recvData.pitch),100);
-	 // HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "roll    : %u \t", recvData.roll),100);
+	  HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "throttle: %u \t", recvData.throttle),100);
+	  HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "pitch   : %u \t", recvData.pitch),100);
+	  HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "roll    : %u \t", recvData.roll),100);
 
 	  //HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "GYROX	 : %2.3f \t", imu.t_ypr[0]),100);
 	  //HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "GYROY	 : %2.3f \t", imu.t_ypr[1]),100);

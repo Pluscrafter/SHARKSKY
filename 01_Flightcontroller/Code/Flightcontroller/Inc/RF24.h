@@ -137,7 +137,7 @@ public:
   RF24(GPIO_TypeDef *GPIOce, uint8_t s_bit_ce,GPIO_TypeDef *GPIOcsn,uint8_t s_bit_csn , SPI_HandleTypeDef &hspi);
 #else
   RF24(GPIO_TypeDef *GPIOce, uint8_t s_bit_ce,GPIO_TypeDef *GPIOcsn,uint8_t s_bit_csn , SPI_HandleTypeDef &hspi , uint32_t spispeed );
-  RF24(GPIO_TypeDef * _cepin_port, uint16_t _cepin, GPIO_TypeDef * _cspin_port, uint16_t _cspin, SPI_HandleTypeDef * _hspix);
+  RF24(GPIO_TypeDef * GPIOce, uint16_t s_bit_ce, GPIO_TypeDef * GPIOcsn, uint16_t s_bit_csn, SPI_HandleTypeDef * _hspix);
 #endif
 
   #if defined (RF24_LINUX)
