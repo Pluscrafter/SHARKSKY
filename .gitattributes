@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 * linguist-vendored
 <<<<<<< HEAD
 *.cpp linguist-vendored=false
@@ -41,3 +42,7 @@ Schriftliches/* linguist-vendored
 =======
 *.cpp linguist-vendored=false
 >>>>>>> 90164f8... Update .gitattributes
+=======
+* linguist-vendored
+*.cpp linguist-vendored=false
+>>>>>>> ceadf724d6d7a679856b5e6b66cfd9c37e22daf6

@@ -20,7 +20,6 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "math.h"
 #include "stdio.h"
 #include "adc.h"
 #include "dac.h"
@@ -32,13 +31,14 @@
 #include "tim.h"
 #include "usart.h"
 #include "gpio.h"
-#include "ICM20689.h"
-#include "MPU6050.h"
-#include "RF24.h"
+
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "math.h"
+#include "ICM20689.h"
+#include "MPU6050.h"
+#include "RF24.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -54,12 +54,15 @@
 
 #define MPU6050_ENABLE 			0
 #define MPU6000_ENABLE 			0
-#define ICM20689_ENABLE 		0
+#define ICM20689_ENABLE 		1
 
 #define ICM20689_OFFSET_FIND  	0
 
-#define TEST_1					0
-#define TEST_2					0
+#define TEST_NRF_T				0
+#define TEST_NRF_R				0
+
+#define PID_TRUE_ANGLE			1
+#define PID_ANGLE_MOTION		0
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -76,13 +79,14 @@
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
+void loopRadio();
 
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 #define USB_MODE true
-#define OSD_MODE true
+#define OSD_MODE false
 
 bool osdusb = USB_MODE;
 
@@ -121,52 +125,51 @@ uint8_t  sine[256] = {
   0x67, 0x6A, 0x6D, 0x70, 0x74, 0x77, 0x7A, 0x7D
 };
 
-uint8_t sawtooth[256] = {
-0, 1, 2, 3, 4, 5, 6, 7,
-8, 9, 10, 11, 12, 13, 14, 15,
-16, 17, 18, 19, 20, 21, 22, 23,
-24, 25, 26, 27, 28, 29, 30, 31,
-32, 33, 34, 35, 36, 37, 38, 39,
-40, 41, 42, 43, 44, 45, 46, 47,
-48, 49, 50, 51, 52, 53, 54, 55,56,
-57, 58, 59, 60, 61, 62, 63, 64,
-65, 66, 67, 68, 69, 70, 71, 72,
-73, 74, 75, 76, 77, 78, 79, 80,
-81, 82, 83, 84, 85, 86, 87, 88,
-89, 90, 91, 92, 93, 94, 95, 96,
-97, 98, 99, 100, 101, 102, 103,
-104, 105, 106,107,
-108, 109, 110, 111, 112, 113, 114, 115,
-116, 117, 118, 119, 120, 121, 122, 123,
-124, 125, 126, 127, 128, 129, 130, 131,
-132, 133, 134, 135, 136, 137, 138, 139,
-140, 141, 142, 143, 144, 145, 146, 147,
-148, 149, 150, 151, 152, 153, 154, 155,156,
-157, 158, 159, 160, 161, 162, 163, 164,
-165, 166, 167, 168, 169, 170, 171, 172,
-173, 174, 175, 176, 177, 178, 179, 180,
-181, 182, 183, 184, 185, 186, 187, 188,
-189, 190, 191, 192, 193, 194, 195, 196,
-197, 198, 199, 200, 201, 202, 203, 204,
-205, 206, 207, 208, 209,
-210, 211, 212, 213, 214, 215,
-216, 217, 218, 219, 220, 221, 222, 223,
-224, 225, 226, 227, 228, 229, 230, 231,
-232, 233, 234, 235, 236, 237, 238, 239,
-240, 241, 242, 243, 244, 245, 246, 247,
-248, 249, 250, 251, 252, 253, 254, 255};
 
+//ICM
 Sensor::ICM20689 imu;
 float 		PI = 3.1415;
 
 uint32_t 	start = 0, stop = 0;
 double 		lptime = 0.101;
 
-RF24 radio(GPIOC, CE_Pin, RF24_NSS_GPIO_Port, RF24_NSS_Pin, &hspi2);
+//Radio
+RF24 radio(GPIOC, 6, GPIOB, 12, &hspi2);
 const uint8_t addresses[][6] = {"1Node","2Node"};
 
-uint8_t data[1] =
-{ 0x41};
+uint8_t data[1] = { 0x41};
+
+//! Acknowlegement struct
+struct AckData{
+	int16_t 	yaw;									//!<2 bytes 2
+	int16_t 	pitch;									//!<2 bytes 4
+	int16_t 	roll;									//!<2 bytes 6
+
+	uint16_t 	heading;								//!<2 bytes 8
+	uint32_t 	altitude; 								//!<4 bytes 12
+
+	uint32_t 	LV03x;									//!<4 byte 16
+	uint32_t 	LV03y;									//!<4 byte 20
+
+	uint16_t 	flags;									//!<2 bytes 22
+	uint32_t	uptdate_time; 							//!<4 bytes 26
+};
+
+//! receive message struct
+struct RadioData{
+	int16_t		yaw;									//!<2 bytes 2
+	int16_t		pitch;									//!<2 bytes 4
+	int16_t		roll;									//!<2 bytes 6
+	uint16_t	throttle;								//!<2 bytes 8
+
+	uint16_t	flags;									//!<2 bytes 10
+	uint32_t	data;									//!<4 bytes 14
+};
+
+AckData 		ackData;								//!< define acknowlegement
+RadioData 		recvData;								//!< Define receive data
+
+
 //I2cdev MPU6050
 #if MPU6050_ENABLE == 1
 MPU6050 		mpu;
@@ -177,6 +180,27 @@ Quaternion 		q;
 VectorFloat 	gravity;
 float 			ypr[3];
 #endif
+
+//PID
+void PID_TrueAngle();
+void PID_AngleMotion();
+
+int16_t pid_ta[3];											//!< define PID with true angle
+int16_t pid_am[3];											//!< define PID with angle motion
+
+float 	_pid_ta[3][3];										//!<  define individual PID for axis [axis][PID]
+float 	_pid_am[3][3];										//!<  define individual PID for axis [axis][PID]
+
+float	pid_gain_ta[3][3];									//!< define pid gain [axis][gain] for PID with true angles
+float	pid_gain_am[3][3];									//!< define pid gain [axis][gain] for PID with angle motion
+
+float 	error[3];											//!<  define error
+float 	previous_error[3];									//!<  define previous error for D-Gain
+
+
+void setMotorSpeed();
+
+uint16_t motor_speed[4];
 /* USER CODE END 0 */
 
 /**
@@ -186,6 +210,17 @@ float 			ypr[3];
 int main(void)
 {
   /* USER CODE BEGIN 1 */
+	pid_gain_ta[0][0] = 0;
+	pid_gain_ta[0][1] = 0;
+	pid_gain_ta[0][2] = 0;
+
+	pid_gain_ta[1][0] = 15;
+	pid_gain_ta[1][1] = 0;
+	pid_gain_ta[1][2] = 0;
+
+	pid_gain_ta[2][0] = 15;
+	pid_gain_ta[2][1] = 0;
+	pid_gain_ta[2][2] = 0;
 
   /* USER CODE END 1 */
   
@@ -249,7 +284,7 @@ int main(void)
 
   //TEST DAC
   HAL_TIM_Base_Start(&htim6);
-  HAL_DAC_Start_DMA(&hdac, DAC_CHANNEL_2, (uint32_t *)sawtooth, 256, DAC_ALIGN_8B_R);
+  HAL_DAC_Start_DMA(&hdac, DAC_CHANNEL_2, (uint32_t *)sine, 256, DAC_ALIGN_8B_R);
 
   //init IMU
 #if ICM20689_ENABLE == 1
@@ -292,12 +327,24 @@ int main(void)
   	//init RF24
   	const uint64_t pipe = 0xE8E8F0F0E2;
   	radio.begin();
-  	//radio.openReadingPipe(1, pipe);
-  	radio.openWritingPipe(pipe);
-  	radio.setDataRate(RF24_250KBPS);
-  	radio.printDetails();
-  	//radio.startListening();
+  	radio.setPayloadSize(32);
+	radio.setChannel(125);
+	radio.setDataRate(RF24_250KBPS);
+	radio.setPALevel(RF24_PA_MAX);
+	radio.setAutoAck(true);
+	radio.enableDynamicPayloads();
+	radio.enableAckPayload();
+  	radio.openReadingPipe(1, pipe);
 
+#if TEST_NRF_T == 1
+  	radio.openWritingPipe(pipe);
+#endif
+  	radio.printDetails();
+  	HAL_Delay(1000);
+
+#if TEST_NRF_T == 0
+  	radio.startListening();
+#endif
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -305,14 +352,20 @@ int main(void)
   while (1)
   {
 	  start = ARM_CM_DWT_CYCCNT;
-	/*if (radio.available()){
+#if TEST_NRF_R == 1
+	if (radio.available()){
 		radio.read(data, 1);
 		HAL_UART_Transmit(&huart1,data,1,100);
 		HAL_UART_Transmit(&huart1,(uint8_t *)"\n",1,100);
 	}else{
 		//HAL_UART_Transmit(&huart1,(uint8_t *)"NODATA\n",8,100);
-	}*/
+	}
+#endif
+
+#if TEST_NRF_T == 1
 	radio.write(data,1);
+#endif
+
 #if ICM20689_ENABLE == 1
 	  char txt[32];
 
@@ -326,6 +379,8 @@ int main(void)
 	  acangle[1] = asin(imu.accel[1]/fullvec) * 57.29577951;
 	  //imu.ReadTemp();
 
+	  lptime = 0.001325;
+
 	  imu.t_ypr[0] += imu.ypr[0]*lptime;
 	  imu.t_ypr[1] += imu.ypr[1]*lptime;
 	  imu.t_ypr[2] += imu.ypr[2]*lptime;
@@ -333,19 +388,28 @@ int main(void)
 	  imu.t_ypr[0] = imu.t_ypr[0] * 0.96 + acangle[1] * 0.04;
 	  imu.t_ypr[1] = imu.t_ypr[1] * 0.96 + acangle[0] * 0.04;
 
-	  HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "GYROX: %2.3f \t", imu.t_ypr[0]),100);
-	  HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "GYROY: %2.3f \t", imu.t_ypr[1]),100);
-	  HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "GYROZ: %2.3f \t \n\r", imu.t_ypr[2]),100);
+	  HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "throttle: %u \t", recvData.throttle),100);
+	  HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "pitch   : %u \t", recvData.pitch),100);
+	  HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "roll    : %u \t", recvData.roll),100);
 
-	  //HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "ACCELX: %2.3f \t", imu.accel[0]),100);
-	  //HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "ACCELY: %2.3f \t", imu.accel[1]),100);
-	  //HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "ACCELZ: %2.3f \t \n\r", imu.accel[2]),100);
+	  //HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "GYROX	 : %2.3f \t", imu.t_ypr[0]),100);
+	  //HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "GYROY	 : %2.3f \t", imu.t_ypr[1]),100);
+	  //HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "GYROZ	 : %2.3f \t", imu.t_ypr[2]),100);
+	  //HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "%2.3f \n\r", lptime),100);
 
-	  //HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "TEMP: %2.3f \t \n\r", imu.temp),100);
+//	  HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "TEMP: %2.3f \t \n\r", imu.temp),100);
 
+	  for (uint8_t i = 0;  i < 3; i++){
+		  previous_error[i] = error[i];
+	  }
 
-	  HAL_Delay(10);
+	  for (uint8_t i = 0;  i < 3; i++){
+		  error[i] = imu.t_ypr[i];
+	  }
+
+	  //HAL_Delay(10);
 #endif
+
 #if MPU6050_ENABLE == 1
 	  while (fifoCount < packetSize) {
 		  fifoCount = mpu.getFIFOCount();
@@ -378,9 +442,23 @@ int main(void)
 	HAL_Delay(50);
 #endif
 
-	  stop = ARM_CM_DWT_CYCCNT;
-	  lptime = (stop - start)/216000000.0;
-	HAL_Delay(500);
+#if PID_ANGLE_MOTION == 1
+	PID_AngleMotion();
+#endif
+
+#if PID_TRUE_ANGLE == 1
+	//error[0] = imu.t_ypr[2] - recvData.yaw;
+	error[1] = recvData.pitch - imu.t_ypr[1];
+	error[2] = recvData.roll - imu.t_ypr[0];
+
+	PID_TrueAngle();
+#endif
+	loopRadio();
+	setMotorSpeed();
+
+	stop = ARM_CM_DWT_CYCCNT;
+	lptime = (stop - start)/216000000.0;
+	//HAL_Delay(500); //TtODO: Uncomment when in flightmode
 
     /* USER CODE END WHILE */
 
@@ -410,7 +488,7 @@ void SystemClock_Config(void)
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
   RCC_OscInitStruct.PLL.PLLM = 8;
-  RCC_OscInitStruct.PLL.PLLN = 432;
+  RCC_OscInitStruct.PLL.PLLN = 400;
   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
   RCC_OscInitStruct.PLL.PLLQ = 9;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
@@ -432,7 +510,7 @@ void SystemClock_Config(void)
   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV4;
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;
 
-  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_7) != HAL_OK)
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_6) != HAL_OK)
   {
     Error_Handler();
   }
@@ -451,8 +529,109 @@ void SystemClock_Config(void)
   }
 }
 
-/* USER CODE BEGIN 4 */
 
+/* USER CODE BEGIN 4 */
+void PID_TrueAngle(){
+	//caculate_PID
+	for(uint8_t i = 0; i < 3; i++){
+		//P-Regler
+		_pid_ta[i][0] 			= 	error[i] * pid_gain_ta[i][0];
+		//I-Regler
+		_pid_ta[i][1] 			+= 	error[i] * pid_gain_ta[i][1];
+		//D-Regler
+		_pid_ta[i][2] 			= 	pid_gain_ta[i][2] * (error[i]-previous_error[i]);
+
+		pid_ta[i] 		 		=	_pid_ta[i][0] + _pid_ta[i][1] + _pid_ta[i][2];
+	}
+
+	for (uint8_t i = 0; i<3;i++){
+		if(pid_ta[i] > 400){
+			pid_ta[i] = 400;
+		}
+
+		if(pid_ta[i] < -400){
+			pid_ta[i] = -400;
+		}
+	}
+}
+
+void PID_AngleMotion(){
+	//caculate_PID
+	for(uint8_t i = 0; i < 3; i++){
+		//P-Regler
+		_pid_am[i][0] 			= 	error[i] * pid_gain_am[i][0];
+		//I-Regler
+		_pid_am[i][1] 			+= 	error[i] * pid_gain_am[i][1];
+		//D-Regler
+		_pid_am[i][2] 			= 	pid_gain_am[i][2] * (error[i]-previous_error[i]);
+
+		pid_am[i] 		 		=	_pid_am[i][0] + _pid_am[i][1] + _pid_am[i][2];
+	}
+
+	for (uint8_t i = 0; i<3;i++){
+		if(pid_am[i] > 400){
+			pid_am[i] = 400;
+		}
+
+		if(pid_am[i] < -400){
+			pid_am[i] = -400;
+		}
+	}
+}
+
+void setMotorSpeed(){
+	if (recvData.throttle < 100){
+		for (int i = 0; i < 4 ;i++){
+			motor_speed[i] = 1024 + 10;
+		}
+	}
+	else{
+#if PID_TRUE_ANGLE == 1
+	motor_speed[0] = (1024 + recvData.throttle) + pid_ta[1] + pid_ta[2] - pid_ta[0];
+	motor_speed[1] = (1024 + recvData.throttle) + pid_ta[1] - pid_ta[2] + pid_ta[0];
+	motor_speed[2] = (1024 + recvData.throttle) - pid_ta[1] - pid_ta[2] - pid_ta[0];
+	motor_speed[3] = (1024 + recvData.throttle) - pid_ta[1] + pid_ta[2] + pid_ta[0];
+#endif
+
+#if PID_ANGLE_MOTION == 1
+	motor_speed[0] = (1024 + recvData.throttle) + pid_am[1] + pid_am[2] - pid_am[0];
+	motor_speed[1] = (1024 + recvData.throttle) + pid_am[1] - pid_am[2] + pid_am[0];
+	motor_speed[2] = (1024 + recvData.throttle) - pid_am[1] - pid_am[2] - pid_am[0];
+	motor_speed[3] = (1024 + recvData.throttle) - pid_am[1] + pid_am[2] + pid_am[0];
+#endif
+
+#if PID_TRUE_ANGLE == 1 &&  PID_ANGLE_MOTION == 1
+	motor_speed[0] = (float)(0.5 * ((1024 + recvData.throttle) + pid_ta[1] + pid_ta[2] - pid_ta[0]) + 0.5 * ((1024 + recvData.throttle) + pid_am[1] + pid_am[2] - pid_am[0]));
+	motor_speed[1] = (float)(0.5 * ((1024 + recvData.throttle) + pid_ta[1] - pid_ta[2] + pid_ta[0]) + 0.5 * ((1024 + recvData.throttle) + pid_am[1] - pid_am[2] + pid_am[0]));
+	motor_speed[2] = (float)(0.5 * ((1024 + recvData.throttle) - pid_ta[1] - pid_ta[2] - pid_ta[0]) + 0.5 * ((1024 + recvData.throttle) - pid_am[1] - pid_am[2] - pid_am[0]));
+	motor_speed[3] = (float)(0.5 * ((1024 + recvData.throttle) - pid_ta[1] + pid_ta[2] + pid_ta[0]) + 0.5 * ((1024 + recvData.throttle) - pid_am[1] + pid_am[2] + pid_am[0]));
+#endif
+	}
+
+	for (int i = 0; i < 4 ;i++){
+		if (motor_speed[i] > 2048){
+			motor_speed[i] = 2048;
+		}
+		else if(motor_speed[i] < 1024){
+			motor_speed[i] = 1024;
+		}
+	}
+
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_1,motor_speed[0]);
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_2,motor_speed[1]);
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_3,motor_speed[2]);
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_4,motor_speed[3]);
+}
+
+void loopRadio(){
+	if(radio.available()){
+		radio.read(&recvData,sizeof(RadioData));
+		radio.writeAckPayload(1,&ackData,sizeof(AckData));
+	}
+	else{
+
+	}
+}
 /* USER CODE END 4 */
 
 /**
