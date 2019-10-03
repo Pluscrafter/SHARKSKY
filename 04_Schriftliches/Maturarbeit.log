@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.9.29)  30 SEP 2019 14:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.9.29)  30 SEP 2019 23:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -76,45 +76,38 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 {/usr/share/texlive/texmf-dist/fonts/map/pdftex/updmap/pdftex.map}]
 (./Maturarbeit.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 4.
+(Font)              <12> on input line 6.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 4.
+(Font)              <8> on input line 6.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 4.
-)
+(Font)              <6> on input line 6.
+ [1
+
+])
 \tf@toc=\write3
 \openout3 = `Maturarbeit.toc'.
 
- [1
+ [2] [1] [2]
+Overfull \vbox (111.16673pt too high) has occurred while \output is active []
 
-] [1]
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 28.
 
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
-[][][]\OT1/cmr/m/n/10 https://blog.dronetrest.com/inertial-sensor-comparison-mp
-u6000-vs-mpu6050-vs-
- []
-
-[2] [3] [4] [5] [6] (./Maturarbeit.aux) ) 
+[3] [4] [5] (./Maturarbeit.aux) ) 
 Here is how much of TeX's memory you used:
- 1152 strings out of 492701
- 14383 string characters out of 6134504
- 90244 words of memory out of 5000000
- 5074 multiletter control sequences out of 15000+600000
+ 1148 strings out of 492701
+ 14331 string characters out of 6134504
+ 87244 words of memory out of 5000000
+ 5070 multiletter control sequences out of 15000+600000
  9107 words of font info for 32 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
- 27i,8n,27p,3316b,198s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
-7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb>
-Output written on Maturarbeit.pdf (8 pages, 83747 bytes).
+ 27i,7n,27p,367b,229s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr17.pfb>
+Output written on Maturarbeit.pdf (8 pages, 51658 bytes).
 PDF statistics:
- 55 PDF objects out of 1000 (max. 8388607)
- 38 compressed objects within 1 object stream
+ 43 PDF objects out of 1000 (max. 8388607)
+ 29 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

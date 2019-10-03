@@ -1,0 +1,55 @@
+\documentclass[12pt,a4paper, ngerman]{article}
+\usepackage{babel}
+\usepackage[round]{natbib}
+\begin{document}
+\bibliographystyle{alphadin}
+\title{\large Maturitätsarbeit an der Kantonsschule Zürich Nord \\ \Huge Regelungstechnik \\ \huge PID-Parameter anhand einem Quadrocopter erforschen}
+\date{\today}
+\author{Charpoan Kong \\ M5d \\ Kantonsschule Zürich Nord}
+\maketitle
+\pagenumbering{gobble}
+
+\newpage
+\clearpage
+\pagenumbering{gobble}
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
+
+\section{Einleitung}
+
+\newpage
+\section{Was ist ein Quadrocopter?}
+\newpage
+\section{PID-Regelung und Filter}
+\newpage
+\section{Bau und programmierung des Quadrocopters}
+\subsection{Der Flightcontroller}
+Der Flightcontroller ist sozusagen das Herz des Quadrocopters. Er steuert die Motoren an, liest und verarbeitet die Daten der Sensoren, die für die Regelung wichtig sind.
+\subsubsection{Genereller Aufbau}
+Der Flightcontroller besteht aus mehreren IC's die alle eine eigene Funktion haben. Der Hauptmicrocontroller ist ein STM32F7. Dieser ist ein 32-Bit ARM-Cortex-M7 Controller. Dieser liest die zwei IMU's aus, regelt und steuert die Motoren. Auch liest und schreibt dieser auf die microSD-Karte. Durch die UART-Schnittstellen kann er seriell mit einem Computer und einem GPS-Empfänger kommunizieren. Der Controller bekommt Steuerimpulse von einem 2.4GHzEmpfänger. Als Nebenmictrocontroller wird ein ATMega328 benutzt, der auch auf dem Arduino Uno zu finden ist. Dieser liest den Drucksensor, die Ultraschallsensoren und zwei ADC Eingänge aus. Er kommuniziert per I2C-Protokoll mit dem Hauptmicrocontroller.
+\subsubsection{Überlegungen beim Bau}
+Zuerst habe ich mir überlegt was für einen Microcontroller ich wählen sollte. Bei meinen ersten Versuchen mit dem Raspberry gingen schief, da der Regler nicht schnell genug reagierte und eine nicht konstates Regelverhalten gezeigt hat. Einerseits lief ein Betriebsystem pararell zum Flightcontroller, adererseits war die Regelung nicht Echtzeit genug. Desswegen habe ich im Internet nachgeschaut was für Microcontroller auf den meisten Quadroopter verbaut sind. Dort werden  meist MCU aus der STM32-Familie verwendet. So kam ich auf die Webseite von Oscar Liang\footnote{\label{foot:1}https://oscarliang.com/f1-f3-f4-flight-controller/ aufgerufen am 31.03.2019} bei der die einzelnen MCU-Generationen aufgelistet waren mit den Vor-und Nachteilen. Ich entschied mich für die neuste Generation aus dieser MCU-Familie, einen STM32F7xx MCU zu benutzen. Nachher habe ich vorhandene Boards angschaut und gesehen, das die meisten den STM32F722RET6 benutzen aus dieser MCU-Generation. Als nächstes überlegte ich mir was für einen Gyro-und Beschleunigungssensor ich bentzen wolle. Ich habe schon eine MPU-6050 IMU aber ich wollte noch einen mit SPI-Protokoll, da die schneller ist, und auch als Backup dienen sollte, so recherchierte ich was für IMU's die FC's benutzen\footnote{\label{foot:2}https://blog.dronetrest.com/inertial-sensor-comparison-mpu6000-vs-mpu6050-vs-mpu6500-vs-icm20602/ aufgerufen am 31.03.2019} und entschied mich für den MPU6000(vielleicht ICM-20689), da diese toleranter gegen Vibrationen sind. Als Empfänger habe ich einen nRF24L01 PA + LNA genommen, da dieser eine grosse Reichweite hat und in einem Stadtgebiet auf eine Reichweite von ca. 250-300m mit einigen Bäumen gekommen ist bei meinen früheren Messungen. Dieser übermittelt die Daten digital und hat einen CRC-Redudanzprüfung drauf, welche Fehlerhafte Übertragungen filtert bzw. korrigiert. Auch kann man in der ACK-Message Daten zurück zur Fernbedienung senden. Aber als Backup wird noch ein PPM Eingang eingebaut für die Standart Funkübertragung über eine komerzielle Fernbedienung. Da für die Versuche Daten gebraucht werden, wird eine microSD-Karten Schnittstelle eingebaut, um die Daten aufzuzeichnen. Damit der Flightcontroller mit dem PC kommunizieren kann um zu Debuggen muss ein FTDI-Chip(F232RL) eingebaut werden damit wird das UART-Protokoll, in ein für den PC verständliches Protokoll übersetzt. Das UART-Protokoll wird auch für die Kommunikation für den GPS-Empfänger und OSD(für HUD Darstellung falls eine Kamera eingebaut wird) benutzt. Um die Höhe zu bestimmen habe ich den BMP280 Drucksensor ausgewählt. Da dieser für das auslesen eine lange Zeit braucht habe ich überlegt noch eine NebenMCU einzubauen. Ich habe den ATMega328 gewählt da er auch auf den Arduino UNO drauf ist und ich mich damit schon auskenne. Über diese MCU werden auch die Ultraschallsensoren ausgelesen, die eine genauere Höhenmessung ermöglicht, aber nur bis zu sechs Metern. Da die ESC's einen 5V Versorgungsausgang haben muss noch ein Spannungsregler  eigebaut werden, da die meisten IC's 3.3V braucchen, der Schulmechaniker Herr Thurnherr hat mir den LM3940 empfohlen. Vielleicht muss noch ein Buck-converter eingebaut  werden, falls die ESC's nicht genug Leistung liefern können.
+\subsubsection{Leiterplatten Design}
+Die Leiterplatte wird mit den Program Eagle von Autodesk designt. In dem Programm kann man die einzelnen Bauteile zusammensetzen und verbinden. (Bild) Ich musste nach dem Datenblatt der einzelenen IC's, Konsendatoren und Wiederstände einbauen. Die Schaltbilder für die einzelnen IC's, die nicht schon in der Standartbibliothek vorhanden sind, habe ich aus dem Internet heruntergeladen. Herr Thurnherr hat mich dabei unterstützt und alle Fragen beantwortet. Nach mehreren Kontrollen wurde die Leiterplatte bei JLCPCB und die einzelenen Teile bei LCSC, Arrow und Conrad bestellt. (Bild). Dazu wurde noch eine Schablone für das SMD-löten bestellt. 
+
+\subsubsection{Leiterplatten Bau}
+Zuerst wurde auf der Rückseite per Hand Lötpaste für den ATMega und dessen Oszillator aufgetragen und mit dann wurde mit den Heissluftfön die Leiterplatte erhitzt, bis die beiden Komponenten verlötet waren. (Bild) Dannach wurden auf einer Holzplatte Löcher gebohrt, wo die beiden verlöteten Komponenten waren, damit man eine Flache Unterlage hat. Dann wurde der FC auf der Holzplatte geklebt. (Bild). Die Die Schablone wurde dann auf der Leiterplatte flach arretiert. So wurde dann mit einem Spachtel Lötpaste auf der Schablone gespachtelt. (Bild) Dann wurde , mit Hilfe des Mikroskop, alle Bauteile auf der Leiterplatte platziert. (Bild) Vor dem Backen haben wir mit einer leeren Leiterplatte ,an dem eine Thermometer befestig war, ein Heizversuch gestartet und so die Optimale Zeit für das an und abschalten des Ofens eruiert. Dann wurden die bestückten Leiterplatten in den Ofen getan und wir backten diese nach der bestimmten Kurve. (Bild). Die Rückseite wurde noch per Hand fertig gelötet, was mit einer Pinzette realisiert wurde. Die Verbindungsstecker wurden auch per Hand gelötet.       
+
+\subsubsection{Programmieren}
+Der Microcontroller wird mit C und C++ programmiert. Man spielt dann das Programm mit einem Programmerstick(STLink) auf den Controller. Beim programmieren kam ich auf mehrere hürden, da es das erste Mal ist, dass ich einen STM32 programmiere. Bei der SPI Schnittstelle mit der IMU kam es zum Beispiel zum folgenden Problem, dass das NSS Signal zu schnell hoch ging und so zu einer unvollständigen Übertragung kam. Das Problem lag darin, dass eine Flag Abfrage falsch war.
+
+\subsection{Die Fernbedienung}
+\subsubsection{Konstruktion}
+\subsubsection{Programmieren}
+\newpage
+\section{Glossar}
+
+
+\newpage
+\section{Quellenverzeichnis}
+\subsection{Literaturverzeichnis}
+\subsection{Abbildungsverzeichnis}
+\subsection{Personenverzeichnis}
+
+\end{document}
