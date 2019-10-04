@@ -379,7 +379,7 @@ int main(void)
 	  acangle[1] = asin(imu.accel[1]/fullvec) * 57.29577951;
 	  //imu.ReadTemp();
 
-	  lptime = 0.001325;
+	  lptime = 0.001;
 
 	  imu.t_ypr[0] += imu.ypr[0]*lptime;
 	  imu.t_ypr[1] += imu.ypr[1]*lptime;
@@ -388,9 +388,9 @@ int main(void)
 	  imu.t_ypr[0] = imu.t_ypr[0] * 0.96 + acangle[1] * 0.04;
 	  imu.t_ypr[1] = imu.t_ypr[1] * 0.96 + acangle[0] * 0.04;
 
-	  HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "throttle: %u \t", recvData.throttle),100);
-	  HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "pitch   : %u \t", recvData.pitch),100);
-	  HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "roll    : %u \t", recvData.roll),100);
+	  //HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "throttle: %u \t", recvData.throttle),100);
+	  //HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "pitch   : %u \t", recvData.pitch),100);
+	  //HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "roll    : %u \t", recvData.roll),100);
 
 	  //HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "GYROX	 : %2.3f \t", imu.t_ypr[0]),100);
 	  //HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "GYROY	 : %2.3f \t", imu.t_ypr[1]),100);
@@ -539,7 +539,7 @@ void PID_TrueAngle(){
 		//I-Regler
 		_pid_ta[i][1] 			+= 	error[i] * pid_gain_ta[i][1];
 		//D-Regler
-		_pid_ta[i][2] 			= 	pid_gain_ta[i][2] * (error[i]-previous_error[i]);
+		_pid_ta[i][2] 			= 	pid_gain_ta[i][2] * ((error[i]-previous_error[i])/lptime);
 
 		pid_ta[i] 		 		=	_pid_ta[i][0] + _pid_ta[i][1] + _pid_ta[i][2];
 	}
@@ -563,7 +563,7 @@ void PID_AngleMotion(){
 		//I-Regler
 		_pid_am[i][1] 			+= 	error[i] * pid_gain_am[i][1];
 		//D-Regler
-		_pid_am[i][2] 			= 	pid_gain_am[i][2] * (error[i]-previous_error[i]);
+		_pid_am[i][2] 			= 	pid_gain_am[i][2] * ((error[i]-previous_error[i])/lptime);
 
 		pid_am[i] 		 		=	_pid_am[i][0] + _pid_am[i][1] + _pid_am[i][2];
 	}
