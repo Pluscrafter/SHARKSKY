@@ -194,6 +194,10 @@ float	pid_gain_am[3][3];									//!< define pid gain [axis][gain] for PID with 
 float 	error[3];											//!<  define error
 float 	previous_error[3];									//!<  define previous error for D-Gain
 
+//Digital Low-pass DLPF
+const float alpha = 0.231710;
+
+volatile float f_ypr[3];
 
 void setMotorSpeed();
 
@@ -363,6 +367,12 @@ int main(void)
 
 	  imu.t_ypr[0] = imu.t_ypr[0] * 0.96 + acangle[1] * 0.04;
 	  imu.t_ypr[1] = imu.t_ypr[1] * 0.96 + acangle[0] * 0.04;
+
+	  //dlpf
+	  https://kiritchatterjee.wordpress.com/2014/11/10/a-simple-digital-low-pass-filter-in-c/ [9.10.19 22:52]
+	  f_ypr[0] = f_ypr[0] - (alpha * (f_ypr[0] - imu.t_ypr[0]));
+	  f_ypr[1] = f_ypr[1] - (alpha * (f_ypr[1] - imu.t_ypr[1]));
+	  f_ypr[2] = f_ypr[2] - (alpha * (f_ypr[2] - imu.ypr[2]));
 #endif
 
 #if MPU6050_ENABLE == 1
@@ -405,16 +415,12 @@ int main(void)
 	  previous_error[i] = error[i];
     }
 
-    for (uint8_t i = 0;  i < 3; i++){
-	   error[i] = imu.t_ypr[i];
-    }
-
     loopRadio();
 
 #if PID_TRUE_ANGLE == 1
-	error[0] = imu.ypr[2] - recvData.yaw;
-	error[1] = recvData.pitch - imu.t_ypr[1];
-	error[2] = recvData.roll - imu.t_ypr[0];
+	error[0] = f_ypr[2] - recvData.yaw;
+	error[1] = recvData.pitch - f_ypr[1];
+	error[2] = recvData.roll - f_ypr[0];
 
 	PID_TrueAngle();
 	PID_AngleMotion();
