@@ -42,10 +42,10 @@ for i in range(0, period):
     x.append(0.000001 * i)
 
 for i in range(0, period):
-    sinemixed.append(sine(1, 80, 0) + sine(2, 8000, math.pi) + sine(1, 800, 0.1) + sine(0.3, 1234, 50) +
+    sinemixed.append(sine(1, 80, 0) + sine(1, 133, math.pi) + sine(1, 800, 0.1) + sine(0.3, 1234, 50) +
                      sine(0.5, 5010, 2.3) + sine(2, 80000, 3) + sine(0.5, 1000, 2.3) + sine(0.5, 1000000, 2.3))
 
-cutoffreq = 200
+cutoffreq = 80
 filtered_dlpf = digital_low_pass(cutoffreq, sinemixed)
 
 plt.plot(x, sinemixed, color='blue', linewidth=1, label='80Hz sine with noise')
