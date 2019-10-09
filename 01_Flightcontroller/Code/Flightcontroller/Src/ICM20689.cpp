@@ -104,9 +104,15 @@ namespace Sensor {
 		r_accel[1] = (tmp[2] << 8) | tmp[3];
 		r_accel[2] = (tmp[4] << 8) | tmp[5];
 
+		int16_t a = r_accel[1];
+		r_accel[1] = r_accel[2];
+		r_accel[2] = a;
+
 		for(int i = 0; i<3; i++){
 			accel[i] =  r_accel[i] / 16384.0;
 		}
+
+
 
 	}
 

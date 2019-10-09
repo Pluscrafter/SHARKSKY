@@ -58,9 +58,6 @@
 
 #define ICM20689_OFFSET_FIND  	0
 
-#define TEST_NRF_T				0
-#define TEST_NRF_R				0
-
 #define PID_TRUE_ANGLE			1
 #define PID_ANGLE_MOTION		0
 /* USER CODE END PD */
@@ -336,15 +333,11 @@ int main(void)
 	radio.enableAckPayload();
   	radio.openReadingPipe(1, pipe);
 
-#if TEST_NRF_T == 1
-  	radio.openWritingPipe(pipe);
-#endif
   	radio.printDetails();
   	HAL_Delay(1000);
 
-#if TEST_NRF_T == 0
   	radio.startListening();
-#endif
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -352,22 +345,7 @@ int main(void)
   while (1)
   {
 	  start = ARM_CM_DWT_CYCCNT;
-#if TEST_NRF_R == 1
-	if (radio.available()){
-		radio.read(data, 1);
-		HAL_UART_Transmit(&huart1,data,1,100);
-		HAL_UART_Transmit(&huart1,(uint8_t *)"\n",1,100);
-	}else{
-		//HAL_UART_Transmit(&huart1,(uint8_t *)"NODATA\n",8,100);
-	}
-#endif
-
-#if TEST_NRF_T == 1
-	radio.write(data,1);
-#endif
-
 #if ICM20689_ENABLE == 1
-	  char txt[32];
 
 	  imu.ReadGyro();
 	  imu.ReadAccel();
@@ -377,37 +355,14 @@ int main(void)
 
 	  acangle[0] = asin(imu.accel[0]/fullvec) * -57.29577951;
 	  acangle[1] = asin(imu.accel[1]/fullvec) * 57.29577951;
-	  //imu.ReadTemp();
 
-	  lptime = 0.001;
+	  lptime = 0.0006;
 
 	  imu.t_ypr[0] += imu.ypr[0]*lptime;
 	  imu.t_ypr[1] += imu.ypr[1]*lptime;
-	  imu.t_ypr[2] += imu.ypr[2]*lptime;
 
 	  imu.t_ypr[0] = imu.t_ypr[0] * 0.96 + acangle[1] * 0.04;
 	  imu.t_ypr[1] = imu.t_ypr[1] * 0.96 + acangle[0] * 0.04;
-
-	  //HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "throttle: %u \t", recvData.throttle),100);
-	  //HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "pitch   : %u \t", recvData.pitch),100);
-	  //HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "roll    : %u \t", recvData.roll),100);
-
-	  //HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "GYROX	 : %2.3f \t", imu.t_ypr[0]),100);
-	  //HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "GYROY	 : %2.3f \t", imu.t_ypr[1]),100);
-	  //HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "GYROZ	 : %2.3f \t", imu.t_ypr[2]),100);
-	  //HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "%2.3f \n\r", lptime),100);
-
-//	  HAL_UART_Transmit(&huart1, (uint8_t*)txt,sprintf(txt, "TEMP: %2.3f \t \n\r", imu.temp),100);
-
-	  for (uint8_t i = 0;  i < 3; i++){
-		  previous_error[i] = error[i];
-	  }
-
-	  for (uint8_t i = 0;  i < 3; i++){
-		  error[i] = imu.t_ypr[i];
-	  }
-
-	  //HAL_Delay(10);
 #endif
 
 #if MPU6050_ENABLE == 1
@@ -446,19 +401,29 @@ int main(void)
 	PID_AngleMotion();
 #endif
 
+	for (uint8_t i = 0;  i < 3; i++){
+	  previous_error[i] = error[i];
+    }
+
+    for (uint8_t i = 0;  i < 3; i++){
+	   error[i] = imu.t_ypr[i];
+    }
+
+    loopRadio();
+
 #if PID_TRUE_ANGLE == 1
-	//error[0] = imu.t_ypr[2] - recvData.yaw;
+	error[0] = imu.ypr[2] - recvData.yaw;
 	error[1] = recvData.pitch - imu.t_ypr[1];
 	error[2] = recvData.roll - imu.t_ypr[0];
 
 	PID_TrueAngle();
+	PID_AngleMotion();
 #endif
-	loopRadio();
+
 	setMotorSpeed();
 
 	stop = ARM_CM_DWT_CYCCNT;
-	lptime = (stop - start)/216000000.0;
-	//HAL_Delay(500); //TtODO: Uncomment when in flightmode
+	lptime = (stop - start)/200000000.0;
 
     /* USER CODE END WHILE */
 
@@ -587,10 +552,10 @@ void setMotorSpeed(){
 	}
 	else{
 #if PID_TRUE_ANGLE == 1
-	motor_speed[0] = (1024 + recvData.throttle) + pid_ta[1] + pid_ta[2] - pid_ta[0];
-	motor_speed[1] = (1024 + recvData.throttle) + pid_ta[1] - pid_ta[2] + pid_ta[0];
-	motor_speed[2] = (1024 + recvData.throttle) - pid_ta[1] - pid_ta[2] - pid_ta[0];
-	motor_speed[3] = (1024 + recvData.throttle) - pid_ta[1] + pid_ta[2] + pid_ta[0];
+	motor_speed[0] = (1024 + recvData.throttle) + pid_ta[1] + pid_ta[2] - pid_am[0];
+	motor_speed[1] = (1024 + recvData.throttle) + pid_ta[1] - pid_ta[2] + pid_am[0];
+	motor_speed[2] = (1024 + recvData.throttle) - pid_ta[1] - pid_ta[2] - pid_am[0];
+	motor_speed[3] = (1024 + recvData.throttle) - pid_ta[1] + pid_ta[2] + pid_am[0];
 #endif
 
 #if PID_ANGLE_MOTION == 1
