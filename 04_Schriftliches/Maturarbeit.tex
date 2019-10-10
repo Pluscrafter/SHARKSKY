@@ -1,5 +1,6 @@
 \documentclass[12pt,a4paper, ngerman]{article}
 \usepackage{babel}
+\usepackage{amsmath}
 \usepackage[style=numeric]{biblatex}
 \addbibresource{Maturarbeit.bib}
 \usepackage{graphicx}
@@ -89,7 +90,7 @@ e(t)=w-x
 \end{wrapfigure}
 In der Abbildung 3 sieht man, wie vorher beschrieben, wie ein solcher Regelkreis funktionert. In der Regelungstechnik wird versucht einen solchen Regelkreis mathematisch zu modellieren. In dem Kapitel wird nur der PID-Regler und seine Komponenten besprochen, da dieser häufig bei Quadrocoptern benutzt wird.
 \\ \\ \\
-Der PID-Regler vereint die Eigenschaft des Proportional(P)-, Integral(I) und des Differenzial(D)-Reglers. Untern wird beschrieben wie die einzelnen Regler wirken. 
+Der PID-Regler besteht aus mehreren Relgern und dem D-Glied. Untern wird beschrieben wie die einzelnen Komponenten wirken. 
 
 \subsubsection{P-Regler}
 Der P-Regler wirkt linear. Dieser Regler gibt die Regelabweichung verstärkt und unverzögert mit dem Faktor $Kp$ weiter. Das Problem dabei ist, dass diese Abweichung bleibend ist und somit den Soll-Wert über- bzw. unterschiesst. Dieser Regler wirkt mittelschnell.\cite{website:rn-wissen_Regelungstechnik}\\
@@ -125,23 +126,87 @@ void D_Glied(float Kd, float error, float &previous_error, float dt, float &D){
 }
 \end{lstlisting}
 
+\subsubsection{PID-Regler}
+Beim PID-Regler werden die Eigenschafter der einzelnen Regler und dem D-Glied vereint.
+\begin{equation}
+y(t)=Kp*e(t)+Kd*e(t)\frac{d}{dt}+Kd*e(t)\frac{d}{dt}
+\end{equation}
+\begin{lstlisting}[language=C++,caption=D-Regler C++ Pseudocode]
+void PID_Regler(float P, float I, float D, float &PID){
+	PID = P + I + D;
+}
+\end{lstlisting}
 \subsection{Digitaler Low-Pass Filter}
 Ein Low-Pass Filter filtert hohe Frequenzen aus. Man kennt diesen Filter meist aus der Elektronik oder der Tontechnik. Beim Quadrocopter wird ein solcher Filter für das unterdrücken des Rauschens der IMU verwendet. Dieses Rauschen wird durch die Vibrationen der Motoren erzeugt und liegt ca. bei 133Hz.\\ \\
 Beim Digitalen Low-Pass Filter(DLPF) wird ein analoger RC-Low-Pass Filter emuliert.
-Herleitung? \\ \\ Vibrationen verursachen beim D-Glied starke auschläge, wenn diese hohe Amplituden haben. Auch wird dieser dann unbrauchbar, da die Regelabweichung durch die Vibrationen verfälscht wird.
+Herleitung? \\ \\ 
+Vibrationen verursachen beim D-Glied starke auschläge, wenn diese hohe Amplituden haben. Auch wird dieser dann unbrauchbar, da die Regelabweichung durch die Vibrationen verfälscht wird.
+\newpage
 \section{Äusserer Aufbau}
 \subsection{Motoren}
+Die verwendeten Motoren sind sogenannte bürstenlose Motoren. Diese werden mit einem Electronic Speed Controller(ESC) angesteuert, da diese wie Drehstrommotoren funktionieren. Da ihre RPM von Spannung abhängig ist gibt man noch einen $Kv$-Wert an. So kann man mit der Formel
+\begin{equation}
+RPM=Kv*U
+\end{equation}
+die Rotationen pro Minute berechnen.\\ \\
+Beim meinem Quadrocopter handelt es sich um ReadyToSky RS2205 Motoren mit einem $Kv$ von 2300. Ich habe diese Motoren ausgesucht, da sie für genug Leistung bringen für einen Quadrocopter mit einer Rahmen länge von 250mm.(Bild l)
 \subsection{Akku}
+Der Akku versorgt alle Kompionenten, die Strom brauchen mit Strom. Im Quadrocopter wird ein LiPo Akku benutzt, der drei Zellen in Serie geschaltet hat mit einer Kapazität von 2.4Ah. Die miminale Spannung beträgt 11.1V. Es gibt noch das Entladerate, die als $C$-Rate angegeben wird. Mit mit der Kapazität multipliziert gibt es den maximalen Entladestrom an.\cite{website:fpvracing.ch_Mult_Komp}
+\begin{equation}
+A_{max}=Q*C
+\end{equation} (Bild r)\\ \\
+Man benutzt in Quadrocoptern meist LiPo Akkus, da sie eine hohe Energiedichte besitzen und viel Leistung abgeben können. Das aber hat auch zur Folge, dass man diese Akkus sorgfältig behandeln muss, da sie auch. im Extremfall, Feuer fangen oder explodieren können. So darf man die einzelnen Zellen nicht unter einer Spannung von 2.7V bringen. Desshalb wird der Akku auch an einem Akkuüberwacher angeschlossen, der piepst, wenn der Akku verbraucht ist. Auch braucht man ein Balancerladegerät, das kontrolliert, dass alle Zellen gleichmässug geladen werden. Eine hohe Kapazität garantiert nicht immer eine längere Flugzeit, da mehr Kapazität auch mehr Gewicht bedeutet.
+\newpage
 
 \section{Der Flightcontroller}
-
-\subsection{Genereller Aufbau}
-
+Der Flightcontroller ist das Herz des Quadrocopter er liest alle Sensoren und gibt den ESCs die Steuerimpulse. In dem Kapitel wird zuerst in die wichtigsten Komponenten eingegangen, dann wird der Design-, Bau und Propgrammierprozess beschrieben.
+\subsection{Komponenten}
 \subsubsection{Microcontroller}
+Der Microcontroller der auf dem FC benutzt wird ist ein ARM-Cortex-M7 STM32F722RET6 Microcontroller von STMicroelectronics. Dieser besitzt alle Schnittstellen um die einzelen Sensoren und andere Komponenten auszulesen und anzusteuern. Da dieser nicht genug Pins hat, wird noch ein zweiter Microcontroller benutzt und zwar der ATMega328P, der auch auf dem Arduino/Genuino UNO zu finden ist. Dieser liest den Drucksensor und einige ADCs aus und kommuniziert mit dem I2C-Protokoll mit dem STM32. \\ \\
+Microcontroller können anders als Mikroprozessoren ohne Zusatz Pehpetrie benutzt werden, da sie schon einen Flash, RAM etc. besitzen. Aber dies kommt mit einer tieferen Taktrate daher. Dies stört aber den Quadrocopter ist da diese völlig ausreichend ist. Der Hauptcontroller lauft mit einer Taktfrequenz von 200MHz.
 
 \subsubsection{Sensoren}
+Die wichtigsten Sensoren des Quadrocopter sind der Gyrosensor und der Beschleunigungssensor. In dem FC wurde eine ICM-20689 von TDK InvSense benutzt. Dieser hat beide Sensoren in einem Chip integriert und wird per SPI-Protokoll ausgelesen. Als Backup wird ein MPU-6050 benutzt, auch vom gleichen Hersteller, dieser wird mit dem langsameren I2C-Protokoll ausgelesen. \\
+
+\begin{wrapfigure}[6]{r}{0.5\textwidth}
+\centering
+\includegraphics[width=0.5\textwidth]{1920px-Mpu6050-HD.jpg}
+\caption[https://de.wikipedia.org/wiki/TDK]{Dice des MPU6050}
+\end{wrapfigure}
+Beide sind sogenannte MEMS-Sensoren, diese werden Direkt auf den Siliziumwaver der Chips realisiert. (Bild) Man ätzt die Sensorstrukturen und deren auslese Schaltung auf einen Chip. 
+\newpage
+Da der Gyrosensor nur Winkelgeschwindigkeit, bei den Sensoren $\frac{^\circ}{s}$ und nicht $\frac{rad}{s}$ misst muss diese noch mit der Loop-Zeit verrechnet werden um den Winkel zu bekommen.
+\begin{equation}
+Grad=\omega*dt
+\end{equation}
+Wenn man den Absoluten Winkel alleine mit dem Gyrosensor misst hat dieser in der Zeit einen Drift. Zum einen wird das durch das Rauschen im Sensor verurasacht und zu anderen auch von einem nicht genauen Loop-Zeit. Auch kann nicht der Anfangswinkel bestimmt werden und man müsste den Quadrocopter immer vom Boden aus starten. Deswegen braucht man da den Beschleunigungssensor. Dieser misst die Beschleunigung auf allen Achsen relativ zur Erdbeschleunigug. Beim Stillstand misst er also
+$
+\begin{pmatrix}
+0\\ 
+0\\ 
+1
+\end{pmatrix}
+\vec{g}
+$. Man kann einfach die Norm des Vektors nehmen und mit der Beschleunigung an der gewünschten Achse verrechnen um dann den Winkel zu bekommen.
+\begin{equation}
+Grad=
+\left \|
+\begin{pmatrix}
+a_{x}\\ 
+a_{y}\\ 
+a_{z}
+\end{pmatrix}
+\right \|
+\vec{g}*\frac{180}{\pi}
+\end{equation}
+So hat man den absoluten Winkel mit zwei Sensoren gemessen und muss diese nur noch Kombinieren. Dies geschieht mit der Formel des Komplementärflilters. Man muss auch beachten das man nur den Absoluten Winkel nur für die Nick-und Rollachse berechnen kann da, für die Gierachse noch ein Magnetometer nötig wäre für eine Null-Referenz.
+\begin{equation}
+Grad_{komp}=0.96*Grad_{Gyro}+0.04*Grad_{Accl}
+\end{equation}
+Man gibt dem Winkel aus dem Beschleunigungssensor einen tiefen Faktor da dieser Winkel nicht mehr genau stimmen wird, wenn der Quadrokopter in eine Richtung beschleunigen würde, dies wird erst bei starken Beschleunigungen der Fall sein, sonst stimmt dieser Wert ungefähr. Aber so kann man den Anfangswinkel des Quadrokopter bestimmen, ihn auch aus der Hand starten lassen und bekommt auch noch stabilere Werte. (Barometer ?) 
 
 \subsubsection{Empfänger}
+Als Empfänger wir dein NRF24L01 Breakoutboard mit PA und LNA benutzt. Der ist ein 2.4GHz Sender und Empfänger von der Firma Nordic Semiconductor. Die Kommunikation erfolgt digital und der Chip besitzt auch eine Zyklische Redundanzprüfung(CRC). Damit wird kontrolliert, ob ein Datenpaktet fehlerhafte Bits besitzt. Allenfalls wird es repariert oder verworfen. PA heisst Power Amplifying und bedeutet, dass das Signal verstärkt wird und so grössere Reichweiten erreicht werden können und LNA bedeutet Low Noise Amplifying und beseutet, dass schwache Empfangssignale verstärkt werden.\cite{website:electronics.stackexchange.com_WhatisPALNA} Vom Hersteller wird eine Reichweite vom bis zu einem Kilometer versprochen aber in einer Wohnsiedlung kommt man mit Sichtkontakt bis zu 300m, was ausreichend genug ist.
 
 \subsubsection{Schnitstellen}
 

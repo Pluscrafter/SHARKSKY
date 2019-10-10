@@ -19,6 +19,65 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
+    \entry{website:fpvracing.ch_Mult_Komp}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=1239e69b7979f4c6964c9ebae827093f}{%
+           family={fpvracing.ch},
+           familyi={f\bibinitperiod}}}%
+      }
+      \strng{namehash}{1239e69b7979f4c6964c9ebae827093f}
+      \strng{fullhash}{1239e69b7979f4c6964c9ebae827093f}
+      \strng{bibnamehash}{1239e69b7979f4c6964c9ebae827093f}
+      \strng{authorbibnamehash}{1239e69b7979f4c6964c9ebae827093f}
+      \strng{authornamehash}{1239e69b7979f4c6964c9ebae827093f}
+      \strng{authorfullhash}{1239e69b7979f4c6964c9ebae827093f}
+      \field{sortinit}{f}
+      \field{sortinithash}{fb0c0faa89eb6abae8213bf60e6799ea}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{hour}{14}
+      \field{howpublished}{Webseite}
+      \field{month}{Oktober}
+      \field{title}{Multicopter Komponenten}
+      \field{year}{2019}
+      \verb{urlraw}
+      \verb https://fpvracing.ch/de/content/8-multicopter-komponenten
+      \endverb
+      \verb{url}
+      \verb https://fpvracing.ch/de/content/8-multicopter-komponenten
+      \endverb
+    \endentry
+    \entry{website:electronics.stackexchange.com_WhatisPALNA}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=124990b44d63106951d1e6ac1e570465}{%
+           family={Name)},
+           familyi={N\bibinitperiod},
+           given={Sparky256\bibnamedelima (Fiktiver},
+           giveni={S\bibinitperiod\bibinitdelim (\bibinitperiod}}}%
+      }
+      \strng{namehash}{124990b44d63106951d1e6ac1e570465}
+      \strng{fullhash}{124990b44d63106951d1e6ac1e570465}
+      \strng{bibnamehash}{124990b44d63106951d1e6ac1e570465}
+      \strng{authorbibnamehash}{124990b44d63106951d1e6ac1e570465}
+      \strng{authornamehash}{124990b44d63106951d1e6ac1e570465}
+      \strng{authorfullhash}{124990b44d63106951d1e6ac1e570465}
+      \field{extraname}{1}
+      \field{sortinit}{N}
+      \field{sortinithash}{98cf339a479c0454fe09153a08675a15}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{hour}{16}
+      \field{howpublished}{Webseite}
+      \field{month}{Oktober}
+      \field{title}{What is a PA/LNA?}
+      \field{year}{2019}
+      \verb{urlraw}
+      \verb https://electronics.stackexchange.com/questions/237267/what-is-a-pa-lna/237278
+      \endverb
+      \verb{url}
+      \verb https://electronics.stackexchange.com/questions/237267/what-is-a-pa-lna/237278
+      \endverb
+    \endentry
     \entry{website:rn-wissen_Regelungstechnik}{misc}{}
       \name{author}{1}{}{%
         {{hash=341957ae64a61c84f71e57f4c2b29762}{%
@@ -33,6 +92,7 @@
       \strng{authorbibnamehash}{341957ae64a61c84f71e57f4c2b29762}
       \strng{authornamehash}{341957ae64a61c84f71e57f4c2b29762}
       \strng{authorfullhash}{341957ae64a61c84f71e57f4c2b29762}
+      \field{extraname}{2}
       \field{sortinit}{N}
       \field{sortinithash}{98cf339a479c0454fe09153a08675a15}
       \field{labelnamesource}{author}
