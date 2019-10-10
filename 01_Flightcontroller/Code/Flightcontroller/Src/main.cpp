@@ -56,6 +56,8 @@
 #define MPU6000_ENABLE 			0
 #define ICM20689_ENABLE 		1
 
+#define MOTORCALIB				0
+
 #define ICM20689_OFFSET_FIND  	0
 
 #define PID_TRUE_ANGLE			1
@@ -266,6 +268,38 @@ int main(void)
   HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
   HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_3);
   HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
+#if MOTORCALIB == 1
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_1,2048);
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_2,2048);
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_3,2048);
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_4,2048);
+
+	HAL_Delay(5000);
+
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_1,1024);
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_2,1024);
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_3,1024);
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_4,1024);
+
+	HAL_Delay(5000);
+
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_1,1100);
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_2,1100);
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_3,1100);
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_4,1100);
+
+	HAL_Delay(2000);
+
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_1,1024);
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_2,1024);
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_3,1024);
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_4,1024);
+
+
+	for(;;){
+
+	}
+#endif
 
   // INIT GIMBAL
   HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
@@ -368,8 +402,7 @@ int main(void)
 	  imu.t_ypr[0] = imu.t_ypr[0] * 0.96 + acangle[1] * 0.04;
 	  imu.t_ypr[1] = imu.t_ypr[1] * 0.96 + acangle[0] * 0.04;
 
-	  //dlpf
-	  https://kiritchatterjee.wordpress.com/2014/11/10/a-simple-digital-low-pass-filter-in-c/ [9.10.19 22:52]
+	  //dlpf https://kiritchatterjee.wordpress.com/2014/11/10/a-simple-digital-low-pass-filter-in-c/ [9.10.19 22:52]
 	  f_ypr[0] = f_ypr[0] - (alpha * (f_ypr[0] - imu.t_ypr[0]));
 	  f_ypr[1] = f_ypr[1] - (alpha * (f_ypr[1] - imu.t_ypr[1]));
 	  f_ypr[2] = f_ypr[2] - (alpha * (f_ypr[2] - imu.ypr[2]));
