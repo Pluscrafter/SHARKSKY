@@ -1,13 +1,48 @@
 \documentclass[12pt,a4paper, ngerman]{article}
 \usepackage{babel}
-\usepackage[round]{natbib}
+\usepackage[style=numeric]{biblatex}
+\addbibresource{Maturarbeit.bib}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+ 
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+ 
+\lstset{style=mystyle}
+
 \begin{document}
-\bibliographystyle{alphadin}
 \title{\large Maturitätsarbeit an der Kantonsschule Zürich Nord \\ \Huge Regelungstechnik \\ \huge PID-Parameter anhand einem Quadrocopter erforschen}
 \date{\today}
-\author{Charpoan Kong \\ M5d \\ Kantonsschule Zürich Nord}
+\author{Charpoan Kong \\ M6d \\ Kantonsschule Zürich Nord}
 \maketitle
 \pagenumbering{gobble}
+
+
+
+
 
 \newpage
 \clearpage
@@ -17,23 +52,83 @@
 \pagenumbering{arabic}
 
 \section{Einleitung}
+Ein Quadrocopter ist ein Flugobjekt mit 4 Propellern. In der Vergangenheit wurden schon Versuche mit Flugobjekten mit 4 Propellern gemacht z.B. wie der Luftfahrtpionier Étienne OEhmichen. der 1920 den Oehmichen No. 2 gebaut hatte. Damals waren die Propeller elastisch und man konnte mit Seilzügen den Anstellwinkel der Propeller einstellen. Er konnte damit einige Rekorde aufstellen.\cite{website:Wikipedia_Quadrocopter}\\
 
+In der heutigen Zeit finden Quadrocopter viele Anwendungen, wie z.B. bei Suchaktionen, im Militär, oder auch als Spielzeug. Mit der schnellen entwicklung von Mikroprozessoren wurden Quadrocopter immer kleiner und einfacher zu realisieren. Auch können damit teurere Helikopterflüge für Kartographie oder Luftaufnahmen billiger realisiert werden.\\
+
+Mit dieser Arbeit will ich mit dem Bau und dessen Regelung befasssen. Der Quadrocopter wird selbst gebau mit dem Hauptziel den Flightcontroller selbst zu designen, bauen und programmieren. So sollte die Regelung selbst implementiert werden. Dannach sollten Versuche gemacht werden, die bestimmen sollten, wie der PID-Regler stabiler gemacht werden kann und wie ungleichheiten, wie sie durch Vibration entstehen, auszugleichen.
 \newpage
 \section{Was ist ein Quadrocopter?}
-Ein Quadrocopter ist ein Flugobjekt mit 4 Propellern. 
+Ein Qadrocopter ist wie in der Einleitung beschrieben ein Flugobjekt. Man könnte meinen, dass man einen stabilen Flug erreichen kann, wenn man den vier Propellern den gleichen Schub gibt. Aber dies ist leider nicht möglich, da viele Umwelteinflüsse einen stabilen Zustand verhindern wie z.B. Wind, unterschiede in den Rotoren oder Motoren, assymetrie des Rahmens etc. So muss ein Computer, der Flightcontroller(FC), das Gleichgewicht erhalten, indem dieser den Schub der vier Motoren so steuert das der Quadrocopter im Gleichgewicht ist oder dieser einen anderen bestimmten Winkel hält.\\
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{MotionDE.jpg}
+\caption[https://fpvracing.ch/de/content/7-grundsatzliche-funktion-quadrocopter-multicopter]{Drehrichtung und Schub bei verschiedenen Steuereingaben }
+\end{figure}\\
+Man sieht in dieser Abbildung welche Rotationsrichtung die Motoren haben. Die benachbarten Motoren müssen eine gegensätzliche rotation haben, da sonst der Quadrocopter zum rotieren kommt. So wird das Drehmoment des anderen Motors ausgeglichen. Auch wird gezeigt, dass man den Quadrocopter mit erhöhen bzw. erniedrigen der Motorleistung der richtigen Motoren, diesen in die gewünschte Richtung steuern kann. Der FC hält dieses Gleichgewicht mit einem Proportional-,Integral- und Differenzial-Regler(PID-Regler).
 
-Geschichte ... 
 
-In der heutigen Zeit finden Quadrocopter viele Anwendungen, wie z.B. im Militär, bei Suchaktionen oder auch als Spielzeug.
+\section{PID-Regler und Filter}
+\subsection{Was ist ein Regler?}
+Eine Regelung ist ein Steuerung mit Rückkoppelung. Es wird ein Wert z.B. die Drehzahl eines Motors überwacht und je nach gewünschter Drehzahl, das Drehmoment des Motors geregelt, dass er auch diesen halten kann, auch wenn eine Last am Motor hängt.\cite{website:rn-wissen_Regelungstechnik}\\
+\begin{wrapfigure}[6]{r}{0.4\textwidth}
+\centering
+\includegraphics[width=0.4\textwidth]{Regelkreis1.png}
+\caption[https://rn-wissen.de/wiki/images/2/25/Regelkreis1.png]{Der Regelkreis}
+\end{wrapfigure}
+Der Regelkreis misst die Regelgrösse z.B. mit einem Sensor. Dann wird dieser mit dem Soll-Wert verglichen um die Regelabweichung zu bestimmen. So kann ein z.B. Motor gestellt werden damit dieser sich dem Soll-Wert nähert.\\ \\ \\ \\
 
-Mit dieser Arbeit will ich mit dem Bau und dessen Regelung befasssen. Der Quadrocopter wird selbst gebau mit dem Hauptziel den Flightcontroller selbst zu designen, bauen und programmieren. So sollte die Regelung selbst implementiert werden. Dannach sollten Versuche gemacht werden, die bestimmen sollten, wie der Regler stabiler gemacht werden kann.
+Die Regelabweichung kann dabei einfach mit der Differenz des Ist-Wertes $x$ mit dem Soll-Wertes $w$ bestimmt werden.
+\begin{equation}
+e(t)=w-x
+\end{equation}
+\begin{wrapfigure}[8]{l}{0.4\textwidth}
+\centering
+\includegraphics[width=0.4\textwidth]{Regelkreis2.png}
+\caption[https://rn-wissen.de/wiki/images/5/5d/Regelkreis2.png]{Wirkungsweise des Regelkreises}
+\end{wrapfigure}
+In der Abbildung 3 sieht man, wie vorher beschrieben, wie ein solcher Regelkreis funktionert. In der Regelungstechnik wird versucht einen solchen Regelkreis mathematisch zu modellieren. In dem Kapitel wird nur der PID-Regler und seine Komponenten besprochen, da dieser häufig bei Quadrocoptern benutzt wird.
+\\ \\ \\
+Der PID-Regler vereint die Eigenschaft des Proportional(P)-, Integral(I) und des Differenzial(D)-Reglers. Untern wird beschrieben wie die einzelnen Regler wirken. 
 
-\section{PID-Regelung und Filter}
-\subsection{PID-Reglelung}
-Eine Regelung ist ein Steuerung mit Rückkoppelung. Es wird ein Wert z.B. die Drehzahl eines Motors überwacht und je nach gewünschter Drehzahl, die Spannung des Motors geregelt, dass er auch diesen halten kann, auch wenn eine Last am Motor hängt.    
+\subsubsection{P-Regler}
+Der P-Regler wirkt linear. Dieser Regler gibt die Regelabweichung verstärkt und unverzögert mit dem Faktor $Kp$ weiter. Das Problem dabei ist, dass diese Abweichung bleibend ist und somit den Soll-Wert über- bzw. unterschiesst. Dieser Regler wirkt mittelschnell.\cite{website:rn-wissen_Regelungstechnik}\\
+\begin{equation}
+y(t)=Kp*e(t)
+\end{equation}
+\begin{lstlisting}[language=C++,caption=P-Regler C++ Pseudocode]
+void P_Regler(float Kp, float error, float &P){
+	P = kp * error;
+}
+\end{lstlisting}
 
-\subsection{Filter 1}
+\subsubsection{I-Regler}
+Beim Integralregler wird die Regelabweichung über die Zeit summiert und mit dem Faktor $Ki$ verstärkt. Dabei werden Abweichungen volständig eliminiert, da dieser Regelwert immer anwächst solange die Regelabweichung nicht Null ist. Dieser Regler wirkt langsam.\cite{website:rn-wissen_Regelungstechnik}\\
+\begin{equation}
+y(t)=Ki\int_{0}^{t}e(t)dt
+\end{equation}
+\begin{lstlisting}[language=C++,caption=I-Regler C++ Pseudocode]
+void I_Regler(float Ki, float error, float &I ){
+	I += I+error*Ki;
+}
+\end{lstlisting}
 
+\subsubsection{D-Glied}
+Das Differenzialglied schaut auf die Differenz der Regelabweichung zur vorherigen Regelabweichung und wird mit dem Faktor $Kd$ verstärkt. Desshalb reagiert dieser sehr schnell und gibt den den beiden anderen Vorhaltezeit. Differenzialglied ist kein Regler da es alleine nichts regleln kann sondern nur auf Veränderungen in der Regelabweichung reagiert.\cite{website:rn-wissen_Regelungstechnik}\\
+\begin{equation}
+y(t)=Kd*e(t)\frac{d}{dt}
+\end{equation}
+\begin{lstlisting}[language=C++,caption=D-Regler C++ Pseudocode]
+void D_Glied(float Kd, float error, float &previous_error, float dt, float &D){
+	D = Kd * (error - previous_error);
+	previous_error = error;
+}
+\end{lstlisting}
+
+\subsection{Digitaler Low-Pass Filter}
+Ein Low-Pass Filter filtert hohe Frequenzen aus. Man kennt diesen Filter meist aus der Elektronik oder der Tontechnik. Beim Quadrocopter wird ein solcher Filter für das unterdrücken des Rauschens der IMU verwendet. Dieses Rauschen wird durch die Vibrationen der Motoren erzeugt und liegt ca. bei 133Hz.\\ \\
+Beim Digitalen Low-Pass Filter(DLPF) wird ein analoger RC-Low-Pass Filter emuliert.
+Herleitung? \\ \\ Vibrationen verursachen beim D-Glied starke auschläge, wenn diese hohe Amplituden haben. Auch wird dieser dann unbrauchbar, da die Regelabweichung durch die Vibrationen verfälscht wird.
 \section{Äusserer Aufbau}
 \subsection{Motoren}
 \subsection{Akku}
@@ -97,7 +192,9 @@ Eine Regelung ist ein Steuerung mit Rückkoppelung. Es wird ein Wert z.B. die Dr
 \newpage
 \section{Quellenverzeichnis}
 \subsection{Literaturverzeichnis}
+\printbibliography
 \subsection{Abbildungsverzeichnis}
+\listoffigures
 \subsection{Personenverzeichnis}
 
 \end{document}
