@@ -1,4 +1,5 @@
 \documentclass[12pt,a4paper, ngerman]{article}
+\usepackage{a4wide}
 \usepackage{babel}
 \usepackage{amsmath}
 \usepackage[style=numeric]{biblatex}
@@ -47,7 +48,7 @@
 
 \newpage
 \clearpage
-\pagenumbering{gobble}
+\pagenumbering{Roman}
 \tableofcontents
 \newpage
 \pagenumbering{arabic}
@@ -77,8 +78,7 @@ Eine Regelung ist ein Steuerung mit Rückkoppelung. Es wird ein Wert z.B. die Dr
 \includegraphics[width=0.4\textwidth]{Regelkreis1.png}
 \caption[https://rn-wissen.de/wiki/images/2/25/Regelkreis1.png]{Der Regelkreis}
 \end{wrapfigure}
-Der Regelkreis misst die Regelgrösse z.B. mit einem Sensor. Dann wird dieser mit dem Soll-Wert verglichen um die Regelabweichung zu bestimmen. So kann ein z.B. Motor gestellt werden damit dieser sich dem Soll-Wert nähert.\\ \\ \\ \\
-
+Der Regelkreis misst die Regelgrösse z.B. mit einem Sensor. Dann wird dieser mit dem Soll-Wert verglichen um die Regelabweichung zu bestimmen. So kann ein z.B. Motor gestellt werden damit dieser sich dem Soll-Wert nähert.\\ \\ \\ \\ \\ \\ \\
 Die Regelabweichung kann dabei einfach mit der Differenz des Ist-Wertes $x$ mit dem Soll-Wertes $w$ bestimmt werden.
 \begin{equation}
 e(t)=w-x
@@ -93,7 +93,8 @@ In der Abbildung 3 sieht man, wie vorher beschrieben, wie ein solcher Regelkreis
 Der PID-Regler besteht aus mehreren Relgern und dem D-Glied. Untern wird beschrieben wie die einzelnen Komponenten wirken. 
 
 \subsubsection{P-Regler}
-Der P-Regler wirkt linear. Dieser Regler gibt die Regelabweichung verstärkt und unverzögert mit dem Faktor $Kp$ weiter. Das Problem dabei ist, dass diese Abweichung bleibend ist und somit den Soll-Wert über- bzw. unterschiesst. Dieser Regler wirkt mittelschnell.\cite{website:rn-wissen_Regelungstechnik}\\
+Der P-Regler wirkt linear. Dieser Regler gibt die Regelabweichung verstärkt und unverzögert mit dem Faktor $Kp$ weiter. Das Problem dabei ist, dass diese Abweichung bleibend ist und somit den Soll-Wert über- bzw. unterschiesst. Dieser Regler wirkt mittelschnell.\cite{website:rn-wissen_Regelungstechnik}
+\newpage
 \begin{equation}
 y(t)=Kp*e(t)
 \end{equation}
@@ -167,14 +168,14 @@ Microcontroller können anders als Mikroprozessoren ohne Zusatz Pehpetrie benutz
 
 \subsubsection{Sensoren}
 Die wichtigsten Sensoren des Quadrocopter sind der Gyrosensor und der Beschleunigungssensor. In dem FC wurde eine ICM-20689 von TDK InvSense benutzt. Dieser hat beide Sensoren in einem Chip integriert und wird per SPI-Protokoll ausgelesen. Als Backup wird ein MPU-6050 benutzt, auch vom gleichen Hersteller, dieser wird mit dem langsameren I2C-Protokoll ausgelesen. \\
-
-\begin{wrapfigure}[6]{r}{0.5\textwidth}
+\begin{wrapfigure}[7]{r}{0.5\textwidth}
 \centering
 \includegraphics[width=0.5\textwidth]{1920px-Mpu6050-HD.jpg}
 \caption[https://de.wikipedia.org/wiki/TDK]{Dice des MPU6050}
 \end{wrapfigure}
-Beide sind sogenannte MEMS-Sensoren, diese werden Direkt auf den Siliziumwaver der Chips realisiert. (Bild) Man ätzt die Sensorstrukturen und deren auslese Schaltung auf einen Chip. 
+Beide sind sogenannte MEMS-Sensoren, diese werden Direkt auf den Siliziumwaver der Chips realisiert. (Bild) Man ätzt die Sensorstrukturen und deren auslese Schaltung auf einen Chip. MEMS bedeutet microelectromechanical systems. Das bedeutet, dass diese Sensoren auf einer mechanischen Basis funktionieren.
 \newpage
+\noindent
 Da der Gyrosensor nur Winkelgeschwindigkeit, bei den Sensoren $\frac{^\circ}{s}$ und nicht $\frac{rad}{s}$ misst muss diese noch mit der Loop-Zeit verrechnet werden um den Winkel zu bekommen.
 \begin{equation}
 Grad=\omega*dt
@@ -208,16 +209,32 @@ Man gibt dem Winkel aus dem Beschleunigungssensor einen tiefen Faktor da dieser 
 \subsubsection{Empfänger}
 Als Empfänger wir dein NRF24L01 Breakoutboard mit PA und LNA benutzt. Der ist ein 2.4GHz Sender und Empfänger von der Firma Nordic Semiconductor. Die Kommunikation erfolgt digital und der Chip besitzt auch eine Zyklische Redundanzprüfung(CRC). Damit wird kontrolliert, ob ein Datenpaktet fehlerhafte Bits besitzt. Allenfalls wird es repariert oder verworfen. PA heisst Power Amplifying und bedeutet, dass das Signal verstärkt wird und so grössere Reichweiten erreicht werden können und LNA bedeutet Low Noise Amplifying und beseutet, dass schwache Empfangssignale verstärkt werden.\cite{website:electronics.stackexchange.com_WhatisPALNA} Vom Hersteller wird eine Reichweite vom bis zu einem Kilometer versprochen aber in einer Wohnsiedlung kommt man mit Sichtkontakt bis zu 300m, was ausreichend genug ist.
 
-\subsubsection{Schnitstellen}
-
+\subsubsection{Schnittstellen}
+Damit der Mikrocontroller mit den Sensoren und der restlichen Pehpetrie kommunizeren kann braucht es Schnittstellen und Protokolle die diese Komponenten verbindedn. Zuerst wird 
 
 \subsection{Leiterplatte}
-
+Auf Leiterplatte oder auch Printed Circuit Board(PCB) wird die Schaltung des FC realisiert. Dieses besteht aus Kunststoff mit den aufgeätzten Kupferbahnen und den verzinnten Lötstellen.
 \subsubsection{Design}
+Zuerst habe ich mir überlegt was für einen Microcontroller ich wählen sollte. Bei meinen ersten Versuchen mit dem Raspberry gingen schief, da der Regler nicht schnell genug reagierte und eine nicht konstates Regelverhalten gezeigt hat. Einerseits lief ein Betriebsystem pararell zum Flightcontroller, adererseits war die Regelung nicht Echtzeit genug. Desswegen habe ich im Internet nachgeschaut was für Microcontroller auf den meisten Quadroopter verbaut sind. Dort werden  meist MCU aus der STM32-Familie verwendet. So kam ich auf die Webseite von Oscar Liang\footnote{\label{foot:1}https://oscarliang.com/f1-f3-f4-flight-controller/ aufgerufen am 31.03.2019} bei der die einzelnen MCU-Generationen aufgelistet waren mit den Vor-und Nachteilen. Ich entschied mich für die neuste Generation aus dieser MCU-Familie, einen STM32F7xx MCU zu benutzen. Nachher habe ich vorhandene Boards angschaut und gesehen, das die meisten den STM32F722RET6 benutzen aus dieser MCU-Generation. Als nächstes überlegte ich mir was für einen Gyro-und Beschleunigungssensor ich bentzen wolle. Ich habe schon eine MPU-6050 IMU aber ich wollte noch einen mit SPI-Protokoll, da dies schneller ist, und der andere als Backup, so recherchierte ich was für IMU's die FC's benutzen\footnote{\label{foot:2}https://blog.dronetrest.com/inertial-sensor-comparison-mpu6000-vs-mpu6050-vs-mpu6500-vs-icm20602/ aufgerufen am 31.03.2019} und entschied mich für den ICM-20689. Als Empfänger habe ich einen nRF24L01 PA + LNA gewählt.A ls Backup wird noch ein PPM Eingang eingebaut für die standart Funkübertragung über eine normale Fernbedienung. Da für die Versuche Daten gebraucht werden, wird eine microSD-Karten Schnittstelle eingebaut, um die Daten aufzuzeichnen. Damit der Flightcontroller mit dem PC kommunizieren kann um zu Debuggen muss ein FTDI-Chip(F232RL) eingebaut werden damit wird das UART-Protokoll, in ein für den PC verständliches Protokoll übersetzt. Um die Höhe zu bestimmen habe ich mich für den BMP280 Drucksensor ausgewählt um die barometrische Höhe zu bestimmen. Da dieser für das auslesen eine lange Zeit braucht habe ich überlegt noch eine NebenMCU einzubauen. Deshalb habe ich den ATMega328 gewählt da er auch auf den Arduino UNO drauf ist und ich mich damit schon auskenne. Über diese MCU werden auch die Ultraschallsensoren ausgelesen, die eine genauere Höhenmessung ermöglicht, aber nur bis zu sechs Metern. Da die ESC's einen 5V Versorgungsausgang haben muss noch ein Spannungsregler  eigebaut werden, da die meisten IC's 3.3V braucchen, der Schulmechaniker Herr Thurnherr hat mir den LM3940 empfohlen.\\ \\
+\begin{wrapfigure}[11]{r}{0.5\textwidth}
+\centering
+\includegraphics[width=0.4\textwidth]{egl.png}
+\caption[Screenshot Eagle FC brd file]{Autodesk Eagle}
+\end{wrapfigure}
+Die Leiterplatte wird mit den Program Eagle von Autodesk designt. In dem Programm kann man die einzelnen Bauteile zusammensetzen und verbinden(Siehe Abbildung 5).Ich musste nach dem Datenblatt der einzelenen IC's, Konsendatoren und Wiederstände einbauen. Die Schaltbilder für die einzelnen IC's, die nicht schon in der Standartbibliothek vorhanden sind, habe ich aus dem Internet heruntergeladen. Herr Thurnherr hat mich dabei unterstützt und alle Fragen beantwortet. Nach mehreren Kontrollen wurde die Leiterplatte bei JLCPCB und die einzelenen Teile bei LCSC, Arrow, RS und Conrad bestellt. Dazu wurde noch eine Schablone für das SMD-löten bestellt. 
 
 \subsubsection{Bau}
+Beim Zusammensetzen des FC wird ein spezielles Lötverfahren gebraucht und zwar das SMD reflowing. Damit man die Komponenten nicht per Hand löten muss wird mit einer Schablone Lötpaste, die Flussmittel und das Lötzinn erhalten, aufgetragen. Dann wird die Schablone entfernt und die Teile werden plaziert. Dies geschieht im industriellen Rahmem mit sogenannten "Pick and Place" Maschienen. Später wird die Leiterplatte in den Ofen getan und nach einer bestimmten Temperaturkurve erhitzt, bis die Komponenten verlötet sind\cite{website:sauter-elektronik.de_reflow}.
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.4\textwidth]{reflow.png}
+\caption[http://www.comtec-crystals.com/service-5.php]{Temperaturkurve für Reflowlöten}
+\end{figure} \\
+Da die Leiterplatte doppelseitig ist kann man hier nicht auf beiden Seiten das Reflow-Verfahren benutzen. Deshalb wurde Zuerst auf der Rückseite Lötpaste für den ATMega, dessen Quarzoszillator und dem SD-Kartenslot aufgetragen und die Komponenten wurden platziert. Dann wurden diese mit dem Heissluftföhn verlötet. Um das Herausfallen der Teile zu verhindern werden sie mit hitzebeständigen Klebeband fixiert.
+Dann wurde auf einer Holzplatte Löcher an den Positionen der Verlöteten Komponenten gebohrt. Damit wird erreicht, dass man die Vorderseite, Plan auf dieser Holzplatte gelegt werden kann. Mit den restlichen PCBs, man kann nur fünf auf einmal bestellen, wurde ein Rahmen erstellt um so das teilweise gelötete Board zu fixieren. Dann wurde die Schablone ausgerichtet und festgemacht. So konnte man mit lötpaste und einem Spachtel die Löcher und somit auch die Lötstellen mit Lötpaste füllen. Dann wurde die Schablone entfernt. Mithilfe des Mikroskops wurden die Teile dann auf der Leiterplatte plaziert. Im Ofen wurden sie dann ungefähr nach der Temperaturkurve gebacken und so war die Vorderseite gelötet. Die Hinterseite wurden dann per Hand fertig gelötet worden. Dann wurden nur noch die Konnektoren angelötet und der Flightcontroller ist fertig zum programmieren.
 
 \subsection{Programmierung}
+
 
 \subsubsection{Motoren und Timing}
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.10.10)  10 OCT 2019 16:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.10.10)  10 OCT 2019 22:50
 entering extended mode
 **./Maturarbeit.tex
 (Maturarbeit.tex
@@ -20,6 +20,12 @@ File: size12.clo 2019/08/27 v1.4j Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
+(C:\Users\Pluscrafter\AppData\Roaming\MiKTeX\2.9\tex/latex/a4wide\a4wide.sty
+Package: a4wide 1994/08/30
+
+(C:\Users\Pluscrafter\AppData\Roaming\MiKTeX\2.9\tex/latex/ntgclass\a4.sty
+Package: a4 2004/04/15 v1.2g A4 based page layout
+))
 (D:\Programs\MiKTeX\tex/generic/babel\babel.sty
 Package: babel 2019/09/27 3.34 The Babel package
 
@@ -479,18 +485,18 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (Maturarbeit.aux)
 \openout1 = `Maturarbeit.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
@@ -499,8 +505,8 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Maturarbeit.bbl' found.
  (Maturarbeit.bbl)
-Package biblatex Info: Reference section=0 on input line 37.
-Package biblatex Info: Reference segment=0 on input line 37.
+Package biblatex Info: Reference section=0 on input line 38.
+Package biblatex Info: Reference segment=0 on input line 38.
 
 (C:\Users\Pluscrafter\AppData\Roaming\MiKTeX\2.9\tex/context/base/mkii\supp-pdf
 .mkii
@@ -544,12 +550,12 @@ rarbeit.toc
 \openout4 = `Maturarbeit.toc'.
 
  [2]
-Underfull \hbox (badness 10000) in paragraph at lines 56--57
+Underfull \hbox (badness 10000) in paragraph at lines 57--58
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 58--59
+Underfull \hbox (badness 10000) in paragraph at lines 59--60
 
  []
 
@@ -557,46 +563,64 @@ Underfull \hbox (badness 10000) in paragraph at lines 58--59
 <MotionDE.jpg, id=17, 1003.75pt x 690.58pt>
 File: MotionDE.jpg Graphic file (type jpg)
 <use MotionDE.jpg>
-Package pdftex.def Info: MotionDE.jpg  used on input line 66.
-(pdftex.def)             Requested size: 390.0pt x 268.32407pt.
+Package pdftex.def Info: MotionDE.jpg  used on input line 67.
+(pdftex.def)             Requested size: 460.72124pt x 316.97519pt.
 <Regelkreis1.png, id=18, 452.69125pt x 280.04625pt>
 File: Regelkreis1.png Graphic file (type png)
 <use Regelkreis1.png>
-Package pdftex.def Info: Regelkreis1.png  used on input line 77.
-(pdftex.def)             Requested size: 155.99762pt x 96.50067pt.
+Package pdftex.def Info: Regelkreis1.png  used on input line 78.
+(pdftex.def)             Requested size: 184.28568pt x 114.00352pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 74--79
+Underfull \hbox (badness 10000) in paragraph at lines 75--80
 
  []
 
 [2 <./MotionDE.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 79--81
+Underfull \hbox (badness 10000) in paragraph at lines 80--83
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--81
+Underfull \hbox (badness 10000) in paragraph at lines 80--83
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--81
+Underfull \hbox (badness 10000) in paragraph at lines 80--83
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--81
+Underfull \hbox (badness 10000) in paragraph at lines 80--83
 
  []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--83
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--83
+
+ []
+
+
+Package wrapfig Warning: Collision between wrapping environments on input line 
+86.
 
 <Regelkreis2.png, id=22, 451.6875pt x 197.73875pt>
 File: Regelkreis2.png Graphic file (type png)
 <use Regelkreis2.png>
 Package pdftex.def Info: Regelkreis2.png  used on input line 88.
-(pdftex.def)             Requested size: 155.99762pt x 68.29234pt.
+(pdftex.def)             Requested size: 184.28568pt x 80.67815pt.
 
-Underfull \hbox (badness 1205) in paragraph at lines 89--89
-[]\OT1/cmr/m/n/12 Abbildung 3: Wir-kungs-wei-se
+Package wrapfig Warning: Stationary wrapfigure forced to float on input line 90
+.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--94
+
  []
 
 
@@ -605,14 +629,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 90--94
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 90--94
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 96--97
-
- []
+Package wrapfig Warning: Stationary wrapfigure forced to float on input line 95
+.
 
 [3 <./Regelkreis1.png> <./Regelkreis2.png>]
 (C:\Users\Pluscrafter\AppData\Roaming\MiKTeX\2.9\tex/latex/listings\lstlang1.st
@@ -626,42 +644,43 @@ File: lstlang1.sty 2019/09/10 1.8c listings language file
 (C:\Users\Pluscrafter\AppData\Roaming\MiKTeX\2.9\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
 )
-Underfull \hbox (badness 10000) in paragraph at lines 107--108
+Underfull \hbox (badness 10000) in paragraph at lines 108--109
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 118--119
+Underfull \hbox (badness 10000) in paragraph at lines 119--120
 
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 140--144
+Underfull \hbox (badness 10000) in paragraph at lines 141--145
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 140--144
+Underfull \hbox (badness 10000) in paragraph at lines 141--145
 
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 150--153
+Underfull \hbox (badness 10000) in paragraph at lines 151--154
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 157--159
+Underfull \hbox (badness 10000) in paragraph at lines 158--160
 
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 165--167
-
+Overfull \hbox (6.04073pt too wide) in paragraph at lines 166--168
+\OT1/cmr/m/n/12 Der Mi-cro-con-trol-ler der auf dem FC be-nutzt wird ist ein AR
+M-Cortex-M7 STM32F722RET6
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 169--170
+Underfull \hbox (badness 10000) in paragraph at lines 166--168
 
  []
 
@@ -669,65 +688,109 @@ Underfull \hbox (badness 10000) in paragraph at lines 169--170
 File: 1920px-Mpu6050-HD.jpg Graphic file (type jpg)
 <use 1920px-Mpu6050-HD.jpg>
 Package pdftex.def Info: 1920px-Mpu6050-HD.jpg  used on input line 173.
-(pdftex.def)             Requested size: 195.0pt x 81.95908pt.
-[7 <./1920px-Mpu6050-HD.jpg>] [8] [9] [10]
+(pdftex.def)             Requested size: 230.36061pt x 96.8158pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 170--175
+
+ []
+
+
+Underfull \hbox (badness 1418) in paragraph at lines 175--177
+[]\OT1/cmr/m/n/12 Beide sind so-ge-nann-te MEMS-Sensoren,
+ []
+
+[7 <./1920px-Mpu6050-HD.jpg>] [8]
+Underfull \hbox (badness 10000) in paragraph at lines 218--218
+[][][]\OT1/cmr/m/n/10 https://blog.dronetrest.com/inertial-sensor-comparison-mp
+u6000-vs-mpu6050-vs-mpu6500-vs-
+ []
+
+<egl.png, id=53, 1397.22pt x 813.0375pt>
+File: egl.png Graphic file (type png)
+<use egl.png>
+Package pdftex.def Info: egl.png  used on input line 221.
+(pdftex.def)             Requested size: 184.28568pt x 107.22452pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 218--223
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 218--223
+
+ []
+
+[9]
+<reflow.png, id=60, 240.9pt x 180.675pt>
+File: reflow.png Graphic file (type png)
+<use reflow.png>
+Package pdftex.def Info: reflow.png  used on input line 230.
+(pdftex.def)             Requested size: 184.28568pt x 138.21867pt.
+ [10 <./egl.png> <./reflow.png>] [11] [12]
 
 Package biblatex Warning: Month out of range or not an integer
 (biblatex)                at entry 'website:fpvracing.ch_Mult_Komp' on input li
-ne 260.
+ne 277.
 
 
 Package biblatex Warning: Month out of range or not an integer
 (biblatex)                at entry 'website:electronics.stackexchange.com_Whati
-sPALNA' on input line 260.
+sPALNA' on input line 277.
 
 
 Package biblatex Warning: Month out of range or not an integer
 (biblatex)                at entry 'website:rn-wissen_Regelungstechnik' on inpu
-t line 260.
+t line 277.
+
+
+Package biblatex Warning: Month out of range or not an integer
+(biblatex)                at entry 'website:sauter-elektronik.de_reflow' on inp
+ut line 277.
 
 
 Package biblatex Warning: Month out of range or not an integer
 (biblatex)                at entry 'website:Wikipedia_Quadrocopter' on input li
-ne 260.
+ne 277.
 
 (Maturarbeit.lof
-Overfull \hbox (61.3912pt too wide) in paragraph at lines 4--4
+Overfull \hbox (37.99586pt too wide) in paragraph at lines 4--4
  [][] []\OT1/cmr/m/n/12 https://fpvracing.ch/de/content/7-grundsatzliche-funkti
-on-quadrocopter- 
+on-quadrocopter-multicopter [][]  
  []
 
 )
 \tf@lof=\write5
 \openout5 = `Maturarbeit.lof'.
 
- [11] (Maturarbeit.aux)
+ [13] (Maturarbeit.aux)
 Package logreq Info: Writing requests to 'Maturarbeit.run.xml'.
 \openout1 = `Maturarbeit.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 12052 strings out of 492452
- 201744 string characters out of 3133997
- 701389 words of memory out of 3000000
- 16274 multiletter control sequences out of 15000+200000
- 11217 words of font info for 41 fonts, out of 3000000 for 9000
+ 12100 strings out of 492452
+ 202778 string characters out of 3133997
+ 713387 words of memory out of 3000000
+ 16312 multiletter control sequences out of 15000+200000
+ 11444 words of font info for 42 fonts, out of 3000000 for 9000
  1143 hyphenation exceptions out of 8191
- 39i,8n,62p,920b,2195s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 39i,8n,62p,2669b,2195s stack positions out of 5000i,500n,10000p,200000b,50000s
 <D:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:/Programs/Mi
 KTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><D:/Programs/MiKTeX/fonts/type1
 /public/amsfonts/cm/cmex10.pfb><D:/Programs/MiKTeX/fonts/type1/public/amsfonts/
 cm/cmmi12.pfb><D:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:/
-Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/Programs/MiKTeX/fo
-nts/type1/public/amsfonts/cm/cmr17.pfb><D:/Programs/MiKTeX/fonts/type1/public/a
-msfonts/cm/cmr6.pfb><D:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb
-><D:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/Programs/MiK
-TeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><D:/Programs/MiKTeX/fonts/type1/pu
-blic/amsfonts/cm/cmti12.pfb><D:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
-cmtt10.pfb><D:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on Maturarbeit.pdf (14 pages, 520386 bytes).
+Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/Programs/MiKTeX/fo
+nts/type1/public/amsfonts/cm/cmr12.pfb><D:/Programs/MiKTeX/fonts/type1/public/a
+msfonts/cm/cmr17.pfb><D:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pf
+b><D:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><D:/Programs/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmr8.pfb><D:/Programs/MiKTeX/fonts/type1/publ
+ic/amsfonts/cm/cmsy10.pfb><D:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
+sy6.pfb><D:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><D:/Progr
+ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><D:/Programs/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on Maturarbeit.pdf (16 pages, 778495 bytes).
 PDF statistics:
- 110 PDF objects out of 1000 (max. 8388607)
+ 129 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

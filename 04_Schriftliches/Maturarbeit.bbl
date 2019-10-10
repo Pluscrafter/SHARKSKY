@@ -109,6 +109,34 @@
       \verb https://de.wikipedia.org/wiki/Quadrocopter#Entwicklung
       \endverb
     \endentry
+    \entry{website:sauter-elektronik.de_reflow}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=15247408593b88449e7a5db92be26bae}{%
+           family={sauter-elektronik.de},
+           familyi={s\bibinithyphendelim e\bibinitperiod}}}%
+      }
+      \strng{namehash}{15247408593b88449e7a5db92be26bae}
+      \strng{fullhash}{15247408593b88449e7a5db92be26bae}
+      \strng{bibnamehash}{15247408593b88449e7a5db92be26bae}
+      \strng{authorbibnamehash}{15247408593b88449e7a5db92be26bae}
+      \strng{authornamehash}{15247408593b88449e7a5db92be26bae}
+      \strng{authorfullhash}{15247408593b88449e7a5db92be26bae}
+      \field{sortinit}{s}
+      \field{sortinithash}{c319cff79d99c853d775f88277d4e45f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{hour}{21}
+      \field{howpublished}{Webseite}
+      \field{month}{Oktober}
+      \field{title}{What is a PA/LNA?}
+      \field{year}{2019}
+      \verb{urlraw}
+      \verb https://www.sauter-elektronik.de/wissenswertes/reflow-loeten
+      \endverb
+      \verb{url}
+      \verb https://www.sauter-elektronik.de/wissenswertes/reflow-loeten
+      \endverb
+    \endentry
     \entry{website:Wikipedia_Quadrocopter}{misc}{}
       \name{author}{1}{}{%
         {{hash=9c677286866aad38f8e9b660f5411814}{%
