@@ -204,6 +204,10 @@ volatile float f_ypr[3];
 void setMotorSpeed();
 
 uint16_t motor_speed[4];
+
+
+UINT	reSD;
+int cc = 0;
 /* USER CODE END 0 */
 
 /**
@@ -283,10 +287,24 @@ int main(void)
 
 	HAL_Delay(5000);
 
-	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_1,1100);
-	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_2,1100);
-	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_3,1100);
-	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_4,1100);
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_1,2048);
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_2,2048);
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_3,2048);
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_4,2048);
+
+	HAL_Delay(5000);
+
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_1,1024);
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_2,1024);
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_3,1024);
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_4,1024);
+
+	HAL_Delay(10000);
+
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_1,1124);
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_2,1124);
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_3,1124);
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_4,1124);
 
 	HAL_Delay(2000);
 
@@ -376,6 +394,18 @@ int main(void)
 
   	radio.startListening();
 
+
+  //sd card init
+//https://www.youtube.com/watch?v=0NbBem8U80Y [11.10.19 14:22] // https://drive.google.com/file/d/1ZunUVcv1RYljzmQe1B3sUUbpJ6705hpM/view
+  	if(f_mount(&SDFatFS, SDPath, 1) == FR_OK){
+  		char mfil[] = "TESTEXT";
+  		if(f_open(&SDFile, mfil, FA_WRITE|FA_CREATE_ALWAYS) == FR_OK){
+  			char buf[] = "Hello World";
+  			f_write(&SDFile, buf, sizeof(buf), &reSD);
+  		}
+  		f_close(&SDFile);
+  	}
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -406,6 +436,15 @@ int main(void)
 	  f_ypr[0] = f_ypr[0] - (alpha * (f_ypr[0] - imu.t_ypr[0]));
 	  f_ypr[1] = f_ypr[1] - (alpha * (f_ypr[1] - imu.t_ypr[1]));
 	  f_ypr[2] = f_ypr[2] - (alpha * (f_ypr[2] - imu.ypr[2]));
+	  cc++;
+	  	if(f_mount(&SDFatFS, SDPath, 1) == FR_OK){
+	  		char mfil[] = "TESTEXT";
+	  		if(f_open(&SDFile, mfil, FA_WRITE) == FR_OK){
+	  			char buf[] = "Hello World \n";
+	  			f_write(&SDFile, buf, sizeof(buf), &reSD);
+	  		}
+	  		f_close(&SDFile);
+	  	}
 #endif
 
 #if MPU6050_ENABLE == 1
@@ -492,7 +531,7 @@ void SystemClock_Config(void)
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
   RCC_OscInitStruct.PLL.PLLM = 8;
-  RCC_OscInitStruct.PLL.PLLN = 400;
+  RCC_OscInitStruct.PLL.PLLN = 432;
   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
   RCC_OscInitStruct.PLL.PLLQ = 9;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
@@ -514,7 +553,7 @@ void SystemClock_Config(void)
   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV4;
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;
 
-  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_6) != HAL_OK)
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_7) != HAL_OK)
   {
     Error_Handler();
   }

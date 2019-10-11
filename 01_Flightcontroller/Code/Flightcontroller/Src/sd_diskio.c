@@ -145,20 +145,12 @@ DSTATUS SD_status(BYTE lun)
               
 DRESULT SD_read(BYTE lun, BYTE *buff, DWORD sector, UINT count)
 {
-  DRESULT res = RES_ERROR;
-
-  if(BSP_SD_ReadBlocks((uint32_t*)buff,
-                       (uint32_t) (sector),
-                       count, SD_TIMEOUT) == MSD_OK)
-  {
-    /* wait until the read operation is finished */
-    while(BSP_SD_GetCardState()!= MSD_OK)
-    {
-    }
-    res = RES_OK;
-  }
-
-  return res;
+	if (BSP_SD_ReadBlocks_DMA((uint32_t*) buff, (uint32_t) (sector),
+	count) != MSD_OK)
+	{
+	return RES_ERROR;
+	}
+	return RES_OK;
 }
 
 /* USER CODE BEGIN beforeWriteSection */
@@ -176,20 +168,12 @@ DRESULT SD_read(BYTE lun, BYTE *buff, DWORD sector, UINT count)
               
 DRESULT SD_write(BYTE lun, const BYTE *buff, DWORD sector, UINT count)
 {
-  DRESULT res = RES_ERROR;
-
-  if(BSP_SD_WriteBlocks((uint32_t*)buff,
-                        (uint32_t)(sector),
-                        count, SD_TIMEOUT) == MSD_OK)
-  {
-	/* wait until the Write operation is finished */
-    while(BSP_SD_GetCardState() != MSD_OK)
-    {
-    }
-    res = RES_OK;
-  }
-
-  return res;
+	if (BSP_SD_WriteBlocks_DMA((uint32_t*) buff, (uint32_t) (sector),
+	count) != MSD_OK)
+	{
+	return RES_ERROR;
+	}
+	return RES_OK;
 }
 #endif /* _USE_WRITE == 1 */  
 
