@@ -39,6 +39,7 @@
 #include "ICM20689.h"
 #include "MPU6050.h"
 #include "RF24.h"
+#include <string>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -130,7 +131,7 @@ Sensor::ICM20689 imu;
 float 		PI = 3.1415;
 
 uint32_t 	start = 0, stop = 0;
-double 		lptime = 0.101;
+double 		lptime = 0;
 
 //Radio
 RF24 radio(GPIOC, 6, GPIOB, 12, &hspi2);
@@ -208,6 +209,9 @@ uint16_t motor_speed[4];
 
 UINT	reSD;
 int cc = 0;
+double tim = 0;
+char logbuf[10000];
+std::string sbuf = " ";
 /* USER CODE END 0 */
 
 /**
@@ -406,6 +410,15 @@ int main(void)
   		f_close(&SDFile);
   	}
 
+
+  	char mfil[] = "LOG";
+	if(f_open(&SDFile, mfil, FA_WRITE|FA_CREATE_ALWAYS) == FR_OK){
+		char buf[] = " ";
+		f_write(&SDFile, buf, sizeof(buf), &reSD);
+	}
+	f_close(&SDFile);
+
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -424,7 +437,7 @@ int main(void)
 	  acangle[0] = asin(imu.accel[0]/fullvec) * -57.29577951;
 	  acangle[1] = asin(imu.accel[1]/fullvec) * 57.29577951;
 
-	  lptime = 0.0006;
+	 // lptime = 0.0017;
 
 	  imu.t_ypr[0] += imu.ypr[0]*lptime;
 	  imu.t_ypr[1] += imu.ypr[1]*lptime;
@@ -436,15 +449,27 @@ int main(void)
 	  f_ypr[0] = f_ypr[0] - (alpha * (f_ypr[0] - imu.t_ypr[0]));
 	  f_ypr[1] = f_ypr[1] - (alpha * (f_ypr[1] - imu.t_ypr[1]));
 	  f_ypr[2] = f_ypr[2] - (alpha * (f_ypr[2] - imu.ypr[2]));
-	  cc++;
-	  	if(f_mount(&SDFatFS, SDPath, 1) == FR_OK){
-	  		char mfil[] = "TESTEXT";
-	  		if(f_open(&SDFile, mfil, FA_WRITE) == FR_OK){
-	  			char buf[] = "Hello World \n";
-	  			f_write(&SDFile, buf, sizeof(buf), &reSD);
-	  		}
-	  		f_close(&SDFile);
+
+	  tim += lptime;
+
+	  	if(cc < 200){
+	  		cc++;
+	  		char buf[25];
+	  		sprintf(buf, "%2.2f\t%2.2f\t%2.2f\t%4.4f\t\n", imu.t_ypr[0],imu.t_ypr[1],imu.t_ypr[2],tim);
+	  		std::string a(buf);
+	  		sbuf += a;
+	  	}else{
+	  		  cc = 0;
+	  		  strcpy(logbuf, sbuf.c_str());
+	  		  f_open(&SDFile, mfil, FA_WRITE|FA_OPEN_APPEND);
+			  f_printf(&SDFile, logbuf);
+			  f_close(&SDFile);
+			  sbuf = " ";
+			  memset(logbuf, 0, 10000*sizeof(char));
 	  	}
+
+
+
 #endif
 
 #if MPU6050_ENABLE == 1
