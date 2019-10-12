@@ -1,23 +1,23 @@
 [0] Config.pm:304> INFO - This is Biber 2.13
 [0] Config.pm:307> INFO - Logfile is 'Maturarbeit.blg'
-[23] biber-MSWIN64:315> INFO - === 
-[38] Biber.pm:375> INFO - Reading 'Maturarbeit.bcf'
-[118] Biber.pm:905> INFO - Found 5 citekeys in bib section 0
-[131] Biber.pm:4196> INFO - Processing section 0
-[133] Utils.pm:75> INFO - Globbing data source 'Maturarbeit.bib'
-[140] Utils.pm:91> INFO - Globbed data source 'Maturarbeit.bib' to Maturarbeit.bib
-[150] Biber.pm:4373> INFO - Looking for bibtex format file 'Maturarbeit.bib' for section 0
-[153] bibtex.pm:1462> INFO - LaTeX decoding ...
-[164] bibtex.pm:1281> INFO - Found BibTeX data source 'Maturarbeit.bib'
-[167] Utils.pm:300> WARN - month field 'Oktober' in entry 'website:Wikipedia_Quadrocopter' is not an integer - this will probably not sort properly.
-[170] Utils.pm:300> WARN - month field 'Oktober' in entry 'website:rn-wissen_Regelungstechnik' is not an integer - this will probably not sort properly.
-[172] Utils.pm:300> WARN - month field 'Oktober' in entry 'website:fpvracing.ch_Mult_Komp' is not an integer - this will probably not sort properly.
-[174] Utils.pm:300> WARN - month field 'Oktober' in entry 'website:electronics.stackexchange.com_WhatisPALNA' is not an integer - this will probably not sort properly.
-[176] Utils.pm:300> WARN - month field 'Oktober' in entry 'website:sauter-elektronik.de_reflow' is not an integer - this will probably not sort properly.
-[191] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[191] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
-[191] Biber.pm:4024> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'de-DE'
-[191] Biber.pm:4030> INFO - No sort tailoring available for locale 'de-DE'
-[199] bbl.pm:648> INFO - Writing 'Maturarbeit.bbl' with encoding 'UTF-8'
-[201] bbl.pm:751> INFO - Output to Maturarbeit.bbl
-[202] Biber.pm:110> INFO - WARNINGS: 5
+[42] biber-MSWIN64:315> INFO - === 
+[94] Biber.pm:375> INFO - Reading 'Maturarbeit.bcf'
+[193] Biber.pm:905> INFO - Found 5 citekeys in bib section 0
+[207] Biber.pm:4196> INFO - Processing section 0
+[246] Utils.pm:75> INFO - Globbing data source 'Maturarbeit.bib'
+[271] Utils.pm:91> INFO - Globbed data source 'Maturarbeit.bib' to Maturarbeit.bib
+[294] Biber.pm:4373> INFO - Looking for bibtex format file 'Maturarbeit.bib' for section 0
+[298] bibtex.pm:1462> INFO - LaTeX decoding ...
+[312] bibtex.pm:1281> INFO - Found BibTeX data source 'Maturarbeit.bib'
+[318] Utils.pm:300> WARN - month field 'Oktober' in entry 'website:Wikipedia_Quadrocopter' is not an integer - this will probably not sort properly.
+[322] Utils.pm:300> WARN - month field 'Oktober' in entry 'website:rn-wissen_Regelungstechnik' is not an integer - this will probably not sort properly.
+[325] Utils.pm:300> WARN - month field 'Oktober' in entry 'website:fpvracing.ch_Mult_Komp' is not an integer - this will probably not sort properly.
+[328] Utils.pm:300> WARN - month field 'Oktober' in entry 'website:electronics.stackexchange.com_WhatisPALNA' is not an integer - this will probably not sort properly.
+[330] Utils.pm:300> WARN - month field 'Oktober' in entry 'website:sauter-elektronik.de_reflow' is not an integer - this will probably not sort properly.
+[347] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[347] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[347] Biber.pm:4024> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'de-DE'
+[347] Biber.pm:4030> INFO - No sort tailoring available for locale 'de-DE'
+[384] bbl.pm:648> INFO - Writing 'Maturarbeit.bbl' with encoding 'UTF-8'
+[386] bbl.pm:751> INFO - Output to Maturarbeit.bbl
+[386] Biber.pm:110> INFO - WARNINGS: 5
