@@ -360,11 +360,15 @@ int main(void)
 #if ICM20689_OFFSET_FIND == 1 and ICM20689_ENABLE == 1
   imu.FindOffset();
 #endif
-  if (ARM_CM_DWT_CTRL != 0) {                  // See if DWT is available
+  /*if (ARM_CM_DWT_CTRL != 0) {                  // See if DWT is available
 	  ARM_CM_DEMCR      |= 1 << 24;            // Set bit 24
 	  ARM_CM_DWT_CYCCNT  = 0;
 	  ARM_CM_DWT_CTRL   |= 1 << 0;             // Set bit 0
-  }
+  }*/
+  	CoreDebug->DEMCR |= CoreDebug_DEMCR_TRCENA_Msk;//https://stackoverflow.com/questions/36378280/stm32-how-to-enable-dwt-cycle-counter
+	DWT->LAR = 0xC5ACCE55; //https://stackoverflow.com/questions/36378280/stm32-how-to-enable-dwt-cycle-counter 12.10.19 02:03
+	DWT->CYCCNT = 0;//https://www.carminenoviello.com/2015/09/04/precisely-measure-microseconds-stm32/ 12.10.19 01:30
+	DWT->CTRL |= DWT_CTRL_CYCCNTENA_Msk;
 
   //I2cdev MPU6050
 #if MPU6050_ENABLE == 1
@@ -413,8 +417,7 @@ int main(void)
 
   	char mfil[] = "LOG";
 	if(f_open(&SDFile, mfil, FA_WRITE|FA_CREATE_ALWAYS) == FR_OK){
-		char buf[] = " ";
-		f_write(&SDFile, buf, sizeof(buf), &reSD);
+
 	}
 	f_close(&SDFile);
 
@@ -425,7 +428,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  start = ARM_CM_DWT_CYCCNT;
+	  start = DWT->CYCCNT;
 #if ICM20689_ENABLE == 1
 
 	  imu.ReadGyro();
@@ -525,7 +528,7 @@ int main(void)
 
 	setMotorSpeed();
 
-	stop = ARM_CM_DWT_CYCCNT;
+	stop = DWT->CYCCNT;
 	lptime = (stop - start)/200000000.0;
 
     /* USER CODE END WHILE */
