@@ -63,6 +63,9 @@
 
 #define PID_TRUE_ANGLE			1
 #define PID_ANGLE_MOTION		0
+
+#define USB_MODE true
+#define OSD_MODE false
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -79,18 +82,12 @@
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
-void loopRadio();
 
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-#define USB_MODE true
-#define OSD_MODE false
-
-bool osdusb = USB_MODE;
-
-uint8_t  sine[256] = {
+uint8_t  sine[256] = { //!< 8bit sine for test with DAC
   0x80, 0x83, 0x86, 0x89, 0x8C, 0x90, 0x93, 0x96,
   0x99, 0x9C, 0x9F, 0xA2, 0xA5, 0xA8, 0xAB, 0xAE,
   0xB1, 0xB3, 0xB6, 0xB9, 0xBC, 0xBF, 0xC1, 0xC4,
@@ -124,94 +121,94 @@ uint8_t  sine[256] = {
   0x4F, 0x52, 0x55, 0x58, 0x5B, 0x5E, 0x61, 0x64,
   0x67, 0x6A, 0x6D, 0x70, 0x74, 0x77, 0x7A, 0x7D
 };
-
+bool 						osdusb = USB_MODE;						//!< define UART output to USB or OSD
 
 //ICM
-Sensor::ICM20689 imu;
-float 		PI = 3.1415;
+Sensor::ICM20689 			imu;									//!< define IMU (ICM20689)
+const float 				PI = 3.1415;							//!< pi constant
 
-uint32_t 	start = 0, stop = 0;
-double 		lptime = 0;
+uint32_t 					start = 0, stop = 0;					//!< start and stop for looptime measurement (read clockcycles)
+volatile double 			lptime = 0;								//!< looptime in seconds
 
 //Radio
-RF24 radio(GPIOC, 6, GPIOB, 12, &hspi2);
-const uint8_t addresses[][6] = {"1Node","2Node"};
+RF24 						radio(GPIOC, 6, GPIOB, 12, &hspi2);		//!< define radio (nRF24L01)
+void 						loopRadio(); 							//!< function: loops radio read data from radio into recvData
+//const uint8_t addresses[][6] = {"1Node","2Node"};//!<
 
-uint8_t data[1] = { 0x41};
+//uint8_t data[1] = { 0x41};
 
 //! Acknowlegement struct
 struct AckData{
-	int16_t 	yaw;									//!<2 bytes 2
-	int16_t 	pitch;									//!<2 bytes 4
-	int16_t 	roll;									//!<2 bytes 6
+	int16_t 				yaw;									//!< 2 bytes 2
+	int16_t 				pitch;									//!< 2 bytes 4
+	int16_t 				roll;									//!< 2 bytes 6
 
-	uint16_t 	heading;								//!<2 bytes 8
-	uint32_t 	altitude; 								//!<4 bytes 12
+	uint16_t 				heading;								//!< 2 bytes 8
+	uint32_t 				altitude; 								//!< 4 bytes 12
 
-	uint32_t 	LV03x;									//!<4 byte 16
-	uint32_t 	LV03y;									//!<4 byte 20
+	uint32_t 				LV03x;									//!< 4 byte 16
+	uint32_t 				LV03y;									//!< 4 byte 20
 
-	uint16_t 	flags;									//!<2 bytes 22
-	uint32_t	uptdate_time; 							//!<4 bytes 26
+	uint16_t 				flags;									//!< 2 bytes 22
+	uint32_t				uptdate_time; 							//!< 4 bytes 26
 };
 
 //! receive message struct
 struct RadioData{
-	int16_t		yaw;									//!<2 bytes 2
-	int16_t		pitch;									//!<2 bytes 4
-	int16_t		roll;									//!<2 bytes 6
-	uint16_t	throttle;								//!<2 bytes 8
+	int16_t					yaw;									//!< 2 bytes 2
+	int16_t					pitch;									//!< 2 bytes 4
+	int16_t					roll;									//!< 2 bytes 6
+	uint16_t				throttle;								//!< 2 bytes 8
 
-	uint16_t	flags;									//!<2 bytes 10
-	uint32_t	data;									//!<4 bytes 14
+	uint16_t				flags;									//!< 2 bytes 10
+	uint32_t				data;									//!< 4 bytes 14
 };
 
-AckData 		ackData;								//!< define acknowlegement
-RadioData 		recvData;								//!< Define receive data
+AckData 					ackData;								//!< define acknowlegement data
+RadioData 					recvData;								//!< define receive data
 
 
 //I2cdev MPU6050
 #if MPU6050_ENABLE == 1
-MPU6050 		mpu;
-uint16_t 		packetSize;
-uint16_t 		fifoCount;
-uint8_t	 		fifoBuffer[64];
-Quaternion 		q;
-VectorFloat 	gravity;
-float 			ypr[3];
+MPU6050 					mpu;
+uint16_t 					packetSize;
+uint16_t 					fifoCount;
+uint8_t	 					fifoBuffer[64];
+Quaternion 					q;
+VectorFloat 				gravity;
+float 						ypr[3];
 #endif
 
 //PID
-void PID_TrueAngle();
-void PID_AngleMotion();
+void 						PID_TrueAngle();						//!< function: PID calculation with true angle
+void 						PID_AngleMotion();						//!< function: PID calculation with angular motion
 
-int16_t pid_ta[3];											//!< define PID with true angle
-int16_t pid_am[3];											//!< define PID with angle motion
+int16_t 					pid_ta[3];								//!< define PID with true angle
+int16_t 					pid_am[3];								//!< define PID with angle motion
 
-float 	_pid_ta[3][3];										//!<  define individual PID for axis [axis][PID]
-float 	_pid_am[3][3];										//!<  define individual PID for axis [axis][PID]
+volatile float 				_pid_ta[3][3];							//!< define individual PID for axis [axis][PID]
+volatile float 				_pid_am[3][3];							//!< define individual PID for axis [axis][PID]
 
-float	pid_gain_ta[3][3];									//!< define pid gain [axis][gain] for PID with true angles
-float	pid_gain_am[3][3];									//!< define pid gain [axis][gain] for PID with angle motion
+float						pid_gain_ta[3][3];						//!< define pid gain [axis][gain] for PID with true angles
+float						pid_gain_am[3][3];						//!< define pid gain [axis][gain] for PID with angle motion
 
-float 	error[3];											//!<  define error
-float 	previous_error[3];									//!<  define previous error for D-Gain
+float 						error[3];								//!< define error
+float 						previous_error[3];						//!< define previous error for D-Gain
 
 //Digital Low-pass DLPF
-const float alpha = 0.231710;
+const float					alpha = 0.231710;						//!< define alpha value of FLPF
+volatile float 				f_ypr[3];								//!< define filtered true angle values
 
-volatile float f_ypr[3];
+//Motor
+void 						setMotorSpeed();						//!< function: sets motor speed according to throttle and PID calculation
+uint16_t 					motor_speed[4];							//!< define motor speed for the 4 motors
 
-void setMotorSpeed();
-
-uint16_t motor_speed[4];
-
-
-UINT	reSD;
-int cc = 0;
-double tim = 0;
-char logbuf[10000];
-std::string sbuf = " ";
+//SD Card
+UINT						reSD;									//!< count errors of write to SD
+int 						cc = 0;									//!< count number of data in buffer
+double						tim = 0;								//!< elapsed time
+char 						logbuf[10000];							//!< write buffer
+std::string 				sbuf = " ";								//!< tmp write buffer in loop
 /* USER CODE END 0 */
 
 /**
@@ -221,6 +218,8 @@ std::string sbuf = " ";
 int main(void)
 {
   /* USER CODE BEGIN 1 */
+
+	//init PID values
 	pid_gain_ta[0][0] = 0;
 	pid_gain_ta[0][1] = 0;
 	pid_gain_ta[0][2] = 0;
@@ -272,10 +271,13 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   // INIT MOTORS
+  // Start PWM on timer 2
   HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
   HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
   HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_3);
   HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
+
+  //Motor calibration
 #if MOTORCALIB == 1
 	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_1,2048);
 	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_2,2048);
@@ -324,13 +326,17 @@ int main(void)
 #endif
 
   // INIT GIMBAL
+  // Start PWM on timer 3
   HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
   HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_2);
   HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_3);
 
   //START LOGIC LEVEL CONVERTER
+  //set LLVOE Pin HIGH
   HAL_GPIO_WritePin(LLVOE_GPIO_Port, LLVOE_Pin, GPIO_PIN_SET);
 
+
+  //Set UART to USB or OSD Mode
   if(HAL_GPIO_ReadPin(USBOSD_GPIO_Port, USBOSD_Pin) == GPIO_PIN_RESET){
 	  osdusb = USB_MODE;
 	  HAL_GPIO_WritePin(MOD0_LED_GPIO_Port, MOD0_LED_Pin, GPIO_PIN_SET);
@@ -339,14 +345,15 @@ int main(void)
 	  HAL_GPIO_WritePin(MOD1_LED_GPIO_Port, MOD1_LED_Pin, GPIO_PIN_SET);
   }
 
-  //TEST DAC
-  HAL_TIM_Base_Start(&htim6);
-  HAL_DAC_Start_DMA(&hdac, DAC_CHANNEL_2, (uint32_t *)sine, 256, DAC_ALIGN_8B_R);
+  //Start and Test DAC
+  HAL_TIM_Base_Start(&htim6);	//start Timer 6 for dac tickspeed
+  HAL_DAC_Start_DMA(&hdac, DAC_CHANNEL_2, (uint32_t *)sine, 256, DAC_ALIGN_8B_R);	//start DAC DMA read from sine array in circular mode
 
   //init IMU
 #if ICM20689_ENABLE == 1
   imu.Initalize();
 
+  // if IMU fails (whoami register returns false value)
   if(imu.init_ok == false){
 	  for(;;){
 		  HAL_GPIO_TogglePin(INIT_OK_GPIO_Port, INIT_OK_Pin);
@@ -355,22 +362,17 @@ int main(void)
   }
 #endif
 
-  HAL_GPIO_WritePin(INIT_OK_GPIO_Port, INIT_OK_Pin, GPIO_PIN_SET);
-
 #if ICM20689_OFFSET_FIND == 1 and ICM20689_ENABLE == 1
   imu.FindOffset();
 #endif
-  /*if (ARM_CM_DWT_CTRL != 0) {                  // See if DWT is available
-	  ARM_CM_DEMCR      |= 1 << 24;            // Set bit 24
-	  ARM_CM_DWT_CYCCNT  = 0;
-	  ARM_CM_DWT_CTRL   |= 1 << 0;             // Set bit 0
-  }*/
-  	CoreDebug->DEMCR |= CoreDebug_DEMCR_TRCENA_Msk;//https://stackoverflow.com/questions/36378280/stm32-how-to-enable-dwt-cycle-counter
+
+  	//start DWT counter also when not in Debug mode to count clock ticks
+  	CoreDebug->DEMCR |= CoreDebug_DEMCR_TRCENA_Msk;	//https://stackoverflow.com/questions/36378280/stm32-how-to-enable-dwt-cycle-counter
 	DWT->LAR = 0xC5ACCE55; //https://stackoverflow.com/questions/36378280/stm32-how-to-enable-dwt-cycle-counter 12.10.19 02:03
 	DWT->CYCCNT = 0;//https://www.carminenoviello.com/2015/09/04/precisely-measure-microseconds-stm32/ 12.10.19 01:30
 	DWT->CTRL |= DWT_CTRL_CYCCNTENA_Msk;
 
-  //I2cdev MPU6050
+  //I2cdev MPU6050 initialize
 #if MPU6050_ENABLE == 1
     mpu.initialize();
   	mpu.dmpInitialize();
@@ -385,8 +387,8 @@ int main(void)
   	packetSize = mpu.dmpGetFIFOPacketSize();
   	fifoCount = mpu.getFIFOCount();
 #endif
-  	//init RF24
-  	const uint64_t pipe = 0xE8E8F0F0E2;
+  	//initalize RF24
+  	const uint64_t pipe = 0xE8E8F0F0E2;	//pipe address
   	radio.begin();
   	radio.setPayloadSize(32);
 	radio.setChannel(125);
@@ -398,13 +400,12 @@ int main(void)
   	radio.openReadingPipe(1, pipe);
 
   	radio.printDetails();
-  	HAL_Delay(1000);
 
   	radio.startListening();
 
 
   //sd card init
-//https://www.youtube.com/watch?v=0NbBem8U80Y [11.10.19 14:22] // https://drive.google.com/file/d/1ZunUVcv1RYljzmQe1B3sUUbpJ6705hpM/view
+  //https://www.youtube.com/watch?v=0NbBem8U80Y [11.10.19 14:22] // https://drive.google.com/file/d/1ZunUVcv1RYljzmQe1B3sUUbpJ6705hpM/view
   	if(f_mount(&SDFatFS, SDPath, 1) == FR_OK){
   		char mfil[] = "TESTEXT";
   		if(f_open(&SDFile, mfil, FA_WRITE|FA_CREATE_ALWAYS) == FR_OK){
@@ -414,62 +415,51 @@ int main(void)
   		f_close(&SDFile);
   	}
 
-
+  	//Init and create new LOG file
   	char mfil[] = "LOG";
 	if(f_open(&SDFile, mfil, FA_WRITE|FA_CREATE_ALWAYS) == FR_OK){
 
 	}
 	f_close(&SDFile);
 
-
+	// initalisation is OK
+	HAL_Delay(1000);
+	HAL_GPIO_WritePin(INIT_OK_GPIO_Port, INIT_OK_Pin, GPIO_PIN_SET);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  start = DWT->CYCCNT;
+	  start = DWT->CYCCNT; //read value from counter register
 #if ICM20689_ENABLE == 1
 
+	  //read values from IMU
 	  imu.ReadGyro();
 	  imu.ReadAccel();
 
-	  float fullvec = sqrt(pow(imu.accel[0],2) + pow(imu.accel[1],2) + pow(imu.accel[2],2));
-	  float acangle[2];
+	  //calculate angle with acceleration
+	  float fullvec = sqrt(pow(imu.accel[0],2) + pow(imu.accel[1],2) + pow(imu.accel[2],2)); //calculate full vector with Pythagoras' theorem
+	  float acangle[2];	//acceleration angle
 
-	  acangle[0] = asin(imu.accel[0]/fullvec) * -57.29577951;
+	  acangle[0] = asin(imu.accel[0]/fullvec) * -57.29577951;	//calculate acceleration sin-1(angle/fullvec)
 	  acangle[1] = asin(imu.accel[1]/fullvec) * 57.29577951;
 
-	 // lptime = 0.0017;
-
+	  //calculate angle with angular motion
 	  imu.t_ypr[0] += imu.ypr[0]*lptime;
 	  imu.t_ypr[1] += imu.ypr[1]*lptime;
 
-	  imu.t_ypr[0] = imu.t_ypr[0] * 0.96 + acangle[1] * 0.04;
+	  //complementary filter
+	  imu.t_ypr[0] = imu.t_ypr[0] * 0.96 + acangle[1] * 0.04;	// angle is mixed up
 	  imu.t_ypr[1] = imu.t_ypr[1] * 0.96 + acangle[0] * 0.04;
 
-	  //dlpf https://kiritchatterjee.wordpress.com/2014/11/10/a-simple-digital-low-pass-filter-in-c/ [9.10.19 22:52]
+	  //Digital Low Pass filtering https://kiritchatterjee.wordpress.com/2014/11/10/a-simple-digital-low-pass-filter-in-c/ [9.10.19 22:52]
+	  //yet only for true angle
 	  f_ypr[0] = f_ypr[0] - (alpha * (f_ypr[0] - imu.t_ypr[0]));
 	  f_ypr[1] = f_ypr[1] - (alpha * (f_ypr[1] - imu.t_ypr[1]));
 	  f_ypr[2] = f_ypr[2] - (alpha * (f_ypr[2] - imu.ypr[2]));
 
-	  tim += lptime;
 
-	  	if(cc < 200){
-	  		cc++;
-	  		char buf[25];
-	  		sprintf(buf, "%2.2f\t%2.2f\t%2.2f\t%4.4f\t\n", imu.t_ypr[0],imu.t_ypr[1],imu.t_ypr[2],tim);
-	  		std::string a(buf);
-	  		sbuf += a;
-	  	}else{
-	  		  cc = 0;
-	  		  strcpy(logbuf, sbuf.c_str());
-	  		  f_open(&SDFile, mfil, FA_WRITE|FA_OPEN_APPEND);
-			  f_printf(&SDFile, logbuf);
-			  f_close(&SDFile);
-			  sbuf = " ";
-			  memset(logbuf, 0, 10000*sizeof(char));
-	  	}
 
 
 
@@ -511,12 +501,35 @@ int main(void)
 	PID_AngleMotion();
 #endif
 
+	//calculate elapsed time from looptime
+	tim += lptime;
+
+	//writes to LOG every 200 loop cycle to have a refresh rate of 500 Hz -> every cycle refresh rate of ca 14 Hz => bad
+	if(cc < 200){
+		cc++;
+		char buf[25];
+		sprintf(buf, "%2.2f\t%2.2f\t%2.2f\t%4.4f\t\n", imu.t_ypr[0],imu.t_ypr[1],imu.t_ypr[2],tim);
+		std::string a(buf);
+		sbuf += a;
+	}else{
+		  cc = 0;
+		  strcpy(logbuf, sbuf.c_str());
+		  f_open(&SDFile, mfil, FA_WRITE|FA_OPEN_APPEND);
+		  f_printf(&SDFile, logbuf);
+		  f_close(&SDFile);
+		  sbuf = " ";
+		  memset(logbuf, 0, 10000*sizeof(char));
+	}
+
+	//set previous error from error
 	for (uint8_t i = 0;  i < 3; i++){
 	  previous_error[i] = error[i];
     }
 
+	// read data from radio buffer
     loopRadio();
 
+    //calculate PID error and PID from dlpf value
 #if PID_TRUE_ANGLE == 1
 	error[0] = f_ypr[2] - recvData.yaw;
 	error[1] = recvData.pitch - f_ypr[1];
@@ -526,10 +539,12 @@ int main(void)
 	PID_AngleMotion();
 #endif
 
+	//set the speed of the motor
 	setMotorSpeed();
 
+	//loop time calculation
 	stop = DWT->CYCCNT;
-	lptime = (stop - start)/200000000.0;
+	lptime = (stop - start)/216000000.0;
 
     /* USER CODE END WHILE */
 
@@ -615,6 +630,7 @@ void PID_TrueAngle(){
 		pid_ta[i] 		 		=	_pid_ta[i][0] + _pid_ta[i][1] + _pid_ta[i][2];
 	}
 
+	// set max PID correction
 	for (uint8_t i = 0; i<3;i++){
 		if(pid_ta[i] > 400){
 			pid_ta[i] = 400;
@@ -639,6 +655,7 @@ void PID_AngleMotion(){
 		pid_am[i] 		 		=	_pid_am[i][0] + _pid_am[i][1] + _pid_am[i][2];
 	}
 
+	// set max PID correction
 	for (uint8_t i = 0; i<3;i++){
 		if(pid_am[i] > 400){
 			pid_am[i] = 400;
@@ -651,12 +668,14 @@ void PID_AngleMotion(){
 }
 
 void setMotorSpeed(){
+	// throttle value under 100 no movement of motors
 	if (recvData.throttle < 100){
 		for (int i = 0; i < 4 ;i++){
 			motor_speed[i] = 1024 + 10;
 		}
 	}
 	else{
+//PID applied to the calculation motor speed
 #if PID_TRUE_ANGLE == 1
 	motor_speed[0] = (1024 + recvData.throttle) + pid_ta[1] + pid_ta[2] - pid_am[0];
 	motor_speed[1] = (1024 + recvData.throttle) + pid_ta[1] - pid_ta[2] + pid_am[0];
@@ -679,6 +698,7 @@ void setMotorSpeed(){
 #endif
 	}
 
+	// maximum motor speed
 	for (int i = 0; i < 4 ;i++){
 		if (motor_speed[i] > 2048){
 			motor_speed[i] = 2048;
@@ -688,6 +708,7 @@ void setMotorSpeed(){
 		}
 	}
 
+	//write to timer
 	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_1,motor_speed[0]);
 	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_2,motor_speed[1]);
 	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_3,motor_speed[2]);

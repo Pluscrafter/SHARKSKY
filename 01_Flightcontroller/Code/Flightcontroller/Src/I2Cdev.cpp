@@ -27,6 +27,8 @@ THE SOFTWARE.
 ===============================================
 */
 
+//edited for STM32 Usage
+
 #include "I2Cdev.h"
 #include <stdio.h>
 

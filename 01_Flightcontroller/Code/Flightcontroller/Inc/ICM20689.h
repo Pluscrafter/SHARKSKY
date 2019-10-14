@@ -114,6 +114,8 @@ public:
 private:
 	Interface::I_SPI 	spi1 = Interface::I_SPI(hspi3, GPIOA, 20);
 
+	//Calubration from I2cdevlib Calib
+
 	void 				SetGyroOffset();
 	void 				SetAccelOffset();
 

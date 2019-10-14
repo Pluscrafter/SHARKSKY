@@ -56,12 +56,6 @@ namespace Interface {
 			while (HAL_SPI_GetState(&spi) != HAL_SPI_STATE_READY); //https://github.com/fboris/STM32Cube_FW_F4/blob/master/Projects/STM32F4-Discovery/Examples/SPI/SPI_FullDuplex_ComDMA/Src/main.c 25.04.2019
 			GPIOx->BSRR = (1<<s_Bit);
 		}
-		/*GPIOx->BSRR = (1<<r_Bit);
-		for (int i = 0; i < bytes; i++){
-			HAL_SPI_Transmit(&spi,&msg[i],1,HAL_MAX_DELAY);
-			HAL_SPI_Receive(&spi,&rec[i],1,HAL_MAX_DELAY);
-		}
-		GPIOx->BSRR = (1<<s_Bit);*/
 	}
 
 	void I_SPI::WriteRegister(uint8_t reg, uint8_t val){
