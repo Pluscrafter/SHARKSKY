@@ -1,4 +1,15 @@
 \documentclass[12pt,a4paper, ngerman]{article}
+\makeatletter
+\def\set@curr@file#1{%
+  \begingroup
+    \escapechar\m@ne
+    \xdef\@curr@file{\expandafter\string\csname #1\endcsname}%
+  \endgroup
+}
+\def\quote@name#1{"\quote@@name#1\@gobble""}
+\def\quote@@name#1"{#1\quote@@name}
+\def\unquote@name#1{\quote@@name#1\@gobble"}
+\makeatother
 \usepackage{a4wide}
 \usepackage{babel}
 \usepackage{amsmath}
