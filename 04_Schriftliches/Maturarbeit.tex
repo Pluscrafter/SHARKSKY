@@ -8,6 +8,7 @@
 \usepackage{wrapfig}
 \usepackage{listings}
 \usepackage{xcolor}
+\usepackage{xfrac}
 
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
@@ -54,11 +55,11 @@
 \pagenumbering{arabic}
 
 \section{Einleitung}
-Ein Quadrocopter ist ein Flugobjekt mit 4 Propellern. In der Vergangenheit wurden schon Versuche mit Flugobjekten mit 4 Propellern gemacht z.B. wie der Luftfahrtpionier Étienne OEhmichen. der 1920 den Oehmichen No. 2 gebaut hatte. Damals waren die Propeller elastisch und man konnte mit Seilzügen den Anstellwinkel der Propeller einstellen. Er konnte damit einige Rekorde aufstellen.\cite{website:Wikipedia_Quadrocopter}\\
+Ein Quadrocopter ist ein Flugobjekt mit vier Propellern. In der Vergangenheit wurden schon Versuche mit Flugobjekten mit vier Propellern gemacht z.B. wie der Luftfahrtpionier Étienne OEhmichen. der 1920 den Oehmichen No. 2 gebaut hatte. Damals waren die Propeller elastisch und man konnte mit Seilzügen den Anstellwinkel der Propeller einstellen. Er konnte damit einige Rekorde aufstellen.\cite{website:Wikipedia_Quadrocopter}\\
 
-In der heutigen Zeit finden Quadrocopter viele Anwendungen, wie z.B. bei Suchaktionen, im Militär, oder auch als Spielzeug. Mit der schnellen entwicklung von Mikroprozessoren wurden Quadrocopter immer kleiner und einfacher zu realisieren. Auch können damit teurere Helikopterflüge für Kartographie oder Luftaufnahmen billiger realisiert werden.\\
+In der heutigen Zeit finden Quadrocopter viele Anwendungen, wie z.B. bei Suchaktionen, im Militär, oder auch als Spielzeug. Mit der schnellen Entwicklung von Mikroprozessoren wurden Quadrocopter immer kleiner und einfacher zu realisieren. Auch können damit teurere Helikopterflüge für Kartographie oder Luftaufnahmen billiger realisiert werden.\\
 
-Mit dieser Arbeit will ich mit dem Bau und dessen Regelung befasssen. Der Quadrocopter wird selbst gebau mit dem Hauptziel den Flightcontroller selbst zu designen, bauen und programmieren. So sollte die Regelung selbst implementiert werden. Dannach sollten Versuche gemacht werden, die bestimmen sollten, wie der PID-Regler stabiler gemacht werden kann und wie ungleichheiten, wie sie durch Vibration entstehen, auszugleichen.
+Mit dieser Arbeit will ich mit dem Bau und dessen Regelung befasssen. Der Quadrocopter wird selbst gebau mit dem Hauptziel den Flightcontroller selbst zu designen, bauen und programmieren. So sollte die Regelung auch selbst implementiert werden. Dannach sollten Versuche gemacht werden, die bestimmen sollten, wie der PID-Regler stabiler gemacht werden kann und wie ungleichheiten, wie sie durch Vibration entstehen, auszugleichen.
 \newpage
 \section{Was ist ein Quadrocopter?}
 Ein Qadrocopter ist wie in der Einleitung beschrieben ein Flugobjekt. Man könnte meinen, dass man einen stabilen Flug erreichen kann, wenn man den vier Propellern den gleichen Schub gibt. Aber dies ist leider nicht möglich, da viele Umwelteinflüsse einen stabilen Zustand verhindern wie z.B. Wind, unterschiede in den Rotoren oder Motoren, assymetrie des Rahmens etc. So muss ein Computer, der Flightcontroller(FC), das Gleichgewicht erhalten, indem dieser den Schub der vier Motoren so steuert das der Quadrocopter im Gleichgewicht ist oder dieser einen anderen bestimmten Winkel hält.\\
@@ -67,7 +68,7 @@ Ein Qadrocopter ist wie in der Einleitung beschrieben ein Flugobjekt. Man könnt
 \includegraphics[width=\textwidth]{MotionDE.jpg}
 \caption[https://fpvracing.ch/de/content/7-grundsatzliche-funktion-quadrocopter-multicopter]{Drehrichtung und Schub bei verschiedenen Steuereingaben }
 \end{figure}\\
-Man sieht in dieser Abbildung welche Rotationsrichtung die Motoren haben. Die benachbarten Motoren müssen eine gegensätzliche rotation haben, da sonst der Quadrocopter zum rotieren kommt. So wird das Drehmoment des anderen Motors ausgeglichen. Auch wird gezeigt, dass man den Quadrocopter mit erhöhen bzw. erniedrigen der Motorleistung der richtigen Motoren, diesen in die gewünschte Richtung steuern kann. Der FC hält dieses Gleichgewicht mit einem Proportional-,Integral- und Differenzial-Regler(PID-Regler).
+Man sieht in dieser Abbildung welche Rotationsrichtung die Motoren haben. Die benachbarten Motoren müssen eine gegensätzliche Rotation haben, da sonst der Quadrocopter zum rotieren kommt. So wird das Drehmoment des anderen Motors ausgeglichen. Auch wird gezeigt, dass man den Quadrocopter mit erhöhen bzw. erniedrigen der Motorleistung der richtigen Motoren, diesen in die gewünschte Richtung steuern kann. Der FC hält dieses Gleichgewicht mit einem PID-Regler.
 
 
 \section{PID-Regler und Filter}
@@ -79,22 +80,22 @@ Eine Regelung ist ein Steuerung mit Rückkoppelung. Es wird ein Wert z.B. die Dr
 \caption[https://rn-wissen.de/wiki/images/2/25/Regelkreis1.png]{Der Regelkreis}
 \end{wrapfigure}
 Der Regelkreis misst die Regelgrösse z.B. mit einem Sensor. Dann wird dieser mit dem Soll-Wert verglichen um die Regelabweichung zu bestimmen. So kann ein z.B. Motor gestellt werden damit dieser sich dem Soll-Wert nähert.\\ \\ \\ \\ \\ \\ \\
-Die Regelabweichung kann dabei einfach mit der Differenz des Ist-Wertes $x$ mit dem Soll-Wertes $w$ bestimmt werden.
+Die Regelabweichung kann dabei einfach mit der Differenz des Ist-Wertes $x$ mit dem Soll-Wertes $w$ bestimmt werden.\cite{website:rn-wissen_Regelungstechnik}
 \begin{equation}
 e(t)=w-x
-\end{equation}
+\end{equation}\\
+
 \begin{wrapfigure}[8]{l}{0.4\textwidth}
 \centering
 \includegraphics[width=0.4\textwidth]{Regelkreis2.png}
 \caption[https://rn-wissen.de/wiki/images/5/5d/Regelkreis2.png]{Wirkungsweise des Regelkreises}
 \end{wrapfigure}
-In der Abbildung 3 sieht man, wie vorher beschrieben, wie ein solcher Regelkreis funktionert. In der Regelungstechnik wird versucht einen solchen Regelkreis mathematisch zu modellieren. In dem Kapitel wird nur der PID-Regler und seine Komponenten besprochen, da dieser häufig bei Quadrocoptern benutzt wird.
-\\ \\ \\
+In der Abbildung 3 sieht man, wie vorher beschrieben, wie ein solcher Regelkreis funktionert. In der Regelungstechnik wird versucht einen solchen Regelkreis mathematisch zu modellieren. In dem Kapitel wird nur der PID-Regler und seine Komponenten besprochen, da dieser häufig bei Quadrocoptern benutzt wird.\cite{website:rn-wissen_Regelungstechnik}
+\\ \\ \\ \\
 Der PID-Regler besteht aus mehreren Relgern und dem D-Glied. Untern wird beschrieben wie die einzelnen Komponenten wirken. 
-
+\newpage
 \subsubsection{P-Regler}
 Der P-Regler wirkt linear. Dieser Regler gibt die Regelabweichung verstärkt und unverzögert mit dem Faktor $Kp$ weiter. Das Problem dabei ist, dass diese Abweichung bleibend ist und somit den Soll-Wert über- bzw. unterschiesst. Dieser Regler wirkt mittelschnell.\cite{website:rn-wissen_Regelungstechnik}
-\newpage
 \begin{equation}
 y(t)=Kp*e(t)
 \end{equation}
@@ -128,7 +129,7 @@ void D_Glied(float Kd, float error, float &previous_error, float dt, float &D){
 \end{lstlisting}
 
 \subsubsection{PID-Regler}
-Beim PID-Regler werden die Eigenschafter der einzelnen Regler und dem D-Glied vereint.
+Beim PID-Regler werden die Eigenschaften der einzelnen Regler und dem D-Glied vereint.
 \begin{equation}
 y(t)=Kp*e(t)+Kd*e(t)\frac{d}{dt}+Kd*e(t)\frac{d}{dt}
 \end{equation}
@@ -139,24 +140,87 @@ void PID_Regler(float P, float I, float D, float &PID){
 \end{lstlisting}
 \subsection{Digitaler Low-Pass Filter}
 Ein Low-Pass Filter filtert hohe Frequenzen aus. Man kennt diesen Filter meist aus der Elektronik oder der Tontechnik. Beim Quadrocopter wird ein solcher Filter für das unterdrücken des Rauschens der IMU verwendet. Dieses Rauschen wird durch die Vibrationen der Motoren erzeugt und liegt ca. bei 133Hz.\\ \\
-Beim Digitalen Low-Pass Filter(DLPF) wird ein analoger RC-Low-Pass Filter emuliert.
-Herleitung? \\ \\ 
-Vibrationen verursachen beim D-Glied starke auschläge, wenn diese hohe Amplituden haben. Auch wird dieser dann unbrauchbar, da die Regelabweichung durch die Vibrationen verfälscht wird.
+Bei diesem Digitalen Low-Pass Filter(DLPF) wird ein analoger RC-Low-Pass Filter emuliert.\cite{website:Wikipedia_LPF}\\
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.4\textwidth]{DLPF1.png}
+\caption[aasdf]{RC Low-Pass Filter}
+\end{figure}\\
+\begin{equation} \label{eq1}
+v_{in}(t)-v_{out}(t)=R*I(t)
+\end{equation}
+Wie man in \ref{eq1} sieht, ist die Eingang-und Ausgangsspannung vom Wiederstand und vom Strom abhängig.
+\begin{equation} \label{eq2}
+Q_{c}(t)=C*v_{out}(t)
+\end{equation}
+\begin{equation} \label{eq3}
+I(t)=\frac{dQ_{c}}{dt}=C*\frac{dv_{out}}{dt}
+\end{equation}
+Der Strom kann man auch abhängig vom Kondensatror und der Ausgangsspannung darstellen wie man in \ref{eq2} und \ref{eq3} sieht.
+\begin{equation}
+v_{in}(t)-v_{out}(t)=RC*\frac{dv_{out}}{dt}
+\end{equation}
+So kann man die Differenzialgleichung \ref{eq1} wie \ref{eq3} darstellen.\\
+
+\begin{equation}\label{eq4}
+x_{i}-y_{i}=RC*\frac{y_{i}-y_{i-1}}{\Delta t}
+\end{equation}
+
+Jetzt wird $v_{in}(t)$ mit $x_{i}$ und $v_{out}$ mit $y_{i}$ dargestellt und die Differenzialgleichung diskretisiert zu der Differenzengleichung \ref{eq4}.
+
+\begin{align*} 
+x_{i}-y_{i}&=RC*\frac{y_{i}-y_{i-1}}{\Delta t} \\ 
+x_{i}-y_{i}&=\frac{RCy_{i}-RCy_{i-1}}{\Delta t}\\
+x_{i}\Delta t-y_{i}\Delta&=RCy_{i}-RCy_{i-1} \\
+y_{i}\Delta t+RCy_{i}&=x_{i}\Delta t+RCy_{i-1} \\
+y_{i}(\Delta t+RC)&=x_{i}\Delta t+RCy_{i-1} \\
+y{i}&=x_{i}\frac{\Delta t}{\Delta t+RC} + y_{i-1}\frac{RC}{\Delta t+RC}
+\end{align*} 
+
+Die Gleichung wird nach $y_{i}$ umgeformt und man kann $\sfrac{\Delta t}{\Delta t+RC}$  mit $\alpha$ und $\sfrac{RC}{\Delta t + RC}$ mit $\alpha-1$ substituieren wie in \ref{eq5} gezeigt.
+\begin{equation}\label{eq5}
+y{i}=\alpha x_{i} + (1-\alpha)y_{i-1} \quad \text{mit} \quad \alpha:=\frac{\Delta t}{\Delta t+RC}
+\end{equation}
+
+$RC$ kann man mit der Formel für den Low-Pass Filter durch $f_{c}$ dargestellt werden wie unten gezeigt wird.
+
+\begin{align*}
+f_{c} = \frac{1}{2\pi RC} \\
+RC = \frac{1}{2\pi f_{c}} 
+\end{align*}
+
+Jetzt kann auch das $RC$ in der Definition von $\alpha$ ersetzt werden, damit die Gleichung nicht mehr von $RC$ abhängig ist.
+
+\begin{align*}
+\alpha&=\frac{\Delta t}{\Delta t+RC} \\
+\alpha \Delta t+RC\alpha &= \Delta t \\
+RC\alpha &= \Delta t \alpha \Delta t \\
+RC &= \Delta t \frac{1-\alpha}{\alpha}\\
+\frac{1}{2\pi f_{c}} &= \frac{\Delta t -\alpha\Delta t}{\alpha} \\
+\frac{1}{2\pi f_{c}} \alpha &= \Delta t -\alpha\Delta t \\
+\frac{1}{2\pi f_{c}} \alpha + \alpha\Delta t &= \Delta t \\
+\alpha &= \frac{\Delta t}{\frac{1}{2\pi f_{c}} + \Delta t} \\
+\alpha &= \frac{\Delta t}{\frac{1+2\pi f_{c}\Delta t}{2\pi f_{c}}} \\
+\alpha &= \frac{2\pi f_{c}\Delta t}{1+2\pi f_{c}\Delta t} \\
+\end{align*}
+
+
+Vibrationen verursachen beim D-Glied starke auschläge, wenn diese hohe Amplituden haben. Auch wird dieser dann unbrauchbar, da die Regelabweichung durch die Vibrationen verfälscht wird. Ein Filter versucht diese Vibrationen zu dämpfen und so starke Ausschläge verhindert.
 \newpage
 \section{Äusserer Aufbau}
 \subsection{Motoren}
-Die verwendeten Motoren sind sogenannte bürstenlose Motoren. Diese werden mit einem Electronic Speed Controller(ESC) angesteuert, da diese wie Drehstrommotoren funktionieren. Da ihre RPM von Spannung abhängig ist gibt man noch einen $Kv$-Wert an. So kann man mit der Formel
+Die verwendeten Motoren sind sogenannte bürstenlose Motoren. Diese werden mit einem Electronic Speed Controller(ESC) angesteuert, diese wandeln die Steuerimpulse in die richtige Spannung für den Motor. Da ihre RPM von Spannung abhängig ist, wird einen $Kv$-Wert angegeben. So kann man mit der Formel
 \begin{equation}
-RPM=Kv*U
+a=Kv*U \quad mit \quad a=[rpm]
 \end{equation}
 die Rotationen pro Minute berechnen.\\ \\
-Beim meinem Quadrocopter handelt es sich um ReadyToSky RS2205 Motoren mit einem $Kv$ von 2300. Ich habe diese Motoren ausgesucht, da sie für genug Leistung bringen für einen Quadrocopter mit einer Rahmen länge von 250mm.(Bild l)
+Beim meinem Quadrocopter handelt es sich um ReadyToSky RS2205 Motoren mit einem $Kv$ von 2300. Ich habe diese Motoren ausgesucht, da sie für genug Leistung bringen für einen Quadrocopter mit einer Rahmenlänge von 250mm.(Bild l)
 \subsection{Akku}
 Der Akku versorgt alle Kompionenten, die Strom brauchen mit Strom. Im Quadrocopter wird ein LiPo Akku benutzt, der drei Zellen in Serie geschaltet hat mit einer Kapazität von 2.4Ah. Die miminale Spannung beträgt 11.1V. Es gibt noch das Entladerate, die als $C$-Rate angegeben wird. Mit mit der Kapazität multipliziert gibt es den maximalen Entladestrom an.\cite{website:fpvracing.ch_Mult_Komp}
 \begin{equation}
 A_{max}=Q*C
 \end{equation} (Bild r)\\ \\
-Man benutzt in Quadrocoptern meist LiPo Akkus, da sie eine hohe Energiedichte besitzen und viel Leistung abgeben können. Das aber hat auch zur Folge, dass man diese Akkus sorgfältig behandeln muss, da sie auch. im Extremfall, Feuer fangen oder explodieren können. So darf man die einzelnen Zellen nicht unter einer Spannung von 2.7V bringen. Desshalb wird der Akku auch an einem Akkuüberwacher angeschlossen, der piepst, wenn der Akku verbraucht ist. Auch braucht man ein Balancerladegerät, das kontrolliert, dass alle Zellen gleichmässug geladen werden. Eine hohe Kapazität garantiert nicht immer eine längere Flugzeit, da mehr Kapazität auch mehr Gewicht bedeutet.
+Man benutzt in Quadrocoptern meist LiPo Akkus, da sie eine hohe Energiedichte besitzen und viel Leistung abgeben können. Das aber hat auch zur Folge, dass man diese Akkus sorgfältig behandeln muss, da sie auch. im Extremfall, Feuer fangen oder explodieren können. So darf man die einzelnen Zellen nicht unter einer Spannung von 2.7V bringen. Desshalb wird der Akku auch an einem Akkuüberwacher angeschlossen, der piepst, wenn der Akku verbraucht ist. Auch braucht man ein Balancerladegerät, das kontrolliert, dass alle Zellen gleichmässug geladen werden. Eine hohe Kapazität garantiert nicht immer eine längere Flugzeit, da mehr Kapazität auch mehr Gewicht bedeutet.\cite{website:fpvracing.ch_Mult_Komp}
 \newpage
 
 \section{Der Flightcontroller}
@@ -164,7 +228,7 @@ Der Flightcontroller ist das Herz des Quadrocopter er liest alle Sensoren und gi
 \subsection{Komponenten}
 \subsubsection{Microcontroller}
 Der Microcontroller der auf dem FC benutzt wird ist ein ARM-Cortex-M7 STM32F722RET6 Microcontroller von STMicroelectronics. Dieser besitzt alle Schnittstellen um die einzelen Sensoren und andere Komponenten auszulesen und anzusteuern. Da dieser nicht genug Pins hat, wird noch ein zweiter Microcontroller benutzt und zwar der ATMega328P, der auch auf dem Arduino/Genuino UNO zu finden ist. Dieser liest den Drucksensor und einige ADCs aus und kommuniziert mit dem I2C-Protokoll mit dem STM32. \\ \\
-Microcontroller können anders als Mikroprozessoren ohne Zusatz Pehpetrie benutzt werden, da sie schon einen Flash, RAM etc. besitzen. Aber dies kommt mit einer tieferen Taktrate daher. Dies stört aber den Quadrocopter ist da diese völlig ausreichend ist. Der Hauptcontroller lauft mit einer Taktfrequenz von 200MHz.
+Microcontroller können anders als Mikroprozessoren ohne Zusatz Pehpetrie benutzt werden, da sie schon einen Flash, RAM etc. besitzen. Aber dies kommt mit einer tieferen Taktrate daher. Dies stört aber den Quadrocopter ist da diese völlig ausreichend ist. Der Hauptcontroller lauft mit einer Taktfrequenz von 216MHz.
 
 \subsubsection{Sensoren}
 Die wichtigsten Sensoren des Quadrocopter sind der Gyrosensor und der Beschleunigungssensor. In dem FC wurde eine ICM-20689 von TDK InvSense benutzt. Dieser hat beide Sensoren in einem Chip integriert und wird per SPI-Protokoll ausgelesen. Als Backup wird ein MPU-6050 benutzt, auch vom gleichen Hersteller, dieser wird mit dem langsameren I2C-Protokoll ausgelesen. \\
@@ -173,14 +237,14 @@ Die wichtigsten Sensoren des Quadrocopter sind der Gyrosensor und der Beschleuni
 \includegraphics[width=0.5\textwidth]{1920px-Mpu6050-HD.jpg}
 \caption[https://de.wikipedia.org/wiki/TDK]{Dice des MPU6050}
 \end{wrapfigure}
-Beide sind sogenannte MEMS-Sensoren, diese werden Direkt auf den Siliziumwaver der Chips realisiert. (Bild) Man ätzt die Sensorstrukturen und deren auslese Schaltung auf einen Chip. MEMS bedeutet microelectromechanical systems. Das bedeutet, dass diese Sensoren auf einer mechanischen Basis funktionieren.
+Beide sind sogenannte MEMS-Sensoren, diese werden Direkt auf den Siliziumwaver der Chips realisiert. (Bild) Man ätzt die Sensorstrukturen und deren auslese Schaltung auf einen Chip. MEMS bedeutet microelectromechanical systems. Das bedeutet, dass diese Sensoren auf einer mechanischen Basis funktionieren.\cite{website:elek_Komp_MEMS}
 \newpage
 \noindent
-Da der Gyrosensor nur Winkelgeschwindigkeit, bei den Sensoren $\frac{^\circ}{s}$ und nicht $\frac{rad}{s}$ misst muss diese noch mit der Loop-Zeit verrechnet werden um den Winkel zu bekommen.
+Da der Gyrosensor nur Winkelgeschwindigkeit, bei den Sensoren $\frac{^\circ}{s}$ und nicht $\frac{rad}{s}$ misst muss diese noch mit der Loop-Zeit multipliziert werden um den Winkel zu bekommen.
 \begin{equation}
-Grad=\omega*dt
+w=\omega*dt \quad mit \quad w=[^\circ] \quad und \quad \omega=\frac{^\circ}{s}
 \end{equation}
-Wenn man den Absoluten Winkel alleine mit dem Gyrosensor misst hat dieser in der Zeit einen Drift. Zum einen wird das durch das Rauschen im Sensor verurasacht und zu anderen auch von einem nicht genauen Loop-Zeit. Auch kann nicht der Anfangswinkel bestimmt werden und man müsste den Quadrocopter immer vom Boden aus starten. Deswegen braucht man da den Beschleunigungssensor. Dieser misst die Beschleunigung auf allen Achsen relativ zur Erdbeschleunigug. Beim Stillstand misst er also
+Wenn man den Absoluten Winkel alleine mit dem Gyrosensor misst hat dieser über die Zeit einen Drift. Zum einen wird das durch das Rauschen im Sensor verurasacht und zu anderen auch von einem nicht genauen Loop-Zeit. Auch kann nicht der Anfangswinkel bestimmt werden und man müsste den Quadrocopter immer vom Boden aus starten. Deswegen braucht man da den Beschleunigungssensor. Dieser misst die Beschleunigung auf allen Achsen relativ zur Erdbeschleunigug. Beim Stillstand auf einer horizontalen Ebene misst er also
 $
 \begin{pmatrix}
 0\\ 
@@ -188,23 +252,21 @@ $
 1
 \end{pmatrix}
 \vec{g}
-$. Man kann einfach die Norm des Vektors nehmen und mit der Beschleunigung an der gewünschten Achse verrechnen um dann den Winkel zu bekommen.
-\begin{equation}
-Grad=
-\left \|
-\begin{pmatrix}
+$. Man kann einfach die Norm des Beschleunigungsvektors $\vec{a} = \begin{pmatrix}
 a_{x}\\ 
 a_{y}\\ 
 a_{z}
-\end{pmatrix}
-\right \|
-\vec{g}*\frac{180}{\pi}
-\end{equation}
-So hat man den absoluten Winkel mit zwei Sensoren gemessen und muss diese nur noch Kombinieren. Dies geschieht mit der Formel des Komplementärflilters. Man muss auch beachten das man nur den Absoluten Winkel nur für die Nick-und Rollachse berechnen kann da, für die Gierachse noch ein Magnetometer nötig wäre für eine Null-Referenz.
+\end{pmatrix}$ nehmen und mit der Beschleunigung an der gewünschten Achse verrechnen um dann den Winkel zu bekommen.
 \begin{equation}
-Grad_{komp}=0.96*Grad_{Gyro}+0.04*Grad_{Accl}
+w=arcsin(\frac{a_{x/y}}{\vec{a}}
+)
+\vec{g}*\frac{180}{\pi} \quad mit \quad w=[^\circ]
 \end{equation}
-Man gibt dem Winkel aus dem Beschleunigungssensor einen tiefen Faktor da dieser Winkel nicht mehr genau stimmen wird, wenn der Quadrokopter in eine Richtung beschleunigen würde, dies wird erst bei starken Beschleunigungen der Fall sein, sonst stimmt dieser Wert ungefähr. Aber so kann man den Anfangswinkel des Quadrokopter bestimmen, ihn auch aus der Hand starten lassen und bekommt auch noch stabilere Werte. (Barometer ?) 
+Nebenbei muss man beachten, dass C/C++ den Winkel in $rad$ berechnet und man diesen noch zu $grad$ konvertieren muss. So hat man den absoluten Winkel mit zwei Sensoren gemessen und muss diese nur noch Kombinieren. Dies geschieht mit Hilfe des Komplementärflilters. (Man muss auch beachten das man nur den Absoluten Winkel nur für die Nick-und Rollachse berechnen kann da, für die Gierachse noch ein Magnetometer nötig wäre für eine Null-Referenz.)
+\begin{equation}
+w_{komp}=0.96*w_{Gyro}+0.04*w_{Accl} \quad mit \quad w=[^\circ]
+\end{equation}
+Dem Winkel aus dem Beschleunigungssensor wird ein tiefer Faktor gegeben da dieser Winkel nicht mehr genau stimmen wird, wenn der Quadrokopter in eine Richtung beschleunigen würde, dies wird erst bei starken Beschleunigungen der Fall sein, sonst stimmt dieser Wert ungefähr. Aber so kann man den Anfangswinkel des Quadrokopter bestimmen, ihn auch aus der Hand starten lassen und bekommt auch noch stabilere Werte. (Barometer ?) 
 
 \subsubsection{Empfänger}
 Als Empfänger wir dein NRF24L01 Breakoutboard mit PA und LNA benutzt. Der ist ein 2.4GHz Sender und Empfänger von der Firma Nordic Semiconductor. Die Kommunikation erfolgt digital und der Chip besitzt auch eine Zyklische Redundanzprüfung(CRC). Damit wird kontrolliert, ob ein Datenpaktet fehlerhafte Bits besitzt. Allenfalls wird es repariert oder verworfen. PA heisst Power Amplifying und bedeutet, dass das Signal verstärkt wird und so grössere Reichweiten erreicht werden können und LNA bedeutet Low Noise Amplifying und beseutet, dass schwache Empfangssignale verstärkt werden.\cite{website:electronics.stackexchange.com_WhatisPALNA} Vom Hersteller wird eine Reichweite vom bis zu einem Kilometer versprochen aber in einer Wohnsiedlung kommt man mit Sichtkontakt bis zu 300m, was ausreichend genug ist.
@@ -234,11 +296,12 @@ Da die Leiterplatte doppelseitig ist kann man hier nicht auf beiden Seiten das R
 Dann wurde auf einer Holzplatte Löcher an den Positionen der Verlöteten Komponenten gebohrt. Damit wird erreicht, dass man die Vorderseite, Plan auf dieser Holzplatte gelegt werden kann. Mit den restlichen PCBs, man kann nur fünf auf einmal bestellen, wurde ein Rahmen erstellt um so das teilweise gelötete Board zu fixieren. Dann wurde die Schablone ausgerichtet und festgemacht. So konnte man mit lötpaste und einem Spachtel die Löcher und somit auch die Lötstellen mit Lötpaste füllen. Dann wurde die Schablone entfernt. Mithilfe des Mikroskops wurden die Teile dann auf der Leiterplatte plaziert. Im Ofen wurden sie dann ungefähr nach der Temperaturkurve gebacken und so war die Vorderseite gelötet. Die Hinterseite wurden dann per Hand fertig gelötet worden. Dann wurden nur noch die Konnektoren angelötet und der Flightcontroller ist fertig zum programmieren.
 
 \subsection{Programmierung}
-
+Der FC wird mit C und C++ programmiert. Dabei wurde die STM32CubeIDE von STMicroelectronics benutzt, die eine Eclipse IDE mit den entsprechenden Bibliotheken vorinstalliert ist. Es wurden für die einzelnen Komponenten auch andere Bibliotheken benutzt, die z.t. umgeschrieben werden mussten für den STM32. Die Bibliothek für die IMU wurde aber selbst programmiert. Dabei kamen mehrere Probleme auf, z.b. das dass ChipSelect-Signal zu früh auf High ging.(Bild). In diesem Kapitel geht es um die grössten Hürden und wichtigsten Abläufe bei der programmierung des Quadrocopters. In der unteren Abbildung sieht man den Ablauf des Programmes.(Bild)
 
 \subsubsection{Motoren und Timing}
-
+Die ESC's der Motoren müssen mit dem OneShot125 Protokoll\cite{website:OL_OneShot125} angesprochen werden. Bei dem wird ein PWM-Signal von 2khz erzeugt. Der Nullpunkt, bei dem die Motoren aus sind, liegt bei einer Periode von 125us bzw. einem PWM von 25$\%$. Die Motoren erreichen ihre maximale Drehzal bei einer Periode von 500us bzw. bei einem PWM von 50$\%$. (Bild).
 \subsubsection{PID Implementierung}
+Der PID-Regler wird für den absoluten Winkel und für die Winkelgeschwindigkeit implementiert, wobei man die Gierachse nur mit der Winkelgeschwindikeit implementieren kann, da keine Referenz besteht, z.b durch ein Magnetometer. Die Regelungsdifferenz und Regelungskorrektur wird jeden Loop-Zyklus berechnet, also ca. mit 500Hz.  
 
 \section{Fernbedienung}
 

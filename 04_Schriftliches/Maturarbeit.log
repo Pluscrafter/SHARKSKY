@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.10.10)  12 OCT 2019 18:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.10.10)  15 OCT 2019 16:55
 entering extended mode
 **./Maturarbeit.tex
 (Maturarbeit.tex
@@ -456,6 +456,368 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
+(C:\Users\Pluscrafter\AppData\Roaming\MiKTeX\2.9\tex/latex/l3packages/xfrac\xfr
+ac.sty
+(C:\Users\Pluscrafter\AppData\Roaming\MiKTeX\2.9\tex/latex/l3kernel\expl3.sty
+Package: expl3 2019-10-02 L3 programming layer (loader) 
+
+(C:\Users\Pluscrafter\AppData\Roaming\MiKTeX\2.9\tex/latex/l3kernel\expl3-code.
+tex
+Package: expl3 2019-10-02 L3 programming layer (code)
+\c_max_int=\count302
+\l_tmpa_int=\count303
+\l_tmpb_int=\count304
+\g_tmpa_int=\count305
+\g_tmpb_int=\count306
+\l__seq_internal_a_int=\count307
+\l__seq_internal_b_int=\count308
+\g__kernel_prg_map_int=\count309
+\c__ior_term_noprompt_ior=\count310
+\c_log_iow=\count311
+\l_iow_line_count_int=\count312
+\l__iow_line_target_int=\count313
+\l__iow_one_indent_int=\count314
+\l__iow_indent_int=\count315
+\c_zero_dim=\dimen121
+\c_max_dim=\dimen122
+\l_tmpa_dim=\dimen123
+\l_tmpb_dim=\dimen124
+\g_tmpa_dim=\dimen125
+\g_tmpb_dim=\dimen126
+\c_zero_skip=\skip68
+\c_max_skip=\skip69
+\l_tmpa_skip=\skip70
+\l_tmpb_skip=\skip71
+\g_tmpa_skip=\skip72
+\g_tmpb_skip=\skip73
+\c_zero_muskip=\muskip16
+\c_max_muskip=\muskip17
+\l_tmpa_muskip=\muskip18
+\l_tmpb_muskip=\muskip19
+\g_tmpa_muskip=\muskip20
+\g_tmpb_muskip=\muskip21
+\l_keys_choice_int=\count316
+\l__intarray_loop_int=\count317
+\c__intarray_sp_dim=\dimen127
+\g__intarray_font_int=\count318
+\c__fp_leading_shift_int=\count319
+\c__fp_middle_shift_int=\count320
+\c__fp_trailing_shift_int=\count321
+\c__fp_big_leading_shift_int=\count322
+\c__fp_big_middle_shift_int=\count323
+\c__fp_big_trailing_shift_int=\count324
+\c__fp_Bigg_leading_shift_int=\count325
+\c__fp_Bigg_middle_shift_int=\count326
+\c__fp_Bigg_trailing_shift_int=\count327
+\c__kernel_randint_max_int=\count328
+\g__fp_array_int=\count329
+\l__fp_array_loop_int=\count330
+\l__sort_length_int=\count331
+\l__sort_min_int=\count332
+\l__sort_top_int=\count333
+\l__sort_max_int=\count334
+\l__sort_true_max_int=\count335
+\l__sort_block_int=\count336
+\l__sort_begin_int=\count337
+\l__sort_end_int=\count338
+\l__sort_A_int=\count339
+\l__sort_B_int=\count340
+\l__sort_C_int=\count341
+\l__str_internal_int=\count342
+\c__str_replacement_char_int=\count343
+\l__tl_analysis_normal_int=\count344
+\l__tl_analysis_index_int=\count345
+\l__tl_analysis_nesting_int=\count346
+\l__tl_analysis_type_int=\count347
+\l__regex_internal_a_int=\count348
+\l__regex_internal_b_int=\count349
+\l__regex_internal_c_int=\count350
+\l__regex_balance_int=\count351
+\l__regex_group_level_int=\count352
+\l__regex_mode_int=\count353
+\c__regex_cs_in_class_mode_int=\count354
+\c__regex_cs_mode_int=\count355
+\l__regex_catcodes_int=\count356
+\l__regex_default_catcodes_int=\count357
+\c__regex_catcode_D_int=\count358
+\c__regex_catcode_S_int=\count359
+\c__regex_catcode_L_int=\count360
+\c__regex_catcode_O_int=\count361
+\c__regex_catcode_A_int=\count362
+\c__regex_all_catcodes_int=\count363
+\l__regex_show_lines_int=\count364
+\l__regex_min_state_int=\count365
+\l__regex_max_state_int=\count366
+\l__regex_left_state_int=\count367
+\l__regex_right_state_int=\count368
+\l__regex_capturing_group_int=\count369
+\l__regex_min_pos_int=\count370
+\l__regex_max_pos_int=\count371
+\l__regex_curr_pos_int=\count372
+\l__regex_start_pos_int=\count373
+\l__regex_success_pos_int=\count374
+\l__regex_curr_char_int=\count375
+\l__regex_curr_catcode_int=\count376
+\l__regex_last_char_int=\count377
+\l__regex_case_changed_char_int=\count378
+\l__regex_curr_state_int=\count379
+\l__regex_step_int=\count380
+\l__regex_min_active_int=\count381
+\l__regex_max_active_int=\count382
+\l__regex_replacement_csnames_int=\count383
+\l__regex_match_count_int=\count384
+\l__regex_min_submatch_int=\count385
+\l__regex_submatch_int=\count386
+\l__regex_zeroth_submatch_int=\count387
+\g__regex_trace_regex_int=\count388
+\c_empty_box=\box32
+\l_tmpa_box=\box33
+\l_tmpb_box=\box34
+\g_tmpa_box=\box35
+\g_tmpb_box=\box36
+\l__box_top_dim=\dimen128
+\l__box_bottom_dim=\dimen129
+\l__box_left_dim=\dimen130
+\l__box_right_dim=\dimen131
+\l__box_top_new_dim=\dimen132
+\l__box_bottom_new_dim=\dimen133
+\l__box_left_new_dim=\dimen134
+\l__box_right_new_dim=\dimen135
+\l__box_internal_box=\box37
+\l__coffin_internal_box=\box38
+\l__coffin_internal_dim=\dimen136
+\l__coffin_offset_x_dim=\dimen137
+\l__coffin_offset_y_dim=\dimen138
+\l__coffin_x_dim=\dimen139
+\l__coffin_y_dim=\dimen140
+\l__coffin_x_prime_dim=\dimen141
+\l__coffin_y_prime_dim=\dimen142
+\c_empty_coffin=\box39
+\l__coffin_aligned_coffin=\box40
+\l__coffin_aligned_internal_coffin=\box41
+\l_tmpa_coffin=\box42
+\l_tmpb_coffin=\box43
+\g_tmpa_coffin=\box44
+\g_tmpb_coffin=\box45
+\l__coffin_bounding_shift_dim=\dimen143
+\l__coffin_left_corner_dim=\dimen144
+\l__coffin_right_corner_dim=\dimen145
+\l__coffin_bottom_corner_dim=\dimen146
+\l__coffin_top_corner_dim=\dimen147
+\l__coffin_scaled_total_height_dim=\dimen148
+\l__coffin_scaled_width_dim=\dimen149
+\c__coffin_empty_coffin=\box46
+\l__coffin_display_coffin=\box47
+\l__coffin_display_coord_coffin=\box48
+\l__coffin_display_pole_coffin=\box49
+\l__coffin_display_offset_dim=\dimen150
+\l__coffin_display_x_dim=\dimen151
+\l__coffin_display_y_dim=\dimen152
+\g__char_data_ior=\read2
+
+(C:\Users\Pluscrafter\AppData\Roaming\MiKTeX\2.9\tex/latex/l3kernel\l3deprecati
+on.def
+File: l3deprecation.def 2019-04-06 v L3 Deprecated functions
+))
+(C:\Users\Pluscrafter\AppData\Roaming\MiKTeX\2.9\tex/latex/l3backend\l3backend-
+pdfmode.def
+File: l3backend-pdfmode.def 2019-04-06 v L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count389
+\l__pdf_internal_box=\box50
+))
+(C:\Users\Pluscrafter\AppData\Roaming\MiKTeX\2.9\tex/latex/l3packages/l3keys2e\
+l3keys2e.sty
+Package: l3keys2e 2019-05-28 LaTeX2e option processing using LaTeX3 keys
+) (D:\Programs\MiKTeX\tex/latex/base\textcomp.sty
+Package: textcomp 2018/08/11 v2.0j Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 79.
+
+(D:\Programs\MiKTeX\tex/latex/base\ts1enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+Now handling font encoding TS1 ...
+... processing UTF-8 mapping file for font encoding TS1
+
+(D:\Programs\MiKTeX\tex/latex/base\ts1enc.dfu
+File: ts1enc.dfu 2019/07/11 v1.2j UTF-8 support for inputenc
+   defining Unicode char U+00A2 (decimal 162)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00A4 (decimal 164)
+   defining Unicode char U+00A5 (decimal 165)
+   defining Unicode char U+00A6 (decimal 166)
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00A8 (decimal 168)
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AC (decimal 172)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00AF (decimal 175)
+   defining Unicode char U+00B0 (decimal 176)
+   defining Unicode char U+00B1 (decimal 177)
+   defining Unicode char U+00B2 (decimal 178)
+   defining Unicode char U+00B3 (decimal 179)
+   defining Unicode char U+00B4 (decimal 180)
+   defining Unicode char U+00B5 (decimal 181)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+00B9 (decimal 185)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+00BC (decimal 188)
+   defining Unicode char U+00BD (decimal 189)
+   defining Unicode char U+00BE (decimal 190)
+   defining Unicode char U+00D7 (decimal 215)
+   defining Unicode char U+00F7 (decimal 247)
+   defining Unicode char U+0192 (decimal 402)
+   defining Unicode char U+02C7 (decimal 711)
+   defining Unicode char U+02D8 (decimal 728)
+   defining Unicode char U+02DD (decimal 733)
+   defining Unicode char U+0E3F (decimal 3647)
+   defining Unicode char U+2016 (decimal 8214)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+203B (decimal 8251)
+   defining Unicode char U+203D (decimal 8253)
+   defining Unicode char U+2044 (decimal 8260)
+   defining Unicode char U+204E (decimal 8270)
+   defining Unicode char U+2052 (decimal 8274)
+   defining Unicode char U+20A1 (decimal 8353)
+   defining Unicode char U+20A4 (decimal 8356)
+   defining Unicode char U+20A6 (decimal 8358)
+   defining Unicode char U+20A9 (decimal 8361)
+   defining Unicode char U+20AB (decimal 8363)
+   defining Unicode char U+20AC (decimal 8364)
+   defining Unicode char U+20B1 (decimal 8369)
+   defining Unicode char U+2103 (decimal 8451)
+   defining Unicode char U+2116 (decimal 8470)
+   defining Unicode char U+2117 (decimal 8471)
+   defining Unicode char U+211E (decimal 8478)
+   defining Unicode char U+2120 (decimal 8480)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2126 (decimal 8486)
+   defining Unicode char U+2127 (decimal 8487)
+   defining Unicode char U+212E (decimal 8494)
+   defining Unicode char U+2190 (decimal 8592)
+   defining Unicode char U+2191 (decimal 8593)
+   defining Unicode char U+2192 (decimal 8594)
+   defining Unicode char U+2193 (decimal 8595)
+   defining Unicode char U+2329 (decimal 9001)
+   defining Unicode char U+232A (decimal 9002)
+   defining Unicode char U+2422 (decimal 9250)
+   defining Unicode char U+25E6 (decimal 9702)
+   defining Unicode char U+25EF (decimal 9711)
+   defining Unicode char U+266A (decimal 9834)
+   defining Unicode char U+27E8 (decimal 10216)
+   defining Unicode char U+27E9 (decimal 10217)
+   defining Unicode char U+FEFF (decimal 65279)
+))
+LaTeX Info: Redefining \oldstylenums on input line 334.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 349.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 350.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 351.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 352.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 353.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 354.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 355.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 356.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 357.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 358.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 359.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 360.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 361.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 362.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 363.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 364.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 365.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 366.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 367.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 368.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 369.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 370.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 371.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 372.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 373.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 374.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 375.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 376.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 377.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 378.
+Package textcomp Info: Setting lmr sub-encoding to TS1/0 on input line 379.
+Package textcomp Info: Setting lmdh sub-encoding to TS1/0 on input line 380.
+Package textcomp Info: Setting lmss sub-encoding to TS1/0 on input line 381.
+Package textcomp Info: Setting lmssq sub-encoding to TS1/0 on input line 382.
+Package textcomp Info: Setting lmvtt sub-encoding to TS1/0 on input line 383.
+Package textcomp Info: Setting lmtt sub-encoding to TS1/0 on input line 384.
+Package textcomp Info: Setting qhv sub-encoding to TS1/0 on input line 385.
+Package textcomp Info: Setting qag sub-encoding to TS1/0 on input line 386.
+Package textcomp Info: Setting qbk sub-encoding to TS1/0 on input line 387.
+Package textcomp Info: Setting qcr sub-encoding to TS1/0 on input line 388.
+Package textcomp Info: Setting qcs sub-encoding to TS1/0 on input line 389.
+Package textcomp Info: Setting qpl sub-encoding to TS1/0 on input line 390.
+Package textcomp Info: Setting qtm sub-encoding to TS1/0 on input line 391.
+Package textcomp Info: Setting qzc sub-encoding to TS1/0 on input line 392.
+Package textcomp Info: Setting qhvc sub-encoding to TS1/0 on input line 393.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 394.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 395.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 396.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 397.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 398.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 399.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 400.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 401.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 402.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 403.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 404.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 405.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 406.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
+)
+(C:\Users\Pluscrafter\AppData\Roaming\MiKTeX\2.9\tex/latex/l3packages/xparse\xp
+arse.sty
+Package: xparse 2019-05-28 L3 Experimental document command parser
+\l__xparse_current_arg_int=\count390
+\g__xparse_grabber_int=\count391
+\l__xparse_m_args_int=\count392
+\l__xparse_v_nesting_int=\count393
+)
+(C:\Users\Pluscrafter\AppData\Roaming\MiKTeX\2.9\tex/latex/l3packages/xtemplate
+\xtemplate.sty
+Package: xtemplate 2019-05-28 L3 Experimental prototype document functions
+\l__xtemplate_tmp_dim=\dimen153
+\l__xtemplate_tmp_int=\count394
+\l__xtemplate_tmp_muskip=\muskip22
+\l__xtemplate_tmp_skip=\skip74
+)
+Package: xfrac 2019-05-28 L3 Experimental split-level fractions
+\l__xfrac_slash_box=\box51
+\l__xfrac_tmp_box=\box52
+\l__xfrac_denominator_bot_sep_dim=\dimen154
+\l__xfrac_numerator_bot_sep_dim=\dimen155
+\l__xfrac_numerator_top_sep_dim=\dimen156
+\l__xfrac_slash_left_sep_dim=\dimen157
+\l__xfrac_slash_right_sep_dim=\dimen158
+\l__xfrac_slash_left_muskip=\muskip23
+\l__xfrac_slash_right_muskip=\muskip24
+
+Package xtemplate Info: Declaring object type 'xfrac' taking 3 argument(s) on
+(xtemplate)             line 79.
+
+)
 Package biblatex Info: Trying to load language 'ngerman'...
 Package biblatex Info: ... file 'ngerman.lbx' found.
 
@@ -480,23 +842,30 @@ File: german.lbx 2019/08/31 v3.13a biblatex localization (PK/MW)
 Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (biblatex)                Loading 'csquotes' recommended.
 
-\@quotelevel=\count302
-\@quotereset=\count303
+\@quotelevel=\count395
+\@quotereset=\count396
 (Maturarbeit.aux)
 \openout1 = `Maturarbeit.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 39.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 3
+9.
+ (D:\Programs\MiKTeX\tex/latex/base\ts1cmr.fd
+File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 39.
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
@@ -504,23 +873,24 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Maturarbeit.bbl' found.
- (Maturarbeit.bbl)
-Package biblatex Info: Reference section=0 on input line 38.
-Package biblatex Info: Reference segment=0 on input line 38.
+
+(Maturarbeit.bbl)
+Package biblatex Info: Reference section=0 on input line 39.
+Package biblatex Info: Reference segment=0 on input line 39.
 
 (C:\Users\Pluscrafter\AppData\Roaming\MiKTeX\2.9\tex/context/base/mkii\supp-pdf
 .mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count304
-\scratchdimen=\dimen121
-\scratchbox=\box32
-\nofMPsegments=\count305
-\nofMParguments=\count306
+\scratchcounter=\count397
+\scratchdimen=\dimen159
+\scratchbox=\box53
+\nofMPsegments=\count398
+\nofMParguments=\count399
 \everyMPshowfont=\toks22
-\MPscratchCnt=\count307
-\MPscratchDim=\dimen122
-\MPnumerator=\count308
-\makeMPintoPDFobject=\count309
+\MPscratchCnt=\count400
+\MPscratchDim=\dimen160
+\MPnumerator=\count401
+\makeMPintoPDFobject=\count402
 \everyMPtoPDFconversion=\toks23
 ) (D:\Programs\MiKTeX\tex/latex/oberdiek\epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -538,7 +908,7 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
-\c@lstlisting=\count310
+\c@lstlisting=\count403
  [1
 
 {C:/Users/Pluscrafter/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] (Matu
@@ -550,12 +920,12 @@ rarbeit.toc
 \openout4 = `Maturarbeit.toc'.
 
  [2]
-Underfull \hbox (badness 10000) in paragraph at lines 57--58
+Underfull \hbox (badness 10000) in paragraph at lines 58--59
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 59--60
+Underfull \hbox (badness 10000) in paragraph at lines 60--61
 
  []
 
@@ -563,74 +933,72 @@ Underfull \hbox (badness 10000) in paragraph at lines 59--60
 <MotionDE.jpg, id=17, 1003.75pt x 690.58pt>
 File: MotionDE.jpg Graphic file (type jpg)
 <use MotionDE.jpg>
-Package pdftex.def Info: MotionDE.jpg  used on input line 67.
+Package pdftex.def Info: MotionDE.jpg  used on input line 68.
 (pdftex.def)             Requested size: 460.72124pt x 316.97519pt.
 <Regelkreis1.png, id=18, 452.69125pt x 280.04625pt>
 File: Regelkreis1.png Graphic file (type png)
 <use Regelkreis1.png>
-Package pdftex.def Info: Regelkreis1.png  used on input line 78.
+Package pdftex.def Info: Regelkreis1.png  used on input line 79.
 (pdftex.def)             Requested size: 184.28568pt x 114.00352pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 75--80
+Underfull \hbox (badness 10000) in paragraph at lines 76--81
 
  []
 
 [2 <./MotionDE.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 80--83
+Underfull \hbox (badness 10000) in paragraph at lines 81--84
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 80--83
+Underfull \hbox (badness 10000) in paragraph at lines 81--84
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 80--83
+Underfull \hbox (badness 10000) in paragraph at lines 81--84
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 80--83
+Underfull \hbox (badness 10000) in paragraph at lines 81--84
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 80--83
+Underfull \hbox (badness 10000) in paragraph at lines 81--84
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 80--83
+Underfull \hbox (badness 10000) in paragraph at lines 81--84
 
  []
 
 
-Package wrapfig Warning: Collision between wrapping environments on input line 
-86.
+Underfull \hbox (badness 10000) in paragraph at lines 86--87
+
+ []
 
 <Regelkreis2.png, id=22, 451.6875pt x 197.73875pt>
 File: Regelkreis2.png Graphic file (type png)
 <use Regelkreis2.png>
-Package pdftex.def Info: Regelkreis2.png  used on input line 88.
+Package pdftex.def Info: Regelkreis2.png  used on input line 90.
 (pdftex.def)             Requested size: 184.28568pt x 80.67815pt.
 
-Package wrapfig Warning: Stationary wrapfigure forced to float on input line 90
-.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 90--94
+Underfull \hbox (badness 10000) in paragraph at lines 93--96
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 90--94
+Underfull \hbox (badness 10000) in paragraph at lines 93--96
 
  []
 
 
-Package wrapfig Warning: Stationary wrapfigure forced to float on input line 95
-.
+Underfull \hbox (badness 10000) in paragraph at lines 93--96
+
+ []
 
 [3 <./Regelkreis1.png> <./Regelkreis2.png>]
 (C:\Users\Pluscrafter\AppData\Roaming\MiKTeX\2.9\tex/latex/listings\lstlang1.st
@@ -644,113 +1012,157 @@ File: lstlang1.sty 2019/09/10 1.8c listings language file
 (C:\Users\Pluscrafter\AppData\Roaming\MiKTeX\2.9\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
 )
-Underfull \hbox (badness 10000) in paragraph at lines 108--109
+Underfull \hbox (badness 10000) in paragraph at lines 109--110
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 119--120
+Underfull \hbox (badness 10000) in paragraph at lines 120--121
 
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 141--145
+<DLPF1.png, id=39, 1927.2pt x 1079.03125pt>
+File: DLPF1.png Graphic file (type png)
+<use DLPF1.png>
+Package pdftex.def Info: DLPF1.png  used on input line 146.
+(pdftex.def)             Requested size: 184.28568pt x 103.16762pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 142--149
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 141--145
-
- []
-
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 151--154
+Underfull \hbox (badness 10000) in paragraph at lines 142--149
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 158--160
+Underfull \hbox (badness 10000) in paragraph at lines 162--164
 
  []
 
-[6]
-Overfull \hbox (6.04073pt too wide) in paragraph at lines 166--168
+[5 <./DLPF1.png>]
+LaTeX Font Info:    Calculating math sizes for size <8.4> on input line 180.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <4.2> not available
+(Font)              size <5> substituted on input line 180.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <4.2> not available
+(Font)              size <5> substituted on input line 180.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <4.2> not available
+(Font)              size <5> substituted on input line 180.
+
+[6] [7]
+Underfull \hbox (badness 10000) in paragraph at lines 215--218
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 222--224
+
+ []
+
+[8]
+Overfull \hbox (6.04073pt too wide) in paragraph at lines 230--232
 \OT1/cmr/m/n/12 Der Mi-cro-con-trol-ler der auf dem FC be-nutzt wird ist ein AR
 M-Cortex-M7 STM32F722RET6
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 166--168
+Underfull \hbox (badness 10000) in paragraph at lines 230--232
 
  []
 
-<1920px-Mpu6050-HD.jpg, id=45, 1927.2pt x 810.02625pt>
+<1920px-Mpu6050-HD.jpg, id=56, 1927.2pt x 810.02625pt>
 File: 1920px-Mpu6050-HD.jpg Graphic file (type jpg)
 <use 1920px-Mpu6050-HD.jpg>
-Package pdftex.def Info: 1920px-Mpu6050-HD.jpg  used on input line 173.
+Package pdftex.def Info: 1920px-Mpu6050-HD.jpg  used on input line 237.
 (pdftex.def)             Requested size: 230.36061pt x 96.8158pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--175
+Underfull \hbox (badness 10000) in paragraph at lines 234--239
 
  []
 
 
-Underfull \hbox (badness 1418) in paragraph at lines 175--177
+Underfull \hbox (badness 1418) in paragraph at lines 239--241
 []\OT1/cmr/m/n/12 Beide sind so-ge-nann-te MEMS-Sensoren,
  []
 
-[7 <./1920px-Mpu6050-HD.jpg>] [8]
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+[9 <./1920px-Mpu6050-HD.jpg>] [10]
+Underfull \hbox (badness 10000) in paragraph at lines 280--280
 [][][]\OT1/cmr/m/n/10 https://blog.dronetrest.com/inertial-sensor-comparison-mp
 u6000-vs-mpu6050-vs-mpu6500-vs-
  []
 
-<egl.png, id=53, 1397.22pt x 813.0375pt>
+<egl.png, id=65, 1397.22pt x 813.0375pt>
 File: egl.png Graphic file (type png)
 <use egl.png>
-Package pdftex.def Info: egl.png  used on input line 221.
+Package pdftex.def Info: egl.png  used on input line 283.
 (pdftex.def)             Requested size: 184.28568pt x 107.22452pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--223
+Underfull \hbox (badness 10000) in paragraph at lines 280--285
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--223
+Underfull \hbox (badness 10000) in paragraph at lines 280--285
 
  []
 
-[9]
-<reflow.png, id=60, 240.9pt x 180.675pt>
+[11]
+<reflow.png, id=71, 240.9pt x 180.675pt>
 File: reflow.png Graphic file (type png)
 <use reflow.png>
-Package pdftex.def Info: reflow.png  used on input line 230.
+Package pdftex.def Info: reflow.png  used on input line 292.
 (pdftex.def)             Requested size: 184.28568pt x 138.21867pt.
- [10 <./egl.png> <./reflow.png>] [11] [12]
+ [12 <./egl.png> <./reflow.png>] [13] [14] [15]
+
+Package biblatex Warning: Month out of range or not an integer
+(biblatex)                at entry 'website:elek_Komp_MEMS' on input line 340.
+
+
+Overfull \hbox (2.20734pt too wide) in paragraph at lines 341--341
+[]\OT1/cmr/m/n/12 elektronik-kompendium.de. \OT1/cmr/m/it/12 MEMS - Micro-Elect
+ro-Mechanical Sys-tems\OT1/cmr/m/n/12 . Web-sei-te. Ok-
+ []
+
 
 Package biblatex Warning: Month out of range or not an integer
 (biblatex)                at entry 'website:fpvracing.ch_Mult_Komp' on input li
-ne 277.
+ne 340.
+
+
+Package biblatex Warning: Month out of range or not an integer
+(biblatex)                at entry 'website:OL_OneShot125' on input line 340.
 
 
 Package biblatex Warning: Month out of range or not an integer
 (biblatex)                at entry 'website:electronics.stackexchange.com_Whati
-sPALNA' on input line 277.
+sPALNA' on input line 340.
 
 
 Package biblatex Warning: Month out of range or not an integer
 (biblatex)                at entry 'website:rn-wissen_Regelungstechnik' on inpu
-t line 277.
+t line 340.
 
 
 Package biblatex Warning: Month out of range or not an integer
 (biblatex)                at entry 'website:sauter-elektronik.de_reflow' on inp
-ut line 277.
+ut line 340.
+
+
+Package biblatex Warning: Month out of range or not an integer
+(biblatex)                at entry 'website:Wikipedia_LPF' on input line 340.
 
 
 Package biblatex Warning: Month out of range or not an integer
 (biblatex)                at entry 'website:Wikipedia_Quadrocopter' on input li
-ne 277.
+ne 340.
 
 (Maturarbeit.lof
 Overfull \hbox (37.99586pt too wide) in paragraph at lines 4--4
@@ -762,35 +1174,41 @@ on-quadrocopter-multicopter [][]
 \tf@lof=\write5
 \openout5 = `Maturarbeit.lof'.
 
- [13] (Maturarbeit.aux)
+ [16] (Maturarbeit.aux)
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 2.90001pt have occurred.
+
 Package logreq Info: Writing requests to 'Maturarbeit.run.xml'.
 \openout1 = `Maturarbeit.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 12100 strings out of 492452
- 202778 string characters out of 3133997
- 713387 words of memory out of 3000000
- 16312 multiletter control sequences out of 15000+200000
- 11444 words of font info for 42 fonts, out of 3000000 for 9000
+ 23057 strings out of 492452
+ 422143 string characters out of 3133997
+ 900853 words of memory out of 3000000
+ 27225 multiletter control sequences out of 15000+200000
+ 541731 words of font info for 59 fonts, out of 3000000 for 9000
  1143 hyphenation exceptions out of 8191
- 39i,8n,62p,2669b,2195s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 44i,12n,68p,2669b,2195s stack positions out of 5000i,500n,10000p,200000b,50000s
 <D:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:/Programs/Mi
 KTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><D:/Programs/MiKTeX/fonts/type1
 /public/amsfonts/cm/cmex10.pfb><D:/Programs/MiKTeX/fonts/type1/public/amsfonts/
-cm/cmmi12.pfb><D:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:/
-Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/Programs/MiKTeX/fo
-nts/type1/public/amsfonts/cm/cmr12.pfb><D:/Programs/MiKTeX/fonts/type1/public/a
-msfonts/cm/cmr17.pfb><D:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pf
-b><D:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><D:/Programs/MiKT
-eX/fonts/type1/public/amsfonts/cm/cmr8.pfb><D:/Programs/MiKTeX/fonts/type1/publ
-ic/amsfonts/cm/cmsy10.pfb><D:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
-sy6.pfb><D:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><D:/Progr
-ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><D:/Programs/MiKTeX/fonts/
-type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on Maturarbeit.pdf (16 pages, 778495 bytes).
+cm/cmmi12.pfb><D:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><D:/
+Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:/Programs/MiKTeX/fo
+nts/type1/public/amsfonts/cm/cmr10.pfb><D:/Programs/MiKTeX/fonts/type1/public/a
+msfonts/cm/cmr12.pfb><D:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.p
+fb><D:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><D:/Programs/MiK
+TeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><D:/Programs/MiKTeX/fonts/type1/pub
+lic/amsfonts/cm/cmr8.pfb><D:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cms
+y10.pfb><D:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><D:/Progra
+ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><D:/Programs/MiKTeX/fonts/ty
+pe1/public/amsfonts/cm/cmti12.pfb><D:/Programs/MiKTeX/fonts/type1/public/amsfon
+ts/cm/cmtt10.pfb><D:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+
+Output written on Maturarbeit.pdf (19 pages, 838054 bytes).
 PDF statistics:
- 129 PDF objects out of 1000 (max. 8388607)
+ 149 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
 

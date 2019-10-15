@@ -19,6 +19,34 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
+    \entry{website:elek_Komp_MEMS}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=426e347424adcaf2297ccb97140b2eb3}{%
+           family={elektronik-kompendium.de},
+           familyi={e\bibinithyphendelim k\bibinitperiod}}}%
+      }
+      \strng{namehash}{426e347424adcaf2297ccb97140b2eb3}
+      \strng{fullhash}{426e347424adcaf2297ccb97140b2eb3}
+      \strng{bibnamehash}{426e347424adcaf2297ccb97140b2eb3}
+      \strng{authorbibnamehash}{426e347424adcaf2297ccb97140b2eb3}
+      \strng{authornamehash}{426e347424adcaf2297ccb97140b2eb3}
+      \strng{authorfullhash}{426e347424adcaf2297ccb97140b2eb3}
+      \field{sortinit}{e}
+      \field{sortinithash}{c554bd1a0b76ea92b9f105fe36d9c7b0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{hour}{14}
+      \field{howpublished}{Webseite}
+      \field{month}{Oktober}
+      \field{title}{MEMS - Micro-Electro-Mechanical Systems}
+      \field{year}{2019}
+      \verb{urlraw}
+      \verb https://www.elektronik-kompendium.de/sites/bau/1503041.htm
+      \endverb
+      \verb{url}
+      \verb https://www.elektronik-kompendium.de/sites/bau/1503041.htm
+      \endverb
+    \endentry
     \entry{website:fpvracing.ch_Mult_Komp}{misc}{}
       \name{author}{1}{}{%
         {{hash=1239e69b7979f4c6964c9ebae827093f}{%
@@ -45,6 +73,36 @@
       \endverb
       \verb{url}
       \verb https://fpvracing.ch/de/content/8-multicopter-komponenten
+      \endverb
+    \endentry
+    \entry{website:OL_OneShot125}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=7a8a4c5cf379cb08f95f2ece64f7ea01}{%
+           family={Liang},
+           familyi={L\bibinitperiod},
+           given={Oscar},
+           giveni={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{7a8a4c5cf379cb08f95f2ece64f7ea01}
+      \strng{fullhash}{7a8a4c5cf379cb08f95f2ece64f7ea01}
+      \strng{bibnamehash}{7a8a4c5cf379cb08f95f2ece64f7ea01}
+      \strng{authorbibnamehash}{7a8a4c5cf379cb08f95f2ece64f7ea01}
+      \strng{authornamehash}{7a8a4c5cf379cb08f95f2ece64f7ea01}
+      \strng{authorfullhash}{7a8a4c5cf379cb08f95f2ece64f7ea01}
+      \field{sortinit}{L}
+      \field{sortinithash}{dad3efd0836470093a7b4a7bb756eb8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{hour}{15}
+      \field{howpublished}{Webseite}
+      \field{month}{Oktober}
+      \field{title}{What is Oneshot ESC Protocol – Active Braking}
+      \field{year}{2019}
+      \verb{urlraw}
+      \verb https://oscarliang.com/oneshot125-esc-quadcopter-fpv/
+      \endverb
+      \verb{url}
+      \verb https://oscarliang.com/oneshot125-esc-quadcopter-fpv/
       \endverb
     \endentry
     \entry{website:electronics.stackexchange.com_WhatisPALNA}{misc}{}
@@ -137,6 +195,35 @@
       \verb https://www.sauter-elektronik.de/wissenswertes/reflow-loeten
       \endverb
     \endentry
+    \entry{website:Wikipedia_LPF}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=9c677286866aad38f8e9b660f5411814}{%
+           family={Wikipedia},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{fullhash}{9c677286866aad38f8e9b660f5411814}
+      \strng{bibnamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authorbibnamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authornamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authorfullhash}{9c677286866aad38f8e9b660f5411814}
+      \field{extraname}{1}
+      \field{sortinit}{W}
+      \field{sortinithash}{1af34bd8c148ffb32de1494636b49713}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{hour}{18}
+      \field{howpublished}{Webseite}
+      \field{month}{Oktober}
+      \field{title}{Low-pass filter}
+      \field{year}{2019}
+      \verb{urlraw}
+      \verb https://en.wikipedia.org/wiki/Low-pass_filter#Simple_infinite_impulse_response_filter
+      \endverb
+      \verb{url}
+      \verb https://en.wikipedia.org/wiki/Low-pass_filter#Simple_infinite_impulse_response_filter
+      \endverb
+    \endentry
     \entry{website:Wikipedia_Quadrocopter}{misc}{}
       \name{author}{1}{}{%
         {{hash=9c677286866aad38f8e9b660f5411814}{%
@@ -149,6 +236,7 @@
       \strng{authorbibnamehash}{9c677286866aad38f8e9b660f5411814}
       \strng{authornamehash}{9c677286866aad38f8e9b660f5411814}
       \strng{authorfullhash}{9c677286866aad38f8e9b660f5411814}
+      \field{extraname}{2}
       \field{sortinit}{W}
       \field{sortinithash}{1af34bd8c148ffb32de1494636b49713}
       \field{labelnamesource}{author}
