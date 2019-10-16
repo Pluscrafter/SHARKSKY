@@ -108,7 +108,7 @@ Der PID-Regler besteht aus mehreren Relgern und dem D-Glied. Untern wird beschri
 \subsubsection{P-Regler}
 Der P-Regler wirkt linear. Dieser Regler gibt die Regelabweichung verstärkt und unverzögert mit dem Faktor $Kp$ weiter. Das Problem dabei ist, dass diese Abweichung bleibend ist und somit den Soll-Wert über- bzw. unterschiesst. Dieser Regler wirkt mittelschnell.\cite{website:rn-wissen_Regelungstechnik}
 \begin{equation}
-y(t)=Kp*e(t)
+y(t)=Kp\cdot e(t)
 \end{equation}
 \begin{lstlisting}[language=C++,caption=P-Regler C++ Pseudocode]
 void P_Regler(float Kp, float error, float &P){
@@ -177,7 +177,7 @@ So kann man die Differenzialgleichung \ref{eq1} wie \ref{eq3} darstellen.\\
 x_{i}-y_{i}=RC*\frac{y_{i}-y_{i-1}}{\Delta t}
 \end{equation}
 
-Jetzt wird $v_{in}(t)$ mit $x_{i}$ und $v_{out}$ mit $y_{i}$ dargestellt und die Differenzialgleichung diskretisiert zu der Differenzengleichung \ref{eq4}.
+Jetzt wird $v_{\text{in}}(t)$ mit $x_{i}$ und $v_{out}$ mit $y_{i}$ dargestellt und die Differenzialgleichung diskretisiert zu der Differenzengleichung \ref{eq4}.
 
 \begin{align*} 
 x_{i}-y_{i}&=RC*\frac{y_{i}-y_{i-1}}{\Delta t} \\ 

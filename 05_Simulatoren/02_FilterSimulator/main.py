@@ -35,6 +35,10 @@ for i in line:
     roll.append(float(x[1]))
     time.append(float(x[3]))
 
+plt.plot(time, pitch)
+plt.plot(time, roll)
+plt.show()
+
 for i in range(1, len(time)):
     dtime.append(time[i]-time[i-1])
 
@@ -50,8 +54,10 @@ froll = digital_low_pass(80, roll)
 print(dt)
 pitch = np.asarray(froll)
 y = np.fft.fft(froll)
+y2 = np.fft.fft(fpitch)
 N = int(len(y)/2+1)
 X = np.linspace(0, freq/2, N, endpoint=True)
 
 plt.plot(X, np.abs(y[:N]/N))
+plt.plot(X, np.abs(y2[:N]/N))
 plt.show()

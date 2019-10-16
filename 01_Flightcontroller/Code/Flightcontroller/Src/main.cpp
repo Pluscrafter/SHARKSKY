@@ -220,17 +220,19 @@ int main(void)
   /* USER CODE BEGIN 1 */
 
 	//init PID values
-	pid_gain_ta[0][0] = 0;
-	pid_gain_ta[0][1] = 0;
-	pid_gain_ta[0][2] = 0;
 
-	pid_gain_ta[1][0] = 15;
+
+	pid_gain_am[0][0] = 3;
+	pid_gain_am[0][1] = 0;
+	pid_gain_am[0][2] = 0;
+
+	pid_gain_ta[1][0] = 7;
 	pid_gain_ta[1][1] = 0;
-	pid_gain_ta[1][2] = 0;
+	pid_gain_ta[1][2] = 0.06;
 
-	pid_gain_ta[2][0] = 15;
+	pid_gain_ta[2][0] = 7;
 	pid_gain_ta[2][1] = 0;
-	pid_gain_ta[2][2] = 0;
+	pid_gain_ta[2][2] = 0.06;
 
   /* USER CODE END 1 */
   
@@ -532,7 +534,7 @@ int main(void)
     //calculate PID error and PID from dlpf value
 #if PID_TRUE_ANGLE == 1
 	error[0] = f_ypr[2] - recvData.yaw;
-	error[1] = recvData.pitch - f_ypr[1];
+	error[1] = f_ypr[1] -recvData.pitch;
 	error[2] = recvData.roll - f_ypr[0];
 
 	PID_TrueAngle();
@@ -677,10 +679,10 @@ void setMotorSpeed(){
 	else{
 //PID applied to the calculation motor speed
 #if PID_TRUE_ANGLE == 1
-	motor_speed[0] = (1024 + recvData.throttle) + pid_ta[1] + pid_ta[2] - pid_am[0];
-	motor_speed[1] = (1024 + recvData.throttle) + pid_ta[1] - pid_ta[2] + pid_am[0];
-	motor_speed[2] = (1024 + recvData.throttle) - pid_ta[1] - pid_ta[2] - pid_am[0];
-	motor_speed[3] = (1024 + recvData.throttle) - pid_ta[1] + pid_ta[2] + pid_am[0];
+	motor_speed[0] = (1024 + recvData.throttle) + pid_ta[1] + pid_ta[2] + pid_am[0];
+	motor_speed[1] = (1024 + recvData.throttle) + pid_ta[1] - pid_ta[2] - pid_am[0];
+	motor_speed[2] = (1024 + recvData.throttle) - pid_ta[1] - pid_ta[2] + pid_am[0];
+	motor_speed[3] = (1024 + recvData.throttle) - pid_ta[1] + pid_ta[2] - pid_am[0];
 #endif
 
 #if PID_ANGLE_MOTION == 1
