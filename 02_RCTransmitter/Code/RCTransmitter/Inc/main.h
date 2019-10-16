@@ -61,8 +61,22 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define USER_Btn_Pin GPIO_PIN_13
 #define USER_Btn_GPIO_Port GPIOC
+#define BTN_L_Pin GPIO_PIN_8
+#define BTN_L_GPIO_Port GPIOF
 #define MCO_Pin GPIO_PIN_0
 #define MCO_GPIO_Port GPIOH
+#define SW1_Pin GPIO_PIN_13
+#define SW1_GPIO_Port GPIOF
+#define SW4_Pin GPIO_PIN_14
+#define SW4_GPIO_Port GPIOF
+#define BTN_D_Pin GPIO_PIN_15
+#define BTN_D_GPIO_Port GPIOF
+#define SW2_Pin GPIO_PIN_9
+#define SW2_GPIO_Port GPIOE
+#define SW3_Pin GPIO_PIN_11
+#define SW3_GPIO_Port GPIOE
+#define BTN_R_Pin GPIO_PIN_13
+#define BTN_R_GPIO_Port GPIOE
 #define LD3_Pin GPIO_PIN_14
 #define LD3_GPIO_Port GPIOB
 #define STLK_RX_Pin GPIO_PIN_8
@@ -87,6 +101,10 @@ void Error_Handler(void);
 #define TMS_GPIO_Port GPIOA
 #define TCK_Pin GPIO_PIN_14
 #define TCK_GPIO_Port GPIOA
+#define BTN_U_Pin GPIO_PIN_9
+#define BTN_U_GPIO_Port GPIOG
+#define BTN_M_Pin GPIO_PIN_14
+#define BTN_M_GPIO_Port GPIOG
 #define SWO_Pin GPIO_PIN_3
 #define SWO_GPIO_Port GPIOB
 #define LD2_Pin GPIO_PIN_7

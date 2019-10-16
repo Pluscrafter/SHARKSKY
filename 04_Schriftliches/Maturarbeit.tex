@@ -123,14 +123,14 @@ y(t)=Ki\int_{0}^{t}e(t)dt
 \end{equation}
 \begin{lstlisting}[language=C++,caption=I-Regler C++ Pseudocode]
 void I_Regler(float Ki, float error, float &I ){
-	I += I+error*Ki;
+	I += I+error * Ki;
 }
 \end{lstlisting}
 
 \subsubsection{D-Glied}
 Das Differenzialglied schaut auf die Differenz der Regelabweichung zur vorherigen Regelabweichung und wird mit dem Faktor $Kd$ verstärkt. Desshalb reagiert dieser sehr schnell und gibt den den beiden anderen Vorhaltezeit. Differenzialglied ist kein Regler da es alleine nichts regleln kann sondern nur auf Veränderungen in der Regelabweichung reagiert.\cite{website:rn-wissen_Regelungstechnik}\\
 \begin{equation}
-y(t)=Kd*e(t)\frac{d}{dt}
+y(t)=Kd\cdot e(t)\frac{d}{dt}
 \end{equation}
 \begin{lstlisting}[language=C++,caption=D-Regler C++ Pseudocode]
 void D_Glied(float Kd, float error, float &previous_error, float dt, float &D){
@@ -142,7 +142,7 @@ void D_Glied(float Kd, float error, float &previous_error, float dt, float &D){
 \subsubsection{PID-Regler}
 Beim PID-Regler werden die Eigenschaften der einzelnen Regler und dem D-Glied vereint.
 \begin{equation}
-y(t)=Kp*e(t)+Kd*e(t)\frac{d}{dt}+Kd*e(t)\frac{d}{dt}
+y(t)=Kp\cdot e(t)+Kd\cdot e(t)\frac{d}{dt}+Kd\cdot e(t)\frac{d}{dt}
 \end{equation}
 \begin{lstlisting}[language=C++,caption=D-Regler C++ Pseudocode]
 void PID_Regler(float P, float I, float D, float &PID){
@@ -158,37 +158,32 @@ Bei diesem Digitalen Low-Pass Filter(DLPF) wird ein analoger RC-Low-Pass Filter 
 \caption[aasdf]{RC Low-Pass Filter}
 \end{figure}\\
 \begin{equation} \label{eq1}
-v_{in}(t)-v_{out}(t)=R*I(t)
+v_{\text{in}}(t)-v_{\text{out}}(t)=R\cdot I(t)
 \end{equation}
 Wie man in \ref{eq1} sieht, ist die Eingang-und Ausgangsspannung vom Wiederstand und vom Strom abhängig.
 \begin{equation} \label{eq2}
-Q_{c}(t)=C*v_{out}(t)
+Q_{c}(t)=C\cdot v_{\text{out}}(t)
 \end{equation}
 \begin{equation} \label{eq3}
-I(t)=\frac{dQ_{c}}{dt}=C*\frac{dv_{out}}{dt}
+I(t)=\frac{dQ_{c}}{dt}=C\cdot \frac{dv_{\text{out}}}{dt}
 \end{equation}
 Der Strom kann man auch abhängig vom Kondensatror und der Ausgangsspannung darstellen wie man in \ref{eq2} und \ref{eq3} sieht.
 \begin{equation}
-v_{in}(t)-v_{out}(t)=RC*\frac{dv_{out}}{dt}
+v_{\text{in}}(t)-v_{\text{out}}(t)=RC\cdot \frac{dv_{\text{out}}}{dt}
 \end{equation}
 So kann man die Differenzialgleichung \ref{eq1} wie \ref{eq3} darstellen.\\
 
 \begin{equation}\label{eq4}
-x_{i}-y_{i}=RC*\frac{y_{i}-y_{i-1}}{\Delta t}
+x_{i}-y_{i}=RC\cdot \frac{y_{i}-y_{i-1}}{\Delta t}
 \end{equation}
 
-Jetzt wird $v_{\text{in}}(t)$ mit $x_{i}$ und $v_{out}$ mit $y_{i}$ dargestellt und die Differenzialgleichung diskretisiert zu der Differenzengleichung \ref{eq4}.
+Jetzt wird $v_{\text{in}}(t)$ mit $x_{i}$ und $v_{\text{out}}$ mit $y_{i}$ dargestellt und die Differenzialgleichung diskretisiert zu der Differenzengleichung \ref{eq4}.
 
-\begin{align*} 
-x_{i}-y_{i}&=RC*\frac{y_{i}-y_{i-1}}{\Delta t} \\ 
-x_{i}-y_{i}&=\frac{RCy_{i}-RCy_{i-1}}{\Delta t}\\
-x_{i}\Delta t-y_{i}\Delta&=RCy_{i}-RCy_{i-1} \\
-y_{i}\Delta t+RCy_{i}&=x_{i}\Delta t+RCy_{i-1} \\
-y_{i}(\Delta t+RC)&=x_{i}\Delta t+RCy_{i-1} \\
-y{i}&=x_{i}\frac{\Delta t}{\Delta t+RC} + y_{i-1}\frac{RC}{\Delta t+RC}
-\end{align*} 
+\begin{equation} \label{eq6}
+y{i}=x_{i}\frac{\Delta t}{\Delta t+RC} + y_{i-1}\frac{RC}{\Delta t+RC}
+\end{equation} 
 
-Die Gleichung wird nach $y_{i}$ umgeformt und man kann $\sfrac{\Delta t}{\Delta t+RC}$  mit $\alpha$ und $\sfrac{RC}{\Delta t + RC}$ mit $\alpha-1$ substituieren wie in \ref{eq5} gezeigt.
+Die Gleichung \ref{eq6} (Ganze Auflösung siehe Anhang 1 Auflösung 1) wird nach $y_{i}$ umgeformt und man kann $\sfrac{\Delta t}{\Delta t+RC}$  mit $\alpha$ und $\sfrac{RC}{\Delta t + RC}$ mit $\alpha-1$ substituieren wie in \ref{eq5} gezeigt.
 \begin{equation}\label{eq5}
 y{i}=\alpha x_{i} + (1-\alpha)y_{i-1} \quad \text{mit} \quad \alpha:=\frac{\Delta t}{\Delta t+RC}
 \end{equation}
@@ -200,20 +195,11 @@ f_{c} = \frac{1}{2\pi RC} \\
 RC = \frac{1}{2\pi f_{c}} 
 \end{align*}
 
-Jetzt kann auch das $RC$ in der Definition von $\alpha$ ersetzt werden, damit die Gleichung nicht mehr von $RC$ abhängig ist.
+Jetzt kann auch das $RC$ in der Definition von $\alpha$ ersetzt werden, damit die Gleichung nicht mehr von $RC$ abhängig ist(Ganzer Beweis siehe Anhang 1 Beweis 1).
 
-\begin{align*}
-\alpha&=\frac{\Delta t}{\Delta t+RC} \\
-\alpha \Delta t+RC\alpha &= \Delta t \\
-RC\alpha &= \Delta t \alpha \Delta t \\
-RC &= \Delta t \frac{1-\alpha}{\alpha}\\
-\frac{1}{2\pi f_{c}} &= \frac{\Delta t -\alpha\Delta t}{\alpha} \\
-\frac{1}{2\pi f_{c}} \alpha &= \Delta t -\alpha\Delta t \\
-\frac{1}{2\pi f_{c}} \alpha + \alpha\Delta t &= \Delta t \\
-\alpha &= \frac{\Delta t}{\frac{1}{2\pi f_{c}} + \Delta t} \\
-\alpha &= \frac{\Delta t}{\frac{1+2\pi f_{c}\Delta t}{2\pi f_{c}}} \\
-\alpha &= \frac{2\pi f_{c}\Delta t}{1+2\pi f_{c}\Delta t} \\
-\end{align*}
+\begin{equation*}
+\alpha = \frac{2\pi f_{c}\Delta t}{1+2\pi f_{c}\Delta t} 
+\end{equation*}
 
 
 Vibrationen verursachen beim D-Glied starke auschläge, wenn diese hohe Amplituden haben. Auch wird dieser dann unbrauchbar, da die Regelabweichung durch die Vibrationen verfälscht wird. Ein Filter versucht diese Vibrationen zu dämpfen und so starke Ausschläge verhindert.
@@ -222,14 +208,14 @@ Vibrationen verursachen beim D-Glied starke auschläge, wenn diese hohe Amplitud
 \subsection{Motoren}
 Die verwendeten Motoren sind sogenannte bürstenlose Motoren. Diese werden mit einem Electronic Speed Controller(ESC) angesteuert, diese wandeln die Steuerimpulse in die richtige Spannung für den Motor. Da ihre RPM von Spannung abhängig ist, wird einen $Kv$-Wert angegeben. So kann man mit der Formel
 \begin{equation}
-a=Kv*U \quad mit \quad a=[rpm]
+a=Kv\cdot U \quad mit \quad a=[\text{rpm}]
 \end{equation}
 die Rotationen pro Minute berechnen.\\ \\
 Beim meinem Quadrocopter handelt es sich um ReadyToSky RS2205 Motoren mit einem $Kv$ von 2300. Ich habe diese Motoren ausgesucht, da sie für genug Leistung bringen für einen Quadrocopter mit einer Rahmenlänge von 250mm.(Bild l)
 \subsection{Akku}
 Der Akku versorgt alle Kompionenten, die Strom brauchen mit Strom. Im Quadrocopter wird ein LiPo Akku benutzt, der drei Zellen in Serie geschaltet hat mit einer Kapazität von 2.4Ah. Die miminale Spannung beträgt 11.1V. Es gibt noch das Entladerate, die als $C$-Rate angegeben wird. Mit mit der Kapazität multipliziert gibt es den maximalen Entladestrom an.\cite{website:fpvracing.ch_Mult_Komp}
 \begin{equation}
-A_{max}=Q*C
+I_{\text{max}}=Q\cdot C
 \end{equation} (Bild r)\\ \\
 Man benutzt in Quadrocoptern meist LiPo Akkus, da sie eine hohe Energiedichte besitzen und viel Leistung abgeben können. Das aber hat auch zur Folge, dass man diese Akkus sorgfältig behandeln muss, da sie auch. im Extremfall, Feuer fangen oder explodieren können. So darf man die einzelnen Zellen nicht unter einer Spannung von 2.7V bringen. Desshalb wird der Akku auch an einem Akkuüberwacher angeschlossen, der piepst, wenn der Akku verbraucht ist. Auch braucht man ein Balancerladegerät, das kontrolliert, dass alle Zellen gleichmässug geladen werden. Eine hohe Kapazität garantiert nicht immer eine längere Flugzeit, da mehr Kapazität auch mehr Gewicht bedeutet.\cite{website:fpvracing.ch_Mult_Komp}
 \newpage
@@ -253,7 +239,7 @@ Beide sind sogenannte MEMS-Sensoren, diese werden Direkt auf den Siliziumwaver d
 \noindent
 Da der Gyrosensor nur Winkelgeschwindigkeit, bei den Sensoren $\frac{^\circ}{s}$ und nicht $\frac{rad}{s}$ misst muss diese noch mit der Loop-Zeit multipliziert werden um den Winkel zu bekommen.
 \begin{equation}
-w=\omega*dt \quad mit \quad w=[^\circ] \quad und \quad \omega=\frac{^\circ}{s}
+w=\omega\cdot dt \quad mit \quad [w]=^\circ \quad und \quad [\omega]=\frac{^\circ}{s}
 \end{equation}
 Wenn man den Absoluten Winkel alleine mit dem Gyrosensor misst hat dieser über die Zeit einen Drift. Zum einen wird das durch das Rauschen im Sensor verurasacht und zu anderen auch von einem nicht genauen Loop-Zeit. Auch kann nicht der Anfangswinkel bestimmt werden und man müsste den Quadrocopter immer vom Boden aus starten. Deswegen braucht man da den Beschleunigungssensor. Dieser misst die Beschleunigung auf allen Achsen relativ zur Erdbeschleunigug. Beim Stillstand auf einer horizontalen Ebene misst er also
 $
@@ -269,13 +255,13 @@ a_{y}\\
 a_{z}
 \end{pmatrix}$ nehmen und mit der Beschleunigung an der gewünschten Achse verrechnen um dann den Winkel zu bekommen.
 \begin{equation}
-w=arcsin(\frac{a_{x/y}}{\vec{a}}
+w=\arcsin(\frac{a_{x/y}}{\vec{a}}
 )
-\vec{g}*\frac{180}{\pi} \quad mit \quad w=[^\circ]
+\vec{g}\cdot \frac{180}{\pi} \quad mit \quad [w]=^\circ
 \end{equation}
 Nebenbei muss man beachten, dass C/C++ den Winkel in $rad$ berechnet und man diesen noch zu $grad$ konvertieren muss. So hat man den absoluten Winkel mit zwei Sensoren gemessen und muss diese nur noch Kombinieren. Dies geschieht mit Hilfe des Komplementärflilters. (Man muss auch beachten das man nur den Absoluten Winkel nur für die Nick-und Rollachse berechnen kann da, für die Gierachse noch ein Magnetometer nötig wäre für eine Null-Referenz.)
 \begin{equation}
-w_{komp}=0.96*w_{Gyro}+0.04*w_{Accl} \quad mit \quad w=[^\circ]
+w_{\text{komp}}=0.96\cdot w_{\text{Gyro}}+0.04\cdot w_{\text{Accl}} \quad mit \quad [w]=^\circ
 \end{equation}
 Dem Winkel aus dem Beschleunigungssensor wird ein tiefer Faktor gegeben da dieser Winkel nicht mehr genau stimmen wird, wenn der Quadrokopter in eine Richtung beschleunigen würde, dies wird erst bei starken Beschleunigungen der Fall sein, sonst stimmt dieser Wert ungefähr. Aber so kann man den Anfangswinkel des Quadrokopter bestimmen, ihn auch aus der Hand starten lassen und bekommt auch noch stabilere Werte. (Barometer ?) 
 
@@ -352,5 +338,29 @@ Der PID-Regler wird für den absoluten Winkel und für die Winkelgeschwindigkeit
 \subsection{Abbildungsverzeichnis}
 \listoffigures
 \subsection{Personenverzeichnis}
+\newpage
+\section{Anhang 1}
+Auflösung 1:
+\begin{align*} 
+x_{i}-y_{i}&=RC\cdot \frac{y_{i}-y_{i-1}}{\Delta t} \\ 
+x_{i}-y_{i}&=\frac{RCy_{i}-RCy_{i-1}}{\Delta t}\\
+x_{i}\Delta t-y_{i}\Delta&=RCy_{i}-RCy_{i-1} \\
+y_{i}\Delta t+RCy_{i}&=x_{i}\Delta t+RCy_{i-1} \\
+y_{i}(\Delta t+RC)&=x_{i}\Delta t+RCy_{i-1} \\
+y{i}&=x_{i}\frac{\Delta t}{\Delta t+RC} + y_{i-1}\frac{RC}{\Delta t+RC}
+\end{align*}
+Beweis 1:
+\begin{align*}
+\alpha&=\frac{\Delta t}{\Delta t+RC} \\
+\alpha \Delta t+RC\alpha &= \Delta t \\
+RC\alpha &= \Delta t \alpha \Delta t \\
+RC &= \Delta t \frac{1-\alpha}{\alpha}\\
+\frac{1}{2\pi f_{c}} &= \frac{\Delta t -\alpha\Delta t}{\alpha} \\
+\frac{1}{2\pi f_{c}} \alpha &= \Delta t -\alpha\Delta t \\
+\frac{1}{2\pi f_{c}} \alpha + \alpha\Delta t &= \Delta t \\
+\alpha &= \frac{\Delta t}{\frac{1}{2\pi f_{c}} + \Delta t} \\
+\alpha &= \frac{\Delta t}{\frac{1+2\pi f_{c}\Delta t}{2\pi f_{c}}} \\
+\alpha &= \frac{2\pi f_{c}\Delta t}{1+2\pi f_{c}\Delta t} 
+\end{align*}
 
 \end{document}

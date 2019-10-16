@@ -98,6 +98,10 @@ struct RadioData{
 AckData 		ackData;										//!< define acknowlegement data
 RadioData 		transData;										//!< define transmit data
 
+
+int page = 0;
+int t = 0;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -188,17 +192,56 @@ int main(void)
 	  transData.roll = (int16_t)(((int16_t)adc3[1]- 470) * (30.0/470.0));
 
 	  //Write to LCD
-	  lcd.lcdSetCursorPosition(0, 0);
-	  lcd.lcdPrintStr((uint8_t*)txt, sprintf(txt,"Throttle :%i  %lu  ",transData.throttle, adc3[3]));
-	  lcd.lcdSetCursorPosition(0, 1);
-	  lcd.lcdPrintStr((uint8_t*)txt, sprintf(txt,"Yaw      :%i  %lu  ",transData.yaw, adc3[2]));
-	  lcd.lcdSetCursorPosition(0, 2);
-	  lcd.lcdPrintStr((uint8_t*)txt, sprintf(txt,"Pitch    :%i  %lu  ",transData.pitch, adc3[0]));
-	  lcd.lcdSetCursorPosition(0, 3);
-	  lcd.lcdPrintStr((uint8_t*)txt, sprintf(txt,"Roll     :%i  %lu  ",transData.roll, adc3[1]));
+	  if(page == 0){
+		  lcd.lcdSetCursorPosition(0, 0);
+		  lcd.lcdPrintStr((uint8_t*)txt, sprintf(txt,"Throttle :%i  %lu  ",transData.throttle, adc3[3]));
+		  lcd.lcdSetCursorPosition(0, 1);
+		  lcd.lcdPrintStr((uint8_t*)txt, sprintf(txt,"Yaw      :%i  %lu  ",transData.yaw, adc3[2]));
+		  lcd.lcdSetCursorPosition(0, 2);
+		  lcd.lcdPrintStr((uint8_t*)txt, sprintf(txt,"Pitch    :%i  %lu  ",transData.pitch, adc3[0]));
+		  lcd.lcdSetCursorPosition(0, 3);
+		  lcd.lcdPrintStr((uint8_t*)txt, sprintf(txt,"Roll     :%i  %lu  ",transData.roll, adc3[1]));
+	  }
+	  if(page == 1){
+		  lcd.lcdSetCursorPosition(0, 0);
+		  lcd.lcdPrintStr((uint8_t*)txt, sprintf(txt,"Throttle :%i  %lu  ",transData.throttle, adc3[3]));
+		  lcd.lcdSetCursorPosition(0, 1);
+		  lcd.lcdPrintStr((uint8_t*)txt, sprintf(txt,"Yaw      :%2.2f",ackData.yaw/100.0));
+		  lcd.lcdSetCursorPosition(0, 2);
+		  lcd.lcdPrintStr((uint8_t*)txt, sprintf(txt,"Pitch    :%2.2f",ackData.pitch/100.0));
+		  lcd.lcdSetCursorPosition(0, 3);
+		  lcd.lcdPrintStr((uint8_t*)txt, sprintf(txt,"Roll     :%2.2f",ackData.roll/100.0));
+	  }
 
 	  //read radio
 	  loopRadio();
+
+	  if(HAL_GPIO_ReadPin(BTN_U_GPIO_Port, BTN_U_Pin) == 0){
+		  HAL_Delay(30);
+		  if(HAL_GPIO_ReadPin(BTN_U_GPIO_Port, BTN_U_Pin) == 0){
+			  page++;
+			  if (page > 1){
+				  page = 0;
+			  }
+		  }
+	  }
+
+	  t = HAL_GPIO_ReadPin(SW1_GPIO_Port, SW1_Pin);
+
+	  if(HAL_GPIO_ReadPin(BTN_D_GPIO_Port, BTN_D_Pin) == 0){
+		  HAL_Delay(30);
+		  if(HAL_GPIO_ReadPin(BTN_D_GPIO_Port, BTN_D_Pin) == 0){
+			  page--;
+			  if (page < 0){
+				  page = 1;
+			  }
+		  }
+	  }
+
+	  if(HAL_GPIO_ReadPin(SW1_GPIO_Port, SW1_Pin) == 0){
+		  transData.flags |= (1<<0);
+	  }
+
 	  //lcd.lcdDisplayClear();
 	  //HAL_Delay(1);
     /* USER CODE END WHILE */

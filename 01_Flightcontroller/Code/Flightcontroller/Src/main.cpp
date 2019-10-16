@@ -167,6 +167,8 @@ struct RadioData{
 AckData 					ackData;								//!< define acknowlegement data
 RadioData 					recvData;								//!< define receive data
 
+float						timnodata = 0;
+
 
 //I2cdev MPU6050
 #if MPU6050_ENABLE == 1
@@ -198,6 +200,7 @@ float 						previous_error[3];						//!< define previous error for D-Gain
 //Digital Low-pass DLPF
 const float					alpha = 0.231710;						//!< define alpha value of FLPF
 volatile float 				f_ypr[3];								//!< define filtered true angle values
+float						z_point[2]	= {0,0};
 
 //Motor
 void 						setMotorSpeed();						//!< function: sets motor speed according to throttle and PID calculation
@@ -461,9 +464,17 @@ int main(void)
 	  f_ypr[1] = f_ypr[1] - (alpha * (f_ypr[1] - imu.t_ypr[1]));
 	  f_ypr[2] = f_ypr[2] - (alpha * (f_ypr[2] - imu.ypr[2]));
 
+	  if(recvData.throttle < 100){
+		  z_point[0] = f_ypr[0];
+		  z_point[1] = f_ypr[1];
+	  }
 
+	  f_ypr[0] -= z_point[0];
+	  f_ypr[1] -= z_point[1];
 
-
+	  ackData.yaw = int(f_ypr[2]*100);
+	  ackData.pitch = int(f_ypr[1]*100);
+	  ackData.roll = int(f_ypr[0]*100);
 
 #endif
 
@@ -670,10 +681,15 @@ void PID_AngleMotion(){
 }
 
 void setMotorSpeed(){
+
+	if (timnodata >= 5){
+		recvData.throttle = 0;
+	}
+
 	// throttle value under 100 no movement of motors
 	if (recvData.throttle < 100){
 		for (int i = 0; i < 4 ;i++){
-			motor_speed[i] = 1024 + 10;
+			motor_speed[i] = 1024;
 		}
 	}
 	else{
@@ -721,9 +737,10 @@ void loopRadio(){
 	if(radio.available()){
 		radio.read(&recvData,sizeof(RadioData));
 		radio.writeAckPayload(1,&ackData,sizeof(AckData));
+		timnodata = 0;
 	}
 	else{
-
+		timnodata += lptime;
 	}
 }
 /* USER CODE END 4 */
