@@ -28,15 +28,19 @@ dt = 0
 
 pitch = []
 roll = []
+yaw = []
+
 
 for i in line:
     x = i.split('\t')
     pitch.append(float(x[0]))
     roll.append(float(x[1]))
+    yaw.append(float(x[2]))
     time.append(float(x[3]))
 
 plt.plot(time, pitch)
 plt.plot(time, roll)
+plt.plot(time, yaw)
 plt.show()
 
 for i in range(1, len(time)):
@@ -50,14 +54,17 @@ freq = 1.0/dt
 
 fpitch = digital_low_pass(80, pitch)
 froll = digital_low_pass(80, roll)
+fyaw = digital_low_pass(80, yaw)
 
 print(dt)
 pitch = np.asarray(froll)
-y = np.fft.fft(froll)
-y2 = np.fft.fft(fpitch)
+y = np.fft.fft(roll)
+y2 = np.fft.fft(pitch)
+y3 = np.fft.fft(yaw)
 N = int(len(y)/2+1)
 X = np.linspace(0, freq/2, N, endpoint=True)
 
 plt.plot(X, np.abs(y[:N]/N))
 plt.plot(X, np.abs(y2[:N]/N))
+plt.plot(X, np.abs(y3[:N]/N))
 plt.show()

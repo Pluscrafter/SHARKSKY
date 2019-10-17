@@ -225,7 +225,8 @@ int main(void)
 	//init PID values
 
 
-	pid_gain_am[0][0] = 3;
+
+	pid_gain_am[0][0] = 0;
 	pid_gain_am[0][1] = 0;
 	pid_gain_am[0][2] = 0;
 
@@ -545,7 +546,7 @@ int main(void)
     //calculate PID error and PID from dlpf value
 #if PID_TRUE_ANGLE == 1
 	error[0] = f_ypr[2] - recvData.yaw;
-	error[1] = f_ypr[1] -recvData.pitch;
+	error[1] = recvData.pitch - f_ypr[1] ;
 	error[2] = recvData.roll - f_ypr[0];
 
 	PID_TrueAngle();
