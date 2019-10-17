@@ -65,8 +65,8 @@
 #define ZA_OFFSET_H			0x7D
 #define ZA_OFFSET_L			0x7E
 
-#define OFFSET_GYRO_X		15
-#define OFFSET_GYRO_Y		-49
+#define OFFSET_GYRO_X		3
+#define OFFSET_GYRO_Y		-46
 #define OFFSET_GYRO_Z		-2
 
 #define OFFSET_ACCEL_X		0

@@ -30,9 +30,9 @@ namespace Sensor {
 		HAL_Delay(10);
 		spi1.WriteRegister(CONFIG, 0x02); //set DLPF to 2 108.6 HZ BW
 		HAL_Delay(10);
-		spi1.WriteRegister(GYRO_CONFIG, 0x00); //set GYRO to 250dps
+		spi1.WriteRegister(GYRO_CONFIG, 0x08); //set GYRO to 500dps 08
 		HAL_Delay(10);
-		spi1.WriteRegister(ACCEL_CONFIG, 0x00); //set ACCEL to 2g
+		spi1.WriteRegister(ACCEL_CONFIG, 0x10); //set ACCEL to 8g
 		HAL_Delay(10);
 		spi1.WriteRegister(ACCEL_CONFIG_2, 0x02); //set ACCEL DLPF to 121.3Hz
 		HAL_Delay(10);
@@ -90,7 +90,7 @@ namespace Sensor {
 		r_gyro[2] = (tmp[4] << 8) | tmp[5];
 
 		for(int i = 0; i<3; i++){
-			ypr[i] =   r_gyro[i] / 131.0 ;
+			ypr[i] =   r_gyro[i] / 65.5 ;
 		}
 
 	}
@@ -109,7 +109,7 @@ namespace Sensor {
 		r_accel[2] = a;*/
 
 		for(int i = 0; i<3; i++){
-			accel[i] =  r_accel[i] / 16384.0;
+			accel[i] =  r_accel[i] / 4096.0;
 		}
 
 

@@ -198,7 +198,8 @@ float 						error[3];								//!< define error
 float 						previous_error[3];						//!< define previous error for D-Gain
 
 //Digital Low-pass DLPF
-const float					alpha = 0.231710;						//!< define alpha value of FLPF
+volatile float				alpha;									//!< define alpha for DLPF
+uint16_t					fc = 80;									//!< define alpha for DLPF
 volatile float 				f_ypr[3];								//!< define filtered true angle values
 float						z_point[2]	= {0,0};
 
@@ -226,7 +227,7 @@ int main(void)
 
 
 
-	pid_gain_am[0][0] = 0;
+	pid_gain_am[0][0] = 0.1;
 	pid_gain_am[0][1] = 0;
 	pid_gain_am[0][2] = 0;
 
@@ -454,13 +455,19 @@ int main(void)
 	  //calculate angle with angular motion
 	  imu.t_ypr[0] += imu.ypr[0]*lptime;
 	  imu.t_ypr[1] += imu.ypr[1]*lptime;
+	  imu.t_ypr[2] += imu.ypr[2]*lptime;
+
+	  //roll and pitch tuning on yaw movement https://www.youtube.com/watch?v=4BoIE8YQwM8 17.10.2019
+	  imu.t_ypr[0] -= imu.t_ypr[1] * sin(imu.ypr[2] * 0.017453293 * lptime);
+	  imu.t_ypr[1] += imu.t_ypr[0] * sin(imu.ypr[2] * 0.017453293 * lptime);
 
 	  //complementary filter
-	  imu.t_ypr[0] = imu.t_ypr[0] * 0.96 + acangle[1] * 0.04;	// angle is mixed up
-	  imu.t_ypr[1] = imu.t_ypr[1] * 0.96 + acangle[0] * 0.04;
+	  imu.t_ypr[0] = imu.t_ypr[0] * 0.9996 + acangle[1] * 0.0004;	// angle is mixed up
+	  imu.t_ypr[1] = imu.t_ypr[1] * 0.9996 + acangle[0] * 0.0004;
 
 	  //Digital Low Pass filtering https://kiritchatterjee.wordpress.com/2014/11/10/a-simple-digital-low-pass-filter-in-c/ [9.10.19 22:52]
 	  //yet only for true angle
+	  alpha = (fc * lptime) / (fc + 80 * lptime);
 	  f_ypr[0] = f_ypr[0] - (alpha * (f_ypr[0] - imu.t_ypr[0]));
 	  f_ypr[1] = f_ypr[1] - (alpha * (f_ypr[1] - imu.t_ypr[1]));
 	  f_ypr[2] = f_ypr[2] - (alpha * (f_ypr[2] - imu.ypr[2]));
@@ -476,6 +483,7 @@ int main(void)
 	  ackData.yaw = int(f_ypr[2]*100);
 	  ackData.pitch = int(f_ypr[1]*100);
 	  ackData.roll = int(f_ypr[0]*100);
+
 
 #endif
 
@@ -542,7 +550,6 @@ int main(void)
 
 	// read data from radio buffer
     loopRadio();
-
     //calculate PID error and PID from dlpf value
 #if PID_TRUE_ANGLE == 1
 	error[0] = f_ypr[2] - recvData.yaw;
