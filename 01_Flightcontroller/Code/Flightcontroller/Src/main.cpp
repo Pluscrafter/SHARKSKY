@@ -199,6 +199,7 @@ float 						previous_error[3];						//!< define previous error for D-Gain
 
 //Digital Low-pass DLPF
 volatile float				alpha;									//!< define alpha for DLPF
+volatile float				alpha2;									//!< define alpha for DLPF
 uint16_t					fc = 80;									//!< define alpha for DLPF
 volatile float 				f_ypr[3];								//!< define filtered true angle values
 float						z_point[2]	= {0,0};
@@ -227,7 +228,7 @@ int main(void)
 
 
 
-	pid_gain_am[0][0] = 0.1;
+	pid_gain_am[0][0] = 1;
 	pid_gain_am[0][1] = 0;
 	pid_gain_am[0][2] = 0;
 
@@ -457,6 +458,9 @@ int main(void)
 	  imu.t_ypr[1] += imu.ypr[1]*lptime;
 	  imu.t_ypr[2] += imu.ypr[2]*lptime;
 
+	  alpha2 = (3 * lptime) / (1 + 3 * lptime);
+	  f_ypr[2] = f_ypr[2] - (alpha * (f_ypr[2] - imu.ypr[2]));
+
 	  //roll and pitch tuning on yaw movement https://www.youtube.com/watch?v=4BoIE8YQwM8 17.10.2019
 	  imu.t_ypr[0] -= imu.t_ypr[1] * sin(imu.ypr[2] * 0.017453293 * lptime);
 	  imu.t_ypr[1] += imu.t_ypr[0] * sin(imu.ypr[2] * 0.017453293 * lptime);
@@ -467,11 +471,12 @@ int main(void)
 
 	  //Digital Low Pass filtering https://kiritchatterjee.wordpress.com/2014/11/10/a-simple-digital-low-pass-filter-in-c/ [9.10.19 22:52]
 	  //yet only for true angle
-	  alpha = (fc * lptime) / (fc + 80 * lptime);
+	  alpha = (fc * lptime) / (1 + fc * lptime);
+
 	  f_ypr[0] = f_ypr[0] - (alpha * (f_ypr[0] - imu.t_ypr[0]));
 	  f_ypr[1] = f_ypr[1] - (alpha * (f_ypr[1] - imu.t_ypr[1]));
-	  f_ypr[2] = f_ypr[2] - (alpha * (f_ypr[2] - imu.ypr[2]));
 
+	 // recvData.throttle = 200;
 	  if(recvData.throttle < 100){
 		  z_point[0] = f_ypr[0];
 		  z_point[1] = f_ypr[1];
