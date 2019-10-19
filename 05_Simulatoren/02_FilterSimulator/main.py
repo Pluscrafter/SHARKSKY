@@ -17,7 +17,7 @@ def digital_low_pass(cutoff_frequency, input):
     return output
 
 
-with open('LOG','r') as file:
+with open('LOG3','r') as file:
     line = []
     for i in file:
         line.append(i.rstrip('\n'))

@@ -122,6 +122,8 @@ uint8_t  sine[256] = { //!< 8bit sine for test with DAC
   0x67, 0x6A, 0x6D, 0x70, 0x74, 0x77, 0x7A, 0x7D
 };
 bool 						osdusb = USB_MODE;						//!< define UART output to USB or OSD
+void						usbmenu();								//!< USB menu
+void 						motor_calibration();
 
 //ICM
 Sensor::ICM20689 			imu;									//!< define IMU (ICM20689)
@@ -287,47 +289,7 @@ int main(void)
 
   //Motor calibration
 #if MOTORCALIB == 1
-	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_1,2048);
-	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_2,2048);
-	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_3,2048);
-	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_4,2048);
-
-	HAL_Delay(5000);
-
-	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_1,1024);
-	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_2,1024);
-	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_3,1024);
-	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_4,1024);
-
-	HAL_Delay(5000);
-
-	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_1,2048);
-	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_2,2048);
-	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_3,2048);
-	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_4,2048);
-
-	HAL_Delay(5000);
-
-	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_1,1024);
-	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_2,1024);
-	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_3,1024);
-	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_4,1024);
-
-	HAL_Delay(10000);
-
-	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_1,1124);
-	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_2,1124);
-	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_3,1124);
-	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_4,1124);
-
-	HAL_Delay(2000);
-
-	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_1,1024);
-	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_2,1024);
-	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_3,1024);
-	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_4,1024);
-
-
+motor_calibration();
 	for(;;){
 
 	}
@@ -347,6 +309,7 @@ int main(void)
   //Set UART to USB or OSD Mode
   if(HAL_GPIO_ReadPin(USBOSD_GPIO_Port, USBOSD_Pin) == GPIO_PIN_RESET){
 	  osdusb = USB_MODE;
+	  usbmenu();
 	  HAL_GPIO_WritePin(MOD0_LED_GPIO_Port, MOD0_LED_Pin, GPIO_PIN_SET);
   }else{
 	  osdusb = OSD_MODE;
@@ -356,6 +319,8 @@ int main(void)
   //Start and Test DAC
   HAL_TIM_Base_Start(&htim6);	//start Timer 6 for dac tickspeed
   HAL_DAC_Start_DMA(&hdac, DAC_CHANNEL_2, (uint32_t *)sine, 256, DAC_ALIGN_8B_R);	//start DAC DMA read from sine array in circular mode
+  HAL_Delay(1000);
+  HAL_TIM_Base_Stop(&htim6);
 
   //init IMU
 #if ICM20689_ENABLE == 1
@@ -754,7 +719,135 @@ void loopRadio(){
 	}
 	else{
 		timnodata += lptime;
+		HAL_TIM_Base_Start(&htim6);
 	}
+}
+
+void usbmenu(){
+	char txt[100];
+	char buf[32];
+	int sel = 5;
+	uint8_t esc = 27;
+
+MENU:
+	HAL_UART_Transmit(&huart1,(uint8_t*)esc,1,100);
+	HAL_UART_Transmit(&huart1,(uint8_t*)txt,sprintf(txt, "[2J"),100);
+	HAL_UART_Transmit(&huart1,(uint8_t*)esc,1,100);
+	HAL_UART_Transmit(&huart1,(uint8_t*)txt,sprintf(txt, "[H"),100);
+	HAL_UART_Transmit(&huart1,(uint8_t*)txt,sprintf(txt, "----USB MENU----\n\r"),100);
+	HAL_UART_Transmit(&huart1,(uint8_t*)txt,sprintf(txt, "[0]	PRINT PID GAINS"),100);
+	HAL_UART_Transmit(&huart1,(uint8_t*)txt,sprintf(txt, "[1]	SET PID GAINS"),100);
+	HAL_UART_Transmit(&huart1,(uint8_t*)txt,sprintf(txt, "[2]	CALIBRATE MOTORS"),100);
+	HAL_UART_Transmit(&huart1,(uint8_t*)txt,sprintf(txt, "[3]	SET LOG DATA"),100);
+	HAL_UART_Transmit(&huart1,(uint8_t*)txt,sprintf(txt, "[4]	SET DECLINATION"),100);
+
+
+
+	switch(sel){
+
+	case 0 :{
+		HAL_UART_Transmit(&huart1,(uint8_t*)esc,1,100);
+		HAL_UART_Transmit(&huart1,(uint8_t*)txt,sprintf(txt, "[2J"),100);
+		HAL_UART_Transmit(&huart1,(uint8_t*)esc,1,100);
+		HAL_UART_Transmit(&huart1,(uint8_t*)txt,sprintf(txt, "[H"),100);
+		HAL_UART_Transmit(&huart1,(uint8_t*)txt,sprintf(txt, "\t P-GAIN \t I-GAIN \t D-GAIN\n\r"),100);
+		HAL_UART_Transmit(&huart1,(uint8_t*)txt,sprintf(txt, "YAW \t %3.3f \t %3.3f \t %3.3f\n\r",pid_gain_am[0][0],pid_gain_am[0][1],pid_gain_am[0][2]),100);
+		HAL_UART_Transmit(&huart1,(uint8_t*)txt,sprintf(txt, "PITCH \t %3.3f \t %3.3f \t %3.3f\n\r",pid_gain_ta[1][0],pid_gain_ta[1][1],pid_gain_ta[1][2]),100);
+		HAL_UART_Transmit(&huart1,(uint8_t*)txt,sprintf(txt, "ROLL \t %3.3f \t %3.3f \t %3.3f\n\r",pid_gain_ta[2][0],pid_gain_ta[2][1],pid_gain_ta[2][2]),100);
+		HAL_UART_Receive(&huart1, (uint8_t*)buf, 32, 100);
+		goto MENU;
+		break;
+	}
+
+	case 1:{
+		HAL_UART_Receive(&huart1, (uint8_t*)buf, 32, 100);
+		goto MENU;
+		break;
+
+	}
+
+	case 2:{
+		HAL_UART_Transmit(&huart1,(uint8_t*)esc,1,100);
+		HAL_UART_Transmit(&huart1,(uint8_t*)txt,sprintf(txt, "[2J"),100);
+		HAL_UART_Transmit(&huart1,(uint8_t*)esc,1,100);
+		HAL_UART_Transmit(&huart1,(uint8_t*)txt,sprintf(txt, "DISARM ALL MOTORS!!! PRESS ENTER TO CONTINUE"),100);
+		HAL_UART_Receive(&huart1, (uint8_t*)buf, 32, 100);
+		motor_calibration();
+		HAL_UART_Transmit(&huart1,(uint8_t*)txt,sprintf(txt, "CALIBRATION COMPLETE"),100);
+		HAL_UART_Receive(&huart1, (uint8_t*)buf, 32, 100);
+		goto MENU;
+		break;
+	}
+
+	case 3:{
+		HAL_UART_Receive(&huart1, (uint8_t*)buf, 32, 100);
+		goto MENU;
+		break;
+	}
+
+	case 4:{
+		HAL_UART_Receive(&huart1, (uint8_t*)buf, 32, 100);
+		goto MENU;
+		break;
+	}
+
+	default : {
+		HAL_UART_Transmit(&huart1,(uint8_t*)esc,1,100);
+		HAL_UART_Transmit(&huart1,(uint8_t*)txt,sprintf(txt, "[2J"),100);
+		HAL_UART_Transmit(&huart1,(uint8_t*)esc,1,100);
+		HAL_UART_Transmit(&huart1,(uint8_t*)txt,sprintf(txt, "[H"),100);
+		HAL_UART_Transmit(&huart1,(uint8_t*)txt,sprintf(txt, "PLEASE SELECT VALID OPTION\n\r"),100);
+		HAL_UART_Receive(&huart1, (uint8_t*)buf, 32, 100);
+		goto MENU;
+		break;
+	}
+
+
+	}
+
+
+}
+
+void motor_calibration(){
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_1,2048);
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_2,2048);
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_3,2048);
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_4,2048);
+
+	HAL_Delay(5000);
+
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_1,1024);
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_2,1024);
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_3,1024);
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_4,1024);
+
+	HAL_Delay(5000);
+
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_1,2048);
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_2,2048);
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_3,2048);
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_4,2048);
+
+	HAL_Delay(5000);
+
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_1,1024);
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_2,1024);
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_3,1024);
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_4,1024);
+
+	HAL_Delay(10000);
+
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_1,1124);
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_2,1124);
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_3,1124);
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_4,1124);
+
+	HAL_Delay(2000);
+
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_1,1024);
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_2,1024);
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_3,1024);
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_4,1024);
 }
 /* USER CODE END 4 */
 
