@@ -216,6 +216,8 @@ int 						cc = 0;									//!< count number of data in buffer
 double						tim = 0;								//!< elapsed time
 char 						logbuf[10000];							//!< write buffer
 std::string 				sbuf = " ";								//!< tmp write buffer in loop
+
+char						gpsbuffer[80];
 /* USER CODE END 0 */
 
 /**
@@ -399,6 +401,9 @@ motor_calibration();
 	HAL_Delay(1000);
 	HAL_GPIO_WritePin(INIT_OK_GPIO_Port, INIT_OK_Pin, GPIO_PIN_SET);
   /* USER CODE END 2 */
+
+
+	HAL_UART_Receive_DMA(&huart2, (uint8_t*)gpsbuffer, 80);
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
