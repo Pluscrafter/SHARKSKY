@@ -232,17 +232,19 @@ int main(void)
 
 
 
-	pid_gain_am[0][0] = 1;
+
+
+	pid_gain_am[0][0] = 0;
 	pid_gain_am[0][1] = 0;
 	pid_gain_am[0][2] = 0;
 
-	pid_gain_ta[1][0] = 7;
-	pid_gain_ta[1][1] = 0;
-	pid_gain_ta[1][2] = 0.06;
+	pid_gain_ta[1][0] = 15;
+	pid_gain_ta[1][1] = 0.025;
+	pid_gain_ta[1][2] = 0.8;
 
-	pid_gain_ta[2][0] = 7;
-	pid_gain_ta[2][1] = 0;
-	pid_gain_ta[2][2] = 0.06;
+	pid_gain_ta[2][0] = 15;
+	pid_gain_ta[2][1] = 0.025;
+	pid_gain_ta[2][2] = 0.8;
 
   /* USER CODE END 1 */
   
