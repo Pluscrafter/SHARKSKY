@@ -58,8 +58,14 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define RNG_ADC_Pin GPIO_PIN_3
-#define RNG_ADC_GPIO_Port GPIOC
+#define CELL_4_Pin GPIO_PIN_0
+#define CELL_4_GPIO_Port GPIOC
+#define CELL_3_Pin GPIO_PIN_1
+#define CELL_3_GPIO_Port GPIOC
+#define CELL_2_Pin GPIO_PIN_2
+#define CELL_2_GPIO_Port GPIOC
+#define CELL_1_Pin GPIO_PIN_3
+#define CELL_1_GPIO_Port GPIOC
 #define RF24_NSS_Pin GPIO_PIN_4
 #define RF24_NSS_GPIO_Port GPIOA
 #define RF24_SCK_Pin GPIO_PIN_5
@@ -72,6 +78,8 @@ void Error_Handler(void);
 #define RF24_CE_GPIO_Port GPIOC
 #define RF24_INT_Pin GPIO_PIN_0
 #define RF24_INT_GPIO_Port GPIOB
+#define RNG_ADC_Pin GPIO_PIN_1
+#define RNG_ADC_GPIO_Port GPIOB
 #define GPS_TX_Pin GPIO_PIN_10
 #define GPS_TX_GPIO_Port GPIOB
 #define GPS_RX_Pin GPIO_PIN_11
