@@ -17300,7 +17300,7 @@ Source: http://www.osram.convergy.de/</description>
 <variantdefs>
 </variantdefs>
 <classes>
-<class number="0" name="default" width="0.3048" drill="0">
+<class number="0" name="default" width="0" drill="0">
 </class>
 </classes>
 <groups>
@@ -17466,6 +17466,10 @@ Source: http://www.osram.convergy.de/</description>
 <part name="RNG" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="PINHD-1X3" device="" package3d_urn="urn:adsk.eagle:package:6240710/1"/>
 <part name="SUPPLY76" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY77" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="VCC_2" device=""/>
+<part name="R10" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="1k"/>
+<part name="R11" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="1k"/>
+<part name="R12" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="1k"/>
+<part name="SUPPLY78" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="LED_TX" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="LED" device="SMT1206" package3d_urn="urn:adsk.eagle:package:6240349/1"/>
 <part name="LED_RX" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="LED" device="SMT1206" package3d_urn="urn:adsk.eagle:package:6240349/1"/>
 <part name="LED_1" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="LED" device="SMT1206" package3d_urn="urn:adsk.eagle:package:6240349/1"/>
@@ -17485,7 +17489,6 @@ Source: http://www.osram.convergy.de/</description>
 <part name="RPI_I2C" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X5" device="" package3d_urn="urn:adsk.eagle:package:22469/2"/>
 <part name="SUPPLY82" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY83" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="VCC_1" device=""/>
-<part name="SUPPLY78" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -18020,6 +18023,21 @@ Source: http://www.osram.convergy.de/</description>
 <instance part="SUPPLY77" gate="G$1" x="-353.06" y="144.78" smashed="yes" grouprefs="CONNECTORS">
 <attribute name="VALUE" x="-353.06" y="147.574" size="1.778" layer="96" align="bottom-center"/>
 </instance>
+<instance part="R10" gate="G$1" x="-340.36" y="116.84" smashed="yes" rot="R90" grouprefs="CONNECTORS">
+<attribute name="NAME" x="-341.8586" y="113.03" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="-337.058" y="113.03" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="R11" gate="G$1" x="-340.36" y="104.14" smashed="yes" rot="R90" grouprefs="CONNECTORS">
+<attribute name="NAME" x="-341.8586" y="100.33" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="-337.058" y="100.33" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="R12" gate="G$1" x="-340.36" y="132.08" smashed="yes" rot="R90" grouprefs="CONNECTORS">
+<attribute name="NAME" x="-341.8586" y="128.27" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="-337.058" y="128.27" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="SUPPLY78" gate="GND" x="-340.36" y="93.98" smashed="yes" grouprefs="CONNECTORS">
+<attribute name="VALUE" x="-342.265" y="90.805" size="1.778" layer="96"/>
+</instance>
 <instance part="LED_TX" gate="G$1" x="-337.82" y="53.34" smashed="yes" grouprefs="CONNECTORS">
 <attribute name="NAME" x="-334.264" y="48.768" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="-332.105" y="48.768" size="1.778" layer="96" rot="R90"/>
@@ -18090,9 +18108,6 @@ Source: http://www.osram.convergy.de/</description>
 </instance>
 <instance part="SUPPLY83" gate="G$2" x="-368.3" y="111.76" smashed="yes" grouprefs="CONNECTORS">
 <attribute name="VALUE" x="-368.3" y="114.554" size="1.778" layer="96" align="bottom-center"/>
-</instance>
-<instance part="SUPPLY78" gate="GND" x="-312.42" y="40.64" smashed="yes">
-<attribute name="VALUE" x="-314.325" y="37.465" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -18261,9 +18276,9 @@ Source: http://www.osram.convergy.de/</description>
 <label x="-167.64" y="114.3" size="1.778" layer="95" grouprefs="STM32F722"/>
 </segment>
 <segment>
-<pinref part="USB/OSD" gate="A" pin="2"/>
-<wire x1="-347.98" y1="195.58" x2="-330.2" y2="195.58" width="0.1524" layer="91"/>
-<label x="-337.82" y="195.58" size="1.778" layer="95"/>
+<pinref part="USB/OSD" gate="A" pin="3"/>
+<wire x1="-347.98" y1="198.12" x2="-330.2" y2="198.12" width="0.1524" layer="91" grouprefs="CONNECTORS"/>
+<label x="-340.36" y="198.12" size="1.778" layer="95" grouprefs="CONNECTORS"/>
 </segment>
 </net>
 <net name="SWDIO" class="0">
@@ -18613,9 +18628,13 @@ Source: http://www.osram.convergy.de/</description>
 <label x="-167.64" y="99.06" size="1.778" layer="95" grouprefs="STM32F722"/>
 </segment>
 <segment>
-<pinref part="RNG" gate="A" pin="3"/>
-<wire x1="-358.14" y1="139.7" x2="-340.36" y2="139.7" width="0.1524" layer="91"/>
-<label x="-350.52" y="139.7" size="1.778" layer="95"/>
+<pinref part="R12" gate="G$1" pin="1"/>
+<pinref part="R10" gate="G$1" pin="2"/>
+<wire x1="-340.36" y1="127" x2="-340.36" y2="124.46" width="0.1524" layer="91" grouprefs="CONNECTORS"/>
+<wire x1="-340.36" y1="124.46" x2="-340.36" y2="121.92" width="0.1524" layer="91" grouprefs="CONNECTORS"/>
+<wire x1="-340.36" y1="124.46" x2="-330.2" y2="124.46" width="0.1524" layer="91" grouprefs="CONNECTORS"/>
+<junction x="-340.36" y="124.46" grouprefs="CONNECTORS"/>
+<label x="-337.82" y="124.46" size="1.778" layer="95" grouprefs="CONNECTORS"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -19018,6 +19037,11 @@ Source: http://www.osram.convergy.de/</description>
 <wire x1="-353.06" y1="134.62" x2="-353.06" y2="129.54" width="0.1524" layer="91" grouprefs="CONNECTORS"/>
 </segment>
 <segment>
+<pinref part="R11" gate="G$1" pin="1"/>
+<pinref part="SUPPLY78" gate="GND" pin="GND"/>
+<wire x1="-340.36" y1="99.06" x2="-340.36" y2="96.52" width="0.1524" layer="91" grouprefs="CONNECTORS"/>
+</segment>
+<segment>
 <pinref part="RESET" gate="G$1" pin="P$2"/>
 <wire x1="-233.68" y1="111.76" x2="-231.14" y2="111.76" width="0.1524" layer="91" grouprefs="CONNECTORS"/>
 <pinref part="SUPPLY81" gate="GND" pin="GND"/>
@@ -19028,25 +19052,6 @@ Source: http://www.osram.convergy.de/</description>
 <pinref part="SUPPLY82" gate="GND" pin="GND"/>
 <wire x1="-375.92" y1="99.06" x2="-368.3" y2="99.06" width="0.1524" layer="91" grouprefs="CONNECTORS"/>
 <wire x1="-368.3" y1="99.06" x2="-368.3" y2="96.52" width="0.1524" layer="91" grouprefs="CONNECTORS"/>
-</segment>
-<segment>
-<pinref part="LED_1" gate="G$1" pin="C"/>
-<wire x1="-322.58" y1="48.26" x2="-322.58" y2="45.72" width="0.1524" layer="91" grouprefs="CONNECTORS"/>
-<wire x1="-322.58" y1="45.72" x2="-314.96" y2="45.72" width="0.1524" layer="91" grouprefs="CONNECTORS"/>
-<pinref part="ON" gate="G$1" pin="C"/>
-<wire x1="-314.96" y1="45.72" x2="-312.42" y2="45.72" width="0.1524" layer="91" grouprefs="CONNECTORS"/>
-<wire x1="-312.42" y1="45.72" x2="-307.34" y2="45.72" width="0.1524" layer="91" grouprefs="CONNECTORS"/>
-<wire x1="-307.34" y1="45.72" x2="-299.72" y2="45.72" width="0.1524" layer="91" grouprefs="CONNECTORS"/>
-<wire x1="-299.72" y1="45.72" x2="-299.72" y2="48.26" width="0.1524" layer="91" grouprefs="CONNECTORS"/>
-<pinref part="LED_2" gate="G$1" pin="C"/>
-<wire x1="-314.96" y1="48.26" x2="-314.96" y2="45.72" width="0.1524" layer="91" grouprefs="CONNECTORS"/>
-<junction x="-314.96" y="45.72" grouprefs="CONNECTORS"/>
-<pinref part="LED_3" gate="G$1" pin="C"/>
-<wire x1="-307.34" y1="48.26" x2="-307.34" y2="45.72" width="0.1524" layer="91" grouprefs="CONNECTORS"/>
-<junction x="-307.34" y="45.72" grouprefs="CONNECTORS"/>
-<pinref part="SUPPLY78" gate="GND" pin="GND"/>
-<wire x1="-312.42" y1="43.18" x2="-312.42" y2="45.72" width="0.1524" layer="91"/>
-<junction x="-312.42" y="45.72"/>
 </segment>
 </net>
 <net name="VCC_1" class="0">
@@ -19289,12 +19294,12 @@ Source: http://www.osram.convergy.de/</description>
 <segment>
 <pinref part="BUZZER" gate="A" pin="2"/>
 <wire x1="-347.98" y1="172.72" x2="-340.36" y2="172.72" width="0.1524" layer="91" grouprefs="CONNECTORS"/>
-<wire x1="-340.36" y1="172.72" x2="-340.36" y2="198.12" width="0.1524" layer="91" grouprefs="CONNECTORS"/>
+<wire x1="-340.36" y1="172.72" x2="-340.36" y2="195.58" width="0.1524" layer="91" grouprefs="CONNECTORS"/>
+<pinref part="USB/OSD" gate="A" pin="2"/>
+<wire x1="-340.36" y1="195.58" x2="-340.36" y2="205.74" width="0.1524" layer="91" grouprefs="CONNECTORS"/>
+<wire x1="-347.98" y1="195.58" x2="-340.36" y2="195.58" width="0.1524" layer="91" grouprefs="CONNECTORS"/>
+<junction x="-340.36" y="195.58" grouprefs="CONNECTORS"/>
 <pinref part="SUPPLY73" gate="G$2" pin="VCC_1"/>
-<pinref part="USB/OSD" gate="A" pin="3"/>
-<wire x1="-340.36" y1="198.12" x2="-340.36" y2="205.74" width="0.1524" layer="91" grouprefs="CONNECTORS"/>
-<wire x1="-347.98" y1="198.12" x2="-340.36" y2="198.12" width="0.1524" layer="91"/>
-<junction x="-340.36" y="198.12"/>
 </segment>
 <segment>
 <pinref part="UART_ARDU" gate="G$1" pin="4"/>
@@ -19724,6 +19729,38 @@ Source: http://www.osram.convergy.de/</description>
 <pinref part="U1" gate="A" pin="PB15"/>
 <wire x1="-152.4" y1="63.5" x2="-162.56" y2="63.5" width="0.1524" layer="91" grouprefs="STM32F722"/>
 <label x="-167.64" y="63.5" size="1.778" layer="95" grouprefs="STM32F722"/>
+</segment>
+</net>
+<net name="N$7" class="0">
+<segment>
+<pinref part="RNG" gate="A" pin="3"/>
+<pinref part="R12" gate="G$1" pin="2"/>
+<wire x1="-358.14" y1="139.7" x2="-340.36" y2="139.7" width="0.1524" layer="91" grouprefs="CONNECTORS"/>
+<wire x1="-340.36" y1="139.7" x2="-340.36" y2="137.16" width="0.1524" layer="91" grouprefs="CONNECTORS"/>
+</segment>
+</net>
+<net name="N$13" class="0">
+<segment>
+<pinref part="R10" gate="G$1" pin="1"/>
+<pinref part="R11" gate="G$1" pin="2"/>
+<wire x1="-340.36" y1="111.76" x2="-340.36" y2="109.22" width="0.1524" layer="91" grouprefs="CONNECTORS"/>
+</segment>
+</net>
+<net name="N$15" class="0">
+<segment>
+<pinref part="LED_1" gate="G$1" pin="C"/>
+<wire x1="-322.58" y1="48.26" x2="-322.58" y2="45.72" width="0.1524" layer="91" grouprefs="CONNECTORS"/>
+<wire x1="-322.58" y1="45.72" x2="-314.96" y2="45.72" width="0.1524" layer="91" grouprefs="CONNECTORS"/>
+<pinref part="ON" gate="G$1" pin="C"/>
+<wire x1="-314.96" y1="45.72" x2="-307.34" y2="45.72" width="0.1524" layer="91" grouprefs="CONNECTORS"/>
+<wire x1="-307.34" y1="45.72" x2="-299.72" y2="45.72" width="0.1524" layer="91" grouprefs="CONNECTORS"/>
+<wire x1="-299.72" y1="45.72" x2="-299.72" y2="48.26" width="0.1524" layer="91" grouprefs="CONNECTORS"/>
+<pinref part="LED_2" gate="G$1" pin="C"/>
+<wire x1="-314.96" y1="48.26" x2="-314.96" y2="45.72" width="0.1524" layer="91" grouprefs="CONNECTORS"/>
+<junction x="-314.96" y="45.72" grouprefs="CONNECTORS"/>
+<pinref part="LED_3" gate="G$1" pin="C"/>
+<wire x1="-307.34" y1="48.26" x2="-307.34" y2="45.72" width="0.1524" layer="91" grouprefs="CONNECTORS"/>
+<junction x="-307.34" y="45.72" grouprefs="CONNECTORS"/>
 </segment>
 </net>
 <net name="N$14" class="0">
