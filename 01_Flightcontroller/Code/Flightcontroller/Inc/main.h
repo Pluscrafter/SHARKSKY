@@ -71,8 +71,6 @@ void Error_Handler(void);
 #define GPS_TX_GPIO_Port GPIOA
 #define GPS_RX_Pin GPIO_PIN_3
 #define GPS_RX_GPIO_Port GPIOA
-#define IMU_NSS_Pin GPIO_PIN_4
-#define IMU_NSS_GPIO_Port GPIOA
 #define INIT_OK_Pin GPIO_PIN_7
 #define INIT_OK_GPIO_Port GPIOA
 #define MOD0_LED_Pin GPIO_PIN_4
@@ -95,6 +93,7 @@ void Error_Handler(void);
 #define CE_GPIO_Port GPIOC
 #define IRQ_Pin GPIO_PIN_7
 #define IRQ_GPIO_Port GPIOC
+#define IRQ_EXTI_IRQn EXTI9_5_IRQn
 #define ARDU_SDA_Pin GPIO_PIN_9
 #define ARDU_SDA_GPIO_Port GPIOC
 #define ARDU_SCL_Pin GPIO_PIN_8
@@ -121,8 +120,10 @@ void Error_Handler(void);
 #define IMU2_SDA_GPIO_Port GPIOB
 #define INTA_Pin GPIO_PIN_8
 #define INTA_GPIO_Port GPIOB
+#define INTA_EXTI_IRQn EXTI9_5_IRQn
 #define IMU_INT_Pin GPIO_PIN_9
 #define IMU_INT_GPIO_Port GPIOB
+#define IMU_INT_EXTI_IRQn EXTI9_5_IRQn
 /* USER CODE BEGIN Private defines */
 
 

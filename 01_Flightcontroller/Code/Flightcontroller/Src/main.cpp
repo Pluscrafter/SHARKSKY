@@ -39,6 +39,7 @@
 #include "ICM20689.h"
 #include "MPU6050.h"
 #include "RF24.h"
+#include "IMU.h"
 #include <string>
 /* USER CODE END Includes */
 
@@ -53,11 +54,9 @@
 #define ARM_CM_DWT_CTRL   		(*(uint32_t *)0xE0001000)
 #define ARM_CM_DWT_CYCCNT 		(*(uint32_t *)0xE0001004)
 
-#define MPU6050_ENABLE 			0
-#define MPU6000_ENABLE 			0
 #define ICM20689_ENABLE 		1
 
-#define MOTORCALIB				0
+#define SD_CARD					0
 
 #define ICM20689_OFFSET_FIND  	0
 
@@ -292,12 +291,6 @@ int main(void)
   HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
 
   //Motor calibration
-#if MOTORCALIB == 1
-motor_calibration();
-	for(;;){
-
-	}
-#endif
 
   // INIT GIMBAL
   // Start PWM on timer 3
@@ -328,15 +321,87 @@ motor_calibration();
 
   //init IMU
 #if ICM20689_ENABLE == 1
-  imu.Initalize();
+  //imu.Initalize();
 
+
+  uint8_t tmp[2] = {PWR_MGMT_1,0x40};
+  HAL_SPI_Transmit(&hspi3, tmp, 2, HAL_MAX_DELAY);
+  __HAL_SPI_DISABLE(&hspi3);
+  HAL_Delay(100);
+
+  tmp[0] = USER_CTRL;
+  tmp[1] = 0x10;
+  HAL_SPI_Transmit(&hspi3, tmp, 2, HAL_MAX_DELAY);
+  __HAL_SPI_DISABLE(&hspi3);
+  HAL_Delay(10);
+
+
+
+  tmp[0] = PWR_MGMT_1;
+  tmp[1] = 0x00;
+  HAL_SPI_Transmit(&hspi3, tmp, 2, HAL_MAX_DELAY);
+  __HAL_SPI_DISABLE(&hspi3);
+  HAL_Delay(10);
+
+
+
+  tmp[0] = WHO_AM_I|0x80;
+  uint8_t whoami[1] ;
+  HAL_SPI_Transmit(&hspi3,(uint8_t *)tmp, 1, HAL_MAX_DELAY);
+  HAL_SPI_Receive(&hspi3, (uint8_t *)whoami, 1, HAL_MAX_DELAY);
+  __HAL_SPI_DISABLE(&hspi3);
   // if IMU fails (whoami register returns false value)
-  if(imu.init_ok == false){
+  if(whoami[0] != 0x98){
 	  for(;;){
 		  HAL_GPIO_TogglePin(INIT_OK_GPIO_Port, INIT_OK_Pin);
 		  HAL_Delay(100);
 	  }
   }
+  HAL_Delay(10);
+
+  tmp[0] = CONFIG;
+  tmp[1] = 0x02;
+  HAL_SPI_Transmit(&hspi3, tmp, 2, HAL_MAX_DELAY);
+  __HAL_SPI_DISABLE(&hspi3);
+  HAL_Delay(10);
+
+
+  tmp[0] = GYRO_CONFIG;
+  tmp[1] = 0x08;
+  HAL_SPI_Transmit(&hspi3, tmp, 2, HAL_MAX_DELAY);
+  __HAL_SPI_DISABLE(&hspi3);
+  HAL_Delay(10);
+
+  tmp[0] = ACCEL_CONFIG;
+  tmp[1] = 0x10;
+  HAL_SPI_Transmit(&hspi3, tmp, 2, HAL_MAX_DELAY);
+  __HAL_SPI_DISABLE(&hspi3);
+  HAL_Delay(10);
+
+  tmp[0] = ACCEL_CONFIG_2;
+  tmp[1] = 0x02;
+  HAL_SPI_Transmit(&hspi3, tmp, 2, HAL_MAX_DELAY);
+  __HAL_SPI_DISABLE(&hspi3);
+  HAL_Delay(10);
+
+  tmp[0] = SMPLRT_DIV;
+  tmp[1] = 0x00;
+  HAL_SPI_Transmit(&hspi3, tmp, 2, HAL_MAX_DELAY);
+  __HAL_SPI_DISABLE(&hspi3);
+  HAL_Delay(10);
+
+  tmp[0] = INT_PIN_CFG;
+  tmp[1] = 0x90;
+  HAL_SPI_Transmit(&hspi3, tmp, 2, HAL_MAX_DELAY);
+  __HAL_SPI_DISABLE(&hspi3);
+  HAL_Delay(10);
+
+  tmp[0] = INT_ENABLE;
+  tmp[1] = 0x01;
+  HAL_SPI_Transmit(&hspi3, tmp, 2, HAL_MAX_DELAY);
+  __HAL_SPI_DISABLE(&hspi3);
+  HAL_Delay(10);
+
 #endif
 
 #if ICM20689_OFFSET_FIND == 1 and ICM20689_ENABLE == 1
@@ -349,21 +414,6 @@ motor_calibration();
 	DWT->CYCCNT = 0;//https://www.carminenoviello.com/2015/09/04/precisely-measure-microseconds-stm32/ 12.10.19 01:30
 	DWT->CTRL |= DWT_CTRL_CYCCNTENA_Msk;
 
-  //I2cdev MPU6050 initialize
-#if MPU6050_ENABLE == 1
-    mpu.initialize();
-  	mpu.dmpInitialize();
-  	mpu.setXGyroOffset(82);
-  	mpu.setYGyroOffset(-23);
-  	mpu.setZGyroOffset(-25);
-
-  	mpu.setXAccelOffset(686);
-  	mpu.setYAccelOffset(-3251);
-  	mpu.setZAccelOffset(1029);
-  	mpu.setDMPEnabled(true);
-  	packetSize = mpu.dmpGetFIFOPacketSize();
-  	fifoCount = mpu.getFIFOCount();
-#endif
   	//initalize RF24
   	const uint64_t pipe = 0xE8E8F0F0E2;	//pipe address
   	radio.begin();
@@ -382,6 +432,7 @@ motor_calibration();
 
 
   //sd card init
+#if SD_CARD == 1
   //https://www.youtube.com/watch?v=0NbBem8U80Y [11.10.19 14:22] // https://drive.google.com/file/d/1ZunUVcv1RYljzmQe1B3sUUbpJ6705hpM/view
   	if(f_mount(&SDFatFS, SDPath, 1) == FR_OK){
   		char mfil[] = "TESTEXT";
@@ -398,7 +449,7 @@ motor_calibration();
 
 	}
 	f_close(&SDFile);
-
+#endif
 	// initalisation is OK
 	HAL_Delay(1000);
 	HAL_GPIO_WritePin(INIT_OK_GPIO_Port, INIT_OK_Pin, GPIO_PIN_SET);
@@ -415,38 +466,38 @@ motor_calibration();
 #if ICM20689_ENABLE == 1
 
 	  //read values from IMU
-	  imu.ReadGyro();
-	  imu.ReadAccel();
+	  //imu.ReadGyro();
+	  //imu.ReadAccel();
+
 
 	  //calculate angle with acceleration
-	  float fullvec = sqrt(pow(imu.accel[0],2) + pow(imu.accel[1],2) + pow(imu.accel[2],2)); //calculate full vector with Pythagoras' theorem
+	  float fullvec = sqrt(pow(icm.accel[0],2) + pow(icm.accel[1],2) + pow(icm.accel[2],2)); //calculate full vector with Pythagoras' theorem
 	  float acangle[2];	//acceleration angle
 
-	  acangle[0] = asin(imu.accel[0]/fullvec) * -57.29577951;	//calculate acceleration sin-1(angle/fullvec)
-	  acangle[1] = asin(imu.accel[1]/fullvec) * 57.29577951;
+	  acangle[0] = asin(icm.accel[0]/fullvec) * -57.29577951;	//calculate acceleration sin-1(angle/fullvec)
+	  acangle[1] = asin(icm.accel[1]/fullvec) * 57.29577951;
 
 	  //calculate angle with angular motion
-	  imu.t_ypr[0] += imu.ypr[0]*lptime;
-	  imu.t_ypr[1] += imu.ypr[1]*lptime;
-	  imu.t_ypr[2] += imu.ypr[2]*lptime;
+	  icm.t_ypr[0] += icm.ypr[0]*lptime;
+	  icm.t_ypr[1] += icm.ypr[1]*lptime;
+	  icm.t_ypr[2] += icm.ypr[2]*lptime;
 
 	  alpha2 = (3 * lptime) / (1 + 3 * lptime);
 	  f_ypr[2] = f_ypr[2] - (alpha * (f_ypr[2] - imu.ypr[2]));
 
 	  //roll and pitch tuning on yaw movement https://www.youtube.com/watch?v=4BoIE8YQwM8 17.10.2019
-	  imu.t_ypr[0] -= imu.t_ypr[1] * sin(imu.ypr[2] * 0.017453293 * lptime);
-	  imu.t_ypr[1] += imu.t_ypr[0] * sin(imu.ypr[2] * 0.017453293 * lptime);
+	  icm.t_ypr[0] -= icm.t_ypr[1] * sin(icm.ypr[2] * 0.017453293 * lptime);
+	  icm.t_ypr[1] += icm.t_ypr[0] * sin(icm.ypr[2] * 0.017453293 * lptime);
 
 	  //complementary filter
-	  imu.t_ypr[0] = imu.t_ypr[0] * 0.9996 + acangle[1] * 0.0004;	// angle is mixed up
-	  imu.t_ypr[1] = imu.t_ypr[1] * 0.9996 + acangle[0] * 0.0004;
+	  icm.t_ypr[0] = icm.t_ypr[0] * 0.9996 + acangle[1] * 0.0004;	// angle is mixed up
+	  icm.t_ypr[1] = icm.t_ypr[1] * 0.9996 + acangle[0] * 0.0004;
 
 	  //Digital Low Pass filtering https://kiritchatterjee.wordpress.com/2014/11/10/a-simple-digital-low-pass-filter-in-c/ [9.10.19 22:52]
 	  //yet only for true angle
 	  alpha = (fc * lptime) / (1 + fc * lptime);
-
-	  f_ypr[0] = f_ypr[0] - (alpha * (f_ypr[0] - imu.t_ypr[0]));
-	  f_ypr[1] = f_ypr[1] - (alpha * (f_ypr[1] - imu.t_ypr[1]));
+	  f_ypr[0] = f_ypr[0] - (alpha * (f_ypr[0] - icm.t_ypr[0]));
+	  f_ypr[1] = f_ypr[1] - (alpha * (f_ypr[1] - icm.t_ypr[1]));
 
 	 // recvData.throttle = 200;
 	  if(recvData.throttle < 100){
@@ -464,38 +515,6 @@ motor_calibration();
 
 #endif
 
-#if MPU6050_ENABLE == 1
-	  while (fifoCount < packetSize) {
-		  fifoCount = mpu.getFIFOCount();
-	  }
-
-	  if (fifoCount >= 1024) {
-		  mpu.resetFIFO();
-	  }
-	  else{
-		if (fifoCount % packetSize != 0) {
-			mpu.resetFIFO();
-			fifoCount = mpu.getFIFOCount();
-		}
-		else{
-			while (fifoCount >= packetSize) {
-				mpu.getFIFOBytes(fifoBuffer,packetSize);
-				fifoCount -= packetSize;
-			}
-			mpu.dmpGetQuaternion(&q,fifoBuffer);
-			mpu.dmpGetGravity(&gravity,&q);
-			mpu.dmpGetYawPitchRoll(ypr,&q,&gravity);
-
-			char txt[32];
-
-			HAL_UART_Transmit(&huart1,(uint8_t*)txt,sprintf(txt, "GYROX: %2.3f \t", ypr[1]*180/PI),100);
-			HAL_UART_Transmit(&huart1,(uint8_t*)txt,sprintf(txt, "GYROY: %2.3f \t", ypr[2]*180/PI),100);
-			HAL_UART_Transmit(&huart1,(uint8_t*)txt,sprintf(txt, "GYROZ: %2.3f \n\r", ypr[0]*180/PI),100);
-			}
-	  }
-	HAL_Delay(50);
-#endif
-
 #if PID_ANGLE_MOTION == 1
 	PID_AngleMotion();
 #endif
@@ -504,6 +523,7 @@ motor_calibration();
 	tim += lptime;
 
 	//writes to LOG every 200 loop cycle to have a refresh rate of 500 Hz -> every cycle refresh rate of ca 14 Hz => bad
+#if SD_CARD == 1
 	if(cc < 200){
 		cc++;
 		char buf[25];
@@ -519,6 +539,7 @@ motor_calibration();
 		  sbuf = " ";
 		  memset(logbuf, 0, 10000*sizeof(char));
 	}
+#endif
 
 	//set previous error from error
 	for (uint8_t i = 0;  i < 3; i++){
@@ -527,6 +548,7 @@ motor_calibration();
 
 	// read data from radio buffer
     loopRadio();
+    recvData.throttle = 200;
     //calculate PID error and PID from dlpf value
 #if PID_TRUE_ANGLE == 1
 	error[0] = f_ypr[2] - recvData.yaw;
