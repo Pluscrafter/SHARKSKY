@@ -548,7 +548,7 @@ int main(void)
 
 	// read data from radio buffer
     loopRadio();
-    recvData.throttle = 200;
+
     //calculate PID error and PID from dlpf value
 #if PID_TRUE_ANGLE == 1
 	error[0] = f_ypr[2] - recvData.yaw;

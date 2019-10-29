@@ -303,12 +303,12 @@ void EXTI9_5_IRQHandler(void)
 {
   /* USER CODE BEGIN EXTI9_5_IRQn 0 */
 
-  uint8_t tmp[1] = {GYRO_XOUT_H|0x80};
-  uint8_t buf[6] ;
-  int16_t r_gyro[3], r_accel[3];
-  HAL_SPI_Transmit(&hspi3,(uint8_t *)tmp, 1, HAL_MAX_DELAY);
-  HAL_SPI_Receive(&hspi3, (uint8_t *)buf, 6, HAL_MAX_DELAY);
-  __HAL_SPI_DISABLE(&hspi3);
+	uint8_t tmp[1] = {GYRO_XOUT_H|0x80};
+	uint8_t buf[6];
+	int16_t r_gyro[3], r_accel[3];
+	HAL_SPI_Transmit(&hspi3,(uint8_t *)tmp, 1, HAL_MAX_DELAY);
+	HAL_SPI_Receive(&hspi3, (uint8_t *)buf, 6, HAL_MAX_DELAY);
+	__HAL_SPI_DISABLE(&hspi3);
 
 
 	r_gyro[0] = (buf[0] << 8) | buf[1];
