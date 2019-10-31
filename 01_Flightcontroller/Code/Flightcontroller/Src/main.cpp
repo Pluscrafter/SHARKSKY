@@ -237,13 +237,13 @@ int main(void)
 	pid_gain_am[0][1] = 0;
 	pid_gain_am[0][2] = 0;
 
-	pid_gain_ta[1][0] = 15;
-	pid_gain_ta[1][1] = 0.025;
-	pid_gain_ta[1][2] = 0.8;
+	pid_gain_ta[1][0] = 0;
+	pid_gain_ta[1][1] = 30.0;
+	pid_gain_ta[1][2] = 0.0;
 
-	pid_gain_ta[2][0] = 15;
-	pid_gain_ta[2][1] = 0.025;
-	pid_gain_ta[2][2] = 0.8;
+	pid_gain_ta[2][0] = 0;
+	pid_gain_ta[2][1] = 30.0;
+	pid_gain_ta[2][2] = 0.0;
 
   /* USER CODE END 1 */
   
@@ -306,7 +306,7 @@ int main(void)
   //Set UART to USB or OSD Mode
   if(HAL_GPIO_ReadPin(USBOSD_GPIO_Port, USBOSD_Pin) == GPIO_PIN_RESET){
 	  osdusb = USB_MODE;
-	  usbmenu();
+	  motor_calibration();//usbmenu();
 	  HAL_GPIO_WritePin(MOD0_LED_GPIO_Port, MOD0_LED_Pin, GPIO_PIN_SET);
   }else{
 	  osdusb = OSD_MODE;
@@ -469,6 +469,34 @@ int main(void)
 	  //imu.ReadGyro();
 	  //imu.ReadAccel();
 
+	  	uint8_t tmp[1] = {GYRO_XOUT_H|0x80};
+		uint8_t buf[6];
+		int16_t r_gyro[3], r_accel[3];
+		HAL_SPI_Transmit(&hspi3,(uint8_t *)tmp, 1, HAL_MAX_DELAY);
+		HAL_SPI_Receive(&hspi3, (uint8_t *)buf, 6, HAL_MAX_DELAY);
+		__HAL_SPI_DISABLE(&hspi3);
+
+
+		r_gyro[0] = (buf[0] << 8) | buf[1];
+		r_gyro[1] = (buf[2] << 8) | buf[3];
+		r_gyro[2] = (buf[4] << 8) | buf[5];
+
+		for(int i = 0; i<3; i++){
+			icm.ypr[i] = r_gyro[i] / 65.5;
+		}
+
+		tmp[0] = ACCEL_XOUT_H|0x80;
+		HAL_SPI_Transmit(&hspi3,(uint8_t *)tmp, 1, HAL_MAX_DELAY);
+		HAL_SPI_Receive(&hspi3, (uint8_t *)buf, 6, HAL_MAX_DELAY);
+		__HAL_SPI_DISABLE(&hspi3);
+
+		r_accel[0] = (buf[0] << 8) | buf[1];
+		r_accel[1] = (buf[2] << 8) | buf[3];
+		r_accel[2] = (buf[4] << 8) | buf[5];
+
+		for(int i = 0; i<3; i++){
+			icm.accel[i] =  r_accel[i] / 4096.0;
+		}
 
 	  //calculate angle with acceleration
 	  float fullvec = sqrt(pow(icm.accel[0],2) + pow(icm.accel[1],2) + pow(icm.accel[2],2)); //calculate full vector with Pythagoras' theorem
@@ -483,7 +511,7 @@ int main(void)
 	  icm.t_ypr[2] += icm.ypr[2]*lptime;
 
 	  alpha2 = (3 * lptime) / (1 + 3 * lptime);
-	  f_ypr[2] = f_ypr[2] - (alpha * (f_ypr[2] - imu.ypr[2]));
+	  f_ypr[2] = f_ypr[2] - (alpha * (f_ypr[2] - icm.ypr[2]));
 
 	  //roll and pitch tuning on yaw movement https://www.youtube.com/watch?v=4BoIE8YQwM8 17.10.2019
 	  icm.t_ypr[0] -= icm.t_ypr[1] * sin(icm.ypr[2] * 0.017453293 * lptime);
@@ -511,7 +539,6 @@ int main(void)
 	  ackData.yaw = int(f_ypr[2]*100);
 	  ackData.pitch = int(f_ypr[1]*100);
 	  ackData.roll = int(f_ypr[0]*100);
-
 
 #endif
 
@@ -643,7 +670,7 @@ void PID_TrueAngle(){
 		//P-Regler
 		_pid_ta[i][0] 			= 	error[i] * pid_gain_ta[i][0];
 		//I-Regler
-		_pid_ta[i][1] 			+= 	error[i] * pid_gain_ta[i][1];
+		_pid_ta[i][1] 			+= 	error[i] * pid_gain_ta[i][1] * lptime;
 		//D-Regler
 		_pid_ta[i][2] 			= 	pid_gain_ta[i][2] * ((error[i]-previous_error[i])/lptime);
 
@@ -668,7 +695,7 @@ void PID_AngleMotion(){
 		//P-Regler
 		_pid_am[i][0] 			= 	error[i] * pid_gain_am[i][0];
 		//I-Regler
-		_pid_am[i][1] 			+= 	error[i] * pid_gain_am[i][1];
+		_pid_am[i][1] 			+= 	error[i] * pid_gain_am[i][1] * lptime;
 		//D-Regler
 		_pid_am[i][2] 			= 	pid_gain_am[i][2] * ((error[i]-previous_error[i])/lptime);
 
@@ -866,10 +893,10 @@ void motor_calibration(){
 
 	HAL_Delay(10000);
 
-	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_1,1124);
-	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_2,1124);
-	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_3,1124);
-	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_4,1124);
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_1,2048);
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_2,2048);
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_3,2048);
+	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_4,2048);
 
 	HAL_Delay(2000);
 
