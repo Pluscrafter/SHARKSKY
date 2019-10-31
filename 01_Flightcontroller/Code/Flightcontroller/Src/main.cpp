@@ -523,7 +523,7 @@ int main(void)
 	  icm.t_ypr[2] += icm.ypr[2]*lptime;
 
 	  alpha2 = (3 * lptime) / (1 + 3 * lptime);
-	  f_ypr[2] = f_ypr[2] - (alpha * (f_ypr[2] - imu.ypr[2]));
+	  f_ypr[2] = f_ypr[2] - (alpha * (f_ypr[2] - icm.ypr[2]));
 
 	  //roll and pitch tuning on yaw movement https://www.youtube.com/watch?v=4BoIE8YQwM8 17.10.2019
 	  icm.t_ypr[0] -= icm.t_ypr[1] * sin(icm.ypr[2] * 0.017453293 * lptime);
@@ -696,7 +696,7 @@ void PID_TrueAngle(){
 		//P-Regler
 		_pid_ta[i][0] 			= 	error[i] * pid_gain_ta[i][0];
 		//I-Regler
-		_pid_ta[i][1] 			+= 	error[i] * pid_gain_ta[i][1];
+		_pid_ta[i][1] 			+= 	error[i] * pid_gain_ta[i][1]*lptime;
 		//D-Regler
 		_pid_ta[i][2] 			= 	pid_gain_ta[i][2] * ((error[i]-previous_error[i])/lptime);
 
@@ -721,7 +721,7 @@ void PID_AngleMotion(){
 		//P-Regler
 		_pid_am[i][0] 			= 	error[i] * pid_gain_am[i][0];
 		//I-Regler
-		_pid_am[i][1] 			+= 	error[i] * pid_gain_am[i][1];
+		_pid_am[i][1] 			+= 	error[i] * pid_gain_am[i][1]*lptime;
 		//D-Regler
 		_pid_am[i][2] 			= 	pid_gain_am[i][2] * ((error[i]-previous_error[i])/lptime);
 
