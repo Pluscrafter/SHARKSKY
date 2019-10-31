@@ -297,53 +297,6 @@ void DMA1_Stream6_IRQHandler(void)
 }
 
 /**
-  * @brief This function handles EXTI line[9:5] interrupts.
-  */
-void EXTI9_5_IRQHandler(void)
-{
-  /* USER CODE BEGIN EXTI9_5_IRQn 0 */
-
-	uint8_t tmp[1] = {GYRO_XOUT_H|0x80};
-	uint8_t buf[6];
-	int16_t r_gyro[3], r_accel[3];
-	HAL_SPI_Transmit(&hspi3,(uint8_t *)tmp, 1, HAL_MAX_DELAY);
-	HAL_SPI_Receive(&hspi3, (uint8_t *)buf, 6, HAL_MAX_DELAY);
-	__HAL_SPI_DISABLE(&hspi3);
-
-
-	r_gyro[0] = (buf[0] << 8) | buf[1];
-	r_gyro[1] = (buf[2] << 8) | buf[3];
-	r_gyro[2] = (buf[4] << 8) | buf[5];
-
-
-
-
-	for(int i = 0; i<3; i++){
-		icm.ypr[i] = r_gyro[i] / 65.5;
-	}
-
-	tmp[0] = ACCEL_XOUT_H|0x80;
-	HAL_SPI_Transmit(&hspi3,(uint8_t *)tmp, 1, HAL_MAX_DELAY);
-	HAL_SPI_Receive(&hspi3, (uint8_t *)buf, 6, HAL_MAX_DELAY);
-	__HAL_SPI_DISABLE(&hspi3);
-
-	r_accel[0] = (buf[0] << 8) | buf[1];
-	r_accel[1] = (buf[2] << 8) | buf[3];
-	r_accel[2] = (buf[4] << 8) | buf[5];
-
-	for(int i = 0; i<3; i++){
-		icm.accel[i] =  r_accel[i] / 4096.0;
-	}
-
-  /* USER CODE END EXTI9_5_IRQn 0 */
-  HAL_GPIO_EXTI_IRQHandler(IMU_INT_Pin);
-
-  /* USER CODE BEGIN EXTI9_5_IRQn 1 */
-
-  /* USER CODE END EXTI9_5_IRQn 1 */
-}
-
-/**
   * @brief This function handles USART2 global interrupt.
   */
 void USART2_IRQHandler(void)

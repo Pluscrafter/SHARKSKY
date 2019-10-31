@@ -161,6 +161,14 @@ struct RadioData{
 	int16_t					roll;									//!< 2 bytes 6
 	uint16_t				throttle;								//!< 2 bytes 8
 
+	uint16_t				rp_P;									//!<2 bytes 10
+	uint16_t				rp_I;									//!<2 bytes 12
+	uint16_t				rp_D;									//!<2 bytes 14
+
+	uint16_t				y_P;									//!<2 bytes 16
+	uint16_t				y_I;									//!<2 bytes 18
+	uint16_t				y_D;									//!<2 bytes 20
+
 	uint16_t				flags;									//!< 2 bytes 10
 	uint32_t				data;									//!< 4 bytes 14
 };
@@ -469,6 +477,38 @@ int main(void)
 	  //imu.ReadGyro();
 	  //imu.ReadAccel();
 
+	  uint8_t tmp[1] = {GYRO_XOUT_H|0x80};
+	  	uint8_t buf[6];
+	  	int16_t r_gyro[3], r_accel[3];
+	  	HAL_SPI_Transmit(&hspi3,(uint8_t *)tmp, 1, HAL_MAX_DELAY);
+	  	HAL_SPI_Receive(&hspi3, (uint8_t *)buf, 6, HAL_MAX_DELAY);
+	  	__HAL_SPI_DISABLE(&hspi3);
+
+
+	  	r_gyro[0] = (buf[0] << 8) | buf[1];
+	  	r_gyro[1] = (buf[2] << 8) | buf[3];
+	  	r_gyro[2] = (buf[4] << 8) | buf[5];
+
+
+
+
+	  	for(int i = 0; i<3; i++){
+	  		icm.ypr[i] = r_gyro[i] / 65.5;
+	  	}
+
+	  	tmp[0] = ACCEL_XOUT_H|0x80;
+	  	HAL_SPI_Transmit(&hspi3,(uint8_t *)tmp, 1, HAL_MAX_DELAY);
+	  	HAL_SPI_Receive(&hspi3, (uint8_t *)buf, 6, HAL_MAX_DELAY);
+	  	__HAL_SPI_DISABLE(&hspi3);
+
+	  	r_accel[0] = (buf[0] << 8) | buf[1];
+	  	r_accel[1] = (buf[2] << 8) | buf[3];
+	  	r_accel[2] = (buf[4] << 8) | buf[5];
+
+	  	for(int i = 0; i<3; i++){
+	  		icm.accel[i] =  r_accel[i] / 4096.0;
+	  	}
+
 
 	  //calculate angle with acceleration
 	  float fullvec = sqrt(pow(icm.accel[0],2) + pow(icm.accel[1],2) + pow(icm.accel[2],2)); //calculate full vector with Pythagoras' theorem
@@ -503,6 +543,19 @@ int main(void)
 	  if(recvData.throttle < 100){
 		  z_point[0] = f_ypr[0];
 		  z_point[1] = f_ypr[1];
+
+		  	pid_gain_am[0][0] = recvData.y_P/100.0;
+			pid_gain_am[0][1] = recvData.y_I/100.0;
+			pid_gain_am[0][2] = recvData.y_D/100.0;
+
+			pid_gain_ta[1][0] = recvData.rp_P/100.0;
+			pid_gain_ta[1][1] = recvData.rp_I/100.0;
+			pid_gain_ta[1][2] = recvData.rp_D/100.0;
+
+			pid_gain_ta[2][0] = recvData.rp_P/100.0;
+			pid_gain_ta[2][1] = recvData.rp_I/100.0;
+			pid_gain_ta[2][2] = recvData.rp_D/100.0;
+
 	  }
 
 	  f_ypr[0] -= z_point[0];

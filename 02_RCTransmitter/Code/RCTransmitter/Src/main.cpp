@@ -91,8 +91,16 @@ struct RadioData{
 	int16_t				roll;									//!<2 bytes 6
 	uint16_t			throttle;								//!<2 bytes 8
 
-	uint16_t			flags;									//!<2 bytes 10
-	uint32_t			data;									//!<4 bytes 14
+	uint16_t			rp_P;									//!<2 bytes 10
+	uint16_t			rp_I;									//!<2 bytes 12
+	uint16_t			rp_D;									//!<2 bytes 14
+
+	uint16_t			y_P;									//!<2 bytes 16
+	uint16_t			y_I;									//!<2 bytes 18
+	uint16_t			y_D;									//!<2 bytes 20
+
+	uint16_t			flags;									//!<2 bytes 22
+	uint32_t			data;									//!<4 bytes 26
 };
 
 AckData 		ackData;										//!< define acknowlegement data
@@ -212,15 +220,36 @@ int main(void)
 		  lcd.lcdSetCursorPosition(0, 3);
 		  lcd.lcdPrintStr((uint8_t*)txt, sprintf(txt,"Roll     :%2.2f",ackData.roll/100.0));
 	  }
+	  if(page == 2){
+		  lcd.lcdSetCursorPosition(0, 0);
+		  lcd.lcdPrintStr((uint8_t*)txt, sprintf(txt,"ROLL PITCH PID"));
+		  lcd.lcdSetCursorPosition(0, 1);
+		  lcd.lcdPrintStr((uint8_t*)txt, sprintf(txt,"rp_P     :%2.2f",transData.rp_P/100.0));
+		  lcd.lcdSetCursorPosition(0, 2);
+		  lcd.lcdPrintStr((uint8_t*)txt, sprintf(txt,"rp_I     :%2.2f",transData.rp_I/100.0));
+		  lcd.lcdSetCursorPosition(0, 3);
+		  lcd.lcdPrintStr((uint8_t*)txt, sprintf(txt,"rp_D     :%2.2f",transData.rp_D/100.0));
+	  }
+	  if(page == 3){
+		  lcd.lcdSetCursorPosition(0, 0);
+		  lcd.lcdPrintStr((uint8_t*)txt, sprintf(txt,"YAW PID"));
+		  lcd.lcdSetCursorPosition(0, 1);
+		  lcd.lcdPrintStr((uint8_t*)txt, sprintf(txt,"y_P      :%2.2f",transData.y_P/100.0));
+		  lcd.lcdSetCursorPosition(0, 2);
+		  lcd.lcdPrintStr((uint8_t*)txt, sprintf(txt,"y_D      :%2.2f",transData.y_I/100.0));
+		  lcd.lcdSetCursorPosition(0, 3);
+		  lcd.lcdPrintStr((uint8_t*)txt, sprintf(txt,"y_I      :%2.2f",transData.y_D/100.0));
+	  }
 
 	  //read radio
 	  loopRadio();
-
+	  //rotate lcd
 	  if(HAL_GPIO_ReadPin(BTN_U_GPIO_Port, BTN_U_Pin) == 0){
 		  HAL_Delay(30);
 		  if(HAL_GPIO_ReadPin(BTN_U_GPIO_Port, BTN_U_Pin) == 0){
 			  page++;
-			  if (page > 1){
+			  lcd.lcdDisplayClear();
+			  if (page > 3){
 				  page = 0;
 			  }
 		  }
@@ -232,15 +261,125 @@ int main(void)
 		  HAL_Delay(30);
 		  if(HAL_GPIO_ReadPin(BTN_D_GPIO_Port, BTN_D_Pin) == 0){
 			  page--;
+			  lcd.lcdDisplayClear();
 			  if (page < 0){
-				  page = 1;
+				  page = 3;
 			  }
 		  }
 	  }
 
-	  if(HAL_GPIO_ReadPin(SW1_GPIO_Port, SW1_Pin) == 0){
-		  transData.flags |= (1<<0);
+	  t = HAL_GPIO_ReadPin(BTN_L_GPIO_Port, BTN_L_Pin);
+
+	 //pid
+	  if(page == 2){
+		  if(HAL_GPIO_ReadPin(SW1_GPIO_Port, SW1_Pin) == 0){
+			  if(HAL_GPIO_ReadPin(BTN_R_GPIO_Port, BTN_R_Pin) == 0){
+				  HAL_Delay(30);
+				  if(HAL_GPIO_ReadPin(BTN_R_GPIO_Port, BTN_R_Pin) == 0){
+					  transData.rp_P += 1*100;
+				  }
+			  }
+
+			  if(HAL_GPIO_ReadPin(BTN_M_GPIO_Port, BTN_M_Pin) == 0){
+				  HAL_Delay(30);
+				  if(HAL_GPIO_ReadPin(BTN_M_GPIO_Port, BTN_M_Pin) == 0){
+					  transData.rp_P -= 1*100;
+				  }
+			  }
+		  }
+
+		  if(HAL_GPIO_ReadPin(SW2_GPIO_Port, SW2_Pin) == 0){
+			  if(HAL_GPIO_ReadPin(BTN_R_GPIO_Port, BTN_R_Pin) == 0){
+				  HAL_Delay(30);
+				  if(HAL_GPIO_ReadPin(BTN_R_GPIO_Port, BTN_R_Pin) == 0){
+					  transData.rp_I += 1*1;
+				  }
+			  }
+
+
+
+			  if(HAL_GPIO_ReadPin(BTN_M_GPIO_Port, BTN_M_Pin) == 0){
+				  HAL_Delay(30);
+				  if(HAL_GPIO_ReadPin(BTN_M_GPIO_Port, BTN_M_Pin) == 0){
+					  transData.rp_I -= 1*1;
+				  }
+			  }
+		  }
+
+		  if(HAL_GPIO_ReadPin(SW3_GPIO_Port, SW3_Pin) == 0){
+			  if(HAL_GPIO_ReadPin(BTN_R_GPIO_Port, BTN_R_Pin) == 0){
+				  HAL_Delay(30);
+				  if(HAL_GPIO_ReadPin(BTN_R_GPIO_Port, BTN_R_Pin) == 0){
+					  transData.rp_D += 1*100;
+				  }
+			  }
+
+
+
+			  if(HAL_GPIO_ReadPin(BTN_M_GPIO_Port, BTN_M_Pin) == 0){
+				  HAL_Delay(30);
+				  if(HAL_GPIO_ReadPin(BTN_M_GPIO_Port, BTN_M_Pin) == 0){
+					  transData.rp_D -= 1*100;
+				  }
+			  }
+		  }
 	  }
+
+
+	  if(page == 3){
+	  		  if(HAL_GPIO_ReadPin(SW1_GPIO_Port, SW1_Pin) == 0){
+	  			  if(HAL_GPIO_ReadPin(BTN_R_GPIO_Port, BTN_R_Pin) == 0){
+	  				  HAL_Delay(30);
+	  				  if(HAL_GPIO_ReadPin(BTN_R_GPIO_Port, BTN_R_Pin) == 0){
+	  					  transData.y_P += 1*100;
+	  				  }
+	  			  }
+
+	  			  if(HAL_GPIO_ReadPin(BTN_M_GPIO_Port, BTN_M_Pin) == 0){
+	  				  HAL_Delay(30);
+	  				  if(HAL_GPIO_ReadPin(BTN_M_GPIO_Port, BTN_M_Pin) == 0){
+	  					  transData.y_P -= 1*100;
+	  				  }
+	  			  }
+	  		  }
+
+	  		  if(HAL_GPIO_ReadPin(SW2_GPIO_Port, SW2_Pin) == 0){
+	  			  if(HAL_GPIO_ReadPin(BTN_R_GPIO_Port, BTN_R_Pin) == 0){
+	  				  HAL_Delay(30);
+	  				  if(HAL_GPIO_ReadPin(BTN_R_GPIO_Port, BTN_R_Pin) == 0){
+	  					  transData.y_I += 1*1;
+	  				  }
+	  			  }
+
+
+
+	  			  if(HAL_GPIO_ReadPin(BTN_M_GPIO_Port, BTN_M_Pin) == 0){
+	  				  HAL_Delay(30);
+	  				  if(HAL_GPIO_ReadPin(BTN_M_GPIO_Port, BTN_M_Pin) == 0){
+	  					  transData.y_I -= 1*1;
+	  				  }
+	  			  }
+	  		  }
+
+	  		  if(HAL_GPIO_ReadPin(SW3_GPIO_Port, SW3_Pin) == 0){
+	  			  if(HAL_GPIO_ReadPin(BTN_R_GPIO_Port, BTN_R_Pin) == 0){
+	  				  HAL_Delay(30);
+	  				  if(HAL_GPIO_ReadPin(BTN_R_GPIO_Port, BTN_R_Pin) == 0){
+	  					  transData.y_D += 1*100;
+	  				  }
+	  			  }
+
+
+
+	  			  if(HAL_GPIO_ReadPin(BTN_M_GPIO_Port, BTN_M_Pin) == 0){
+	  				  HAL_Delay(30);
+	  				  if(HAL_GPIO_ReadPin(BTN_M_GPIO_Port, BTN_M_Pin) == 0){
+	  					  transData.y_D -= 1*100;
+	  				  }
+	  			  }
+	  		  }
+
+	  	  }
 
 	  //lcd.lcdDisplayClear();
 	  //HAL_Delay(1);
