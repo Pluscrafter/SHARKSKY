@@ -228,7 +228,31 @@ char						gpsbuffer[80];
 
 
 void HAL_SPI_RxCpltCallback(SPI_HandleTypeDef *hspi){
-	HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_SET);
+	if (icm.init == true){
+		int16_t r_gyro[3],r_accel[3];
+
+		if(icm.ac == 0){
+			r_gyro[0] = (icm.buf[0] << 8) | icm.buf[1];
+			r_gyro[1] = (icm.buf[2] << 8) | icm.buf[3];
+			r_gyro[2] = (icm.buf[4] << 8) | icm.buf[5];
+
+			for(int i = 0; i<3; i++){
+				icm.ypr[i] = r_gyro[i] / 65.5;
+			}
+			icm.ac = 1;
+		}else{
+			r_accel[0] = (icm.buf[0] << 8) | icm.buf[1];
+			r_accel[1] = (icm.buf[2] << 8) | icm.buf[3];
+			r_accel[2] = (icm.buf[4] << 8) | icm.buf[5];
+
+			for(int i = 0; i<3; i++){
+				icm.accel[i] =  r_accel[i] / 4096.0;
+			}
+			icm.ac = 0;
+		}
+
+		HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_SET);
+	}
 }
 
 /* USER CODE END 0 */
@@ -259,6 +283,8 @@ int main(void)
 	pid_gain_ta[2][1] = 0.025;
 	pid_gain_ta[2][2] = 0.8;
 
+	icm.ac = 0;
+	icm.init = false;
   /* USER CODE END 1 */
   
 
@@ -342,7 +368,7 @@ int main(void)
   HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_RESET);
   HAL_SPI_Transmit(&hspi3, tmp, 2, HAL_MAX_DELAY);
   while (HAL_SPI_GetState(&hspi3) != HAL_SPI_STATE_READY);
-  	HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_SET);
   HAL_Delay(100);
 
   tmp[0] = USER_CTRL;
@@ -350,7 +376,7 @@ int main(void)
   HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_RESET);
   HAL_SPI_Transmit(&hspi3, tmp, 2, HAL_MAX_DELAY);
   while (HAL_SPI_GetState(&hspi3) != HAL_SPI_STATE_READY);
-  	HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_SET);
   HAL_Delay(10);
 
 
@@ -360,7 +386,7 @@ int main(void)
   HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_RESET);
   HAL_SPI_Transmit(&hspi3, tmp, 2, HAL_MAX_DELAY);
   while (HAL_SPI_GetState(&hspi3) != HAL_SPI_STATE_READY);
-  	HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_SET);
   HAL_Delay(10);
 
 
@@ -371,7 +397,7 @@ int main(void)
   HAL_SPI_Transmit(&hspi3,(uint8_t *)tmp, 1, HAL_MAX_DELAY);
   HAL_SPI_Receive(&hspi3, (uint8_t *)whoami, 1, HAL_MAX_DELAY);
   while (HAL_SPI_GetState(&hspi3) != HAL_SPI_STATE_READY);
-  	HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_SET);
   // if IMU fails (whoami register returns false value)
   if(whoami[0] != 0x98){
 	  for(;;){
@@ -386,7 +412,7 @@ int main(void)
   HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_RESET);
   HAL_SPI_Transmit(&hspi3, tmp, 2, HAL_MAX_DELAY);
   while (HAL_SPI_GetState(&hspi3) != HAL_SPI_STATE_READY);
-  	HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_SET);
   HAL_Delay(10);
 
 
@@ -395,7 +421,7 @@ int main(void)
   HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_RESET);
   HAL_SPI_Transmit(&hspi3, tmp, 2, HAL_MAX_DELAY);
   while (HAL_SPI_GetState(&hspi3) != HAL_SPI_STATE_READY);
-  	HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_SET);
   HAL_Delay(10);
 
   tmp[0] = ACCEL_CONFIG;
@@ -403,7 +429,7 @@ int main(void)
   HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_RESET);
   HAL_SPI_Transmit(&hspi3, tmp, 2, HAL_MAX_DELAY);
   while (HAL_SPI_GetState(&hspi3) != HAL_SPI_STATE_READY);
-    	HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_SET);
   HAL_Delay(10);
 
   tmp[0] = ACCEL_CONFIG_2;
@@ -411,7 +437,7 @@ int main(void)
   HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_RESET);
   HAL_SPI_Transmit(&hspi3, tmp, 2, HAL_MAX_DELAY);
   while (HAL_SPI_GetState(&hspi3) != HAL_SPI_STATE_READY);
-  	HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_SET);
   HAL_Delay(10);
 
   tmp[0] = SMPLRT_DIV;
@@ -419,15 +445,15 @@ int main(void)
   HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_RESET);
   HAL_SPI_Transmit(&hspi3, tmp, 2, HAL_MAX_DELAY);
   while (HAL_SPI_GetState(&hspi3) != HAL_SPI_STATE_READY);
-  	HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_SET);
   HAL_Delay(10);
 
   tmp[0] = INT_PIN_CFG;
-  tmp[1] = 0x90;
+  tmp[1] = 0x00;
   HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_RESET);
   HAL_SPI_Transmit(&hspi3, tmp, 2, HAL_MAX_DELAY);
   while (HAL_SPI_GetState(&hspi3) != HAL_SPI_STATE_READY);
-  	HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_SET);
   HAL_Delay(10);
 
   tmp[0] = INT_ENABLE;
@@ -435,9 +461,10 @@ int main(void)
   HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_RESET);
   HAL_SPI_Transmit(&hspi3, tmp, 2, HAL_MAX_DELAY);
   while (HAL_SPI_GetState(&hspi3) != HAL_SPI_STATE_READY);
-  	HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_SET);
   HAL_Delay(10);
 
+  icm.init = true;
 #endif
 
 #if ICM20689_OFFSET_FIND == 1 and ICM20689_ENABLE == 1
@@ -460,6 +487,7 @@ int main(void)
 	radio.setAutoAck(true);
 	radio.enableDynamicPayloads();
 	radio.enableAckPayload();
+	radio.maskIRQ(1, 1, 0);
   	radio.openReadingPipe(1, pipe);
 
   	radio.printDetails();
@@ -504,39 +532,6 @@ int main(void)
 	  //read values from IMU
 	  //imu.ReadGyro();
 	  //imu.ReadAccel();
-
-	  uint8_t tmp[1] = {GYRO_XOUT_H|0x80};
-	  	uint8_t buf[6];
-	  	int16_t r_gyro[3], r_accel[3];
-	  	HAL_SPI_Transmit(&hspi3,(uint8_t *)tmp, 1, HAL_MAX_DELAY);
-	  	HAL_SPI_Receive(&hspi3, (uint8_t *)buf, 6, HAL_MAX_DELAY);
-	  	__HAL_SPI_DISABLE(&hspi3);
-
-
-	  	r_gyro[0] = (buf[0] << 8) | buf[1];
-	  	r_gyro[1] = (buf[2] << 8) | buf[3];
-	  	r_gyro[2] = (buf[4] << 8) | buf[5];
-
-
-
-
-	  	for(int i = 0; i<3; i++){
-	  		icm.ypr[i] = r_gyro[i] / 65.5;
-	  	}
-
-	  	tmp[0] = ACCEL_XOUT_H|0x80;
-	  	HAL_SPI_Transmit(&hspi3,(uint8_t *)tmp, 1, HAL_MAX_DELAY);
-	  	HAL_SPI_Receive(&hspi3, (uint8_t *)buf, 6, HAL_MAX_DELAY);
-	  	__HAL_SPI_DISABLE(&hspi3);
-
-	  	r_accel[0] = (buf[0] << 8) | buf[1];
-	  	r_accel[1] = (buf[2] << 8) | buf[3];
-	  	r_accel[2] = (buf[4] << 8) | buf[5];
-
-	  	for(int i = 0; i<3; i++){
-	  		icm.accel[i] =  r_accel[i] / 4096.0;
-	  	}
-
 
 	  //calculate angle with acceleration
 	  float fullvec = sqrt(pow(icm.accel[0],2) + pow(icm.accel[1],2) + pow(icm.accel[2],2)); //calculate full vector with Pythagoras' theorem
@@ -825,11 +820,6 @@ void loopRadio(){
 	if(radio.available()){
 		radio.read(&recvData,sizeof(RadioData));
 		radio.writeAckPayload(1,&ackData,sizeof(AckData));
-		timnodata = 0;
-	}
-	else{
-		timnodata += lptime;
-		HAL_TIM_Base_Start(&htim6);
 	}
 }
 

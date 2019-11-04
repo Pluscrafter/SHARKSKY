@@ -95,6 +95,7 @@ void Error_Handler(void);
 #define CE_GPIO_Port GPIOC
 #define IRQ_Pin GPIO_PIN_7
 #define IRQ_GPIO_Port GPIOC
+#define IRQ_EXTI_IRQn EXTI9_5_IRQn
 #define ARDU_SDA_Pin GPIO_PIN_9
 #define ARDU_SDA_GPIO_Port GPIOC
 #define ARDU_SCL_Pin GPIO_PIN_8
@@ -121,8 +122,10 @@ void Error_Handler(void);
 #define IMU2_SDA_GPIO_Port GPIOB
 #define INTA_Pin GPIO_PIN_8
 #define INTA_GPIO_Port GPIOB
+#define INTA_EXTI_IRQn EXTI9_5_IRQn
 #define IMU_INT_Pin GPIO_PIN_9
 #define IMU_INT_GPIO_Port GPIOB
+#define IMU_INT_EXTI_IRQn EXTI9_5_IRQn
 /* USER CODE BEGIN Private defines */
 
 

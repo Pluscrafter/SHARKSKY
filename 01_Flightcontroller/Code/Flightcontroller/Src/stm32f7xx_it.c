@@ -25,6 +25,7 @@
 /* USER CODE BEGIN Includes */
 #include "IMU.h"
 #include "spi.h"
+#include "gpio.h"
 /* USER CODE END Includes */
   
 /* Private typedef -----------------------------------------------------------*/
@@ -294,6 +295,33 @@ void DMA1_Stream6_IRQHandler(void)
   /* USER CODE BEGIN DMA1_Stream6_IRQn 1 */
 
   /* USER CODE END DMA1_Stream6_IRQn 1 */
+}
+
+/**
+  * @brief This function handles EXTI line[9:5] interrupts.
+  */
+void EXTI9_5_IRQHandler(void)
+{
+  /* USER CODE BEGIN EXTI9_5_IRQn 0 */
+	uint8_t tmp[1];
+	if (icm.init == true){
+		if(icm.ac == 0){
+			tmp[0] = GYRO_XOUT_H|0x80;
+		}else{
+			tmp[0] = ACCEL_XOUT_H|0x80;
+		}
+		HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_RESET);
+
+		HAL_SPI_Transmit(&hspi3,(uint8_t *)tmp, 1, HAL_MAX_DELAY);
+		HAL_SPI_Receive_DMA(&hspi3, (uint8_t *)icm.buf, 6);
+	}
+  /* USER CODE END EXTI9_5_IRQn 0 */
+  //HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_7);
+  //HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_8);
+  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_9);
+  /* USER CODE BEGIN EXTI9_5_IRQn 1 */
+
+  /* USER CODE END EXTI9_5_IRQn 1 */
 }
 
 /**

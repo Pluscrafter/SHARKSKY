@@ -72,12 +72,18 @@ extern "C" {
 
 #define TEMP_OFFSET 		0
 
+#include "stdbool.h"
 
 
 struct imu_out{
 	float 				ypr[3];
 	float 				t_ypr[3];
 	float 				accel[3];
+
+	uint8_t 			buf[6],buff[6];
+	bool				init;
+
+	uint8_t 			ac;
 }icm;
 
 
