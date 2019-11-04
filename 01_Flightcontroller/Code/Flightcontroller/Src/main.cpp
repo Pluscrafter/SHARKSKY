@@ -225,6 +225,12 @@ char 						logbuf[10000];							//!< write buffer
 std::string 				sbuf = " ";								//!< tmp write buffer in loop
 
 char						gpsbuffer[80];
+
+
+void HAL_SPI_RxCpltCallback(SPI_HandleTypeDef *hspi){
+	HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_SET);
+}
+
 /* USER CODE END 0 */
 
 /**
@@ -333,31 +339,39 @@ int main(void)
 
 
   uint8_t tmp[2] = {PWR_MGMT_1,0x40};
+  HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_RESET);
   HAL_SPI_Transmit(&hspi3, tmp, 2, HAL_MAX_DELAY);
-  __HAL_SPI_DISABLE(&hspi3);
+  while (HAL_SPI_GetState(&hspi3) != HAL_SPI_STATE_READY);
+  	HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_SET);
   HAL_Delay(100);
 
   tmp[0] = USER_CTRL;
   tmp[1] = 0x10;
+  HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_RESET);
   HAL_SPI_Transmit(&hspi3, tmp, 2, HAL_MAX_DELAY);
-  __HAL_SPI_DISABLE(&hspi3);
+  while (HAL_SPI_GetState(&hspi3) != HAL_SPI_STATE_READY);
+  	HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_SET);
   HAL_Delay(10);
 
 
 
   tmp[0] = PWR_MGMT_1;
   tmp[1] = 0x00;
+  HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_RESET);
   HAL_SPI_Transmit(&hspi3, tmp, 2, HAL_MAX_DELAY);
-  __HAL_SPI_DISABLE(&hspi3);
+  while (HAL_SPI_GetState(&hspi3) != HAL_SPI_STATE_READY);
+  	HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_SET);
   HAL_Delay(10);
 
 
 
   tmp[0] = WHO_AM_I|0x80;
   uint8_t whoami[1] ;
+  HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_RESET);
   HAL_SPI_Transmit(&hspi3,(uint8_t *)tmp, 1, HAL_MAX_DELAY);
   HAL_SPI_Receive(&hspi3, (uint8_t *)whoami, 1, HAL_MAX_DELAY);
-  __HAL_SPI_DISABLE(&hspi3);
+  while (HAL_SPI_GetState(&hspi3) != HAL_SPI_STATE_READY);
+  	HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_SET);
   // if IMU fails (whoami register returns false value)
   if(whoami[0] != 0x98){
 	  for(;;){
@@ -369,45 +383,59 @@ int main(void)
 
   tmp[0] = CONFIG;
   tmp[1] = 0x02;
+  HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_RESET);
   HAL_SPI_Transmit(&hspi3, tmp, 2, HAL_MAX_DELAY);
-  __HAL_SPI_DISABLE(&hspi3);
+  while (HAL_SPI_GetState(&hspi3) != HAL_SPI_STATE_READY);
+  	HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_SET);
   HAL_Delay(10);
 
 
   tmp[0] = GYRO_CONFIG;
   tmp[1] = 0x08;
+  HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_RESET);
   HAL_SPI_Transmit(&hspi3, tmp, 2, HAL_MAX_DELAY);
-  __HAL_SPI_DISABLE(&hspi3);
+  while (HAL_SPI_GetState(&hspi3) != HAL_SPI_STATE_READY);
+  	HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_SET);
   HAL_Delay(10);
 
   tmp[0] = ACCEL_CONFIG;
   tmp[1] = 0x10;
+  HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_RESET);
   HAL_SPI_Transmit(&hspi3, tmp, 2, HAL_MAX_DELAY);
-  __HAL_SPI_DISABLE(&hspi3);
+  while (HAL_SPI_GetState(&hspi3) != HAL_SPI_STATE_READY);
+    	HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_SET);
   HAL_Delay(10);
 
   tmp[0] = ACCEL_CONFIG_2;
   tmp[1] = 0x02;
+  HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_RESET);
   HAL_SPI_Transmit(&hspi3, tmp, 2, HAL_MAX_DELAY);
-  __HAL_SPI_DISABLE(&hspi3);
+  while (HAL_SPI_GetState(&hspi3) != HAL_SPI_STATE_READY);
+  	HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_SET);
   HAL_Delay(10);
 
   tmp[0] = SMPLRT_DIV;
   tmp[1] = 0x00;
+  HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_RESET);
   HAL_SPI_Transmit(&hspi3, tmp, 2, HAL_MAX_DELAY);
-  __HAL_SPI_DISABLE(&hspi3);
+  while (HAL_SPI_GetState(&hspi3) != HAL_SPI_STATE_READY);
+  	HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_SET);
   HAL_Delay(10);
 
   tmp[0] = INT_PIN_CFG;
   tmp[1] = 0x90;
+  HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_RESET);
   HAL_SPI_Transmit(&hspi3, tmp, 2, HAL_MAX_DELAY);
-  __HAL_SPI_DISABLE(&hspi3);
+  while (HAL_SPI_GetState(&hspi3) != HAL_SPI_STATE_READY);
+  	HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_SET);
   HAL_Delay(10);
 
   tmp[0] = INT_ENABLE;
   tmp[1] = 0x01;
+  HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_RESET);
   HAL_SPI_Transmit(&hspi3, tmp, 2, HAL_MAX_DELAY);
-  __HAL_SPI_DISABLE(&hspi3);
+  while (HAL_SPI_GetState(&hspi3) != HAL_SPI_STATE_READY);
+  	HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_SET);
   HAL_Delay(10);
 
 #endif

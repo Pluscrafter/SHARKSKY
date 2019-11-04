@@ -71,6 +71,8 @@ void Error_Handler(void);
 #define GPS_TX_GPIO_Port GPIOA
 #define GPS_RX_Pin GPIO_PIN_3
 #define GPS_RX_GPIO_Port GPIOA
+#define IMU_NSS_Pin GPIO_PIN_4
+#define IMU_NSS_GPIO_Port GPIOA
 #define INIT_OK_Pin GPIO_PIN_7
 #define INIT_OK_GPIO_Port GPIOA
 #define MOD0_LED_Pin GPIO_PIN_4
