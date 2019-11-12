@@ -73,13 +73,13 @@ In der heutigen Zeit finden Quadrocopter viele Anwendungen, wie z.B. bei Suchakt
 Mit dieser Arbeit will ich mit dem Bau und dessen Regelung befasssen. Der Quadrocopter wird selbst gebau mit dem Hauptziel den Flightcontroller selbst zu designen, bauen und programmieren. So sollte die Regelung auch selbst implementiert werden. Dannach sollten Versuche gemacht werden, die bestimmen sollten, wie der PID-Regler stabiler gemacht werden kann und wie ungleichheiten, wie sie durch Vibration entstehen, auszugleichen.
 \newpage
 \section{Was ist ein Quadrocopter?}
-Ein Qadrocopter ist wie in der Einleitung beschrieben ein Flugobjekt. Man könnte meinen, dass man einen stabilen Flug erreichen kann, wenn man den vier Propellern den gleichen Schub gibt. Aber dies ist leider nicht möglich, da viele Umwelteinflüsse einen stabilen Zustand verhindern wie z.B. Wind, unterschiede in den Rotoren oder Motoren, assymetrie des Rahmens etc. So muss ein Computer, der Flightcontroller(FC), das Gleichgewicht erhalten, indem dieser den Schub der vier Motoren so steuert das der Quadrocopter im Gleichgewicht ist oder dieser einen anderen bestimmten Winkel hält.\\
+Ein Qadrocopter ist wie in der Einleitung beschrieben ein Flugobjekt. Man könnte meinen, dass man einen stabilen Flug erreichen kann, wenn man den vier Propellern den gleichen Schub gibt. Aber dies ist leider nicht möglich, da viele Umwelteinflüsse einen stabilen Zustand verhindern wie z.B. Wind, unterschiede in den Rotoren oder Motoren, Assymetrie des Rahmens etc. So muss ein Computer, der Flightcontroller(FC), das Gleichgewicht erhalten, indem dieser den Schub der vier Motoren so steuert das der Quadrocopter im Gleichgewicht ist oder dieser einen anderen bestimmten Winkel hält.\\
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{MotionDE.jpg}
 \caption[https://fpvracing.ch/de/content/7-grundsatzliche-funktion-quadrocopter-multicopter]{Drehrichtung und Schub bei verschiedenen Steuereingaben }
 \end{figure}\\
-Man sieht in dieser Abbildung welche Rotationsrichtung die Motoren haben. Die benachbarten Motoren müssen eine gegensätzliche Rotation haben, da sonst der Quadrocopter zum rotieren kommt. So wird das Drehmoment des anderen Motors ausgeglichen. Auch wird gezeigt, dass man den Quadrocopter mit erhöhen bzw. erniedrigen der Motorleistung der richtigen Motoren, diesen in die gewünschte Richtung steuern kann. Der FC hält dieses Gleichgewicht mit einem PID-Regler.
+In dieser Abbildung wird die Rotationsrichtung der Motoren gezeigt. Die benachbarten Motoren müssen eine gegensätzliche Rotation haben, da sonst der Quadrocopter ins Rotieren kommt. So wird das Drehmoment des anderen Motors ausgeglichen. Auch wird gezeigt, dass man den Quadrocopter mit erhöhen bzw. erniedrigen der Motorleistung der richtigen Motoren, diesen in die gewünschte Richtung steuern kann. Der FC hält dieses Gleichgewicht mit einem PID-Regler.
 
 
 \section{PID-Regler und Filter}
@@ -110,99 +110,69 @@ Der P-Regler wirkt linear. Dieser Regler gibt die Regelabweichung verstärkt und
 \begin{equation}
 y(t)=Kp\cdot e(t)
 \end{equation}
-\begin{lstlisting}[language=C++,caption=P-Regler C++ Pseudocode]
-void P_Regler(float Kp, float error, float &P){
-	P = kp * error;
-}
-\end{lstlisting}
 
 \subsubsection{I-Regler}
 Beim Integralregler wird die Regelabweichung über die Zeit summiert und mit dem Faktor $Ki$ verstärkt. Dabei werden Abweichungen volständig eliminiert, da dieser Regelwert immer anwächst solange die Regelabweichung nicht Null ist. Dieser Regler wirkt langsam.\cite{website:rn-wissen_Regelungstechnik}\\
 \begin{equation}
 y(t)=Ki\int_{0}^{t}e(t)dt
 \end{equation}
-\begin{lstlisting}[language=C++,caption=I-Regler C++ Pseudocode]
-void I_Regler(float Ki, float error, float &I ){
-	I += I+error * Ki;
-}
-\end{lstlisting}
 
 \subsubsection{D-Glied}
 Das Differenzialglied schaut auf die Differenz der Regelabweichung zur vorherigen Regelabweichung und wird mit dem Faktor $Kd$ verstärkt. Desshalb reagiert dieser sehr schnell und gibt den den beiden anderen Vorhaltezeit. Differenzialglied ist kein Regler da es alleine nichts regleln kann sondern nur auf Veränderungen in der Regelabweichung reagiert.\cite{website:rn-wissen_Regelungstechnik}\\
 \begin{equation}
 y(t)=Kd\cdot e(t)\frac{d}{dt}
 \end{equation}
-\begin{lstlisting}[language=C++,caption=D-Regler C++ Pseudocode]
-void D_Glied(float Kd, float error, float &previous_error, float dt, float &D){
-	D = Kd * (error - previous_error);
-	previous_error = error;
-}
-\end{lstlisting}
 
 \subsubsection{PID-Regler}
 Beim PID-Regler werden die Eigenschaften der einzelnen Regler und dem D-Glied vereint.
 \begin{equation}
 y(t)=Kp\cdot e(t)+Ki\int_{0}^{t}e(t)dt+Kd\cdot e(t)\frac{d}{dt}
 \end{equation}
-\begin{lstlisting}[language=C++,caption=D-Regler C++ Pseudocode]
-void PID_Regler(float P, float I, float D, float &PID){
-	PID = P + I + D;
-}
-\end{lstlisting}
+\newpage
 \subsection{Digitaler Low-Pass Filter}
 Ein Low-Pass Filter filtert hohe Frequenzen aus. Man kennt diesen Filter meist aus der Elektronik oder der Tontechnik. Beim Quadrocopter wird ein solcher Filter für das unterdrücken des Rauschens der IMU verwendet. Dieses Rauschen wird durch die Vibrationen der Motoren erzeugt und liegt ca. bei 133Hz.\\ \\
-Bei diesem Digitalen Low-Pass Filter(DLPF) wird ein analoger RC-Low-Pass Filter emuliert.\cite{website:Wikipedia_LPF}\\
+Bei diesem Digitalen Low-Pass Filter (DLPF) wird ein analoger RC-Low-Pass Filter emuliert.\cite{website:Wikipedia_LPF}\\ \\
+Vibrationen verursachen beim D-Glied starke Auschläge, wenn diese hohe Amplituden haben. Auch wird dieser dann unbrauchbar, da die Regelabweichung durch die Vibrationen verfälscht wird. Ein Filter versucht diese Vibrationen zu dämpfen und so starke Ausschläge verhindert.
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.4\textwidth]{DLPF1.png}
 \caption[aasdf]{RC Low-Pass Filter}
 \end{figure}\\
+Wie man in \ref{eq1} sieht, ist die Eingang- und Ausgangsspannung vom Widerstand und von der Stromstärke abhängig.
 \begin{equation} \label{eq1}
 v_{\text{in}}(t)-v_{\text{out}}(t)=R\cdot I(t)
 \end{equation}
-Wie man in \ref{eq1} sieht, ist die Eingang-und Ausgangsspannung vom Wiederstand und vom Strom abhängig.
+Der Strom kann man auch abhängig vom Kondensator und der Ausgangsspannung darstellen wie man in \ref{eq2} und \ref{eq3} sieht.
 \begin{equation} \label{eq2}
 Q_{c}(t)=C\cdot v_{\text{out}}(t)
 \end{equation}
 \begin{equation} \label{eq3}
 I(t)=\frac{dQ_{c}}{dt}=C\cdot \frac{dv_{\text{out}}}{dt}
 \end{equation}
-Der Strom kann man auch abhängig vom Kondensatror und der Ausgangsspannung darstellen wie man in \ref{eq2} und \ref{eq3} sieht.
-\begin{equation}
+So kann man die Differenzialgleichung \ref{eq1} wie \ref{eq111} darstellen.\\
+\begin{equation} \label{eq111}
 v_{\text{in}}(t)-v_{\text{out}}(t)=RC\cdot \frac{dv_{\text{out}}}{dt}
 \end{equation}
-So kann man die Differenzialgleichung \ref{eq1} wie \ref{eq3} darstellen.\\
-
+Jetzt wird $v_{\text{in}}(t)$ mit $x_{i}$ und $v_{\text{out}}$ mit $y_{i}$ dargestellt und die Differenzialgleichung diskretisiert zu der Differenzengleichung \ref{eq4}.
 \begin{equation}\label{eq4}
 x_{i}-y_{i}=RC\cdot \frac{y_{i}-y_{i-1}}{\Delta t}
 \end{equation}
-
-Jetzt wird $v_{\text{in}}(t)$ mit $x_{i}$ und $v_{\text{out}}$ mit $y_{i}$ dargestellt und die Differenzialgleichung diskretisiert zu der Differenzengleichung \ref{eq4}.
-
+Die Gleichung \ref{eq6} (Ganze Auflösung siehe Anhang 1 Auflösung 1) wird nach $y_{i}$ umgeformt und man kann $\sfrac{\Delta t}{\Delta t+RC}$  mit $\alpha$ und $\sfrac{RC}{\Delta t + RC}$ mit $\alpha-1$ substituieren wie in \ref{eq5} gezeigt.
 \begin{equation} \label{eq6}
 y{i}=x_{i}\frac{\Delta t}{\Delta t+RC} + y_{i-1}\frac{RC}{\Delta t+RC}
 \end{equation} 
-
-Die Gleichung \ref{eq6} (Ganze Auflösung siehe Anhang 1 Auflösung 1) wird nach $y_{i}$ umgeformt und man kann $\sfrac{\Delta t}{\Delta t+RC}$  mit $\alpha$ und $\sfrac{RC}{\Delta t + RC}$ mit $\alpha-1$ substituieren wie in \ref{eq5} gezeigt.
 \begin{equation}\label{eq5}
 y{i}=\alpha x_{i} + (1-\alpha)y_{i-1} \quad \text{mit} \quad \alpha:=\frac{\Delta t}{\Delta t+RC}
 \end{equation}
-
 $RC$ kann man mit der Formel für den Low-Pass Filter durch $f_{c}$ dargestellt werden wie unten gezeigt wird.
-
 \begin{align*}
 f_{c} = \frac{1}{2\pi RC} \\
 RC = \frac{1}{2\pi f_{c}} 
 \end{align*}
-
 Jetzt kann auch das $RC$ in der Definition von $\alpha$ ersetzt werden, damit die Gleichung nicht mehr von $RC$ abhängig ist(Ganzer Beweis siehe Anhang 1 Beweis 1).
-
 \begin{equation*}
 \alpha = \frac{2\pi f_{c}\Delta t}{1+2\pi f_{c}\Delta t} 
 \end{equation*}
-
-
-Vibrationen verursachen beim D-Glied starke auschläge, wenn diese hohe Amplituden haben. Auch wird dieser dann unbrauchbar, da die Regelabweichung durch die Vibrationen verfälscht wird. Ein Filter versucht diese Vibrationen zu dämpfen und so starke Ausschläge verhindert.
 \newpage
 \section{Äusserer Aufbau}
 \subsection{Motoren}
@@ -229,12 +199,12 @@ Microcontroller können anders als Mikroprozessoren ohne Zusatz Pehpetrie benutz
 
 \subsubsection{Sensoren}
 Die wichtigsten Sensoren des Quadrocopter sind der Gyrosensor und der Beschleunigungssensor. In dem FC wurde eine ICM-20689 von TDK InvSense benutzt. Dieser hat beide Sensoren in einem Chip integriert und wird per SPI-Protokoll ausgelesen. Als Backup wird ein MPU-6050 benutzt, auch vom gleichen Hersteller, dieser wird mit dem langsameren I2C-Protokoll ausgelesen. \\
-\begin{wrapfigure}[7]{r}{0.5\textwidth}
+\begin{wrapfigure}[6]{r}{0.5\textwidth}
 \centering
 \includegraphics[width=0.5\textwidth]{1920px-Mpu6050-HD.jpg}
 \caption[https://de.wikipedia.org/wiki/TDK]{Dice des MPU6050}
 \end{wrapfigure}
-Beide sind sogenannte MEMS-Sensoren, diese werden Direkt auf den Siliziumwaver der Chips realisiert. (Bild) Man ätzt die Sensorstrukturen und deren auslese Schaltung auf einen Chip. MEMS bedeutet microelectromechanical systems. Das bedeutet, dass diese Sensoren auf einer mechanischen Basis funktionieren.\cite{website:elek_Komp_MEMS}
+Beide sind sogenannte MEMS-Sensoren. MEMS bedeutet microelectromechanical systems. Das bedeutet, dass diese Sensoren auf einer mechanischen Basis funktionieren.\cite{website:elek_Komp_MEMS}. Man ätzt die Sensorstrukturen und deren auslese Schaltung auf einen Chip.
 \newpage
 \noindent
 Da der Gyrosensor nur Winkelgeschwindigkeit, bei den Sensoren $\frac{^\circ}{s}$ und nicht $\frac{rad}{s}$ misst muss diese noch mit der Loop-Zeit multipliziert werden um den Winkel zu bekommen.
@@ -263,7 +233,8 @@ Nebenbei muss man beachten, dass C/C++ den Winkel in $rad$ berechnet und man die
 \begin{equation}
 w_{\text{komp}}=0.9996\cdot w_{\text{Gyro}}+0.0004\cdot w_{\text{Accl}} \quad mit \quad [w]=^\circ
 \end{equation}
-Dem Winkel aus dem Beschleunigungssensor wird ein tiefer Faktor gegeben da dieser Winkel nicht mehr genau stimmen wird, wenn der Quadrokopter in eine Richtung beschleunigen würde, dies wird erst bei starken Beschleunigungen der Fall sein, sonst stimmt dieser Wert ungefähr. Aber so kann man den Anfangswinkel des Quadrokopter bestimmen, ihn auch aus der Hand starten lassen und bekommt auch noch stabilere Werte. (Barometer ?) 
+Dem Winkel aus dem Beschleunigungssensor wird ein tiefer Faktor gegeben da dieser Winkel nicht mehr genau stimmen wird, wenn der Quadrokopter in eine Richtung beschleunigen würde, dies wird erst bei starken Beschleunigungen der Fall sein, sonst stimmt dieser Wert ungefähr. Aber so kann man den Anfangswinkel des Quadrokopter bestimmen, ihn auch aus der Hand starten lassen und bekommt auch noch stabilere Werte. \\ \\
+Desweiteren muss auch noch beachtet werden, das bei einer Bewegung um die Gierachse, der Sensor keine Bewegung auf der Roll- und Nickachse misst. Desshalb müssen die Werte dieser Achsen bei einer Bewegung um die Gierachse ineinander übersetzt werden mithilfe der Rotationsmatrix. (Formel)
 
 \subsubsection{Empfänger}
 Als Empfänger wir dein NRF24L01 Breakoutboard mit PA und LNA benutzt. Der ist ein 2.4GHz Sender und Empfänger von der Firma Nordic Semiconductor. Die Kommunikation erfolgt digital und der Chip besitzt auch eine Zyklische Redundanzprüfung(CRC). Damit wird kontrolliert, ob ein Datenpaktet fehlerhafte Bits besitzt. Allenfalls wird es repariert oder verworfen. PA heisst Power Amplifying und bedeutet, dass das Signal verstärkt wird und so grössere Reichweiten erreicht werden können und LNA bedeutet Low Noise Amplifying und beseutet, dass schwache Empfangssignale verstärkt werden.\cite{website:electronics.stackexchange.com_WhatisPALNA} Vom Hersteller wird eine Reichweite vom bis zu einem Kilometer versprochen aber in einer Wohnsiedlung kommt man mit Sichtkontakt bis zu 300m, was ausreichend genug ist.
