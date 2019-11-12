@@ -142,7 +142,7 @@ void D_Glied(float Kd, float error, float &previous_error, float dt, float &D){
 \subsubsection{PID-Regler}
 Beim PID-Regler werden die Eigenschaften der einzelnen Regler und dem D-Glied vereint.
 \begin{equation}
-y(t)=Kp\cdot e(t)+Kd\cdot e(t)\frac{d}{dt}+Kd\cdot e(t)\frac{d}{dt}
+y(t)=Kp\cdot e(t)+Ki\int_{0}^{t}e(t)dt+Kd\cdot e(t)\frac{d}{dt}
 \end{equation}
 \begin{lstlisting}[language=C++,caption=D-Regler C++ Pseudocode]
 void PID_Regler(float P, float I, float D, float &PID){
@@ -294,6 +294,52 @@ Dann wurde auf einer Holzplatte Löcher an den Positionen der Verlöteten Kompon
 
 \subsection{Programmierung}
 Der FC wird mit C und C++ programmiert. Dabei wurde die STM32CubeIDE von STMicroelectronics benutzt, die eine Eclipse IDE mit den entsprechenden Bibliotheken vorinstalliert ist. Es wurden für die einzelnen Komponenten auch andere Bibliotheken benutzt, die z.t. umgeschrieben werden mussten für den STM32. Die Bibliothek für die IMU wurde aber selbst programmiert. Dabei kamen mehrere Probleme auf, z.b. das dass ChipSelect-Signal zu früh auf High ging.(Bild). In diesem Kapitel geht es um die grössten Hürden und wichtigsten Abläufe bei der programmierung des Quadrocopters. In der unteren Abbildung sieht man den Ablauf des Programmes.(Bild)
+
+\begin{lstlisting}[language=C++,caption=Programmablauf Pseudocode]
+int main(){
+	initPID_Values();
+	initPeriphial();
+	initIMU();
+	initnRF24();
+	initSD();
+	
+	while(true){
+		loop();
+	}
+	
+	return 0;
+}
+
+void loop(){
+	start = elapsedticks();
+	
+	calcTrueangle();
+	writeSD() //every 200th loopcycle;
+	calcError();
+	calcPID();
+	setMotor();
+	
+	stop = elapsedticks();
+	looptime = stop - start;
+}
+
+void setMotor(){
+	if(throttle < 100){
+		motspeed[0:3] = 1024;	
+	}else{
+		motspeed[0] = throttle + roll + pitch + yaw; 
+		motspeed[1]	= throttle + roll - pitch - yaw;
+		motspeed[2]	= throttle - roll - pitch + yaw;
+		motspeed[3]	= throttle - roll + pitch - yaw;
+	}
+	
+	PWM_SET(M1, motspeed[0]);
+	PWM_SET(M2, motspeed[1]);
+	PWM_SET(M3, motspeed[2]);
+	PWM_SET(M4, motspeed[3]);
+}
+\end{lstlisting}
+
 
 \subsubsection{Motoren und Timing}
 Die ESC's der Motoren müssen mit dem OneShot125 Protokoll\cite{website:OL_OneShot125} angesprochen werden. Bei dem wird ein PWM-Signal von 2khz erzeugt. Der Nullpunkt, bei dem die Motoren aus sind, liegt bei einer Periode von 125us bzw. einem PWM von 25$\%$. Die Motoren erreichen ihre maximale Drehzal bei einer Periode von 500us bzw. bei einem PWM von 50$\%$. (Bild).

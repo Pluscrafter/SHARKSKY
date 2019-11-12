@@ -105,7 +105,7 @@ struct RadioData{
 
 AckData 		ackData;										//!< define acknowlegement data
 RadioData 		transData;										//!< define transmit data
-
+RadioData		_transData;
 
 int page = 0;
 int t = 0;
@@ -242,7 +242,14 @@ int main(void)
 	  }
 
 	  //read radio
-	  loopRadio();
+
+	  if(_transData.throttle != transData.throttle || _transData.pitch != transData.pitch  || _transData.roll != transData.roll || _transData.yaw != transData.yaw){
+		  loopRadio();
+		  loopRadio();
+		  loopRadio();
+	  }
+
+	  _transData = transData;
 	  //rotate lcd
 	  if(HAL_GPIO_ReadPin(BTN_U_GPIO_Port, BTN_U_Pin) == 0){
 		  HAL_Delay(30);
