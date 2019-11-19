@@ -321,6 +321,7 @@ int main(void)
   MX_ADC1_Init();
   MX_TIM3_Init();
   MX_TIM6_Init();
+  MX_TIM4_Init();
   /* USER CODE BEGIN 2 */
 
   // INIT MOTORS
@@ -346,7 +347,7 @@ int main(void)
   //Set UART to USB or OSD Mode
   if(HAL_GPIO_ReadPin(USBOSD_GPIO_Port, USBOSD_Pin) == GPIO_PIN_RESET){
 	  osdusb = USB_MODE;
-	  usbmenu();
+	  motor_calibration();
 	  HAL_GPIO_WritePin(MOD0_LED_GPIO_Port, MOD0_LED_Pin, GPIO_PIN_SET);
   }else{
 	  osdusb = OSD_MODE;
@@ -487,7 +488,6 @@ int main(void)
 	radio.setAutoAck(true);
 	radio.enableDynamicPayloads();
 	radio.enableAckPayload();
-	radio.maskIRQ(1, 1, 0);
   	radio.openReadingPipe(1, pipe);
 
   	radio.printDetails();
@@ -521,6 +521,7 @@ int main(void)
 
 
 	HAL_UART_Receive_DMA(&huart2, (uint8_t*)gpsbuffer, 80);
+	HAL_TIM_Base_Start_IT(&htim4);
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
@@ -535,6 +536,7 @@ int main(void)
 
 	  //calculate angle with acceleration
 	  float fullvec = sqrt(pow(icm.accel[0],2) + pow(icm.accel[1],2) + pow(icm.accel[2],2)); //calculate full vector with Pythagoras' theorem
+	  if(fullvec == 0) {fullvec = 1;}
 	  float acangle[2];	//acceleration angle
 
 	  acangle[0] = asin(icm.accel[0]/fullvec) * -57.29577951;	//calculate acceleration sin-1(angle/fullvec)
