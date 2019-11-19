@@ -120,13 +120,13 @@ y(t)=Ki\int_{0}^{t}e(t)dt
 \subsubsection{D-Glied}
 Das Differenzialglied schaut auf die Differenz der Regelabweichung zur vorherigen Regelabweichung und wird mit dem Faktor $Kd$ verstärkt. Desshalb reagiert dieser sehr schnell und gibt den den beiden anderen Vorhaltezeit. Differenzialglied ist kein Regler da es alleine nichts regleln kann sondern nur auf Veränderungen in der Regelabweichung reagiert.\cite{website:rn-wissen_Regelungstechnik}\\
 \begin{equation}
-y(t)=Kd\cdot e(t)\frac{d}{dt}
+y(t)=Kd\cdot \dot{e}(t)
 \end{equation}
 
 \subsubsection{PID-Regler}
 Beim PID-Regler werden die Eigenschaften der einzelnen Regler und dem D-Glied vereint.
 \begin{equation}
-y(t)=Kp\cdot e(t)+Ki\int_{0}^{t}e(t)dt+Kd\cdot e(t)\frac{d}{dt}
+y(t)=Kp\cdot e(t)+Ki\int_{0}^{t}e(t)dt+Kd\cdot \dot{e}(t)
 \end{equation}
 \newpage
 \subsection{Digitaler Low-Pass Filter}
@@ -147,11 +147,11 @@ Der Strom kann man auch abhängig vom Kondensator und der Ausgangsspannung darst
 Q_{c}(t)=C\cdot v_{\text{out}}(t)
 \end{equation}
 \begin{equation} \label{eq3}
-I(t)=\frac{dQ_{c}}{dt}=C\cdot \frac{dv_{\text{out}}}{dt}
+I(t)=\dot{Q}_{c}(t)=C\cdot \dot{v}_{\text{out}}(t)
 \end{equation}
 So kann man die Differenzialgleichung \ref{eq1} wie \ref{eq111} darstellen.\\
 \begin{equation} \label{eq111}
-v_{\text{in}}(t)-v_{\text{out}}(t)=RC\cdot \frac{dv_{\text{out}}}{dt}
+v_{\text{in}}(t)-v_{\text{out}}(t)=RC\cdot \dot{v}_{\text{out}}(t)
 \end{equation}
 Jetzt wird $v_{\text{in}}(t)$ mit $x_{i}$ und $v_{\text{out}}$ mit $y_{i}$ dargestellt und die Differenzialgleichung diskretisiert zu der Differenzengleichung \ref{eq4}.
 \begin{equation}\label{eq4}
@@ -264,7 +264,7 @@ Da die Leiterplatte doppelseitig ist kann man hier nicht auf beiden Seiten das R
 Dann wurde auf einer Holzplatte Löcher an den Positionen der Verlöteten Komponenten gebohrt. Damit wird erreicht, dass man die Vorderseite, Plan auf dieser Holzplatte gelegt werden kann. Mit den restlichen PCBs, man kann nur fünf auf einmal bestellen, wurde ein Rahmen erstellt um so das teilweise gelötete Board zu fixieren. Dann wurde die Schablone ausgerichtet und festgemacht. So konnte man mit lötpaste und einem Spachtel die Löcher und somit auch die Lötstellen mit Lötpaste füllen. Dann wurde die Schablone entfernt. Mithilfe des Mikroskops wurden die Teile dann auf der Leiterplatte plaziert. Im Ofen wurden sie dann ungefähr nach der Temperaturkurve gebacken und so war die Vorderseite gelötet. Die Hinterseite wurden dann per Hand fertig gelötet worden. Dann wurden nur noch die Konnektoren angelötet und der Flightcontroller ist fertig zum programmieren.
 
 \subsection{Programmierung}
-Der FC wird mit C und C++ programmiert. Dabei wurde die STM32CubeIDE von STMicroelectronics benutzt, die eine Eclipse IDE mit den entsprechenden Bibliotheken vorinstalliert ist. Es wurden für die einzelnen Komponenten auch andere Bibliotheken benutzt, die z.t. umgeschrieben werden mussten für den STM32. Die Bibliothek für die IMU wurde aber selbst programmiert. Dabei kamen mehrere Probleme auf, z.b. das dass ChipSelect-Signal zu früh auf High ging.(Bild). In diesem Kapitel geht es um die grössten Hürden und wichtigsten Abläufe bei der programmierung des Quadrocopters. In der unteren Abbildung sieht man den Ablauf des Programmes.(Bild)
+Der FC wird mit C und C++ programmiert. Dabei wurde die STM32CubeIDE von STMicroelectronics benutzt, die eine Eclipse IDE mit den entsprechenden Bibliotheken vorinstalliert ist. Es wurden für die einzelnen Komponenten auch andere Bibliotheken benutzt, die z.t. umgeschrieben werden mussten für den STM32. Die Bibliothek für die IMU wurde aber selbst programmiert. Dabei kamen mehrere Probleme auf, z.b. das dass ChipSelect-Signal zu früh auf High ging.(Bild). In diesem Kapitel geht es um die grössten Hürden und wichtigsten Abläufe bei der programmierung des Quadrocopters. Im folgenden Listening wird der grobe Ablaufplan des Programms gezeigt.
 
 \begin{lstlisting}[language=C++,caption=Programmablauf Pseudocode]
 int main(){
@@ -311,6 +311,7 @@ void setMotor(){
 }
 \end{lstlisting}
 
+Die IMU und der Empfänger werden per Interrupt ausgelesen. Die  IMU gibt im 1KHz Takt ein Interruptsignal , dass beim lesen dann zurückgesetzt wird. Beim Empfänger wird ein Interruptsignal ausgegeben sobald neue Daten vorhanden sind.
 
 \subsubsection{Motoren und Timing}
 Die ESC's der Motoren müssen mit dem OneShot125 Protokoll\cite{website:OL_OneShot125} angesprochen werden. Bei dem wird ein PWM-Signal von 2khz erzeugt. Der Nullpunkt, bei dem die Motoren aus sind, liegt bei einer Periode von 125us bzw. einem PWM von 25$\%$. Die Motoren erreichen ihre maximale Drehzal bei einer Periode von 500us bzw. bei einem PWM von 50$\%$. (Bild).
@@ -318,6 +319,7 @@ Die ESC's der Motoren müssen mit dem OneShot125 Protokoll\cite{website:OL_OneSh
 Der PID-Regler wird für den absoluten Winkel und für die Winkelgeschwindigkeit implementiert, wobei man die Gierachse nur mit der Winkelgeschwindikeit implementieren kann, da keine Referenz besteht, z.b durch ein Magnetometer. Die Regelungsdifferenz und Regelungskorrektur wird jeden Loop-Zyklus berechnet mit ca 2kHz.
 
 \section{Fernbedienung}
+Die Fernbedienung wird aus Holz und PLA gebaut. Der Rahmen wurde aus dem 3D-Drucker gedrukt.(Bild) Das Frontpanel ist aus Holz gelasert worden. Die Schieberegler wurden aus einer kaputten Fernbedienung genommen. Auch besitzt diese ein LCD-CharDisplay mit 20x4 Zeichen. Dies wird benutzt um den genauen Ausschlag der Schieberegler und der Sensorwerte. Die Anzeige wird duch Knöpfe und Schalter gesteuert.
 
 \section{Versuche}
 
