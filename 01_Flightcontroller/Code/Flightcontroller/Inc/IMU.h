@@ -76,9 +76,9 @@ extern "C" {
 
 
 struct imu_out{
-	float 				ypr[3];
-	float 				t_ypr[3];
-	float 				accel[3];
+	double 				ypr[3];
+	double 				t_ypr[3];
+	double 				accel[3];
 
 	uint8_t 			buf[6],buff[6];
 	bool				init;
