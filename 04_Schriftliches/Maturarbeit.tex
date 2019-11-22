@@ -66,11 +66,13 @@
 \pagenumbering{arabic}
 
 \section{Einleitung}
-Ein Quadrocopter ist ein Flugobjekt mit vier Propellern. In der Vergangenheit wurden schon Versuche mit Flugobjekten mit vier Propellern gemacht z.B. wie der Luftfahrtpionier Étienne OEhmichen. der 1920 den Oehmichen No. 2 gebaut hatte. Damals waren die Propeller elastisch und man konnte mit Seilzügen den Anstellwinkel der Propeller einstellen. Er konnte damit einige Rekorde aufstellen.\cite{website:Wikipedia_Quadrocopter}\\
-
-In der heutigen Zeit finden Quadrocopter viele Anwendungen, wie z.B. bei Suchaktionen, im Militär, oder auch als Spielzeug. Mit der schnellen Entwicklung von Mikroprozessoren wurden Quadrocopter immer kleiner und einfacher zu realisieren. Auch können damit teurere Helikopterflüge für Kartographie oder Luftaufnahmen billiger realisiert werden.\\
-
+Ein Quadrocopter ist ein Flugobjekt mit vier Propellern. In der Vergangenheit wurden schon Versuche mit Flugobjekten mit vier Propellern gemacht z.B. wie der Luftfahrtpionier Étienne OEhmichen. der 1920 den Oehmichen No. 2 gebaut hatte. Damals waren die Propeller elastisch und man konnte mit Seilzügen den Anstellwinkel der Propeller einstellen. Er konnte damit einige Rekorde aufstellen.\cite{website:Wikipedia_Quadrocopter}\\ \\
+In der heutigen Zeit finden Quadrocopter viele Anwendungen, wie z.B. bei Suchaktionen, im Militär, oder auch als Spielzeug. Mit der schnellen Entwicklung von Mikroprozessoren wurden Quadrocopter immer kleiner und einfacher zu realisieren. Auch können damit teurere Helikopterflüge für Kartographie oder Luftaufnahmen billiger realisiert werden.\\ \\
+Die Idee des Quadrocopters ist eine weiterführung eines Projektes aus der Robotik. Damals wurde noch ein Raspberry Pi benutzt. Da der ein Betriebsystem paralell zum Flightcontroller am laufen hat, war die Regelung nicht in Echtzeit und so zu langsam ist. Desswegen wird auch ein neuer Chip evaluiert der, kein Betriebsystem nebenbei am laufen hat. \\ \\
+\iffalse
 Mit dieser Arbeit will ich mit dem Bau und dessen Regelung befasssen. Der Quadrocopter wird selbst gebau mit dem Hauptziel den Flightcontroller selbst zu designen, bauen und programmieren. So sollte die Regelung auch selbst implementiert werden. Dannach sollten Versuche gemacht werden, die bestimmen sollten, wie der PID-Regler stabiler gemacht werden kann und wie ungleichheiten, wie sie durch Vibration entstehen, auszugleichen.
+\fi
+In der Arbeit wird der Quadrocopter selber gebaut, mit den Hauptziel den Flightcontroller selbst zu designen und zu programmieren. Dannach werden Versuche gemacht, die bestimmten wie der PID-Regler stabiler gemacht wird und wie ungleichheiten, die durch Vibrationen enstehen, auszugleichen. Die Fernbedienung wird auch selbst gebaut und dient auch dazu Daten wärend des Fluges auszuwerten. 
 \newpage
 \section{Was ist ein Quadrocopter?}
 Ein Qadrocopter ist wie in der Einleitung beschrieben ein Flugobjekt. Man könnte meinen, dass man einen stabilen Flug erreichen kann, wenn man den vier Propellern den gleichen Schub gibt. Aber dies ist leider nicht möglich, da viele Umwelteinflüsse einen stabilen Zustand verhindern wie z.B. Wind, unterschiede in den Rotoren oder Motoren, Assymetrie des Rahmens etc. So muss ein Computer, der Flightcontroller(FC), das Gleichgewicht erhalten, indem dieser den Schub der vier Motoren so steuert das der Quadrocopter im Gleichgewicht ist oder dieser einen anderen bestimmten Winkel hält.\\
@@ -132,7 +134,7 @@ y(t)=Kp\cdot e(t)+Ki\int_{0}^{t}e(t)dt+Kd\cdot \dot{e}(t)
 \subsection{Digitaler Low-Pass Filter}
 Ein Low-Pass Filter filtert hohe Frequenzen aus. Man kennt diesen Filter meist aus der Elektronik oder der Tontechnik. Beim Quadrocopter wird ein solcher Filter für das unterdrücken des Rauschens der IMU verwendet. Dieses Rauschen wird durch die Vibrationen der Motoren erzeugt und liegt ca. bei 133Hz.\\ \\
 Bei diesem Digitalen Low-Pass Filter (DLPF) wird ein analoger RC-Low-Pass Filter emuliert.\cite{website:Wikipedia_LPF}\\ \\
-Vibrationen verursachen beim D-Glied starke Auschläge, wenn diese hohe Amplituden haben. Auch wird dieser dann unbrauchbar, da die Regelabweichung durch die Vibrationen verfälscht wird. Ein Filter versucht diese Vibrationen zu dämpfen und so starke Ausschläge verhindert.
+Im letzten Kapitel wurde der PID-Regler eingeführt, doch Vibrationen verursachen Störungen in der Regelung und führen so zu falschen korrekturen. Zum Beispiel verursachen Vibrationen beim D-Glied starke Auschläge, wenn diese hohe Amplituden haben. Auch wird dieser dann unbrauchbar, da die Regelabweichung durch die Vibrationen verfälscht wird. Ein Filter versucht diese Vibrationen zu dämpfen und so starke Ausschläge verhindert.
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.4\textwidth]{DLPF1.png}
@@ -234,13 +236,21 @@ Nebenbei muss man beachten, dass C/C++ den Winkel in $rad$ berechnet und man die
 w_{\text{komp}}=0.9996\cdot w_{\text{Gyro}}+0.0004\cdot w_{\text{Accl}} \quad mit \quad [w]=^\circ
 \end{equation}
 Dem Winkel aus dem Beschleunigungssensor wird ein tiefer Faktor gegeben da dieser Winkel nicht mehr genau stimmen wird, wenn der Quadrokopter in eine Richtung beschleunigen würde, dies wird erst bei starken Beschleunigungen der Fall sein, sonst stimmt dieser Wert ungefähr. Aber so kann man den Anfangswinkel des Quadrokopter bestimmen, ihn auch aus der Hand starten lassen und bekommt auch noch stabilere Werte. \\ \\
-Desweiteren muss auch noch beachtet werden, das bei einer Bewegung um die Gierachse, der Sensor keine Bewegung auf der Roll- und Nickachse misst. Desshalb müssen die Werte dieser Achsen bei einer Bewegung um die Gierachse ineinander übersetzt werden mithilfe der Rotationsmatrix. (Formel)
+Desweiteren muss auch noch beachtet werden, das bei einer Bewegung um die Gierachse, der Sensor keine Bewegung auf der Roll- und Nickachse misst. Desshalb müssen die Werte dieser Achsen bei einer Bewegung um die Gierachse ineinander übersetzt werden mithilfe der Rotationsmatrix.
+\begin{equation}
+\binom{pitch'}{roll'}=\begin{pmatrix}
+cos(\alpha) & -sin(\alpha)\\ 
+sin(\alpha) & cos(\alpha)
+\end{pmatrix}*\binom{pitch}{roll}
+\end{equation}
+Somit muss man die Achsen wie folgt verrechnen.
+\begin{align} 
+roll' = sin(\alpha)*pitch\\
+pitch'= sin(\alpha)*roll
+\end{align} 
 
 \subsubsection{Empfänger}
 Als Empfänger wir dein NRF24L01 Breakoutboard mit PA und LNA benutzt. Der ist ein 2.4GHz Sender und Empfänger von der Firma Nordic Semiconductor. Die Kommunikation erfolgt digital und der Chip besitzt auch eine Zyklische Redundanzprüfung(CRC). Damit wird kontrolliert, ob ein Datenpaktet fehlerhafte Bits besitzt. Allenfalls wird es repariert oder verworfen. PA heisst Power Amplifying und bedeutet, dass das Signal verstärkt wird und so grössere Reichweiten erreicht werden können und LNA bedeutet Low Noise Amplifying und beseutet, dass schwache Empfangssignale verstärkt werden.\cite{website:electronics.stackexchange.com_WhatisPALNA} Vom Hersteller wird eine Reichweite vom bis zu einem Kilometer versprochen aber in einer Wohnsiedlung kommt man mit Sichtkontakt bis zu 300m, was ausreichend genug ist.
-
-\subsubsection{Schnittstellen}
-Damit der Mikrocontroller mit den Sensoren und der restlichen Pehpetrie kommunizeren kann braucht es Schnittstellen und Protokolle die diese Komponenten verbindedn. Zuerst wird 
 
 \subsection{Leiterplatte}
 Auf Leiterplatte oder auch Printed Circuit Board(PCB) wird die Schaltung des FC realisiert. Dieses besteht aus Kunststoff mit den aufgeätzten Kupferbahnen und den verzinnten Lötstellen.
@@ -319,36 +329,44 @@ Die ESC's der Motoren müssen mit dem OneShot125 Protokoll\cite{website:OL_OneSh
 Der PID-Regler wird für den absoluten Winkel und für die Winkelgeschwindigkeit implementiert, wobei man die Gierachse nur mit der Winkelgeschwindikeit implementieren kann, da keine Referenz besteht, z.b durch ein Magnetometer. Die Regelungsdifferenz und Regelungskorrektur wird jeden Loop-Zyklus berechnet mit ca 2kHz.
 
 \section{Fernbedienung}
-Die Fernbedienung wird aus Holz und PLA gebaut. Der Rahmen wurde aus dem 3D-Drucker gedrukt.(Bild) Das Frontpanel ist aus Holz gelasert worden. Die Schieberegler wurden aus einer kaputten Fernbedienung genommen. Auch besitzt diese ein LCD-CharDisplay mit 20x4 Zeichen. Dies wird benutzt um den genauen Ausschlag der Schieberegler und der Sensorwerte. Die Anzeige wird duch Knöpfe und Schalter gesteuert.
+Die Fernbedienung wird aus Holz und PLA gebaut. Der Rahmen wurde aus dem 3D-Drucker gedrukt.(Bild) Das Frontpanel ist aus Holz gelasert worden. Die Schieberegler wurden aus einer kaputten Fernbedienung genommen. Auch besitzt diese ein LCD-CharDisplay mit 20x4 Zeichen. Dies wird benutzt um den genauen Ausschlag der Schieberegler, die Sensorwerte und die PID-Werte anzuzeigen bzw. zu bearbeiten. Als Microcontroller wird ein STM32F767ZI benutzt der auf einem Nucleo-144 Protoboard verbaut ist. Im folgenden sehen sie den Ablaufplan des Programms.
+\begin{lstlisting}[language=C++,caption=Programmablauf Pseudocode]
+int main(){
+	initPeriphial();
+	initADC();
+	initnRF24();
+
+	while(true){
+		loop();
+	}
+	
+	return 0;
+}
+
+void loop(){
+	readADC();
+	sendData();
+	
+	menu_print();
+}
+
+void menu_print(){
+	MENU_1:
+		print_ADC_VAL();
+	MENU_2:
+		print_ACK_VAL();
+	MENU_3:
+		print_PID_ROLL_PITCH(); //<-- ALSO EDIT VALUES ON 0% Throttle
+	MENU_4:
+		print_PID_YAW(); //<-- ALSO EDIT VALUES ON 0% Throttle
+}
+
+
+\end{lstlisting}
 
 \section{Versuche}
 
-\subsection{PID absoluter Winkel oder Winkelgeschwindigkeit}
-
-\subsubsection{Absoluter Winkel}
-
-\subsubsection{Winkelgeschwindigkeit}
-
-\subsubsection{Ergebnisse}
-
-\subsection{Filter}
-
-\subsubsection{Ohne Filter}
-
-\subsubsection{Filter 1}
-
-\subsubsection{Filter 2}
-
-\subsubsection{Ergebnisse}
-
 \section{Schlussfolgerung}
-
-
-
-
-\newpage
-\section{Glossar}
-
 
 \newpage
 \section{Quellenverzeichnis}
