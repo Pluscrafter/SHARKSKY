@@ -1,15 +1,11 @@
-<<<<<<< HEAD
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.10.10)  22 NOV 2019 01:33
-=======
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.6.17)  13 NOV 2019 15:58
->>>>>>> master
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.10.10)  23 NOV 2019 01:30
 entering extended mode
 **./Maturarbeit.tex
 (Maturarbeit.tex
-LaTeX2e <2018-12-01>
-("C:\Program Files\MiKTeX 2.9\tex/latex/base\article.cls"
+LaTeX2e <2019-10-01>
+(D:\Programs\MiKTeX\tex/latex/base\article.cls
 Document Class: article 2019/08/27 v1.4j Standard LaTeX document class
-("C:\Program Files\MiKTeX 2.9\tex/latex/base\size12.clo"
+(D:\Programs\MiKTeX\tex/latex/base\size12.clo
 File: size12.clo 2019/08/27 v1.4j Standard LaTeX file (size option)
 )
 \c@part=\count80
@@ -30,10 +26,10 @@ Package: a4wide 1994/08/30
 (C:\Users\Pluscrafter\AppData\Roaming\MiKTeX\2.9\tex/latex/ntgclass\a4.sty
 Package: a4 2004/04/15 v1.2g A4 based page layout
 ))
-("C:\Program Files\MiKTeX 2.9\tex/generic/babel\babel.sty"
+(D:\Programs\MiKTeX\tex/generic/babel\babel.sty
 Package: babel 2019/09/27 3.34 The Babel package
 
-("C:\Program Files\MiKTeX 2.9\tex/generic/babel\switch.def"
+(D:\Programs\MiKTeX\tex/generic/babel\switch.def
 File: switch.def 2019/09/27 3.34 Babel switching mechanism
 )
 *************************************
@@ -43,42 +39,42 @@ File: switch.def 2019/09/27 3.34 Babel switching mechanism
 File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
  babel
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/babel-german\ngerman.ldf"
+(D:\Programs\MiKTeX\tex/latex/babel-german\ngerman.ldf
 Language: ngerman 2018/12/08 v2.11 German support for babel (post-1996 orthogra
 phy)
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/babel-german\ngermanb.ldf"
+(D:\Programs\MiKTeX\tex/latex/babel-german\ngermanb.ldf
 Language: ngermanb 2018/12/08 v2.11 German support for babel (post-1996 orthogr
 aphy)
 
-("C:\Program Files\MiKTeX 2.9\tex/generic/babel\babel.def"
+(D:\Programs\MiKTeX\tex/generic/babel\babel.def
 File: babel.def 2019/09/27 3.34 Babel common definitions
 \babel@savecnt=\count88
 \U@D=\dimen103
 
-("C:\Program Files\MiKTeX 2.9\tex/generic/babel\txtbabel.def")
+(D:\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
 \bbl@dirlevel=\count89
 )
 Package babel Info: Making " an active character on input line 121.
 )))
-("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amsmath.sty"
+(D:\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
 Package: amsmath 2019/04/01 v2.17c AMS math features
 \@mathmargin=\skip43
 
 For additional information on amsmath, use the `?' option.
-("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amstext.sty"
+(D:\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
 Package: amstext 2000/06/29 v2.01 AMS text
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amsgen.sty"
+(D:\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks14
 \ex@=\dimen104
 ))
-("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amsbsy.sty"
+(D:\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen105
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amsopn.sty"
+(D:\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
 \inf@bad=\count90
@@ -122,21 +118,21 @@ LaTeX Info: Redefining \] on input line 2856.
 (C:\Users\Pluscrafter\AppData\Roaming\MiKTeX\2.9\tex/latex/biblatex\biblatex.st
 y
 Package: biblatex 2019/08/31 v3.13a programmable bibliographies (PK/MW)
- ("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\pdftexcmds.sty"
+ (D:\Programs\MiKTeX\tex/generic/oberdiek\pdftexcmds.sty
 Package: pdftexcmds 2019/07/25 v0.30 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\infwarerr.sty"
+(D:\Programs\MiKTeX\tex/generic/oberdiek\infwarerr.sty
 Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 )
-("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\ifluatex.sty"
+(D:\Programs\MiKTeX\tex/generic/oberdiek\ifluatex.sty
 Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
 )
-("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\ltxcmds.sty"
+(D:\Programs\MiKTeX\tex/generic/oberdiek\ltxcmds.sty
 Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 )
-("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\ifpdf.sty"
+(D:\Programs\MiKTeX\tex/generic/oberdiek\ifpdf.sty
 Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
 )
 Package pdftexcmds Info: LuaTeX not detected.
@@ -148,17 +144,17 @@ Package pdftexcmds Info: \pdfdraftmode found.
 y
 Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count102
-) ("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\keyval.sty"
+) (D:\Programs\MiKTeX\tex/latex/graphics\keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks19
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/oberdiek\kvoptions.sty"
+(D:\Programs\MiKTeX\tex/latex/oberdiek\kvoptions.sty
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\kvsetkeys.sty"
+(D:\Programs\MiKTeX\tex/generic/oberdiek\kvsetkeys.sty
 Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\etexcmds.sty"
+(D:\Programs\MiKTeX\tex/generic/oberdiek\etexcmds.sty
 Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
 )))
 (C:\Users\Pluscrafter\AppData\Roaming\MiKTeX\2.9\tex/latex/logreq\logreq.sty
@@ -168,7 +164,7 @@ Package: logreq 2010/08/04 v1.0 xml request logger
 (C:\Users\Pluscrafter\AppData\Roaming\MiKTeX\2.9\tex/latex/logreq\logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 ))
-("C:\Program Files\MiKTeX 2.9\tex/latex/base\ifthen.sty"
+(D:\Programs\MiKTeX\tex/latex/base\ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
 (C:\Users\Pluscrafter\AppData\Roaming\MiKTeX\2.9\tex/latex/url\url.sty
@@ -388,21 +384,21 @@ Package biblatex Info: ... file 'biblatex.cfg' found.
 (C:\Users\Pluscrafter\AppData\Roaming\MiKTeX\2.9\tex/latex/biblatex\biblatex.cf
 g
 File: biblatex.cfg 
-)) ("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\graphicx.sty"
+)) (D:\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
 Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\graphics.sty"
+(D:\Programs\MiKTeX\tex/latex/graphics\graphics.sty
 Package: graphics 2019/07/20 v1.3b Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\trig.sty"
+(D:\Programs\MiKTeX\tex/latex/graphics\trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics-cfg\graphics.cfg"
+(D:\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 105.
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics-def\pdftex.def"
+(D:\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
 File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen113
@@ -446,7 +442,7 @@ Package: listings 2019/09/10 1.8c (Carsten Heinz)
 (C:\Users\Pluscrafter\AppData\Roaming\MiKTeX\2.9\tex/latex/xcolor\xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics-cfg\color.cfg"
+(D:\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
@@ -632,7 +628,7 @@ File: l3backend-pdfmode.def 2019-04-06 v L3 backend support: PDF mode
 (C:\Users\Pluscrafter\AppData\Roaming\MiKTeX\2.9\tex/latex/l3packages/l3keys2e\
 l3keys2e.sty
 Package: l3keys2e 2019-05-28 LaTeX2e option processing using LaTeX3 keys
-) ("C:\Program Files\MiKTeX 2.9\tex/latex/base\textcomp.sty"
+) (D:\Programs\MiKTeX\tex/latex/base\textcomp.sty
 Package: textcomp 2018/08/11 v2.0j Standard LaTeX package
 Package textcomp Info: Sub-encoding information:
 (textcomp)               5 = only ISO-Adobe without \textcurrency
@@ -647,12 +643,12 @@ Package textcomp Info: Sub-encoding information:
 (textcomp)             See the documentation for details.
 Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 79.
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/base\ts1enc.def"
+(D:\Programs\MiKTeX\tex/latex/base\ts1enc.def
 File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
 Now handling font encoding TS1 ...
 ... processing UTF-8 mapping file for font encoding TS1
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/base\ts1enc.dfu"
+(D:\Programs\MiKTeX\tex/latex/base\ts1enc.dfu
 File: ts1enc.dfu 2019/07/11 v1.2j UTF-8 support for inputenc
    defining Unicode char U+00A2 (decimal 162)
    defining Unicode char U+00A3 (decimal 163)
@@ -864,8 +860,9 @@ LaTeX Font Info:    ... okay on input line 50.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
 LaTeX Font Info:    ... okay on input line 50.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 50.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 50.
- ("C:\Program Files\MiKTeX 2.9\tex/latex/base\ts1cmr.fd"
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 5
+0.
+ (D:\Programs\MiKTeX\tex/latex/base\ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 50.
@@ -895,13 +892,13 @@ Package biblatex Info: Reference segment=0 on input line 50.
 \MPnumerator=\count401
 \makeMPintoPDFobject=\count402
 \everyMPtoPDFconversion=\toks23
-) ("C:\Program Files\MiKTeX 2.9\tex/latex/oberdiek\epstopdf-base.sty"
+) (D:\Programs\MiKTeX\tex/latex/oberdiek\epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/oberdiek\grfext.sty"
+(D:\Programs\MiKTeX\tex/latex/oberdiek\grfext.sty
 Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\kvdefinekeys.sty"
+(D:\Programs\MiKTeX\tex/generic/oberdiek\kvdefinekeys.sty
 Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
 ))
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -912,18 +909,10 @@ G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
 \c@lstlisting=\count403
+ [1
 
-<<<<<<< HEAD
 {C:/Users/Pluscrafter/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] (Matu
 rarbeit.toc)
-=======
-[1
-
-{C:/Users/Pluscrafter/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-(Maturarbeit.toc [1
-
-])
->>>>>>> master
 \tf@toc=\write4
 \openout4 = `Maturarbeit.toc'.
 
@@ -931,17 +920,22 @@ rarbeit.toc)
 [1
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 69--76
+Underfull \hbox (badness 10000) in paragraph at lines 69--77
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 69--76
+Underfull \hbox (badness 10000) in paragraph at lines 69--77
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 69--76
+Underfull \hbox (badness 10000) in paragraph at lines 69--77
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 69--77
 
  []
 
@@ -949,80 +943,80 @@ Underfull \hbox (badness 10000) in paragraph at lines 69--76
 <MotionDE.jpg, id=14, 1003.75pt x 690.58pt>
 File: MotionDE.jpg Graphic file (type jpg)
 <use MotionDE.jpg>
-Package pdftex.def Info: MotionDE.jpg  used on input line 81.
+Package pdftex.def Info: MotionDE.jpg  used on input line 82.
 (pdftex.def)             Requested size: 460.72124pt x 316.97519pt.
 <Regelkreis1.png, id=15, 452.69125pt x 280.04625pt>
 File: Regelkreis1.png Graphic file (type png)
 <use Regelkreis1.png>
-Package pdftex.def Info: Regelkreis1.png  used on input line 92.
+Package pdftex.def Info: Regelkreis1.png  used on input line 93.
 (pdftex.def)             Requested size: 184.28568pt x 114.00352pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 89--94
+Underfull \hbox (badness 10000) in paragraph at lines 90--95
 
  []
 
 [2 <./MotionDE.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 94--97
+Underfull \hbox (badness 10000) in paragraph at lines 95--98
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 94--97
+Underfull \hbox (badness 10000) in paragraph at lines 95--98
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 94--97
+Underfull \hbox (badness 10000) in paragraph at lines 95--98
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 94--97
+Underfull \hbox (badness 10000) in paragraph at lines 95--98
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 94--97
+Underfull \hbox (badness 10000) in paragraph at lines 95--98
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 94--97
+Underfull \hbox (badness 10000) in paragraph at lines 95--98
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 99--100
+Underfull \hbox (badness 10000) in paragraph at lines 100--101
 
  []
 
 <Regelkreis2.png, id=19, 451.6875pt x 197.73875pt>
 File: Regelkreis2.png Graphic file (type png)
 <use Regelkreis2.png>
-Package pdftex.def Info: Regelkreis2.png  used on input line 103.
+Package pdftex.def Info: Regelkreis2.png  used on input line 104.
 (pdftex.def)             Requested size: 184.28568pt x 80.67815pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 106--109
+Underfull \hbox (badness 10000) in paragraph at lines 107--110
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 106--109
+Underfull \hbox (badness 10000) in paragraph at lines 107--110
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 106--109
+Underfull \hbox (badness 10000) in paragraph at lines 107--110
 
  []
 
 [3 <./Regelkreis1.png> <./Regelkreis2.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 117--118
+Underfull \hbox (badness 10000) in paragraph at lines 118--119
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 123--124
+Underfull \hbox (badness 10000) in paragraph at lines 124--125
 
  []
 
@@ -1030,90 +1024,90 @@ Underfull \hbox (badness 10000) in paragraph at lines 123--124
 <DLPF1.png, id=33, 1927.2pt x 1079.03125pt>
 File: DLPF1.png Graphic file (type png)
 <use DLPF1.png>
-Package pdftex.def Info: DLPF1.png  used on input line 140.
+Package pdftex.def Info: DLPF1.png  used on input line 141.
 (pdftex.def)             Requested size: 184.28568pt x 103.16762pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 135--144
+Underfull \hbox (badness 10000) in paragraph at lines 136--145
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 135--144
+Underfull \hbox (badness 10000) in paragraph at lines 136--145
 
  []
 
 
-Overfull \hbox (10.45993pt too wide) in paragraph at lines 135--144
+Overfull \hbox (10.45993pt too wide) in paragraph at lines 136--145
 \OT1/cmr/m/n/12 Im letz-ten Ka-pi-tel wur-de der PID-Regler ein-gef[]uhrt, doch
  Vi-bra-tio-nen ver-ur-sa-chen St[]orungen
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 153--155
+Underfull \hbox (badness 10000) in paragraph at lines 154--156
 
  []
 
-LaTeX Font Info:    Calculating math sizes for size <8.4> on input line 162.
+LaTeX Font Info:    Calculating math sizes for size <8.4> on input line 163.
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <4.2> not available
-(Font)              size <5> substituted on input line 162.
+(Font)              size <5> substituted on input line 163.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <4.2> not available
-(Font)              size <5> substituted on input line 162.
+(Font)              size <5> substituted on input line 163.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <4.2> not available
-(Font)              size <5> substituted on input line 162.
+(Font)              size <5> substituted on input line 163.
 
 [5 <./DLPF1.png>] [6]
-Underfull \hbox (badness 10000) in paragraph at lines 184--187
+Underfull \hbox (badness 10000) in paragraph at lines 185--188
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 191--193
+Underfull \hbox (badness 10000) in paragraph at lines 192--194
 
  []
 
 [7]
-Overfull \hbox (6.04073pt too wide) in paragraph at lines 199--201
+Overfull \hbox (6.04073pt too wide) in paragraph at lines 200--202
 \OT1/cmr/m/n/12 Der Mi-cro-con-trol-ler der auf dem FC be-nutzt wird ist ein AR
 M-Cortex-M7 STM32F722RET6
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 199--201
+Underfull \hbox (badness 10000) in paragraph at lines 200--202
 
  []
 
 <1920px-Mpu6050-HD.jpg, id=47, 1927.2pt x 810.02625pt>
 File: 1920px-Mpu6050-HD.jpg Graphic file (type jpg)
 <use 1920px-Mpu6050-HD.jpg>
-Package pdftex.def Info: 1920px-Mpu6050-HD.jpg  used on input line 206.
+Package pdftex.def Info: 1920px-Mpu6050-HD.jpg  used on input line 207.
 (pdftex.def)             Requested size: 230.36061pt x 96.8158pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 203--208
+Underfull \hbox (badness 10000) in paragraph at lines 204--209
 
  []
 
 
-Underfull \hbox (badness 1418) in paragraph at lines 208--210
+Underfull \hbox (badness 1418) in paragraph at lines 209--211
 []\OT1/cmr/m/n/12 Beide sind so-ge-nann-te MEMS-Sensoren.
  []
 
 
-Underfull \hbox (badness 3098) in paragraph at lines 208--210
+Underfull \hbox (badness 3098) in paragraph at lines 209--211
 \OT1/cmr/m/n/12 MEMS be-deu-tet mi-cro-elec-tro-me-cha-ni-cal
  []
 
 [8 <./1920px-Mpu6050-HD.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 237--240
+Underfull \hbox (badness 10000) in paragraph at lines 238--241
 
  []
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 258--258
+Underfull \hbox (badness 10000) in paragraph at lines 259--259
 [][][]\OT1/cmr/m/n/10 https://blog.dronetrest.com/inertial-sensor-comparison-mp
 u6000-vs-mpu6050-vs-mpu6500-vs-
  []
@@ -1121,15 +1115,15 @@ u6000-vs-mpu6050-vs-mpu6500-vs-
 <egl.png, id=55, 1397.22pt x 813.0375pt>
 File: egl.png Graphic file (type png)
 <use egl.png>
-Package pdftex.def Info: egl.png  used on input line 261.
+Package pdftex.def Info: egl.png  used on input line 262.
 (pdftex.def)             Requested size: 184.28568pt x 107.22452pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 258--263
+Underfull \hbox (badness 10000) in paragraph at lines 259--264
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 258--263
+Underfull \hbox (badness 10000) in paragraph at lines 259--264
 
  []
 
@@ -1137,7 +1131,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 258--263
 <reflow.png, id=61, 240.9pt x 180.675pt>
 File: reflow.png Graphic file (type png)
 <use reflow.png>
-Package pdftex.def Info: reflow.png  used on input line 270.
+Package pdftex.def Info: reflow.png  used on input line 271.
 (pdftex.def)             Requested size: 184.28568pt x 138.21867pt.
 
 
@@ -1155,39 +1149,32 @@ File: lstlang1.sty 2019/09/10 1.8c listings language file
 (C:\Users\Pluscrafter\AppData\Roaming\MiKTeX\2.9\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
 ) [12 <./reflow.png>] [13] [14]
-Underfull \hbox (badness 10000) in paragraph at lines 369--372
+Underfull \hbox (badness 10000) in paragraph at lines 370--373
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 369--372
+Underfull \hbox (badness 10000) in paragraph at lines 370--373
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 369--372
+Underfull \hbox (badness 10000) in paragraph at lines 370--373
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 369--372
+Underfull \hbox (badness 10000) in paragraph at lines 370--373
 
  []
 
 [15] [16]
 
 Package biblatex Warning: Month out of range or not an integer
-<<<<<<< HEAD
-(biblatex)                at entry 'website:elek_Komp_MEMS' on input line 379.
+(biblatex)                at entry 'website:elek_Komp_MEMS' on input line 380.
 
 
-Overfull \hbox (2.20734pt too wide) in paragraph at lines 380--380
-=======
-(biblatex)                at entry 'website:elek_Komp_MEMS' on input line 356.
-
-
-Overfull \hbox (2.20734pt too wide) in paragraph at lines 357--357
->>>>>>> master
+Overfull \hbox (2.20734pt too wide) in paragraph at lines 381--381
 []\OT1/cmr/m/n/12 elektronik-kompendium.de. \OT1/cmr/m/it/12 MEMS - Micro-Elect
 ro-Mechanical Sys-tems\OT1/cmr/m/n/12 . Web-sei-te. Ok-
  []
@@ -1195,63 +1182,35 @@ ro-Mechanical Sys-tems\OT1/cmr/m/n/12 . Web-sei-te. Ok-
 
 Package biblatex Warning: Month out of range or not an integer
 (biblatex)                at entry 'website:fpvracing.ch_Mult_Komp' on input li
-<<<<<<< HEAD
-ne 379.
+ne 380.
 
 
 Package biblatex Warning: Month out of range or not an integer
-(biblatex)                at entry 'website:OL_OneShot125' on input line 379.
-=======
-ne 356.
-
-
-Package biblatex Warning: Month out of range or not an integer
-(biblatex)                at entry 'website:OL_OneShot125' on input line 356.
->>>>>>> master
+(biblatex)                at entry 'website:OL_OneShot125' on input line 380.
 
 
 Package biblatex Warning: Month out of range or not an integer
 (biblatex)                at entry 'website:electronics.stackexchange.com_Whati
-<<<<<<< HEAD
-sPALNA' on input line 379.
-=======
-sPALNA' on input line 356.
->>>>>>> master
+sPALNA' on input line 380.
 
 
 Package biblatex Warning: Month out of range or not an integer
 (biblatex)                at entry 'website:rn-wissen_Regelungstechnik' on inpu
-<<<<<<< HEAD
-t line 379.
-=======
-t line 356.
->>>>>>> master
+t line 380.
 
 
 Package biblatex Warning: Month out of range or not an integer
 (biblatex)                at entry 'website:sauter-elektronik.de_reflow' on inp
-<<<<<<< HEAD
-ut line 379.
+ut line 380.
 
 
 Package biblatex Warning: Month out of range or not an integer
-(biblatex)                at entry 'website:Wikipedia_LPF' on input line 379.
-=======
-ut line 356.
-
-
-Package biblatex Warning: Month out of range or not an integer
-(biblatex)                at entry 'website:Wikipedia_LPF' on input line 356.
->>>>>>> master
+(biblatex)                at entry 'website:Wikipedia_LPF' on input line 380.
 
 
 Package biblatex Warning: Month out of range or not an integer
 (biblatex)                at entry 'website:Wikipedia_Quadrocopter' on input li
-<<<<<<< HEAD
-ne 379.
-=======
-ne 356.
->>>>>>> master
+ne 380.
 
 (Maturarbeit.lof
 Overfull \hbox (37.99586pt too wide) in paragraph at lines 4--4
@@ -1273,11 +1232,10 @@ Package logreq Info: Writing requests to 'Maturarbeit.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
-<<<<<<< HEAD
- 23109 strings out of 492452
- 422863 string characters out of 3133997
- 927700 words of memory out of 3000000
- 27277 multiletter control sequences out of 15000+200000
+ 23113 strings out of 492452
+ 422877 string characters out of 3133997
+ 927732 words of memory out of 3000000
+ 27281 multiletter control sequences out of 15000+200000
  541731 words of font info for 59 fonts, out of 3000000 for 9000
  1143 hyphenation exceptions out of 8191
  44i,12n,68p,2668b,2195s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1296,34 +1254,7 @@ ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><D:/Programs/MiKTeX/fonts/ty
 pe1/public/amsfonts/cm/cmti12.pfb><D:/Programs/MiKTeX/fonts/type1/public/amsfon
 ts/cm/cmtt10.pfb><D:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
 
-Output written on Maturarbeit.pdf (20 pages, 852874 bytes).
-=======
- 22994 strings out of 492895
- 422259 string characters out of 3133461
- 925879 words of memory out of 3000000
- 26719 multiletter control sequences out of 15000+200000
- 541731 words of font info for 59 fonts, out of 3000000 for 9000
- 1143 hyphenation exceptions out of 8191
- 41i,12n,68p,2668b,2191s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program F
-iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
-/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
-/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17
-.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/P
-rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Fil
-es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
-ublic/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
-fonts/cm/cmti12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
-/cmtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.
-pfb>
-Output written on Maturarbeit.pdf (20 pages, 845836 bytes).
->>>>>>> master
+Output written on Maturarbeit.pdf (20 pages, 853155 bytes).
 PDF statistics:
  152 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

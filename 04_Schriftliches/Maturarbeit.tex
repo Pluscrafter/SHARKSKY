@@ -68,20 +68,21 @@
 \section{Einleitung}
 Ein Quadrocopter ist ein Flugobjekt mit vier Propellern. In der Vergangenheit wurden schon Versuche mit Flugobjekten mit vier Propellern gemacht z.B. wie der Luftfahrtpionier Étienne OEhmichen. der 1920 den Oehmichen No. 2 gebaut hatte. Damals waren die Propeller elastisch und man konnte mit Seilzügen den Anstellwinkel der Propeller einstellen. Er konnte damit einige Rekorde aufstellen.\cite{website:Wikipedia_Quadrocopter}\\ \\
 In der heutigen Zeit finden Quadrocopter viele Anwendungen, wie z.B. bei Suchaktionen, im Militär, oder auch als Spielzeug. Mit der schnellen Entwicklung von Mikroprozessoren wurden Quadrocopter immer kleiner und einfacher zu realisieren. Auch können damit teurere Helikopterflüge für Kartographie oder Luftaufnahmen billiger realisiert werden.(Quelle)\\ \\
-Die Idee des Quadrocopters ist eine weiterführung eines Projektes aus der Robotik. Damals wurde noch ein Raspberry Pi benutzt. Da der ein Betriebsystem paralell zum Flightcontroller am laufen hat, war die Regelung nicht in Echtzeit und so zu langsam ist. Desswegen wird auch ein neuer Chip evaluiert der, kein Betriebsystem nebenbei am laufen hat. \\ \\
+Die Intention zu dieser Arbeit folgt aus einem Projekt aus dem Freifachkurs Robotik. Damals kam der Raspberry Pi zum. Da der ein Betriebsystem parallel zum Flightcontroller am laufen hat, war die Regelung des Flightcontrollers zu träge. Desswegen wird auch ein neuer Chip evaluiert, der den Echtzeitanforderungen entspricht. \\ \\
 \iffalse
-Mit dieser Arbeit will ich mit dem Bau und dessen Regelung befasssen. Der Quadrocopter wird selbst gebau mit dem Hauptziel den Flightcontroller selbst zu designen, bauen und programmieren. So sollte die Regelung auch selbst implementiert werden. Dannach sollten Versuche gemacht werden, die bestimmen sollten, wie der PID-Regler stabiler gemacht werden kann und wie ungleichheiten, wie sie durch Vibration entstehen, auszugleichen.
+Mit dieser Arbeit will ich mit dem Bau und dessen Regelung befasssen. Der Quadrocopter wird selbst gebau mit dem Hauptziel den Flightcontroller selbst zu designen, bauen und programmieren. So sollte die Regelung auch selbst implementiert werden. Dannach sollten Versuche gemacht werden, die bestimmen sollten, wie der PID-Regler stabiler gemacht werden kann und wie ungleichheiten, wie sie durch Vibration entstehen, auszugleichen. 
 \fi
-In der Arbeit wird der Quadrocopter selber gebaut, mit den Hauptziel den Flightcontroller selbst zu designen und zu programmieren. Dannach werden Versuche gemacht, die bestimmten wie der PID-Regler stabiler gemacht wird und wie ungleichheiten, die durch Vibrationen enstehen, auszugleichen. Die Fernbedienung wird auch selbst gebaut und dient auch dazu Daten wärend des Fluges auszuwerten. 
+Die Fragestellung lautet, wie der die Regelung des Flightcontrollers implementiert werden muss, damit diese funktioniert und welche Faktoren diese stören und wie schnell die Daten verarbeitet werden müssen. Auch wird untersucht , welche Lösungen es für diese Probleme gibt und es wird cersucht diese zu implementieren. \\ \\
+In der Arbeit wird der Quadrocopter selber gebaut, mit den Hauptziel den Flightcontroller selbst zu designen und zu programmieren. Dannach werden Versuche gemacht, die Bestimmten wie der PID-Regler stabiler gemacht wird und wie ungleichheiten, die durch Vibrationen enstehen, ausgeglichen werden können. Die Fernbedienung wird auch selbst gebaut und dient dazu Daten wärend des Fluges auszuwerten. 
 \newpage
 \section{Was ist ein Quadrocopter?}
-Ein Qadrocopter ist wie in der Einleitung beschrieben ein Flugobjekt. Man könnte meinen, dass man einen stabilen Flug erreichen kann, wenn man den vier Propellern den gleichen Schub gibt. Aber dies ist leider nicht möglich, da viele Umwelteinflüsse einen stabilen Zustand verhindern wie z.B. Wind, unterschiede in den Rotoren oder Motoren, Assymetrie des Rahmens etc. So muss ein Computer, der Flightcontroller(FC), das Gleichgewicht erhalten, indem dieser den Schub der vier Motoren so steuert das der Quadrocopter im Gleichgewicht ist oder dieser einen anderen bestimmten Winkel hält.\\
+Ein Qadrocopter ist wie in der Einleitung beschrieben ein Flugobjekt. Man könnte meinen, dass man einen stabilen Flug erreichen kann, wenn der Schub der vier Rotoren gleich ist. Aber dies ist leider nicht möglich, da viele Umwelteinflüsse einen stabilen Zustand verhindern wie z.B. Wind, unterschiede in den Rotoren oder Motoren, Assymetrie des Rahmens etc. So muss ein Computer, der Flightcontroller(FC), das Gleichgewicht erhalten, indem dieser den Schub der vier Motoren so reglelt, dass der Quadrocopter im Gleichgewicht ist oder dieser einen anderen bestimmten Winkel hält.\\
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{MotionDE.jpg}
 \caption[https://fpvracing.ch/de/content/7-grundsatzliche-funktion-quadrocopter-multicopter]{Drehrichtung und Schub bei verschiedenen Steuereingaben }
 \end{figure}\\
-In dieser Abbildung wird die Rotationsrichtung der Motoren gezeigt. Die benachbarten Motoren müssen eine gegensätzliche Rotation haben, da sonst der Quadrocopter ins Rotieren kommt. So wird das Drehmoment des anderen Motors ausgeglichen. Auch wird gezeigt, dass man den Quadrocopter mit erhöhen bzw. erniedrigen der Motorleistung der richtigen Motoren, diesen in die gewünschte Richtung steuern kann. Der FC hält dieses Gleichgewicht mit einem PID-Regler.
+Abbildung 1 zeigt die Rotationsrichtung der Motoren gezeigt. Die benachbarten Motoren müssen eine gegensätzliche Rotation haben, da sonst der Quadrocopter ins Rotieren kommt. So wird das Drehmoment des anderen Motors ausgeglichen. Auch wird gezeigt, dass man den Quadrocopter mit erhöhen bzw. erniedrigen der Motorleistung der richtigen Motoren, diesen in die gewünschte Richtung steuern kann. Kernelement dieser Steuerung ist der PID-Regler.
 
 
 \section{PID-Regler und Filter}
@@ -92,7 +93,7 @@ Eine Regelung ist ein Steuerung mit Rückkoppelung. Es wird ein Wert z.B. die Dr
 \includegraphics[width=0.4\textwidth]{Regelkreis1.png}
 \caption[https://rn-wissen.de/wiki/images/2/25/Regelkreis1.png]{Der Regelkreis}
 \end{wrapfigure}
-Der Regelkreis misst die Regelgrösse z.B. mit einem Sensor. Dann wird dieser mit dem Soll-Wert verglichen um die Regelabweichung zu bestimmen. So kann ein z.B. Motor gestellt werden damit dieser sich dem Soll-Wert nähert.\\ \\ \\ \\ \\ \\ \\
+Im Reglekreis wird der Ist-Wert z.B. mit einem Sensor gemessen. Dieser wird dieser mit dem Soll-Wert verglichen um die Regelabweichung zu bestimmen. So kann der Reglegrösse bestimmt werden um so das System dem Soll-Wert anzugleichen.\\ \\ \\ \\ \\ \\ \\
 Die Regelabweichung kann dabei einfach mit der Differenz des Ist-Wertes $x$ mit dem Soll-Wertes $w$ bestimmt werden.\cite{website:rn-wissen_Regelungstechnik}
 \begin{equation}
 e(t)=w-x
@@ -103,38 +104,38 @@ e(t)=w-x
 \includegraphics[width=0.4\textwidth]{Regelkreis2.png}
 \caption[https://rn-wissen.de/wiki/images/5/5d/Regelkreis2.png]{Wirkungsweise des Regelkreises}
 \end{wrapfigure}
-In der Abbildung 3 sieht man, wie vorher beschrieben, wie ein solcher Regelkreis funktionert. In der Regelungstechnik wird versucht einen solchen Regelkreis mathematisch zu modellieren. In dem Kapitel wird nur der PID-Regler und seine Komponenten besprochen, da dieser häufig bei Quadrocoptern benutzt wird.\cite{website:rn-wissen_Regelungstechnik}
+In Abbildung 3 sieht man, wie vorher beschrieben, wie ein solcher Regelkreis funktionert. In der Regelungstechnik wird versucht einen solchen Regelkreis mathematisch zu modellieren. In diesem Kapitel wird nur der PID-Regler und seine Komponenten besprochen, da dieser häufig bei Quadrocoptern benutzt wird.(Quelle)\cite{website:rn-wissen_Regelungstechnik}
 \\ \\ \\ \\
-Der PID-Regler besteht aus mehreren Relgern und dem D-Glied. Untern wird beschrieben wie die einzelnen Komponenten wirken. 
+Der PID-Regler besteht aus mehreren Relgern und dem D-Glied. In der Folge wird beschrieben wie die einzelnen Komponenten wirken. 
 \newpage
 \subsubsection{P-Regler}
-Der P-Regler wirkt linear. Dieser Regler gibt die Regelabweichung verstärkt und unverzögert mit dem Faktor $Kp$ weiter. Das Problem dabei ist, dass diese Abweichung bleibend ist und somit den Soll-Wert über- bzw. unterschiesst. Dieser Regler wirkt mittelschnell.\cite{website:rn-wissen_Regelungstechnik}
-\begin{equation}
+Der P-Regler wirkt linear. Dieser Regler gibt die Regelabweichung verstärkt und unverzögert mit dem Faktor $Kp$ weiter.(Vgl. \ref{p}) Das Problem dabei ist, dass diese Abweichung bleibend ist und somit den Soll-Wert über- bzw. unterschiesst. Dieser Regler wirkt mittelschnell.\cite{website:rn-wissen_Regelungstechnik}
+\begin{equation}\label{p}
 y(t)=Kp\cdot e(t)
 \end{equation}
 
 \subsubsection{I-Regler}
-Beim Integralregler wird die Regelabweichung über die Zeit summiert und mit dem Faktor $Ki$ verstärkt. Dabei werden Abweichungen volständig eliminiert, da dieser Regelwert immer anwächst solange die Regelabweichung nicht Null ist. Dieser Regler wirkt langsam.\cite{website:rn-wissen_Regelungstechnik}\\
-\begin{equation}
+Beim Integralregler wird die Regelabweichung über die Zeit summiert und mit dem Faktor $Ki$ verstärkt.(Vgl. \ref{i}) Dabei werden Abweichungen volständig eliminiert, da dieser Regelwert immer anwächst solange die Regelabweichung nicht Null ist. Dieser Regler wirkt langsam.\cite{website:rn-wissen_Regelungstechnik}\\
+\begin{equation}\label{i}
 y(t)=Ki\int_{0}^{t}e(t)dt
 \end{equation}
 
 \subsubsection{D-Glied}
-Das Differenzialglied schaut auf die Differenz der Regelabweichung zur vorherigen Regelabweichung und wird mit dem Faktor $Kd$ verstärkt. Desshalb reagiert dieser sehr schnell und gibt den den beiden anderen Vorhaltezeit. Differenzialglied ist kein Regler da es alleine nichts regleln kann sondern nur auf Veränderungen in der Regelabweichung reagiert.\cite{website:rn-wissen_Regelungstechnik}\\
-\begin{equation}
+Das Differenzialglied schaut auf die Differenz der Regelabweichung zur vorherigen Regelabweichung und wird mit dem Faktor $Kd$ verstärkt.(Vgl. \ref{d}) Desshalb reagiert dieser sehr schnell und gibt den beiden anderen Vorhaltezeit.Differenzialglied ist kein Regler da es alleine nichts regleln kann sondern nur auf Veränderungen in der Regelabweichung reagiert.\cite{website:rn-wissen_Regelungstechnik}\\
+\begin{equation}\label{d}
 y(t)=Kd\cdot \dot{e}(t)
 \end{equation}
 
 \subsubsection{PID-Regler}
-Beim PID-Regler werden die Eigenschaften der einzelnen Regler und dem D-Glied vereint.
-\begin{equation}
+Beim PID-Regler werden die Eigenschaften der einzelnen Regler und dem D-Glied vereint.(Vgl. \ref{pid})
+\begin{equation}\label{pid}
 y(t)=Kp\cdot e(t)+Ki\int_{0}^{t}e(t)dt+Kd\cdot \dot{e}(t)
 \end{equation}
 \newpage
 \subsection{Digitaler Low-Pass Filter}
-Ein Low-Pass Filter filtert hohe Frequenzen aus. Man kennt diesen Filter meist aus der Elektronik oder der Tontechnik. Beim Quadrocopter wird ein solcher Filter für das unterdrücken des Rauschens der IMU verwendet. Dieses Rauschen wird durch die Vibrationen der Motoren erzeugt und liegt ca. bei 133Hz.\\ \\
-Bei diesem Digitalen Low-Pass Filter (DLPF) wird ein analoger RC-Low-Pass Filter emuliert.\cite{website:Wikipedia_LPF}\\ \\
-Im letzten Kapitel wurde der PID-Regler eingeführt, doch Vibrationen verursachen Störungen in der Regelung und führen so zu falschen korrekturen. Zum Beispiel verursachen Vibrationen beim D-Glied starke Auschläge, wenn diese hohe Amplituden haben. Auch wird dieser dann unbrauchbar, da die Regelabweichung durch die Vibrationen verfälscht wird. Ein Filter versucht diese Vibrationen zu dämpfen und so starke Ausschläge verhindert.
+Ein Low-Pass Filter filtert hohe Frequenzen heraus. Der Filter ist aus der Elektronik oder der Tontechnik bekannt. Beim Quadrocopter wird ein solcher Filter für das unterdrücken des Rauschens des Inertialsensors verwendet. Dieses Rauschen wird durch die Vibrationen der Motoren erzeugt und liegt ca. bei 133Hz.\\ \\
+Beim vorliegenden Digitalen Low-Pass Filter (DLPF) wird ein analoger RC-Low-Pass Filter emuliert, wie der in Abbildung 4.\cite{website:Wikipedia_LPF}\\ \\
+Im letzten Kapitel wurde der PID-Regler eingeführt, doch Vibrationen verursachen Störungen in der Regelung und führen so zu falschen korrekturen. Zum Beispiel verursachen Vibrationen beim D-Glied starke Auschläge, wenn diese hohe Amplituden haben. Auch wird dieser dann unbrauchbar, da die Regelabweichung durch die Vibrationen verfälscht wird. Ein Filter versucht diese Vibrationen zu dämpfen und verhindert so starke Ausschläge.
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.4\textwidth]{DLPF1.png}
@@ -166,7 +167,7 @@ y{i}=x_{i}\frac{\Delta t}{\Delta t+RC} + y_{i-1}\frac{RC}{\Delta t+RC}
 \begin{equation}\label{eq5}
 y{i}=\alpha x_{i} + (1-\alpha)y_{i-1} \quad \text{mit} \quad \alpha:=\frac{\Delta t}{\Delta t+RC}
 \end{equation}
-$RC$ kann man mit der Formel für den Low-Pass Filter durch $f_{c}$ dargestellt werden wie unten gezeigt wird.
+$RC$ kann mit der Formel für den Low-Pass Filter durch $f_{c}$ dargestellt werden wie unten gezeigt wird.
 \begin{align*}
 f_{c} = \frac{1}{2\pi RC} \\
 RC = \frac{1}{2\pi f_{c}} 
@@ -178,18 +179,18 @@ Jetzt kann auch das $RC$ in der Definition von $\alpha$ ersetzt werden, damit di
 \newpage
 \section{Äusserer Aufbau}
 \subsection{Motoren}
-Die verwendeten Motoren sind sogenannte bürstenlose Motoren. Diese werden mit einem Electronic Speed Controller(ESC) angesteuert, diese wandeln die Steuerimpulse in die richtige Spannung für den Motor. Da ihre RPM von Spannung abhängig ist, wird einen $Kv$-Wert angegeben. So kann man mit der Formel
+Die verwendeten Motoren sind sogenannte bürstenlose Motoren. Diese werden mit einem Electronic Speed Controller(ESC) angesteuert, dieser wandelt die Steuerimpulse in die richtige Spannung für den Motor. Da ihre RPM von Spannung abhängig ist, wird einen $Kv$-Wert angegeben. So kann man mit der Formel
 \begin{equation}
 a=Kv\cdot U \quad mit \quad a=[\text{rpm}]
 \end{equation}
 die Rotationen pro Minute berechnen.\\ \\
-Beim meinem Quadrocopter handelt es sich um ReadyToSky RS2205 Motoren mit einem $Kv$ von 2300. Ich habe diese Motoren ausgesucht, da sie für genug Leistung bringen für einen Quadrocopter mit einer Rahmenlänge von 250mm.(Bild l)
+Beim vorliegenden Quadrocopter handelt es sich um ReadyToSky RS2205 Motoren mit einem $Kv$ von 2300. Diese Motoren wurden ausgesucht, da sie für genug Leistung bringen für einen Quadrocopter mit einer Rahmenlänge von 250mm.(Bild l)
 \subsection{Akku}
-Der Akku versorgt alle Kompionenten, die Strom brauchen mit Strom. Im Quadrocopter wird ein LiPo Akku benutzt, der drei Zellen in Serie geschaltet hat mit einer Kapazität von 2.4Ah. Die miminale Spannung beträgt 11.1V. Es gibt noch das Entladerate, die als $C$-Rate angegeben wird. Mit mit der Kapazität multipliziert gibt es den maximalen Entladestrom an.\cite{website:fpvracing.ch_Mult_Komp}
+Der Akku versorgt alle Komponenten, die Strom brauchen mit Strom. Im Quadrocopter wird ein LiPo Akku benutzt, der drei Zellen in Serie geschaltet hat mit einer Kapazität von 2.4Ah. Die miminale Spannung beträgt 11.1V. Die Entladerate wird $C$-Rate angegeben. Mit der Kapazität multipliziert wird der maximale Entladestrom ausgerechnet.\cite{website:fpvracing.ch_Mult_Komp}
 \begin{equation}
 I_{\text{max}}=Q\cdot C
 \end{equation} (Bild r)\\ \\
-Man benutzt in Quadrocoptern meist LiPo Akkus, da sie eine hohe Energiedichte besitzen und viel Leistung abgeben können. Das aber hat auch zur Folge, dass man diese Akkus sorgfältig behandeln muss, da sie auch. im Extremfall, Feuer fangen oder explodieren können. So darf man die einzelnen Zellen nicht unter einer Spannung von 2.7V bringen. Desshalb wird der Akku auch an einem Akkuüberwacher angeschlossen, der piepst, wenn der Akku verbraucht ist. Auch braucht man ein Balancerladegerät, das kontrolliert, dass alle Zellen gleichmässug geladen werden. Eine hohe Kapazität garantiert nicht immer eine längere Flugzeit, da mehr Kapazität auch mehr Gewicht bedeutet.\cite{website:fpvracing.ch_Mult_Komp}
+Man benutzt in Quadrocoptern meist LiPo Akkus, da sie eine hohe Energiedichte besitzen und viel Leistung abgeben können. Dies aber hat auch zur Folge, dass man diese Akkus sorgfältig behandeln muss, da sie auch. im Extremfall, Feuer fangen oder explodieren können. So darf man die einzelnen Zellen nicht unter einer Spannung von 2.7V fallen lassen. Desshalb wird der Akku auch an einem Akkuüberwacher angeschlossen, der piepst, wenn der Akku verbraucht ist. Auch braucht man ein Balanceladegerät, das kontrolliert, dass alle Zellen gleichmässug geladen werden. Eine hohe Kapazität garantiert nicht immer eine längere Flugzeit, da mehr Kapazität auch mehr Gewicht bedeutet.\cite{website:fpvracing.ch_Mult_Komp}
 \newpage
 
 \section{Der Flightcontroller}
