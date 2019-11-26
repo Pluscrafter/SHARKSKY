@@ -179,7 +179,7 @@ x_{i}-y_{i}=RC\cdot \frac{y_{i}-y_{i-1}}{\Delta t}
 \end{equation}
 \newpage
 \noindent
-Die Gleichung \ref{eq6} (Ganze Auflösung siehe Anhang 1 Auflösung 1) wird nach $y_{i}$ umgeformt und man kann $\sfrac{\Delta t}{\Delta t+RC}$  mit $\alpha$ und $\sfrac{RC}{\Delta t + RC}$ mit $\alpha-1$ substituieren wie in \ref{eq5} gezeigt.
+Die Gleichung \ref{eq6} (Ganze Auflösung siehe Anhang 2 Auflösung 1) wird nach $y_{i}$ umgeformt und man kann $\sfrac{\Delta t}{\Delta t+RC}$  mit $\alpha$ und $\sfrac{RC}{\Delta t + RC}$ mit $\alpha-1$ substituieren wie in \ref{eq5} gezeigt.
 \begin{equation} \label{eq6}
 y{i}=x_{i}\frac{\Delta t}{\Delta t+RC} + y_{i-1}\frac{RC}{\Delta t+RC}
 \end{equation} 
@@ -191,7 +191,7 @@ $RC$ kann mit der Formel für den Low-Pass Filter durch $f_{c}$ dargestellt werd
 f_{c} = \frac{1}{2\pi RC} \\
 RC = \frac{1}{2\pi f_{c}} 
 \end{align*}
-Jetzt kann auch das $RC$ in der Definition von $\alpha$ ersetzt werden, damit die Gleichung nicht mehr von $RC$ abhängig ist (Ganzer Beweis siehe Anhang 1 Beweis 1).
+Jetzt kann auch das $RC$ in der Definition von $\alpha$ ersetzt werden, damit die Gleichung nicht mehr von $RC$ abhängig ist (Ganzer Beweis siehe Anhang 2 Beweis 1).
 \begin{equation*}
 \alpha = \frac{2\pi f_{c}\Delta t}{1+2\pi f_{c}\Delta t} 
 \end{equation*}
@@ -334,7 +334,7 @@ Die Hinterseite wurde dann per Hand fertig gelötet. Dann wurden nur noch die Ko
 \end{figure} \\
 \newpage
 \subsubsection{Programmierung}
-Der FC wird mit C und C++ programmiert. Dabei wurde die STM32CubeIDE von STMicroelectronics benutzt, die eine Eclipse IDE mit den entsprechenden Bibliotheken vorinstalliert ist. Es wurden für die einzelnen Komponenten auch andere Bibliotheken benutzt, die z.t. für den STM32 umgeschrieben werden mussten. Die Bibliothek für die IMU wurde aber selbst programmiert. Dabei kamen mehrere Probleme auf, z.B. dass das ChipSelect-Signal zu früh auf High ging. In diesem Kapitel geht es um die grössten Hürden und wichtigsten Abläufe bei der programmierung des Quadrocopters. Im Listening 1 wird der grobe Ablaufplan des Programms gezeigt.
+Der FC wird mit C und C++ programmiert. Dabei wurde die STM32CubeIDE von STMicroelectronics benutzt, die eine Eclipse IDE mit den entsprechenden Bibliotheken vorinstalliert ist. Es wurden für die einzelnen Komponenten auch andere Bibliotheken benutzt, die z.t. für den STM32 umgeschrieben werden mussten. Die Bibliothek für die IMU wurde aber selbst programmiert. Dabei kamen mehrere Probleme auf, z.B. dass das ChipSelect-Signal zu früh auf High ging. In diesem Kapitel geht es um die grössten Hürden und wichtigsten Abläufe bei der programmierung des Quadrocopters. Im Listening 1 wird der grobe Ablaufplan des Programms gezeigt. (Der ganze Quellcode und alle Projektdateien findet man im Link im Anhang 1.)
 
 \begin{lstlisting}[language=C++,caption=Programmablauf Pseudocode]
 int main(){
@@ -373,7 +373,6 @@ void setMotor(){
 		motspeed[2]	= throttle - roll - pitch + yaw;
 		motspeed[3]	= throttle - roll + pitch - yaw;
 	}
-	
 	PWM_SET(M1, motspeed[0]);
 	PWM_SET(M2, motspeed[1]);
 	PWM_SET(M3, motspeed[2]);
@@ -436,7 +435,12 @@ void menu_print(){
 \newpage
 
 \subsection{Filtersimulation}
-Die Filtersimulation ist ein kleines Python-Programm, das den DLPF Filter auf die aufgezeichneten Werte anwendet und ein Graph zeichnet, der die rohen Werte und die gefilterten Werte darstellt.(Bild FilterGraph). Listening 3 zeigt den Code des Programmes. 
+Die Filtersimulation ist ein kleines Python-Programm, das den DLPF Filter auf die aufgezeichneten Werte, von der SD-Karte, anwendet und ein Graph zeichnet, der die rohen Werte und die gefilterten Werte darstellt (siehe Abb.\ref{list}). Listening 3 zeigt den Code des Programmes. 
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{Figure_1.png}
+\caption[Eigenes Bild]{Hier wird ein Winkel mit den Filter analysiert.}\label{list}
+\end{figure}
 \begin{lstlisting}[language=Python,caption=Filtersimulation]
 from matplotlib import pyplot as plt
 import numpy as np
@@ -487,6 +491,8 @@ plt.plot(time, fpitch)
 
 plt.show()
 \end{lstlisting}
+\newpage
+
 \section{Versuche}
 Nach dem Bau des Quadrocopters und der Fernbedienung, wurden Tests in der Turnhalle der Schule gemacht, da der Quadrocopter schwerer als 0.5kg ist und dies gegen die Bestimmungen des Bundesamtes für Zivilluftfahrt ist, wurde desshalb auch eine Indoordrohne gebaut. \\ \\ Zuerst wurden Versuche gemacht, um den richtigen Wert des P-Reglers der Nick-und Rollachse zu bestimmen. Der Wert wurde so lange erhöht, bis der Quadrocopter zu oszillieren begann. Dann wurde er in die Mitte der Turnhalle gestellt und es wurden die ersten Flugversuche gestartet. Später wurde probiert das D-Glied einzustellen. Auch nach der Achsenkorrektur, die später in den Ergebnissen besprochen wird, waren diese Versuche gescheitert. \\ \\ In einem zweiten Versuch wurde der Quadrocopter mit einem komerziellen Quadrocopter des Mechanikers verglichen. Dadurch wurden einige Fehler, die im Kapitel 
 Ergebnisse besprochen werden, korrigiert. Durch diese Korrektur kam es zu einem halberfolgreichen Versuch. \\ \\ Die Gierachse wurde auch im ersten Versuch getestet. Dabei wurde bemerkt, dass diese zu stark reagierte. Der Mechaniker hat dann behauptet, dass die Gierachse auf 5Hz gefiltert werden muss. Dabei wurde ein kleines Python-Programm geschrieben, dass die aufgezeichneten Werte filterte. Natürlich konnte so nicht der Effekt des Filtes simuliert werden. Diese Versuche waren nicht befriedigend und so wurde das Augenmerk zunächst auf die Nick-und Rollachse geworfen. \\ \\ Beim leztzen Versuch ist es leider zu einem Unfall gekommen und einer der Motoren wurde beschädigt, somit kann auch die Versuchsreihe bis zur Abgabe der Maturarbeit nicht weitergeführt werden, da die Motoren eine lange Lieferfrist haben und auch ein neuer Rahmen von Vorteil ist, da beim alten die Beine beschädigt waren und nicht richtig repariert werden konnten. Somit ist der Quadrocopter bis zur Abgabe noch nicht flugfähig. 
@@ -508,7 +514,14 @@ Im Vergleich zum Flightcontroller mit dem Raspberry Pi, konnten alle Probleme ge
 \@starttoc{lof}% Print List of Figures
 \makeatother
 \newpage
-\section{Anhang 1}
+\section{Anhang 1 QR-Code zum Quellcode}
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.5\textwidth]{qrcode.png}
+\end{figure}
+\centering{\large{\url{https://github.com/Pluscrafter/SHARKSKY/tree/Abgabe}}}
+\newpage
+\section{Anhang 2 Beweis und Auflösung des DLPF}
 Auflösung 1:
 \begin{align*} 
 x_{i}-y_{i}&=RC\cdot \frac{y_{i}-y_{i-1}}{\Delta t} \\ 
