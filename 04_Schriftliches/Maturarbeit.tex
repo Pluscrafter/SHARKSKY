@@ -109,7 +109,7 @@ Eine Regelung ist eine Steuerung mit Rückkoppelung. Ein Wert z.B. die Drehzahl 
 \includegraphics[width=0.4\textwidth]{Regelkreis1.png}
 \caption[\url{https://rn-wissen.de/wiki/images/2/25/Regelkreis1.png}]{Der Regelkreis}
 \end{wrapfigure}
-Im Reglekreis wird der Ist-Wert z.B. mit einem Sensor gemessen. Dieser wird mit dem Soll-Wert verglichen, um die Regelabweichung zu bestimmen. So kann die Reglegrösse bestimmt werden, um so das System dem Soll-Wert anzugleichen.\\ \\ \\ \\ \\ \\ \\
+Im Reglekreis (siehe Abb.2) wird der Ist-Wert z.B. mit einem Sensor gemessen. Dieser wird mit dem Soll-Wert verglichen, um die Regelabweichung zu bestimmen. So kann die Reglegrösse bestimmt werden, um so das System dem Soll-Wert anzugleichen.\\ \\ \\ \\ \\ \\ \\
 Die Regelabweichung kann dabei einfach mit der Differenz des Ist-Wertes $x$ mit dem Soll-Wertes $w$ bestimmt werden.\cite{website:rn-wissen_Regelungstechnik}
 \begin{equation}
 e(t)=w-x
@@ -209,7 +209,7 @@ Beim vorliegenden Quadrocopter handelt es sich um ReadyToSky RS2205 Motoren mit 
 \begin{wrapfigure}[10]{r}{0.4\textwidth}
 \centering
 \includegraphics[width=0.4\textwidth]{accu.jpg}
-\caption[]{LiPo-Akku und Akkuüberwacher} \label{accu}
+\caption[Eigenes Bild]{LiPo-Akku und Akkuüberwacher} \label{accu}
 \end{wrapfigure}
 Der Akku (Abb.\ref{accu}) versorgt alle Komponenten, die Strom brauchen mit Strom. Im Quadrocopter wird ein LiPo Akku benutzt, der drei Zellen in Serie geschaltet hat mit einer Kapazität von 2.4Ah. Die miminale Spannung beträgt 11.1V. Die Entladerate wird $C$-Rate angegeben. Mit der Kapazität multipliziert wird der maximale Entladestrom ausgerechnet.\cite{website:fpvracing.ch_Mult_Komp}
 \begin{equation}
@@ -292,7 +292,7 @@ Zuerst wurde überlegt, was für ein Microcontroller benutzt werden sollte. Bei 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\textwidth]{egl.png}
-\caption[]{Screenshot Autodesk Eagle} \label{eagle}
+\caption[Eigenes Bild]{Screenshot Autodesk Eagle} \label{eagle}
 \end{figure}
 
 \paragraph{Bau}
@@ -302,8 +302,36 @@ Beim Zusammensetzen des FC wird ein spezielles Lötverfahren gebraucht, und zwar
 \includegraphics[width=0.5\textwidth]{reflow.png}
 \caption[\url{http://www.comtec-crystals.com/images/service/reflow.gif}]{Temperaturkurve für Reflowlöten}\label{reflow}
 \end{figure} \\
-Da die Leiterplatte doppelseitig ist, kann man hier nicht auf beiden Seiten das Reflow-Verfahren benutzen. Deshalb wurde Zuerst auf der Rückseite Lötpaste für den ATMega, dessen Quarzoszillator und dem SD-Kartenslot aufgetragen und die Komponenten wurden platziert. Dann wurden diese mit dem Heissluftföhn verlötet. Um das Herausfallen der Teile zu verhindern werden sie mit hitzebeständigen Klebeband fixiert.
-Dann wurde auf einer Holzplatte Löcher an den Positionen der Verlöteten Komponenten gebohrt. Damit wird erreicht, dass man die Vorderseite, Plan auf dieser Holzplatte gelegt werden kann. Mit den restlichen PCBs, man kann nur fünf auf einmal bestellen, wurde ein Rahmen erstellt, um so das teilweise gelötete Board zu fixieren. Dann wurde die Schablone ausgerichtet und festgemacht. So konnte man mit Lötpaste und einem Spachtel, die Löcher und somit auch die Lötstellen mit Lötpaste füllen. Dann wurde die Schablone entfernt. Mithilfe des Mikroskops wurden die Teile dann auf der Leiterplatte plaziert. Im Ofen wurden sie dann ungefähr nach der Temperaturkurve gebacken und so war die Vorderseite gelötet. Die Hinterseite wurde dann per Hand fertig gelötet. Dann wurden nur noch die Konnektoren angelötet und der Flightcontroller ist fertig zum programmieren.
+Da die Leiterplatte doppelseitig ist, kann man hier nicht auf beiden Seiten das Reflow-Verfahren benutzen. Deshalb wurde Zuerst auf der Rückseite Lötpaste für den microSD-Karten Slot und dem Quarzoszillator aufgetragen. Nachher wurden die Komponenten platziert. Dann wurden diese mit dem Heissluftföhn verlötet (siehe Abb.\ref{unterlot}). Um das Herausfallen der Teile im Ofen zu verhindern werden sie mit hitzebeständigen Klebeband fixiert. \\
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{unterlot.jpg}
+\caption[Eigenes Bild]{Löten des Quarzes und des microSD-Karten Slots}\label{unterlot}
+\end{figure} \\ \\
+Dann wurde auf einer Holzplatte Löcher an den Positionen der Verlöteten Komponenten gebohrt. Damit wird erreicht, dass man die Vorderseite, Plan auf dieser Holzplatte gelegt werden kann. Mit den restlichen PCBs, man kann nur fünf auf einmal bestellen, wurde ein Rahmen erstellt, um so das teilweise gelötete Board zu fixieren. Dann wurde die Schablone ausgerichtet und festgemacht. So konnte man mit Lötpaste und einem Spachtel, die Löcher und somit auch die Lötstellen mit Lötpaste füllen (siehe Abb.\ref{schabi}). 
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{schabi.jpg}
+\caption[Eigenes Bild]{Mit Hilfe des Spachtel und der Schablone aufgetragene Lötpaste.}\label{schabi}
+\end{figure} \\
+Dann wurde die Schablone entfernt. Mithilfe des Mikroskops wurden die Teile dann auf der Leiterplatte plaziert (siehe Abb.\ref{plati}). 
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{plati.jpg}
+\caption[Eigenes Bild]{Bestückes PCB}\label{plati}
+\end{figure} \\
+Im Ofen wurden sie dann ungefähr nach der Temperaturkurve gebacken und so war die Vorderseite gelötet (siehe Abb. \ref{vordi}). \\
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.5\textwidth]{vordi.jpg}
+\caption[Eigenes Bild]{Gelötete Vorderseite}\label{vordi}
+\end{figure} \\ 
+Die Hinterseite wurde dann per Hand fertig gelötet. Dann wurden nur noch die Konnektoren angelötet und der Flightcontroller ist fertig zum programmieren (siehe Abb.\ref{fertig}).
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.5\textwidth]{fertig.jpg}
+\caption[Eigenes Bild]{Fertiges Lightcontroller Board}\label{fertig}
+\end{figure} \\
 
 \subsubsection{Programmierung}
 Der FC wird mit C und C++ programmiert. Dabei wurde die STM32CubeIDE von STMicroelectronics benutzt, die eine Eclipse IDE mit den entsprechenden Bibliotheken vorinstalliert ist. Es wurden für die einzelnen Komponenten auch andere Bibliotheken benutzt, die z.t. für den STM32 umgeschrieben werden mussten. Die Bibliothek für die IMU wurde aber selbst programmiert. Dabei kamen mehrere Probleme auf, z.B. dass das ChipSelect-Signal zu früh auf High ging. In diesem Kapitel geht es um die grössten Hürden und wichtigsten Abläufe bei der programmierung des Quadrocopters. Im Listening 1 wird der grobe Ablaufplan des Programms gezeigt.
@@ -353,15 +381,15 @@ void setMotor(){
 	PWM_SET(M4, motspeed[3]);
 }
 \end{lstlisting}
-
+\noindent
 Die IMU wird per Interrupt ausgelesen. Ein Timer gibt einen 500Hz Takt aus und nach diesem liest der Microcontroller die IMU aus.
-
+\newpage
 \paragraph{Motoren und Timing}
 Die ESC's der Motoren müssen mit dem OneShot125 Protokoll\cite{website:OL_OneShot125} angesprochen werden. Bei dem wird ein PWM-Signal von 2khz erzeugt. Der Nullpunkt, bei dem die Motoren aus sind, liegt bei einer Periode von 125us bzw. einem PWM von 25$\%$ (vgl. Abb.\ref{pwm}). Die Motoren erreichen ihre maximale Drehzahl bei einer Periode von 500us bzw. bei einem PWM von 50$\%$.
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.9\textwidth]{PWM_25.png}
-\caption[]{Signal fur die Motoren(25$\%$ PWM).}\label{pwm}
+\caption[Eigenes Bild]{Signal fur die Motoren(25$\%$ PWM).}\label{pwm}
 \end{figure}
 \paragraph{PID Implementierung}
 Der PID-Regler wird für den absoluten Winkel und für die Winkelgeschwindigkeit implementiert, wobei man die Gierachse nur mit der Winkelgeschwindikeit implementieren kann, da keine Referenz besteht, z.b durch ein Magnetometer. Die Regelungsdifferenz und Regelungskorrektur wird jeden Loop-Zyklus berechnet, der mit ca. 1.5kHz läuft.
@@ -370,7 +398,7 @@ Der PID-Regler wird für den absoluten Winkel und für die Winkelgeschwindigkeit
 \begin{wrapfigure}[17]{r}{0.5\textwidth}
 \centering
 \includegraphics[width=0.5\textwidth]{Ferni.JPG}
-\caption[]{Fernbedienung mit Schiebereglerausgabe auf dem Display.} \label{ferni}
+\caption[Eigenes Bild]{Fernbedienung mit Schiebereglerausgabe auf dem Display.} \label{ferni}
 \end{wrapfigure}
 Die Fernbedienung (Abb.\ref{ferni}) wird aus Holz und PLA gebaut. Der Rahmen wurde mittels eines 3D-Drucker gedrukt. Das Frontpanel ist aus Holz gelasert worden. Die Schieberegler wurden aus einer kaputten Fernbedienung genommen. Auch besitzt diese ein LCD-CharDisplay mit 20x4 Zeichen. Dies wird benutzt um den genauen Ausschlag der Schieberegler, die Sensorwerte und die PID-Werte anzuzeigen bzw. zu bearbeiten. Als Microcontroller wird ein STM32F767ZI benutzt, der auf einem Nucleo-144 Protoboard verbaut ist. Listening 2 zeigt den Ablaufplan des Programmes.\\ \\ \\
 \begin{lstlisting}[language=C++,caption=Programmablauf Pseudocode]
