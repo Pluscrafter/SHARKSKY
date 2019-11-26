@@ -53,16 +53,18 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.4}Filtersimulation}{17}{subsection.3.4}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4}Versuche}{18}{section.4}% 
+\contentsline {section}{\numberline {4}Versuche}{19}{section.4}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5}Ergebnisse}{19}{section.5}% 
+\contentsline {section}{\numberline {5}Ergebnisse}{20}{section.5}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6}Diskussion}{20}{section.6}% 
+\contentsline {section}{\numberline {6}Diskussion}{21}{section.6}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7}Quellenverzeichnis}{21}{section.7}% 
+\contentsline {section}{\numberline {7}Quellenverzeichnis}{22}{section.7}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.1}Literaturverzeichnis}{21}{subsection.7.1}% 
+\contentsline {subsection}{\numberline {7.1}Literaturverzeichnis}{22}{subsection.7.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.2}Abbildungsverzeichnis}{21}{subsection.7.2}% 
+\contentsline {subsection}{\numberline {7.2}Abbildungsverzeichnis}{22}{subsection.7.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8}Anhang 1}{23}{section.8}% 
+\contentsline {section}{\numberline {8}Anhang 1 QR-Code zum Quellcode}{24}{section.8}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {9}Anhang 2 Beweis und Auflösung des DLPF}{25}{section.9}% 

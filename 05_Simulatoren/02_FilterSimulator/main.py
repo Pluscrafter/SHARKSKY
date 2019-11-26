@@ -17,7 +17,7 @@ def digital_low_pass(cutoff_frequency, input):
     return output
 
 
-with open('LOG3','r') as file:
+with open('LOG2','r') as file:
     line = []
     for i in file:
         line.append(i.rstrip('\n'))
@@ -34,8 +34,6 @@ yaw = []
 for i in line:
     x = i.split('\t')
     pitch.append(float(x[0]))
-    roll.append(float(x[1]))
-    yaw.append(float(x[2]))
     time.append(float(x[3]))
 
 
@@ -50,12 +48,14 @@ dt = dt/len(dtime)
 freq = 1.0/dt
 
 fpitch = digital_low_pass(80, pitch)
-froll = digital_low_pass(80, roll)
-fyaw = digital_low_pass(3, yaw)
+#froll = digital_low_pass(80, roll)
+#fyaw = digital_low_pass(3, yaw)
 
-plt.plot(time, pitch)
-plt.plot(time, roll)
-plt.plot(time, yaw)
+plt.plot(time, pitch, color='blue', linewidth=1, label='ungefilterter abs. Winkel')
+plt.plot(time, fpitch, color='red', linewidth=1, label='gefilterter abs. Winkel mit 80Hz')
+plt.xlabel("Zeit in [s]")
+plt.ylabel("Absoluter Winkel in [°]")
+plt.legend()
 plt.show()
 
 print(dt)
