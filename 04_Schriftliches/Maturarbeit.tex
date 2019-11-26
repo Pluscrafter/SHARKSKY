@@ -332,7 +332,7 @@ Die Hinterseite wurde dann per Hand fertig gelötet. Dann wurden nur noch die Ko
 \includegraphics[width=0.5\textwidth]{fertig.jpg}
 \caption[Eigenes Bild]{Fertiges Lightcontroller Board}\label{fertig}
 \end{figure} \\
-
+\newpage
 \subsubsection{Programmierung}
 Der FC wird mit C und C++ programmiert. Dabei wurde die STM32CubeIDE von STMicroelectronics benutzt, die eine Eclipse IDE mit den entsprechenden Bibliotheken vorinstalliert ist. Es wurden für die einzelnen Komponenten auch andere Bibliotheken benutzt, die z.t. für den STM32 umgeschrieben werden mussten. Die Bibliothek für die IMU wurde aber selbst programmiert. Dabei kamen mehrere Probleme auf, z.B. dass das ChipSelect-Signal zu früh auf High ging. In diesem Kapitel geht es um die grössten Hürden und wichtigsten Abläufe bei der programmierung des Quadrocopters. Im Listening 1 wird der grobe Ablaufplan des Programms gezeigt.
 
@@ -347,7 +347,6 @@ int main(){
 	while(true){
 		loop();
 	}
-	
 	return 0;
 }
 
