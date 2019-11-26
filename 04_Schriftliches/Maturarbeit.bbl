@@ -19,6 +19,34 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
+    \entry{website:IMU_COLL}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=a08372b70196c21a9229cf04db6b7ceb}{%
+           family={Alex},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{a08372b70196c21a9229cf04db6b7ceb}
+      \strng{fullhash}{a08372b70196c21a9229cf04db6b7ceb}
+      \strng{bibnamehash}{a08372b70196c21a9229cf04db6b7ceb}
+      \strng{authorbibnamehash}{a08372b70196c21a9229cf04db6b7ceb}
+      \strng{authornamehash}{a08372b70196c21a9229cf04db6b7ceb}
+      \strng{authorfullhash}{a08372b70196c21a9229cf04db6b7ceb}
+      \field{sortinit}{A}
+      \field{sortinithash}{a3dcedd53b04d1adfd5ac303ecd5e6fa}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{hour}{15}
+      \field{howpublished}{Webseite}
+      \field{month}{März}
+      \field{title}{Inertial Sensor Comparison MPU6000 vs MPU6050 vs MPU6500 vs ICM20602}
+      \field{year}{2019}
+      \verb{urlraw}
+      \verb https://blog.dronetrest.com/inertial-sensor-comparison-mpu6000-vs-mpu6050-vs-mpu6500-vs-icm20602/
+      \endverb
+      \verb{url}
+      \verb https://blog.dronetrest.com/inertial-sensor-comparison-mpu6000-vs-mpu6050-vs-mpu6500-vs-icm20602/
+      \endverb
+    \endentry
     \entry{website:elek_Komp_MEMS}{misc}{}
       \name{author}{1}{}{%
         {{hash=426e347424adcaf2297ccb97140b2eb3}{%
@@ -75,6 +103,37 @@
       \verb https://fpvracing.ch/de/content/8-multicopter-komponenten
       \endverb
     \endentry
+    \entry{website:OS_MCU_COLL}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=7a8a4c5cf379cb08f95f2ece64f7ea01}{%
+           family={Liang},
+           familyi={L\bibinitperiod},
+           given={Oscar},
+           giveni={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{7a8a4c5cf379cb08f95f2ece64f7ea01}
+      \strng{fullhash}{7a8a4c5cf379cb08f95f2ece64f7ea01}
+      \strng{bibnamehash}{7a8a4c5cf379cb08f95f2ece64f7ea01}
+      \strng{authorbibnamehash}{7a8a4c5cf379cb08f95f2ece64f7ea01}
+      \strng{authornamehash}{7a8a4c5cf379cb08f95f2ece64f7ea01}
+      \strng{authorfullhash}{7a8a4c5cf379cb08f95f2ece64f7ea01}
+      \field{extraname}{1}
+      \field{sortinit}{L}
+      \field{sortinithash}{dad3efd0836470093a7b4a7bb756eb8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{hour}{15}
+      \field{howpublished}{Webseite}
+      \field{month}{März}
+      \field{title}{F1, F3, F4, F7 and H7 Flight Controller Explained}
+      \field{year}{2019}
+      \verb{urlraw}
+      \verb https://oscarliang.com/f1-f3-f4-flight-controller/
+      \endverb
+      \verb{url}
+      \verb https://oscarliang.com/f1-f3-f4-flight-controller/
+      \endverb
+    \endentry
     \entry{website:OL_OneShot125}{misc}{}
       \name{author}{1}{}{%
         {{hash=7a8a4c5cf379cb08f95f2ece64f7ea01}{%
@@ -89,6 +148,7 @@
       \strng{authorbibnamehash}{7a8a4c5cf379cb08f95f2ece64f7ea01}
       \strng{authornamehash}{7a8a4c5cf379cb08f95f2ece64f7ea01}
       \strng{authorfullhash}{7a8a4c5cf379cb08f95f2ece64f7ea01}
+      \field{extraname}{2}
       \field{sortinit}{L}
       \field{sortinithash}{dad3efd0836470093a7b4a7bb756eb8c}
       \field{labelnamesource}{author}
@@ -251,6 +311,35 @@
       \endverb
       \verb{url}
       \verb https://de.wikipedia.org/wiki/Quadrocopter#Entwicklung
+      \endverb
+    \endentry
+    \entry{website:Wikipedia_Quad_Einsatz}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=9c677286866aad38f8e9b660f5411814}{%
+           family={Wikipedia},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{fullhash}{9c677286866aad38f8e9b660f5411814}
+      \strng{bibnamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authorbibnamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authornamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authorfullhash}{9c677286866aad38f8e9b660f5411814}
+      \field{extraname}{3}
+      \field{sortinit}{W}
+      \field{sortinithash}{1af34bd8c148ffb32de1494636b49713}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{hour}{14}
+      \field{howpublished}{Webseite}
+      \field{month}{11}
+      \field{title}{Quadrocopter}
+      \field{year}{2019}
+      \verb{urlraw}
+      \verb https://de.wikipedia.org/wiki/Quadrocopter#Einsatz
+      \endverb
+      \verb{url}
+      \verb https://de.wikipedia.org/wiki/Quadrocopter#Einsatz
       \endverb
     \endentry
   \enddatalist

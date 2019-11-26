@@ -3,60 +3,66 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1}Einleitung}{1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2}Was ist ein Quadrocopter?}{2}% 
+\contentsline {section}{\numberline {2}Theorie}{2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3}PID-Regler und Filter}{3}% 
+\contentsline {subsection}{\numberline {2.1}Funktionsweise eines Quadrocopters}{2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1}Was ist ein Regler?}{3}% 
+\contentsline {subsection}{\numberline {2.2}Was ist ein Regler?}{3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.1.1}P-Regler}{4}% 
+\contentsline {subsubsection}{\numberline {2.2.1}P-Regler}{4}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.1.2}I-Regler}{4}% 
+\contentsline {subsubsection}{\numberline {2.2.2}I-Regler}{4}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.1.3}D-Glied}{4}% 
+\contentsline {subsubsection}{\numberline {2.2.3}D-Glied}{4}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.1.4}PID-Regler}{4}% 
+\contentsline {subsubsection}{\numberline {2.2.4}PID-Regler}{4}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2}Digitaler Low-Pass Filter}{5}% 
+\contentsline {subsection}{\numberline {2.3}Digitaler Low-Pass Filter}{5}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4}\IeC {\"A}usserer Aufbau}{7}% 
+\contentsline {section}{\numberline {3}Versuchsaufbau}{7}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1}Motoren}{7}% 
+\contentsline {subsection}{\numberline {3.1}Quadrocopter}{7}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2}Akku}{7}% 
+\contentsline {subsubsection}{\numberline {3.1.1}Motoren}{7}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5}Der Flightcontroller}{8}% 
+\contentsline {subsubsection}{\numberline {3.1.2}Akku}{7}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1}Komponenten}{8}% 
+\contentsline {subsection}{\numberline {3.2}Der Flightcontroller}{8}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.1.1}Microcontroller}{8}% 
+\contentsline {subsubsection}{\numberline {3.2.1}Komponenten}{8}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.1.2}Sensoren}{8}% 
+\contentsline {paragraph}{\numberline {3.2.1.1}Microcontroller}{8}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.1.3}Empf\IeC {\"a}nger}{10}% 
+\contentsline {paragraph}{\numberline {3.2.1.2}Sensoren}{8}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2}Leiterplatte}{10}% 
+\contentsline {paragraph}{\numberline {3.2.1.3}Empfänger}{10}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.2.1}Design}{10}% 
+\contentsline {subsubsection}{\numberline {3.2.2}Leiterplatte}{11}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.2.2}Bau}{11}% 
+\contentsline {paragraph}{\numberline {3.2.2.1}Design}{11}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.3}Programmierung}{12}% 
+\contentsline {paragraph}{\numberline {3.2.2.2}Bau}{12}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.3.1}Motoren und Timing}{13}% 
+\contentsline {subsubsection}{\numberline {3.2.3}Programmierung}{13}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.3.2}PID Implementierung}{13}% 
+\contentsline {paragraph}{\numberline {3.2.3.1}Motoren und Timing}{14}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6}Fernbedienung}{14}% 
+\contentsline {paragraph}{\numberline {3.2.3.2}PID Implementierung}{14}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7}Versuche}{15}% 
+\contentsline {subsection}{\numberline {3.3}Fernbedienung}{14}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8}Schlussfolgerung}{16}% 
+\contentsline {subsection}{\numberline {3.4}Filterssimulation}{16}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {9}Quellenverzeichnis}{17}% 
+\contentsline {section}{\numberline {4}Versuche}{17}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {9.1}Literaturverzeichnis}{17}% 
+\contentsline {section}{\numberline {5}Ergebnisse}{19}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {9.2}Abbildungsverzeichnis}{17}% 
+\contentsline {section}{\numberline {6}Diskussion}{19}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {10}Anhang 1}{18}% 
+\contentsline {section}{\numberline {7}Quellenverzeichnis}{20}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.1}Literaturverzeichnis}{20}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.2}Abbildungsverzeichnis}{20}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8}Anhang 1}{22}% 

@@ -2130,19 +2130,22 @@
   </bcf:bibdata>
   <bcf:section number="0">
     <bcf:citekey order="1">website:Wikipedia_Quadrocopter</bcf:citekey>
-    <bcf:citekey order="2">website:rn-wissen_Regelungstechnik</bcf:citekey>
+    <bcf:citekey order="2">website:Wikipedia_Quad_Einsatz</bcf:citekey>
     <bcf:citekey order="3">website:rn-wissen_Regelungstechnik</bcf:citekey>
     <bcf:citekey order="4">website:rn-wissen_Regelungstechnik</bcf:citekey>
     <bcf:citekey order="5">website:rn-wissen_Regelungstechnik</bcf:citekey>
     <bcf:citekey order="6">website:rn-wissen_Regelungstechnik</bcf:citekey>
     <bcf:citekey order="7">website:rn-wissen_Regelungstechnik</bcf:citekey>
-    <bcf:citekey order="8">website:Wikipedia_LPF</bcf:citekey>
-    <bcf:citekey order="9">website:fpvracing.ch_Mult_Komp</bcf:citekey>
+    <bcf:citekey order="8">website:rn-wissen_Regelungstechnik</bcf:citekey>
+    <bcf:citekey order="9">website:Wikipedia_LPF</bcf:citekey>
     <bcf:citekey order="10">website:fpvracing.ch_Mult_Komp</bcf:citekey>
-    <bcf:citekey order="11">website:elek_Komp_MEMS</bcf:citekey>
-    <bcf:citekey order="12">website:electronics.stackexchange.com_WhatisPALNA</bcf:citekey>
-    <bcf:citekey order="13">website:sauter-elektronik.de_reflow</bcf:citekey>
-    <bcf:citekey order="14">website:OL_OneShot125</bcf:citekey>
+    <bcf:citekey order="11">website:fpvracing.ch_Mult_Komp</bcf:citekey>
+    <bcf:citekey order="12">website:elek_Komp_MEMS</bcf:citekey>
+    <bcf:citekey order="13">website:electronics.stackexchange.com_WhatisPALNA</bcf:citekey>
+    <bcf:citekey order="14">website:OS_MCU_COLL</bcf:citekey>
+    <bcf:citekey order="15">website:IMU_COLL</bcf:citekey>
+    <bcf:citekey order="16">website:sauter-elektronik.de_reflow</bcf:citekey>
+    <bcf:citekey order="17">website:OL_OneShot125</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">
