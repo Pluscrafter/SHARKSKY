@@ -1,0 +1,17 @@
+[0] Config.pm:304> INFO - This is Biber 2.13
+[0] Config.pm:307> INFO - Logfile is 'MA_TEXT_ONLY.blg'
+[29] biber-MSWIN64:315> INFO - === 
+[45] Biber.pm:375> INFO - Reading 'MA_TEXT_ONLY.bcf'
+[130] Biber.pm:905> INFO - Found 11 citekeys in bib section 0
+[143] Biber.pm:4196> INFO - Processing section 0
+[144] Utils.pm:75> INFO - Globbing data source 'Maturarbeit.bib'
+[151] Utils.pm:91> INFO - Globbed data source 'Maturarbeit.bib' to Maturarbeit.bib
+[161] Biber.pm:4373> INFO - Looking for bibtex format file 'Maturarbeit.bib' for section 0
+[164] bibtex.pm:1462> INFO - LaTeX decoding ...
+[176] bibtex.pm:1281> INFO - Found BibTeX data source 'Maturarbeit.bib'
+[223] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[223] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[223] Biber.pm:4024> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'de-DE'
+[223] Biber.pm:4030> INFO - No sort tailoring available for locale 'de-DE'
+[235] bbl.pm:648> INFO - Writing 'MA_TEXT_ONLY.bbl' with encoding 'UTF-8'
+[238] bbl.pm:751> INFO - Output to MA_TEXT_ONLY.bbl
