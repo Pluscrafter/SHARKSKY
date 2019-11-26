@@ -35,11 +35,13 @@
       \field{sortinithash}{a3dcedd53b04d1adfd5ac303ecd5e6fa}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{day}{31}
       \field{hour}{15}
       \field{howpublished}{Webseite}
-      \field{month}{März}
+      \field{month}{3}
       \field{title}{Inertial Sensor Comparison MPU6000 vs MPU6050 vs MPU6500 vs ICM20602}
       \field{year}{2019}
+      \field{dateera}{ce}
       \verb{urlraw}
       \verb https://blog.dronetrest.com/inertial-sensor-comparison-mpu6000-vs-mpu6050-vs-mpu6500-vs-icm20602/
       \endverb
@@ -63,11 +65,13 @@
       \field{sortinithash}{c554bd1a0b76ea92b9f105fe36d9c7b0}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{day}{15}
       \field{hour}{14}
       \field{howpublished}{Webseite}
-      \field{month}{Oktober}
+      \field{month}{10}
       \field{title}{MEMS - Micro-Electro-Mechanical Systems}
       \field{year}{2019}
+      \field{dateera}{ce}
       \verb{urlraw}
       \verb https://www.elektronik-kompendium.de/sites/bau/1503041.htm
       \endverb
@@ -91,11 +95,13 @@
       \field{sortinithash}{fb0c0faa89eb6abae8213bf60e6799ea}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{day}{10}
       \field{hour}{14}
       \field{howpublished}{Webseite}
-      \field{month}{Oktober}
+      \field{month}{10}
       \field{title}{Multicopter Komponenten}
       \field{year}{2019}
+      \field{dateera}{ce}
       \verb{urlraw}
       \verb https://fpvracing.ch/de/content/8-multicopter-komponenten
       \endverb
@@ -122,11 +128,13 @@
       \field{sortinithash}{dad3efd0836470093a7b4a7bb756eb8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{day}{31}
       \field{hour}{15}
       \field{howpublished}{Webseite}
-      \field{month}{März}
+      \field{month}{3}
       \field{title}{F1, F3, F4, F7 and H7 Flight Controller Explained}
       \field{year}{2019}
+      \field{dateera}{ce}
       \verb{urlraw}
       \verb https://oscarliang.com/f1-f3-f4-flight-controller/
       \endverb
@@ -153,11 +161,13 @@
       \field{sortinithash}{dad3efd0836470093a7b4a7bb756eb8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{day}{15}
       \field{hour}{15}
       \field{howpublished}{Webseite}
-      \field{month}{Oktober}
+      \field{month}{10}
       \field{title}{What is Oneshot ESC Protocol – Active Braking}
       \field{year}{2019}
+      \field{dateera}{ce}
       \verb{urlraw}
       \verb https://oscarliang.com/oneshot125-esc-quadcopter-fpv/
       \endverb
@@ -184,11 +194,13 @@
       \field{sortinithash}{98cf339a479c0454fe09153a08675a15}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{day}{10}
       \field{hour}{16}
       \field{howpublished}{Webseite}
-      \field{month}{Oktober}
+      \field{month}{10}
       \field{title}{What is a PA/LNA?}
       \field{year}{2019}
+      \field{dateera}{ce}
       \verb{urlraw}
       \verb https://electronics.stackexchange.com/questions/237267/what-is-a-pa-lna/237278
       \endverb
@@ -215,11 +227,13 @@
       \field{sortinithash}{98cf339a479c0454fe09153a08675a15}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{day}{10}
       \field{hour}{1}
       \field{howpublished}{Webseite}
-      \field{month}{Oktober}
+      \field{month}{10}
       \field{title}{Regelungstechnik}
       \field{year}{2019}
+      \field{dateera}{ce}
       \verb{urlraw}
       \verb https://rn-wissen.de/wiki/index.php/Regelungstechnik
       \endverb
@@ -243,11 +257,13 @@
       \field{sortinithash}{c319cff79d99c853d775f88277d4e45f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{day}{10}
       \field{hour}{21}
       \field{howpublished}{Webseite}
-      \field{month}{Oktober}
+      \field{month}{10}
       \field{title}{What is a PA/LNA?}
       \field{year}{2019}
+      \field{dateera}{ce}
       \verb{urlraw}
       \verb https://www.sauter-elektronik.de/wissenswertes/reflow-loeten
       \endverb
@@ -272,11 +288,13 @@
       \field{sortinithash}{1af34bd8c148ffb32de1494636b49713}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{day}{14}
       \field{hour}{18}
       \field{howpublished}{Webseite}
-      \field{month}{Oktober}
+      \field{month}{10}
       \field{title}{Low-pass filter}
       \field{year}{2019}
+      \field{dateera}{ce}
       \verb{urlraw}
       \verb https://en.wikipedia.org/wiki/Low-pass_filter#Simple_infinite_impulse_response_filter
       \endverb
@@ -301,11 +319,12 @@
       \field{sortinithash}{1af34bd8c148ffb32de1494636b49713}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{hour}{0}
+      \field{day}{10}
       \field{howpublished}{Webseite}
-      \field{month}{Oktober}
+      \field{month}{10}
       \field{title}{Quadrocopter}
       \field{year}{2019}
+      \field{dateera}{ce}
       \verb{urlraw}
       \verb https://de.wikipedia.org/wiki/Quadrocopter#Entwicklung
       \endverb
@@ -330,11 +349,13 @@
       \field{sortinithash}{1af34bd8c148ffb32de1494636b49713}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{day}{25}
       \field{hour}{14}
       \field{howpublished}{Webseite}
       \field{month}{11}
       \field{title}{Quadrocopter}
       \field{year}{2019}
+      \field{dateera}{ce}
       \verb{urlraw}
       \verb https://de.wikipedia.org/wiki/Quadrocopter#Einsatz
       \endverb
