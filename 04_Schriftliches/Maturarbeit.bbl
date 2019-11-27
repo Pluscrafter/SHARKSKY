@@ -49,6 +49,37 @@
       \verb https://blog.dronetrest.com/inertial-sensor-comparison-mpu6000-vs-mpu6050-vs-mpu6500-vs-icm20602/
       \endverb
     \endentry
+    \entry{website:Digikey_Komplementaerfilter}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=db5e21baf10198452da711f5291383d0}{%
+           family={Baker},
+           familyi={B\bibinitperiod},
+           given={Bonnie},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{db5e21baf10198452da711f5291383d0}
+      \strng{fullhash}{db5e21baf10198452da711f5291383d0}
+      \strng{bibnamehash}{db5e21baf10198452da711f5291383d0}
+      \strng{authorbibnamehash}{db5e21baf10198452da711f5291383d0}
+      \strng{authornamehash}{db5e21baf10198452da711f5291383d0}
+      \strng{authorfullhash}{db5e21baf10198452da711f5291383d0}
+      \field{sortinit}{B}
+      \field{sortinithash}{8de16967003c7207dae369d874f1456e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{27}
+      \field{howpublished}{Webseite}
+      \field{month}{10}
+      \field{title}{Anwendung der Sensorfusion auf Beschleunigungsmesser und Gyroskope}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://www.digikey.ch/de/articles/techzone/2018/jan/apply-sensor-fusion-to-accelerometers-and-gyroscopes
+      \endverb
+      \verb{url}
+      \verb https://www.digikey.ch/de/articles/techzone/2018/jan/apply-sensor-fusion-to-accelerometers-and-gyroscopes
+      \endverb
+    \endentry
     \entry{website:elek_Komp_MEMS}{misc}{}
       \name{author}{1}{}{%
         {{hash=426e347424adcaf2297ccb97140b2eb3}{%

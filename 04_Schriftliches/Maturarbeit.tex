@@ -21,6 +21,10 @@
 \usepackage{xcolor}
 \usepackage{xfrac}
 \usepackage{titlesec}
+\usepackage[utf8]{inputenc} %
+\usepackage{graphicx, caption} %
+\usepackage{threeparttable}%
+\usepackage{lipsum}
 
 \usepackage{hyperref}
 
@@ -69,11 +73,10 @@
 \author{Charpoan Kong M6d \\ Betreuer: Christian Prim}
 \date{\today}
 \maketitle
+\begin{center}
+\includegraphics[width=0.8\textwidth,trim=0 -40cm 0 -40cm]{titel.jpg}
+\end{center}
 \pagenumbering{gobble}
-
-
-
-
 
 \newpage
 \clearpage
@@ -90,7 +93,12 @@ Die Intention zu dieser Arbeit folgt aus einem Projekt aus dem Freifachkurs Robo
 Mit dieser Arbeit will ich mit dem Bau und dessen Regelung befasssen. Der Quadrocopter wird selbst gebau mit dem Hauptziel den Flightcontroller selbst zu designen, bauen und programmieren. So sollte die Regelung auch selbst implementiert werden. Dannach sollten Versuche gemacht werden, die bestimmen sollten, wie der PID-Regler stabiler gemacht werden kann und wie ungleichheiten, wie sie durch Vibration entstehen, auszugleichen. 
 \fi
 Die Fragestellung lautet: Wie muss man die Regelung des Flightcontrollers implementiert werden, damit diese funktioniert und welche Faktoren diese stören und wie schnell die Daten verarbeitet werden müssen? Auch wird untersucht, welche Lösungen es für diese Probleme gibt und es wird versucht diese zu implementieren. \\ \\
-In der Arbeit wird der Quadrocopter selber gebaut, mit dem Hauptziel den Flightcontroller selbst zu designen und zu programmieren. Dannach werden Versuche gemacht, die bestimmen wie der PID-Regler stabiler gemacht wird und wie ungleichheiten, die durch Vibrationen enstehen, ausgeglichen werden können. Die Fernbedienung wird auch selbst gebaut und dient dazu Daten wärend des Fluges auszuwerten. 
+In der Arbeit wird der Quadrocopter (siehe Abb.\ref{drohne}) selber gebaut, mit dem Hauptziel den Flightcontroller selbst zu designen und zu programmieren. Dannach werden Versuche gemacht, die bestimmen wie der PID-Regler stabiler gemacht wird und wie ungleichheiten, die durch Vibrationen enstehen, ausgeglichen werden können. Die Fernbedienung wird auch selbst gebaut und dient dazu Daten wärend des Fluges auszuwerten. 
+\begin{figure}[h]
+\captionsetup{singlelinecheck = false, format= hang, justification=raggedright, font=footnotesize, labelsep=space}
+\includegraphics[width=0.70\textwidth]{Drohne.jpg}
+\caption[]{Die fertige Drohne ohne Propeller.} \label{drohne}
+\end{figure}
 \newpage
 \section{Theorie}
 \subsection{Funktionsweise eines Quadrocopters}
@@ -98,18 +106,18 @@ Man könnte meinen, dass man einen stabilen Flug erreichen kann, wenn der Schub 
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{MotionDE.jpg}
-\caption[\url{http://fpvracing.ch/img/cms/MotionDE.jpg}]{Drehrichtung und Schub bei verschiedenen Steuereingaben }
+\caption[\url{http://fpvracing.ch/img/cms/MotionDE.jpg}]{Drehrichtung und Schub bei verschiedenen Steuereingaben } \label{dreh}
 \end{figure}\\
-Abbildung 1 zeigt die Rotationsrichtung der Motoren. Die benachbarten Motoren müssen eine gegensätzliche Rotation haben, da sonst der Quadrocopter ins Rotieren gerät. So wird das Drehmoment des anderen Motors ausgeglichen. Auch wird gezeigt, dass man den Quadrocopter mit erhöhen bzw. erniedrigen der Motorleistung der richtigen Motoren, in die gewünschte Richtung steuern kann. Kernelement dieser Steuerung ist der PID-Regler.
+Abbildung \ref{dreh} zeigt die Rotationsrichtung der Motoren. Die benachbarten Motoren müssen eine gegensätzliche Rotation haben, da sonst der Quadrocopter ins Rotieren gerät. So wird das Drehmoment des anderen Motors ausgeglichen. Auch wird gezeigt, dass man den Quadrocopter mit erhöhen bzw. erniedrigen der Motorleistung der richtigen Motoren, in die gewünschte Richtung steuern kann. Kernelement dieser Steuerung ist der PID-Regler.
 \newpage
 \subsection{Was ist ein Regler?}
-Eine Regelung ist eine Steuerung mit Rückkoppelung.\cite{website:rn-wissen_Regelungstechnik} Ein Wert z.B. der Anstellwinkel eines Flugzeuges wird überwacht. Je nach gewünschten Winkel, wird das Höhenruder so geregelt, dass es diesen Winkel halten kann auch wenn Turbulenzen kommen.\\
+Eine Regelung ist eine Steuerung mit Rückkoppelung.\cite{website:rn-wissen_Regelungstechnik} Ein Wert z.B. der Anstellwinkel eines Flugzeuges wird überwacht. Je nach gewünschten Winkel, wird das Höhenruder so geregelt, dass es diesen Winkel kontinuierlich halten kann.\\
 \begin{wrapfigure}[6]{r}{0.4\textwidth}
 \centering
 \includegraphics[width=0.4\textwidth]{Regelkreis1.png}
-\caption[\url{https://rn-wissen.de/wiki/images/2/25/Regelkreis1.png}]{Der Regelkreis}
+\caption[\url{https://rn-wissen.de/wiki/images/2/25/Regelkreis1.png}]{Der Regelkreis}\label{regkreis}
 \end{wrapfigure}
-Im Reglekreis (siehe Abb.2) wird der Ist-Wert z.B. mit einem Sensor gemessen. Dieser wird mit dem Soll-Wert verglichen, um die Regelabweichung zu bestimmen. So kann die Reglegrösse bestimmt werden, um so das System dem Soll-Wert anzugleichen.\\ \\ \\ \\ \\ \\ \\
+Im Reglekreis (siehe Abb.\ref{regkreis}) wird der Ist-Wert z.B. mit einem Sensor gemessen. Dieser wird mit dem Soll-Wert verglichen, um die Regelabweichung zu bestimmen. So kann die Reglegrösse bestimmt werden, um so das System dem Soll-Wert anzugleichen.\cite{website:rn-wissen_Regelungstechnik}\\ \\ \\ \\ \\ \\ \\
 Die Regelabweichung kann dabei einfach mit der Differenz des Ist-Wertes $x$ mit dem Soll-Wertes $w$ bestimmt werden.\cite{website:rn-wissen_Regelungstechnik}
 \begin{equation}
 e(t)=w-x
@@ -118,10 +126,10 @@ e(t)=w-x
 \begin{wrapfigure}[8]{l}{0.4\textwidth}
 \centering
 \includegraphics[width=0.4\textwidth]{Regelkreis2.png}
-\caption[\url{https://rn-wissen.de/wiki/images/5/5d/Regelkreis2.png}]{Wirkungsweise des Regelkreises}
+\caption[\url{https://rn-wissen.de/wiki/images/5/5d/Regelkreis2.png}]{Wirkungsweise des Regelkreises}\label{regkr2}
 \end{wrapfigure}
 \noindent
-In Abbildung 3 sieht man, wie vorher beschrieben, wie ein solcher Regelkreis funktionert. In der Regelungstechnik wird versucht einen solchen Regelkreis mathematisch zu modellieren. In diesem Kapitel wird nur der PID-Regler und seine Komponenten besprochen, da dieser häufig bei Quadrocoptern benutzt wird.\cite{website:rn-wissen_Regelungstechnik}
+In Abbildung \ref{regkr2} sieht man, wie vorher beschrieben, wie ein solcher Regelkreis funktionert. In der Regelungstechnik wird versucht einen solchen Regelkreis mathematisch zu modellieren. In diesem Kapitel wird nur der PID-Regler und seine Komponenten besprochen, da dieser häufig bei Quadrocoptern benutzt wird.\cite{website:rn-wissen_Regelungstechnik}
 \\ \\ \\ \\
 Der PID-Regler besteht aus mehreren Relgern und dem D-Glied. In der Folge wird beschrieben wie die einzelnen Komponenten wirken. 
 
@@ -209,7 +217,7 @@ Beim vorliegenden Quadrocopter handelt es sich um ReadyToSky RS2205 Motoren mit 
 \begin{wrapfigure}[10]{r}{0.4\textwidth}
 \centering
 \includegraphics[width=0.4\textwidth]{accu.jpg}
-\caption[Eigenes Bild]{LiPo-Akku und Akkuüberwacher} \label{accu}
+\caption[]{LiPo-Akku und Akkuüberwacher} \label{accu}
 \end{wrapfigure}
 Der Akku (Abb.\ref{accu}) versorgt alle Komponenten, die Strom brauchen mit Strom. Im Quadrocopter wird ein LiPo Akku benutzt, der drei Zellen in Serie geschaltet hat mit einer Kapazität von 2.4Ah. Die miminale Spannung beträgt 11.1V. Die Entladerate wird $C$-Rate angegeben. Mit der Kapazität multipliziert wird der maximale Entladestrom ausgerechnet.\cite{website:fpvracing.ch_Mult_Komp}
 \begin{equation}
@@ -222,7 +230,7 @@ Man benutzt in Quadrocoptern meist LiPo Akkus, da sie eine hohe Energiedichte be
 Der Flightcontroller ist das Herz des Quadrocopter. Dieser liest alle Sensoren und gibt den ESCs die Steuerimpulse. In dem Kapitel wird zuerst auf wichtigsten Komponenten eingegangen, dann wird der Design-, Bau und Propgrammierprozess beschrieben.
 \subsubsection{Komponenten}
 \paragraph{Microcontroller}
-Der Microcontroller, der auf dem FC benutzt wird, ist ein ARM-Cortex-M7 STM32F722RET6 Microcontroller von STMicroelectronics. Dieser besitzt alle Schnittstellen um die einzelnen Sensoren und andere Komponenten auszulesen und anzusteuern. Da dieser nicht genug Pins hat, wird noch ein zweiter Microcontroller benutzt und zwar der ATMega328P, der auch auf dem Arduino/Genuino UNO zu finden ist. Dieser liest den Drucksensor und einige ADCs aus und kommuniziert mit dem I2C-Protokoll mit dem STM32. \\ \\
+Der Microcontroller, der auf dem FC benutzt wird, ist ein ARM-Cortex-M7 STM32F722 Microcontroller von STMicroelectronics. Dieser besitzt alle Schnittstellen um die einzelnen Sensoren und andere Komponenten auszulesen und anzusteuern. Da dieser nicht genug Pins hat, wird noch ein zweiter Microcontroller benutzt und zwar der ATMega328P, der auch auf dem Arduino/Genuino UNO zu finden ist. Dieser liest den Drucksensor und einige ADCs aus und kommuniziert mit dem I2C-Protokoll mit dem STM32. \\ \\
 Microcontroller können anders als Mikroprozessoren, die auf den Raspbery Pi verbaut sind, ohne Zusatz Pehpetrie benutzt werden, da sie schon einen Flash, RAM oder ähnliches besitzen. 
 
 \paragraph{Sensoren}
@@ -255,7 +263,7 @@ w=\arcsin(\frac{a_{x,y}}{\vec{a}}
 )
 \vec{g}\cdot \frac{180}{\pi} \quad mit \quad [w]=^\circ
 \end{equation}
-Nebenbei muss man beachten, dass C/C++ den Winkel in $rad$ berechnet und man diesen noch zu $grad$ konvertieren muss. So hat man den absoluten Winkel mit zwei Sensoren gemessen und muss diese nur noch Kombinieren. Dies geschieht mit Hilfe des Komplementärflilters(vgl. \ref{comp}). (Weiter muss beachtet werden, dass der Absolute Winkel nur für die Nick-und Rollachse berechnen kann und für die Gierachse noch ein Magnetometer für eine Null-Referenz nötig wäre (Achsenbezeichnung siehe Abb.\ref{ypr}).
+Nebenbei muss man beachten, dass C/C++ den Winkel in $rad$ berechnet und man diesen noch zu $grad$ konvertieren muss. So hat man den absoluten Winkel mit zwei Sensoren gemessen und muss diese nur noch Kombinieren. Dies geschieht mit Hilfe des Komplementärflilters (vgl. \ref{comp})\cite{website:Digikey_Komplementaerfilter}. (Weiter muss beachtet werden, dass der Absolute Winkel nur für die Nick-und Rollachse berechnen kann und für die Gierachse noch ein Magnetometer für eine Null-Referenz nötig wäre (Achsenbezeichnung siehe Abb.\ref{ypr}).
 \begin{equation}\label{comp}
 w_{\text{komp}}=0.9996\cdot w_{\text{Gyro}}+0.0004\cdot w_{\text{Accl}} \quad mit \quad [w]=^\circ
 \end{equation}
@@ -292,7 +300,7 @@ Zuerst wurde überlegt, was für ein Microcontroller benutzt werden sollte. Bei 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\textwidth]{egl.png}
-\caption[Eigenes Bild]{Screenshot Autodesk Eagle} \label{eagle}
+\caption[]{Screenshot Autodesk Eagle} \label{eagle}
 \end{figure}
 
 \paragraph{Bau}
@@ -306,31 +314,31 @@ Da die Leiterplatte doppelseitig ist, kann man hier nicht auf beiden Seiten das 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\textwidth]{unterlot.jpg}
-\caption[Eigenes Bild]{Löten des Quarzes und des microSD-Karten Slots}\label{unterlot}
+\caption[]{Löten des Quarzes und des microSD-Karten Slots}\label{unterlot}
 \end{figure} \\ \\
 Dann wurden auf einer Holzplatte Löcher an den Positionen der Verlöteten Komponenten gebohrt. Damit wird erreicht, dass man die Vorderseite, Plan auf dieser Holzplatte gelegt werden kann. Mit den restlichen PCBs, man kann nur fünf auf einmal bestellen, wurde ein Rahmen erstellt, um so das teilweise gelötete Board zu fixieren. Dann wurde die Schablone ausgerichtet und festgemacht. So konnte man mit Lötpaste und einem Spachtel, die Löcher und somit auch die Lötstellen mit Lötpaste füllen (siehe Abb.\ref{schabi}). 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\textwidth]{schabi.jpg}
-\caption[Eigenes Bild]{Mit Hilfe des Spachtel und der Schablone aufgetragene Lötpaste.}\label{schabi}
+\caption[]{Mit Hilfe des Spachtel und der Schablone aufgetragene Lötpaste.}\label{schabi}
 \end{figure} \\
 Dann wurde die Schablone entfernt. Mithilfe des Mikroskops wurden die Teile dann auf der Leiterplatte plaziert (siehe Abb.\ref{plati}). 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\textwidth]{plati.jpg}
-\caption[Eigenes Bild]{Bestückes PCB}\label{plati}
+\caption[]{Bestückes PCB}\label{plati}
 \end{figure} \\
 Im Ofen wurden sie dann ungefähr nach der Temperaturkurve gebacken und so war die Vorderseite gelötet (siehe Abb. \ref{vordi}). \\
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.5\textwidth]{vordi.jpg}
-\caption[Eigenes Bild]{Gelötete Vorderseite}\label{vordi}
+\caption[]{Gelötete Vorderseite}\label{vordi}
 \end{figure} \\ 
 Die Hinterseite wurde dann per Hand fertig gelötet. Dann wurden nur noch die Konnektoren angelötet und der Flightcontroller stand bereit zum programmieren (siehe Abb.\ref{fertig}).
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.5\textwidth]{fertig.jpg}
-\caption[Eigenes Bild]{Fertiges Lightcontroller Board}\label{fertig}
+\caption[]{Fertiges Lightcontroller Board}\label{fertig}
 \end{figure} \\
 \newpage
 \subsubsection{Programmierung}
@@ -387,7 +395,7 @@ Die ESC's der Motoren müssen mit dem OneShot125 Protokoll\cite{website:OL_OneSh
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.9\textwidth]{PWM_25.png}
-\caption[Eigenes Bild]{Signal fur die Motoren(25$\%$ PWM).}\label{pwm}
+\caption[]{Signal fur die Motoren(25$\%$ PWM).}\label{pwm}
 \end{figure}
 \paragraph{PID Implementierung}
 Der PID-Regler wird für den absoluten Winkel und für die Winkelgeschwindigkeit implementiert, wobei man die Gierachse nur mit der Winkelgeschwindikeit implementieren kann, da keine Referenz besteht, z.b durch ein Magnetometer. Die Regelungsdifferenz und Regelungskorrektur wird für jeden Loop-Zyklus berechnet, welcher mit ca. 1.5kHz läuft.
@@ -396,7 +404,7 @@ Der PID-Regler wird für den absoluten Winkel und für die Winkelgeschwindigkeit
 \begin{wrapfigure}[17]{r}{0.5\textwidth}
 \centering
 \includegraphics[width=0.5\textwidth]{Ferni.JPG}
-\caption[Eigenes Bild]{Fernbedienung mit Schiebereglerausgabe auf dem Display.} \label{ferni}
+\caption[]{Fernbedienung mit Schiebereglerausgabe auf dem Display.} \label{ferni}
 \end{wrapfigure}
 Die Fernbedienung (Abb.\ref{ferni}) wird aus Holz und PLA gebaut. Der Rahmen wurde mittels eines 3D-Drucker gedrukt. Das Frontpanel ist aus Holz gelasert worden. Die Schieberegler wurden aus einer kaputten Fernbedienung genommen. Auch besitzt diese ein LCD-CharDisplay mit 20x4 Zeichen. Dies wird benutzt um den genauen Ausschlag der Schieberegler, die Sensorwerte und die PID-Werte anzuzeigen bzw. zu bearbeiten. Als Microcontroller wird ein STM32F767ZI benutzt, der auf einem Nucleo-144 Protoboard verbaut ist. Listening 2 zeigt den Ablaufplan des Programmes.\\ \\ \\
 \begin{lstlisting}[language=C++,caption=Programmablauf Pseudocode]
@@ -439,7 +447,7 @@ Die Filtersimulation ist ein kleines Python-Programm, das den DLPF Filter auf di
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{Figure_1.png}
-\caption[Eigenes Bild]{Hier wird ein Winkel mit den Filter analysiert.}\label{list}
+\caption[]{Hier wird ein Logfile mit den Filter analysiert.}\label{list}
 \end{figure}
 \begin{lstlisting}[language=Python,caption=Filtersimulation]
 from matplotlib import pyplot as plt
@@ -503,7 +511,10 @@ Die erste Versuchsreihe war gescheitert. Dabei spielen viele Gründe eine Rolle.
 \newpage
 \section{Diskussion}
 Da keine weiteren Versuche gemacht werden können, kann nur spekuliert werden, wieso der Quadrocopter einen unstabilen Flug absolviert hat. Die Werte waren sicher nicht optimal und das D-Glied, dass solche Oszillationen verhindern sollte, war auch nicht Ideal eingestellt worden. Auch ist es möglich, dass der Filter der angewant wurde, die Regelung verzögert und somit auch die Antwort des FC's auf die Oszillationen, da auch die IMU einen DLPF besitzt und so zwei Filter in Reihe geschaltet sind. Nach der Abgabe des Schriftlichen Teils werden weitere Versuche getätigt sobald der Quadrocopter repariert ist, um so die Ursache der Oszillationen herauszufinden und diese zu korrigieren. \\ \\ Dennoch wurden viele der Ziele erreicht. Das designen und bauen des Flightcontrollers war erfolgreich und dieser zeigte auch das richtige Reglelverhalten. Auch konnte in der testfreien Phase, der Programmloop des FC's von 200Hz auf ca. 1.5kHz erhöht werden, was zu einer schnelleren Regelung führt.  \\ \\
-Im Vergleich zum Flightcontroller mit dem Raspberry Pi, konnten alle Probleme gelöst werden, die dieser Verursacht hat. Es gab beim programmieren fast keine Probleme und auch wurde gelernt wie man auf der STM32-Plattform programmiert. \\ \\ Zum Schluss möchte ich mich noch an dem Physiklabroant Bruno Turnherr bedanken, der sein Wissen über Quadrocopter, PCB-Design, Reflow-Löten gezeigt hat und für die Hilfe beim Bau des Quadrocopters. 
+Im Vergleich zum Flightcontroller mit dem Raspberry Pi, konnten alle Probleme gelöst werden, die dieser Verursacht hat. Es gab beim programmieren fast keine Probleme und auch wurde gelernt wie man auf der STM32-Plattform programmiert. 
+
+\section{Danksagung}
+Zum Schluss möchte ich mich noch an dem Physiklabroant Bruno Turnherr bedanken, der sein Wissen über Quadrocopter, PCB-Design, Reflow-Löten gezeigt hat und für die Hilfe beim Bau des Quadrocopters. 
 
 \newpage
 \section{Quellenverzeichnis}
