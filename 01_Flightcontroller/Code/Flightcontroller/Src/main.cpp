@@ -121,11 +121,10 @@ uint8_t  sine[256] = { //!< 8bit sine for test with DAC
   0x67, 0x6A, 0x6D, 0x70, 0x74, 0x77, 0x7A, 0x7D
 };
 bool 						osdusb = USB_MODE;						//!< define UART output to USB or OSD
-void						usbmenu();								//!< USB menu
-void 						motor_calibration();
+void 						motor_calibration();					//!< Motorcalibration
 
 //ICM
-Sensor::ICM20689 			imu;									//!< define IMU (ICM20689)
+Sensor::ICM20689 			imu;									//!< define IMU (ICM20689) notused
 const float 				PI = 3.1415;							//!< pi constant
 
 uint32_t 					start = 0, stop = 0;					//!< start and stop for looptime measurement (read clockcycles)
@@ -176,9 +175,6 @@ struct RadioData{
 AckData 					ackData;								//!< define acknowlegement data
 RadioData 					recvData;								//!< define receive data
 
-float						timnodata = 0;
-
-
 //I2cdev MPU6050
 #if MPU6050_ENABLE == 1
 MPU6050 					mpu;
@@ -224,10 +220,11 @@ double						tim = 0;								//!< elapsed time
 char 						logbuf[10000];							//!< write buffer
 std::string 				sbuf = " ";								//!< tmp write buffer in loop
 
-char						gpsbuffer[80];
+char						gpsbuffer[80];							//!< GPSBuffer notused
 
 
 void HAL_SPI_RxCpltCallback(SPI_HandleTypeDef *hspi){
+	//read IMU GYRO ACCEL alternating
 	if (icm.init == true){
 		int16_t r_gyro[3],r_accel[3];
 
@@ -250,7 +247,7 @@ void HAL_SPI_RxCpltCallback(SPI_HandleTypeDef *hspi){
 			}
 			icm.ac = 0;
 		}
-
+		//NSS HIGH IMU SPI
 		HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_SET);
 	}
 }
@@ -266,11 +263,6 @@ int main(void)
   /* USER CODE BEGIN 1 */
 
 	//init PID values
-
-
-
-
-
 	pid_gain_am[0][0] = 0;
 	pid_gain_am[0][1] = 0;
 	pid_gain_am[0][2] = 0;
@@ -364,7 +356,7 @@ int main(void)
 #if ICM20689_ENABLE == 1
   //imu.Initalize();
 
-
+  // RESET IMU
   uint8_t tmp[2] = {PWR_MGMT_1,0x40};
   HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_RESET);
   HAL_SPI_Transmit(&hspi3, tmp, 2, HAL_MAX_DELAY);
@@ -372,6 +364,7 @@ int main(void)
   HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_SET);
   HAL_Delay(100);
 
+  // DISABLE I2C
   tmp[0] = USER_CTRL;
   tmp[1] = 0x10;
   HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_RESET);
@@ -380,8 +373,7 @@ int main(void)
   HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_SET);
   HAL_Delay(10);
 
-
-
+  // START IMU
   tmp[0] = PWR_MGMT_1;
   tmp[1] = 0x00;
   HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_RESET);
@@ -390,8 +382,7 @@ int main(void)
   HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_SET);
   HAL_Delay(10);
 
-
-
+  //CONTROL ID
   tmp[0] = WHO_AM_I|0x80;
   uint8_t whoami[1] ;
   HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_RESET);
@@ -408,6 +399,7 @@ int main(void)
   }
   HAL_Delay(10);
 
+  //set DLPF to 2 108.6 HZ BW
   tmp[0] = CONFIG;
   tmp[1] = 0x02;
   HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_RESET);
@@ -416,7 +408,7 @@ int main(void)
   HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_SET);
   HAL_Delay(10);
 
-
+  //set GYRO to 500dps 08
   tmp[0] = GYRO_CONFIG;
   tmp[1] = 0x08;
   HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_RESET);
@@ -425,6 +417,7 @@ int main(void)
   HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_SET);
   HAL_Delay(10);
 
+  //set ACCEL to 8g
   tmp[0] = ACCEL_CONFIG;
   tmp[1] = 0x10;
   HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_RESET);
@@ -433,6 +426,7 @@ int main(void)
   HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_SET);
   HAL_Delay(10);
 
+  //set ACCEL DLPF to 121.3Hz
   tmp[0] = ACCEL_CONFIG_2;
   tmp[1] = 0x02;
   HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_RESET);
@@ -441,6 +435,7 @@ int main(void)
   HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_SET);
   HAL_Delay(10);
 
+  //no divider
   tmp[0] = SMPLRT_DIV;
   tmp[1] = 0x00;
   HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_RESET);
@@ -449,6 +444,7 @@ int main(void)
   HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_SET);
   HAL_Delay(10);
 
+  //config Interrupt <- not used Tim based Interrupt
   tmp[0] = INT_PIN_CFG;
   tmp[1] = 0x00;
   HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_RESET);
@@ -457,6 +453,7 @@ int main(void)
   HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_SET);
   HAL_Delay(10);
 
+  //enable Interrupt <- not used Tim based Interrupt
   tmp[0] = INT_ENABLE;
   tmp[1] = 0x01;
   HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_RESET);
@@ -465,6 +462,7 @@ int main(void)
   HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_SET);
   HAL_Delay(10);
 
+  //initalizing complete
   icm.init = true;
 #endif
 
@@ -519,9 +517,7 @@ int main(void)
 	HAL_GPIO_WritePin(INIT_OK_GPIO_Port, INIT_OK_Pin, GPIO_PIN_SET);
   /* USER CODE END 2 */
 
-
-	HAL_UART_Receive_DMA(&huart2, (uint8_t*)gpsbuffer, 80);
-	HAL_TIM_Base_Start_IT(&htim4);
+	HAL_TIM_Base_Start_IT(&htim4); //start IMU trigger
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
@@ -531,9 +527,6 @@ int main(void)
 #if ICM20689_ENABLE == 1
 
 	  //read values from IMU
-	  //imu.ReadGyro();
-	  //imu.ReadAccel();
-
 	  //calculate angle with acceleration
 	  float fullvec = sqrt(pow(icm.accel[0],2) + pow(icm.accel[1],2) + pow(icm.accel[2],2)); //calculate full vector with Pythagoras' theorem
 	  if(fullvec == 0) {fullvec = 1;}
@@ -825,90 +818,6 @@ void loopRadio(){
 	}
 }
 
-void usbmenu(){
-	char txt[100];
-	char buf[32];
-	int sel = 5;
-	uint8_t esc = 27;
-
-MENU:
-	HAL_UART_Transmit(&huart1,(uint8_t*)esc,1,100);
-	HAL_UART_Transmit(&huart1,(uint8_t*)txt,sprintf(txt, "[2J"),100);
-	HAL_UART_Transmit(&huart1,(uint8_t*)esc,1,100);
-	HAL_UART_Transmit(&huart1,(uint8_t*)txt,sprintf(txt, "[H"),100);
-	HAL_UART_Transmit(&huart1,(uint8_t*)txt,sprintf(txt, "----USB MENU----\n\r"),100);
-	HAL_UART_Transmit(&huart1,(uint8_t*)txt,sprintf(txt, "[0]	PRINT PID GAINS"),100);
-	HAL_UART_Transmit(&huart1,(uint8_t*)txt,sprintf(txt, "[1]	SET PID GAINS"),100);
-	HAL_UART_Transmit(&huart1,(uint8_t*)txt,sprintf(txt, "[2]	CALIBRATE MOTORS"),100);
-	HAL_UART_Transmit(&huart1,(uint8_t*)txt,sprintf(txt, "[3]	SET LOG DATA"),100);
-	HAL_UART_Transmit(&huart1,(uint8_t*)txt,sprintf(txt, "[4]	SET DECLINATION"),100);
-
-
-
-	switch(sel){
-
-	case 0 :{
-		HAL_UART_Transmit(&huart1,(uint8_t*)esc,1,100);
-		HAL_UART_Transmit(&huart1,(uint8_t*)txt,sprintf(txt, "[2J"),100);
-		HAL_UART_Transmit(&huart1,(uint8_t*)esc,1,100);
-		HAL_UART_Transmit(&huart1,(uint8_t*)txt,sprintf(txt, "[H"),100);
-		HAL_UART_Transmit(&huart1,(uint8_t*)txt,sprintf(txt, "\t P-GAIN \t I-GAIN \t D-GAIN\n\r"),100);
-		HAL_UART_Transmit(&huart1,(uint8_t*)txt,sprintf(txt, "YAW \t %3.3f \t %3.3f \t %3.3f\n\r",pid_gain_am[0][0],pid_gain_am[0][1],pid_gain_am[0][2]),100);
-		HAL_UART_Transmit(&huart1,(uint8_t*)txt,sprintf(txt, "PITCH \t %3.3f \t %3.3f \t %3.3f\n\r",pid_gain_ta[1][0],pid_gain_ta[1][1],pid_gain_ta[1][2]),100);
-		HAL_UART_Transmit(&huart1,(uint8_t*)txt,sprintf(txt, "ROLL \t %3.3f \t %3.3f \t %3.3f\n\r",pid_gain_ta[2][0],pid_gain_ta[2][1],pid_gain_ta[2][2]),100);
-		HAL_UART_Receive(&huart1, (uint8_t*)buf, 32, 100);
-		goto MENU;
-		break;
-	}
-
-	case 1:{
-		HAL_UART_Receive(&huart1, (uint8_t*)buf, 32, 100);
-		goto MENU;
-		break;
-
-	}
-
-	case 2:{
-		HAL_UART_Transmit(&huart1,(uint8_t*)esc,1,100);
-		HAL_UART_Transmit(&huart1,(uint8_t*)txt,sprintf(txt, "[2J"),100);
-		HAL_UART_Transmit(&huart1,(uint8_t*)esc,1,100);
-		HAL_UART_Transmit(&huart1,(uint8_t*)txt,sprintf(txt, "DISARM ALL MOTORS!!! PRESS ENTER TO CONTINUE"),100);
-		HAL_UART_Receive(&huart1, (uint8_t*)buf, 32, 100);
-		motor_calibration();
-		HAL_UART_Transmit(&huart1,(uint8_t*)txt,sprintf(txt, "CALIBRATION COMPLETE"),100);
-		HAL_UART_Receive(&huart1, (uint8_t*)buf, 32, 100);
-		goto MENU;
-		break;
-	}
-
-	case 3:{
-		HAL_UART_Receive(&huart1, (uint8_t*)buf, 32, 100);
-		goto MENU;
-		break;
-	}
-
-	case 4:{
-		HAL_UART_Receive(&huart1, (uint8_t*)buf, 32, 100);
-		goto MENU;
-		break;
-	}
-
-	default : {
-		HAL_UART_Transmit(&huart1,(uint8_t*)esc,1,100);
-		HAL_UART_Transmit(&huart1,(uint8_t*)txt,sprintf(txt, "[2J"),100);
-		HAL_UART_Transmit(&huart1,(uint8_t*)esc,1,100);
-		HAL_UART_Transmit(&huart1,(uint8_t*)txt,sprintf(txt, "[H"),100);
-		HAL_UART_Transmit(&huart1,(uint8_t*)txt,sprintf(txt, "PLEASE SELECT VALID OPTION\n\r"),100);
-		HAL_UART_Receive(&huart1, (uint8_t*)buf, 32, 100);
-		goto MENU;
-		break;
-	}
-
-
-	}
-
-
-}
 
 void motor_calibration(){
 	__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_1,2048);
