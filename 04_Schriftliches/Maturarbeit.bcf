@@ -2137,15 +2137,22 @@
     <bcf:citekey order="6">website:rn-wissen_Regelungstechnik</bcf:citekey>
     <bcf:citekey order="7">website:rn-wissen_Regelungstechnik</bcf:citekey>
     <bcf:citekey order="8">website:rn-wissen_Regelungstechnik</bcf:citekey>
-    <bcf:citekey order="9">website:Wikipedia_LPF</bcf:citekey>
-    <bcf:citekey order="10">website:fpvracing.ch_Mult_Komp</bcf:citekey>
-    <bcf:citekey order="11">website:fpvracing.ch_Mult_Komp</bcf:citekey>
-    <bcf:citekey order="12">website:elek_Komp_MEMS</bcf:citekey>
-    <bcf:citekey order="13">website:electronics.stackexchange.com_WhatisPALNA</bcf:citekey>
-    <bcf:citekey order="14">website:OS_MCU_COLL</bcf:citekey>
-    <bcf:citekey order="15">website:IMU_COLL</bcf:citekey>
-    <bcf:citekey order="16">website:sauter-elektronik.de_reflow</bcf:citekey>
-    <bcf:citekey order="17">website:OL_OneShot125</bcf:citekey>
+    <bcf:citekey order="9">website:rn-wissen_Regelungstechnik</bcf:citekey>
+    <bcf:citekey order="10">website:rn-wissen_Regelungstechnik</bcf:citekey>
+    <bcf:citekey order="11">website:Wikipedia_LPF</bcf:citekey>
+    <bcf:citekey order="12">website:rn-wissen_Regelungstechnik</bcf:citekey>
+    <bcf:citekey order="13">website:fpvracing.ch_Mult_Komp</bcf:citekey>
+    <bcf:citekey order="14">website:fpvracing.ch_Mult_Komp</bcf:citekey>
+    <bcf:citekey order="15">website:Arduino</bcf:citekey>
+    <bcf:citekey order="16">website:MPUvsMCU</bcf:citekey>
+    <bcf:citekey order="17">website:elek_Komp_MEMS</bcf:citekey>
+    <bcf:citekey order="18">website:Digikey_Komplementaerfilter</bcf:citekey>
+    <bcf:citekey order="19">website:electronics.stackexchange.com_WhatisPALNA</bcf:citekey>
+    <bcf:citekey order="20">website:OS_MCU_COLL</bcf:citekey>
+    <bcf:citekey order="21">website:IMU_COLL</bcf:citekey>
+    <bcf:citekey order="22">website:sauter-elektronik.de_reflow</bcf:citekey>
+    <bcf:citekey order="23">website:OL_OneShot125</bcf:citekey>
+    <bcf:citekey order="24">website:BAZL</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

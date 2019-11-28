@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.10.10)  26 NOV 2019 22:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.10.10)  28 NOV 2019 01:58
 entering extended mode
 **./Maturarbeit.tex
 (Maturarbeit.tex
@@ -848,7 +848,43 @@ Package: titlesec 2019/09/09 v2.12 Sectioning titles
 \titlewidth=\dimen169
 \titlewidthlast=\dimen170
 \titlewidthfirst=\dimen171
-) (D:\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
+) (D:\Programs\MiKTeX\tex/latex/base\inputenc.sty
+Package: inputenc 2018/08/11 v1.3c Input encoding file
+\inpenc@prehook=\toks24
+\inpenc@posthook=\toks25
+)
+(C:\Users\Pluscrafter\AppData\Roaming\MiKTeX\2.9\tex/latex/caption\caption.sty
+Package: caption 2019/10/18 v3.4a Customizing captions (AR)
+
+(C:\Users\Pluscrafter\AppData\Roaming\MiKTeX\2.9\tex/latex/caption\caption3.sty
+Package: caption3 2019/09/09 v1.8e caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 64.
+\captionmargin=\dimen172
+\captionmargin@=\dimen173
+\captionwidth=\dimen174
+\caption@tempdima=\dimen175
+\caption@indent=\dimen176
+\caption@parindent=\dimen177
+\caption@hangindent=\dimen178
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count398
+\c@continuedfloat=\count399
+Package caption Info: listings package is loaded.
+Package caption Info: wrapfig package is loaded.
+)
+(C:\Users\Pluscrafter\AppData\Roaming\MiKTeX\2.9\tex/latex/threeparttable\three
+parttable.sty
+Package: threeparttable 2003/06/13  v 3.0
+\@tempboxb=\box54
+)
+(C:\Users\Pluscrafter\AppData\Roaming\MiKTeX\2.9\tex/latex/lipsum\lipsum.sty
+Package: lipsum 2019/01/02 v2.2 150 paragraphs of Lorem Ipsum dummy text
+
+(C:\Users\Pluscrafter\AppData\Roaming\MiKTeX\2.9\tex/latex/lipsum\lipsum.ltd.te
+x
+File: lipsum.ltd.tex 2019/01/02 v2.2 The Lorem ipsum dummy text
+)) (D:\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
 Package: hyperref 2019/09/28 v7.00a Hypertext links for LaTeX
 
 (D:\Programs\MiKTeX\tex/generic/oberdiek\hobsub-hyperref.sty
@@ -886,16 +922,16 @@ Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
 (D:\Programs\MiKTeX\tex/latex/oberdiek\auxhook.sty
 Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 )
-\@linkdim=\dimen172
-\Hy@linkcounter=\count398
-\Hy@pagecounter=\count399
+\@linkdim=\dimen179
+\Hy@linkcounter=\count400
+\Hy@pagecounter=\count401
 
 (D:\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
 File: pd1enc.def 2019/09/28 v7.00a Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
-\Hy@SavedSpaceFactor=\count400
+\Hy@SavedSpaceFactor=\count402
 
 (D:\Programs\MiKTeX\tex/latex/00miktex\hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
@@ -907,12 +943,12 @@ Package hyperref Info: Plain pages OFF on input line 4555.
 Package hyperref Info: Backreferencing OFF on input line 4560.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4793.
-\c@Hy@tempcnt=\count401
+\c@Hy@tempcnt=\count403
 LaTeX Info: Redefining \url on input line 5152.
-\XeTeXLinkMargin=\dimen173
-\Fld@menulength=\count402
-\Field@Width=\dimen174
-\Fld@charsize=\dimen175
+\XeTeXLinkMargin=\dimen180
+\Fld@menulength=\count404
+\Field@Width=\dimen181
+\Fld@charsize=\dimen182
 Package hyperref Info: Hyper figures OFF on input line 6423.
 Package hyperref Info: Link nesting OFF on input line 6428.
 Package hyperref Info: Hyper index ON on input line 6431.
@@ -922,16 +958,16 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6448.
 Package hyperref Info: PDF/A mode OFF on input line 6453.
 LaTeX Info: Redefining \ref on input line 6493.
 LaTeX Info: Redefining \pageref on input line 6497.
-\Hy@abspage=\count403
-\c@Item=\count404
-\c@Hfootnote=\count405
+\Hy@abspage=\count405
+\c@Item=\count406
+\c@Hfootnote=\count407
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
 (D:\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
 File: hpdftex.def 2019/09/28 v7.00a Hyperref driver for pdfTeX
-\Fld@listcount=\count406
-\c@bookmark@seq@number=\count407
+\Fld@listcount=\count408
+\c@bookmark@seq@number=\count409
 
 (D:\Programs\MiKTeX\tex/latex/oberdiek\rerunfilecheck.sty
 Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
@@ -964,32 +1000,32 @@ File: german.lbx 2019/08/31 v3.13a biblatex localization (PK/MW)
 Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (biblatex)                Loading 'csquotes' recommended.
 
-\@quotelevel=\count408
-\@quotereset=\count409
+\@quotelevel=\count410
+\@quotereset=\count411
 (Maturarbeit.aux)
 \openout1 = `Maturarbeit.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 67.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 6
-7.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 71.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 7
+1.
  (D:\Programs\MiKTeX\tex/latex/base\ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1033,23 +1069,23 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Maturarbeit.bbl' found.
 (Maturarbeit.bbl)
-Package biblatex Info: Reference section=0 on input line 67.
-Package biblatex Info: Reference segment=0 on input line 67.
+Package biblatex Info: Reference section=0 on input line 71.
+Package biblatex Info: Reference segment=0 on input line 71.
 
 (C:\Users\Pluscrafter\AppData\Roaming\MiKTeX\2.9\tex/context/base/mkii\supp-pdf
 .mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count410
-\scratchdimen=\dimen176
-\scratchbox=\box54
-\nofMPsegments=\count411
-\nofMParguments=\count412
-\everyMPshowfont=\toks24
-\MPscratchCnt=\count413
-\MPscratchDim=\dimen177
-\MPnumerator=\count414
-\makeMPintoPDFobject=\count415
-\everyMPtoPDFconversion=\toks25
+\scratchcounter=\count412
+\scratchdimen=\dimen183
+\scratchbox=\box55
+\nofMPsegments=\count413
+\nofMParguments=\count414
+\everyMPshowfont=\toks26
+\MPscratchCnt=\count415
+\MPscratchDim=\dimen184
+\MPnumerator=\count416
+\makeMPintoPDFobject=\count417
+\everyMPtoPDFconversion=\toks27
 ) (D:\Programs\MiKTeX\tex/latex/oberdiek\epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -1063,9 +1099,13 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
-\c@lstlisting=\count416
-\AtBeginShipoutBox=\box55
-Package hyperref Info: Link coloring OFF on input line 67.
+\c@lstlisting=\count418
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: hyperref package is loaded.
+Package caption Info: threeparttable package is loaded.
+Package caption Info: End \AtBeginDocument code.
+\AtBeginShipoutBox=\box56
+Package hyperref Info: Link coloring OFF on input line 71.
 
 (D:\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -1073,290 +1113,297 @@ Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 (D:\Programs\MiKTeX\tex/generic/oberdiek\gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count417
+\c@section@level=\count419
 )
-LaTeX Info: Redefining \ref on input line 67.
-LaTeX Info: Redefining \pageref on input line 67.
-LaTeX Info: Redefining \nameref on input line 67.
+LaTeX Info: Redefining \ref on input line 71.
+LaTeX Info: Redefining \pageref on input line 71.
+LaTeX Info: Redefining \nameref on input line 71.
  (Maturarbeit.out) (Maturarbeit.out)
 \@outlinefile=\write4
 \openout4 = `Maturarbeit.out'.
 
+<titel.jpg, id=115, 4625.28pt x 2601.72pt>
+File: titel.jpg Graphic file (type jpg)
+<use titel.jpg>
+Package pdftex.def Info: titel.jpg  used on input line 77.
+(pdftex.def)             Requested size: 364.19667pt x 384.06541pt.
  [1
 
-{C:/Users/Pluscrafter/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] (Matu
-rarbeit.toc)
+{C:/Users/Pluscrafter/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./tit
+el.jpg>] (Maturarbeit.toc)
 \tf@toc=\write5
 \openout5 = `Maturarbeit.toc'.
 
  [1
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 86--94
+<Drohne.jpg, id=159, 4625.28pt x 2601.72pt>
+File: Drohne.jpg Graphic file (type jpg)
+<use Drohne.jpg>
+Package pdftex.def Info: Drohne.jpg  used on input line 99.
+(pdftex.def)             Requested size: 318.66948pt x 179.24098pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 89--102
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 86--94
+Underfull \hbox (badness 10000) in paragraph at lines 89--102
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 86--94
+Underfull \hbox (badness 10000) in paragraph at lines 89--102
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 86--94
+Underfull \hbox (badness 10000) in paragraph at lines 89--102
 
  []
 
-[1]
-<MotionDE.jpg, id=158, 1003.75pt x 690.58pt>
+[1 <./Drohne.jpg>]
+<MotionDE.jpg, id=168, 1003.75pt x 690.58pt>
 File: MotionDE.jpg Graphic file (type jpg)
 <use MotionDE.jpg>
-Package pdftex.def Info: MotionDE.jpg  used on input line 100.
+Package pdftex.def Info: MotionDE.jpg  used on input line 108.
 (pdftex.def)             Requested size: 455.24411pt x 313.21333pt.
  [2 <./MotionDE.jpg>]
-<Regelkreis1.png, id=165, 452.69125pt x 280.04625pt>
+<Regelkreis1.png, id=176, 452.69125pt x 280.04625pt>
 File: Regelkreis1.png Graphic file (type png)
 <use Regelkreis1.png>
-Package pdftex.def Info: Regelkreis1.png  used on input line 109.
+Package pdftex.def Info: Regelkreis1.png  used on input line 117.
 (pdftex.def)             Requested size: 182.09486pt x 112.64893pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 106--111
+Underfull \hbox (badness 10000) in paragraph at lines 114--119
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 111--114
+Underfull \hbox (badness 10000) in paragraph at lines 119--122
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 111--114
+Underfull \hbox (badness 10000) in paragraph at lines 119--122
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 111--114
+Underfull \hbox (badness 10000) in paragraph at lines 119--122
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 111--114
+Underfull \hbox (badness 10000) in paragraph at lines 119--122
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 111--114
+Underfull \hbox (badness 10000) in paragraph at lines 119--122
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 111--114
+Underfull \hbox (badness 10000) in paragraph at lines 119--122
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 116--117
+Underfull \hbox (badness 10000) in paragraph at lines 124--125
 
  []
 
-<Regelkreis2.png, id=167, 451.6875pt x 197.73875pt>
+<Regelkreis2.png, id=180, 451.6875pt x 197.73875pt>
 File: Regelkreis2.png Graphic file (type png)
 <use Regelkreis2.png>
-Package pdftex.def Info: Regelkreis2.png  used on input line 120.
+Package pdftex.def Info: Regelkreis2.png  used on input line 128.
 (pdftex.def)             Requested size: 182.09486pt x 79.71866pt.
 
-Underfull \hbox (badness 1590) in paragraph at lines 121--121
-[]\OT1/cmr/m/n/12 Abbildung 3: []Wirkungsweise des
+Underfull \hbox (badness 1590) in paragraph at lines 129--129
+[]\OT1/cmr/m/n/12 Abbildung 4: |Wir-kungs-wei-se des
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 123--127
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 123--127
+Underfull \hbox (badness 10000) in paragraph at lines 131--135
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 123--127
+Underfull \hbox (badness 10000) in paragraph at lines 131--135
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 131--135
 
  []
 
 [3 <./Regelkreis1.png> <./Regelkreis2.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 135--136
+Underfull \hbox (badness 10000) in paragraph at lines 143--144
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 141--142
+Underfull \hbox (badness 10000) in paragraph at lines 149--150
 
  []
 
 [4]
-<DLPF1.png, id=200, 1927.2pt x 1079.03125pt>
+<DLPF1.png, id=216, 1927.2pt x 1079.03125pt>
 File: DLPF1.png Graphic file (type png)
 <use DLPF1.png>
-Package pdftex.def Info: DLPF1.png  used on input line 158.
+Package pdftex.def Info: DLPF1.png  used on input line 166.
 (pdftex.def)             Requested size: 182.09486pt x 101.94923pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 153--162
+Underfull \hbox (badness 10000) in paragraph at lines 161--170
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 153--162
+Underfull \hbox (badness 10000) in paragraph at lines 161--170
 
  []
 
 
-Overfull \hbox (15.93706pt too wide) in paragraph at lines 153--162
+Overfull \hbox (15.93706pt too wide) in paragraph at lines 161--170
 \OT1/cmr/m/n/12 Im letz-ten Ka-pi-tel wur-de der PID-Regler ein-gef[]uhrt, doch
  Vi-bra-tio-nen ver-ur-sa-chen St[]orungen
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 171--173
+Underfull \hbox (badness 10000) in paragraph at lines 179--181
 
  []
 
 [5 <./DLPF1.png>]
-LaTeX Font Info:    Calculating math sizes for size <8.4> on input line 182.
+LaTeX Font Info:    Calculating math sizes for size <8.4> on input line 190.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <4.2> not available
-(Font)              size <5> substituted on input line 182.
+(Font)              size <5> substituted on input line 190.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <4.2> not available
-(Font)              size <5> substituted on input line 182.
+(Font)              size <5> substituted on input line 190.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <4.2> not available
-(Font)              size <5> substituted on input line 182.
+(Font)              size <5> substituted on input line 190.
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 205--208
+Underfull \hbox (badness 10000) in paragraph at lines 213--216
 
  []
 
-<accu.jpg, id=230, 4625.28pt x 2601.72pt>
+<accu.jpg, id=246, 4625.28pt x 2601.72pt>
 File: accu.jpg Graphic file (type jpg)
 <use accu.jpg>
-Package pdftex.def Info: accu.jpg  used on input line 211.
+Package pdftex.def Info: accu.jpg  used on input line 219.
 (pdftex.def)             Requested size: 182.09486pt x 102.42342pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 217--219
-
- []
-
-[7 <./accu.jpg>]
-Overfull \hbox (18.04819pt too wide) in paragraph at lines 225--227
-\OT1/cmr/m/n/12 Der Mi-cro-con-trol-ler, der auf dem FC be-nutzt wird, ist ein 
-ARM-Cortex-M7 STM32F722RET6
- []
-
 
 Underfull \hbox (badness 10000) in paragraph at lines 225--227
 
  []
 
-<1920px-Mpu6050-HD.jpg, id=242, 1927.2pt x 810.02625pt>
+[7 <./accu.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 233--235
+
+ []
+
+<1920px-Mpu6050-HD.jpg, id=260, 1927.2pt x 810.02625pt>
 File: 1920px-Mpu6050-HD.jpg Graphic file (type jpg)
 <use 1920px-Mpu6050-HD.jpg>
-Package pdftex.def Info: 1920px-Mpu6050-HD.jpg  used on input line 232.
+Package pdftex.def Info: 1920px-Mpu6050-HD.jpg  used on input line 240.
 (pdftex.def)             Requested size: 227.62206pt x 95.6663pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 229--234
+Underfull \hbox (badness 10000) in paragraph at lines 237--242
 
  []
 
 
-Underfull \hbox (badness 1454) in paragraph at lines 234--237
+Underfull \hbox (badness 1454) in paragraph at lines 242--245
 \OT1/cmr/m/n/12 MEMS be-deu-tet mi-cro-elec-tro-me-cha-ni-cal
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 234--237
+Underfull \hbox (badness 10000) in paragraph at lines 242--245
 
  []
 
 [8 <./1920px-Mpu6050-HD.jpg>]
-<ypr.png, id=258, 863.225pt x 501.875pt>
+<ypr.png, id=279, 863.225pt x 501.875pt>
 File: ypr.png Graphic file (type png)
 <use ypr.png>
-Package pdftex.def Info: ypr.png  used on input line 264.
+Package pdftex.def Info: ypr.png  used on input line 272.
 (pdftex.def)             Requested size: 227.62206pt x 132.33765pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 261--269
+Underfull \hbox (badness 10000) in paragraph at lines 269--277
 
  []
 
 [9 <./ypr.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 290--291
+Underfull \hbox (badness 10000) in paragraph at lines 298--299
 
  []
 
 [10]
-<egl.png, id=286, 1397.22pt x 813.0375pt>
+<egl.png, id=309, 1397.22pt x 813.0375pt>
 File: egl.png Graphic file (type png)
 <use egl.png>
-Package pdftex.def Info: egl.png  used on input line 294.
+Package pdftex.def Info: egl.png  used on input line 302.
 (pdftex.def)             Requested size: 227.62206pt x 132.44579pt.
-<reflow.png, id=289, 240.9pt x 180.675pt>
+<reflow.png, id=312, 240.9pt x 180.675pt>
 File: reflow.png Graphic file (type png)
 <use reflow.png>
-Package pdftex.def Info: reflow.png  used on input line 302.
+Package pdftex.def Info: reflow.png  used on input line 310.
 (pdftex.def)             Requested size: 227.62206pt x 170.72221pt.
-<unterlot.jpg, id=291, 4625.28pt x 2601.72pt>
+<unterlot.jpg, id=314, 4625.28pt x 2601.72pt>
 File: unterlot.jpg Graphic file (type jpg)
 <use unterlot.jpg>
-Package pdftex.def Info: unterlot.jpg  used on input line 308.
+Package pdftex.def Info: unterlot.jpg  used on input line 316.
 (pdftex.def)             Requested size: 227.62206pt x 128.02927pt.
-<schabi.jpg, id=293, 4625.28pt x 2601.72pt>
+<schabi.jpg, id=316, 4625.28pt x 2601.72pt>
 File: schabi.jpg Graphic file (type jpg)
 <use schabi.jpg>
-Package pdftex.def Info: schabi.jpg  used on input line 314.
+Package pdftex.def Info: schabi.jpg  used on input line 322.
 (pdftex.def)             Requested size: 227.62206pt x 128.02927pt.
-<plati.jpg, id=295, 4625.28pt x 2601.72pt>
+<plati.jpg, id=318, 4625.28pt x 2601.72pt>
 File: plati.jpg Graphic file (type jpg)
 <use plati.jpg>
-Package pdftex.def Info: plati.jpg  used on input line 320.
-(pdftex.def)             Requested size: 227.62206pt x 128.02927pt.
-<vordi.jpg, id=297, 4625.28pt x 2601.72pt>
-File: vordi.jpg Graphic file (type jpg)
-<use vordi.jpg>
-Package pdftex.def Info: vordi.jpg  used on input line 326.
-(pdftex.def)             Requested size: 227.62206pt x 128.02927pt.
-<fertig.jpg, id=299, 4625.28pt x 2601.72pt>
-File: fertig.jpg Graphic file (type jpg)
-<use fertig.jpg>
-Package pdftex.def Info: fertig.jpg  used on input line 332.
+Package pdftex.def Info: plati.jpg  used on input line 328.
 (pdftex.def)             Requested size: 227.62206pt x 128.02927pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 299--335
+Underfull \hbox (badness 10000) in paragraph at lines 307--331
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 299--335
+Underfull \hbox (badness 10000) in paragraph at lines 307--331
 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[11 <./egl.png> <./reflow.png>]
+[11 <./egl.png> <./reflow.png>] [12 <./unterlot.jpg> <./schabi.jpg> <./plati.jp
+g>]
+<vordi.jpg, id=337, 4625.28pt x 2601.72pt>
+File: vordi.jpg Graphic file (type jpg)
+<use vordi.jpg>
+Package pdftex.def Info: vordi.jpg  used on input line 336.
+(pdftex.def)             Requested size: 227.62206pt x 128.02927pt.
+<fertig.jpg, id=339, 4625.28pt x 2601.72pt>
+File: fertig.jpg Graphic file (type jpg)
+<use fertig.jpg>
+Package pdftex.def Info: fertig.jpg  used on input line 342.
+(pdftex.def)             Requested size: 227.62206pt x 128.02927pt.
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+Underfull \hbox (badness 10000) in paragraph at lines 332--345
 
-[12 <./unterlot.jpg> <./schabi.jpg> <./plati.jpg>] [13 <./vordi.jpg> <./fertig.
-jpg>]
+ []
+
+[13 <./vordi.jpg> <./fertig.jpg>]
 (C:\Users\Pluscrafter\AppData\Roaming\MiKTeX\2.9\tex/latex/listings\lstlang1.st
 y
 File: lstlang1.sty 2019/09/10 1.8c listings language file
@@ -1368,134 +1415,135 @@ File: lstlang1.sty 2019/09/10 1.8c listings language file
 (C:\Users\Pluscrafter\AppData\Roaming\MiKTeX\2.9\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
 ) [14]
-<PWM_25.png, id=373, 602.25pt x 361.35pt>
+<PWM_25.png, id=396, 602.25pt x 361.35pt>
 File: PWM_25.png Graphic file (type png)
 <use PWM_25.png>
-Package pdftex.def Info: PWM_25.png  used on input line 389.
+Package pdftex.def Info: PWM_25.png  used on input line 399.
 (pdftex.def)             Requested size: 409.71692pt x 245.84157pt.
  [15 <./PWM_25.png>]
-<Ferni.JPG, id=383, 3131.7pt x 2542.49875pt>
+<Ferni.JPG, id=406, 3131.7pt x 2542.49875pt>
 File: Ferni.JPG Graphic file (type jpg)
 <use Ferni.JPG>
-Package pdftex.def Info: Ferni.JPG  used on input line 398.
+Package pdftex.def Info: Ferni.JPG  used on input line 408.
 (pdftex.def)             Requested size: 227.62206pt x 184.78229pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 401--402
+Underfull \hbox (badness 10000) in paragraph at lines 411--412
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 401--402
+Underfull \hbox (badness 10000) in paragraph at lines 411--412
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 401--402
+Underfull \hbox (badness 10000) in paragraph at lines 411--412
 
  []
 
 [16 <./Ferni.JPG>]
-<Figure_1.png, id=421, 462.528pt x 346.896pt>
+<Figure_1.png, id=444, 462.528pt x 346.896pt>
 File: Figure_1.png Graphic file (type png)
 <use Figure_1.png>
-Package pdftex.def Info: Figure_1.png  used on input line 441.
+Package pdftex.def Info: Figure_1.png  used on input line 451.
 (pdftex.def)             Requested size: 455.24411pt x 341.44843pt.
 
 (C:\Users\Pluscrafter\AppData\Roaming\MiKTeX\2.9\tex/latex/listings\lstlang1.st
 y
 File: lstlang1.sty 2019/09/10 1.8c listings language file
 ) [17 <./Figure_1.png>] [18]
-Underfull \hbox (badness 10000) in paragraph at lines 497--499
+Underfull \hbox (badness 10000) in paragraph at lines 507--509
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 497--499
+Underfull \hbox (badness 10000) in paragraph at lines 507--509
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 497--499
+Underfull \hbox (badness 10000) in paragraph at lines 507--509
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 497--499
+Underfull \hbox (badness 10000) in paragraph at lines 507--509
 
  []
 
 [19]
-Underfull \hbox (badness 10000) in paragraph at lines 502--503
+Underfull \hbox (badness 10000) in paragraph at lines 512--513
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 502--503
+Underfull \hbox (badness 10000) in paragraph at lines 512--513
 
  []
 
 [20]
-Underfull \hbox (badness 10000) in paragraph at lines 505--507
+Underfull \hbox (badness 10000) in paragraph at lines 515--517
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 505--507
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 505--507
+Underfull \hbox (badness 10000) in paragraph at lines 515--517
 
  []
 
 [21]
-Overfull \hbox (5.76262pt too wide) in paragraph at lines 511--511
+Overfull \hbox (5.76262pt too wide) in paragraph at lines 524--524
 []\OT1/cmr/m/n/12 Alex. \OT1/cmr/m/it/12 In-er-ti-al Sen-sor Com-pa-ri-son MPU6
 000 vs MPU6050 vs MPU6500 vs ICM20602\OT1/cmr/m/n/12 .
  []
 
-(Maturarbeit.lof
+
+Overfull \hbox (13.29742pt too wide) in paragraph at lines 524--524
+\OT1/cmtt/m/n/12 techzone / 2018 / jan / apply -[] sensor -[] fusion -[] to -[]
+ accelerometers -[] and -[] gyroscopes$[]\OT1/cmr/m/n/12 . 
+ []
+
+[22] (Maturarbeit.lof
 Overfull \hbox (2.21786pt too wide) in paragraph at lines 10--10
  [][] [][][]$\OT1/cmtt/m/n/12 https : / / upload . wikimedia . org / wikipedia 
 / commons / e / e0 / 1st _ Order _ 
  []
 
 
-Overfull \hbox (8.89287pt too wide) in paragraph at lines 14--14
+Overfull \hbox (8.89287pt too wide) in paragraph at lines 12--12
  [][] [][][]$\OT1/cmtt/m/n/12 https : / / upload . wikimedia . org / wikipedia 
 / commons / 2 / 27 / Mpu6050-[]HD . 
  []
 
 
-Overfull \hbox (3.71786pt too wide) in paragraph at lines 16--16
+Overfull \hbox (3.71786pt too wide) in paragraph at lines 14--14
  [][] [][][]$\OT1/cmtt/m/n/12 https : / / technikblog . ch / wp-[]content / upl
 oads / 2013 / 03 / Roll-[]Pitch-[] _ 
  []
 
-[22])
+)
 \tf@lof=\write6
 \openout6 = `Maturarbeit.lof'.
 
  [23]
-<qrcode.png, id=556, 1003.75pt x 1003.75pt>
+<qrcode.png, id=579, 1003.75pt x 1003.75pt>
 File: qrcode.png Graphic file (type png)
 <use qrcode.png>
-Package pdftex.def Info: qrcode.png  used on input line 520.
+Package pdftex.def Info: qrcode.png  used on input line 534.
 (pdftex.def)             Requested size: 227.62206pt x 227.61066pt.
  [24 <./qrcode.png>]
-Underfull \hbox (badness 2426) in paragraph at lines 524--524
+Underfull \hbox (badness 1371) in paragraph at lines 538--538
 |[]\OT1/cmr/bx/n/17.28 Anhang 2 Be-weis und Aufl[]osung des DL-PF|
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 548.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 562.
 [25]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 548.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 562.
  (Maturarbeit.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 548.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 548.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 562.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 562.
 Package rerunfilecheck Info: File `Maturarbeit.out' has not changed.
-(rerunfilecheck)             Checksum: 555BE7DDC323C82AA67D1AF0E6C5AA64;1714.
+(rerunfilecheck)             Checksum: 2E44AD316B4B49B0914D84C45DE23F23;1761.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -1506,29 +1554,31 @@ Package logreq Info: Writing requests to 'Maturarbeit.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 27763 strings out of 492452
- 491993 string characters out of 3133997
- 1045512 words of memory out of 3000000
- 31645 multiletter control sequences out of 15000+200000
+ 29060 strings out of 492452
+ 517607 string characters out of 3133997
+ 1155594 words of memory out of 3000000
+ 32913 multiletter control sequences out of 15000+200000
  541900 words of font info for 60 fonts, out of 3000000 for 9000
  1143 hyphenation exceptions out of 8191
- 44i,12n,68p,2644b,2195s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 44i,12n,68p,2643b,2195s stack positions out of 5000i,500n,10000p,200000b,50000s
 <D:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:/Programs/Mi
 KTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><D:/Programs/MiKTeX/fonts/type1
 /public/amsfonts/cm/cmex10.pfb><D:/Programs/MiKTeX/fonts/type1/public/amsfonts/
-cm/cmmi12.pfb><D:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><D:/
-Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:/Programs/MiKTeX/fo
-nts/type1/public/amsfonts/cm/cmr12.pfb><D:/Programs/MiKTeX/fonts/type1/public/a
-msfonts/cm/cmr17.pfb><D:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pf
-b><D:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><D:/Programs/MiKT
-eX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/Programs/MiKTeX/fonts/type1/pu
-blic/amsfonts/cm/cmsy6.pfb><D:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
-msy8.pfb><D:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><D:/Prog
-rams/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><D:/Programs/MiKTeX/fonts
-/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on Maturarbeit.pdf (27 pages, 27580798 bytes).
+cm/cmmi10.pfb><D:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><D:
+/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><D:/Programs/MiKTeX/f
+onts/type1/public/amsfonts/cm/cmmi8.pfb><D:/Programs/MiKTeX/fonts/type1/public/
+amsfonts/cm/cmr10.pfb><D:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.
+pfb><D:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><D:/Programs/M
+iKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><D:/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmr8.pfb><D:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
+msy10.pfb><D:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><D:/Prog
+rams/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><D:/Programs/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmti12.pfb><D:/Programs/MiKTeX/fonts/type1/public/amsf
+onts/cm/cmtt10.pfb><D:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pf
+b>
+Output written on Maturarbeit.pdf (27 pages, 35644571 bytes).
 PDF statistics:
- 669 PDF objects out of 1000 (max. 8388607)
- 231 named destinations out of 1000 (max. 500000)
- 307 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 701 PDF objects out of 1000 (max. 8388607)
+ 238 named destinations out of 1000 (max. 500000)
+ 325 words of extra memory for PDF output out of 10000 (max. 10000000)
 
