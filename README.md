@@ -19,4 +19,4 @@ Dort ist das LaTex file für den schriftlichen Teil.
 * [nRF24/RF24](https://github.com/nRF24/RF24) - Bibliothek für den Sender bzw. Empfänger
 * [EminAtes/NRF24_STM32](https://github.com/EminAtes/NRF24_STM32) - Bibliothek für den Sender bzw. Empfänger übersetzt für kompitabilität mit STM32
 * [jrowberg/i2cdevlib](https://github.com/jrowberg/i2cdevlib) - Bibliothek für den MPU6050
-* [firebull/STM32-LCD-HD44780-I2C] (https://github.com/firebull/STM32-LCD-HD44780-I2C) - Bibliothek für Hitachi LCD HD44780 
+* [firebull/STM32-LCD-HD44780-I2C](https://github.com/firebull/STM32-LCD-HD44780-I2C) - Bibliothek für Hitachi LCD HD44780 
