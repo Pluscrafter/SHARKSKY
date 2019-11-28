@@ -70,3 +70,5 @@
 \contentsline {section}{\numberline {9}Anhang 1 QR-Code zum Quellcode}{24}{section.9}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {10}Anhang 2 Beweis und Aufl\IeC {\"o}sung des DLPF}{25}{section.10}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {11}Anhang 3 Board und Schaltplan}{26}{section.11}% 

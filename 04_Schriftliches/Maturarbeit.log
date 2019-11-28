@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.6.17)  28 NOV 2019 13:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.6.17)  28 NOV 2019 14:38
 entering extended mode
 **./Maturarbeit.tex
 (Maturarbeit.tex
@@ -1122,7 +1122,7 @@ LaTeX Info: Redefining \nameref on input line 71.
 \@outlinefile=\write4
 \openout4 = `Maturarbeit.out'.
 
-<titel.jpg, id=115, 4625.28pt x 2601.72pt>
+<titel.jpg, id=119, 4625.28pt x 2601.72pt>
 File: titel.jpg Graphic file (type jpg)
 <use titel.jpg>
 Package pdftex.def Info: titel.jpg  used on input line 77.
@@ -1137,7 +1137,7 @@ el.jpg>] (Maturarbeit.toc)
  [1
 
 ]
-<Drohne.jpg, id=159, 4625.28pt x 2601.72pt>
+<Drohne.jpg, id=164, 4625.28pt x 2601.72pt>
 File: Drohne.jpg Graphic file (type jpg)
 <use Drohne.jpg>
 Package pdftex.def Info: Drohne.jpg  used on input line 99.
@@ -1163,13 +1163,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 89--102
  []
 
 [1 <./Drohne.jpg>]
-<MotionDE.jpg, id=168, 1003.75pt x 690.58pt>
+<MotionDE.jpg, id=173, 1003.75pt x 690.58pt>
 File: MotionDE.jpg Graphic file (type jpg)
 <use MotionDE.jpg>
 Package pdftex.def Info: MotionDE.jpg  used on input line 108.
 (pdftex.def)             Requested size: 455.24411pt x 313.21333pt.
  [2 <./MotionDE.jpg>]
-<Regelkreis1.png, id=176, 452.69125pt x 280.04625pt>
+<Regelkreis1.png, id=181, 452.69125pt x 280.04625pt>
 File: Regelkreis1.png Graphic file (type png)
 <use Regelkreis1.png>
 Package pdftex.def Info: Regelkreis1.png  used on input line 117.
@@ -1214,7 +1214,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 124--125
 
  []
 
-<Regelkreis2.png, id=180, 451.6875pt x 197.73875pt>
+<Regelkreis2.png, id=185, 451.6875pt x 197.73875pt>
 File: Regelkreis2.png Graphic file (type png)
 <use Regelkreis2.png>
 Package pdftex.def Info: Regelkreis2.png  used on input line 128.
@@ -1250,7 +1250,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 149--150
  []
 
 [4]
-<DLPF1.png, id=216, 1927.2pt x 1079.03125pt>
+<DLPF1.png, id=221, 1927.2pt x 1079.03125pt>
 File: DLPF1.png Graphic file (type png)
 <use DLPF1.png>
 Package pdftex.def Info: DLPF1.png  used on input line 166.
@@ -1296,7 +1296,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 213--216
 
  []
 
-<accu.jpg, id=246, 4625.28pt x 2601.72pt>
+<accu.jpg, id=251, 4625.28pt x 2601.72pt>
 File: accu.jpg Graphic file (type jpg)
 <use accu.jpg>
 Package pdftex.def Info: accu.jpg  used on input line 219.
@@ -1311,7 +1311,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 233--235
 
  []
 
-<1920px-Mpu6050-HD.jpg, id=260, 1927.2pt x 810.02625pt>
+<1920px-Mpu6050-HD.jpg, id=265, 1927.2pt x 810.02625pt>
 File: 1920px-Mpu6050-HD.jpg Graphic file (type jpg)
 <use 1920px-Mpu6050-HD.jpg>
 Package pdftex.def Info: 1920px-Mpu6050-HD.jpg  used on input line 240.
@@ -1332,7 +1332,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 242--245
  []
 
 [8 <./1920px-Mpu6050-HD.jpg>]
-<ypr.png, id=279, 863.225pt x 501.875pt>
+<ypr.png, id=284, 863.225pt x 501.875pt>
 File: ypr.png Graphic file (type png)
 <use ypr.png>
 Package pdftex.def Info: ypr.png  used on input line 272.
@@ -1348,27 +1348,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 298--299
  []
 
 [10]
-<egl.png, id=309, 1397.22pt x 813.0375pt>
+<egl.png, id=314, 1397.22pt x 813.0375pt>
 File: egl.png Graphic file (type png)
 <use egl.png>
 Package pdftex.def Info: egl.png  used on input line 302.
 (pdftex.def)             Requested size: 227.62206pt x 132.44579pt.
-<reflow.png, id=312, 240.9pt x 180.675pt>
+<reflow.png, id=317, 240.9pt x 180.675pt>
 File: reflow.png Graphic file (type png)
 <use reflow.png>
 Package pdftex.def Info: reflow.png  used on input line 310.
 (pdftex.def)             Requested size: 227.62206pt x 170.72221pt.
-<unterlot.jpg, id=314, 4625.28pt x 2601.72pt>
+<unterlot.jpg, id=319, 4625.28pt x 2601.72pt>
 File: unterlot.jpg Graphic file (type jpg)
 <use unterlot.jpg>
 Package pdftex.def Info: unterlot.jpg  used on input line 316.
 (pdftex.def)             Requested size: 227.62206pt x 128.02927pt.
-<schabi.jpg, id=316, 4625.28pt x 2601.72pt>
+<schabi.jpg, id=321, 4625.28pt x 2601.72pt>
 File: schabi.jpg Graphic file (type jpg)
 <use schabi.jpg>
 Package pdftex.def Info: schabi.jpg  used on input line 322.
 (pdftex.def)             Requested size: 227.62206pt x 128.02927pt.
-<plati.jpg, id=318, 4625.28pt x 2601.72pt>
+<plati.jpg, id=323, 4625.28pt x 2601.72pt>
 File: plati.jpg Graphic file (type jpg)
 <use plati.jpg>
 Package pdftex.def Info: plati.jpg  used on input line 328.
@@ -1388,12 +1388,12 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 [11 <./egl.png> <./reflow.png>] [12 <./unterlot.jpg> <./schabi.jpg> <./plati.jp
 g>]
-<vordi.jpg, id=337, 4625.28pt x 2601.72pt>
+<vordi.jpg, id=342, 4625.28pt x 2601.72pt>
 File: vordi.jpg Graphic file (type jpg)
 <use vordi.jpg>
 Package pdftex.def Info: vordi.jpg  used on input line 336.
 (pdftex.def)             Requested size: 227.62206pt x 128.02927pt.
-<fertig.jpg, id=339, 4625.28pt x 2601.72pt>
+<fertig.jpg, id=344, 4625.28pt x 2601.72pt>
 File: fertig.jpg Graphic file (type jpg)
 <use fertig.jpg>
 Package pdftex.def Info: fertig.jpg  used on input line 342.
@@ -1415,13 +1415,13 @@ File: lstlang1.sty 2019/09/10 1.8c listings language file
 (C:\Users\Pluscrafter\AppData\Roaming\MiKTeX\2.9\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
 ) [14]
-<PWM_25.png, id=396, 602.25pt x 361.35pt>
+<PWM_25.png, id=401, 602.25pt x 361.35pt>
 File: PWM_25.png Graphic file (type png)
 <use PWM_25.png>
 Package pdftex.def Info: PWM_25.png  used on input line 399.
 (pdftex.def)             Requested size: 409.71692pt x 245.84157pt.
  [15 <./PWM_25.png>]
-<Ferni.JPG, id=406, 3131.7pt x 2542.49875pt>
+<Ferni.JPG, id=411, 3131.7pt x 2542.49875pt>
 File: Ferni.JPG Graphic file (type jpg)
 <use Ferni.JPG>
 Package pdftex.def Info: Ferni.JPG  used on input line 408.
@@ -1442,7 +1442,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 411--412
  []
 
 [16 <./Ferni.JPG>]
-<Figure_1.png, id=444, 462.528pt x 346.896pt>
+<Figure_1.png, id=449, 462.528pt x 346.896pt>
 File: Figure_1.png Graphic file (type png)
 <use Figure_1.png>
 Package pdftex.def Info: Figure_1.png  used on input line 451.
@@ -1526,25 +1526,25 @@ oads / 2013 / 03 / Roll-[]Pitch-[] _
 \openout6 = `Maturarbeit.lof'.
 
  [23]
-<qrcode.png, id=579, 1003.75pt x 1003.75pt>
+<qrcode.png, id=584, 1003.75pt x 1003.75pt>
 File: qrcode.png Graphic file (type png)
 <use qrcode.png>
 Package pdftex.def Info: qrcode.png  used on input line 534.
 (pdftex.def)             Requested size: 227.62206pt x 227.61066pt.
- [24 <./qrcode.png>]
-Underfull \hbox (badness 1371) in paragraph at lines 538--538
-|[]\OT1/cmr/bx/n/17.28 Anhang 2 Be-weis und Aufl[]osung des DL-PF|
- []
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 562.
-[25]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 562.
+ [24 <./qrcode.png>] [25]
+<Board.png, id=598, 367.49295pt x 372.4314pt>
+File: Board.png Graphic file (type png)
+<use Board.png>
+Package pdftex.def Info: Board.png  used on input line 568.
+(pdftex.def)             Requested size: 455.24411pt x 461.38962pt.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 571.
+ [26 <./Board.png (PNG copy)>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 571.
  (Maturarbeit.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 562.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 562.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 571.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 571.
 Package rerunfilecheck Info: File `Maturarbeit.out' has not changed.
-(rerunfilecheck)             Checksum: 2E44AD316B4B49B0914D84C45DE23F23;1761.
-
+(rerunfilecheck)             Checksum: 371E2702483636DF8EE3B70C9C984031;1827.
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 2.90001pt have occurred.
@@ -1554,10 +1554,10 @@ Package logreq Info: Writing requests to 'Maturarbeit.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 28915 strings out of 492895
- 516952 string characters out of 3133461
+ 28924 strings out of 492895
+ 517054 string characters out of 3133461
  1151009 words of memory out of 3000000
- 32325 multiletter control sequences out of 15000+200000
+ 32331 multiletter control sequences out of 15000+200000
  541900 words of font info for 60 fonts, out of 3000000 for 9000
  1143 hyphenation exceptions out of 8191
  41i,12n,68p,2643b,2191s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1578,9 +1578,9 @@ nts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
 msfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
 cm/cmtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt1
 2.pfb>
-Output written on Maturarbeit.pdf (27 pages, 35644588 bytes).
+Output written on Maturarbeit.pdf (28 pages, 39294690 bytes).
 PDF statistics:
- 701 PDF objects out of 1000 (max. 8388607)
- 238 named destinations out of 1000 (max. 500000)
- 325 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 711 PDF objects out of 1000 (max. 8388607)
+ 240 named destinations out of 1000 (max. 500000)
+ 338 words of extra memory for PDF output out of 10000 (max. 10000000)
 
