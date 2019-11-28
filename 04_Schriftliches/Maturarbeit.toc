@@ -65,8 +65,8 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {8.1}Literaturverzeichnis}{22}{subsection.8.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.2}Abbildungsverzeichnis}{22}{subsection.8.2}% 
+\contentsline {subsection}{\numberline {8.2}Abbildungsverzeichnis}{23}{subsection.8.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {9}Anhang 1 QR-Code zum Quellcode}{23}{section.9}% 
+\contentsline {section}{\numberline {9}Anhang 1 QR-Code zum Quellcode}{24}{section.9}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {10}Anhang 2 Beweis und Auflösung des DLPF}{24}{section.10}% 
+\contentsline {section}{\numberline {10}Anhang 2 Beweis und Auflösung des DLPF}{25}{section.10}% 

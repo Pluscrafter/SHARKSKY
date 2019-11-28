@@ -49,6 +49,35 @@
       \verb https://blog.dronetrest.com/inertial-sensor-comparison-mpu6000-vs-mpu6050-vs-mpu6500-vs-icm20602/
       \endverb
     \endentry
+    \entry{website:Arduino}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=ee5bced252ab77ec8d633c1afda7c5da}{%
+           family={Arduino},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{ee5bced252ab77ec8d633c1afda7c5da}
+      \strng{fullhash}{ee5bced252ab77ec8d633c1afda7c5da}
+      \strng{bibnamehash}{ee5bced252ab77ec8d633c1afda7c5da}
+      \strng{authorbibnamehash}{ee5bced252ab77ec8d633c1afda7c5da}
+      \strng{authornamehash}{ee5bced252ab77ec8d633c1afda7c5da}
+      \strng{authorfullhash}{ee5bced252ab77ec8d633c1afda7c5da}
+      \field{sortinit}{A}
+      \field{sortinithash}{a3dcedd53b04d1adfd5ac303ecd5e6fa}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{28}
+      \field{howpublished}{Webseite}
+      \field{month}{11}
+      \field{title}{Arduino Uno Rev3}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://store.arduino.cc/arduino-uno-rev3
+      \endverb
+      \verb{url}
+      \verb https://store.arduino.cc/arduino-uno-rev3
+      \endverb
+    \endentry
     \entry{website:Digikey_Komplementaerfilter}{misc}{}
       \name{author}{1}{}{%
         {{hash=db5e21baf10198452da711f5291383d0}{%
@@ -138,6 +167,37 @@
       \endverb
       \verb{url}
       \verb https://fpvracing.ch/de/content/8-multicopter-komponenten
+      \endverb
+    \endentry
+    \entry{website:MPUvsMCU}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=c6b864b1e23463b52a2679b6897e1a3b}{%
+           family={Kalman},
+           familyi={K\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{c6b864b1e23463b52a2679b6897e1a3b}
+      \strng{fullhash}{c6b864b1e23463b52a2679b6897e1a3b}
+      \strng{bibnamehash}{c6b864b1e23463b52a2679b6897e1a3b}
+      \strng{authorbibnamehash}{c6b864b1e23463b52a2679b6897e1a3b}
+      \strng{authornamehash}{c6b864b1e23463b52a2679b6897e1a3b}
+      \strng{authorfullhash}{c6b864b1e23463b52a2679b6897e1a3b}
+      \field{sortinit}{K}
+      \field{sortinithash}{d3edc18d54b9438a72c24c925bfb38f4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{28}
+      \field{howpublished}{Webseite}
+      \field{month}{11}
+      \field{title}{Mikrocontroller oder Mikroprozessor?}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://www.elektronikpraxis.vogel.de/mikrocontroller-oder-mikroprozessor-a-393850/
+      \endverb
+      \verb{url}
+      \verb https://www.elektronikpraxis.vogel.de/mikrocontroller-oder-mikroprozessor-a-393850/
       \endverb
     \endentry
     \entry{website:OS_MCU_COLL}{misc}{}
@@ -392,6 +452,39 @@
       \endverb
       \verb{url}
       \verb https://de.wikipedia.org/wiki/Quadrocopter#Einsatz
+      \endverb
+    \endentry
+    \entry{website:BAZL}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=8f5ad72b2d0097406a0440969c4fb0c7}{%
+           family={Zivilluftfahrt},
+           familyi={Z\bibinitperiod},
+           given={Budesamt},
+           giveni={B\bibinitperiod},
+           prefix={für},
+           prefixi={f\bibinitperiod}}}%
+      }
+      \strng{namehash}{8f5ad72b2d0097406a0440969c4fb0c7}
+      \strng{fullhash}{8f5ad72b2d0097406a0440969c4fb0c7}
+      \strng{bibnamehash}{8f5ad72b2d0097406a0440969c4fb0c7}
+      \strng{authorbibnamehash}{8f5ad72b2d0097406a0440969c4fb0c7}
+      \strng{authornamehash}{8f5ad72b2d0097406a0440969c4fb0c7}
+      \strng{authorfullhash}{8f5ad72b2d0097406a0440969c4fb0c7}
+      \field{sortinit}{Z}
+      \field{sortinithash}{8f7b480688e809b50b6f6577b16f3db5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{28}
+      \field{howpublished}{Webseite}
+      \field{month}{11}
+      \field{title}{Regeln und allgemeine Fragen zu Drohnen}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://www.bazl.admin.ch/bazl/de/home/gutzuwissen/drohnen-und-flugmodelle/allgemeine-fragen-zu-drohnen.html
+      \endverb
+      \verb{url}
+      \verb https://www.bazl.admin.ch/bazl/de/home/gutzuwissen/drohnen-und-flugmodelle/allgemeine-fragen-zu-drohnen.html
       \endverb
     \endentry
   \enddatalist
