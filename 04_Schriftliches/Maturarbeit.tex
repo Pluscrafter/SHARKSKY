@@ -71,7 +71,7 @@
 \begin{document}
 \title{\large Maturitätsarbeit an der Kantonsschule Zürich Nord \\ \Huge Regelungstechnik - \\ \huge PID-Parametrisierung anhand eines selbstgebauten Quadrocopters}
 \author{Charpoan Kong M6d \\ Betreuer: Christian Prim}
-\date{\today}
+\date{02. Dezember 2019}
 \maketitle
 \begin{center}
 \includegraphics[width=0.8\textwidth,trim=0 -40cm 0 -40cm]{titel.jpg}
@@ -86,8 +86,8 @@
 \pagenumbering{arabic}
 
 \section{Einleitung}
-Ein Quadrocopter ist ein Flugobjekt mit vier Propellern. Schon in den 1920er Jahren wurde diese Technik eingehend untersucht. Der Luftfahrtpionier Étienne \OE hmichen, der 1920 den Oehmichen No. 2 gebaut hatte, machte schon Versuch mit Flugobjekten mit vier Propellern. Damals waren die Propeller elastisch und man konnte mit Seilzügen den Anstellwinkel der Propeller einstellen. Mit diesem Gerät konnten einige Rekorde erzielt werden.\cite{website:Wikipedia_Quadrocopter}\\ \\
-In der heutigen Zeit finden Quadrocopter viele Anwendungen, wie z.B. bei Suchaktionen, im Militär oder auch als Spielzeug. Mit der schnellen Entwicklung von Mikroprozessoren wurden Quadrocopter immer kleiner und einfacher zu realisieren. Auch können damit teurere Helikopterflüge für Kartographie oder Luftaufnahmen ökonomischer realisiert werden.\cite{website:Wikipedia_Quad_Einsatz}\\ \\
+Ein Quadrocopter ist ein Flugobjekt mit vier Propellern. Schon in den 1920er Jahren wurde diese Technik eingehend untersucht. Der Luftfahrtpionier Étienne \OE hmichen, der 1920 den Oehmichen No. 2 gebaut hatte, machte schon Versuch mit Flugobjekten mit vier Propellern. Damals waren die Propeller elastisch und man konnte mit Seilzügen den Anstellwinkel der Propeller einstellen. Mit diesem Gerät konnten einige Rekorde erzielt werden\cite{website:Wikipedia_Quadrocopter}.\\ \\
+In der heutigen Zeit finden Quadrocopter viele Anwendungen, wie z.B. bei Suchaktionen, im Militär oder auch als Spielzeug. Mit der schnellen Entwicklung von Mikroprozessoren wurden Quadrocopter immer kleiner und einfacher zu realisieren. Auch können damit teurere Helikopterflüge für Kartographie oder Luftaufnahmen ökonomischer realisiert werden\cite{website:Wikipedia_Quad_Einsatz}.\\ \\
 Die Intention zu dieser Arbeit folgt aus einem Projekt aus dem Freifachkurs Robotik. Damals kam der Raspberry Pi zum Einsatz. Da dieser ein Betriebsystem parallel zum Flightcontroller am Laufen hat, war die Regelung des Flightcontrollers zu träge. Auch war das Stueuersignal an den Motoren viel zu zittrig und so war dieses unbrauchbar. Aus diesem Grund wurde für das vorliegende Projekt ein neuer Chip evaluiert, der den Echtzeitanforderungen entspricht und eine richtige Hardware Pulsweitenmodulation (PWM) hat. \\ \\
 \iffalse
 Mit dieser Arbeit will ich mit dem Bau und dessen Regelung befasssen. Der Quadrocopter wird selbst gebau mit dem Hauptziel den Flightcontroller selbst zu designen, bauen und programmieren. So sollte die Regelung auch selbst implementiert werden. Dannach sollten Versuche gemacht werden, die bestimmen sollten, wie der PID-Regler stabiler gemacht werden kann und wie ungleichheiten, wie sie durch Vibration entstehen, auszugleichen. 
@@ -111,14 +111,14 @@ Man könnte meinen, dass man einen stabilen Flug erreichen kann, wenn der Schub 
 Abbildung \ref{dreh} zeigt die Rotationsrichtung der Motoren. Die benachbarten Motoren müssen eine gegensätzliche Rotation haben, da sonst der Quadrocopter ins Rotieren gerät. So wird das Drehmoment des anderen Motors ausgeglichen. Auch wird gezeigt, dass man den Quadrocopter mit erhöhen bzw. erniedrigen der Motorleistung der richtigen Motoren, in die gewünschte Richtung steuern kann. Kernelement dieser Steuerung ist der PID-Regler.
 \newpage
 \subsection{Was ist ein Regler?}
-Eine Regelung ist eine Steuerung mit Rückkoppelung.\cite{website:rn-wissen_Regelungstechnik} Ein Wert z.B. der Anstellwinkel eines Flugzeuges wird überwacht. Je nach gewünschten Winkel, wird das Höhenruder so geregelt, dass es diesen Winkel kontinuierlich halten kann.\\
+Eine Regelung ist eine Steuerung mit Rückkoppelung\cite{website:rn-wissen_Regelungstechnik}. Ein Wert z.B. der Anstellwinkel eines Flugzeuges wird überwacht. Je nach gewünschten Winkel, wird das Höhenruder so geregelt, dass es diesen Winkel kontinuierlich halten kann.\\
 \begin{wrapfigure}[6]{r}{0.4\textwidth}
 \centering
 \includegraphics[width=0.4\textwidth]{Regelkreis1.png}
 \caption[\url{https://rn-wissen.de/wiki/images/2/25/Regelkreis1.png}]{Der Regelkreis}\label{regkreis}
 \end{wrapfigure}
-Im Regelkreis (siehe Abb.\ref{regkreis}) wird der Ist-Wert z.B. mit einem Sensor gemessen. Dieser wird mit dem Soll-Wert verglichen, um die Regelabweichung zu bestimmen. So kann die Regelgrösse bestimmt werden, um so das System dem Soll-Wert anzugleichen.\cite{website:rn-wissen_Regelungstechnik}\\ \\ \\ \\ \\ \\ \\
-Die Regelabweichung kann dabei einfach mit der Differenz des Ist-Wertes $x$ mit dem Soll-Wertes $w$ bestimmt werden.\cite{website:rn-wissen_Regelungstechnik}
+Im Regelkreis (siehe Abb.\ref{regkreis}) wird der Ist-Wert z.B. mit einem Sensor gemessen. Dieser wird mit dem Soll-Wert verglichen, um die Regelabweichung zu bestimmen. So kann die Regelgrösse bestimmt werden, um so das System dem Soll-Wert anzugleichen\cite{website:rn-wissen_Regelungstechnik}.\\ \\ \\ \\ \\ \\ \\
+Die Regelabweichung kann dabei einfach mit der Differenz des Ist-Wertes $x$ mit dem Soll-Wertes $w$ bestimmt werden\cite{website:rn-wissen_Regelungstechnik}.
 \begin{equation}
 e(t)=w-x
 \end{equation}\\
@@ -129,24 +129,24 @@ e(t)=w-x
 \caption[\url{https://rn-wissen.de/wiki/images/5/5d/Regelkreis2.png}]{Wirkungsweise des Regelkreises}\label{regkr2}
 \end{wrapfigure}
 \noindent
-In Abbildung \ref{regkr2} sieht man, wie vorher beschrieben, wie ein solcher Regelkreis funktioniert. In der Regelungstechnik wird versucht, einen solchen Regelkreis mathematisch zu modellieren. In diesem Kapitel wird nur der PID-Regler und seine Komponenten besprochen, da dieser häufig bei Quadrocoptern benutzt wird.\cite{website:rn-wissen_Regelungstechnik}
+In Abbildung \ref{regkr2} sieht man, wie vorher beschrieben, wie ein solcher Regelkreis funktioniert. In der Regelungstechnik wird versucht, einen solchen Regelkreis mathematisch zu modellieren. In diesem Kapitel wird nur der PID-Regler und seine Komponenten besprochen, da dieser häufig bei Quadrocoptern benutzt wird\cite{website:rn-wissen_Regelungstechnik}.
 \\ \\ \\ \\
 Der PID-Regler besteht aus mehreren Relgern und dem D-Glied. In der Folge wird beschrieben wie die einzelnen Komponenten wirken. 
 
 \subsubsection{P-Regler}
-Der P-Regler wirkt linear. Dieser Regler gibt die Regelabweichung verstärkt und unverzögert mit dem Faktor $Kp$ weiter (Vgl. \ref{p}). Das Problem dabei ist, dass diese Abweichung bleibend ist und somit den Soll-Wert über- bzw. unterschiesst. Dieser Regler wirkt schnell.\cite{website:rn-wissen_Regelungstechnik}
+Der P-Regler wirkt linear. Dieser Regler gibt die Regelabweichung verstärkt und unverzögert mit dem Faktor $Kp$ weiter (Vgl. \ref{p}). Das Problem dabei ist, dass diese Abweichung bleibend ist und somit den Soll-Wert über- bzw. unterschiesst. Dieser Regler wirkt schnell\cite{website:rn-wissen_Regelungstechnik}.
 \begin{equation}\label{p}
 y(t)=Kp\cdot e(t)
 \end{equation}
 \newpage
 \subsubsection{I-Regler}
-Beim Integralregler wird die Regelabweichung über die Zeit summiert und mit dem Faktor $Ki$ verstärkt (Vgl. \ref{i}). Dabei werden Abweichungen volständig eliminiert, da dieser Regelwert immer anwächst, solange die Regelabweichung nicht Null ist. Dieser Regler wirkt langsam.\cite{website:rn-wissen_Regelungstechnik}\\
+Beim Integralregler wird die Regelabweichung über die Zeit summiert und mit dem Faktor $Ki$ verstärkt (Vgl. \ref{i}). Dabei werden Abweichungen volständig eliminiert, da dieser Regelwert immer anwächst, solange die Regelabweichung nicht Null ist. Dieser Regler wirkt langsam\cite{website:rn-wissen_Regelungstechnik}.\\
 \begin{equation}\label{i}
 y(t)=Ki\int_{0}^{t}e(t)dt
 \end{equation}
 
 \subsubsection{D-Glied}
-Das Differenzialglied schaut auf die Differenz der Regelabweichung zur vorherigen Regelabweichung und wird mit dem Faktor $Kd$ verstärkt (Vgl. \ref{d}). Deshalb reagiert dieser sehr schnell und gibt den beiden anderen Vorhaltezeit. Das Differenzialglied ist kein Regler, da es alleine nichts regleln kann, sondern nur auf Veränderungen in der Regelabweichung reagiert.\cite{website:rn-wissen_Regelungstechnik}\\
+Das Differenzialglied schaut auf die Differenz der Regelabweichung zur vorherigen Regelabweichung und wird mit dem Faktor $Kd$ verstärkt (Vgl. \ref{d}). Deshalb reagiert dieser sehr schnell und gibt den beiden anderen Vorhaltezeit. Das Differenzialglied ist kein Regler, da es alleine nichts regleln kann, sondern nur auf Veränderungen in der Regelabweichung reagiert\cite{website:rn-wissen_Regelungstechnik}.\\
 \begin{equation}\label{d}
 y(t)=Kd\cdot \dot{e}(t)
 \end{equation}
@@ -170,7 +170,7 @@ Wie man in der Differenzialgleichung \ref{eq1} sieht, ist die Eingang- und Ausga
 \begin{equation} \label{eq1}
 v_{\text{in}}(t)-v_{\text{out}}(t)=R\cdot I(t)
 \end{equation}
-Den Strom kann man auch abhängig vom Kondensator und der Ausgangsspannung darstellen, wie man in \ref{eq2} und \ref{eq3} sieht.
+Den Strom kann man auch abhängig vom Kondensator und der Ausgangsspannung darstellen, wie man in den Funktionsgleichungen  \ref{eq2} und \ref{eq3} sieht.
 \begin{equation} \label{eq2}
 Q_{c}(t)=C\cdot v_{\text{out}}(t)
 \end{equation}
@@ -219,11 +219,11 @@ Bei den vorliegenden Motoren handelt es sich um ReadyToSky RS2205 Motoren mit ei
 \includegraphics[width=0.4\textwidth]{accu.jpg}
 \caption[]{LiPo-Akku und Akkuüberwacher} \label{accu}
 \end{wrapfigure}
-Der Akku (Abb.\ref{accu}) versorgt alle Komponenten, die Strom brauchen mit Strom. Im Quadrocopter wird ein LiPo Akku benutzt, der drei Zellen in Serie geschaltet hat mit einer Kapazität von 2.4Ah. Die miminale Spannung beträgt 11.1V. Die Entladerate wird $C$-Rate angegeben. Mit der Kapazität multipliziert, wird der maximale Entladestrom ausgerechnet.\cite{website:fpvracing.ch_Mult_Komp}
+Der Akku (Abb.\ref{accu}) versorgt alle Komponenten, die Strom brauchen mit Strom. Im Quadrocopter wird ein LiPo Akku benutzt, der drei Zellen in Serie geschaltet hat mit einer Kapazität von 2.4Ah. Die miminale Spannung beträgt 11.1V. Die Entladerate wird $C$-Rate angegeben. Mit der Kapazität multipliziert, wird der maximale Entladestrom ausgerechnet\cite{website:fpvracing.ch_Mult_Komp}.
 \begin{equation}
 I_{\text{max}}=Q\cdot C
 \end{equation}\\ \\
-Man benutzt in Quadrocoptern meist LiPo Akkus, da sie eine hohe Energiedichte besitzen und viel Leistung abgeben können. Dies hat aber auch zur Folge, dass man diese Akkus sorgfältig behandeln muss, da sie im Extremfall, Feuer fangen oder explodieren können. So darf man die einzelnen Zellen nicht unter eine Spannung von 2.7V fallen lassen. Deshalb wird der Akku auch an einem Akkuüberwacher angeschlossen, der piepst, wenn der Akku verbraucht ist. Auch braucht man ein Balanceladegerät, das kontrolliert, dass alle Zellen gleichmässug geladen werden. Eine hohe Kapazität garantiert nicht immer eine längere Flugzeit, da mehr Kapazität auch mehr Gewicht bedeutet.\cite{website:fpvracing.ch_Mult_Komp}
+Man benutzt in Quadrocoptern meist LiPo Akkus, da sie eine hohe Energiedichte besitzen und viel Leistung abgeben können. Dies hat aber auch zur Folge, dass man diese Akkus sorgfältig behandeln muss, da sie im Extremfall, Feuer fangen oder explodieren können. So darf man die einzelnen Zellen nicht unter eine Spannung von 2.7V fallen lassen. Deshalb wird der Akku auch an einem Akkuüberwacher angeschlossen, der piepst, wenn der Akku verbraucht ist. Auch braucht man ein Balanceladegerät, das kontrolliert, dass alle Zellen gleichmässug geladen werden. Eine hohe Kapazität garantiert nicht immer eine längere Flugzeit, da mehr Kapazität auch mehr Gewicht bedeutet\cite{website:fpvracing.ch_Mult_Komp}.
 \newpage
 
 \subsection{Der Flightcontroller}
@@ -295,7 +295,7 @@ Auf Leiterplatte oder auch Printed Circuit Board (PCB) wird die Schaltung des FC
 \iffalse
 Zuerst habe ich mir überlegt was für einen Mikrocontroller ich wählen sollte. Bei meinen ersten Versuchen mit dem Raspberry gingen schief, da der Regler nicht schnell genug reagierte und eine nicht konstates Regelverhalten gezeigt hat. Einerseits lief ein Betriebsystem pararell zum Flightcontroller, adererseits war die Regelung nicht Echtzeit genug. Deswegen habe ich im Internet nachgeschaut was für Mikrocontroller auf den meisten Quadroopter verbaut sind. Dort werden  meist MCU aus der STM32-Familie verwendet. So kam ich auf die Webseite von Oscar Liang\footnote{\label{foot:1}https://oscarliang.com/f1-f3-f4-flight-controller/ aufgerufen am 31.03.2019} bei der die einzelnen MCU-Generationen aufgelistet waren mit den Vor-und Nachteilen. Ich entschied mich für die neuste Generation aus dieser MCU-Familie, einen STM32F7xx MCU zu benutzen. Nachher habe ich vorhandene Boards angschaut und gesehen, das die meisten den STM32F722RET6 benutzen aus dieser MCU-Generation. Als nächstes überlegte ich mir was für einen Gyro-und Beschleunigungssensor ich bentzen wolle. Ich habe schon eine MPU-6050 IMU aber ich wollte noch einen mit SPI-Protokoll, da dies schneller ist, und der andere als Backup, so recherchierte ich was für IMU's die FC's benutzen\footnote{\label{foot:2}https://blog.dronetrest.com/inertial-sensor-comparison-mpu6000-vs-mpu6050-vs-mpu6500-vs-icm20602/ aufgerufen am 31.03.2019} und entschied mich für den ICM-20689. Als Empfänger habe ich einen nRF24L01 PA + LNA gewählt.Als Backup wird noch ein PPM Eingang eingebaut für die standart Funkübertragung über eine normale Fernbedienung. Da für die Versuche Daten gebraucht werden, wird eine microSD-Karten Schnittstelle eingebaut, um die Daten aufzuzeichnen. Damit der Flightcontroller mit dem PC kommunizieren kann um zu Debuggen muss ein FTDI-Chip (F232RL) eingebaut werden damit wird das UART-Protokoll, in ein für den PC verständliches Protokoll übersetzt. Um die Höhe zu bestimmen habe ich mich für den BMP280 Drucksensor ausgewählt um die barometrische Höhe zu bestimmen. Da dieser für das auslesen eine lange Zeit braucht habe ich überlegt noch eine NebenMCU einzubauen. Deshalb habe ich den ATMega328 gewählt da er auch auf den Arduino UNO drauf ist und ich mich damit schon auskenne. Über diese MCU werden auch die Ultraschallsensoren ausgelesen, die eine genauere Höhenmessung ermöglicht, aber nur bis zu sechs Metern. Da die ESC's einen 5V Versorgungsausgang haben muss noch ein Spannungsregler  eigebaut werden, da die meisten IC's 3.3V braucchen, der Schulmechaniker Herr Thurnherr hat mir den LM3940 empfohlen.
 \fi
-Zuerst wurde überlegt, was für ein Mikrocontroller benutzt werden sollte. Bei den ersten Versuchen wurde ein Raspberry Pi benutzt, dort gingen die Versuche schief, da dieser kein konstantes Regelverhalten aufzeigte und desweiteren ein Betriebsystem neben dem Flightcontroller lief. Ausserdem war das PWM Signal für die ESC's nicht gut. Mittels Internetrecherchen wurde geschaut, was für Mikrocontroller in den meisten Quadrocopter verbaut sind. So wurde die Webseite von Oscar Liang entdeckt \cite{website:OS_MCU_COLL}. Dort sind die einzelnen Mikrocontroller mit ihren Vor-und Nachteilen aufgelistet. Für die Arbeit wurde entschieden einen STM32F7xx Mikrocontroller zu benutzen. Als nächstes wurde überlegt, was für ein Gyro-und Beschleunigungssensor benutzt werden sollte. Vom letzten Versuch blieb noch eine MPU-6050 IMU übrig, aber da das I2C-Protokoll langsam war, wurde entschieden, diesen als Backup zu benutzen und es wurde recherchiert, was für IMU's die komerziellen Flightcontroller benutzen \cite{website:IMU_COLL}. Als Empfänger wurde ein nRF24L01-Breakoutboard benutzt. Damit in den Versuchen Daten aufgezeichnet werden können, wurde noch ein microSD-Karten Schnittstelle eingebaut, um Daten zu loggen. Damit eine Serielle-Verbindung zum PC hergestellt werden kann, wird ein FTDI-Chip (FT232RL) benutzt, der das UART-Protokoll für den PC übersetzt. Als Nebenmikrocontroller wurde ein ATMega328 benutzt, dieser ist für das Auslesen der Höhensensoren und des PulsPausenModulations-Signal (PPM) zuständig. Dieses wird benötigt, falls die selbstgebaute Fernbedienung nicht funktionieren würde und eine Kommerzielle stattdessen benutzt werden müsste. Als Höhensensor wurden ein Barometer-IC (BMP280) und Ultraschallsensoren benutzt. Da die ESC's einen 5V Versorgungsausgang haben, muss diese für die IC's auf 3.3V gereglet werden. Dies wird mit einem LM3940 Spannungsregler realisiert. \\ \\ Die Leiterplatte wurde mit den Program Eagle von Autodesk designt. In dem Programm kann man die einzelnen Bauteile zusammensetzen und verbinden (Siehe Abb.\ref{eagle}). Nach dem Datenblatt der einzelnen IC's wurden die nötigen Kondensatoren und Wiederstände gesetzt. Die Schaltbilder für die einzelnen IC's, die nicht schon in der Standartbibliothek vorhanden sind, wurden aus dem Internet heruntergeladen. Nach mehreren Kontrollen wurde die Leiterplatte bei JLCPCB und die einzelenen Teile bei LCSC, Arrow, RS und Conrad bestellt. Dazu wurde noch eine Schablone für das SMD-löten bestellt. 
+Zuerst wurde überlegt, was für ein Mikrocontroller benutzt werden sollte. Bei den ersten Versuchen wurde ein Raspberry Pi benutzt, dort gingen die Versuche schief, da dieser kein konstantes Regelverhalten aufzeigte und desweiteren ein Betriebsystem neben dem Flightcontroller lief. Ausserdem war das PWM Signal für die ESC's nicht gut. Mittels Internetrecherchen wurde geschaut, was für Mikrocontroller in den meisten Quadrocopter verbaut sind. So wurde die Webseite von Oscar Liang entdeckt \cite{website:OS_MCU_COLL}. Dort sind die einzelnen Mikrocontroller mit ihren Vor-und Nachteilen aufgelistet. Für die Arbeit wurde entschieden einen STM32F7xx Mikrocontroller zu benutzen. Als nächstes wurde überlegt, was für ein Gyro-und Beschleunigungssensor benutzt werden sollte. Vom letzten Versuch blieb noch eine MPU-6050 IMU übrig, aber da das I2C-Protokoll langsam war, wurde entschieden, diesen als Backup zu benutzen und es wurde recherchiert, was für IMU's die komerziellen Flightcontroller benutzen \cite{website:IMU_COLL}. Als Empfänger wurde ein nRF24L01-Breakoutboard benutzt. Damit in den Versuchen Daten aufgezeichnet werden können, wurde noch ein microSD-Karten Schnittstelle eingebaut, um Daten zu loggen. Damit eine Serielle-Verbindung zum PC hergestellt werden kann, wird ein FTDI-Chip (FT232RL) benutzt, der das UART-Protokoll für den PC übersetzt. Als Nebenmikrocontroller wurde ein ATMega328 benutzt, dieser ist für das Auslesen der Höhensensoren und des PulsPausenModulations-Signal (PPM) zuständig. Dieses wird benötigt, falls die selbstgebaute Fernbedienung nicht funktionieren würde und eine Kommerzielle stattdessen benutzt werden müsste. Als Höhensensor wurden ein Barometer-IC (BMP280) und Ultraschallsensoren benutzt. Da die ESC's einen 5V Versorgungsausgang haben, muss diese für die IC's auf 3.3V gereglet werden. Dies wird mit einem LM3940 Spannungsregler realisiert. \\ \\ Die Leiterplatte wurde mit den Program Eagle von Autodesk designt. In dem Programm kann man die einzelnen Bauteile zusammensetzen und verbinden (Siehe Abb.\ref{eagle}). Nach dem Datenblatt der einzelnen IC's wurden die nötigen Kondensatoren und Wiederstände gesetzt. Die Schaltbilder für die einzelnen IC's, die nicht schon in der Standartbibliothek vorhanden sind, wurden aus dem Internet heruntergeladen. Nach mehreren Kontrollen wurde die Leiterplatte bei JLCPCB und die einzelenen Teile bei LCSC, Arrow, RS und Conrad bestellt. Dazu wurde noch eine Schablone für das SMD-löten bestellt. (Board und Schaltplan siehe Anhang 3)
 
 \begin{figure}[h]
 \centering
@@ -535,7 +535,9 @@ Zum Schluss möchte ich mich noch an dem Physiklabroant Bruno Turnherr bedanken,
 \end{figure}
 \centering\large{\url{https://github.com/Pluscrafter/SHARKSKY/tree/Abgabe}}
 \newpage
+\begin{flushleft} 
 \section{Anhang 2 Beweis und Auflösung des DLPF}
+\end{flushleft}
 Auflösung 1:
 \begin{align*} 
 x_{i}-y_{i}&=RC\cdot \frac{y_{i}-y_{i-1}}{\Delta t} \\ 
@@ -558,5 +560,12 @@ RC &= \Delta t \frac{1-\alpha}{\alpha}\\
 \alpha &= \frac{\Delta t}{\frac{1+2\pi f_{c}\Delta t}{2\pi f_{c}}} \\
 \alpha &= \frac{2\pi f_{c}\Delta t}{1+2\pi f_{c}\Delta t} 
 \end{align*}
+\newpage
+\begin{flushleft} 
+\section[Anhang 3 Board und Schaltplan]{Anhang 3 Board und Schaltplan}
+\end{flushleft}
+\begin{center}
+\includegraphics[width=\textwidth]{Board.png}
+\end{center}
 
 \end{document}
