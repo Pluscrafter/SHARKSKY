@@ -1,17 +1,17 @@
 [0] Config.pm:304> INFO - This is Biber 2.13
 [0] Config.pm:307> INFO - Logfile is 'Maturarbeit.blg'
-[29] biber-MSWIN64:315> INFO - === 
-[46] Biber.pm:375> INFO - Reading 'Maturarbeit.bcf'
-[152] Biber.pm:905> INFO - Found 15 citekeys in bib section 0
-[170] Biber.pm:4196> INFO - Processing section 0
-[171] Utils.pm:75> INFO - Globbing data source 'Maturarbeit.bib'
-[180] Utils.pm:91> INFO - Globbed data source 'Maturarbeit.bib' to Maturarbeit.bib
-[195] Biber.pm:4373> INFO - Looking for bibtex format file 'Maturarbeit.bib' for section 0
-[199] bibtex.pm:1462> INFO - LaTeX decoding ...
-[224] bibtex.pm:1281> INFO - Found BibTeX data source 'Maturarbeit.bib'
-[310] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[310] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
-[310] Biber.pm:4024> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'de-DE'
-[310] Biber.pm:4030> INFO - No sort tailoring available for locale 'de-DE'
-[328] bbl.pm:648> INFO - Writing 'Maturarbeit.bbl' with encoding 'UTF-8'
-[333] bbl.pm:751> INFO - Output to Maturarbeit.bbl
+[47] biber-MSWIN64:315> INFO - === 
+[71] Biber.pm:375> INFO - Reading 'Maturarbeit.bcf'
+[305] Biber.pm:905> INFO - Found 15 citekeys in bib section 0
+[347] Biber.pm:4196> INFO - Processing section 0
+[349] Utils.pm:75> INFO - Globbing data source 'Maturarbeit.bib'
+[363] Utils.pm:91> INFO - Globbed data source 'Maturarbeit.bib' to Maturarbeit.bib
+[380] Biber.pm:4373> INFO - Looking for bibtex format file 'Maturarbeit.bib' for section 0
+[384] bibtex.pm:1462> INFO - LaTeX decoding ...
+[414] bibtex.pm:1281> INFO - Found BibTeX data source 'Maturarbeit.bib'
+[535] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[536] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[536] Biber.pm:4024> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'de-DE'
+[536] Biber.pm:4030> INFO - No sort tailoring available for locale 'de-DE'
+[561] bbl.pm:648> INFO - Writing 'Maturarbeit.bbl' with encoding 'UTF-8'
+[576] bbl.pm:751> INFO - Output to Maturarbeit.bbl
