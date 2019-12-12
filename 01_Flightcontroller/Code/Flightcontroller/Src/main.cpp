@@ -224,7 +224,7 @@ double						tim = 0;								//!< elapsed time
 char 						logbuf[10000];							//!< write buffer
 std::string 				sbuf = " ";								//!< tmp write buffer in loop
 
-char						gpsbuffer[80];
+char				gpsbuffer[80];
 
 
 void HAL_SPI_RxCpltCallback(SPI_HandleTypeDef *hspi){
@@ -564,6 +564,16 @@ int main(void)
 	  f_ypr[0] = f_ypr[0] - (alpha * (f_ypr[0] - icm.t_ypr[0]));
 	  f_ypr[1] = f_ypr[1] - (alpha * (f_ypr[1] - icm.t_ypr[1]));
 
+	  if (isnan(icm.t_ypr[0])){
+		  icm.t_ypr[0] = 0;
+	  }
+
+	  if (isnan(icm.t_ypr[1])){
+		  icm.t_ypr[1] = 0;
+	  }
+
+
+
 	 // recvData.throttle = 200;
 	  if(recvData.throttle < 100){
 		  z_point[0] = f_ypr[0];
@@ -626,6 +636,14 @@ int main(void)
 
 	// read data from radio buffer
     loopRadio();
+
+    if (icm.t_ypr[1] > 25 || icm.t_ypr[1] < -25){
+		recvData.throttle = 0;
+	}
+
+	  if (icm.t_ypr[0] > 25 || icm.t_ypr[0] < -25){
+		  recvData.throttle = 0;
+	}
 
     //calculate PID error and PID from dlpf value
 #if PID_TRUE_ANGLE == 1
