@@ -266,11 +266,6 @@ int main(void)
   /* USER CODE BEGIN 1 */
 
 	//init PID values
-
-
-
-
-
 	pid_gain_am[0][0] = 0;
 	pid_gain_am[0][1] = 0;
 	pid_gain_am[0][2] = 0;
