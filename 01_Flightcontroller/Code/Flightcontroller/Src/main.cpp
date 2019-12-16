@@ -596,9 +596,9 @@ int main(void)
 	  f_ypr[0] -= z_point[0];
 	  f_ypr[1] -= z_point[1];
 
-	  ackData.yaw = int(f_ypr[2]*100);
-	  ackData.pitch = int(f_ypr[1]*100);
-	  ackData.roll = int(f_ypr[0]*100);
+	  ackData.yaw = int(icm.t_ypr[2]*100);
+	  ackData.pitch = int(icm.t_ypr[1]*100);
+	  ackData.roll = int(icm.t_ypr[0]*100);
 
 
 #endif
@@ -648,8 +648,8 @@ int main(void)
     //calculate PID error and PID from dlpf value
 #if PID_TRUE_ANGLE == 1
 	error[0] = f_ypr[2] - recvData.yaw;
-	error[1] = recvData.pitch - f_ypr[1] ;
-	error[2] = recvData.roll - f_ypr[0];
+	error[1] = recvData.pitch - icm.t_ypr[1] ;
+	error[2] = recvData.roll - icm.t_ypr[0];
 
 	PID_TrueAngle();
 	PID_AngleMotion();
