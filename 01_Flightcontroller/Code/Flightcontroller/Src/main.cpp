@@ -63,8 +63,15 @@
 #define PID_TRUE_ANGLE			1
 #define PID_ANGLE_MOTION		0
 
-#define USB_MODE true
-#define OSD_MODE false
+#define USB_MODE 				true
+#define OSD_MODE 				false
+
+#define DLPF_FREQ_YAW			5.0
+#define DLPF_FREQ_PITCHROLL		200.0
+
+#define CUTOFF_ANGLE			40.0
+
+#define MAX_CORRECTION			600
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -209,7 +216,6 @@ float 						previous_error[3];						//!< define previous error for D-Gain
 //Digital Low-pass DLPF
 volatile float				alpha;									//!< define alpha for DLPF
 volatile float				alpha2;									//!< define alpha for DLPF
-uint16_t					fc = 80;									//!< define alpha for DLPF
 volatile float 				f_ypr[3];								//!< define filtered true angle values
 float						z_point[2]	= {0,0};
 
@@ -526,9 +532,6 @@ int main(void)
 #if ICM20689_ENABLE == 1
 
 	  //read values from IMU
-	  //imu.ReadGyro();
-	  //imu.ReadAccel();
-
 	  //calculate angle with acceleration
 	  float fullvec = sqrt(pow(icm.accel[0],2) + pow(icm.accel[1],2) + pow(icm.accel[2],2)); //calculate full vector with Pythagoras' theorem
 	  if(fullvec == 0) {fullvec = 1;}
@@ -542,8 +545,8 @@ int main(void)
 	  icm.t_ypr[1] += icm.ypr[1]*lptime;
 	  icm.t_ypr[2] += icm.ypr[2]*lptime;
 
-	  alpha2 = (3 * lptime) / (1 + 3 * lptime);
-	  f_ypr[2] = f_ypr[2] - (alpha * (f_ypr[2] - icm.ypr[2]));
+	  alpha2 = (DLPF_FREQ_YAW * lptime) / (1 + DLPF_FREQ_YAW * lptime);
+	  f_ypr[2] = f_ypr[2] - (alpha2 * (f_ypr[2] - icm.ypr[2]));
 
 	  //roll and pitch tuning on yaw movement https://www.youtube.com/watch?v=4BoIE8YQwM8 17.10.2019
 	  icm.t_ypr[0] -= icm.t_ypr[1] * sin(icm.ypr[2] * 0.017453293 * lptime);
@@ -555,9 +558,9 @@ int main(void)
 
 	  //Digital Low Pass filtering https://kiritchatterjee.wordpress.com/2014/11/10/a-simple-digital-low-pass-filter-in-c/ [9.10.19 22:52]
 	  //yet only for true angle
-	  alpha = (fc * lptime) / (1 + fc * lptime);
-	  f_ypr[0] = f_ypr[0] - (alpha * (f_ypr[0] - icm.t_ypr[0]));
-	  f_ypr[1] = f_ypr[1] - (alpha * (f_ypr[1] - icm.t_ypr[1]));
+	  //alpha = (DLPF_FREQ_PITCHROLL * lptime) / (1 + DLPF_FREQ_PITCHROLL * lptime);
+	  //f_ypr[0] = f_ypr[0] - (alpha * (f_ypr[0] - icm.t_ypr[0]));
+	  //f_ypr[1] = f_ypr[1] - (alpha * (f_ypr[1] - icm.t_ypr[1]));
 
 	  if (isnan(icm.t_ypr[0])){
 		  icm.t_ypr[0] = 0;
@@ -571,8 +574,8 @@ int main(void)
 
 	 // recvData.throttle = 200;
 	  if(recvData.throttle < 100){
-		  z_point[0] = f_ypr[0];
-		  z_point[1] = f_ypr[1];
+		  //z_point[0] = f_ypr[0];
+		  //z_point[1] = f_ypr[1];
 
 		  	pid_gain_am[0][0] = recvData.y_P/100.0;
 			pid_gain_am[0][1] = recvData.y_I/100.0;
@@ -586,10 +589,12 @@ int main(void)
 			pid_gain_ta[2][1] = recvData.rp_I/100.0;
 			pid_gain_ta[2][2] = recvData.rp_D/100.0;
 
+	  }else{
+		  //f_ypr[0] -= z_point[0];
+		  //f_ypr[1] -= z_point[1];
 	  }
 
-	  f_ypr[0] -= z_point[0];
-	  f_ypr[1] -= z_point[1];
+
 
 	  ackData.yaw = int(icm.t_ypr[2]*100);
 	  ackData.pitch = int(icm.t_ypr[1]*100);
@@ -632,11 +637,11 @@ int main(void)
 	// read data from radio buffer
     loopRadio();
 
-    if (icm.t_ypr[1] > 25 || icm.t_ypr[1] < -25){
+    if (icm.t_ypr[1] > CUTOFF_ANGLE || icm.t_ypr[1] < -CUTOFF_ANGLE){
 		recvData.throttle = 0;
 	}
 
-	  if (icm.t_ypr[0] > 25 || icm.t_ypr[0] < -25){
+	  if (icm.t_ypr[0] > CUTOFF_ANGLE || icm.t_ypr[0] < -CUTOFF_ANGLE){
 		  recvData.throttle = 0;
 	}
 
@@ -743,12 +748,12 @@ void PID_TrueAngle(){
 
 	// set max PID correction
 	for (uint8_t i = 0; i<3;i++){
-		if(pid_ta[i] > 400){
-			pid_ta[i] = 400;
+		if(pid_ta[i] > MAX_CORRECTION){
+			pid_ta[i] = MAX_CORRECTION;
 		}
 
-		if(pid_ta[i] < -400){
-			pid_ta[i] = -400;
+		if(pid_ta[i] < -MAX_CORRECTION){
+			pid_ta[i] = -MAX_CORRECTION;
 		}
 	}
 }
@@ -768,12 +773,12 @@ void PID_AngleMotion(){
 
 	// set max PID correction
 	for (uint8_t i = 0; i<3;i++){
-		if(pid_am[i] > 400){
-			pid_am[i] = 400;
+		if(pid_am[i] > MAX_CORRECTION){
+			pid_am[i] = MAX_CORRECTION;
 		}
 
-		if(pid_am[i] < -400){
-			pid_am[i] = -400;
+		if(pid_am[i] < -MAX_CORRECTION){
+			pid_am[i] = -MAX_CORRECTION;
 		}
 	}
 }
