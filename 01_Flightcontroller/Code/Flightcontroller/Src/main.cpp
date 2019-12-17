@@ -576,22 +576,24 @@ int main(void)
 	  if(recvData.throttle < 100){
 		  //z_point[0] = f_ypr[0];
 		  //z_point[1] = f_ypr[1];
+		z_point[0] = icm.t_ypr[0];
+		z_point[1] = icm.t_ypr[1];
 
-		  	pid_gain_am[0][0] = recvData.y_P/100.0;
-			pid_gain_am[0][1] = recvData.y_I/100.0;
-			pid_gain_am[0][2] = recvData.y_D/100.0;
+		pid_gain_am[0][0] = recvData.y_P/100.0;
+		pid_gain_am[0][1] = recvData.y_I/100.0;
+		pid_gain_am[0][2] = recvData.y_D/100.0;
 
-			pid_gain_ta[1][0] = recvData.rp_P/100.0;
-			pid_gain_ta[1][1] = recvData.rp_I/100.0;
-			pid_gain_ta[1][2] = recvData.rp_D/100.0;
+		pid_gain_ta[1][0] = recvData.rp_P/100.0;
+		pid_gain_ta[1][1] = recvData.rp_I/100.0;
+		pid_gain_ta[1][2] = recvData.rp_D/100.0;
 
-			pid_gain_ta[2][0] = recvData.rp_P/100.0;
-			pid_gain_ta[2][1] = recvData.rp_I/100.0;
-			pid_gain_ta[2][2] = recvData.rp_D/100.0;
+		pid_gain_ta[2][0] = recvData.rp_P/100.0;
+		pid_gain_ta[2][1] = recvData.rp_I/100.0;
+		pid_gain_ta[2][2] = recvData.rp_D/100.0;
 
 	  }else{
-		  //f_ypr[0] -= z_point[0];
-		  //f_ypr[1] -= z_point[1];
+		  icm.t_ypr[0] -= z_point[0];
+		  icm.t_ypr[1] -= z_point[1];
 	  }
 
 
