@@ -326,6 +326,7 @@ void TIM4_IRQHandler(void)
 		}else{
 			tmp[0] = ACCEL_XOUT_H|0x80;
 		}
+		// IMU SPI NSS LOW
 		HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_RESET);
 
 		HAL_SPI_Transmit(&hspi3,(uint8_t *)tmp, 1, HAL_MAX_DELAY);
