@@ -78,7 +78,7 @@ namespace FLIGHTCONTROLLER {
 		 *	Constructor. Not used because this is a 'static' class
 		 */
 
-		virtual 					~Flightcontroller();
+		virtual 				~Flightcontroller();
 		/**
 		 *	Destructor. Not used because this is a 'static' class
 		 */
