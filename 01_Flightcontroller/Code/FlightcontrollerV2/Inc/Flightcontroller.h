@@ -2,15 +2,15 @@
  * Flightcontroller.h
  * Author: Pluscrafter
  *
- * Flightcontroller class only static metohdes because there can only be one instance of the FC
+ * Flightcontroller class
  */
 
 #ifndef FLIGHTCONTROLLER_H_
 #define FLIGHTCONTROLLER_H_
 
-/**
+/**************************************************
  * Defines for disable or enable various features.
- */
+ **************************************************/
 
 #define ICM20689_ENABLE 		1
 
@@ -59,7 +59,8 @@
 /**********************
  * Includes of Sensors
  **********************/
-
+#include "RF24.h"
+#include "ICM20689.h"
 
 /**
  * NAMESPACE for FC
@@ -78,12 +79,12 @@ namespace FLIGHTCONTROLLER {
 		 *	Constructor. Not used because this is a 'static' class
 		 */
 
-		virtual 				~Flightcontroller();
+		virtual 					~Flightcontroller();
 		/**
 		 *	Destructor. Not used because this is a 'static' class
 		 */
 
-		void					Init();
+		void						Init();
 		/**
 		 * This function initialize the components of the FC.
 		 *
@@ -96,7 +97,7 @@ namespace FLIGHTCONTROLLER {
 		 * 		-# Init SDCard
 		 */
 
-		void					Loop();
+		void						Loop();
 		/**
 		 * This function is the loop function of the FC
 		 *
@@ -120,6 +121,12 @@ namespace FLIGHTCONTROLLER {
 		 * PUBLIC VARIABLES
 		 *******************/
 
+		/******************
+		 * FC Variables
+		 ******************/
+
+		static volatile double		looptime;
+
 
 	private:
 
@@ -127,17 +134,17 @@ namespace FLIGHTCONTROLLER {
 		 * PRIVATE FUNCTIONS
 		 ********************/
 
-		void	 				PID_TrueAngle();
+		void	 					PID_TrueAngle();
 		/**
 		 * Calculate true angle pid.
 		 */
 
-		void	 				PID_AngleMotion();
+		void	 					PID_AngleMotion();
 		/**
 		 * Calculate angle motion pid.
 		 */
 
-		void	 				MotorCalibration();
+		void	 					MotorCalibration();
 		/**
 		 * Calibrate ESC
 		 *
@@ -155,12 +162,12 @@ namespace FLIGHTCONTROLLER {
 		 * 	- calibration complete
 		 */
 
-		void	 				LoopRadio();
+		void	 					LoopRadio();
 		/**
 		 * read radio if data is aviable
 		 */
 
-		void	 				SetMotorSpeed();
+		void	 					SetMotorSpeed();
 		/**
 		 * set motor speed according to PID-Values
 		 *
@@ -168,21 +175,23 @@ namespace FLIGHTCONTROLLER {
 		 * 	- set PWM for ESC
 		 */
 
-		void					SetPIDGain();
+		void						SetPIDGain();
 
-		void 					CalculateError();
+		void 						CalculateError();
 
-		void					InitMotors();
+		void						InitMotors();
 
-		void					InitGimbal();
+		void						InitGimbal();
 
-		void					InitRadio();
+		void						InitRadio();
 
-		void					InitDAC();
+		void						InitDAC();
 
-		void					InitCounter();
+		void						InitCounter();
 
-		void					InitSDCard();
+		void						InitSDCard();
+
+		void						InitUSBOSD();
 
 		/********************
 		 * PRIVATE VARIABLES
@@ -192,8 +201,13 @@ namespace FLIGHTCONTROLLER {
 		 * FC Variables
 		 ******************/
 
-		bool 						osdusb 				= USB_MODE;
-		double						looptime			= 0;
+		bool 						osdusb 				= OSD_MODE;
+
+		/******************
+		 * IMU Variables
+		 ******************/
+
+		SENSOR::ICM20689			imu					= SENSOR::ICM20689(hspi3, IMU_NSS_GPIO_Port, IMU_NSS_Pin);
 
 		/****************
 		 * PID Variables
@@ -288,11 +302,13 @@ namespace FLIGHTCONTROLLER {
 		AckData 					ackData;									//!< acknowlegement data
 		RadioData 					recvData;									//!< receive data
 
+		RF24 						radio = RF24(GPIOC, 6, GPIOB, 12, &hspi2);	//!< define radio (nRF24L01)
+
 		/******************
 		 * DAC Variables
 		 ******************/
 
-		uint8_t  sine[256] = { //!< 8bit sine for test with DAC
+		uint8_t  sine[256] = { 													//!< 8bit sine for test with DAC
 		  0x80, 0x83, 0x86, 0x89, 0x8C, 0x90, 0x93, 0x96,
 		  0x99, 0x9C, 0x9F, 0xA2, 0xA5, 0xA8, 0xAB, 0xAE,
 		  0xB1, 0xB3, 0xB6, 0xB9, 0xBC, 0xBF, 0xC1, 0xC4,

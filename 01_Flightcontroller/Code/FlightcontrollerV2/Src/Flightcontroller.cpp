@@ -9,6 +9,8 @@
 
 namespace FLIGHTCONTROLLER {
 
+	volatile double Flightcontroller::looptime = 0;
+
 	Flightcontroller::Flightcontroller() {
 		// TODO Auto-generated constructor stub
 
@@ -26,17 +28,18 @@ namespace FLIGHTCONTROLLER {
 		InitGimbal();
 		InitDAC();
 
-		//Set UART to USB or OSD Mode
-		if(HAL_GPIO_ReadPin(USBOSD_GPIO_Port, USBOSD_Pin) == GPIO_PIN_RESET){
-			osdusb = USB_MODE;
-			MotorCalibration();
-			HAL_GPIO_WritePin(MOD0_LED_GPIO_Port, MOD0_LED_Pin, GPIO_PIN_SET);
-		}else{
-			osdusb = OSD_MODE;
-			HAL_GPIO_WritePin(MOD1_LED_GPIO_Port, MOD1_LED_Pin, GPIO_PIN_SET);
-		}
+		InitUSBOSD();
 
 		InitRadio();
+
+		if(!imu.initICM()){
+			for(;;){
+				HAL_GPIO_TogglePin(INIT_OK_GPIO_Port, INIT_OK_Pin);
+				HAL_Delay(100);
+			}
+		}
+
+		HAL_TIM_Base_Start_IT(&htim4); //start IMU trigger
 
 		// initalisation is OK
 		HAL_Delay(1000);
@@ -102,11 +105,39 @@ namespace FLIGHTCONTROLLER {
 	}
 
 	void Flightcontroller::InitRadio(){
+		const uint64_t pipe = 0xE8E8F0F0E2;	//pipe address
+		radio.begin();
+		radio.setPayloadSize(32);
+		radio.setChannel(125);
+		radio.setDataRate(RF24_250KBPS);
+		radio.setPALevel(RF24_PA_MAX);
+		radio.setAutoAck(true);
+		radio.enableDynamicPayloads();
+		radio.enableAckPayload();
+		radio.openReadingPipe(1, pipe);
 
+		radio.printDetails();
+
+		radio.startListening();
 	}
 
 	void Flightcontroller::InitSDCard(){
+		//https://www.youtube.com/watch?v=0NbBem8U80Y [11.10.19 14:22] // https://drive.google.com/file/d/1ZunUVcv1RYljzmQe1B3sUUbpJ6705hpM/view
+		if(f_mount(&SDFatFS, SDPath, 1) == FR_OK){
+			char mfil[] = "TESTEXT";
+			if(f_open(&SDFile, mfil, FA_WRITE|FA_CREATE_ALWAYS) == FR_OK){
+				char buf[] = "Hello World";
+				f_write(&SDFile, buf, sizeof(buf), &reSD);
+			}
+			f_close(&SDFile);
+		}
 
+		//Init and create new LOG file
+		char mfil[] = "LOG";
+		if(f_open(&SDFile, mfil, FA_WRITE|FA_CREATE_ALWAYS) == FR_OK){
+
+		}
+		f_close(&SDFile);
 	}
 
 	void Flightcontroller::LoopRadio(){
@@ -146,13 +177,26 @@ namespace FLIGHTCONTROLLER {
 		__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_4,motorSpeed[3]);
 	}
 
-	void Flightcontroller::CalculateError(){
+	void Flightcontroller::InitUSBOSD(){
+		//Set UART to USB or OSD Mode
+		if(HAL_GPIO_ReadPin(USBOSD_GPIO_Port, USBOSD_Pin) == GPIO_PIN_RESET){
+			osdusb = USB_MODE;
+			MotorCalibration();
+			HAL_GPIO_WritePin(MOD0_LED_GPIO_Port, MOD0_LED_Pin, GPIO_PIN_SET);
+		}else{
+			osdusb = OSD_MODE;
+			HAL_GPIO_WritePin(MOD1_LED_GPIO_Port, MOD1_LED_Pin, GPIO_PIN_SET);
+		}
+	}
 
+	void Flightcontroller::CalculateError(){
+		error[0] = imu.f_ypr[2] - recvData.yaw;
+		error[1] = recvData.pitch - imu.t_ypr[1] ;
+		error[2] = recvData.roll - imu.t_ypr[0];
 	}
 
 	void Flightcontroller::PID_TrueAngle(){
 		for(uint8_t i = 0; i < 3; i++){
-
 			//calc pid
 			pid_TA_P[i] = error[i] * pidGain_TA_P[i];
 			pid_TA_I[i] += error[i] * pidGain_TA_I[i] * looptime;
@@ -172,7 +216,6 @@ namespace FLIGHTCONTROLLER {
 
 	void Flightcontroller::PID_AngleMotion(){
 		for(uint8_t i = 0; i < 3; i++){
-
 			//calc pid
 			pid_AM_P[i] = error[i] * pidGain_AM_P[i];
 			pid_AM_I[i] += error[i] * pidGain_AM_I[i] * looptime;
