@@ -226,12 +226,13 @@ double						tim = 0;								//!< elapsed time
 char 						logbuf[10000];							//!< write buffer
 std::string 				sbuf = " ";								//!< tmp write buffer in loop
 
-<<<<<<< HEAD
-char						gpsbuffer[80];							//!< GPSBuffer notused
-=======
-char				gpsbuffer[80];
->>>>>>> master
 
+char						gpsbuffer[80];							//!< GPSBuffer notused
+
+//Zeropoint
+
+float						z_point_avg[2];
+int							avg_count = 100;
 
 void HAL_SPI_RxCpltCallback(SPI_HandleTypeDef *hspi){
 	//read IMU GYRO ACCEL alternating
@@ -575,14 +576,18 @@ int main(void)
 		  icm.t_ypr[1] = 0;
 	  }
 
+	  if(avg_count >= 0){
+		  z_point_avg[0] += icm.t_ypr[0];
+		  z_point_avg[1] += icm.t_ypr[1];
 
+		  avg_count--;
+	  }else if(avg_count == -1){
+		  z_point[0] = z_point_avg[0]/100;
+		  z_point[1] = z_point_avg[1]/100;
+		  HAL_GPIO_WritePin(INIT_OK_GPIO_Port, INIT_OK_Pin, GPIO_PIN_RESET);
+	  }
 
-	 // recvData.throttle = 200;
 	  if(recvData.throttle < 100){
-		  //z_point[0] = f_ypr[0];
-		  //z_point[1] = f_ypr[1];
-		z_point[0] = icm.t_ypr[0];
-		z_point[1] = icm.t_ypr[1];
 
 		pid_gain_am[0][0] = recvData.y_P/100.0;
 		pid_gain_am[0][1] = recvData.y_I/100.0;
@@ -651,6 +656,11 @@ int main(void)
 	  if (icm.t_ypr[0] > CUTOFF_ANGLE || icm.t_ypr[0] < -CUTOFF_ANGLE){
 		  recvData.throttle = 0;
 	}
+
+	  if(avg_count >= 0){
+		  recvData.throttle = 0;
+	  }
+
 
     //calculate PID error and PID from dlpf value
 #if PID_TRUE_ANGLE == 1
@@ -791,10 +801,6 @@ void PID_AngleMotion(){
 }
 
 void setMotorSpeed(){
-
-	if (timnodata >= 5){
-		recvData.throttle = 0;
-	}
 
 	// throttle value under 100 no movement of motors
 	if (recvData.throttle < 100){
