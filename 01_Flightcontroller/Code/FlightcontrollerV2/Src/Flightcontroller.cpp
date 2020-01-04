@@ -50,6 +50,8 @@ namespace FLIGHTCONTROLLER {
 	void Flightcontroller::Loop(){
 		double start = DWT->CYCCNT; //read value from counter register
 		elapsedTime += looptime;
+		imu.lptime = looptime;
+		imu.calculateICM();
 
 		SetPIDGain();
 
@@ -116,7 +118,7 @@ namespace FLIGHTCONTROLLER {
 		radio.enableAckPayload();
 		radio.openReadingPipe(1, pipe);
 
-		radio.printDetails();
+		//radio.printDetails();
 
 		radio.startListening();
 	}
@@ -141,7 +143,10 @@ namespace FLIGHTCONTROLLER {
 	}
 
 	void Flightcontroller::LoopRadio(){
-
+		if(radio.available()){
+			radio.read(&recvData,sizeof(RadioData));
+			radio.writeAckPayload(1,&ackData,sizeof(AckData));
+		}
 	}
 
 	void Flightcontroller::SetMotorSpeed(){

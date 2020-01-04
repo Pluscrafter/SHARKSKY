@@ -61,7 +61,6 @@
  **********************/
 #include "RF24.h"
 #include "ICM20689.h"
-
 /**
  * NAMESPACE for FC
  */
@@ -127,6 +126,11 @@ namespace FLIGHTCONTROLLER {
 
 		static volatile double		looptime;
 
+		/******************
+		 * IMU Variables
+		 ******************/
+
+		SENSOR::ICM20689			imu					= SENSOR::ICM20689(hspi3, IMU_NSS_GPIO_Port, IMU_NSS_Pin);
 
 	private:
 
@@ -203,11 +207,7 @@ namespace FLIGHTCONTROLLER {
 
 		bool 						osdusb 				= OSD_MODE;
 
-		/******************
-		 * IMU Variables
-		 ******************/
 
-		SENSOR::ICM20689			imu					= SENSOR::ICM20689(hspi3, IMU_NSS_GPIO_Port, IMU_NSS_Pin);
 
 		/****************
 		 * PID Variables

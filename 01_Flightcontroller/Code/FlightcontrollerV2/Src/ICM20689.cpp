@@ -41,6 +41,61 @@ namespace SENSOR {
 		return true;
 	}
 
+	float ICM20689::fastsqrt(float val) { //https://bits.stephan-brumme.com/squareRoot.html
+		unsigned int i = *(unsigned int*) &val;
+		// adjust bias
+		i  += 127 << 23;
+		// approximation of square root
+		i >>= 1;
+		return *(float*) &i;
+	}
+
+	float ICM20689::fastsin(float val){ //sinus polynom
+		return val - ((val*val*val)/6) + ((val*val*val*val*val)/120) - ((val*val*val*val*val*val*val)/5040);
+	}
+
+	float ICM20689::fastasin(float x){//https://en.wikipedia.org/wiki/Inverse_trigonometric_functions#Infinite_series
+		return x+(0.5)*((x*x*x)/3)+(0.375)*((x*x*x*x*x)/5)+(0.3125)*((x*x*x*x*x*x*x)/7);
+	}
+
+	void ICM20689::calculateICM(){
+		  fullvec = fastsqrt(accel[0]*accel[0] + accel[1]*accel[1] + accel[2]*accel[2]); //calculate full vector with Pythagoras' theorem
+		  if(fullvec == 0) {
+			  fullvec = 1;
+		  }
+
+		  acangle[0] = fastasin(accel[0]/fullvec) * -57.29577951;	//calculate acceleration sin-1(angle/fullvec)
+		  acangle[1] = fastasin(accel[1]/fullvec) * 57.29577951;
+
+		  //calculate angle with angular motion
+		  t_ypr[0] += ypr[0]*lptime;
+		  t_ypr[1] += ypr[1]*lptime;
+		  t_ypr[2] += ypr[2]*lptime;
+
+
+		  alpha2 = (DLPF_FREQ_YAW * lptime) / (1 + DLPF_FREQ_YAW * lptime);
+		  f_ypr[2] = f_ypr[2] - (alpha2 * (f_ypr[2] - ypr[2]));
+
+		  //roll and pitch tuning on yaw movement https://www.youtube.com/watch?v=4BoIE8YQwM8 17.10.2019
+		  t_ypr[0] -= t_ypr[1] * fastsin(ypr[2] * 0.017453293 * lptime);
+		  t_ypr[1] += t_ypr[0] * fastsin(ypr[2] * 0.017453293 * lptime);
+
+		  //complementary filter
+		  t_ypr[0] = t_ypr[0] * 0.9996 + acangle[1] * 0.0004;	// angle is mixed up
+		  t_ypr[1] = t_ypr[1] * 0.9996 + acangle[0] * 0.0004;
+
+		  //is nan error
+		  if (isnan(t_ypr[0])){
+			  t_ypr[0] = 0;
+		  }
+
+		  if (isnan(t_ypr[1])){
+			  t_ypr[1] = 0;
+		  }
+
+
+	}
+
 	bool ICM20689::whoami(){
 
 		if(readRegister(WHO_AM_I) != 0x98){

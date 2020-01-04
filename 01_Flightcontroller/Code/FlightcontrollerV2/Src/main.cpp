@@ -34,6 +34,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "Flightcontroller.h"
+#include "IMU.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -58,6 +59,37 @@
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
+
+
+
+void HAL_SPI_RxCpltCallback(SPI_HandleTypeDef *hspi){
+	//read IMU GYRO ACCEL alternating
+	if (icm.init == true){
+		int16_t r_gyro[3],r_accel[3];
+
+		if(icm.ac == 0){
+			r_gyro[0] = (icm.buf[0] << 8) | icm.buf[1];
+			r_gyro[1] = (icm.buf[2] << 8) | icm.buf[3];
+			r_gyro[2] = (icm.buf[4] << 8) | icm.buf[5];
+
+			for(int i = 0; i<3; i++){
+				icm.ypr[i] = r_gyro[i] / 65.5;
+			}
+			icm.ac = 1;
+		}else{
+			r_accel[0] = (icm.buf[0] << 8) | icm.buf[1];
+			r_accel[1] = (icm.buf[2] << 8) | icm.buf[3];
+			r_accel[2] = (icm.buf[4] << 8) | icm.buf[5];
+
+			for(int i = 0; i<3; i++){
+				icm.accel[i] =  r_accel[i] / 4096.0;
+			}
+			icm.ac = 0;
+		}
+		//NSS HIGH IMU SPI
+		HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_SET);
+	}
+}
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -112,6 +144,7 @@ int main(void)
   MX_TIM6_Init();
   MX_TIM4_Init();
   /* USER CODE BEGIN 2 */
+
   fc.Init();
   /* USER CODE END 2 */
 
@@ -119,6 +152,12 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  for (uint8_t i = 0; i < 3; i++){
+		  fc.imu.accel[i] = icm.accel[i];
+		  fc.imu.ypr[i] = icm.ypr[i];
+	  }
+
+	  icm.init = fc.imu.initOK;
 	  fc.Loop();
     /* USER CODE END WHILE */
 

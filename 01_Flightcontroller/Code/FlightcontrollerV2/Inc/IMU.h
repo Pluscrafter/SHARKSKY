@@ -1,12 +1,9 @@
-/*
- * ICM20689.h
- *
- *  Created on: 24.12.2019
- *      Author: Pluscrafter
- */
+#ifndef __IMU_H
+#define __IMU_H
 
-#ifndef ICM20689_H_
-#define ICM20689_H_
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #define SELF_TEST_X_GYRO	0x00
 #define SELF_TEST_Y_GYRO	0x01
@@ -75,63 +72,24 @@
 
 #define TEMP_OFFSET 		0
 
-#define DLPF_FREQ_YAW		5.0
+#include "stdbool.h"
 
-#include "stm32f7xx_hal.h"
-#include "dma.h"
-#include "spi.h"
-#include "stdio.h"
-#include "main.h"
-#include "tim.h"
-#include "math.h"
 
-//#include "Flightcontroller.h"
+struct imu_out{
+	volatile float 	ypr[3];
+	volatile float 	accel[3];
 
-namespace SENSOR {
+	volatile uint8_t 	buf[6],buff[6];
+	bool				init;
 
-class ICM20689 {
-public:
-	ICM20689(SPI_HandleTypeDef&hspi , GPIO_TypeDef *GPIOx, uint8_t pin);
-	virtual ~ICM20689();
+	uint8_t 			ac;
+}icm;
 
-	bool initICM();
 
-	void calculateICM();
 
-	bool initOK 					= false;
 
-	volatile float	ypr[3]			= {0, 0, 0};
-	float			t_ypr[3]		= {0, 0, 0};
-	float			f_ypr[3]		= {0, 0, 0};
-	volatile float 	accel[3]			= {0, 0, 0};
-	float 			fullVec			= 0;
-	float 			accelAngle[2]		= {0, 0};
+#ifdef __cplusplus
+}
+#endif
 
-	volatile float lptime;
-	float alpha2;
-
-	float acangle[2];	//acceleration angle
-	float fullvec;
-
-	float fastsqrt(float val);
-	float fastsin(float sin);
-	float fastasin(float x);
-
-private:
-	SPI_HandleTypeDef &spi;
-	GPIO_TypeDef *GPIOx;
-	uint8_t pin;
-
-	void writeRegister(uint8_t reg, uint8_t value);
-	void writeRegister(uint8_t reg, uint8_t value, uint8_t delay);
-
-	uint8_t readRegister(uint8_t reg);
-	uint8_t readRegister(uint8_t reg, uint8_t delay);
-
-	bool whoami();
-
-};
-
-} /* namespace SENSOR */
-
-#endif /* ICM20689_H_ */
+#endif /* __IMU_H */
