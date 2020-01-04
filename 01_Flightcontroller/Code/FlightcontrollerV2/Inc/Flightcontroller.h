@@ -213,27 +213,27 @@ namespace FLIGHTCONTROLLER {
 		 * PID Variables
 		 ****************/
 
-		double						error[3] 			= {0, 0, 0};			//!< Error for the PID calculation
-		double						previousError[3]	= {0, 0, 0};			//!< Previous error for the I-Gain of the PID
+		double						error[3] 			= {0, 0, 0};								//!< Error for the PID calculation
+		double						previousError[3]	= {0, 0, 0};								//!< Previous error for the I-Gain of the PID
 
-		int16_t						pidAngleMotion[3]	= {0, 0, 0};			//!< Angle motion PID
-		int16_t						pidTrueAngle[3]		= {0, 0, 0};			//!< True angle PID
+		int16_t						pidAngleMotion[3]	= {0, 0, 0};								//!< Angle motion PID
+		int16_t						pidTrueAngle[3]		= {0, 0, 0};								//!< True angle PID
 
-		double						pidGain_AM_P[3]		= {0, 0, 0};			//!< Angle motion P-Gain
-		double						pidGain_AM_I[3]		= {0, 0, 0};			//!< Angle motion I-Gain
-		double						pidGain_AM_D[3]		= {0, 0, 0};			//!< Angle motion D-Gain
+		double						pidGain_AM_P[3]		= {0, 0, 0};								//!< Angle motion P-Gain
+		double						pidGain_AM_I[3]		= {0, 0, 0};								//!< Angle motion I-Gain
+		double						pidGain_AM_D[3]		= {0, 0, 0};								//!< Angle motion D-Gain
 
-		double						pidGain_TA_P[3]		= {0, 0, 0};			//!< True angle P-Gain
-		double						pidGain_TA_I[3]		= {0, 0, 0};			//!< True angle I-Gain
-		double						pidGain_TA_D[3]		= {0, 0, 0};			//!< True angle D-Gain
+		double						pidGain_TA_P[3]		= {0, 0, 0};								//!< True angle P-Gain
+		double						pidGain_TA_I[3]		= {0, 0, 0};								//!< True angle I-Gain
+		double						pidGain_TA_D[3]		= {0, 0, 0};								//!< True angle D-Gain
 
-		double						pid_AM_P[3]		= {0, 0, 0};				//!< Angle motion P
-		double						pid_AM_I[3]		= {0, 0, 0};				//!< Angle motion I
-		double						pid_AM_D[3]		= {0, 0, 0};				//!< Angle motion D
+		double						pid_AM_P[3]			= {0, 0, 0};								//!< Angle motion P
+		double						pid_AM_I[3]			= {0, 0, 0};								//!< Angle motion I
+		double						pid_AM_D[3]			= {0, 0, 0};								//!< Angle motion D
 
-		double						pid_TA_P[3]		= {0, 0, 0};				//!< True angle P
-		double						pid_TA_I[3]		= {0, 0, 0};				//!< True angle I
-		double						pid_TA_D[3]		= {0, 0, 0};				//!< True angle D
+		double						pid_TA_P[3]			= {0, 0, 0};								//!< True angle P
+		double						pid_TA_I[3]			= {0, 0, 0};								//!< True angle I
+		double						pid_TA_D[3]			= {0, 0, 0};								//!< True angle D
 
 		double						pid_AM[3];
 		double						pid_TA[3];
@@ -242,23 +242,23 @@ namespace FLIGHTCONTROLLER {
 		 * Motor Variables
 		 ******************/
 
-		uint16_t					motorSpeed[4]		= {0, 0, 0};			//!< Motor Speed [1024;2048]
+		uint16_t					motorSpeed[4]		= {0, 0, 0};								//!< Motor Speed [1024;2048]
 
 		/*******************
 		 * SDCard Variables
 		 *******************/
 
-		UINT						reSD;										//!< count errors of write to SD
-		int 						dataCount = 0;								//!< count number of data in buffer
-		double						elapsedTime = 0;							//!< elapsed time
-		char 						logbuffer[10000];							//!< write buffer
-		std::string 				tmpbuffer = " ";							//!< tmp write buffer in loop
+		UINT						reSD;															//!< count errors of write to SD
+		int 						dataCount 			= 0;										//!< count number of data in buffer
+		double						elapsedTime 		= 0;										//!< elapsed time
+		char 						logbuffer[10000];												//!< write buffer
+		std::string 				tmpbuffer 			= " ";										//!< tmp write buffer in loop
 
 		/****************
 		 * GPS Variables
 		 ****************/
 
-		char						gpsbuffer[80];								//!< GPS buffer for data through UART
+		char						gpsbuffer[80];													//!< GPS buffer for data through UART
 
 		/******************
 		 * Radio Variables
@@ -266,49 +266,49 @@ namespace FLIGHTCONTROLLER {
 
 		//! acklowlegement message struct
 		struct AckData{
-			int16_t 				yaw;										//!< angle motion yaw
-			int16_t 				pitch;										//!< true motion pitch
-			int16_t 				roll;										//!< true motion roll
+			int16_t 				yaw;															//!< angle motion yaw
+			int16_t 				pitch;															//!< true motion pitch
+			int16_t 				roll;															//!< true motion roll
 
-			uint16_t 				heading;									//!< magnetic heading
-			uint32_t 				altitude; 									//!< barometric altitide
+			uint16_t 				heading;														//!< magnetic heading
+			uint32_t 				altitude; 														//!< barometric altitide
 
-			uint32_t 				LV03x;										//!< Position Swiss LV03 x
-			uint32_t 				LV03y;										//!< Position Swiss LV03 y
+			uint32_t 				LV03x;															//!< Position Swiss LV03 x
+			uint32_t 				LV03y;															//!< Position Swiss LV03 y
 
-			uint16_t 				flags;										//!< Option Flags
-			uint32_t				uptdate_time; 								//!< Loop time
+			uint16_t 				flags;															//!< Option Flags
+			uint32_t				uptdate_time; 													//!< Loop time
 		};
 
 		//! receive message struct
 		struct RadioData{
-			int16_t					yaw;										//!< Setpoint yaw
-			int16_t					pitch;										//!< Setpoint pitch
-			int16_t					roll;										//!< Setpoint roll
-			uint16_t				throttle;									//!< Throttle
+			int16_t					yaw;															//!< Setpoint yaw
+			int16_t					pitch;															//!< Setpoint pitch
+			int16_t					roll;															//!< Setpoint roll
+			uint16_t				throttle;														//!< Throttle
 
-			uint16_t				rp_P;										//!< roll pitch P-Gain
-			uint16_t				rp_I;										//!< roll pitch I-Gain
-			uint16_t				rp_D;										//!< roll pitch D-Gain
+			uint16_t				rp_P;															//!< roll pitch P-Gain
+			uint16_t				rp_I;															//!< roll pitch I-Gain
+			uint16_t				rp_D;															//!< roll pitch D-Gain
 
-			uint16_t				y_P;										//!< yaw P-Gain
-			uint16_t				y_I;										//!< yaw I-Gain
-			uint16_t				y_D;										//!< yaw D-Gain
+			uint16_t				y_P;															//!< yaw P-Gain
+			uint16_t				y_I;															//!< yaw I-Gain
+			uint16_t				y_D;															//!< yaw D-Gain
 
-			uint16_t				flags;										//!< 2 bytes 10
-			uint32_t				data;										//!< 4 bytes 14
+			uint16_t				flags;															//!< 2 bytes 10
+			uint32_t				data;															//!< 4 bytes 14
 		};
 
-		AckData 					ackData;									//!< acknowlegement data
-		RadioData 					recvData;									//!< receive data
+		AckData 					ackData;														//!< acknowlegement data
+		RadioData 					recvData;														//!< receive data
 
-		RF24 						radio = RF24(GPIOC, 6, GPIOB, 12, &hspi2);	//!< define radio (nRF24L01)
+		RF24 						radio 				= RF24(GPIOC, 6, GPIOB, 12, &hspi2);		//!< define radio (nRF24L01)
 
 		/******************
 		 * DAC Variables
 		 ******************/
 
-		uint8_t  sine[256] = { 													//!< 8bit sine for test with DAC
+		uint8_t  sine[256] = { 																		//!< 8bit sine for test with DAC
 		  0x80, 0x83, 0x86, 0x89, 0x8C, 0x90, 0x93, 0x96,
 		  0x99, 0x9C, 0x9F, 0xA2, 0xA5, 0xA8, 0xAB, 0xAE,
 		  0xB1, 0xB3, 0xB6, 0xB9, 0xBC, 0xBF, 0xC1, 0xC4,
