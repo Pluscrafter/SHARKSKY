@@ -15,6 +15,12 @@ Hier sind die nötigen Datasheets gelagert um nicht immer im Internet dannach zu
 ### 04_Schriftliche Arbeit
 Dort ist das LaTex file für den schriftlichen Teil.
 
+### 05_Simulatoren
+Dort sind die Programme um die Filter zu testen.
+
+### 06_Videos und Bilder
+Dort sind alle Bilder zur MA.
+
 ## Benutzte Libraries
 * [nRF24/RF24](https://github.com/nRF24/RF24) - Bibliothek für den Sender bzw. Empfänger
 * [EminAtes/NRF24_STM32](https://github.com/EminAtes/NRF24_STM32) - Bibliothek für den Sender bzw. Empfänger übersetzt für kompitabilität mit STM32
