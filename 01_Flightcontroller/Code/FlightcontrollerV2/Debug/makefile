@@ -54,8 +54,8 @@ FlightcontrollerV2.list \
 all: FlightcontrollerV2.elf secondary-outputs
 
 # Tool invocations
-FlightcontrollerV2.elf: $(OBJS) $(USER_OBJS) D:\Pluscrafter\Documents\SHARKSKY\01_Flightcontroller\Code\FlightcontrollerV2\STM32F722RETX_FLASH.ld
-	arm-none-eabi-g++ -o "FlightcontrollerV2.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"D:\Pluscrafter\Documents\SHARKSKY\01_Flightcontroller\Code\FlightcontrollerV2\STM32F722RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FlightcontrollerV2.map" -Wl,--gc-sections -static  -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+FlightcontrollerV2.elf: $(OBJS) $(USER_OBJS) C:\Users\Pluscrafter\Documents\SHARKSKY\01_Flightcontroller\Code\FlightcontrollerV2\STM32F722RETX_FLASH.ld
+	arm-none-eabi-g++ -o "FlightcontrollerV2.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"C:\Users\Pluscrafter\Documents\SHARKSKY\01_Flightcontroller\Code\FlightcontrollerV2\STM32F722RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FlightcontrollerV2.map" -Wl,--gc-sections -static  -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
