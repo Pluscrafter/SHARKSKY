@@ -49,9 +49,6 @@ default.size.stdout \
 OBJDUMP_LIST += \
 FlightcontrollerV2.list \
 
-OBJCOPY_BIN += \
-FlightcontrollerV2.bin \
-
 
 # All Target
 all: FlightcontrollerV2.elf secondary-outputs
@@ -72,17 +69,12 @@ FlightcontrollerV2.list: $(EXECUTABLES)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-FlightcontrollerV2.bin: $(EXECUTABLES)
-	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "FlightcontrollerV2.bin"
-	@echo 'Finished building: $@'
-	@echo ' '
-
 # Other Targets
 clean:
 	-$(RM) *
 	-@echo ' '
 
-secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_BIN)
+secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
 
 .PHONY: all clean dependents
 .SECONDARY:

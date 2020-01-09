@@ -6,7 +6,7 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
+  * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
   * All rights reserved.</center></h2>
   *
   * This software component is licensed by ST under Ultimate Liberty license
@@ -132,7 +132,7 @@ void MX_TIM4_Init(void)
   TIM_MasterConfigTypeDef sMasterConfig = {0};
 
   htim4.Instance = TIM4;
-  htim4.Init.Prescaler = 7;
+  htim4.Init.Prescaler = 3;
   htim4.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim4.Init.Period = 53999;
   htim4.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;

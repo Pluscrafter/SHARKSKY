@@ -315,7 +315,8 @@ void EXTI9_5_IRQHandler(void)
 /**
   * @brief This function handles TIM4 global interrupt.
   */
-void TIM4_IRQHandler(void){
+void TIM4_IRQHandler(void)
+{
   /* USER CODE BEGIN TIM4_IRQn 0 */
 	uint8_t tmp[1];
 	if (icm.init == true){
