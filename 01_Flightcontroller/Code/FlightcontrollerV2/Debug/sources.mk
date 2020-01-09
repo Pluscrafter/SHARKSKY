@@ -23,6 +23,7 @@ C_UPPER_DEPS :=
 CXX_DEPS := 
 C_DEPS := 
 CPP_DEPS := 
+OBJCOPY_BIN := 
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
