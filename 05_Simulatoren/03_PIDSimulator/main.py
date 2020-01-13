@@ -8,7 +8,7 @@ IGain = 0.002
 DGain = 0.2
 
 fig, ax = plt.subplots()
-plt.subplots_adjust(left=0.25, bottom=0.25)
+plt.subplots_adjust(left=0.25, bottom=0.30)
 
 axcolor = 'lightgoldenrodyellow'
 axP = plt.axes([0.2, 0.1, 0.65, 0.03], facecolor=axcolor)
@@ -49,11 +49,15 @@ def update(val):
     fig.canvas.draw_idle()
 
     ax.cla()
-    ax.plot(Sollwert)
-    ax.plot(Istwert)
+    ax.plot(Sollwert, label='Sollwert')
+    ax.plot(Istwert, label='Istwert')
+    ax.legend()
 
 
 PSild.on_changed(update)
 ISild.on_changed(update)
 DSild.on_changed(update)
+
+
+
 plt.show()
