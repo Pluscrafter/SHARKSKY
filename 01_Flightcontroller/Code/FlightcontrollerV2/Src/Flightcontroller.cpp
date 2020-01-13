@@ -30,6 +30,8 @@ namespace FLIGHTCONTROLLER {
 
 		InitUSBOSD();
 
+		HAL_GPIO_WritePin(LLVOE_GPIO_Port, LLVOE_Pin, GPIO_PIN_SET);
+
 		InitRadio();
 
 		if(!imu.initICM()){
