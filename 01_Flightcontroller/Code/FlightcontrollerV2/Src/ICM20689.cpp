@@ -93,6 +93,23 @@ namespace SENSOR {
 			  t_ypr[1] = 0;
 		  }
 
+		  if (t_ypr[0] < -60){
+			  t_ypr[0] = -60;
+		  }
+
+		  if (t_ypr[1] < -60){
+			  t_ypr[1] = -60;
+		  }
+
+		  if (t_ypr[0] > 60){
+			  t_ypr[0] = 60;
+		  }
+
+		  if (t_ypr[1] > 60){
+			  t_ypr[1] = 60;
+		  }
+
+
 
 	}
 

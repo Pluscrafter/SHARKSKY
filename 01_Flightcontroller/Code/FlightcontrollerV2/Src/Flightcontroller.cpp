@@ -41,7 +41,7 @@ namespace FLIGHTCONTROLLER {
 			}
 		}
 
-		HAL_TIM_Base_Start_IT(&htim4); //start IMU trigger
+		//HAL_TIM_Base_Start_IT(&htim7); //start baro trigger
 
 		// initalisation is OK
 		HAL_Delay(1000);

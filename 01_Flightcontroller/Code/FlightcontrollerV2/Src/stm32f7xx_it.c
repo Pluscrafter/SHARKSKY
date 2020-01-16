@@ -25,6 +25,7 @@
 /* USER CODE BEGIN Includes */
 #include "IMU.h"
 #include "spi.h"
+#include "i2c.h"
 #include "gpio.h"
 /* USER CODE END Includes */
   
@@ -320,19 +321,8 @@ void EXTI9_5_IRQHandler(void)
 void TIM4_IRQHandler(void)
 {
   /* USER CODE BEGIN TIM4_IRQn 0 */
-	uint8_t tmp[1];
-	if (icm.init == true){
-		if(icm.ac == 0){
-			tmp[0] = GYRO_XOUT_H|0x80;
-		}else{
-			tmp[0] = ACCEL_XOUT_H|0x80;
-		}
-		// IMU SPI NSS LOW
-		HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_RESET);
 
-		HAL_SPI_Transmit(&hspi3,(uint8_t *)tmp, 1, HAL_MAX_DELAY);
-		HAL_SPI_Receive_DMA(&hspi3, (uint8_t *)icm.buf, 6);
-	}
+
   /* USER CODE END TIM4_IRQn 0 */
   HAL_TIM_IRQHandler(&htim4);
   /* USER CODE BEGIN TIM4_IRQn 1 */
@@ -388,6 +378,7 @@ void SDMMC1_IRQHandler(void)
 void TIM5_IRQHandler(void)
 {
   /* USER CODE BEGIN TIM5_IRQn 0 */
+
 
   /* USER CODE END TIM5_IRQn 0 */
   HAL_TIM_IRQHandler(&htim5);

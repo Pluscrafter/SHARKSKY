@@ -78,8 +78,9 @@ extern "C" {
 struct imu_out{
 	volatile float 	ypr[3];
 	volatile float 	accel[3];
+	volatile uint16_t altitude;
 
-	volatile uint8_t 	buf[6],buff[6];
+	volatile uint8_t 	buf[6],buff[6], buf2[2];
 	bool				init;
 
 	uint8_t 			ac;

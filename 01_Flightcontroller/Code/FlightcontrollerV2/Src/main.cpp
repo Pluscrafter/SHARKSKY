@@ -223,13 +223,10 @@ float fastasin(float x);
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 
-
-
 void HAL_SPI_RxCpltCallback(SPI_HandleTypeDef *hspi){
 	//read IMU GYRO ACCEL alternating
-	if (icm.init == true){
-		int16_t r_gyro[3],r_accel[3];
-
+	int16_t r_gyro[3],r_accel[3];
+	if(icm.init == true){
 		if(icm.ac == 0){
 			r_gyro[0] = (icm.buf[0] << 8) | icm.buf[1];
 			r_gyro[1] = (icm.buf[2] << 8) | icm.buf[3];
@@ -251,8 +248,10 @@ void HAL_SPI_RxCpltCallback(SPI_HandleTypeDef *hspi){
 		}
 		//NSS HIGH IMU SPI
 		HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_SET);
+
 	}
 }
+
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -394,13 +393,28 @@ int main(void)
   while (1)
   {
 #ifndef CMode
-	  for (uint8_t i = 0; i < 3; i++){
-		  fc.imu.accel[i] = icm.accel[i];
-		  fc.imu.ypr[i] = icm.ypr[i];
-	  }
+	uint8_t tmp[1];
+	if (icm.init == true){
+		if(icm.ac == 0){
+			tmp[0] = GYRO_XOUT_H|0x80;
+		}else{
+			tmp[0] = ACCEL_XOUT_H|0x80;
+		}
+		// IMU SPI NSS LOW
+		HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_RESET);
 
-	  icm.init = fc.imu.initOK;
-	  fc.Loop();
+		HAL_SPI_Transmit(&hspi3,(uint8_t *)tmp, 1, HAL_MAX_DELAY);
+		HAL_SPI_Receive_DMA(&hspi3, (uint8_t *)icm.buf, 6);
+	}
+
+	for (uint8_t i = 0; i < 3; i++){
+	  fc.imu.accel[i] = icm.accel[i];
+	  fc.imu.ypr[i] = icm.ypr[i];
+	}
+
+
+	icm.init = fc.imu.initOK;
+	fc.Loop();
 #endif
 
 #ifdef CMode

@@ -238,6 +238,8 @@ namespace FLIGHTCONTROLLER {
 		double						pid_AM[3];
 		double						pid_TA[3];
 
+
+
 		/******************
 		 * Motor Variables
 		 ******************/
