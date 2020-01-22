@@ -1,0 +1,82 @@
+\documentclass[12pt,a4paper, ngerman]{beamer}
+\makeatletter
+\def\set@curr@file#1{%
+  \begingroup
+    \escapechar\m@ne
+    \xdef\@curr@file{\expandafter\string\csname #1\endcsname}%
+  \endgroup
+}
+\def\quote@name#1{"\quote@@name#1\@gobble""}
+\def\quote@@name#1"{#1\quote@@name}
+\def\unquote@name#1{\quote@@name#1\@gobble"}
+\makeatother
+\usepackage{babel}
+\usetheme{Pittsburgh}
+\title{Regelungstechnik}
+\subtitle{PID-Parametrisierung anhand eines selbstgebauten Quadrocopters}
+\author{Charpoan Kong}
+\institute{Kantonsschule Zürich Nord}
+\date{\today}
+\begin{document}
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\frametitle{Inhaltsverzeichnis}
+\tableofcontents
+\end{frame}
+
+\section{Bau und Programmierung}
+\subsection{Bau}
+ 
+\begin{frame}
+\frametitle{Bau}
+\begin{itemize}
+\item Was für Komponenten?
+\item PCB Design
+\item Löten
+\end{itemize}
+\end{frame}
+
+\subsection{Programmierung}
+ 
+\begin{frame}
+\frametitle{Programmierung}
+\begin{itemize}
+\item neue Umgebung
+\item Zeitkritisch
+\item Bugs
+\item Debugging
+\item langsame math. Funktionen
+\end{itemize}
+
+
+\end{frame}
+
+\begin{frame}
+\begin{alertblock}{Tipp}
+Git oder andere Versionsverwaltungsysteme retten Leben!!!
+\end{alertblock}
+\end{frame}
+
+\section{Filter und PID-Regler}
+\subsection{Filter}
+
+\begin{frame}
+\frametitle{Title}
+asdf
+\end{frame}
+
+\subsection{PID-Regler}
+
+\begin{frame}
+\frametitle{Title}
+asdf
+\end{frame}
+
+\begin{frame}
+\frametitle{Fragen?}
+\end{frame}
+
+\end{document}

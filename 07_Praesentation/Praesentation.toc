@@ -1,0 +1,7 @@
+\babel@toc {ngerman}{}
+\beamer@sectionintoc {1}{Bau und Programmierung}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Bau}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{Programmierung}{4}{0}{1}
+\beamer@sectionintoc {2}{Filter und PID-Regler}{6}{0}{2}
+\beamer@subsectionintoc {2}{1}{Filter}{6}{0}{2}
+\beamer@subsectionintoc {2}{2}{PID-Regler}{7}{0}{2}
