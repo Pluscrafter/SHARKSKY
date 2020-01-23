@@ -17,16 +17,16 @@ void loop() {
   S.attach(9);
   error = sollwert - currentpos;
   Serial.println(currentpos);
-  p = error * 5;//5
-  i += error * 0.0 * (delaytime/1000); //0.03
-  d = 0.075 * ((error - preverror)/(delaytime/1000));
+  p = error * 4;//4
+  i += error * 0.01 * (delaytime/1000); //0.01
+  d = 0.08 * ((error - preverror)/(delaytime/1000));//0.08
 
   float pid = p + i + d;
   preverror = error;
 
   S.write(currentpos + pid);
-  delay(delaytime/2 - 1);
+  delay(delaytime/2);
 
   S.detach();
-  delay(delaytime/2 - 1);
+  delay(delaytime/2);
 }
