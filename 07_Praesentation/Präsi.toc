@@ -1,7 +1,7 @@
 \babel@toc {ngerman}{}
 \beamer@sectionintoc {1}{Bau und Programmierung}{3}{0}{1}
 \beamer@subsectionintoc {1}{1}{Bau}{3}{0}{1}
-\beamer@subsectionintoc {1}{2}{Programmierung}{15}{0}{1}
-\beamer@sectionintoc {2}{Filter und PID-Regler}{17}{0}{2}
-\beamer@subsectionintoc {2}{1}{Filter}{17}{0}{2}
-\beamer@subsectionintoc {2}{2}{PID-Regler}{18}{0}{2}
+\beamer@subsectionintoc {1}{2}{Programmierung}{14}{0}{1}
+\beamer@sectionintoc {2}{Filter und PID-Regler}{16}{0}{2}
+\beamer@subsectionintoc {2}{1}{Filter}{16}{0}{2}
+\beamer@subsectionintoc {2}{2}{PID-Regler}{17}{0}{2}
