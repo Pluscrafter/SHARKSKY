@@ -25,16 +25,17 @@ void loop() {
       dd = getValue(data,' ',2).toFloat();
       sollwert = getValue(data,' ',3).toFloat();
       data = "";
+      Serial.flush();
     }
-    
   }
-  int currentpos = map(analogRead(A0),813,10,0,180);
+  delay(5);
+  int currentpos = map(analogRead(A2),813,10,0,180);
   S.attach(9);
   error = sollwert - currentpos;
   Serial.println(currentpos);
   p = error * pp;//4
-  i += error * ii * (delaytime/1000); //0.01
-  d = dd * ((error - preverror)/(delaytime/1000));//0.08
+  i += error * ii * ((delaytime+5)/1000); //0.01
+  d = dd * ((error - preverror)/((delaytime+5)/1000));//0.08
 
   float pid = p + i + d;
   preverror = error;
