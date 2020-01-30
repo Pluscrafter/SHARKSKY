@@ -207,7 +207,7 @@ namespace FLIGHTCONTROLLER {
 			//calc pid
 			pid_TA_P[i] = error[i] * pidGain_TA_P[i];
 			pid_TA_I[i] += error[i] * pidGain_TA_I[i] * looptime;
-			pid_TA_D[i] = pidGain_TA_D[i] * ((error[i] - previousError[i]) * looptime);
+			pid_TA_D[i] = pidGain_TA_D[i] * ((error[i] - previousError[i]) / looptime);
 
 			//sum of all corrections
 			pid_TA[i] = pid_TA_P[i] + pid_TA_I[i] + pid_TA_D[i];
@@ -226,7 +226,7 @@ namespace FLIGHTCONTROLLER {
 			//calc pid
 			pid_AM_P[i] = error[i] * pidGain_AM_P[i];
 			pid_AM_I[i] += error[i] * pidGain_AM_I[i] * looptime;
-			pid_AM_D[i] = pidGain_AM_D[i] * ((error[i] - previousError[i]) * looptime);
+			pid_AM_D[i] = pidGain_AM_D[i] * ((error[i] - previousError[i]) /looptime);
 
 			//sum of all corrections
 			pid_AM[i] = pid_AM_P[i] + pid_AM_I[i] + pid_AM_D[i];
