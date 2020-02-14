@@ -1,6 +1,0 @@
-main.cpp:226:6:void HAL_SPI_RxCpltCallback(SPI_HandleTypeDef*)	64	static
-main.cpp:506:6:void SystemClock_Config()	224	static
-main.cpp:277:5:int main()	32	static
-main.cpp:704:6:void Error_Handler()	0	static
-main.cpp:710:1:cpp)	0	static
-main.cpp:710:1:cpp)	0	static
