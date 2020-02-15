@@ -12,7 +12,6 @@ int c = 0;
 void setup() {
   Serial.begin(9600);
   Wire.begin(0x08);
-  Wire.onReceive(receiveEvent);
   Wire.onRequest(requestEvent);
   Serial.println(F("BMP280 test"));
 
@@ -35,19 +34,8 @@ void loop() {
   lAlt = iAlt & 0xFF;
   hAlt = iAlt >> 8;
 
-  Serial.print(hAlt);
-  Serial.print(" ");
-  Serial.print(lAlt);
-  Serial.print(" ");
-  Serial.println(iAlt);
-  Serial.println(c);
-
   delay(100);
   
-}
-
-void receiveEvent(int bytes){
-   c = 1;
 }
 
 void requestEvent(){
