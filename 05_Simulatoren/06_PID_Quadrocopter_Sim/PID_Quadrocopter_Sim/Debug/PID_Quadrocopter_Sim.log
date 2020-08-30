@@ -1,0 +1,3 @@
+﻿  main.c
+C:\Users\Pluscrafter\Documents\SHARKSKY\05_Simulatoren\06_PID_Quadrocopter_Sim\PID_Quadrocopter_Sim\main.c(3,21): warning C4305: 'initializing': truncation from 'double' to 'float'
+  PID_Quadrocopter_Sim.vcxproj -> C:\Users\Pluscrafter\Documents\SHARKSKY\05_Simulatoren\06_PID_Quadrocopter_Sim\PID_Quadrocopter_Sim\Debug\PID_Quadrocopter_Sim.exe
