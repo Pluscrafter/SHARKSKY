@@ -24,7 +24,9 @@ def digital_low_pass(cutoff_frequency, input):
     print(alpha)
 
     for i in range(1, len(input)):
-        output[i] = alpha * input[i] + (1 - alpha) * output[i - 1]
+        output[i] = alpha * (input[i] - output[i - 1]) + output[i - 1]
+        #output[i] = alpha * input[i] + (1 - alpha) * output[i - 1]
+
     return output
 
 
@@ -41,19 +43,21 @@ sinemixed = []
 
 # this loop calculate the values for the sine80 list
 for i in range(0, period):
-    sine80.append(sine(1, 80, 0))
+    sine80.append(sine(1, 30, 0))
     x.append(dt * i)
 
 for i in range(0, period):
-    sinemixed.append(sine(1, 80, 0) + sine(1, 133, math.pi) + sine(1, 800, 0.1) + sine(0.3, 1234, 50) +
-                     + sine(0.5, 1000, 2.3) + sine(0.5, 3000, 2.3))
+    a = 0
+    for j in range(0, 500):
+        a = a + sine(1, j*2, j*0.1)
+    sinemixed.append(a)
 
 cutoffreq = 80
 filtered_dlpf = digital_low_pass(cutoffreq, sinemixed)
 
-plt.plot(x, sinemixed, color='blue', linewidth=1, label='80Hz sine with noise')
-plt.plot(x, filtered_dlpf, color='red', linewidth=1, label='80Hz sine filtered with dlpf')
-plt.plot(x, sine80, color='green', linewidth=3, label='80Hz sine')
+plt.plot(x, sinemixed, color='blue', linewidth=1, label='50Hz sine with noise')
+plt.plot(x, filtered_dlpf, color='red', linewidth=1, label='50Hz sine filtered with dlpf')
+plt.plot(x, sine80, color='green', linewidth=3, label='50Hz sine')
 plt.legend()
 plt.show()
 
@@ -67,8 +71,8 @@ N = int(len(y1)/2+1)
 X = np.linspace(0, fs/2, N, endpoint=True)
 
 
-plt.plot(X, np.abs(y1[:N]/N), color='blue', linewidth=1, label='80Hz sine with noise')
-plt.plot(X, np.abs(y3[:N]/N), color='green', linewidth=3, label='80Hz sine')
-plt.plot(X, np.abs(y2[:N]/N), color='red', linewidth=1, label='80Hz sine filtered with dlpf')
+plt.plot(X, np.abs(y1[:N]/N), color='blue', linewidth=1, label='50Hz sine with noise')
+plt.plot(X, np.abs(y3[:N]/N), color='green', linewidth=3, label='50Hz sine')
+plt.plot(X, np.abs(y2[:N]/N), color='red', linewidth=1, label='50Hz sine filtered with dlpf')
 plt.legend()
 plt.show()
