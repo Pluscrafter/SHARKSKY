@@ -81,6 +81,7 @@
 #include <stdbool.h>
 #include "gpio.h"
 #include "spi.h"
+#include "dma.h"
 #include "main.h"
 #include "fast_math.h"
 

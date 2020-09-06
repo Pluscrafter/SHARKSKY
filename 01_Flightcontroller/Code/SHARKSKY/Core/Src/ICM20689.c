@@ -88,38 +88,15 @@ bool IMU_Init(){
 	IMU_writeRegister(ACCEL_CONFIG, 0x10);			//set ACCEL to 8g
 	IMU_writeRegister(ACCEL_CONFIG_2, 0x02);		//set ACCEL DLPF to 121.3Hz
 	IMU_writeRegister(SMPLRT_DIV, 0x00);			//no divider
-	//writeRegister(INT_PIN_CFG, 0x00);			//config Interrupt <- not used Tim based Interrupt
-	//writeRegister(INT_ENABLE, 0x01);			//enable Interrupt <- not used Tim based Interrupt
-
-	IMU_init_ok = true;
+	IMU_writeRegister(INT_PIN_CFG, 0x00);			//config Interrupt <- not used Tim based Interrupt
+	IMU_writeRegister(INT_ENABLE, 0x01);			//enable Interrupt <- not used Tim based Interrupt
 
 	return true;
 }
 
 void HAL_SPI_RxCpltCallback(SPI_HandleTypeDef *hspi){
 	//read IMU GYRO ACCEL alternating
-	if(IMU_init_ok == true){
 
-		IMU_r_gyro[0] = (IMU_BUF[0] << 8) | IMU_BUF[1];
-		IMU_r_gyro[1] = (IMU_BUF[2] << 8) | IMU_BUF[3];
-		IMU_r_gyro[2] = (IMU_BUF[4] << 8) | IMU_BUF[5];
-
-		for(int i = 0; i<3; i++){
-			IMU_ypr[i] = IMU_r_gyro[i] / 65.5;
-		}
-
-		IMU_r_accel[0] = (IMU_BUF[10] << 8) | IMU_BUF[11];
-		IMU_r_accel[1] = (IMU_BUF[12] << 8) | IMU_BUF[13];
-		IMU_r_accel[2] = (IMU_BUF[14] << 8) | IMU_BUF[15];
-
-		for(int i = 0; i<3; i++){
-			IMU_accel[i] =  IMU_r_accel[i] / 4096.0;
-		}
-
-		//NSS HIGH IMU SPI
-		HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_SET);
-
-	}
 }
 
 void IMU_calcAngle(){
@@ -131,13 +108,13 @@ void IMU_calcAngle(){
 }
 
 void IMU_calcAccelAngle(){
-	IMU_fullvec = ff_fastSqrt(IMU_accel[0]*IMU_accel[0] + IMU_accel[0]*IMU_accel[0] + IMU_accel[0]*IMU_accel[0]);
+	IMU_fullvec = ff_fastSqrt(IMU_accel[0]*IMU_accel[0] + IMU_accel[1]*IMU_accel[1] + IMU_accel[2]*IMU_accel[2]);
 	if(IMU_fullvec == 0) {
 		IMU_fullvec = 1;
 	}
 
-	IMU_acclAngle[0] = ff_fastASin((IMU_accel[0]/IMU_fullvec) * -57.29577951);
-	IMU_acclAngle[1] = ff_fastASin((IMU_accel[1]/IMU_fullvec) * 57.29577951);
+	IMU_acclAngle[0] = ff_fastASin(IMU_accel[0]/IMU_fullvec) * -57.29577951;
+	IMU_acclAngle[1] = ff_fastASin(IMU_accel[1]/IMU_fullvec) * 57.29577951;
 
 }
 
@@ -157,7 +134,7 @@ void IMU_DLPF(){
 	IMU_f_ypr[2] = IMU_f_ypr[2] + (IMU_alpha2_DLPF * (IMU_ypr[2] - IMU_f_ypr[2]));
 
 	IMU_alpha_DLPF = (DLPF_PITCHROLL * looptime) / (1 + DLPF_PITCHROLL * looptime);
-	IMU_f_ypr[0] = IMU_f_ypr[0] + (IMU_alpha_DLPF * (IMU_ypr[0] - IMU_f_ypr[0]));
-	IMU_f_ypr[1] = IMU_f_ypr[1] + (IMU_alpha_DLPF * (IMU_ypr[1] - IMU_f_ypr[1]));
+	IMU_f_ypr[0] = IMU_f_ypr[0] + (IMU_alpha_DLPF * (IMU_t_ypr[0] - IMU_f_ypr[0]));
+	IMU_f_ypr[1] = IMU_f_ypr[1] + (IMU_alpha_DLPF * (IMU_t_ypr[1] - IMU_f_ypr[1]));
 
 }

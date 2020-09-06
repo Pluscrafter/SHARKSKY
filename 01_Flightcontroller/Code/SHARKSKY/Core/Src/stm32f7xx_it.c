@@ -234,7 +234,28 @@ void DMA1_Stream1_IRQHandler(void)
 void DMA1_Stream2_IRQHandler(void)
 {
   /* USER CODE BEGIN DMA1_Stream2_IRQn 0 */
+	if(IMU_init_ok == true){
 
+		IMU_r_gyro[0] = (IMU_BUF[8] << 8) | IMU_BUF[9];
+		IMU_r_gyro[1] = (IMU_BUF[10] << 8) | IMU_BUF[11];
+		IMU_r_gyro[2] = (IMU_BUF[12] << 8) | IMU_BUF[13];
+
+		for(int i = 0; i<3; i++){
+			IMU_ypr[i] = IMU_r_gyro[i] / 65.5;
+		}
+
+		IMU_r_accel[0] = (IMU_BUF[0] << 8) | IMU_BUF[1];
+		IMU_r_accel[1] = (IMU_BUF[2] << 8) | IMU_BUF[3];
+		IMU_r_accel[2] = (IMU_BUF[4] << 8) | IMU_BUF[5];
+
+		for(int i = 0; i<3; i++){
+			IMU_accel[i] =  IMU_r_accel[i] / 4096.0;
+		}
+
+		//NSS HIGH IMU SPI
+		HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_SET);
+
+	}
   /* USER CODE END DMA1_Stream2_IRQn 0 */
   HAL_DMA_IRQHandler(&hdma_spi3_rx);
   /* USER CODE BEGIN DMA1_Stream2_IRQn 1 */
@@ -304,10 +325,19 @@ void DMA1_Stream6_IRQHandler(void)
 void EXTI9_5_IRQHandler(void)
 {
   /* USER CODE BEGIN EXTI9_5_IRQn 0 */
+	uint8_t tmp[1];
+	if (IMU_init_ok == true){
+		tmp[0] = ACCEL_XOUT_H|0x80;
+		// IMU SPI NSS LOW
+		HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_RESET);
 
+		HAL_SPI_Transmit(&hspi3,(uint8_t *)tmp, 1, HAL_MAX_DELAY);
+		HAL_SPI_Receive_DMA(&hspi3, (uint8_t *)IMU_BUF, 14);
+	}
   /* USER CODE END EXTI9_5_IRQn 0 */
-  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_7);
-  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_8);
+  //HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_7);
+  //HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_8);
+  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_9);
   /* USER CODE BEGIN EXTI9_5_IRQn 1 */
 
   /* USER CODE END EXTI9_5_IRQn 1 */
@@ -319,15 +349,7 @@ void EXTI9_5_IRQHandler(void)
 void TIM4_IRQHandler(void)
 {
   /* USER CODE BEGIN TIM4_IRQn 0 */
-	uint8_t tmp[1];
-	if (IMU_init_ok == true){
-		tmp[0] = ACCEL_XOUT_H|0x80;
-		// IMU SPI NSS LOW
-		HAL_GPIO_WritePin(IMU_NSS_GPIO_Port, IMU_NSS_Pin, GPIO_PIN_RESET);
 
-		HAL_SPI_Transmit(&hspi3,(uint8_t *)tmp, 1, HAL_MAX_DELAY);
-		HAL_SPI_Receive_DMA(&hspi3, (uint8_t *)IMU_BUF, 14);
-	}
   /* USER CODE END TIM4_IRQn 0 */
   HAL_TIM_IRQHandler(&htim4);
   /* USER CODE BEGIN TIM4_IRQn 1 */

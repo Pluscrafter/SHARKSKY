@@ -32,7 +32,6 @@
 
 extern SPI_HandleTypeDef hspi2;
 extern SPI_HandleTypeDef hspi3;
-
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */

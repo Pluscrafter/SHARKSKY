@@ -52,7 +52,7 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
+float looptime;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -126,6 +126,8 @@ int main(void)
 	HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_3);
 	HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
 
+	IMU_init_ok = IMU_Init();
+
 	HAL_TIM_Base_Start_IT(&htim4); //start IMU trigger
   /* USER CODE END 2 */
 
@@ -133,6 +135,12 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  double start = DWT->CYCCNT; //read value from counter register
+
+	  IMU_calcAngle();
+
+	  double stop = DWT->CYCCNT;
+	  looptime = (stop - start)/216000000.0;
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
