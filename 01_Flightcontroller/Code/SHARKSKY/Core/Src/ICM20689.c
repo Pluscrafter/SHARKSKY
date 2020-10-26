@@ -125,7 +125,7 @@ void IMU_calcGyroAngle(){
 }
 
 void IMU_ComplementaryFilter(){
-	IMU_t_ypr[0] = IMU_t_ypr[0] * 0.9996 + IMU_acclAngle[1] * 0.0004;	// angle is mixed up
+	IMU_t_ypr[0] = IMU_t_ypr[0] * 0.9996 + IMU_acclAngle[1] * 0.0004;	// angle is mixed up WHY I DON'T KNOW?
 	IMU_t_ypr[1] = IMU_t_ypr[1] * 0.9996 + IMU_acclAngle[0] * 0.0004;
 }
 
@@ -136,5 +136,9 @@ void IMU_DLPF(){
 	IMU_alpha_DLPF = (DLPF_PITCHROLL * looptime) / (1 + DLPF_PITCHROLL * looptime);
 	IMU_f_ypr[0] = IMU_f_ypr[0] + (IMU_alpha_DLPF * (IMU_t_ypr[0] - IMU_f_ypr[0]));
 	IMU_f_ypr[1] = IMU_f_ypr[1] + (IMU_alpha_DLPF * (IMU_t_ypr[1] - IMU_f_ypr[1]));
+
+	//roll and pitch tuning on yaw movement https://www.youtube.com/watch?v=4BoIE8YQwM8 17.10.2019
+	IMU_f_ypr[0] -= IMU_f_ypr[1] * ff_fastSin(IMU_f_ypr[2] * 0.017453293 * looptime);
+	IMU_f_ypr[1] += IMU_f_ypr[0] * ff_fastSin(IMU_f_ypr[2] * 0.017453293 * looptime);
 
 }
