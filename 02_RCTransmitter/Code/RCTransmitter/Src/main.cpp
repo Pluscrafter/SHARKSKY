@@ -109,6 +109,7 @@ RadioData		_transData;
 
 int page = 0;
 int t = 0;
+int a = 10;
 
 /* USER CODE END PV */
 
@@ -243,13 +244,8 @@ int main(void)
 
 	  //read radio
 
-	  if(_transData.throttle != transData.throttle || _transData.pitch != transData.pitch  || _transData.roll != transData.roll || _transData.yaw != transData.yaw){
-		  loopRadio();
-		  loopRadio();
-		  loopRadio();
-	  }
+	loopRadio();
 
-	  _transData = transData;
 	  //rotate lcd
 	  if(HAL_GPIO_ReadPin(BTN_U_GPIO_Port, BTN_U_Pin) == 0){
 		  HAL_Delay(30);
@@ -463,9 +459,9 @@ void SystemClock_Config(void)
 void loopRadio(){
 	radio.write(&transData,sizeof(RadioData));
 
-	if(radio.isAckPayloadAvailable()){
+	/*if(radio.isAckPayloadAvailable()){
 		radio.read(&ackData,radio.getDynamicPayloadSize());
-	}
+	}*/
 }
 
 /* USER CODE END 4 */

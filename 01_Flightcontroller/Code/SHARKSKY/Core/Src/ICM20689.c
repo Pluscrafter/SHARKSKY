@@ -94,11 +94,6 @@ bool IMU_Init(){
 	return true;
 }
 
-void HAL_SPI_RxCpltCallback(SPI_HandleTypeDef *hspi){
-	//read IMU GYRO ACCEL alternating
-
-}
-
 void IMU_calcAngle(){
 	IMU_calcAccelAngle();
 	IMU_calcGyroAngle();

@@ -115,6 +115,44 @@
 #include "dma.h"
 #include "main.h"
 
+		//! acklowlegement message struct
+		struct AckData{
+			int16_t 				yaw;															//!< angle motion yaw
+			int16_t 				pitch;															//!< true motion pitch
+			int16_t 				roll;															//!< true motion roll
+
+			uint16_t 				heading;														//!< magnetic heading
+			uint32_t 				altitude; 														//!< barometric altitide
+
+			uint32_t 				LV03x;															//!< Position Swiss LV03 x
+			uint32_t 				LV03y;															//!< Position Swiss LV03 y
+
+			uint16_t 				flags;															//!< Option Flags
+			uint32_t				uptdate_time; 													//!< Loop time
+		};
+
+		//! receive message struct
+		struct RadioData{
+			int16_t					yaw;															//!< Setpoint yaw
+			int16_t					pitch;															//!< Setpoint pitch
+			int16_t					roll;															//!< Setpoint roll
+			uint16_t				throttle;														//!< Throttle
+
+			uint16_t				rp_P;															//!< roll pitch P-Gain
+			uint16_t				rp_I;															//!< roll pitch I-Gain
+			uint16_t				rp_D;															//!< roll pitch D-Gain
+
+			uint16_t				y_P;															//!< yaw P-Gain
+			uint16_t				y_I;															//!< yaw I-Gain
+			uint16_t				y_D;															//!< yaw D-Gain
+
+			uint16_t				flags;															//!< 2 bytes 10
+			uint32_t				data;															//!< 4 bytes 14
+		};
+
+		struct AckData 					ackData;														//!< acknowlegement data
+		struct RadioData 				recvData;														//!< receive data
+
 typedef enum { RF24_PA_MIN = 0,RF24_PA_LOW, RF24_PA_HIGH, RF24_PA_MAX, RF24_PA_ERROR } rf24_pa_dbm_e ;
 typedef enum { RF24_1MBPS = 0, RF24_2MBPS, RF24_250KBPS } rf24_datarate_e;
 typedef enum { RF24_CRC_DISABLED = 0, RF24_CRC_8, RF24_CRC_16 } rf24_crclength_e;
