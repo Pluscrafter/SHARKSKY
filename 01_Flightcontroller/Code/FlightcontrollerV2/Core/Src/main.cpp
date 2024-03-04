@@ -27,7 +27,6 @@
 #include "adc.h"
 #include "dac.h"
 #include "dma.h"
-#include "fatfs.h"
 #include "i2c.h"
 #include "sdmmc.h"
 #include "spi.h"
@@ -305,7 +304,6 @@ int main(void)
   MX_SPI2_Init();
   MX_USART1_UART_Init();
   MX_USART2_UART_Init();
-  MX_FATFS_Init();
   MX_I2C3_Init();
   MX_TIM2_Init();
   MX_DAC_Init();

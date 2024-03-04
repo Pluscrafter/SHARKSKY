@@ -1,0 +1,9 @@
+../Core/Src/SPI.cpp:11:7:void COM::SPI::Init()	16	static
+../Core/Src/SPI.cpp:61:7:void COM::SPI::Enable()	0	static
+../Core/Src/SPI.cpp:65:7:void COM::SPI::Disable()	0	static
+../Core/Src/SPI.cpp:69:7:void COM::SPI::Transmit(const uint8_t*, std::size_t)	4	static,ignoring_inline_asm
+../Core/Src/SPI.cpp:83:7:void COM::SPI::Receive(uint8_t*, std::size_t)	4	static,ignoring_inline_asm
+../Core/Src/SPI.cpp:98:7:void COM::SPI::TransmitReceive(uint8_t*, uint8_t*, std::size_t)	0	static,ignoring_inline_asm
+../Core/Src/SPI.cpp:113:7:void COM::SPI::Interrupt_Handler()	12	static
+../Core/Src/SPI.cpp:166:7:void COM::SPI::CS_EN()	0	static
+../Core/Src/SPI.cpp:170:7:void COM::SPI::CS_DIS()	0	static

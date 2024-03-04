@@ -1,22 +1,22 @@
+/* USER CODE BEGIN Header */
 /**
   ******************************************************************************
-  * File Name          : DAC.c
-  * Description        : This file provides code for the configuration
-  *                      of the DAC instances.
+  * @file    dac.c
+  * @brief   This file provides code for the configuration
+  *          of the DAC instances.
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
-  * All rights reserved.</center></h2>
+  * Copyright (c) 2022 STMicroelectronics.
+  * All rights reserved.
   *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
   *
   ******************************************************************************
   */
-
+/* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "dac.h"
 
@@ -30,16 +30,26 @@ DMA_HandleTypeDef hdma_dac2;
 /* DAC init function */
 void MX_DAC_Init(void)
 {
+
+  /* USER CODE BEGIN DAC_Init 0 */
+
+  /* USER CODE END DAC_Init 0 */
+
   DAC_ChannelConfTypeDef sConfig = {0};
 
-  /** DAC Initialization 
+  /* USER CODE BEGIN DAC_Init 1 */
+
+  /* USER CODE END DAC_Init 1 */
+
+  /** DAC Initialization
   */
   hdac.Instance = DAC;
   if (HAL_DAC_Init(&hdac) != HAL_OK)
   {
     Error_Handler();
   }
-  /** DAC channel OUT2 config 
+
+  /** DAC channel OUT2 config
   */
   sConfig.DAC_Trigger = DAC_TRIGGER_T6_TRGO;
   sConfig.DAC_OutputBuffer = DAC_OUTPUTBUFFER_ENABLE;
@@ -47,6 +57,9 @@ void MX_DAC_Init(void)
   {
     Error_Handler();
   }
+  /* USER CODE BEGIN DAC_Init 2 */
+
+  /* USER CODE END DAC_Init 2 */
 
 }
 
@@ -61,10 +74,10 @@ void HAL_DAC_MspInit(DAC_HandleTypeDef* dacHandle)
   /* USER CODE END DAC_MspInit 0 */
     /* DAC clock enable */
     __HAL_RCC_DAC_CLK_ENABLE();
-  
+
     __HAL_RCC_GPIOA_CLK_ENABLE();
-    /**DAC GPIO Configuration    
-    PA5     ------> DAC_OUT2 
+    /**DAC GPIO Configuration
+    PA5     ------> DAC_OUT2
     */
     GPIO_InitStruct.Pin = GPIO_PIN_5;
     GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
@@ -106,9 +119,9 @@ void HAL_DAC_MspDeInit(DAC_HandleTypeDef* dacHandle)
   /* USER CODE END DAC_MspDeInit 0 */
     /* Peripheral clock disable */
     __HAL_RCC_DAC_CLK_DISABLE();
-  
-    /**DAC GPIO Configuration    
-    PA5     ------> DAC_OUT2 
+
+    /**DAC GPIO Configuration
+    PA5     ------> DAC_OUT2
     */
     HAL_GPIO_DeInit(GPIOA, GPIO_PIN_5);
 
@@ -118,10 +131,8 @@ void HAL_DAC_MspDeInit(DAC_HandleTypeDef* dacHandle)
 
   /* USER CODE END DAC_MspDeInit 1 */
   }
-} 
+}
 
 /* USER CODE BEGIN 1 */
 
 /* USER CODE END 1 */
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

@@ -40,9 +40,7 @@
 #include "adc.h"
 #include "dac.h"
 #include "dma.h"
-#include "fatfs.h"
 #include "i2c.h"
-#include "sdmmc.h"
 #include "spi.h"
 #include "tim.h"
 #include "usart.h"
@@ -249,13 +247,6 @@ namespace FLIGHTCONTROLLER {
 		/*******************
 		 * SDCard Variables
 		 *******************/
-
-		UINT						reSD;															//!< count errors of write to SD
-		int 						dataCount 			= 0;										//!< count number of data in buffer
-		double						elapsedTime 		= 0;										//!< elapsed time
-		char 						logbuffer[10000];												//!< write buffer
-		std::string 				tmpbuffer 			= " ";										//!< tmp write buffer in loop
-
 		/****************
 		 * GPS Variables
 		 ****************/

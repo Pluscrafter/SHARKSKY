@@ -51,7 +51,7 @@ namespace FLIGHTCONTROLLER {
 
 	void Flightcontroller::Loop(){
 		double start = DWT->CYCCNT; //read value from counter register
-		elapsedTime += looptime;
+
 		imu.lptime = looptime;
 		imu.calculateICM();
 
@@ -125,24 +125,6 @@ namespace FLIGHTCONTROLLER {
 		radio.startListening();
 	}
 
-	void Flightcontroller::InitSDCard(){
-		//https://www.youtube.com/watch?v=0NbBem8U80Y [11.10.19 14:22] // https://drive.google.com/file/d/1ZunUVcv1RYljzmQe1B3sUUbpJ6705hpM/view
-		if(f_mount(&SDFatFS, SDPath, 1) == FR_OK){
-			char mfil[] = "TESTEXT";
-			if(f_open(&SDFile, mfil, FA_WRITE|FA_CREATE_ALWAYS) == FR_OK){
-				char buf[] = "Hello World";
-				f_write(&SDFile, buf, sizeof(buf), &reSD);
-			}
-			f_close(&SDFile);
-		}
-
-		//Init and create new LOG file
-		char mfil[] = "LOG";
-		if(f_open(&SDFile, mfil, FA_WRITE|FA_CREATE_ALWAYS) == FR_OK){
-
-		}
-		f_close(&SDFile);
-	}
 
 	void Flightcontroller::LoopRadio(){
 		if(radio.available()){

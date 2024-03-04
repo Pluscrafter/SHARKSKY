@@ -1,0 +1,152 @@
+/* USER CODE BEGIN Header */
+/**
+  ******************************************************************************
+  * @file           : main.h
+  * @brief          : Header for main.c file.
+  *                   This file contains the common defines of the application.
+  ******************************************************************************
+  * @attention
+  *
+  * Copyright (c) 2024 STMicroelectronics.
+  * All rights reserved.
+  *
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
+  *
+  ******************************************************************************
+  */
+/* USER CODE END Header */
+
+/* Define to prevent recursive inclusion -------------------------------------*/
+#ifndef __MAIN_H
+#define __MAIN_H
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+/* Includes ------------------------------------------------------------------*/
+#include "stm32f7xx_hal.h"
+
+#include "stm32f7xx_ll_adc.h"
+#include "stm32f7xx_ll_dac.h"
+#include "stm32f7xx_ll_dma.h"
+#include "stm32f7xx_ll_i2c.h"
+#include "stm32f7xx_ll_rcc.h"
+#include "stm32f7xx_ll_bus.h"
+#include "stm32f7xx_ll_system.h"
+#include "stm32f7xx_ll_exti.h"
+#include "stm32f7xx_ll_cortex.h"
+#include "stm32f7xx_ll_utils.h"
+#include "stm32f7xx_ll_pwr.h"
+#include "stm32f7xx_ll_spi.h"
+#include "stm32f7xx_ll_tim.h"
+#include "stm32f7xx_ll_usart.h"
+#include "stm32f7xx_ll_gpio.h"
+
+/* Private includes ----------------------------------------------------------*/
+/* USER CODE BEGIN Includes */
+
+/* USER CODE END Includes */
+
+/* Exported types ------------------------------------------------------------*/
+/* USER CODE BEGIN ET */
+
+/* USER CODE END ET */
+
+/* Exported constants --------------------------------------------------------*/
+/* USER CODE BEGIN EC */
+
+/* USER CODE END EC */
+
+/* Exported macro ------------------------------------------------------------*/
+/* USER CODE BEGIN EM */
+
+/* USER CODE END EM */
+
+/* Exported functions prototypes ---------------------------------------------*/
+void Error_Handler(void);
+
+/* USER CODE BEGIN EFP */
+
+/* USER CODE END EFP */
+
+/* Private defines -----------------------------------------------------------*/
+#define RF24_MOSI_Pin LL_GPIO_PIN_1
+#define RF24_MOSI_GPIO_Port GPIOC
+#define RF24_MISO_Pin LL_GPIO_PIN_2
+#define RF24_MISO_GPIO_Port GPIOC
+#define MOTOR_1_Pin LL_GPIO_PIN_0
+#define MOTOR_1_GPIO_Port GPIOA
+#define MOTOR_2_Pin LL_GPIO_PIN_1
+#define MOTOR_2_GPIO_Port GPIOA
+#define GPS_TX_Pin LL_GPIO_PIN_2
+#define GPS_TX_GPIO_Port GPIOA
+#define GPS_RX_Pin LL_GPIO_PIN_3
+#define GPS_RX_GPIO_Port GPIOA
+#define IMU_NSS_Pin LL_GPIO_PIN_4
+#define IMU_NSS_GPIO_Port GPIOA
+#define INIT_OK_Pin LL_GPIO_PIN_7
+#define INIT_OK_GPIO_Port GPIOA
+#define MOD0_LED_Pin LL_GPIO_PIN_4
+#define MOD0_LED_GPIO_Port GPIOC
+#define GIMBAL_X_Pin LL_GPIO_PIN_0
+#define GIMBAL_X_GPIO_Port GPIOB
+#define MOD1_LED_Pin LL_GPIO_PIN_1
+#define MOD1_LED_GPIO_Port GPIOB
+#define IMU_MOSI_Pin LL_GPIO_PIN_2
+#define IMU_MOSI_GPIO_Port GPIOB
+#define MOTOR_3_Pin LL_GPIO_PIN_10
+#define MOTOR_3_GPIO_Port GPIOB
+#define MOTOR_4_Pin LL_GPIO_PIN_11
+#define MOTOR_4_GPIO_Port GPIOB
+#define RF24_NSS_Pin LL_GPIO_PIN_12
+#define RF24_NSS_GPIO_Port GPIOB
+#define RF24_SCK_Pin LL_GPIO_PIN_13
+#define RF24_SCK_GPIO_Port GPIOB
+#define CE_Pin LL_GPIO_PIN_6
+#define CE_GPIO_Port GPIOC
+#define IRQ_Pin LL_GPIO_PIN_7
+#define IRQ_GPIO_Port GPIOC
+#define IRQ_EXTI_IRQn EXTI9_5_IRQn
+#define ARDU_SDA_Pin LL_GPIO_PIN_9
+#define ARDU_SDA_GPIO_Port GPIOC
+#define ARDU_SCL_Pin LL_GPIO_PIN_8
+#define ARDU_SCL_GPIO_Port GPIOA
+#define FTDI_TX_Pin LL_GPIO_PIN_9
+#define FTDI_TX_GPIO_Port GPIOA
+#define FTDI_RX_Pin LL_GPIO_PIN_10
+#define FTDI_RX_GPIO_Port GPIOA
+#define LLVOE_Pin LL_GPIO_PIN_11
+#define LLVOE_GPIO_Port GPIOA
+#define USBOSD_Pin LL_GPIO_PIN_12
+#define USBOSD_GPIO_Port GPIOA
+#define IMU_SCK_Pin LL_GPIO_PIN_10
+#define IMU_SCK_GPIO_Port GPIOC
+#define IMU_MISO_Pin LL_GPIO_PIN_11
+#define IMU_MISO_GPIO_Port GPIOC
+#define GIMBAL_Y_Pin LL_GPIO_PIN_4
+#define GIMBAL_Y_GPIO_Port GPIOB
+#define GIMBAL_Z_Pin LL_GPIO_PIN_5
+#define GIMBAL_Z_GPIO_Port GPIOB
+#define IMU2_SCL_Pin LL_GPIO_PIN_6
+#define IMU2_SCL_GPIO_Port GPIOB
+#define IMU2_SDA_Pin LL_GPIO_PIN_7
+#define IMU2_SDA_GPIO_Port GPIOB
+#define INTA_Pin LL_GPIO_PIN_8
+#define INTA_GPIO_Port GPIOB
+#define INTA_EXTI_IRQn EXTI9_5_IRQn
+#define IMU_INT_Pin LL_GPIO_PIN_9
+#define IMU_INT_GPIO_Port GPIOB
+#define IMU_INT_EXTI_IRQn EXTI9_5_IRQn
+
+/* USER CODE BEGIN Private defines */
+
+/* USER CODE END Private defines */
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif /* __MAIN_H */

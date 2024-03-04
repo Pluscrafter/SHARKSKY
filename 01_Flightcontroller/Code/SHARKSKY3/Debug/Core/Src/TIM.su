@@ -1,0 +1,11 @@
+../Core/Src/TIM.cpp:10:7:void TIMER::TIM::Init()	4	static
+../Core/Src/TIM.cpp:42:7:void TIMER::TIM::EnableUpdateInterrupt()	0	static
+../Core/Src/TIM.cpp:46:7:void TIMER::TIM::UpdateInterrupt_Handler()	0	static
+../Core/Src/TIM.cpp:50:7:void TIMER::TIM::EnableChannel(GPIO_TypeDef*, uint8_t, uint8_t, uint8_t)	24	static
+../Core/Src/TIM.cpp:73:7:void TIMER::TIM::EnablePWM(uint8_t)	0	static
+../Core/Src/TIM.cpp:95:7:void TIMER::TIM::TIM_Start()	0	static
+../Core/Src/TIM.cpp:99:7:void TIMER::TIM::Interrupt_Handler()	8	static
+../Core/Src/TIM.cpp:145:7:void TIMER::TIM::PWM_setDutyCycle(uint8_t, uint16_t)	0	static
+../Core/Src/TIM.cpp:157:7:void TIMER::TIM::EnableInputCapture(uint8_t)	0	static
+../Core/Src/TIM.cpp:205:11:uint32_t TIMER::TIM::getInputCycle(uint8_t)	0	static
+../Core/Src/TIM.cpp:217:7:void TIMER::TIM::EnablePWMInput(uint8_t)	0	static

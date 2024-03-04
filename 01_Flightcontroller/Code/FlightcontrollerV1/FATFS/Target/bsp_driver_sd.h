@@ -1,21 +1,22 @@
+/* USER CODE BEGIN Header */
 /**
  ******************************************************************************
   * @file    bsp_driver_sd.h (based on stm32756g_eval_sd.h)
-  * @brief   This file contains the common defines and functions prototypes for 
+  * @brief   This file contains the common defines and functions prototypes for
   *          the bsp_driver_sd.c driver.
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
-  * All rights reserved.</center></h2>
+  * Copyright (c) 2022 STMicroelectronics.
+  * All rights reserved.
   *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
   *
   ******************************************************************************
   */
+/* USER CODE END Header */
 
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __STM32F7_SD_H
@@ -23,29 +24,29 @@
 
 #ifdef __cplusplus
  extern "C" {
-#endif 
+#endif
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f7xx_hal.h"
 #include "fatfs_platform.h"
 
-/* Exported types --------------------------------------------------------*/ 
-/** 
-  * @brief SD Card information structure 
+/* Exported types --------------------------------------------------------*/
+/**
+  * @brief SD Card information structure
   */
 #define BSP_SD_CardInfo HAL_SD_CardInfoTypeDef
 
-/* Exported constants --------------------------------------------------------*/ 
+/* Exported constants --------------------------------------------------------*/
 /**
-  * @brief  SD status structure definition  
-  */     
+  * @brief  SD status structure definition
+  */
 #define   MSD_OK                        ((uint8_t)0x00)
 #define   MSD_ERROR                     ((uint8_t)0x01)
 #define   MSD_ERROR_SD_NOT_PRESENT      ((uint8_t)0x02)
 
-/** 
-  * @brief  SD transfer state definition  
-  */     
+/**
+  * @brief  SD transfer state definition
+  */
 #define   SD_TRANSFER_OK                ((uint8_t)0x00)
 #define   SD_TRANSFER_BUSY              ((uint8_t)0x01)
 
@@ -57,7 +58,7 @@
 /* kept to avoid issue when migrating old projects. */
 /* USER CODE BEGIN 0 */
 
-/* USER CODE END 0 */ 
+/* USER CODE END 0 */
 #else
 /* USER CODE BEGIN BSP_H_CODE */
 
@@ -80,11 +81,9 @@ void    BSP_SD_WriteCpltCallback(void);
 void    BSP_SD_ReadCpltCallback(void);
 /* USER CODE END BSP_H_CODE */
 #endif
-   
+
 #ifdef __cplusplus
 }
 #endif
 
 #endif /* __STM32F7_SD_H */
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
