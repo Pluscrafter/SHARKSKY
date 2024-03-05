@@ -1,6 +1,7 @@
 
 #include "Instances.hpp"
 #include "Sensors.hpp"
+#include "PID.h"
 
 
 COM::SPI spi3(SPI3, GPIOB, 2, 7 ,GPIOC, 10, 6, GPIOC, 11, 6, GPIOA, 4);
@@ -12,8 +13,8 @@ COM::UART uart1(USART1, GPIOA, 9, 7, GPIOA, 10, 7);
 TIMER::TIM tim2_motor(TIM2, 12, 4096);
 TIMER::TIM tim3_controller(TIM3,71, 4096);
 TIMER::TIM tim4_controller(TIM4,71, 4096);
-TIMER::TIM tim5_trig(TIM5,1, 26999);
-TIMER::TIM tim7_trig(TIM7,1, 53999);
+TIMER::TIM tim7_trig(TIM7,0, 21599);
+TIMER::TIM tim5_trig(TIM5,8, 47999);
 
 extern "C" void SPI3_IRQHandler(){
 	spi3.Interrupt_Handler();
@@ -36,22 +37,26 @@ extern "C" void TIM4_IRQHandler(){
 }
 
 extern "C" void TIM5_IRQHandler(){
-	if(GPIO::READ(GPIOC, 4)){
+	tim5_trig.UpdateInterrupt_Handler();
+	if(GPIO::READ(GPIOB,1)){
+		GPIO::WRITE(GPIOB, 1, LOW);
+	}else{
+		GPIO::WRITE(GPIOB, 1, HIGH);
+	}
+}
+
+extern "C" void TIM7_IRQHandler(){
+	tim7_trig.UpdateInterrupt_Handler();
+	if(GPIO::READ(GPIOC,4)){
 		GPIO::WRITE(GPIOC, 4, LOW);
 	}else{
 		GPIO::WRITE(GPIOC, 4, HIGH);
 	}
 	imu.IMU_calcAngle();
-	tim5_trig.UpdateInterrupt_Handler();
-}
-
-
-extern "C" void TIM7_IRQHandler(){
-	tim7_trig.UpdateInterrupt_Handler();
 }
 
 extern "C" void EXTI9_5_IRQHandler(){
 
 	//imu.IMU_readAngle();
-	EXTI->PR = EXTI->PR | (1 << 9);
+	//EXTI->PR = EXTI->PR | (1 << 9);
 }

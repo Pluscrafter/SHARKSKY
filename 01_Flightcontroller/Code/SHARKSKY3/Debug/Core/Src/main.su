@@ -1,4 +1,4 @@
 ../Core/Src/main.cpp:32:6:void delay(uint32_t)	8	static
-../Core/Src/main.cpp:164:6:void SystemClock_Config()	96	static
+../Core/Src/main.cpp:165:6:void SystemClock_Config()	96	static
 ../Core/Src/main.cpp:79:5:int main()	56	static
-../Core/Src/main.cpp:237:6:void Error_Handler()	0	static
+../Core/Src/main.cpp:238:6:void Error_Handler()	0	static

@@ -89,8 +89,9 @@ int main(void)
 	DWT->CTRL |= DWT_CTRL_CYCCNTENA_Msk;
 
 	GPIO::EN(GPIOC);
+	GPIO::EN(GPIOB);
 	GPIO::MODE(GPIOC, 4, MODE_OUTPUT);
-
+	GPIO::MODE(GPIOB, 1, MODE_OUTPUT);
 
 	imu.IMU_init_ok = false;
 
@@ -144,7 +145,7 @@ int main(void)
 		GPIO::WRITE(GPIOC, 4, HIGH);
 	}
 
-	imu.IMU_startINT();
+	//imu.IMU_startINT();
 
 	while (1){
 		double start = DWT->CYCCNT;

@@ -1,6 +1,7 @@
 "./Core/Src/GPIO.o"
 "./Core/Src/ICM20689.o"
 "./Core/Src/InterruptHandlers.o"
+"./Core/Src/PID.o"
 "./Core/Src/RF24.o"
 "./Core/Src/SPI.o"
 "./Core/Src/Sensors.o"

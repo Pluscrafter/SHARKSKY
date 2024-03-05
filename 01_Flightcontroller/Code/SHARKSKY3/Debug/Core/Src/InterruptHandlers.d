@@ -29,7 +29,8 @@ Core/Src/InterruptHandlers.o: ../Core/Src/InterruptHandlers.cpp \
  ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_i2c.h \
  ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_i2c_ex.h \
  ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pwr.h \
- ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pwr_ex.h
+ ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pwr_ex.h \
+ ../Core/Inc/PID.h
 ../Core/Inc/Instances.hpp:
 ../Core/Inc/SPI.hpp:
 ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f722xx.h:
@@ -68,3 +69,4 @@ Core/Src/InterruptHandlers.o: ../Core/Src/InterruptHandlers.cpp \
 ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_i2c_ex.h:
 ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pwr.h:
 ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pwr_ex.h:
+../Core/Inc/PID.h:

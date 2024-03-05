@@ -78,7 +78,7 @@
 #define DLPF_YAW			31.41 //5Hz * 2Pi
 #define DLPF_PITCHROLL		942.48//100HZ*2Pi//1256.63 //200Hz * 2Pi
 
-#define FILTER_TAP_NUM 51
+#define FILTER_TAP_NUM 45
 
 #include <stdbool.h>
 #include "Instances.hpp"
