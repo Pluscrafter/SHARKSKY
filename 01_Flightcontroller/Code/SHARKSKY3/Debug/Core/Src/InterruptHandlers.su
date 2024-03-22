@@ -3,7 +3,7 @@
 ../Core/Src/InterruptHandlers.cpp:27:17:void USART1_IRQHandler()	0	static
 ../Core/Src/InterruptHandlers.cpp:31:17:void TIM3_IRQHandler()	0	static
 ../Core/Src/InterruptHandlers.cpp:35:17:void TIM4_IRQHandler()	0	static
-../Core/Src/InterruptHandlers.cpp:39:17:void TIM5_IRQHandler()	8	static
-../Core/Src/InterruptHandlers.cpp:48:17:void TIM7_IRQHandler()	8	static
-../Core/Src/InterruptHandlers.cpp:58:17:void EXTI9_5_IRQHandler()	0	static
-../Core/Src/InterruptHandlers.cpp:62:1:cpp)	36	static
+../Core/Src/InterruptHandlers.cpp:39:17:void TIM5_IRQHandler()	16	static
+../Core/Src/InterruptHandlers.cpp:56:17:void TIM7_IRQHandler()	8	static
+../Core/Src/InterruptHandlers.cpp:67:17:void EXTI9_5_IRQHandler()	0	static
+../Core/Src/InterruptHandlers.cpp:71:1:cpp)	36	static

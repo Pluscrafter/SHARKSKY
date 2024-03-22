@@ -2,6 +2,12 @@
 CAD.formats=
 CAD.pinconfig=
 CAD.provider=
+CORTEX_M7.ART_ACCELERATOR_ENABLE=0
+CORTEX_M7.CPU_DCache=Enabled
+CORTEX_M7.CPU_ICache=Enabled
+CORTEX_M7.FlashInterface=AXI_Enabled
+CORTEX_M7.IPParameters=ART_ACCELERATOR_ENABLE,PREFETCH_ENABLE,CPU_ICache,CPU_DCache,FlashInterface
+CORTEX_M7.PREFETCH_ENABLE=0
 File.Version=6
 KeepUserPlacement=false
 Mcu.CPN=STM32F722RET6

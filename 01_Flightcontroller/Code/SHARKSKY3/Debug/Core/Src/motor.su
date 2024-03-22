@@ -1,0 +1,2 @@
+../Core/Src/motor.cpp:10:1:motor::motor()	0	static
+../Core/Src/motor.cpp:14:6:void motor::setMotor()	8	static

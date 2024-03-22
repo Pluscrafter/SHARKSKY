@@ -29,7 +29,8 @@ Core/Src/main.o: ../Core/Src/main.cpp ../Core/Inc/main.h \
  ../Core/Inc/Sensors.hpp ../Core/Inc/ICM20689.h ../Core/Inc/Instances.hpp \
  ../Core/Inc/SPI.hpp ../Core/Inc/stm32f7xx_it.h ../Core/Inc/GPIO.hpp \
  ../Core/Inc/UART.hpp ../Core/Inc/TIM.hpp ../Core/Inc/fast_math.h \
- ../Core/Inc/FIR.h ../Core/Inc/Instances.hpp ../Core/Inc/GPIO.hpp \
+ ../Core/Inc/FIR.h ../Core/Inc/receiver.h ../Core/Inc/PID.h \
+ ../Core/Inc/motor.h ../Core/Inc/Instances.hpp ../Core/Inc/GPIO.hpp \
  ../Core/Inc/ICM20689.h
 ../Core/Inc/main.h:
 ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:
@@ -69,6 +70,9 @@ Core/Src/main.o: ../Core/Src/main.cpp ../Core/Inc/main.h \
 ../Core/Inc/TIM.hpp:
 ../Core/Inc/fast_math.h:
 ../Core/Inc/FIR.h:
+../Core/Inc/receiver.h:
+../Core/Inc/PID.h:
+../Core/Inc/motor.h:
 ../Core/Inc/Instances.hpp:
 ../Core/Inc/GPIO.hpp:
 ../Core/Inc/ICM20689.h:

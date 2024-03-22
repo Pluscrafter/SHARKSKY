@@ -9,12 +9,15 @@
 #define INC_PID_H_
 
 class PID{
-	static float f_lastError;
-	static float i_lastError;
+private:
+	float dt, max, min, Kp, Ki, Kd;
+	float _P, _I, _D, error, integral, prev_error, de, output;
+
 public:
-	static void PID_P(float gain, float error, float &corr);
-	static void PID_I(float gain, float error, float &corr);
-	static void PID_D(float gain, float error, float &corr);
+	PID(float dt, float max, float min, float Kp, float Ki, float Kd):
+		dt(dt), max(max), min(min) ,Kp(Kp), Ki(Ki), Kd(Kd) {};
+
+	float calc(float setpoint, float meas);
 };
 
 

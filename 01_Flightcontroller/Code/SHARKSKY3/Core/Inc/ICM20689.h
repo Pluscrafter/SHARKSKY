@@ -78,7 +78,7 @@
 #define DLPF_YAW			31.41 //5Hz * 2Pi
 #define DLPF_PITCHROLL		942.48//100HZ*2Pi//1256.63 //200Hz * 2Pi
 
-#define FILTER_TAP_NUM 45
+#define FILTER_TAP_NUM 145
 
 #include <stdbool.h>
 #include "Instances.hpp"
@@ -91,6 +91,20 @@
 namespace SENSORS{
 	class IMU{
 		public:
+			bool 				IMU_init_ok;
+			float 				IMU_f_ypr[3];
+
+
+			bool 				IMU_whoami();
+
+			bool 				IMU_Init();
+			void				IMU_startINT();
+
+			void				IMU_calcAngle() noexcept;
+			void				IMU_readAngle() noexcept;
+
+
+		private:
 			typedef struct {
 					float out;
 					float *coeff;
@@ -99,7 +113,7 @@ namespace SENSORS{
 					uint8_t putIndex;
 				} FIRFilter ;
 
-			bool 				IMU_init_ok;
+
 
 			uint8_t				IMU_BUF[14];
 			float				IMU_BUF_FIR_Y[FILTER_TAP_NUM];
@@ -114,7 +128,6 @@ namespace SENSORS{
 			float 				IMU_ypr[3];
 
 			float 				IMU_t_ypr[3];
-			float 				IMU_f_ypr[3];
 			float 				IMU_accel[3];
 			float				IMU_acclAngle[2];
 			float 				IMU_temp;
@@ -128,32 +141,22 @@ namespace SENSORS{
 			int16_t 			IMU_r_gyro[3];
 			int16_t 			IMU_r_temp;
 
-
-
-			bool 				IMU_whoami();
-
-			bool 				IMU_Init();
-			void				IMU_startINT();
-
-			void				IMU_calcAngle();
-			void				IMU_readAngle();
-
-			void 				IMU_calcAccelAngle();
-			void				IMU_calcGyroAngle();
-
-			void				IMU_ComplementaryFilter();
-			void				IMU_DLPF();
-			void				IMU_FIR();
-
-			void				FIRFilter_Init(FIRFilter *filt, float *coeff, float *buf, const uint8_t order);
-			float 				FIRFilter_Update(FIRFilter *filt, float in);
-		private:
 			void 				IMU_writeRegister(uint8_t reg, uint8_t value);
 			void 				_IMU_writeRegister(uint8_t reg, uint8_t value, uint8_t delay);
 
 			uint8_t 			IMU_readRegister(uint8_t reg);
 			uint8_t 			IMU_readRegisters(uint8_t reg, uint8_t ret[], uint8_t buf);
 			uint8_t 			_IMU_readRegister(uint8_t reg, uint8_t delay);
+
+			void 				IMU_calcAccelAngle() noexcept;
+			void				IMU_calcGyroAngle() noexcept;
+
+			void				IMU_ComplementaryFilter() noexcept;
+			void				IMU_DLPF() noexcept;
+			void				IMU_FIR() noexcept;
+
+			void				FIRFilter_Init(FIRFilter *filt, float *coeff, float *buf, const uint8_t order);
+			float 				FIRFilter_Update(FIRFilter *filt, float in) noexcept;
 
 	};
 }

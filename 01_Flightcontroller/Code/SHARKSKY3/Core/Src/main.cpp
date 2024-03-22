@@ -78,6 +78,8 @@ float looptime = 0.001;
 
 int main(void)
 {
+	SCB_EnableICache();
+	SCB_EnableDCache();
 	HAL_Init();
 	SystemClock_Config();
 	MX_GPIO_Init();
@@ -95,14 +97,16 @@ int main(void)
 
 	imu.IMU_init_ok = false;
 
-	spi2.Init();
+	//spi2.Init();
 	spi3.Init();
-	//uart1.Init();
+
 	tim2_motor.Init();
 	tim3_controller.Init();
 	tim4_controller.Init();
+
 	tim5_trig.Init();
 	tim7_trig.Init();
+
 	tim5_trig.EnableUpdateInterrupt();
 	tim7_trig.EnableUpdateInterrupt();
 
@@ -115,22 +119,18 @@ int main(void)
 	tim2_motor.EnablePWM(2);
 	tim2_motor.EnablePWM(3);
 	tim2_motor.EnablePWM(4);
-	tim2_motor.TIM_Start();
-
-	tim2_motor.PWM_setDutyCycle(1, 50);
-	tim2_motor.PWM_setDutyCycle(2, 4000);
-	tim2_motor.PWM_setDutyCycle(3, 3072);
-	tim2_motor.PWM_setDutyCycle(4, 2000);
 
 	tim3_controller.EnableChannel(GPIOB, 4, GPIO_AF2_TIM3, 1); //CH 1 ROLL
 	tim3_controller.EnableChannel(GPIOB, 5, GPIO_AF2_TIM3, 2); //CH 2 PITCH
 	tim3_controller.EnableChannel(GPIOB, 0, GPIO_AF2_TIM3, 3); //CH 3 THROTTLE
-	tim4_controller.EnableChannel(GPIOB, 8, GPIO_AF2_TIM4, 3); //CH 3 THROTTLE
+	tim4_controller.EnableChannel(GPIOB, 8, GPIO_AF2_TIM4, 3); //CH 4 THROTTLE
 
 	tim3_controller.EnableInputCapture(1);
 	tim3_controller.EnableInputCapture(2);
 	tim3_controller.EnableInputCapture(3);
 	tim4_controller.EnableInputCapture(3);
+
+	tim2_motor.TIM_Start();
 
 	tim3_controller.TIM_Start();
 	tim4_controller.TIM_Start();

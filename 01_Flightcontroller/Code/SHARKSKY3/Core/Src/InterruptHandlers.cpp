@@ -13,8 +13,8 @@ COM::UART uart1(USART1, GPIOA, 9, 7, GPIOA, 10, 7);
 TIMER::TIM tim2_motor(TIM2, 12, 4096);
 TIMER::TIM tim3_controller(TIM3,71, 4096);
 TIMER::TIM tim4_controller(TIM4,71, 4096);
-TIMER::TIM tim7_trig(TIM7,0, 21599);
-TIMER::TIM tim5_trig(TIM5,8, 47999);
+TIMER::TIM tim7_trig(TIM7,0, 13499);
+TIMER::TIM tim5_trig(TIM5,1, 53999);
 
 extern "C" void SPI3_IRQHandler(){
 	spi3.Interrupt_Handler();
@@ -36,22 +36,31 @@ extern "C" void TIM4_IRQHandler(){
 	tim4_controller.Interrupt_Handler();
 }
 
-extern "C" void TIM5_IRQHandler(){
+extern "C" void TIM5_IRQHandler() noexcept{
 	tim5_trig.UpdateInterrupt_Handler();
 	if(GPIO::READ(GPIOB,1)){
 		GPIO::WRITE(GPIOB, 1, LOW);
 	}else{
 		GPIO::WRITE(GPIOB, 1, HIGH);
 	}
+	recv.getVal();
+
+	mot.Y_CORR = YAW_PID.calc(recv.yaw, imu.IMU_f_ypr[2]);
+	mot.P_CORR = PITCH_PID.calc(recv.pitch, imu.IMU_f_ypr[1]);
+	mot.R_CORR = ROLL_PID.calc(recv.roll, imu.IMU_f_ypr[0]);
+	mot.THROTTLE = recv.throttle;
+
+	mot.setMotor();
 }
 
-extern "C" void TIM7_IRQHandler(){
+extern "C" void TIM7_IRQHandler() noexcept{
 	tim7_trig.UpdateInterrupt_Handler();
 	if(GPIO::READ(GPIOC,4)){
 		GPIO::WRITE(GPIOC, 4, LOW);
 	}else{
 		GPIO::WRITE(GPIOC, 4, HIGH);
 	}
+
 	imu.IMU_calcAngle();
 }
 

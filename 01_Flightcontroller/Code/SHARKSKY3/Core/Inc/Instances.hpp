@@ -13,7 +13,6 @@
 #include "UART.hpp"
 #include "TIM.hpp"
 
-
 extern COM::SPI spi3;
 extern COM::SPI spi2;
 extern COM::UART uart1;

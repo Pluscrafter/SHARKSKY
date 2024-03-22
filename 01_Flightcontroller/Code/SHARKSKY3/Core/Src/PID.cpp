@@ -9,20 +9,29 @@
 
 
 #include "PID.h"
-extern float looptime;
 
-float PID::f_lastError = 0;
-float PID::i_lastError = 0;
 
-void PID::PID_P(float gain, float error, float &corr){
-	corr = gain * error;
-}
+float PID::calc(float setpoint, float meas){
+	float error = setpoint - meas;
 
-void PID::PID_I(float gain, float error, float &corr){
-	corr += error * gain * looptime;
-}
+	_P = Kp * error;
 
-void PID::PID_D(float gain, float error, float &corr){
-	corr = gain * ((error - f_lastError) * looptime);
-	f_lastError = error;
+	integral += error * dt;
+
+	_I = Ki * integral;
+
+	de = (error - prev_error) / dt;
+	_D = Kd * de;
+
+	output = _P + _I + _D;
+
+	if(output > max){
+		output = max;
+	} else if(output < min){
+		output = min;
+	}
+
+	prev_error = error;
+
+	return output;
 }

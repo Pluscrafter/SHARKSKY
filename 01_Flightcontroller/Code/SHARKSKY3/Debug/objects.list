@@ -9,6 +9,8 @@
 "./Core/Src/UART.o"
 "./Core/Src/fast_math.o"
 "./Core/Src/main.o"
+"./Core/Src/motor.o"
+"./Core/Src/receiver.o"
 "./Core/Src/stm32f7xx_hal_msp.o"
 "./Core/Src/stm32f7xx_it.o"
 "./Core/Src/syscalls.o"

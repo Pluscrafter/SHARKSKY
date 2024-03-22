@@ -28,7 +28,8 @@ Core/Src/Sensors.o: ../Core/Src/Sensors.cpp ../Core/Inc/Sensors.hpp \
  ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_i2c.h \
  ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_i2c_ex.h \
  ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pwr.h \
- ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pwr_ex.h
+ ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pwr_ex.h \
+ ../Core/Inc/receiver.h ../Core/Inc/PID.h ../Core/Inc/motor.h
 ../Core/Inc/Sensors.hpp:
 ../Core/Inc/ICM20689.h:
 ../Core/Inc/Instances.hpp:
@@ -66,3 +67,6 @@ Core/Src/Sensors.o: ../Core/Src/Sensors.cpp ../Core/Inc/Sensors.hpp \
 ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_i2c_ex.h:
 ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pwr.h:
 ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pwr_ex.h:
+../Core/Inc/receiver.h:
+../Core/Inc/PID.h:
+../Core/Inc/motor.h:
